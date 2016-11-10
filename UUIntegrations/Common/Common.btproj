@@ -61,12 +61,25 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Schema Include="Schemas\Event1.xsd">
+    <Schema Include="Schemas\www.uu.se-schemas.xsd">
+      <TypeName>www_uu_se_schemas</TypeName>
+      <Namespace>Common.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="Schemas\www.uu.se-schemas-event.xsd">
       <TypeName>Schema1</TypeName>
       <Namespace>Common.Schemas</Namespace>
       <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="Schemas\www.uu.se-schemas-data.xsd">
+      <SubType>Task</SubType>
+      <TypeName>www_uu_se_schemas_Copy</TypeName>
+      <Namespace>Common.Schemas</Namespace>
     </Schema>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
