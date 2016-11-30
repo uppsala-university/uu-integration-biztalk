@@ -69,6 +69,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk.pfx" />
+    <Schema Include="MembershipEventResponse.xsd">
+      <TypeName>MembershipEventResponse</TypeName>
+      <Namespace>Ladok2GroupAdapter</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="MembershipEventResponse1.xsd">
+      <TypeName>MembershipEventResponse1</TypeName>
+      <Namespace>Ladok2GroupAdapter</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="MembershipEventResponse_to_GroupMembershipCreateRequestEvent.btm">
+      <TypeName>MembershipEventResponse_to_GroupMembershipCreateRequestEvent</TypeName>
+      <Namespace>Ladok2GroupAdapter</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.btproj">
+      <Project>{3ff5289c-b045-4bd2-9489-a16320e738a9}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Ladok2GroupAdapter.odx">
+      <TypeName>Ladok2GroupAdapter</TypeName>
+      <Namespace>Ladok2GroupAdapter</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />

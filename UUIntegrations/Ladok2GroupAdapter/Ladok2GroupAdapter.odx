@@ -1,0 +1,361 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="2d132e2c-0997-407c-bbd3-2dad398edb8b" LowerBound="1.1" HigherBound="85.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Ladok2GroupAdapter" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="e32020a8-50d4-4c94-b1df-e62c40e83d11" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MembershipEventsPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="50de70b2-6105-4fe7-affa-87185a47ca46" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="123771b8-828c-4492-8d11-5b672daeb590" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.36">
+                    <om:Property Name="Ref" Value="Ladok2GroupAdapter.MembershipEventResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="8fb2329e-9297-477f-b4dd-7dab9a47d180" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_1" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="c5ccb28b-7275-4d53-a931-e059a6a227b0" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="15651b03-a3f1-4481-b0db-ece418c6c283" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.37">
+                    <om:Property Name="Ref" Value="Ladok2GroupAdapter.MembershipEventResponse1" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="caa8e09e-758c-4805-9f81-b7609511ebe8" ParentLink="Module_CorrelationType" LowerBound="18.1" HigherBound="22.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceivePortNameCorrelationType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="65a20ae4-74e8-4356-b2f9-44d744ec886c" ParentLink="CorrelationType_PropertyRef" LowerBound="20.9" HigherBound="20.28">
+                <om:Property Name="Ref" Value="BTS.ReceivePortName" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="8d687bee-a4af-4caf-9dd7-da1f7dfa5996" ParentLink="Module_ServiceDeclaration" LowerBound="22.1" HigherBound="84.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Ladok2GroupAdapterOrchestration" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="af70d00a-7dd0-4e35-bf31-04a47b5104ec" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="InitialValue" Value="true" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Loop" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="17a02e66-0e6d-47d8-80ab-b2060e098d1b" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="messageCount" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="f0a3c731-cf26-4f9b-a03b-14d5415b4f94" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="counter" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="dd97a0bf-dad2-40f9-bcf9-4ef2b00c77a6" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sXPathQuery" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="CorrelationDeclaration" OID="a5101d06-b0ab-4f98-ad48-7bffc2c774c8" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="Type" Value="Ladok2GroupAdapter.ReceivePortNameCorrelationType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceivePortNameCorrelationSet" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="aa53176c-7eb7-44aa-a16d-6b0cd53309e7" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="39.82" HigherBound="39.122">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="0d7bccf6-96a4-47c2-99df-a940d339a57d" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="df3d4b06-6193-47ad-9bb3-51ffcb5c9085" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="71.87" HigherBound="71.116">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="a7a59b03-dcb3-40dd-9342-68d28ed1641f" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_2" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ca04ced4-0882-4c10-95b0-3c5762bbc347" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="Type" Value="Ladok2GroupAdapter.MembershipEventResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgMembershipEvents" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="1cb63f46-d642-46bb-89f3-157f214a1ec4" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="Type" Value="Ladok2GroupAdapter.MembershipEventResponse1" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgSingleEvent" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="68867432-1480-4bb0-ac5c-b2764afcbb64" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="0d7bccf6-96a4-47c2-99df-a940d339a57d" ParentLink="ServiceBody_Statement" LowerBound="38.1" HigherBound="42.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="MembershipEvents" />
+                    <om:Property Name="MessageName" Value="msgMembershipEvents" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive MembershipEventResponse" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="c760ac46-0e93-4f60-9790-d51b50706944" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="44.1">
+                    <om:Property Name="Expression" Value="Loop = true;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Initialize Loop" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="While" OID="b88d9be7-ebc0-47e6-bb32-a429879ddd93" ParentLink="ServiceBody_Statement" LowerBound="44.1" HigherBound="82.1">
+                    <om:Property Name="Expression" Value="Loop == true" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive Loop" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="VariableAssignment" OID="abde95a4-354c-4d6b-89f7-dee2c8da4ae6" ParentLink="ComplexStatement_Statement" LowerBound="47.1" HigherBound="50.1">
+                        <om:Property Name="Expression" Value="messageCount = (System.Int32)(xpath(msgMembershipEvents, &quot;count(/*[local-name()='Root' and namespace-uri()='http://www.uu.se/schemas/integration/ladok2/membership']/*[local-name()='getUpdoctestDB.dbo.MEMBERSHIP_EVENTS' and namespace-uri()=''])&quot;));&#xD;&#xA;counter=0;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Initialize debatching" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="While" OID="fe6b72d7-0dab-4739-ba43-178cd6016adf" ParentLink="ComplexStatement_Statement" LowerBound="50.1" HigherBound="67.1">
+                        <om:Property Name="Expression" Value="counter &lt; messageCount" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Debatching Loop" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="7507972d-99b8-4f54-8864-190aee733355" ParentLink="ComplexStatement_Statement" LowerBound="53.1" HigherBound="62.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Construct Single Message" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="3c873a31-4691-4d40-8eb6-657ec47e0bb2" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="61.1">
+                                <om:Property Name="Expression" Value="sXPathQuery = System.String.Format(&quot;/*[local-name()='Root' and namespace-uri()='http://www.uu.se/schemas/integration/ladok2/membership']/*[local-name()='getUpdoctestDB.dbo.MEMBERSHIP_EVENTS' and namespace-uri()=''][{0}]&quot;, counter+1);&#xD;&#xA;&#xD;&#xA;msgSingleEvent = xpath(msgMembershipEvents, sXPathQuery);&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_1" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="078a6dd2-d99f-43b3-827b-51f81702b4af" ParentLink="Construct_MessageRef" LowerBound="54.31" HigherBound="54.45">
+                                <om:Property Name="Ref" Value="msgSingleEvent" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="f37fed52-d578-4450-8157-131812ea71b8" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="64.1">
+                            <om:Property Name="PortName" Value="Port_1" />
+                            <om:Property Name="MessageName" Value="msgSingleEvent" />
+                            <om:Property Name="OperationName" Value="Operation_1" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send Single Message" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="bb8cf7d4-fc02-4b9d-9db1-a2dd89c59436" ParentLink="ComplexStatement_Statement" LowerBound="64.1" HigherBound="66.1">
+                            <om:Property Name="Expression" Value="counter = counter+1;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Update loop lount" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Listen" OID="9dedc94e-d0a6-4583-9d93-f669226fd68e" ParentLink="ComplexStatement_Statement" LowerBound="67.1" HigherBound="81.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Listen_1" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="ListenBranch" OID="2784650a-9321-440c-b8f7-ce9dc768087c" ParentLink="ReallyComplexStatement_Branch" LowerBound="67.1" HigherBound="67.1">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ListenBranch_1" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Receive" OID="a7a59b03-dcb3-40dd-9342-68d28ed1641f" ParentLink="ListenBranch_Statement" LowerBound="70.1" HigherBound="71.117">
+                                <om:Property Name="Activate" Value="False" />
+                                <om:Property Name="PortName" Value="MembershipEvents" />
+                                <om:Property Name="MessageName" Value="msgMembershipEvents" />
+                                <om:Property Name="OperationName" Value="Operation_1" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Receive MembershipEventResponse 2" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="ListenBranch" OID="e957555c-9250-492a-8fa5-32daabd2272f" ParentLink="ReallyComplexStatement_Branch" LowerBound="67.1" HigherBound="67.1">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ListenBranch_2" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="VariableAssignment" OID="8ca56b12-104f-40ee-b561-6ccf93bf224a" ParentLink="ComplexStatement_Statement" LowerBound="77.1" HigherBound="79.1">
+                                <om:Property Name="Expression" Value="Loop = false;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Exit Loop" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Delay" OID="82eeace0-1e7d-4fa4-85c8-efc9bd874a8d" ParentLink="ListenBranch_Statement" LowerBound="74.1" HigherBound="75.57">
+                                <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,5,0)" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Wait" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="24ca710a-a126-4f13-a6cb-137886106f4a" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="25.1" HigherBound="27.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="5" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Ladok2GroupAdapter.MembershipEventsPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MembershipEvents" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="97ccea8c-3b46-41c1-aba2-c9c62687e875" ParentLink="PortDeclaration_CLRAttribute" LowerBound="25.1" HigherBound="26.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="1a8686d2-4b2a-461f-912e-6a2026c63bb5" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="27.1" HigherBound="29.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="39" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Ladok2GroupAdapter.PortType_1" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="c3f73001-65bc-4e27-b7d5-eb760d842c95" ParentLink="PortDeclaration_CLRAttribute" LowerBound="27.1" HigherBound="28.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Ladok2GroupAdapter
+{
+    internal porttype MembershipEventsPortType
+    {
+        oneway Operation_1
+        {
+            MembershipEventResponse
+        };
+    };
+    internal porttype PortType_1
+    {
+        oneway Operation_1
+        {
+            MembershipEventResponse1
+        };
+    };
+    internal correlationtype ReceivePortNameCorrelationType
+    {
+        BTS.ReceivePortName
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service Ladok2GroupAdapterOrchestration
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements MembershipEventsPortType MembershipEvents;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_1 Port_1;
+        correlation ReceivePortNameCorrelationType ReceivePortNameCorrelationSet;
+        message MembershipEventResponse msgMembershipEvents;
+        message MembershipEventResponse1 msgSingleEvent;
+        System.Boolean Loop;
+        System.Int32 messageCount;
+        System.Int32 counter;
+        System.String sXPathQuery;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0d7bccf6-96a4-47c2-99df-a940d339a57d")]
+            activate receive (MembershipEvents.Operation_1, msgMembershipEvents, initialize ReceivePortNameCorrelationSet);
+            Loop = true;
+            sXPathQuery = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c760ac46-0e93-4f60-9790-d51b50706944")]
+            Loop = true;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b88d9be7-ebc0-47e6-bb32-a429879ddd93")]
+            while (Loop == true)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("abde95a4-354c-4d6b-89f7-dee2c8da4ae6")]
+                messageCount = (System.Int32)(xpath(msgMembershipEvents, "count(/*[local-name()='Root' and namespace-uri()='http://www.uu.se/schemas/integration/ladok2/membership']/*[local-name()='getUpdoctestDB.dbo.MEMBERSHIP_EVENTS' and namespace-uri()=''])"));
+                counter=0;
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("fe6b72d7-0dab-4739-ba43-178cd6016adf")]
+                while (counter < messageCount)
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("7507972d-99b8-4f54-8864-190aee733355")]
+                    construct msgSingleEvent
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("3c873a31-4691-4d40-8eb6-657ec47e0bb2")]
+                        sXPathQuery = System.String.Format("/*[local-name()='Root' and namespace-uri()='http://www.uu.se/schemas/integration/ladok2/membership']/*[local-name()='getUpdoctestDB.dbo.MEMBERSHIP_EVENTS' and namespace-uri()=''][{0}]", counter+1);
+                        
+                        msgSingleEvent = xpath(msgMembershipEvents, sXPathQuery);
+                        
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f37fed52-d578-4450-8157-131812ea71b8")]
+                    send (Port_1.Operation_1, msgSingleEvent);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("bb8cf7d4-fc02-4b9d-9db1-a2dd89c59436")]
+                    counter = counter+1;
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("9dedc94e-d0a6-4583-9d93-f669226fd68e")]
+                listen
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a7a59b03-dcb3-40dd-9342-68d28ed1641f")]
+                    until receive (MembershipEvents.Operation_1, msgMembershipEvents, ReceivePortNameCorrelationSet)
+                    {
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("82eeace0-1e7d-4fa4-85c8-efc9bd874a8d")]
+                    timeout new System.TimeSpan(0,0,5,0)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("8ca56b12-104f-40ee-b561-6ccf93bf224a")]
+                        Loop = false;
+                    }
+                }
+            }
+        }
+    }
+}
+
