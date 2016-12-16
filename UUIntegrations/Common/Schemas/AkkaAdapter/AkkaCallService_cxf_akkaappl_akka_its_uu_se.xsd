@@ -21,6 +21,8 @@
   <xs:element name="etableraEjAktiveratStudentkontoResponse" type="tns:etableraEjAktiveratStudentkontoResponse" />
   <xs:element name="forlangGastkonto" type="tns:forlangGastkonto" />
   <xs:element name="forlangGastkontoResponse" type="tns:forlangGastkontoResponse" />
+  <xs:element name="getAnvidList" type="tns:getAnvidList" />
+  <xs:element name="getAnvidListResponse" type="tns:getAnvidListResponse" />
   <xs:element name="getAup" type="tns:getAup" />
   <xs:element name="getAupResponse" type="tns:getAupResponse" />
   <xs:element name="getConfig" type="tns:getConfig" />
@@ -53,6 +55,10 @@
   <xs:element name="getLosenSenastAndradResponse" type="tns:getLosenSenastAndradResponse" />
   <xs:element name="getOrcid" type="tns:getOrcid" />
   <xs:element name="getOrcidResponse" type="tns:getOrcidResponse" />
+  <xs:element name="getSenastEtableradeAnvid" type="tns:getSenastEtableradeAnvid" />
+  <xs:element name="getSenastEtableradeAnvidResponse" type="tns:getSenastEtableradeAnvidResponse" />
+  <xs:element name="getSenastEtableradeKontokatalog" type="tns:getSenastEtableradeKontokatalog" />
+  <xs:element name="getSenastEtableradeKontokatalogResponse" type="tns:getSenastEtableradeKontokatalogResponse" />
   <xs:element name="getSokAnvandareKategori" type="tns:getSokAnvandareKategori" />
   <xs:element name="getSokAnvandareKategoriResponse" type="tns:getSokAnvandareKategoriResponse" />
   <xs:element name="getSpamlevelList" type="tns:getSpamlevelList" />
@@ -96,7 +102,7 @@
   </xs:complexType>
   <xs:complexType name="etableraEjAktiveratStudentkontoResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="ns1:konto" />
+      <xs:element minOccurs="0" name="return" type="ns1:kontokat" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insFranvaro">
@@ -216,6 +222,18 @@
   <xs:complexType name="updOrcidResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:orcid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAnvidList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="applikation" type="xs:string" />
+      <xs:element minOccurs="0" name="pnr" type="xs:string" />
+      <xs:element minOccurs="0" name="kategori" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAnvidListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="forlangGastkonto">
@@ -358,6 +376,18 @@
   <xs:complexType name="getGastkontoListResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns1:gastkonto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSenastEtableradeAnvid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="applikation" type="xs:string" />
+      <xs:element minOccurs="0" name="pnr" type="xs:string" />
+      <xs:element minOccurs="0" name="kategori" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSenastEtableradeAnvidResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insKontoAup">
@@ -535,6 +565,18 @@
   <xs:complexType name="sparraGastkontoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="ns1:gastkonto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSenastEtableradeKontokatalog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="applikation" type="xs:string" />
+      <xs:element minOccurs="0" name="pnr" type="xs:string" />
+      <xs:element minOccurs="0" name="kategori" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSenastEtableradeKontokatalogResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:kontokat" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="updKontokatPkt">
