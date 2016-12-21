@@ -17,11 +17,11 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Operation_1" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="MessageRef" OID="41ad69ab-b0e4-411f-8634-f4d6aba1025e" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.74">
-                    <om:Property Name="Ref" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup" />
+                <om:Element Type="MessageRef" OID="41ad69ab-b0e4-411f-8634-f4d6aba1025e" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.63">
+                    <om:Property Name="Ref" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
-                    <om:Property Name="Signal" Value="False" />
+                    <om:Property Name="Signal" Value="True" />
                 </om:Element>
             </om:Element>
         </om:Element>
@@ -36,11 +36,11 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Operation_1" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="MessageRef" OID="072dfd8b-8407-4f6e-9317-5d92b26d513a" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.74">
-                    <om:Property Name="Ref" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup" />
+                <om:Element Type="MessageRef" OID="072dfd8b-8407-4f6e-9317-5d92b26d513a" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.63">
+                    <om:Property Name="Ref" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
-                    <om:Property Name="Signal" Value="False" />
+                    <om:Property Name="Signal" Value="True" />
                 </om:Element>
             </om:Element>
         </om:Element>
@@ -52,7 +52,7 @@
             <om:Property Name="Name" Value="HandleAllGroupChanges" />
             <om:Property Name="Signal" Value="False" />
             <om:Element Type="MessageDeclaration" OID="3c2fcaf2-99c8-4a25-9b18-d65f774d5099" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="23.1" HigherBound="24.1">
-                <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup" />
+                <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ADNewGroup" />
@@ -99,14 +99,14 @@ module GroupADAdapter
     {
         oneway Operation_1
         {
-            UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup
+            UU.Integrations.Common.Schemas.Internal.ADNewGroup
         };
     };
     internal porttype ArchiveNewGroupPortType
     {
         oneway Operation_1
         {
-            UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup
+            UU.Integrations.Common.Schemas.Internal.ADNewGroup
         };
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
@@ -114,7 +114,7 @@ module GroupADAdapter
     {
         [Microsoft.XLANGs.BaseTypes.DirectBinding()]
         port implements AllGroupChangesPortType AllGroupChangesPort;
-        message UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup ADNewGroup;
+        message UU.Integrations.Common.Schemas.Internal.ADNewGroup ADNewGroup;
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("ab7fb67d-9387-4647-a5be-7f86c5ee3767")]
