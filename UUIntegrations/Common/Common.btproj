@@ -76,17 +76,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk.pfx" />
-    <Schema Include="Schemas\AkkaAdapter\AkkaCallService_call_authsrv_its_uu_se.xsd">
-      <Namespace>UU.Integrations.Common.Schemas.AkkaAdapter</Namespace>
-      <TypeName>AkkaCallService_call_authsrv_its_uu_se</TypeName>
+    <Schema Include="Schemas\Internal\ADNewIndividual.xsd">
       <SubType>Task</SubType>
+      <TypeName>ADNewIndividual</TypeName>
+      <Namespace>UU.Integrations.Common.Schemas.Internal.ADNewIndividual</Namespace>
     </Schema>
     <Schema Include="Schemas\AkkaAdapter\AkkaCallService_cxf_akkaappl_akka_its_uu_se.xsd">
       <Namespace>UU.Integrations.Common.Schemas.AkkaAdapter</Namespace>
       <TypeName>AkkaCallService_cxf_akkaappl_akka_its_uu_se</TypeName>
       <SubType>Task</SubType>
     </Schema>
-    <None Include="Wsdl\AkkaCall.wsdl" />
+    <Schema Include="Schemas\Internal\ADNewGroup.xsd">
+      <TypeName>ADNewGroup</TypeName>
+      <Namespace>UU.Integrations.Common.Schemas.Internal.ADNewGroup</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\ActiveAdapter\ADSendAdapterSolicitResponseGroupQuery.xsd">
+      <SubType>Task</SubType>
+      <TypeName>ADSendAdapterSolicitResponseGroupQuery</TypeName>
+      <Namespace>UU.Integrations.Common.Schemas.ActiveAdapter</Namespace>
+    </Schema>
     <Schema Include="PropertySchema.xsd">
       <TypeName>PropertySchema</TypeName>
       <Namespace>UU.Integrations.Common</Namespace>
@@ -109,12 +118,12 @@
     </Schema>
     <Schema Include="Schemas\Internal\InternalGroup.xsd">
       <TypeName>InternalGroup</TypeName>
-      <Namespace>UU.Integrations.Common.Schemas.Internal.Group</Namespace>
+      <Namespace>UU.Integrations.Common.Schemas.Internal</Namespace>
       <SubType>Task</SubType>
     </Schema>
     <Schema Include="Schemas\Internal\InternalIdentity.xsd">
       <TypeName>InternalIdentity</TypeName>
-      <Namespace>UU.Integrations.Common.Schemas.Internal.Identity</Namespace>
+      <Namespace>UU.Integrations.Common.Schemas.Internal</Namespace>
       <SubType>Task</SubType>
     </Schema>
     <Schema Include="Schemas\ActiveAdapter\ADQueryResultsChange.xsd">
@@ -137,11 +146,6 @@
       <Namespace>UU.Integrations.Common.Schemas.ActiveAdapter</Namespace>
       <SubType>Task</SubType>
     </Schema>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="Schemas\AkkaAdapter\AkkaCallService.BindingInfo.xml" />
-    <Content Include="Schemas\AkkaAdapter\AkkaCallService_Custom.BindingInfo.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />

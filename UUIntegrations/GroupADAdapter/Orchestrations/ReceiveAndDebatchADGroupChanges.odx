@@ -36,8 +36,8 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Operation_1" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="MessageRef" OID="29007ea6-06db-492a-932a-289bc0436df3" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.74">
-                    <om:Property Name="Ref" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup" />
+                <om:Element Type="MessageRef" OID="29007ea6-06db-492a-932a-289bc0436df3" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.63">
+                    <om:Property Name="Ref" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="True" />
@@ -90,7 +90,7 @@
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="dc50083d-dfc8-45ae-9105-ed4586f3fd91" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
-                <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup" />
+                <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ADNewGroup" />
@@ -143,14 +143,14 @@
                             <om:Property Name="ClassName" Value="GroupADAdapter.ADQueryResultsChangeObjectAdded_to_ADGroupChange" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="X_GroupADAdapterADQueryResultsChangeObjectAdded_to_ADGroupChange" />
-                            <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="MessagePartRef" OID="5ee3edfe-c033-4bb3-96c2-8886abbff724" ParentLink="Transform_InputMessagePartRef" LowerBound="55.111" HigherBound="55.124">
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="MessagePartRef" OID="50cb9283-ed24-4690-b540-c28dfcc4c49d" ParentLink="Transform_InputMessagePartRef" LowerBound="55.111" HigherBound="55.124">
                                 <om:Property Name="MessageRef" Value="ADAddedObject" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_1" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
-                            <om:Element Type="MessagePartRef" OID="6efc93b7-1b42-496e-a51a-c1ae65c26987" ParentLink="Transform_OutputMessagePartRef" LowerBound="55.32" HigherBound="55.42">
+                            <om:Element Type="MessagePartRef" OID="958cb437-b22b-40fc-9882-f81e1fe36b74" ParentLink="Transform_OutputMessagePartRef" LowerBound="55.32" HigherBound="55.42">
                                 <om:Property Name="MessageRef" Value="ADNewGroup" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_2" />
@@ -231,7 +231,7 @@ module GroupADAdapter
     {
         oneway Operation_1
         {
-            UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup
+            UU.Integrations.Common.Schemas.Internal.ADNewGroup
         };
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
@@ -243,7 +243,7 @@ module GroupADAdapter
         port uses CNPropertyToMessageBox ADChangeToMessageBoxPort;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResultsChange ADQueryResultsChangeIncoming;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResultsChangeObjectAdded ADAddedObject;
-        message UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup ADNewGroup;
+        message UU.Integrations.Common.Schemas.Internal.ADNewGroup ADNewGroup;
         System.Int32 counter;
         System.Int32 messageCount;
         System.String XPathQuery;

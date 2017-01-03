@@ -8,8 +8,8 @@
     <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>library</OutputType>
     <GenericProcessing>true</GenericProcessing>
-    <RootNamespace>GroupADAdapter</RootNamespace>
-    <AssemblyName>GroupADAdapter</AssemblyName>
+    <RootNamespace>UU.Integrations.GroupADAdapter</RootNamespace>
+    <AssemblyName>UU.Integrations.GroupADAdapter</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <BpelCompliance>True</BpelCompliance>
   </PropertyGroup>
@@ -68,76 +68,76 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <XLang Include="AddInividualToGroupInAD.odx">
-      <TypeName>AddGroupMembershipToAD</TypeName>
-      <Namespace>GroupADAdapter</Namespace>
-      <SubType>Task</SubType>
-    </XLang>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Common\Common.btproj">
       <Project>{3ff5289c-b045-4bd2-9489-a16320e738a9}</Project>
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <XLang Include="ReceiveAndDebatchADGroupChanges.odx">
-      <TypeName>DebatchADChanges</TypeName>
-      <Namespace>GroupADAdapter</Namespace>
-      <SubType>Task</SubType>
-    </XLang>
-  </ItemGroup>
-  <ItemGroup>
-    <Map Include="InternalGroupEvent_to_ADQueryGroup.btm">
+    <Map Include="Maps\InternalGroupEvent_to_ADQueryGroup.btm">
       <TypeName>InternalGroupEvent_to_ADQueryGroup</TypeName>
       <Namespace>GroupADAdapter</Namespace>
       <SubType>Task</SubType>
     </Map>
   </ItemGroup>
   <ItemGroup>
-    <XLang Include="AddGroupToAD.odx">
-      <TypeName>AddGroupToAD</TypeName>
-      <Namespace>GroupADAdapter</Namespace>
-      <SubType>Task</SubType>
-    </XLang>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="key.snk.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Map Include="InternalGroupEvent_to_ADQueryIndividual.btm">
+    <Map Include="Maps\InternalGroupEvent_to_ADQueryIndividual.btm">
       <TypeName>InternalGroupEvent_to_ADQueryIndividual</TypeName>
       <Namespace>GroupADAdapter</Namespace>
       <SubType>Task</SubType>
     </Map>
   </ItemGroup>
   <ItemGroup>
-    <Map Include="ADQueryResultsChangeObjectAdded_to_ADNewGroup.btm">
+    <Map Include="Maps\ADQueryResultsChangeObjectAdded_to_ADNewGroup.btm">
       <TypeName>ADQueryResultsChangeObjectAdded_to_ADGroupChange</TypeName>
       <Namespace>GroupADAdapter</Namespace>
       <SubType>Task</SubType>
     </Map>
   </ItemGroup>
   <ItemGroup>
-    <XLang Include="CheckAndWaitForADGroup.odx">
-      <TypeName>CheckAndWaitForADGroup</TypeName>
-      <Namespace>GroupADAdapter</Namespace>
-      <SubType>Task</SubType>
-    </XLang>
-  </ItemGroup>
-  <ItemGroup>
-    <XLang Include="CheckAndWaitForADIndividual.odx">
-      <TypeName>CheckAndWaitForADIndividual</TypeName>
-      <Namespace>GroupADAdapter</Namespace>
-      <SubType>Task</SubType>
-    </XLang>
-  </ItemGroup>
-  <ItemGroup>
-    <Map Include="InternalGroupEvent_to_ADSendAdapterOneWayUpdatea.btm">
+    <Map Include="Maps\InternalGroupEvent_to_ADSendAdapterOneWayUpdate.btm">
       <TypeName>InternalGroupEvent_to_ADSendAdapterOneWayUpdate</TypeName>
       <Namespace>GroupADAdapter</Namespace>
       <SubType>Task</SubType>
     </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Schemas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Orchestrations\AddGroupToAD.odx">
+      <SubType>Task</SubType>
+      <TypeName>AddGroupToAD</TypeName>
+      <Namespace>GroupADAdapter.Orchestrations</Namespace>
+    </XLang>
+    <XLang Include="Orchestrations\AddInividualToGroupInAD.odx">
+      <SubType>Task</SubType>
+      <TypeName>AddInividualToGroupInAD</TypeName>
+      <Namespace>GroupADAdapter.Orchestrations</Namespace>
+    </XLang>
+    <XLang Include="Orchestrations\CheckAndWaitForADGroup.odx">
+      <SubType>Task</SubType>
+      <TypeName>CheckAndWaitForADGroup</TypeName>
+      <Namespace>GroupADAdapter.Orchestrations</Namespace>
+    </XLang>
+    <XLang Include="Orchestrations\CheckAndWaitForADIndividual.odx">
+      <SubType>Task</SubType>
+      <TypeName>CheckAndWaitForADIndividual</TypeName>
+      <Namespace>GroupADAdapter.Orchestrations</Namespace>
+    </XLang>
+    <XLang Include="Orchestrations\HandleAllGroupChanges.odx">
+      <SubType>Task</SubType>
+      <TypeName>HandleAllGroupChanges</TypeName>
+      <Namespace>GroupADAdapter.Orchestrations</Namespace>
+    </XLang>
+    <XLang Include="Orchestrations\ReceiveAndDebatchADGroupChanges.odx">
+      <SubType>Task</SubType>
+      <TypeName>ReceiveAndDebatchADGroupChanges</TypeName>
+      <Namespace>GroupADAdapter.Orchestrations</Namespace>
+    </XLang>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
