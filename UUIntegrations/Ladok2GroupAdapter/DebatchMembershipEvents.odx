@@ -10,7 +10,7 @@
             <om:Property Name="Synchronous" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="ProcessMembershipEvents" />
+            <om:Property Name="Name" Value="ReceiveMembershipEvents" />
             <om:Property Name="Signal" Value="True" />
             <om:Element Type="OperationDeclaration" OID="50de70b2-6105-4fe7-affa-87185a47ca46" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
                 <om:Property Name="OperationType" Value="OneWay" />
@@ -135,7 +135,7 @@
                 <om:Property Name="Signal" Value="False" />
                 <om:Element Type="Receive" OID="0d7bccf6-96a4-47c2-99df-a940d339a57d" ParentLink="ServiceBody_Statement" LowerBound="38.1" HigherBound="42.1">
                     <om:Property Name="Activate" Value="True" />
-                    <om:Property Name="PortName" Value="ProcessMembershipEventsPort" />
+                    <om:Property Name="PortName" Value="ReceiveMembershipEventsPort" />
                     <om:Property Name="MessageName" Value="MembershipEventIncoming" />
                     <om:Property Name="OperationName" Value="Operation_1" />
                     <om:Property Name="OperationMessageName" Value="Request" />
@@ -208,7 +208,7 @@
                             <om:Property Name="Signal" Value="True" />
                             <om:Element Type="Receive" OID="a7a59b03-dcb3-40dd-9342-68d28ed1641f" ParentLink="ListenBranch_Statement" LowerBound="70.1" HigherBound="71.118">
                                 <om:Property Name="Activate" Value="False" />
-                                <om:Property Name="PortName" Value="ProcessMembershipEventsPort" />
+                                <om:Property Name="PortName" Value="ReceiveMembershipEventsPort" />
                                 <om:Property Name="MessageName" Value="MembershipEventIncoming" />
                                 <om:Property Name="OperationName" Value="Operation_1" />
                                 <om:Property Name="OperationMessageName" Value="Request" />
@@ -231,7 +231,7 @@
                             <om:Element Type="Delay" OID="82eeace0-1e7d-4fa4-85c8-efc9bd874a8d" ParentLink="ListenBranch_Statement" LowerBound="74.1" HigherBound="75.57">
                                 <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,5,0)" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="WaitForNextMessageEventBatch" />
+                                <om:Property Name="Name" Value="MembershipEventIncomingTimeout" />
                                 <om:Property Name="Signal" Value="True" />
                             </om:Element>
                         </om:Element>
@@ -245,10 +245,10 @@
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="UU.Integrations.Ladok2GroupAdapter.ProcessMembershipEvents" />
+                <om:Property Name="Type" Value="UU.Integrations.Ladok2GroupAdapter.ReceiveMembershipEvents" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ProcessMembershipEventsPort" />
+                <om:Property Name="Name" Value="ReceiveMembershipEventsPort" />
                 <om:Property Name="Signal" Value="True" />
                 <om:Element Type="LogicalBindingAttribute" OID="97ccea8c-3b46-41c1-aba2-c9c62687e875" ParentLink="PortDeclaration_CLRAttribute" LowerBound="25.1" HigherBound="26.1">
                     <om:Property Name="Signal" Value="False" />
@@ -277,7 +277,7 @@
 [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
 module UU.Integrations.Ladok2GroupAdapter
 {
-    internal porttype ProcessMembershipEvents
+    internal porttype ReceiveMembershipEvents
     {
         oneway Operation_1
         {
@@ -299,7 +299,7 @@ module UU.Integrations.Ladok2GroupAdapter
     internal service Ladok2GroupAdapterOrchestration
     {
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port implements ProcessMembershipEvents ProcessMembershipEventsPort;
+        port implements ReceiveMembershipEvents ReceiveMembershipEventsPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses SendMembershipEventSingle SendMembershipEventsPort;
         correlation ReceivePortName receivePortName;
@@ -312,7 +312,7 @@ module UU.Integrations.Ladok2GroupAdapter
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("0d7bccf6-96a4-47c2-99df-a940d339a57d")]
-            activate receive (ProcessMembershipEventsPort.Operation_1, MembershipEventIncoming, initialize receivePortName);
+            activate receive (ReceiveMembershipEventsPort.Operation_1, MembershipEventIncoming, initialize receivePortName);
             loop = true;
             sXPathQuery = "";
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("c760ac46-0e93-4f60-9790-d51b50706944")]
@@ -344,7 +344,7 @@ module UU.Integrations.Ladok2GroupAdapter
                 listen
                 {
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("a7a59b03-dcb3-40dd-9342-68d28ed1641f")]
-                    until receive (ProcessMembershipEventsPort.Operation_1, MembershipEventIncoming, receivePortName)
+                    until receive (ReceiveMembershipEventsPort.Operation_1, MembershipEventIncoming, receivePortName)
                     {
                     }
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("82eeace0-1e7d-4fa4-85c8-efc9bd874a8d")]
