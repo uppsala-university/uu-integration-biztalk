@@ -66,6 +66,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schemas\AkkaAdapter\AkkaCallService_call_authsrv_its_uu_se.xsd.cs">
+      <DependentUpon>AkkaCallService_call_authsrv_its_uu_se.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Schema Include="Schemas\Internal\www.uu.se-schemas-event.xsd">
@@ -76,35 +79,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk.pfx" />
+    <Schema Include="Schemas\AkkaAdapter\AkkaCallService_call_authsrv_its_uu_se.xsd">
+      <TypeName>AkkaCallService_call_authsrv_its_uu_se</TypeName>
+      <Namespace>UU.Integrations.Common.Schemas.AkkaAdapter</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <None Include="Wsdl\AkkaCall.wsdl" />
     <Schema Include="Schemas\Internal\ADNewIndividual.xsd">
+      <SubType>Task</SubType>
       <TypeName>ADNewIndividual</TypeName>
-      <Namespace>UU.Integrations.Common.Schemas.Internal</Namespace>
+      <Namespace>UU.Integrations.Common.Schemas.Internal.ADNewIndividual</Namespace>
+    </Schema>
+    <Schema Include="Schemas\AkkaAdapter\AkkaCallService_cxf_akkaappl_akka_its_uu_se.xsd">
+      <Namespace>UU.Integrations.Common.Schemas.AkkaAdapter</Namespace>
+      <TypeName>AkkaCallService_cxf_akkaappl_akka_its_uu_se</TypeName>
       <SubType>Task</SubType>
     </Schema>
     <Schema Include="Schemas\Internal\ADNewGroup.xsd">
       <TypeName>ADNewGroup</TypeName>
-      <Namespace>UU.Integrations.Common.Schemas.Internal</Namespace>
+      <Namespace>UU.Integrations.Common.Schemas.Internal.ADNewGroup</Namespace>
       <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Internal\InternalPersonEvent.xsd">
-      <TypeName>InternalPersonEvent</TypeName>
-      <Namespace>UU.Integrations.Common.Schemas.Internal</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Internal\InternalPerson.xsd">
-      <TypeName>InternalPerson</TypeName>
-      <Namespace>UU.Integrations.Common.Schemas.Internal</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ActiveAdapter\ADSendAdapterSolicitResponseIndividualQuery.xsd">
-      <SubType>Task</SubType>
-      <TypeName>ADSendAdapterSolicitResponseIndividualQuery</TypeName>
-      <Namespace>UU.Integrations.Common.Schemas.ActiveAdapter</Namespace>
-    </Schema>
-    <Schema Include="Schemas\ActiveAdapter\ADQueryResultsChangeObjectAdded.xsd">
-      <SubType>Task</SubType>
-      <TypeName>ADQueryResultsChangeObjectAdded</TypeName>
-      <Namespace>UU.Integrations.Common.Schemas.ActiveAdapter</Namespace>
     </Schema>
     <Schema Include="Schemas\ActiveAdapter\ADSendAdapterSolicitResponseGroupQuery.xsd">
       <SubType>Task</SubType>
@@ -113,7 +107,7 @@
     </Schema>
     <Schema Include="PropertySchema.xsd">
       <TypeName>PropertySchema</TypeName>
-      <Namespace>UU.Integrations.Common.PropertySchema</Namespace>
+      <Namespace>UU.Integrations.Common</Namespace>
       <SubType>Task</SubType>
     </Schema>
     <Schema Include="Schemas\Internal\www.uu.se-schemas.xsd">
@@ -161,14 +155,6 @@
       <Namespace>UU.Integrations.Common.Schemas.ActiveAdapter</Namespace>
       <SubType>Task</SubType>
     </Schema>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Map Include="Maps\InternalGroupEvent_to_InternalPersonEvent.btm">
-      <SubType>Task</SubType>
-      <TypeName>InternalGroupEvent_to_InternalPersonEvent</TypeName>
-      <Namespace>UU.Integrations.Common.Maps</Namespace>
-    </Map>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
