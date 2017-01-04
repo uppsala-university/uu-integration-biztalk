@@ -36,8 +36,8 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Operation_1" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="MessageRef" OID="9778ef7f-4a1f-449b-b438-602e8d1d328f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.63">
-                    <om:Property Name="Ref" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup" />
+                <om:Element Type="MessageRef" OID="9778ef7f-4a1f-449b-b438-602e8d1d328f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.74">
+                    <om:Property Name="Ref" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="True" />
@@ -87,8 +87,8 @@
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="PersonID" />
             <om:Property Name="Signal" Value="True" />
-            <om:Element Type="PropertyRef" OID="ce394ecd-167c-467d-bd41-65c703d6b389" ParentLink="CorrelationType_PropertyRef" LowerBound="34.9" HigherBound="34.59">
-                <om:Property Name="Ref" Value="UU.Integrations.Common.PropertySchema.PersonNumber" />
+            <om:Element Type="PropertyRef" OID="d7067eb2-fef4-4abe-86dd-a9b96f0dfb0f" ParentLink="CorrelationType_PropertyRef" LowerBound="34.9" HigherBound="34.44">
+                <om:Property Name="Ref" Value="UU.Integrations.Common.PersonNumber" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="PropertyRef_1" />
                 <om:Property Name="Signal" Value="False" />
@@ -99,8 +99,8 @@
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="GroupName" />
             <om:Property Name="Signal" Value="True" />
-            <om:Element Type="PropertyRef" OID="3287666e-2fda-4734-8e6c-58d0ec0dd03b" ParentLink="CorrelationType_PropertyRef" LowerBound="38.9" HigherBound="38.56">
-                <om:Property Name="Ref" Value="UU.Integrations.Common.PropertySchema.GroupName" />
+            <om:Element Type="PropertyRef" OID="07f4250c-bc87-416a-97db-edcacb4f0e17" ParentLink="CorrelationType_PropertyRef" LowerBound="38.9" HigherBound="38.41">
+                <om:Property Name="Ref" Value="UU.Integrations.Common.GroupName" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="PropertyRef_1" />
                 <om:Property Name="Signal" Value="False" />
@@ -351,7 +351,7 @@ module GroupADAdapter
     {
         oneway Operation_1
         {
-            UU.Integrations.Common.Schemas.Internal.ADNewGroup
+            UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup
         };
     };
     internal porttype ADAddGroupType
@@ -370,11 +370,11 @@ module GroupADAdapter
     };
     internal correlationtype PersonID
     {
-        UU.Integrations.Common.PropertySchema.PersonNumber
+        UU.Integrations.Common.PersonNumber
     };
     internal correlationtype GroupName
     {
-        UU.Integrations.Common.PropertySchema.GroupName
+        UU.Integrations.Common.GroupName
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
     internal service AddInividualToGroupInAD

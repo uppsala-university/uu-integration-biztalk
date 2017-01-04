@@ -87,7 +87,7 @@
                 </om:Element>
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="1ce225c9-e8e7-4e08-b814-8d4ca27d16e8" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
-                <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup" />
+                <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ADNewGroup" />
@@ -283,7 +283,7 @@ module GroupADAdapter
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses ADGroupQueryPortType ADGroupQueryPort;
         correlation GroupName groupName;
-        message UU.Integrations.Common.Schemas.Internal.ADNewGroup ADNewGroup;
+        message UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup ADNewGroup;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResults ADGroupQueryResult;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADSendAdapterSolicitResponseGroupQuery ADGroupQuery;
         System.Int32 resultCountGroup;

@@ -36,8 +36,8 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Operation_1" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="MessageRef" OID="29007ea6-06db-492a-932a-289bc0436df3" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.63">
-                    <om:Property Name="Ref" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup" />
+                <om:Element Type="MessageRef" OID="29007ea6-06db-492a-932a-289bc0436df3" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.74">
+                    <om:Property Name="Ref" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="True" />
@@ -90,7 +90,7 @@
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="dc50083d-dfc8-45ae-9105-ed4586f3fd91" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
-                <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup" />
+                <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ADNewGroup" />
@@ -231,7 +231,7 @@ module GroupADAdapter
     {
         oneway Operation_1
         {
-            UU.Integrations.Common.Schemas.Internal.ADNewGroup
+            UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup
         };
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
@@ -243,7 +243,7 @@ module GroupADAdapter
         port uses CNPropertyToMessageBox ADChangeToMessageBoxPort;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResultsChange ADQueryResultsChangeIncoming;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResultsChangeObjectAdded ADAddedObject;
-        message UU.Integrations.Common.Schemas.Internal.ADNewGroup ADNewGroup;
+        message UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup ADNewGroup;
         System.Int32 counter;
         System.Int32 messageCount;
         System.String XPathQuery;
