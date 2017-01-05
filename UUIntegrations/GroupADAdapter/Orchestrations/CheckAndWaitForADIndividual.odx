@@ -10,8 +10,8 @@
             <om:Property Name="Synchronous" Value="True" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="ADIndividualQueryPortType" />
-            <om:Property Name="Signal" Value="False" />
+            <om:Property Name="Name" Value="SendReceiveADIndividualQuery" />
+            <om:Property Name="Signal" Value="True" />
             <om:Element Type="OperationDeclaration" OID="4d87f6e8-9e8b-4dc6-b25a-912d11b21401" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
                 <om:Property Name="OperationType" Value="RequestResponse" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
@@ -256,7 +256,7 @@
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="GroupADAdapter.ADIndividualQueryPortType" />
+                <om:Property Name="Type" Value="GroupADAdapter.SendReceiveADIndividualQuery" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ADIndividualQueryPort" />
@@ -304,7 +304,7 @@
 [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
 module GroupADAdapter
 {
-    internal porttype ADIndividualQueryPortType
+    internal porttype SendReceiveADIndividualQuery
     {
         requestresponse Operation_1
         {
@@ -329,7 +329,7 @@ module GroupADAdapter
     internal service CheckAndWaitForADIndividual
     {
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port uses ADIndividualQueryPortType ADIndividualQueryPort;
+        port uses SendReceiveADIndividualQuery ADIndividualQueryPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port implements ADNewIndividualPortType ADNewIndividualPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]

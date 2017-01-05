@@ -81,6 +81,12 @@
     <Compile Include="Schemas\AkkaAdapter\AkkaCallService_call_authsrv_its_uu_se.xsd.cs">
       <DependentUpon>AkkaCallService_call_authsrv_its_uu_se.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Schemas\Internal\InternalPerson.xsd.cs">
+      <DependentUpon>InternalPerson.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Schemas\Internal\InternalPersonEvent.xsd.cs">
+      <DependentUpon>InternalPersonEvent.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Schema Include="Schemas\Internal\www.uu.se-schemas-event.xsd">
@@ -104,6 +110,16 @@
     <Schema Include="Schemas\ActiveAdapter\ADSendAdapterSolicitResponseIndividualQuery.xsd">
       <TypeName>ADSendAdapterSolicitResponseIndividualQuery</TypeName>
       <Namespace>UU.Integrations.Common.Schemas.ActiveAdapter</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Internal\InternalPerson.xsd">
+      <TypeName>InternalPerson</TypeName>
+      <Namespace>UU.Integrations.Common.Schemas.Internal</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Internal\InternalPersonEvent.xsd">
+      <TypeName>InternalPersonEvent</TypeName>
+      <Namespace>UU.Integrations.Common.Schemas.Internal</Namespace>
       <SubType>Task</SubType>
     </Schema>
     <None Include="Wsdl\AkkaCall.wsdl" />
