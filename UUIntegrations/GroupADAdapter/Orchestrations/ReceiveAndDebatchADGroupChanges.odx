@@ -10,7 +10,7 @@
             <om:Property Name="Synchronous" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="ChangesFromAD" />
+            <om:Property Name="Name" Value="ReceiveADGroupChange" />
             <om:Property Name="Signal" Value="True" />
             <om:Element Type="OperationDeclaration" OID="44991c09-c0d0-4eab-a72d-375639fa1b4f" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
                 <om:Property Name="OperationType" Value="OneWay" />
@@ -29,8 +29,8 @@
             <om:Property Name="Synchronous" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="CNPropertyToMessageBox" />
-            <om:Property Name="Signal" Value="False" />
+            <om:Property Name="Name" Value="SendADNewGroup" />
+            <om:Property Name="Signal" Value="True" />
             <om:Element Type="OperationDeclaration" OID="dab7c1d3-63f2-4f28-9722-8822b5e6eb9b" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
                 <om:Property Name="OperationType" Value="OneWay" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
@@ -100,7 +100,7 @@
                 <om:Property Name="Signal" Value="False" />
                 <om:Element Type="Receive" OID="6c5ddf50-ee46-4c58-97f9-0d6d32ce9e52" ParentLink="ServiceBody_Statement" LowerBound="33.1" HigherBound="36.1">
                     <om:Property Name="Activate" Value="True" />
-                    <om:Property Name="PortName" Value="ChangesFromADPort" />
+                    <om:Property Name="PortName" Value="ReceiveADGroupChangePort" />
                     <om:Property Name="MessageName" Value="ADQueryResultsChangeIncoming" />
                     <om:Property Name="OperationName" Value="Operation_1" />
                     <om:Property Name="OperationMessageName" Value="Request" />
@@ -164,7 +164,7 @@
                         </om:Element>
                     </om:Element>
                     <om:Element Type="Send" OID="7615f6a2-e06a-4f69-898d-f58deb97858c" ParentLink="ComplexStatement_Statement" LowerBound="57.1" HigherBound="59.1">
-                        <om:Property Name="PortName" Value="ADChangeToMessageBoxPort" />
+                        <om:Property Name="PortName" Value="SendADNewGroupPort" />
                         <om:Property Name="MessageName" Value="ADNewGroup" />
                         <om:Property Name="OperationName" Value="Operation_1" />
                         <om:Property Name="OperationMessageName" Value="Request" />
@@ -187,10 +187,10 @@
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="GroupADAdapter.ChangesFromAD" />
+                <om:Property Name="Type" Value="GroupADAdapter.ReceiveADGroupChange" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ChangesFromADPort" />
+                <om:Property Name="Name" Value="ReceiveADGroupChangePort" />
                 <om:Property Name="Signal" Value="True" />
                 <om:Element Type="LogicalBindingAttribute" OID="415a056e-8133-466d-ab95-6e047b0a3ca9" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
                     <om:Property Name="Signal" Value="False" />
@@ -203,10 +203,10 @@
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="GroupADAdapter.CNPropertyToMessageBox" />
+                <om:Property Name="Type" Value="GroupADAdapter.SendADNewGroup" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ADChangeToMessageBoxPort" />
+                <om:Property Name="Name" Value="SendADNewGroupPort" />
                 <om:Property Name="Signal" Value="True" />
                 <om:Element Type="DirectBindingAttribute" OID="770728c6-4d04-4adf-81f6-823141f4a5c7" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
                     <om:Property Name="DirectBindingType" Value="MessageBox" />
@@ -220,14 +220,14 @@
 [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
 module GroupADAdapter
 {
-    internal porttype ChangesFromAD
+    internal porttype ReceiveADGroupChange
     {
         oneway Operation_1
         {
             UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResultsChange
         };
     };
-    internal porttype CNPropertyToMessageBox
+    internal porttype SendADNewGroup
     {
         oneway Operation_1
         {
@@ -238,9 +238,9 @@ module GroupADAdapter
     internal service ReceiveAndDebatchADGroupChanges
     {
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port implements ChangesFromAD ChangesFromADPort;
+        port implements ReceiveADGroupChange ReceiveADGroupChangePort;
         [Microsoft.XLANGs.BaseTypes.DirectBinding()]
-        port uses CNPropertyToMessageBox ADChangeToMessageBoxPort;
+        port uses SendADNewGroup SendADNewGroupPort;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResultsChange ADQueryResultsChangeIncoming;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResultsChangeObjectAdded ADAddedObject;
         message UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup ADNewGroup;
@@ -250,7 +250,7 @@ module GroupADAdapter
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("6c5ddf50-ee46-4c58-97f9-0d6d32ce9e52")]
-            activate receive (ChangesFromADPort.Operation_1, ADQueryResultsChangeIncoming);
+            activate receive (ReceiveADGroupChangePort.Operation_1, ADQueryResultsChangeIncoming);
             XPathQuery = "";
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("3e6b01dc-577c-4702-b5f1-4dffd7a5b04e")]
             messageCount = (System.Int32)(xpath(ADQueryResultsChangeIncoming, "count(/*[local-name()='ActiveDirectoryQueryResultsChange' and namespace-uri()='']/*[local-name()='OBJECT_ADDED' and namespace-uri()=''])"));
@@ -274,7 +274,7 @@ module GroupADAdapter
                     transform (ADNewGroup) = GroupADAdapter.ADQueryResultsChangeObjectAdded_to_ADGroupChange (ADAddedObject);
                 }
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("7615f6a2-e06a-4f69-898d-f58deb97858c")]
-                send (ADChangeToMessageBoxPort.Operation_1, ADNewGroup);
+                send (SendADNewGroupPort.Operation_1, ADNewGroup);
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("83c48020-4f2d-4e37-8264-3d36eee7b451")]
                 counter = counter+1;
             }

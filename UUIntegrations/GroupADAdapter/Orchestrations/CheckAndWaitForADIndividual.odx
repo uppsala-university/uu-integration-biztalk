@@ -35,8 +35,8 @@
             <om:Property Name="Synchronous" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="ADNewIndividualPortType" />
-            <om:Property Name="Signal" Value="False" />
+            <om:Property Name="Name" Value="ReceiveADNewIndividual" />
+            <om:Property Name="Signal" Value="True" />
             <om:Element Type="OperationDeclaration" OID="4b6aae00-aa43-4a5e-b231-75c3b7dffec5" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
                 <om:Property Name="OperationType" Value="OneWay" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
@@ -54,8 +54,8 @@
             <om:Property Name="Synchronous" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="GroupEventIdentityDistributionPortType" />
-            <om:Property Name="Signal" Value="False" />
+            <om:Property Name="Name" Value="SendGroupEventIdentityDistribution" />
+            <om:Property Name="Signal" Value="True" />
             <om:Element Type="OperationDeclaration" OID="23415c84-9f3b-40bc-be7b-b388cf9ed759" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
                 <om:Property Name="OperationType" Value="OneWay" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
@@ -97,7 +97,7 @@
                     <om:Property Name="Name" Value="StatementRef_1" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
-                <om:Element Type="StatementRef" OID="896fd4a5-5dd6-46c3-8a36-4da00f753a43" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="65.86" HigherBound="65.94">
+                <om:Element Type="StatementRef" OID="896fd4a5-5dd6-46c3-8a36-4da00f753a43" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="65.93" HigherBound="65.101">
                     <om:Property Name="Initializes" Value="False" />
                     <om:Property Name="Ref" Value="b40f48fe-4c02-4309-8874-4c8d5fa421e0" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -205,7 +205,7 @@
                         <om:Property Name="Name" Value="Else" />
                         <om:Property Name="Signal" Value="False" />
                         <om:Element Type="Send" OID="0dab62ae-8b59-40f5-a42c-2a8f287f3e62" ParentLink="ComplexStatement_Statement" LowerBound="59.1" HigherBound="61.1">
-                            <om:Property Name="PortName" Value="GroupEventIdentityDistribution" />
+                            <om:Property Name="PortName" Value="GroupEventIdentityDistributionPort" />
                             <om:Property Name="MessageName" Value="GroupEvent" />
                             <om:Property Name="OperationName" Value="Operation_1" />
                             <om:Property Name="OperationMessageName" Value="Request" />
@@ -222,9 +222,9 @@
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="ListenBranch_1" />
                                 <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="Receive" OID="b40f48fe-4c02-4309-8874-4c8d5fa421e0" ParentLink="ListenBranch_Statement" LowerBound="64.1" HigherBound="65.95">
+                                <om:Element Type="Receive" OID="b40f48fe-4c02-4309-8874-4c8d5fa421e0" ParentLink="ListenBranch_Statement" LowerBound="64.1" HigherBound="65.102">
                                     <om:Property Name="Activate" Value="False" />
-                                    <om:Property Name="PortName" Value="ADNewIndividualPort" />
+                                    <om:Property Name="PortName" Value="ReceiveADNewIndividualPort" />
                                     <om:Property Name="MessageName" Value="ADNewIndividual" />
                                     <om:Property Name="OperationName" Value="Operation_1" />
                                     <om:Property Name="OperationMessageName" Value="Request" />
@@ -272,11 +272,11 @@
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="GroupADAdapter.ADNewIndividualPortType" />
+                <om:Property Name="Type" Value="GroupADAdapter.ReceiveADNewIndividual" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ADNewIndividualPort" />
-                <om:Property Name="Signal" Value="False" />
+                <om:Property Name="Name" Value="ReceiveADNewIndividualPort" />
+                <om:Property Name="Signal" Value="True" />
                 <om:Element Type="LogicalBindingAttribute" OID="b7a384de-d6b8-44c9-aec6-f28f95481bfe" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
@@ -288,11 +288,11 @@
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="GroupADAdapter.GroupEventIdentityDistributionPortType" />
+                <om:Property Name="Type" Value="GroupADAdapter.SendGroupEventIdentityDistribution" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="GroupEventIdentityDistribution" />
-                <om:Property Name="Signal" Value="False" />
+                <om:Property Name="Name" Value="GroupEventIdentityDistributionPort" />
+                <om:Property Name="Signal" Value="True" />
                 <om:Element Type="LogicalBindingAttribute" OID="84606ed5-5a97-49c6-9a6f-f332d928fff2" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
@@ -311,14 +311,14 @@ module GroupADAdapter
             UU.Integrations.Common.Schemas.ActiveAdapter.ADSendAdapterSolicitResponseIndividualQuery, UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResults
         };
     };
-    internal porttype ADNewIndividualPortType
+    internal porttype ReceiveADNewIndividual
     {
         oneway Operation_1
         {
             UU.Integrations.Common.Schemas.Internal.ADNewIndividual.ADNewIndividual
         };
     };
-    internal porttype GroupEventIdentityDistributionPortType
+    internal porttype SendGroupEventIdentityDistribution
     {
         oneway Operation_1
         {
@@ -331,9 +331,9 @@ module GroupADAdapter
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses SendReceiveADIndividualQuery ADIndividualQueryPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port implements ADNewIndividualPortType ADNewIndividualPort;
+        port implements ReceiveADNewIndividual ReceiveADNewIndividualPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port uses GroupEventIdentityDistributionPortType GroupEventIdentityDistribution;
+        port uses SendGroupEventIdentityDistribution GroupEventIdentityDistributionPort;
         correlation PersonID personId;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResults ADIndividualQueryResult;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADSendAdapterSolicitResponseIndividualQuery ADIndividualQuery;
@@ -360,12 +360,12 @@ module GroupADAdapter
             else 
             {
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("0dab62ae-8b59-40f5-a42c-2a8f287f3e62")]
-                send (GroupEventIdentityDistribution.Operation_1, GroupEvent);
+                send (GroupEventIdentityDistributionPort.Operation_1, GroupEvent);
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("bb41684f-e704-4166-84da-edd93c93a9a5")]
                 listen
                 {
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("b40f48fe-4c02-4309-8874-4c8d5fa421e0")]
-                    until receive (ADNewIndividualPort.Operation_1, ADNewIndividual, personId)
+                    until receive (ReceiveADNewIndividualPort.Operation_1, ADNewIndividual, personId)
                     {
                     }
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("08680df7-f9d4-4dac-99b6-e0aee4a97a44")]
