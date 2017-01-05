@@ -36,7 +36,7 @@
                 <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ADNewGroup" />
+                <om:Property Name="Name" Value="ADNewGroupIncoming" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="ServiceBody" OID="555b7aed-fa18-4b14-8d4c-3d407cc321e3" ParentLink="ServiceDeclaration_ServiceBody">
@@ -44,11 +44,11 @@
                 <om:Element Type="Receive" OID="ab7fb67d-9387-4647-a5be-7f86c5ee3767" ParentLink="ServiceBody_Statement" LowerBound="19.1" HigherBound="21.1">
                     <om:Property Name="Activate" Value="True" />
                     <om:Property Name="PortName" Value="ReceiveAllADNewGroupPort" />
-                    <om:Property Name="MessageName" Value="ADNewGroup" />
+                    <om:Property Name="MessageName" Value="ADNewGroupIncoming" />
                     <om:Property Name="OperationName" Value="Operation_1" />
                     <om:Property Name="OperationMessageName" Value="Request" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
-                    <om:Property Name="Name" Value="ADNewGroup" />
+                    <om:Property Name="Name" Value="ADNewGroupIncoming" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
             </om:Element>
@@ -88,11 +88,11 @@ module GroupADAdapter
     {
         [Microsoft.XLANGs.BaseTypes.DirectBinding()]
         port implements ReceiveAllADNewGroup ReceiveAllADNewGroupPort;
-        message UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup ADNewGroup;
+        message UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup ADNewGroupIncoming;
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("ab7fb67d-9387-4647-a5be-7f86c5ee3767")]
-            activate receive (ReceiveAllADNewGroupPort.Operation_1, ADNewGroup);
+            activate receive (ReceiveAllADNewGroupPort.Operation_1, ADNewGroupIncoming);
         }
     }
 }

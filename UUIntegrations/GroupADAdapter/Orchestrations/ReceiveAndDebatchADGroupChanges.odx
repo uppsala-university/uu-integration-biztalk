@@ -72,7 +72,7 @@
                 <om:Property Name="Type" Value="System.String" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="XPathQuery" />
+                <om:Property Name="Name" Value="xPathQuery" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="4e557955-5605-4a68-be40-f205df96fbb6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
@@ -93,7 +93,7 @@
                 <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ADNewGroup" />
+                <om:Property Name="Name" Value="ADNewGroupOutgoing" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="ServiceBody" OID="f6a25ece-fcab-4467-b53d-ab37fce78c98" ParentLink="ServiceDeclaration_ServiceBody">
@@ -124,10 +124,10 @@
                         <om:Property Name="Name" Value="ADAddedObject" />
                         <om:Property Name="Signal" Value="True" />
                         <om:Element Type="MessageAssignment" OID="1af8bf6a-14e3-475d-a3d6-4ba9dd85d679" ParentLink="ComplexStatement_Statement" LowerBound="45.1" HigherBound="50.1">
-                            <om:Property Name="Expression" Value="XPathQuery = System.String.Format(&quot;/*[local-name()='ActiveDirectoryQueryResultsChange' and namespace-uri()='']/*[local-name()='OBJECT_ADDED' and namespace-uri()=''][{0}]&quot;, counter+1);&#xD;&#xA;&#xD;&#xA;ADAddedObject = xpath(ADQueryResultsChangeIncoming, XPathQuery);&#xD;&#xA;&#xD;&#xA;" />
+                            <om:Property Name="Expression" Value="xPathQuery = System.String.Format(&quot;/*[local-name()='ActiveDirectoryQueryResultsChange' and namespace-uri()='']/*[local-name()='OBJECT_ADDED' and namespace-uri()=''][{0}]&quot;, counter+1);&#xD;&#xA;&#xD;&#xA;ADAddedObject = xpath(ADQueryResultsChangeIncoming, xPathQuery);&#xD;&#xA;&#xD;&#xA;" />
                             <om:Property Name="ReportToAnalyst" Value="False" />
                             <om:Property Name="Name" Value="CopySingleMessage" />
-                            <om:Property Name="Signal" Value="False" />
+                            <om:Property Name="Signal" Value="True" />
                         </om:Element>
                         <om:Element Type="MessageRef" OID="42596493-7df2-4223-93c0-9fdf93512221" ParentLink="Construct_MessageRef" LowerBound="43.27" HigherBound="43.40">
                             <om:Property Name="Ref" Value="ADAddedObject" />
@@ -137,39 +137,39 @@
                     </om:Element>
                     <om:Element Type="Construct" OID="062bcb60-e889-4cf3-861b-186b71b727b3" ParentLink="ComplexStatement_Statement" LowerBound="51.1" HigherBound="57.1">
                         <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="ADQuerySingleProperty" />
+                        <om:Property Name="Name" Value="GroupADAdapterADQueryResultsChangeObjectAdded_to_ADGroupChange" />
                         <om:Property Name="Signal" Value="True" />
                         <om:Element Type="Transform" OID="50928522-7f4e-4b32-969c-09d299fd7007" ParentLink="ComplexStatement_Statement" LowerBound="54.1" HigherBound="56.1">
                             <om:Property Name="ClassName" Value="GroupADAdapter.ADQueryResultsChangeObjectAdded_to_ADGroupChange" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="X_GroupADAdapterADQueryResultsChangeObjectAdded_to_ADGroupChange" />
                             <om:Property Name="Signal" Value="False" />
-                            <om:Element Type="MessagePartRef" OID="50cb9283-ed24-4690-b540-c28dfcc4c49d" ParentLink="Transform_InputMessagePartRef" LowerBound="55.111" HigherBound="55.124">
+                            <om:Element Type="MessagePartRef" OID="50cb9283-ed24-4690-b540-c28dfcc4c49d" ParentLink="Transform_InputMessagePartRef" LowerBound="55.119" HigherBound="55.132">
                                 <om:Property Name="MessageRef" Value="ADAddedObject" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_1" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
-                            <om:Element Type="MessagePartRef" OID="958cb437-b22b-40fc-9882-f81e1fe36b74" ParentLink="Transform_OutputMessagePartRef" LowerBound="55.32" HigherBound="55.42">
-                                <om:Property Name="MessageRef" Value="ADNewGroup" />
+                            <om:Element Type="MessagePartRef" OID="958cb437-b22b-40fc-9882-f81e1fe36b74" ParentLink="Transform_OutputMessagePartRef" LowerBound="55.32" HigherBound="55.50">
+                                <om:Property Name="MessageRef" Value="ADNewGroupOutgoing" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_2" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
                         </om:Element>
-                        <om:Element Type="MessageRef" OID="b82d3e90-4499-4688-9ad6-77e17f282b38" ParentLink="Construct_MessageRef" LowerBound="52.27" HigherBound="52.37">
-                            <om:Property Name="Ref" Value="ADNewGroup" />
+                        <om:Element Type="MessageRef" OID="b82d3e90-4499-4688-9ad6-77e17f282b38" ParentLink="Construct_MessageRef" LowerBound="52.27" HigherBound="52.45">
+                            <om:Property Name="Ref" Value="ADNewGroupOutgoing" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
                     </om:Element>
                     <om:Element Type="Send" OID="7615f6a2-e06a-4f69-898d-f58deb97858c" ParentLink="ComplexStatement_Statement" LowerBound="57.1" HigherBound="59.1">
                         <om:Property Name="PortName" Value="SendADNewGroupPort" />
-                        <om:Property Name="MessageName" Value="ADNewGroup" />
+                        <om:Property Name="MessageName" Value="ADNewGroupOutgoing" />
                         <om:Property Name="OperationName" Value="Operation_1" />
                         <om:Property Name="OperationMessageName" Value="Request" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="ADChange" />
+                        <om:Property Name="Name" Value="ADNewGroupOutgoing" />
                         <om:Property Name="Signal" Value="True" />
                     </om:Element>
                     <om:Element Type="VariableAssignment" OID="83c48020-4f2d-4e37-8264-3d36eee7b451" ParentLink="ComplexStatement_Statement" LowerBound="59.1" HigherBound="61.1">
@@ -243,15 +243,15 @@ module GroupADAdapter
         port uses SendADNewGroup SendADNewGroupPort;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResultsChange ADQueryResultsChangeIncoming;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResultsChangeObjectAdded ADAddedObject;
-        message UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup ADNewGroup;
+        message UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup ADNewGroupOutgoing;
         System.Int32 counter;
         System.Int32 messageCount;
-        System.String XPathQuery;
+        System.String xPathQuery;
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("6c5ddf50-ee46-4c58-97f9-0d6d32ce9e52")]
             activate receive (ReceiveADGroupChangePort.Operation_1, ADQueryResultsChangeIncoming);
-            XPathQuery = "";
+            xPathQuery = "";
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("3e6b01dc-577c-4702-b5f1-4dffd7a5b04e")]
             messageCount = (System.Int32)(xpath(ADQueryResultsChangeIncoming, "count(/*[local-name()='ActiveDirectoryQueryResultsChange' and namespace-uri()='']/*[local-name()='OBJECT_ADDED' and namespace-uri()=''])"));
             counter=0;
@@ -262,19 +262,19 @@ module GroupADAdapter
                 construct ADAddedObject
                 {
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("1af8bf6a-14e3-475d-a3d6-4ba9dd85d679")]
-                    XPathQuery = System.String.Format("/*[local-name()='ActiveDirectoryQueryResultsChange' and namespace-uri()='']/*[local-name()='OBJECT_ADDED' and namespace-uri()=''][{0}]", counter+1);
+                    xPathQuery = System.String.Format("/*[local-name()='ActiveDirectoryQueryResultsChange' and namespace-uri()='']/*[local-name()='OBJECT_ADDED' and namespace-uri()=''][{0}]", counter+1);
                     
-                    ADAddedObject = xpath(ADQueryResultsChangeIncoming, XPathQuery);
+                    ADAddedObject = xpath(ADQueryResultsChangeIncoming, xPathQuery);
                     
                 }
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("062bcb60-e889-4cf3-861b-186b71b727b3")]
-                construct ADNewGroup
+                construct ADNewGroupOutgoing
                 {
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("50928522-7f4e-4b32-969c-09d299fd7007")]
-                    transform (ADNewGroup) = GroupADAdapter.ADQueryResultsChangeObjectAdded_to_ADGroupChange (ADAddedObject);
+                    transform (ADNewGroupOutgoing) = GroupADAdapter.ADQueryResultsChangeObjectAdded_to_ADGroupChange (ADAddedObject);
                 }
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("7615f6a2-e06a-4f69-898d-f58deb97858c")]
-                send (SendADNewGroupPort.Operation_1, ADNewGroup);
+                send (SendADNewGroupPort.Operation_1, ADNewGroupOutgoing);
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("83c48020-4f2d-4e37-8264-3d36eee7b451")]
                 counter = counter+1;
             }

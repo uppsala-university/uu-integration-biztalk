@@ -97,7 +97,7 @@
                     <om:Property Name="Name" Value="StatementRef_1" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
-                <om:Element Type="StatementRef" OID="896fd4a5-5dd6-46c3-8a36-4da00f753a43" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="65.93" HigherBound="65.101">
+                <om:Element Type="StatementRef" OID="896fd4a5-5dd6-46c3-8a36-4da00f753a43" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="65.101" HigherBound="65.109">
                     <om:Property Name="Initializes" Value="False" />
                     <om:Property Name="Ref" Value="b40f48fe-4c02-4309-8874-4c8d5fa421e0" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -123,7 +123,7 @@
                 <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Internal.ADNewIndividual.ADNewIndividual" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ADNewIndividual" />
+                <om:Property Name="Name" Value="ADNewIndividualIncoming" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="ServiceBody" OID="21b7645b-6418-4a31-940d-5cae734020d1" ParentLink="ServiceDeclaration_ServiceBody">
@@ -222,14 +222,14 @@
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="ListenBranch_1" />
                                 <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="Receive" OID="b40f48fe-4c02-4309-8874-4c8d5fa421e0" ParentLink="ListenBranch_Statement" LowerBound="64.1" HigherBound="65.102">
+                                <om:Element Type="Receive" OID="b40f48fe-4c02-4309-8874-4c8d5fa421e0" ParentLink="ListenBranch_Statement" LowerBound="64.1" HigherBound="65.110">
                                     <om:Property Name="Activate" Value="False" />
                                     <om:Property Name="PortName" Value="ReceiveADNewIndividualPort" />
-                                    <om:Property Name="MessageName" Value="ADNewIndividual" />
+                                    <om:Property Name="MessageName" Value="ADNewIndividualIncoming" />
                                     <om:Property Name="OperationName" Value="Operation_1" />
                                     <om:Property Name="OperationMessageName" Value="Request" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
-                                    <om:Property Name="Name" Value="ADNewIndividual" />
+                                    <om:Property Name="Name" Value="ADNewIndividualIncoming" />
                                     <om:Property Name="Signal" Value="True" />
                                 </om:Element>
                             </om:Element>
@@ -337,7 +337,7 @@ module GroupADAdapter
         correlation PersonID personId;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResults ADIndividualQueryResult;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADSendAdapterSolicitResponseIndividualQuery ADIndividualQuery;
-        message UU.Integrations.Common.Schemas.Internal.ADNewIndividual.ADNewIndividual ADNewIndividual;
+        message UU.Integrations.Common.Schemas.Internal.ADNewIndividual.ADNewIndividual ADNewIndividualIncoming;
         System.Int32 resultCountIndividual;
         body (message UU.Integrations.Common.Schemas.Internal.InternalGroupEvent GroupEvent)
         {
@@ -365,7 +365,7 @@ module GroupADAdapter
                 listen
                 {
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("b40f48fe-4c02-4309-8874-4c8d5fa421e0")]
-                    until receive (ReceiveADNewIndividualPort.Operation_1, ADNewIndividual, personId)
+                    until receive (ReceiveADNewIndividualPort.Operation_1, ADNewIndividualIncoming, personId)
                     {
                     }
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("08680df7-f9d4-4dac-99b6-e0aee4a97a44")]

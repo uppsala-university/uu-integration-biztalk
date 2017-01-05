@@ -71,7 +71,7 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="groupName" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="StatementRef" OID="04a3acd0-9ce8-4d65-9c2d-3895bc3e91a9" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="54.83" HigherBound="54.92">
+                <om:Element Type="StatementRef" OID="04a3acd0-9ce8-4d65-9c2d-3895bc3e91a9" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="54.91" HigherBound="54.100">
                     <om:Property Name="Initializes" Value="False" />
                     <om:Property Name="Ref" Value="4d0a7e15-41a6-4ba2-ac4f-193fb4336356" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -90,7 +90,7 @@
                 <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ADNewGroup" />
+                <om:Property Name="Name" Value="ADNewGroupIncoming" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="2fc3b3d1-472c-4f8d-bbba-3320db0a7994" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
@@ -194,14 +194,14 @@
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="ListenBranch_1" />
                                 <om:Property Name="Signal" Value="False" />
-                                <om:Element Type="Receive" OID="4d0a7e15-41a6-4ba2-ac4f-193fb4336356" ParentLink="ListenBranch_Statement" LowerBound="53.1" HigherBound="54.93">
+                                <om:Element Type="Receive" OID="4d0a7e15-41a6-4ba2-ac4f-193fb4336356" ParentLink="ListenBranch_Statement" LowerBound="53.1" HigherBound="54.101">
                                     <om:Property Name="Activate" Value="False" />
                                     <om:Property Name="PortName" Value="ReceiveADNewGroupPort" />
-                                    <om:Property Name="MessageName" Value="ADNewGroup" />
+                                    <om:Property Name="MessageName" Value="ADNewGroupIncoming" />
                                     <om:Property Name="OperationName" Value="Operation_1" />
                                     <om:Property Name="OperationMessageName" Value="Request" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
-                                    <om:Property Name="Name" Value="ADNewGroup" />
+                                    <om:Property Name="Name" Value="ADNewGroupIncoming" />
                                     <om:Property Name="Signal" Value="True" />
                                 </om:Element>
                             </om:Element>
@@ -282,7 +282,7 @@ module GroupADAdapter
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port implements ReceiveADNewGroup ReceiveADNewGroupPort;
         correlation GroupName groupName;
-        message UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup ADNewGroup;
+        message UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup ADNewGroupIncoming;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResults ADGroupQueryResult;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADSendAdapterSolicitResponseGroupQuery ADGroupQuery;
         System.Int32 resultCountGroup;
@@ -310,7 +310,7 @@ module GroupADAdapter
                 listen
                 {
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("4d0a7e15-41a6-4ba2-ac4f-193fb4336356")]
-                    until receive (ReceiveADNewGroupPort.Operation_1, ADNewGroup, groupName)
+                    until receive (ReceiveADNewGroupPort.Operation_1, ADNewGroupIncoming, groupName)
                     {
                     }
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("1aae1a94-f650-478b-8f9e-93d88b329cff")]
