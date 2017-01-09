@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="2" TotalEndpoints="2">
+  <Timestamp>2017-01-09T16:00:11.2509365+01:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:UU.Integrations.Ladok2GroupAdapter]" Version="" Culture="" PublicKeyToken="" FullName="[Application:UU.Integrations.Ladok2GroupAdapter], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas>
+        <Schema FullName="UU.Integrations.Ladok2GroupAdapter.MembershipEvent" RootName="Root" AssemblyQualifiedName="UU.Integrations.Ladok2GroupAdapter.MembershipEvent,UU.Integrations.Ladok2GroupAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="UU.Integrations.Ladok2GroupAdapter.MembershipEventSingle" RootName="getUpdoctestDB.dbo.MEMBERSHIP_EVENTS" AssemblyQualifiedName="UU.Integrations.Ladok2GroupAdapter.MembershipEventSingle,UU.Integrations.Ladok2GroupAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+      </TrackedSchemas>
+    </ModuleRef>
+    <ModuleRef Name="UU.Integrations.Ladok2GroupAdapter" Version="1.0.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="UU.Integrations.Ladok2GroupAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
+      <Services>
+        <Service Name="UU.Integrations.Ladok2GroupAdapter.Ladok2GroupAdapterOrchestration" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports>
+            <Port Name="ReceiveMembershipEventsPort" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="MembershipEvents" />
+            </Port>
+            <Port Name="SendMembershipEventsPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="MembershipEvent" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkServerApplication64" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+      </Services>
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="MembershipEvent" IsStatic="true" IsTwoWay="false" BindingOption="1">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>sb://win-egd1cil7jkh.user.uu.se/ServiceBusDefaultNamespace/GroupDistribution</Address>
+        <TransportType Name="SB-Messaging" Capabilities="523" ConfigurationClsid="9c458d4a-a73c-4cb3-89c4-86ae0103de2f" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;DefaultReplyTo vt="8" /&gt;&lt;IssuerSecret vt="1" /&gt;&lt;DefaultReplyToSessionId vt="8" /&gt;&lt;DefaultTimeToLive vt="8"&gt;10675199.02:48:05.4775807&lt;/DefaultTimeToLive&gt;&lt;StsUri vt="8"&gt;https://&amp;lt;Namespace&amp;gt;-sb.accesscontrol.windows.net/&lt;/StsUri&gt;&lt;SharedAccessKeyName vt="8"&gt;RootManageSharedAccessKey&lt;/SharedAccessKeyName&gt;&lt;DefaultSessionId vt="8" /&gt;&lt;UseAcsAuthentication vt="11"&gt;0&lt;/UseAcsAuthentication&gt;&lt;DefaultCorrelationId vt="8" /&gt;&lt;SharedAccessKey vt="1" /&gt;&lt;BatchFlushInterval vt="8"&gt;00:00:00&lt;/BatchFlushInterval&gt;&lt;OpenTimeout vt="8"&gt;00:01:00&lt;/OpenTimeout&gt;&lt;DefaultLabel vt="8" /&gt;&lt;DefaultScheduledEnqueueTimeUtc vt="7"&gt;12/07/2016 09:49:42&lt;/DefaultScheduledEnqueueTimeUtc&gt;&lt;IssuerName vt="8" /&gt;&lt;DefaultMessageId vt="8" /&gt;&lt;UseSasAuthentication vt="11"&gt;-1&lt;/UseSasAuthentication&gt;&lt;CloseTimeout vt="8"&gt;00:01:00&lt;/CloseTimeout&gt;&lt;SendTimeout vt="8"&gt;00:01:00&lt;/SendTimeout&gt;&lt;CustomBrokeredPropertyNamespace vt="8" /&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T23:00:00</FromTime>
+        <ToTime>2000-01-01T22:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="false">
+          <TransportType Name="SB-Messaging" Capabilities="523" ConfigurationClsid="9c458d4a-a73c-4cb3-89c4-86ae0103de2f" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T23:00:00</FromTime>
+        <ToTime>2000-01-01T22:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms>
+        <Transform FullName="UU.Integrations.Ladok2GroupAdapter.MembershipEventSingle_to_InternalGroupEvent" AssemblyQualifiedName="UU.Integrations.Ladok2GroupAdapter.MembershipEventSingle_to_InternalGroupEvent,UU.Integrations.Ladok2GroupAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+      </Transforms>
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>UU.Integrations.Ladok2GroupAdapter</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="MembershipEvents" IsTwoWay="false" BindingOption="1">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="MembershipEvents_SQL">
+          <Description xsi:nil="true" />
+          <Address>mssql://tmssql-ag2.user.uu.se//getUpdoctestDB</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T23:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T22:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2016-12-07T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2016-12-08T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="WCF-SQL" Capabilities="779" ConfigurationClsid="59b35d03-6a06-4734-a249-ef561254ecf7" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" useAmbientTransaction="false" polledDataAvailableStatement="select count(*) FROM [getUpdoctestDB].[dbo].[MEMBERSHIP_EVENTS] WHERE processed=0" pollingStatement="SELECT top 10 [id]&amp;amp;#xD;&amp;amp;#xA;      ,[date]&amp;amp;#xD;&amp;amp;#xA;      ,[pnr]&amp;amp;#xD;&amp;amp;#xA;      ,[meType]&amp;amp;#xD;&amp;amp;#xA;      ,[courseCode]&amp;amp;#xD;&amp;amp;#xA;      ,[reportCode]&amp;amp;#xD;&amp;amp;#xA;      ,[startSemester]&amp;amp;#xD;&amp;amp;#xA;      ,[semester]&amp;amp;#xD;&amp;amp;#xA;      ,[program]&amp;amp;#xD;&amp;amp;#xA;      ,[programOrientation]&amp;amp;#xD;&amp;amp;#xA;      ,[condition1]&amp;amp;#xD;&amp;amp;#xA;      ,[condition2]&amp;amp;#xD;&amp;amp;#xA;      ,[condition3]&amp;amp;#xD;&amp;amp;#xA;      ,[origin]&amp;amp;#xD;&amp;amp;#xA;      ,[origin2]&amp;amp;#xD;&amp;amp;#xA;      ,[processed]&amp;amp;#xD;&amp;amp;#xA;FROM [getUpdoctestDB].[dbo].[MEMBERSHIP_EVENTS]&amp;amp;#xD;&amp;amp;#xA;WHERE processed=0 order by id &amp;amp;#xD;&amp;amp;#xA;for xml auto;  &amp;amp;#xD;&amp;amp;#xA;update [getUpdoctestDB].[dbo].[MEMBERSHIP_EVENTS]&amp;amp;#xD;&amp;amp;#xA;set processed=1&amp;amp;#xD;&amp;amp;#xA;where id in (SELECT top 10 [id]&amp;amp;#xD;&amp;amp;#xA;FROM [getUpdoctestDB].[dbo].[MEMBERSHIP_EVENTS]&amp;amp;#xD;&amp;amp;#xA;where processed=0&amp;amp;#xD;&amp;amp;#xA;order by id)" inboundOperationType="XmlPolling" xmlStoredProcedureRootNodeName="Root" xmlStoredProcedureRootNodeNamespace="http://UU.Integrations.Ladok2GroupAdapter.MembershipEvent" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;DisableLocationOnFailure vt="11"&gt;0&lt;/DisableLocationOnFailure&gt;&lt;UserName vt="8"&gt;getUpdoctest&lt;/UserName&gt;&lt;ServiceBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="ServiceBehavior" /&amp;gt;&lt;/ServiceBehaviorConfiguration&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;IncludeExceptionDetailInFaults vt="11"&gt;0&lt;/IncludeExceptionDetailInFaults&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;CredentialType vt="8"&gt;UserAccount&lt;/CredentialType&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;Password vt="1" /&gt;&lt;SuspendMessageOnFailure vt="11"&gt;0&lt;/SuspendMessageOnFailure&gt;&lt;OrderedProcessing vt="11"&gt;0&lt;/OrderedProcessing&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>false</Enable>
+          <ReceiveHandler Name="BizTalkServerApplication" HostTrusted="false">
+            <TransportType Name="WCF-SQL" Capabilities="779" ConfigurationClsid="59b35d03-6a06-4734-a249-ef561254ecf7" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>UU.Integrations.Ladok2GroupAdapter</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>
