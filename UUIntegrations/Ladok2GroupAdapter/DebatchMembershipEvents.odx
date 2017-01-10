@@ -29,7 +29,7 @@
             <om:Property Name="Synchronous" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="SendMembershipEventSingle" />
+            <om:Property Name="Name" Value="SendMembershipEvent" />
             <om:Property Name="Signal" Value="True" />
             <om:Element Type="OperationDeclaration" OID="c5ccb28b-7275-4d53-a931-e059a6a227b0" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
                 <om:Property Name="OperationType" Value="OneWay" />
@@ -182,7 +182,7 @@
                             </om:Element>
                         </om:Element>
                         <om:Element Type="Send" OID="f37fed52-d578-4450-8157-131812ea71b8" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="64.1">
-                            <om:Property Name="PortName" Value="SendMembershipEventsPort" />
+                            <om:Property Name="PortName" Value="SendMembershipEventPort" />
                             <om:Property Name="MessageName" Value="MembershipEventSingleOutgoing" />
                             <om:Property Name="OperationName" Value="Operation_1" />
                             <om:Property Name="OperationMessageName" Value="Request" />
@@ -261,10 +261,10 @@
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="UU.Integrations.Ladok2GroupAdapter.SendMembershipEventSingle" />
+                <om:Property Name="Type" Value="UU.Integrations.Ladok2GroupAdapter.SendMembershipEvent" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="SendMembershipEventsPort" />
+                <om:Property Name="Name" Value="SendMembershipEventPort" />
                 <om:Property Name="Signal" Value="True" />
                 <om:Element Type="LogicalBindingAttribute" OID="c3f73001-65bc-4e27-b7d5-eb760d842c95" ParentLink="PortDeclaration_CLRAttribute" LowerBound="27.1" HigherBound="28.1">
                     <om:Property Name="Signal" Value="False" />
@@ -284,7 +284,7 @@ module UU.Integrations.Ladok2GroupAdapter
             MembershipEvent
         };
     };
-    internal porttype SendMembershipEventSingle
+    internal porttype SendMembershipEvent
     {
         oneway Operation_1
         {
@@ -301,7 +301,7 @@ module UU.Integrations.Ladok2GroupAdapter
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port implements ReceiveMembershipEvents ReceiveMembershipEventsPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port uses SendMembershipEventSingle SendMembershipEventsPort;
+        port uses SendMembershipEvent SendMembershipEventPort;
         correlation ReceivePortName receivePortName;
         message MembershipEvent MembershipEventIncoming;
         message MembershipEventSingle MembershipEventSingleOutgoing;
@@ -336,7 +336,7 @@ module UU.Integrations.Ladok2GroupAdapter
                         
                     }
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("f37fed52-d578-4450-8157-131812ea71b8")]
-                    send (SendMembershipEventsPort.Operation_1, MembershipEventSingleOutgoing);
+                    send (SendMembershipEventPort.Operation_1, MembershipEventSingleOutgoing);
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("bb8cf7d4-fc02-4b9d-9db1-a2dd89c59436")]
                     counter = counter+1;
                 }
