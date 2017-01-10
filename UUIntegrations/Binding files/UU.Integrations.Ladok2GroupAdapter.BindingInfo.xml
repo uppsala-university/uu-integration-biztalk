@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="2" TotalEndpoints="2">
-  <Timestamp>2017-01-09T16:00:11.2509365+01:00</Timestamp>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="PartiallyBound" BoundEndpoints="1" TotalEndpoints="2">
+  <Timestamp>2017-01-10T08:35:56.1506776+01:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:UU.Integrations.Ladok2GroupAdapter]" Version="" Culture="" PublicKeyToken="" FullName="[Application:UU.Integrations.Ladok2GroupAdapter], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -20,10 +20,10 @@
             <Port Name="ReceiveMembershipEventsPort" Modifier="2" BindingOption="1">
               <SendPortRef xsi:nil="true" />
               <DistributionListRef xsi:nil="true" />
-              <ReceivePortRef Name="MembershipEvents" />
+              <ReceivePortRef Name="MembershipEventsFromLadok" />
             </Port>
-            <Port Name="SendMembershipEventsPort" Modifier="1" BindingOption="1">
-              <SendPortRef Name="MembershipEvent" />
+            <Port Name="SendMembershipEventPort" Modifier="1" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
               <DistributionListRef xsi:nil="true" />
               <ReceivePortRef xsi:nil="true" />
             </Port>
@@ -36,7 +36,7 @@
     </ModuleRef>
   </ModuleRefCollection>
   <SendPortCollection>
-    <SendPort Name="MembershipEvent" IsStatic="true" IsTwoWay="false" BindingOption="1">
+    <SendPort Name="MembershipEvent" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
@@ -70,9 +70,7 @@
       <ReceivePipelineData xsi:nil="true" />
       <Tracking>0</Tracking>
       <Filter />
-      <Transforms>
-        <Transform FullName="UU.Integrations.Ladok2GroupAdapter.MembershipEventSingle_to_InternalGroupEvent" AssemblyQualifiedName="UU.Integrations.Ladok2GroupAdapter.MembershipEventSingle_to_InternalGroupEvent,UU.Integrations.Ladok2GroupAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-      </Transforms>
+      <Transforms />
       <OrderedDelivery>false</OrderedDelivery>
       <Priority>5</Priority>
       <StopSendingOnFailure>false</StopSendingOnFailure>
@@ -82,10 +80,10 @@
   </SendPortCollection>
   <DistributionListCollection />
   <ReceivePortCollection>
-    <ReceivePort Name="MembershipEvents" IsTwoWay="false" BindingOption="1">
+    <ReceivePort Name="MembershipEventsFromLadok" IsTwoWay="false" BindingOption="1">
       <Description xsi:nil="true" />
       <ReceiveLocations>
-        <ReceiveLocation Name="MembershipEvents_SQL">
+        <ReceiveLocation Name="MembershipEventsFromLadok_SQL">
           <Description xsi:nil="true" />
           <Address>mssql://tmssql-ag2.user.uu.se//getUpdoctestDB</Address>
           <PublicAddress />
