@@ -240,7 +240,7 @@
             <om:Element Type="PortDeclaration" OID="abefbcca-ccc7-4b4c-90c2-ac08c8f058c7" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
                 <om:Property Name="PortModifier" Value="Implements" />
                 <om:Property Name="Orientation" Value="Left" />
-                <om:Property Name="PortIndex" Value="28" />
+                <om:Property Name="PortIndex" Value="31" />
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
@@ -249,7 +249,8 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReceiveADNewGroupPort" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="LogicalBindingAttribute" OID="1f0dd848-b1ca-45b1-984a-fbd1d4a8ab43" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                <om:Element Type="DirectBindingAttribute" OID="7c22546b-8e44-4ae8-b13c-775a04aa6c6e" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
@@ -279,7 +280,7 @@ module GroupADAdapter
     {
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses SendReceiveADGroupQuery ADGroupQueryPort;
-        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
         port implements ReceiveADNewGroup ReceiveADNewGroupPort;
         correlation GroupName groupName;
         message UU.Integrations.Common.Schemas.Internal.ADNewGroup.ADNewGroup ADNewGroupIncoming;

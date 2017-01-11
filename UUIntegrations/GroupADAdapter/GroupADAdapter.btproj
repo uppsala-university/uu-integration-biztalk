@@ -89,7 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Map Include="Maps\ADQueryResultsChangeObjectAdded_to_ADNewGroup.btm">
-      <TypeName>ADQueryResultsChangeObjectAdded_to_ADGroupChange</TypeName>
+      <TypeName>ADQueryResultsChangeObjectAdded_to_ADNewGroup</TypeName>
       <Namespace>GroupADAdapter</Namespace>
       <SubType>Task</SubType>
     </Map>
@@ -138,6 +138,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Orchestrations\HandleAllIndividualChanges.odx">
+      <SubType>Task</SubType>
+      <TypeName>HandleAllGroupChanges_Copy</TypeName>
+      <Namespace>UU.Integrations.GroupADAdapter.Orchestrations</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Orchestrations\ReceiveAndDebatchADIndividualChanges.odx">
+      <TypeName>ReceiveAndDebatchADIndividualChanges</TypeName>
+      <Namespace>UU.Integrations.GroupADAdapter.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\ADQueryResultsChangeObjectAdded_to_ADNewIndividual.btm">
+      <TypeName>ADQueryResultsChangeObjectAdded_to_ADNewIndividual</TypeName>
+      <Namespace>GroupADAdapter</Namespace>
+      <SubType>Task</SubType>
+    </Map>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />

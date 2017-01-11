@@ -137,20 +137,20 @@
                     </om:Element>
                     <om:Element Type="Construct" OID="062bcb60-e889-4cf3-861b-186b71b727b3" ParentLink="ComplexStatement_Statement" LowerBound="51.1" HigherBound="57.1">
                         <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="GroupADAdapterADQueryResultsChangeObjectAdded_to_ADGroupChange" />
+                        <om:Property Name="Name" Value="GroupADAdapterADQueryResultsChangeObjectAdded_to_ADNewGroup" />
                         <om:Property Name="Signal" Value="True" />
                         <om:Element Type="Transform" OID="50928522-7f4e-4b32-969c-09d299fd7007" ParentLink="ComplexStatement_Statement" LowerBound="54.1" HigherBound="56.1">
-                            <om:Property Name="ClassName" Value="GroupADAdapter.ADQueryResultsChangeObjectAdded_to_ADGroupChange" />
+                            <om:Property Name="ClassName" Value="GroupADAdapter.ADQueryResultsChangeObjectAdded_to_ADNewGroup" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="X_GroupADAdapterADQueryResultsChangeObjectAdded_to_ADGroupChange" />
+                            <om:Property Name="Name" Value="X_GroupADAdapterADQueryResultsChangeObjectAdded_to_ADNewGroup" />
                             <om:Property Name="Signal" Value="False" />
-                            <om:Element Type="MessagePartRef" OID="50cb9283-ed24-4690-b540-c28dfcc4c49d" ParentLink="Transform_InputMessagePartRef" LowerBound="55.119" HigherBound="55.132">
+                            <om:Element Type="MessagePartRef" OID="03fd3b3a-2938-487f-8344-cca0309769d2" ParentLink="Transform_InputMessagePartRef" LowerBound="55.116" HigherBound="55.129">
                                 <om:Property Name="MessageRef" Value="ADAddedObject" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_1" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
-                            <om:Element Type="MessagePartRef" OID="958cb437-b22b-40fc-9882-f81e1fe36b74" ParentLink="Transform_OutputMessagePartRef" LowerBound="55.32" HigherBound="55.50">
+                            <om:Element Type="MessagePartRef" OID="eab5a47a-04d4-4c6e-b601-0f9863e70749" ParentLink="Transform_OutputMessagePartRef" LowerBound="55.32" HigherBound="55.50">
                                 <om:Property Name="MessageRef" Value="ADNewGroupOutgoing" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_2" />
@@ -271,7 +271,7 @@ module GroupADAdapter
                 construct ADNewGroupOutgoing
                 {
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("50928522-7f4e-4b32-969c-09d299fd7007")]
-                    transform (ADNewGroupOutgoing) = GroupADAdapter.ADQueryResultsChangeObjectAdded_to_ADGroupChange (ADAddedObject);
+                    transform (ADNewGroupOutgoing) = GroupADAdapter.ADQueryResultsChangeObjectAdded_to_ADNewGroup (ADAddedObject);
                 }
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("7615f6a2-e06a-4f69-898d-f58deb97858c")]
                 send (SendADNewGroupPort.Operation_1, ADNewGroupOutgoing);

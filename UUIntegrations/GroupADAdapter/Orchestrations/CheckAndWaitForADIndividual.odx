@@ -277,7 +277,8 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReceiveADNewIndividualPort" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="LogicalBindingAttribute" OID="b7a384de-d6b8-44c9-aec6-f28f95481bfe" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                <om:Element Type="DirectBindingAttribute" OID="f346f292-0d5f-4b59-a9bd-401b9df4321a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
@@ -330,7 +331,7 @@ module GroupADAdapter
     {
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses SendReceiveADIndividualQuery ADIndividualQueryPort;
-        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
         port implements ReceiveADNewIndividual ReceiveADNewIndividualPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses SendGroupEventIdentityDistribution GroupEventIdentityDistributionPort;
