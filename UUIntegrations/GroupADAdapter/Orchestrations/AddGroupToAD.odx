@@ -76,6 +76,13 @@
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="GroupEventIncoming" />
                     <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="1f877362-4c11-4db7-93a8-6fc792957722" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="UU.Integrations.Common.GroupEventType" />
+                        <om:Property Name="RHS" Value="&quot;GroupCreateRequestEvent&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
                 </om:Element>
                 <om:Element Type="Construct" OID="f4138a16-2d57-424b-86f2-9d2ecda43ae7" ParentLink="ServiceBody_Statement" LowerBound="33.1" HigherBound="39.1">
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -274,7 +281,7 @@ module GroupADAdapter
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("4678aeca-dad7-4117-9126-3a0c177d1618")]
-            activate receive (ReceiveGroupEventPort.Operation_1, GroupEventIncoming);
+            activate ((UU.Integrations.Common.GroupEventType == "GroupCreateRequestEvent"))receive (ReceiveGroupEventPort.Operation_1, GroupEventIncoming);
             xmlDocMessage = new System.Xml.XmlDocument();
             groupName = "";
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("f4138a16-2d57-424b-86f2-9d2ecda43ae7")]
