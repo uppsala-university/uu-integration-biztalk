@@ -180,23 +180,7 @@
                     </om:Element>
                 </om:Element>
             </om:Element>
-            <om:Element Type="PortDeclaration" OID="0f23e49a-36ac-44b0-8f86-2f455881f384" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
-                <om:Property Name="PortModifier" Value="Uses" />
-                <om:Property Name="Orientation" Value="Left" />
-                <om:Property Name="PortIndex" Value="33" />
-                <om:Property Name="IsWebPort" Value="False" />
-                <om:Property Name="OrderedDelivery" Value="False" />
-                <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="GroupADAdapter.SendADNewIndividual" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="SendADNewIndividualPort" />
-                <om:Property Name="Signal" Value="False" />
-                <om:Element Type="LogicalBindingAttribute" OID="3ddaaed1-0fed-4519-b533-7048ba08f471" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
-                    <om:Property Name="Signal" Value="False" />
-                </om:Element>
-            </om:Element>
-            <om:Element Type="PortDeclaration" OID="15d7c862-b132-4e17-911b-b9d936ec9ee6" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+            <om:Element Type="PortDeclaration" OID="15d7c862-b132-4e17-911b-b9d936ec9ee6" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
                 <om:Property Name="PortModifier" Value="Implements" />
                 <om:Property Name="Orientation" Value="Left" />
                 <om:Property Name="PortIndex" Value="0" />
@@ -208,7 +192,24 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReceiveADIndividualChangePort" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="LogicalBindingAttribute" OID="91b80083-2525-482e-8b60-536f4a699fa8" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                <om:Element Type="LogicalBindingAttribute" OID="91b80083-2525-482e-8b60-536f4a699fa8" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0f23e49a-36ac-44b0-8f86-2f455881f384" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="39" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="GroupADAdapter.SendADNewIndividual" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendADNewIndividualPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="DirectBindingAttribute" OID="ad6d5148-dce6-4082-b92b-bc433472e14a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
@@ -237,9 +238,9 @@ module GroupADAdapter
     internal service ReceiveAndDebatchADIndividualChanges
     {
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port uses SendADNewIndividual SendADNewIndividualPort;
-        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port implements ReceiveADIndividualChange ReceiveADIndividualChangePort;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port uses SendADNewIndividual SendADNewIndividualPort;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResultsChangeObjectAdded ADAddedObject;
         message UU.Integrations.Common.Schemas.Internal.ADNewIndividual.ADNewIndividual ADNewIndividualOutgoing;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResultsChange ADQueryResultsChangeIncoming;

@@ -181,23 +181,7 @@
                     </om:Element>
                 </om:Element>
             </om:Element>
-            <om:Element Type="PortDeclaration" OID="19652f38-537c-4653-bced-fae916efa03c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="14.1" HigherBound="16.1">
-                <om:Property Name="PortModifier" Value="Uses" />
-                <om:Property Name="Orientation" Value="Left" />
-                <om:Property Name="PortIndex" Value="12" />
-                <om:Property Name="IsWebPort" Value="False" />
-                <om:Property Name="OrderedDelivery" Value="False" />
-                <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="GroupADAdapter.SendReceiveADGroupQuery" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ADGroupQueryPort" />
-                <om:Property Name="Signal" Value="True" />
-                <om:Element Type="LogicalBindingAttribute" OID="6976fd19-bc71-4c05-8a1b-9baa12f2deea" ParentLink="PortDeclaration_CLRAttribute" LowerBound="14.1" HigherBound="15.1">
-                    <om:Property Name="Signal" Value="False" />
-                </om:Element>
-            </om:Element>
-            <om:Element Type="PortDeclaration" OID="80a74658-fbd0-4aaf-b82d-546c4fe1f4b5" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="16.1" HigherBound="18.1">
+            <om:Element Type="PortDeclaration" OID="80a74658-fbd0-4aaf-b82d-546c4fe1f4b5" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="14.1" HigherBound="16.1">
                 <om:Property Name="PortModifier" Value="Implements" />
                 <om:Property Name="Orientation" Value="Left" />
                 <om:Property Name="PortIndex" Value="1" />
@@ -209,14 +193,30 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReceiveGroupEventPort" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="LogicalBindingAttribute" OID="5a824616-b828-464e-9a31-26dca6a24011" ParentLink="PortDeclaration_CLRAttribute" LowerBound="16.1" HigherBound="17.1">
+                <om:Element Type="LogicalBindingAttribute" OID="5a824616-b828-464e-9a31-26dca6a24011" ParentLink="PortDeclaration_CLRAttribute" LowerBound="14.1" HigherBound="15.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="19652f38-537c-4653-bced-fae916efa03c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="16.1" HigherBound="18.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="19" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="GroupADAdapter.SendReceiveADGroupQuery" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ADGroupQueryPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="6976fd19-bc71-4c05-8a1b-9baa12f2deea" ParentLink="PortDeclaration_CLRAttribute" LowerBound="16.1" HigherBound="17.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
             <om:Element Type="PortDeclaration" OID="2e591d56-332e-4146-8763-39c3317808e9" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="18.1" HigherBound="20.1">
                 <om:Property Name="PortModifier" Value="Uses" />
                 <om:Property Name="Orientation" Value="Right" />
-                <om:Property Name="PortIndex" Value="55" />
+                <om:Property Name="PortIndex" Value="48" />
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
@@ -266,9 +266,9 @@ module GroupADAdapter
     internal service AddGroupToAD
     {
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port uses SendReceiveADGroupQuery ADGroupQueryPort;
-        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port implements ReceiveGroupEvent ReceiveGroupEventPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendReceiveADGroupQuery ADGroupQueryPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses SendADAddGroup SendADAddGroupPort;
         message UU.Integrations.Common.Schemas.ActiveAdapter.ADQueryResults ADGroupQueryResult;
