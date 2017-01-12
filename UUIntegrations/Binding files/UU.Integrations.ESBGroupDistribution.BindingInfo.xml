@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2017-01-10T10:43:45.6524634+01:00</Timestamp>
+  <Timestamp>2017-01-12T10:01:01.4691375+01:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:UU.Integrations.ESBGroupDistribution]" Version="" Culture="" PublicKeyToken="" FullName="[Application:UU.Integrations.ESBGroupDistribution], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -12,7 +12,7 @@
     </ModuleRef>
   </ModuleRefCollection>
   <SendPortCollection>
-    <SendPort Name="PersonEventToGroupAD" IsStatic="true" IsTwoWay="false" BindingOption="0">
+    <SendPort Name="GroupEventToGroupAD" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
@@ -66,10 +66,10 @@
   </SendPortCollection>
   <DistributionListCollection />
   <ReceivePortCollection>
-    <ReceivePort Name="PersonEventFromGroupDistribution" IsTwoWay="false" BindingOption="0">
+    <ReceivePort Name="GroupEventFromGroupDistribution" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
       <ReceiveLocations>
-        <ReceiveLocation Name="PersonEventGroupDistribution">
+        <ReceiveLocation Name="GroupEventFromGroupDistribution">
           <Description xsi:nil="true" />
           <Address>sb://win-egd1cil7jkh.user.uu.se/ServiceBusDefaultNamespace/GroupDistribution</Address>
           <PublicAddress />
