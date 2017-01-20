@@ -30,7 +30,7 @@
             <om:Property Name="IsInvokable" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="HandleAllIndividualChanges" />
+            <om:Property Name="Name" Value="HandleAllADIndividualChanges" />
             <om:Property Name="Signal" Value="True" />
             <om:Element Type="MessageDeclaration" OID="3c2fcaf2-99c8-4a25-9b18-d65f774d5099" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="16.1" HigherBound="17.1">
                 <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Internal.ADNewIndividual.ADNewIndividual" />
@@ -84,7 +84,7 @@ module GroupADAdapter
         };
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
-    internal service HandleAllIndividualChanges
+    internal service HandleAllADIndividualChanges
     {
         [Microsoft.XLANGs.BaseTypes.DirectBinding()]
         port implements ReceiveAllADNewIndividual ReceiveAllADNewIndividualPort;
