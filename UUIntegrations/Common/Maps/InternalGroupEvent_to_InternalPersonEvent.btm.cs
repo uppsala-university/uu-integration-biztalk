@@ -51,6 +51,8 @@ public string StringTrimRight(string str)
 ]]></msxsl:script>
 </xsl:stylesheet>";
         
+        private const int _useXSLTransform = 0;
+        
         private const string _strArgList = @"<ExtensionObjects />";
         
         private const string _strSrcSchemasList0 = @"UU.Integrations.Common.Schemas.Internal.InternalGroupEvent";
@@ -64,6 +66,12 @@ public string StringTrimRight(string str)
         public override string XmlContent {
             get {
                 return _strMap;
+            }
+        }
+        
+        public override int UseXSLTransform {
+            get {
+                return _useXSLTransform;
             }
         }
         
