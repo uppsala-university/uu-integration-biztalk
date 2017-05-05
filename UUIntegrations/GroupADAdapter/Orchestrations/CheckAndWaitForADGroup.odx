@@ -164,10 +164,10 @@
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
                 <om:Element Type="VariableAssignment" OID="3597b41d-64a1-434b-9ac2-09af15cb1f0d" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="44.1">
-                    <om:Property Name="Expression" Value="resultCountGroup = 0;" />
+                    <om:Property Name="Expression" Value="resultCountGroup = (System.Int32)(xpath(ADGroupQueryResult, &quot;count(/*[local-name()='ActiveDirectoryQueryResults' and namespace-uri()='']/*[local-name()='FilterMatch' and namespace-uri()=''])&quot;));&#xD;&#xA;" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="CheckQueryResult" />
-                    <om:Property Name="Signal" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
                 </om:Element>
                 <om:Element Type="Decision" OID="dd20eaee-96da-4134-9ebf-21dd622bc63e" ParentLink="ServiceBody_Statement" LowerBound="44.1" HigherBound="63.1">
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -300,7 +300,7 @@ module GroupADAdapter
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("8d5946f3-35e4-45d2-ab23-550bb7dd8c52")]
             receive (ADGroupQueryPort.Operation_1, ADGroupQueryResult);
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("3597b41d-64a1-434b-9ac2-09af15cb1f0d")]
-            resultCountGroup = 0;
+            resultCountGroup = (System.Int32)(xpath(ADGroupQueryResult, "count(/*[local-name()='ActiveDirectoryQueryResults' and namespace-uri()='']/*[local-name()='FilterMatch' and namespace-uri()=''])"));
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("dd20eaee-96da-4134-9ebf-21dd622bc63e")]
             if (resultCountGroup > 0)
             {
