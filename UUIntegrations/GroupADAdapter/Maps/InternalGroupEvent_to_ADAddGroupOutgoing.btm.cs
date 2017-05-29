@@ -18,15 +18,12 @@ namespace GroupADAdapter {
     <xsl:variable name=""var:v4"" select=""userCSharp:StringTrimLeft(&quot;1&quot;)"" />
     <xsl:variable name=""var:v5"" select=""userCSharp:StringTrimLeft(&quot;distinguishedName&quot;)"" />
     <xsl:variable name=""var:v6"" select=""userCSharp:StringTrimLeft(&quot;OU=Courses,OU=Student,OU=AKKA,DC=exchange-test,DC=its,DC=uu,DC=se&quot;)"" />
-    <xsl:variable name=""var:v7"" select=""userCSharp:StringConcat(&quot;CN=&quot; , string(s1:Group/s1:Name/text()))"" />
+    <xsl:variable name=""var:v7"" select=""userCSharp:StringConcat(&quot;CN=&quot;)"" />
     <xsl:variable name=""var:v8"" select=""$var:v7"" />
     <xsl:variable name=""var:v9"" select=""'group'"" />
     <xsl:variable name=""var:v10"" select=""'createobject'"" />
-    <xsl:variable name=""var:v11"" select=""string(s1:Group/s1:Name/text())"" />
-    <xsl:variable name=""var:v12"" select=""userCSharp:StringConcat(&quot;CN=&quot; , $var:v11)"" />
-    <xsl:variable name=""var:v13"" select=""'sAMAccountName'"" />
-    <xsl:variable name=""var:v14"" select=""s1:Group/s1:Name"" />
-    <xsl:variable name=""var:v15"" select=""'update'"" />
+    <xsl:variable name=""var:v11"" select=""'sAMAccountName'"" />
+    <xsl:variable name=""var:v12"" select=""'update'"" />
     <ActiveDirectoryUpdate>
       <Directives>
         <xsl:attribute name=""WhereToBind"">
@@ -63,13 +60,10 @@ namespace GroupADAdapter {
       </Change>
       <Change>
         <xsl:attribute name=""PropertyName"">
-          <xsl:value-of select=""$var:v13"" />
-        </xsl:attribute>
-        <xsl:attribute name=""ChangeToValue"">
-          <xsl:value-of select=""$var:v14"" />
+          <xsl:value-of select=""$var:v11"" />
         </xsl:attribute>
         <xsl:attribute name=""ChangeType"">
-          <xsl:value-of select=""$var:v15"" />
+          <xsl:value-of select=""$var:v12"" />
         </xsl:attribute>
       </Change>
     </ActiveDirectoryUpdate>
@@ -85,9 +79,9 @@ public string StringTrimLeft(string str)
 }
 
 
-public string StringConcat(string param0, string param1)
+public string StringConcat(string param0)
 {
-   return param0 + param1;
+   return param0;
 }
 
 
