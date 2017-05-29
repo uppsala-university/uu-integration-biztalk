@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="2" TotalEndpoints="2">
-  <Timestamp>2017-05-29T11:13:39.1361828+02:00</Timestamp>
+  <Timestamp>2017-05-29T13:59:30.2008469+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:UU.Integrations.SDGroupAdapter]" Version="" Culture="" PublicKeyToken="" FullName="[Application:UU.Integrations.SDGroupAdapter], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -8,14 +8,14 @@
     </ModuleRef>
     <ModuleRef Name="UU.Integrations.SDGroupAdapter" Version="1.0.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="UU.Integrations.SDGroupAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services>
-        <Service Name="SDGroupAdapter.HandleEventsFromSDGroup" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents">
+        <Service Name="SDGroupAdapter.HandleEventsFromSDGroup" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="ReceiveEventsPort" Modifier="2" BindingOption="1">
               <SendPortRef xsi:nil="true" />
               <DistributionListRef xsi:nil="true" />
               <ReceivePortRef Name="EventFromSDGroup" />
             </Port>
-            <Port Name="KurstillfalleTillStatusEventPort" Modifier="1" BindingOption="1">
+            <Port Name="InternalGroupEventPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="EventToGroupDistribution" />
               <DistributionListRef xsi:nil="true" />
               <ReceivePortRef xsi:nil="true" />
@@ -39,8 +39,8 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2017-05-22T22:00:00</FromTime>
-        <ToTime>2017-05-23T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
@@ -53,8 +53,8 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2017-05-22T22:00:00</FromTime>
-        <ToTime>2017-05-23T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>false</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
