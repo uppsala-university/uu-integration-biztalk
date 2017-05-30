@@ -102,7 +102,7 @@ namespace Helper
 
         public string GetSemesters(string startperiodID, string utbildningstillfalleskod)
         {
-            string query = "SELECT termin, termordn FROM uu.ktfort2 WHERE kod = " + utbildningstillfalleskod + " AND startter = " + startperiodID + " ORDER BY termordn";
+            string query = "SELECT termin, termordn FROM uu.ktfort2 WHERE kod='" + utbildningstillfalleskod + "' AND startter='" + startperiodID + "' ORDER BY termordn";
             string value = startperiodID;
 
             if (this.OpenConnection() == true)
