@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="e8a72d89-3a6f-4d75-b428-d0aeec3a6fc7" LowerBound="1.1" HigherBound="54.1">
+    <om:Element Type="Module" OID="e8a72d89-3a6f-4d75-b428-d0aeec3a6fc7" LowerBound="1.1" HigherBound="118.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="SDGroupAdapter" />
         <om:Property Name="Signal" Value="False" />
@@ -44,37 +44,79 @@
                 </om:Element>
             </om:Element>
         </om:Element>
-        <om:Element Type="ServiceDeclaration" OID="7ae8af6a-a6f3-4c5a-9e67-000db7225473" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="53.1">
+        <om:Element Type="PortType" OID="05c4668d-88f8-400d-b57e-319fce446364" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ErrorMessage" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="9d8248ad-374e-4884-a158-94722dbfefc5" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="773ead9b-6234-4570-81fa-c3f561cca5eb" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="7ae8af6a-a6f3-4c5a-9e67-000db7225473" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="117.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="HandleEventsFromSDGroup" />
             <om:Property Name="Signal" Value="False" />
-            <om:Element Type="MessageDeclaration" OID="6e2ce564-c206-4c7b-b9f2-a26196c0d762" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+            <om:Element Type="VariableDeclaration" OID="fdc7dbc3-84c4-47f0-acd7-59a51c0cffb1" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="2ebde294-dbeb-409e-ad47-16ffc02b0d16" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="39.1" HigherBound="40.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="stringMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="6e2ce564-c206-4c7b-b9f2-a26196c0d762" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
                 <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="KurstillfalleTillStatusEventIncoming" />
+                <om:Property Name="Name" Value="KurstillfalleTillStatusEvent" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
-            <om:Element Type="MessageDeclaration" OID="e67d5c73-cb19-4554-bd93-dc6d1c3cd79f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+            <om:Element Type="MessageDeclaration" OID="e67d5c73-cb19-4554-bd93-dc6d1c3cd79f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
                 <om:Property Name="Type" Value="System.Xml.XmlDocument" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="EventIncoming" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
-            <om:Element Type="MessageDeclaration" OID="b825dba4-6f28-43f3-9457-5521315b84fc" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+            <om:Element Type="MessageDeclaration" OID="b825dba4-6f28-43f3-9457-5521315b84fc" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
                 <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Internal.InternalGroupEvent" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="InternalGroupEventOutgoing" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ea4ee722-278c-4735-ba0d-1f572480c8d4" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="Type" Value="UU.Integrations.Common.Schemas.Ladok.schemas_ladok_se_studiedeltagande.ForvantatDeltagandeSkapadEvent" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ForvantatDeltagandeSkapadEvent" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
             <om:Element Type="ServiceBody" OID="1b617460-4ada-488a-bf73-42fab313e15d" ParentLink="ServiceDeclaration_ServiceBody">
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="Receive" OID="d3a9989e-c5dc-40cb-836f-eff368eebe91" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="32.1">
+                <om:Element Type="Receive" OID="d3a9989e-c5dc-40cb-836f-eff368eebe91" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="46.1">
                     <om:Property Name="Activate" Value="True" />
                     <om:Property Name="PortName" Value="ReceiveEventsPort" />
                     <om:Property Name="MessageName" Value="EventIncoming" />
@@ -84,79 +126,187 @@
                     <om:Property Name="Name" Value="EventIncoming" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="Decision" OID="3a434082-8700-42a3-abf1-a74e7ba1d70a" ParentLink="ServiceBody_Statement" LowerBound="32.1" HigherBound="51.1">
+                <om:Element Type="Scope" OID="65449962-9616-4fa3-8174-86116bdab397" ParentLink="ServiceBody_Statement" LowerBound="46.1" HigherBound="115.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
-                    <om:Property Name="Name" Value="EventType" />
+                    <om:Property Name="Name" Value="MainScope" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="DecisionBranch" OID="89419bab-6803-49e4-a679-e724084bc7e7" ParentLink="ReallyComplexStatement_Branch" LowerBound="33.13" HigherBound="51.1">
-                        <om:Property Name="Expression" Value="EventIncoming(BTS.MessageType) == &quot;http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent&quot;&#xD;&#xA;" />
-                        <om:Property Name="IsGhostBranch" Value="True" />
+                    <om:Element Type="VariableAssignment" OID="a9865641-72fc-4e4e-86db-8b1c25c183e4" ParentLink="ComplexStatement_Statement" LowerBound="51.1" HigherBound="55.1">
+                        <om:Property Name="Expression" Value="xmlMessage = EventIncoming;&#xD;&#xA;stringMessage = xmlMessage.OuterXml;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk - SDGroupAdapter&quot;, &quot;Tagit emot meddelande: &quot; + stringMessage);" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="KurstillfalleTillStatusEvent" />
+                        <om:Property Name="Name" Value="LogIncomingMessage" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Decision" OID="3a434082-8700-42a3-abf1-a74e7ba1d70a" ParentLink="ComplexStatement_Statement" LowerBound="55.1" HigherBound="100.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="EventType" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="Construct" OID="88329e02-02ce-4a5e-81f7-12e3859ffd9d" ParentLink="ComplexStatement_Statement" LowerBound="36.1" HigherBound="42.1">
+                        <om:Element Type="DecisionBranch" OID="89419bab-6803-49e4-a679-e724084bc7e7" ParentLink="ReallyComplexStatement_Branch" LowerBound="56.21" HigherBound="78.1">
+                            <om:Property Name="Expression" Value="EventIncoming(BTS.MessageType) == &quot;http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent&quot;&#xD;&#xA;" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="KurstillfalleTillStatusEventOutgoing" />
+                            <om:Property Name="Name" Value="KurstillfalleTillStatusEvent" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="MessageAssignment" OID="fbd41dde-7608-4c7c-9c9a-0dff9f4862d3" ParentLink="ComplexStatement_Statement" LowerBound="39.1" HigherBound="41.1">
-                                <om:Property Name="Expression" Value="KurstillfalleTillStatusEventIncoming = EventIncoming;" />
-                                <om:Property Name="ReportToAnalyst" Value="False" />
-                                <om:Property Name="Name" Value="EventIncomingToKurstillfalleTillStatusEvent" />
-                                <om:Property Name="Signal" Value="True" />
-                            </om:Element>
-                            <om:Element Type="MessageRef" OID="7a074635-db29-4cd6-b878-9a344f1948da" ParentLink="Construct_MessageRef" LowerBound="37.27" HigherBound="37.63">
-                                <om:Property Name="Ref" Value="KurstillfalleTillStatusEventIncoming" />
+                            <om:Element Type="Construct" OID="88329e02-02ce-4a5e-81f7-12e3859ffd9d" ParentLink="ComplexStatement_Statement" LowerBound="59.1" HigherBound="65.1">
                                 <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Signal" Value="False" />
-                            </om:Element>
-                        </om:Element>
-                        <om:Element Type="Construct" OID="2d476a2d-5b08-462e-8872-9eda693de59b" ParentLink="ComplexStatement_Statement" LowerBound="42.1" HigherBound="48.1">
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="KurstillfalleTillStatusEvent_to_InternalGroupEvent" />
-                            <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="Transform" OID="cdccf0d1-bb60-41f1-a6d7-24ee45e97455" ParentLink="ComplexStatement_Statement" LowerBound="45.1" HigherBound="47.1">
-                                <om:Property Name="ClassName" Value="UU.Integrations.SDGroupAdapter.Maps.KurstillfalleTillStatusEvent_to_InternalGroupEvent" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="X_KurstillfalleTillStatusEvent_to_InternalGroupEvent" />
+                                <om:Property Name="Name" Value="KurstillfalleTillStatusEvent" />
                                 <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="MessagePartRef" OID="4edfef09-793d-4777-b10c-9a4b418bd2e4" ParentLink="Transform_InputMessagePartRef" LowerBound="46.150" HigherBound="46.186">
-                                    <om:Property Name="MessageRef" Value="KurstillfalleTillStatusEventIncoming" />
-                                    <om:Property Name="ReportToAnalyst" Value="True" />
-                                    <om:Property Name="Name" Value="MessagePartReference_1" />
-                                    <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="MessageAssignment" OID="fbd41dde-7608-4c7c-9c9a-0dff9f4862d3" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="64.1">
+                                    <om:Property Name="Expression" Value="KurstillfalleTillStatusEvent = EventIncoming;" />
+                                    <om:Property Name="ReportToAnalyst" Value="False" />
+                                    <om:Property Name="Name" Value="ConvertToKurstillfalleTillStatusEvent" />
+                                    <om:Property Name="Signal" Value="True" />
                                 </om:Element>
-                                <om:Element Type="MessagePartRef" OID="5ce8797b-ce1d-4cdb-8312-93d09d52fde0" ParentLink="Transform_OutputMessagePartRef" LowerBound="46.32" HigherBound="46.58">
-                                    <om:Property Name="MessageRef" Value="InternalGroupEventOutgoing" />
+                                <om:Element Type="MessageRef" OID="7a074635-db29-4cd6-b878-9a344f1948da" ParentLink="Construct_MessageRef" LowerBound="60.35" HigherBound="60.63">
+                                    <om:Property Name="Ref" Value="KurstillfalleTillStatusEvent" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
-                                    <om:Property Name="Name" Value="MessagePartReference_2" />
                                     <om:Property Name="Signal" Value="False" />
                                 </om:Element>
                             </om:Element>
-                            <om:Element Type="MessageRef" OID="75246906-e34c-4b45-96cd-3bbd58f2f4ce" ParentLink="Construct_MessageRef" LowerBound="43.27" HigherBound="43.53">
-                                <om:Property Name="Ref" Value="InternalGroupEventOutgoing" />
+                            <om:Element Type="Construct" OID="2d476a2d-5b08-462e-8872-9eda693de59b" ParentLink="ComplexStatement_Statement" LowerBound="65.1" HigherBound="71.1">
                                 <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Signal" Value="False" />
+                                <om:Property Name="Name" Value="KurstillfalleTillStatusEvent_to_InternalGroupEvent" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Transform" OID="cdccf0d1-bb60-41f1-a6d7-24ee45e97455" ParentLink="ComplexStatement_Statement" LowerBound="68.1" HigherBound="70.1">
+                                    <om:Property Name="ClassName" Value="UU.Integrations.SDGroupAdapter.Maps.KurstillfalleTillStatusEvent_to_InternalGroupEvent" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="X_KurstillfalleTillStatusEvent_to_InternalGroupEvent" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessagePartRef" OID="4edfef09-793d-4777-b10c-9a4b418bd2e4" ParentLink="Transform_InputMessagePartRef" LowerBound="69.158" HigherBound="69.186">
+                                        <om:Property Name="MessageRef" Value="KurstillfalleTillStatusEvent" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_1" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessagePartRef" OID="5ce8797b-ce1d-4cdb-8312-93d09d52fde0" ParentLink="Transform_OutputMessagePartRef" LowerBound="69.40" HigherBound="69.66">
+                                        <om:Property Name="MessageRef" Value="InternalGroupEventOutgoing" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_2" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="MessageRef" OID="75246906-e34c-4b45-96cd-3bbd58f2f4ce" ParentLink="Construct_MessageRef" LowerBound="66.35" HigherBound="66.61">
+                                    <om:Property Name="Ref" Value="InternalGroupEventOutgoing" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Send" OID="157ce5c3-bff8-42df-bf43-6fb24f21ecaa" ParentLink="ComplexStatement_Statement" LowerBound="71.1" HigherBound="73.1">
+                                <om:Property Name="PortName" Value="InternalGroupEventPort" />
+                                <om:Property Name="MessageName" Value="InternalGroupEventOutgoing" />
+                                <om:Property Name="OperationName" Value="Operation_1" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="InternalGroupEventOutgoing" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="4d14921f-3cc1-4985-ab8a-8415e9f9c78a" ParentLink="ComplexStatement_Statement" LowerBound="73.1" HigherBound="77.1">
+                                <om:Property Name="Expression" Value="xmlMessage = InternalGroupEventOutgoing;&#xD;&#xA;stringMessage = xmlMessage.OuterXml;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk - SDGroupAdapter&quot;, &quot;Skickat meddelande: &quot; + stringMessage);" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="LogOutgoingMessage" />
+                                <om:Property Name="Signal" Value="True" />
                             </om:Element>
                         </om:Element>
-                        <om:Element Type="Send" OID="157ce5c3-bff8-42df-bf43-6fb24f21ecaa" ParentLink="ComplexStatement_Statement" LowerBound="48.1" HigherBound="50.1">
-                            <om:Property Name="PortName" Value="InternalGroupEventPort" />
-                            <om:Property Name="MessageName" Value="InternalGroupEventOutgoing" />
+                        <om:Element Type="DecisionBranch" OID="5bb51398-69b6-414b-b7fc-57f921455d64" ParentLink="ReallyComplexStatement_Branch" LowerBound="78.26" HigherBound="100.1">
+                            <om:Property Name="Expression" Value="EventIncoming(BTS.MessageType) == &quot;http://schemas.ladok.se/studiedeltagande#ForvantatDeltagandeSkapadEvent&quot;" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ForvantatDeltagandeSkapadEvent" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Construct" OID="b19594f3-0401-4a11-81d6-bcd6d933e0df" ParentLink="ComplexStatement_Statement" LowerBound="81.1" HigherBound="87.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ForvantatDeltagandeSkapadEvent" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessageAssignment" OID="fbef0c55-9415-442d-91f8-58bdd5ff845b" ParentLink="ComplexStatement_Statement" LowerBound="84.1" HigherBound="86.1">
+                                    <om:Property Name="Expression" Value="ForvantatDeltagandeSkapadEvent = EventIncoming;" />
+                                    <om:Property Name="ReportToAnalyst" Value="False" />
+                                    <om:Property Name="Name" Value="ConvertToKurstillfalleTillStatusEvent" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessageRef" OID="d7e7901b-5e84-4504-bb57-f84906b74522" ParentLink="Construct_MessageRef" LowerBound="82.35" HigherBound="82.65">
+                                    <om:Property Name="Ref" Value="ForvantatDeltagandeSkapadEvent" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Construct" OID="974f502a-104b-40f8-9e29-a9073385b433" ParentLink="ComplexStatement_Statement" LowerBound="87.1" HigherBound="93.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ForvantatDeltagandeSkapadEvent_to_InternalGroupEvent" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Transform" OID="02d37898-4fae-4061-849c-17784ae6a42b" ParentLink="ComplexStatement_Statement" LowerBound="90.1" HigherBound="92.1">
+                                    <om:Property Name="ClassName" Value="UU.Integrations.SDGroupAdapter.Maps.ForvantatDeltagandeSkapadEvent_to_InternalGroupEvent" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="X_ForvantatDeltagandeSkapadEvent_to_InternalGroupEvent" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessagePartRef" OID="f2499ccd-8da1-4dc4-8446-62c80849571b" ParentLink="Transform_InputMessagePartRef" LowerBound="91.160" HigherBound="91.190">
+                                        <om:Property Name="MessageRef" Value="ForvantatDeltagandeSkapadEvent" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_3" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessagePartRef" OID="1ae03d73-09bd-458d-bc58-9026e55d1d3c" ParentLink="Transform_OutputMessagePartRef" LowerBound="91.40" HigherBound="91.66">
+                                        <om:Property Name="MessageRef" Value="InternalGroupEventOutgoing" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_4" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="MessageRef" OID="f4363555-eed7-456a-b524-6aec8d585d3c" ParentLink="Construct_MessageRef" LowerBound="88.35" HigherBound="88.61">
+                                    <om:Property Name="Ref" Value="InternalGroupEventOutgoing" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Send" OID="8228b3c9-5402-4c13-8b6a-6033c5642dc7" ParentLink="ComplexStatement_Statement" LowerBound="93.1" HigherBound="95.1">
+                                <om:Property Name="PortName" Value="InternalGroupEventPort" />
+                                <om:Property Name="MessageName" Value="InternalGroupEventOutgoing" />
+                                <om:Property Name="OperationName" Value="Operation_1" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="InternalGroupEvent" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="95f1df9d-cff3-4bc7-9847-d6b4a24c40d2" ParentLink="ComplexStatement_Statement" LowerBound="95.1" HigherBound="99.1">
+                                <om:Property Name="Expression" Value="xmlMessage = InternalGroupEventOutgoing;&#xD;&#xA;stringMessage = xmlMessage.OuterXml;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk - SDGroupAdapter&quot;, &quot;Skickat meddelande: &quot; + stringMessage);" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="LogOutgoingMessage" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="DecisionBranch" OID="1ac101e6-2187-4718-bc04-beda9985b511" ParentLink="ReallyComplexStatement_Branch">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Else" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Catch" OID="4458967e-68e8-4f51-bcc3-571b52cc2473" ParentLink="Scope_Catch" LowerBound="103.1" HigherBound="113.1">
+                        <om:Property Name="ExceptionName" Value="exception" />
+                        <om:Property Name="ExceptionType" Value="System.SystemException" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CatchExceptionMain" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="f2a92d9f-7c67-4b74-8bab-76fb4149a528" ParentLink="Catch_Statement" LowerBound="106.1" HigherBound="110.1">
+                            <om:Property Name="Expression" Value="xmlMessage = EventIncoming;&#xD;&#xA;stringMessage = xmlMessage.OuterXml;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk - SDGroupAdapter&quot;, exception.ToString() + &quot; &quot; + stringMessage);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="WriteErrorToEventLog" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Send" OID="532800af-cbcd-43e1-8fec-0783a984c2c9" ParentLink="Catch_Statement" LowerBound="110.1" HigherBound="112.1">
+                            <om:Property Name="PortName" Value="ErrorMessagePort" />
+                            <om:Property Name="MessageName" Value="EventIncoming" />
                             <om:Property Name="OperationName" Value="Operation_1" />
                             <om:Property Name="OperationMessageName" Value="Request" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="InternalGroupEventOutgoing" />
+                            <om:Property Name="Name" Value="EventIncoming" />
                             <om:Property Name="Signal" Value="True" />
                         </om:Element>
                     </om:Element>
-                    <om:Element Type="DecisionBranch" OID="1ac101e6-2187-4718-bc04-beda9985b511" ParentLink="ReallyComplexStatement_Branch">
-                        <om:Property Name="IsGhostBranch" Value="True" />
-                        <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="Else" />
-                        <om:Property Name="Signal" Value="False" />
-                    </om:Element>
                 </om:Element>
             </om:Element>
-            <om:Element Type="PortDeclaration" OID="d19b6547-3168-402a-87f1-140956394387" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+            <om:Element Type="PortDeclaration" OID="d19b6547-3168-402a-87f1-140956394387" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
                 <om:Property Name="PortModifier" Value="Implements" />
                 <om:Property Name="Orientation" Value="Left" />
                 <om:Property Name="PortIndex" Value="0" />
@@ -168,14 +318,14 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReceiveEventsPort" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="LogicalBindingAttribute" OID="788ff24f-b7e8-4f5f-87bb-9d7dcb48e922" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                <om:Element Type="LogicalBindingAttribute" OID="788ff24f-b7e8-4f5f-87bb-9d7dcb48e922" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
-            <om:Element Type="PortDeclaration" OID="5f1ec927-1066-42d4-a442-12c0c6c2dd5c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+            <om:Element Type="PortDeclaration" OID="5f1ec927-1066-42d4-a442-12c0c6c2dd5c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="30.1" HigherBound="32.1">
                 <om:Property Name="PortModifier" Value="Uses" />
                 <om:Property Name="Orientation" Value="Left" />
-                <om:Property Name="PortIndex" Value="32" />
+                <om:Property Name="PortIndex" Value="45" />
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
@@ -184,7 +334,23 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="InternalGroupEventPort" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="LogicalBindingAttribute" OID="10a7dc28-e291-4ced-98b9-a5164d8b7bab" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                <om:Element Type="LogicalBindingAttribute" OID="10a7dc28-e291-4ced-98b9-a5164d8b7bab" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="64610644-d7a9-496f-a893-e8ad5a3eb769" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="72" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="SDGroupAdapter.ErrorMessage" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ErrorMessagePort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="b1f2374d-850b-43a6-bc63-f7329e0d5f41" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
@@ -209,6 +375,13 @@ module SDGroupAdapter
             UU.Integrations.Common.Schemas.Internal.InternalGroupEvent
         };
     };
+    internal porttype ErrorMessage
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
     internal service HandleEventsFromSDGroup
     {
@@ -216,31 +389,88 @@ module SDGroupAdapter
         port implements ReceiveEvents ReceiveEventsPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses InternalGroupEvent InternalGroupEventPort;
-        message UU.Integrations.Common.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent KurstillfalleTillStatusEventIncoming;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses ErrorMessage ErrorMessagePort;
+        message UU.Integrations.Common.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent KurstillfalleTillStatusEvent;
         message System.Xml.XmlDocument EventIncoming;
         message UU.Integrations.Common.Schemas.Internal.InternalGroupEvent InternalGroupEventOutgoing;
+        message UU.Integrations.Common.Schemas.Ladok.schemas_ladok_se_studiedeltagande.ForvantatDeltagandeSkapadEvent ForvantatDeltagandeSkapadEvent;
+        System.Xml.XmlDocument xmlMessage;
+        System.String stringMessage;
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("d3a9989e-c5dc-40cb-836f-eff368eebe91")]
             activate receive (ReceiveEventsPort.Operation_1, EventIncoming);
-            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3a434082-8700-42a3-abf1-a74e7ba1d70a")]
-            if (EventIncoming(BTS.MessageType) == "http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent"
-                )
+            xmlMessage = new System.Xml.XmlDocument();
+            stringMessage = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("65449962-9616-4fa3-8174-86116bdab397")]
+            scope
             {
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("88329e02-02ce-4a5e-81f7-12e3859ffd9d")]
-                construct KurstillfalleTillStatusEventIncoming
+                body
                 {
-                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("fbd41dde-7608-4c7c-9c9a-0dff9f4862d3")]
-                    KurstillfalleTillStatusEventIncoming = EventIncoming;
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a9865641-72fc-4e4e-86db-8b1c25c183e4")]
+                    xmlMessage = EventIncoming;
+                    stringMessage = xmlMessage.OuterXml;
+                    System.Diagnostics.EventLog.WriteEntry("BizTalk - SDGroupAdapter", "Tagit emot meddelande: " + stringMessage);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("3a434082-8700-42a3-abf1-a74e7ba1d70a")]
+                    if (EventIncoming(BTS.MessageType) == "http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent"
+                        )
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("88329e02-02ce-4a5e-81f7-12e3859ffd9d")]
+                        construct KurstillfalleTillStatusEvent
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fbd41dde-7608-4c7c-9c9a-0dff9f4862d3")]
+                            KurstillfalleTillStatusEvent = EventIncoming;
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("2d476a2d-5b08-462e-8872-9eda693de59b")]
+                        construct InternalGroupEventOutgoing
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("cdccf0d1-bb60-41f1-a6d7-24ee45e97455")]
+                            transform (InternalGroupEventOutgoing) = UU.Integrations.SDGroupAdapter.Maps.KurstillfalleTillStatusEvent_to_InternalGroupEvent (KurstillfalleTillStatusEvent);
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("157ce5c3-bff8-42df-bf43-6fb24f21ecaa")]
+                        send (InternalGroupEventPort.Operation_1, InternalGroupEventOutgoing);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("4d14921f-3cc1-4985-ab8a-8415e9f9c78a")]
+                        xmlMessage = InternalGroupEventOutgoing;
+                        stringMessage = xmlMessage.OuterXml;
+                        System.Diagnostics.EventLog.WriteEntry("BizTalk - SDGroupAdapter", "Skickat meddelande: " + stringMessage);
+                    }
+                    else if (EventIncoming(BTS.MessageType) == "http://schemas.ladok.se/studiedeltagande#ForvantatDeltagandeSkapadEvent"
+                        )
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("b19594f3-0401-4a11-81d6-bcd6d933e0df")]
+                        construct ForvantatDeltagandeSkapadEvent
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fbef0c55-9415-442d-91f8-58bdd5ff845b")]
+                            ForvantatDeltagandeSkapadEvent = EventIncoming;
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("974f502a-104b-40f8-9e29-a9073385b433")]
+                        construct InternalGroupEventOutgoing
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("02d37898-4fae-4061-849c-17784ae6a42b")]
+                            transform (InternalGroupEventOutgoing) = UU.Integrations.SDGroupAdapter.Maps.ForvantatDeltagandeSkapadEvent_to_InternalGroupEvent (ForvantatDeltagandeSkapadEvent);
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("8228b3c9-5402-4c13-8b6a-6033c5642dc7")]
+                        send (InternalGroupEventPort.Operation_1, InternalGroupEventOutgoing);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("95f1df9d-cff3-4bc7-9847-d6b4a24c40d2")]
+                        xmlMessage = InternalGroupEventOutgoing;
+                        stringMessage = xmlMessage.OuterXml;
+                        System.Diagnostics.EventLog.WriteEntry("BizTalk - SDGroupAdapter", "Skickat meddelande: " + stringMessage);
+                    }
                 }
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("2d476a2d-5b08-462e-8872-9eda693de59b")]
-                construct InternalGroupEventOutgoing
+                exceptions
                 {
-                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("cdccf0d1-bb60-41f1-a6d7-24ee45e97455")]
-                    transform (InternalGroupEventOutgoing) = UU.Integrations.SDGroupAdapter.Maps.KurstillfalleTillStatusEvent_to_InternalGroupEvent (KurstillfalleTillStatusEventIncoming);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("4458967e-68e8-4f51-bcc3-571b52cc2473")]
+                    catch (System.SystemException exception)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("f2a92d9f-7c67-4b74-8bab-76fb4149a528")]
+                        xmlMessage = EventIncoming;
+                        stringMessage = xmlMessage.OuterXml;
+                        System.Diagnostics.EventLog.WriteEntry("BizTalk - SDGroupAdapter", exception.ToString() + " " + stringMessage);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("532800af-cbcd-43e1-8fec-0783a984c2c9")]
+                        send (ErrorMessagePort.Operation_1, EventIncoming);
+                    }
                 }
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("157ce5c3-bff8-42df-bf43-6fb24f21ecaa")]
-                send (InternalGroupEventPort.Operation_1, InternalGroupEventOutgoing);
             }
         }
     }
