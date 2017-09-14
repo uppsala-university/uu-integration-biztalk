@@ -1,0 +1,312 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="6058535c-e372-4a5a-925b-0dacc730fa1c" LowerBound="1.1" HigherBound="64.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="INT0003.AD.Distribution" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="08fcdac0-03cb-4c3b-8305-4ebad89fe98e" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CreateGropusEventResultPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="6fd50085-3483-4b01-86e0-52406e03ac9a" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveCreateGroupEventsOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="24ec1920-7ac6-4857-9c24-4d2fb13b1fab" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.50">
+                    <om:Property Name="Ref" Value="Shared.Schemas.GroupEvents.ADNewGroup" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="7b9e35ad-4d01-42fd-b6b9-449fafbfb1ab" ParentLink="Module_CorrelationType" LowerBound="11.1" HigherBound="15.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ADGroupName" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="85235db5-e4c2-47dd-8281-f65c13b0c8be" ParentLink="CorrelationType_PropertyRef" LowerBound="13.9" HigherBound="13.40">
+                <om:Property Name="Ref" Value="Shared.Schemas.Common.GroupName" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="5a2dae1e-3b74-4c0e-a3c3-23d600675c21" ParentLink="Module_ServiceDeclaration" LowerBound="15.1" HigherBound="63.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CheckAndWaitForADGroup" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="d1a8b35e-63fc-47da-a6e5-2268d569e51e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="InitialValue" Value="0" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="resultCountGroup" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="CorrelationDeclaration" OID="3e7de556-bb84-42b8-821d-21e5877a668c" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="22.1" HigherBound="23.1">
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.ADGroupName" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ADGroupNameSet" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="7885b96e-8317-46fc-8049-a0d2921f5975" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="37.73" HigherBound="37.98">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="06011901-0367-4d42-9210-f1b9eb106793" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="f0f972ef-913a-47a4-8d8d-9420298360ff" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="52.123" HigherBound="52.137">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="06d7270b-e36e-40aa-94c0-61d403d5a861" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_2" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="b52b5226-d7cb-44aa-9d85-0866ef4bc12e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="23.1" HigherBound="24.1">
+                <om:Property Name="Type" Value="Shared.Schemas.ADEvents.ADQueryResults" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ADGroupQueryResults" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="03c5b2e7-3559-4062-a8fc-2f7c9dd32b11" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="24.1" HigherBound="25.1">
+                <om:Property Name="Type" Value="Shared.Schemas.ADEvents.ADSendAdapterSolicitResponseGroupQuery" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ADGroupQuery" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="c92b6bf2-c0fa-4cc0-bec2-9a9bdf005c2f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.ADNewGroup" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CreateGroupsEventResult" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="fb4e3bac-1894-46ed-abb5-e560678ad057" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageDeclaration" OID="dd2cd8fe-9d89-444a-9fae-4544787b288e" ParentLink="ServiceBody_Declaration" LowerBound="27.15" HigherBound="27.79">
+                    <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                    <om:Property Name="ParamDirection" Value="In" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GroupEvent" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="f027ffbe-4e4d-4e07-9208-b1476636c64b" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="36.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructADGroupQuery" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageRef" OID="16c5a903-e7f7-4322-93fc-e8a76bb853c5" ParentLink="Construct_MessageRef" LowerBound="31.23" HigherBound="31.35">
+                        <om:Property Name="Ref" Value="ADGroupQuery" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Transform" OID="3782ad0b-88ee-4512-8f42-bb37ba9b9d2c" ParentLink="ComplexStatement_Statement" LowerBound="33.1" HigherBound="35.1">
+                        <om:Property Name="ClassName" Value="INT0003.AD.Distribution.Maps.InternalGroupEvent_to_ADQueryGroup" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="GroupEvent_To_ADQuery" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="d85eeb94-eee9-4255-a837-b9315e7e7ccc" ParentLink="Transform_InputMessagePartRef" LowerBound="34.109" HigherBound="34.119">
+                            <om:Property Name="MessageRef" Value="GroupEvent" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="1d4516b8-8454-488e-bc6b-cca712bdd1a2" ParentLink="Transform_OutputMessagePartRef" LowerBound="34.28" HigherBound="34.40">
+                            <om:Property Name="MessageRef" Value="ADGroupQuery" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="06011901-0367-4d42-9210-f1b9eb106793" ParentLink="ServiceBody_Statement" LowerBound="36.1" HigherBound="38.1">
+                    <om:Property Name="PortName" Value="ADGroupQueryPort" />
+                    <om:Property Name="MessageName" Value="ADGroupQuery" />
+                    <om:Property Name="OperationName" Value="ADGroupQueryOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SendADGroupQuery" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="9807375d-6908-47b9-8bd3-f88625bf247a" ParentLink="ServiceBody_Statement" LowerBound="38.1" HigherBound="40.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="ADGroupQueryPort" />
+                    <om:Property Name="MessageName" Value="ADGroupQueryResults" />
+                    <om:Property Name="OperationName" Value="ADGroupQueryOperation" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveADGroupQuery" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="932fa089-1a6a-4ba2-8781-6327c693b2c5" ParentLink="ServiceBody_Statement" LowerBound="40.1" HigherBound="42.1">
+                    <om:Property Name="Expression" Value="resultCountGroup = (System.Int32)(xpath(ADGroupQueryResults, &quot;count(/*[local-name()='ActiveDirectoryQueryResults' and namespace-uri()='']/*[local-name()='FilterMatch' and namespace-uri()=''])&quot;));&#xD;&#xA;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="CheckQueryResult" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Decision" OID="182e0eae-fb88-4cd7-b9f6-00f482c2bc08" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="61.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="CheckGroupCount" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="70f1af91-e0d9-48c4-a81a-d0a460ecf85f" ParentLink="ReallyComplexStatement_Branch" LowerBound="43.13" HigherBound="46.1">
+                        <om:Property Name="Expression" Value="resultCountGroup &gt; 0" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="No groups" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="c55f36cf-18d9-4c4c-84a0-2f7375bcbf9d" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Listen" OID="99bb6f65-6ae1-4f9a-9f38-53cd6dd3b7d3" ParentLink="ComplexStatement_Statement" LowerBound="48.1" HigherBound="60.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Listen_1" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="ListenBranch" OID="f26d6c9b-ead9-4d9f-abdc-50cb175c8010" ParentLink="ReallyComplexStatement_Branch" LowerBound="48.1" HigherBound="48.1">
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ListenBranch_1" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Receive" OID="06d7270b-e36e-40aa-94c0-61d403d5a861" ParentLink="ListenBranch_Statement" LowerBound="51.1" HigherBound="52.138">
+                                    <om:Property Name="Activate" Value="False" />
+                                    <om:Property Name="PortName" Value="CreateGroupEventResultPort" />
+                                    <om:Property Name="MessageName" Value="CreateGroupsEventResult" />
+                                    <om:Property Name="OperationName" Value="ReceiveCreateGroupEventsOperation" />
+                                    <om:Property Name="OperationMessageName" Value="Request" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="ReceiveCreateADGroupResults" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="ListenBranch" OID="2aa37f06-2373-40ad-bce8-d3dc6f89c8fb" ParentLink="ReallyComplexStatement_Branch" LowerBound="48.1" HigherBound="48.1">
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ListenBranch_2" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="Delay" OID="38366639-8eb9-4a6e-ad4d-c21c12aa5368" ParentLink="ListenBranch_Statement" LowerBound="55.1" HigherBound="56.57">
+                                    <om:Property Name="Timeout" Value="new System.TimeSpan(1,0,0,0)" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="WaitForGroupADTimeout" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="1ae680da-4da0-4ae7-850a-9fc9a2400f69" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="18.1" HigherBound="20.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="40" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.CreateGropusEventResultPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CreateGroupEventResultPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="DirectBindingAttribute" OID="f48f8db3-d30c-4f12-bdea-2dd4af10a675" ParentLink="PortDeclaration_CLRAttribute" LowerBound="18.1" HigherBound="19.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="9d9f8620-420c-4ab0-9005-ebf5ab865670" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="20.1" HigherBound="22.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="14" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.ADGroupQueryPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ADGroupQueryPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="70bfb80c-30af-41ce-a2be-6771e3815f8f" ParentLink="PortDeclaration_CLRAttribute" LowerBound="20.1" HigherBound="21.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module INT0003.AD.Distribution
+{
+    internal porttype CreateGropusEventResultPortType
+    {
+        oneway ReceiveCreateGroupEventsOperation
+        {
+            Shared.Schemas.GroupEvents.ADNewGroup
+        };
+    };
+    internal correlationtype ADGroupName
+    {
+        Shared.Schemas.Common.GroupName
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service CheckAndWaitForADGroup
+    {
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port implements CreateGropusEventResultPortType CreateGroupEventResultPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses ADGroupQueryPortType ADGroupQueryPort;
+        correlation ADGroupName ADGroupNameSet;
+        message Shared.Schemas.ADEvents.ADQueryResults ADGroupQueryResults;
+        message Shared.Schemas.ADEvents.ADSendAdapterSolicitResponseGroupQuery ADGroupQuery;
+        message Shared.Schemas.GroupEvents.ADNewGroup CreateGroupsEventResult;
+        System.Int32 resultCountGroup;
+        body (message Shared.Schemas.GroupEvents.InternalGroupEvent GroupEvent)
+        {
+            resultCountGroup = 0;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f027ffbe-4e4d-4e07-9208-b1476636c64b")]
+            construct ADGroupQuery
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("3782ad0b-88ee-4512-8f42-bb37ba9b9d2c")]
+                transform (ADGroupQuery) = INT0003.AD.Distribution.Maps.InternalGroupEvent_to_ADQueryGroup (GroupEvent);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("06011901-0367-4d42-9210-f1b9eb106793")]
+            send (ADGroupQueryPort.ADGroupQueryOperation, ADGroupQuery, initialize ADGroupNameSet);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("9807375d-6908-47b9-8bd3-f88625bf247a")]
+            receive (ADGroupQueryPort.ADGroupQueryOperation, ADGroupQueryResults);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("932fa089-1a6a-4ba2-8781-6327c693b2c5")]
+            resultCountGroup = (System.Int32)(xpath(ADGroupQueryResults, "count(/*[local-name()='ActiveDirectoryQueryResults' and namespace-uri()='']/*[local-name()='FilterMatch' and namespace-uri()=''])"));
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("182e0eae-fb88-4cd7-b9f6-00f482c2bc08")]
+            if (resultCountGroup > 0)
+            {
+            }
+            else 
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("99bb6f65-6ae1-4f9a-9f38-53cd6dd3b7d3")]
+                listen
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("06d7270b-e36e-40aa-94c0-61d403d5a861")]
+                    until receive (CreateGroupEventResultPort.ReceiveCreateGroupEventsOperation, CreateGroupsEventResult, ADGroupNameSet)
+                    {
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("38366639-8eb9-4a6e-ad4d-c21c12aa5368")]
+                    timeout new System.TimeSpan(1,0,0,0)
+                    {
+                    }
+                }
+            }
+        }
+    }
+}
+
