@@ -1,4 +1,4 @@
-namespace INT0002.Ladok3.Maps {
+namespace INT0002.UU.GroupEvents.Maps {
     
     
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation+KurstillfalleTillStatusEvent", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent))]

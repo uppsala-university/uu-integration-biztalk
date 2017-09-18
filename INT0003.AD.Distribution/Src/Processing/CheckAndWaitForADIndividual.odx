@@ -272,11 +272,12 @@
                         <om:Property Name="Name" Value="Else" />
                         <om:Property Name="Signal" Value="False" />
                         <om:Element Type="Send" OID="b4c670ec-b008-4214-981f-e0fa4b8d92a0" ParentLink="ComplexStatement_Statement" LowerBound="77.1" HigherBound="79.1">
-                            <om:Property Name="PortName" Value="SendEventGroupPort" />
+                            <om:Property Name="PortName" Value="SendEventIdentityDistributionPort" />
                             <om:Property Name="MessageName" Value="GroupEvent" />
                             <om:Property Name="OperationName" Value="SendGroupEventOperation" />
                             <om:Property Name="OperationMessageName" Value="Request" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="AnalystComments" Value="Sends group message to AKKA queue" />
                             <om:Property Name="Name" Value="SendGroupEvent" />
                             <om:Property Name="Signal" Value="True" />
                         </om:Element>
@@ -364,8 +365,9 @@
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReceiveADNewIndividualPort" />
-                <om:Property Name="Signal" Value="False" />
-                <om:Element Type="LogicalBindingAttribute" OID="b8a205d8-29b4-4604-a19e-851e72d7e49c" ParentLink="PortDeclaration_CLRAttribute" LowerBound="41.1" HigherBound="42.1">
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="DirectBindingAttribute" OID="05d52710-5609-42ab-8e31-1b58a290b003" ParentLink="PortDeclaration_CLRAttribute" LowerBound="41.1" HigherBound="42.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
@@ -379,8 +381,8 @@
                 <om:Property Name="Type" Value="INT0003.AD.Distribution.SendEventGroupPortType" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="SendEventGroupPort" />
-                <om:Property Name="Signal" Value="False" />
+                <om:Property Name="Name" Value="SendEventIdentityDistributionPort" />
+                <om:Property Name="Signal" Value="True" />
                 <om:Element Type="LogicalBindingAttribute" OID="cccc3812-1ba7-42e8-8542-6a7e23e8218d" ParentLink="PortDeclaration_CLRAttribute" LowerBound="43.1" HigherBound="44.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
@@ -429,10 +431,10 @@ module INT0003.AD.Distribution
     {
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses ADQueryIndividualPortType ADQueryIndividualPort;
-        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
         port implements ReceiveADNewIndividualPortType ReceiveADNewIndividualPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port uses SendEventGroupPortType SendEventGroupPort;
+        port uses SendEventGroupPortType SendEventIdentityDistributionPort;
         correlation IndividualID IndividualIDSet;
         message System.Xml.XmlDocument xmlDocMessage;
         message Shared.Schemas.ADEvents.ADQueryResults ADIndividualQueryResult;
@@ -466,7 +468,7 @@ module INT0003.AD.Distribution
             else 
             {
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("b4c670ec-b008-4214-981f-e0fa4b8d92a0")]
-                send (SendEventGroupPort.SendGroupEventOperation, GroupEvent);
+                send (SendEventIdentityDistributionPort.SendGroupEventOperation, GroupEvent);
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("0c4ee447-6cd1-41c3-a08c-f2eef40c80ed")]
                 listen
                 {

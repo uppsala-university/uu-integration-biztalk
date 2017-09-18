@@ -40,13 +40,14 @@ namespace INT0001.Ladok2.Events.Pipelines
 "be33dac94b8972</Name>          <ComponentName>ContextAdder</ComponentName>          <Description>Con"+
 "text Adder</Description>          <Version>1.0.0.0</Version>          <Properties>            <Prope"+
 "rty Name=\"Properties\">              <Value xsi:type=\"xsd:string\">http://schemas.microsoft.com/BizTal"+
-"k/2003/system-properties#AckRequired@3=true;</Value>            </Property>          </Properties>  "+
-"        <CachedDisplayName>ContextAdder</CachedDisplayName>          <CachedIsManaged>true</CachedIs"+
-"Managed>        </Component>      </Components>    </Stage>    <Stage>      <PolicyFileStage _locAtt"+
-"rData=\"Name\" _locID=\"4\" Name=\"ResolveParty\" minOccurs=\"0\" maxOccurs=\"-1\" execMethod=\"All\" stageId=\"9"+
-"d0e410e-4cce-4536-83fa-4a5040674ad6\" />      <Components />    </Stage>  </Stages></Document>";
+"k/2003/system-properties#AckRequired@3=true;http://schemas.microsoft.com/BizTalk/2003/system-propert"+
+"ies#SuppressRoutingFailureDiagnosticInfo@3=true;</Value>            </Property>          </Propertie"+
+"s>          <CachedDisplayName>ContextAdder</CachedDisplayName>          <CachedIsManaged>true</Cach"+
+"edIsManaged>        </Component>      </Components>    </Stage>    <Stage>      <PolicyFileStage _lo"+
+"cAttrData=\"Name\" _locID=\"4\" Name=\"ResolveParty\" minOccurs=\"0\" maxOccurs=\"-1\" execMethod=\"All\" stageI"+
+"d=\"9d0e410e-4cce-4536-83fa-4a5040674ad6\" />      <Components />    </Stage>  </Stages></Document>";
         
-        private const string _versionDependentGuid = "8632b464-ce43-48db-b9cc-e6bc3b569b68";
+        private const string _versionDependentGuid = "2d2dde06-4761-488f-984b-e8b851379a26";
         
         public PromoteAck_ReceivePipeline()
         {
@@ -76,7 +77,8 @@ namespace INT0001.Ladok2.Events.Pipelines
                 string comp1XmlProperties = "<?xml version=\"1.0\" encoding=\"utf-16\"?><PropertyBag xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-inst"+
 "ance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">  <Properties>    <Property Name=\"Properties\">   "+
 "   <Value xsi:type=\"xsd:string\">http://schemas.microsoft.com/BizTalk/2003/system-properties#AckRequi"+
-"red@3=true;</Value>    </Property>  </Properties></PropertyBag>";
+"red@3=true;http://schemas.microsoft.com/BizTalk/2003/system-properties#SuppressRoutingFailureDiagnos"+
+"ticInfo@3=true;</Value>    </Property>  </Properties></PropertyBag>";
                 PropertyBag pb = PropertyBag.DeserializeFromXml(comp1XmlProperties);;
                 ((IPersistPropertyBag)(comp1)).Load(pb, 0);
             }

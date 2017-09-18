@@ -47,7 +47,7 @@ namespace INT0003.AD.Distribution.Pipelines
 "rData=\"Name\" _locID=\"4\" Name=\"ResolveParty\" minOccurs=\"0\" maxOccurs=\"-1\" execMethod=\"All\" stageId=\"9"+
 "d0e410e-4cce-4536-83fa-4a5040674ad6\" />      <Components />    </Stage>  </Stages></Document>";
         
-        private const string _versionDependentGuid = "7b8dc67f-6cfd-4fe2-92b7-8aa4b85e468a";
+        private const string _versionDependentGuid = "8c7fa566-3efe-4d13-b884-f6b956b0fb0b";
         
         public SuppressRoutingFailure()
         {

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
+  <Timestamp>2017-09-15T14:02:35.5526898+02:00</Timestamp>
+  <ModuleRefCollection />
+  <SendPortCollection />
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="WcfReceivePort_SqlAdapterBinding_TypedPolling_ladokevents_Custom" IsTwoWay="false" BindingOption="1">
+      <Description>ReceivePort for SqlAdapterBinding.</Description>
+      <ReceiveLocations>
+        <ReceiveLocation Name="WcfReceiveLocation_SqlAdapterBinding_TypedPolling_ladokevents_Custom">
+          <Description xsi:nil="true" />
+          <Address>mssql://.//localUpdoctestDB?InboundId=ladokevents</Address>
+          <PublicAddress xsi:nil="true" />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2000-01-01T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2000-01-01T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;
+  &lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;
+  &lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="SqlAdapterBinding" maxConnectionPoolSize="100" encrypt="false" workstationId="" useAmbientTransaction="true" batchSize="20" ApplicationIntent="ReadWrite" MultiSubnetFailover="true" polledDataAvailableStatement="" pollingStatement="exec  [dbo].[INT0001.Ladok2.Events.getNext]" pollingIntervalInSeconds="30" pollWhileDataFound="false" notificationStatement="" notifyOnListenerStart="true" enableBizTalkCompatibilityMode="true" chunkSize="4194304" inboundOperationType="TypedPolling" useDatabaseNameInXsdNamespace="false" allowIdentityInsert="false" acceptCredentialsInUri="false" enablePerformanceCounters="false" xmlStoredProcedureRootNodeName="" xmlStoredProcedureRootNodeNamespace="" /&amp;gt;&lt;/BindingConfiguration&gt;
+  &lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;
+  &lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;
+  &lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;
+  &lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;
+  &lt;DisableLocationOnFailure vt="11"&gt;0&lt;/DisableLocationOnFailure&gt;
+  &lt;SuspendMessageOnFailure vt="11"&gt;0&lt;/SuspendMessageOnFailure&gt;
+  &lt;IncludeExceptionDetailInFaults vt="11"&gt;0&lt;/IncludeExceptionDetailInFaults&gt;
+  &lt;CredentialType vt="8"&gt;None&lt;/CredentialType&gt;
+  &lt;OrderedProcessing vt="11"&gt;0&lt;/OrderedProcessing&gt;
+  &lt;Identity vt="8" /&gt;
+&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>false</Enable>
+          <ReceiveHandler Name="BizTalkServerApplication" HostTrusted="false">
+            <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName />
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>
