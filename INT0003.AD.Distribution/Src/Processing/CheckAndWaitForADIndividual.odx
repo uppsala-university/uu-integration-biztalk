@@ -222,10 +222,10 @@
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
                 <om:Element Type="VariableAssignment" OID="80e0a1a9-5606-4c9b-82e9-32a93ce06de0" ParentLink="ServiceBody_Statement" LowerBound="63.1" HigherBound="65.1">
-                    <om:Property Name="Expression" Value="resultCountIndividual = (System.Int32)(xpath(ADIndividualQueryResult, &quot;count(/*[local-name()='ActiveDirectoryQueryResults' and namespace-uri()='']/*[local-name()='FilterMatch' and namespace-uri()=''])&quot;));" />
+                    <om:Property Name="Expression" Value="resultCountIndividual = (System.Int32)(xpath(ADIndividualQueryResult, &quot;count(/*[local-name()='ActiveDirectoryQueryResults']/*[local-name()='FilterMatch'])&quot;));" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="CheckQueryResult" />
-                    <om:Property Name="Signal" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
                 </om:Element>
                 <om:Element Type="Decision" OID="0f839c7f-55fe-45b2-9e5e-5a123472a60d" ParentLink="ServiceBody_Statement" LowerBound="65.1" HigherBound="100.1">
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -454,7 +454,7 @@ module INT0003.AD.Distribution
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("1241c3f9-6f07-4a77-a595-b313b0f75ddc")]
             receive (ADQueryIndividualPort.ADQueryIndividualOperation, ADIndividualQueryResult);
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("80e0a1a9-5606-4c9b-82e9-32a93ce06de0")]
-            resultCountIndividual = (System.Int32)(xpath(ADIndividualQueryResult, "count(/*[local-name()='ActiveDirectoryQueryResults' and namespace-uri()='']/*[local-name()='FilterMatch' and namespace-uri()=''])"));
+            resultCountIndividual = (System.Int32)(xpath(ADIndividualQueryResult, "count(/*[local-name()='ActiveDirectoryQueryResults']/*[local-name()='FilterMatch'])"));
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("0f839c7f-55fe-45b2-9e5e-5a123472a60d")]
             if (resultCountIndividual > 0)
             {

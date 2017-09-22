@@ -275,7 +275,7 @@ public bool IsNumeric(string val, ref double d)
         private const int _useXSLTransform = 0;
         
         private const string _strArgList = @"<ExtensionObjects>
-  <ExtensionObject Namespace=""http://schemas.microsoft.com/BizTalk/2003/ScriptNS0"" AssemblyName=""UU.Integrations.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a"" ClassName=""Helper.MySQLConnect"" />
+  <ExtensionObject Namespace=""http://schemas.microsoft.com/BizTalk/2003/ScriptNS0"" AssemblyName=""INT0002.UU.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a"" ClassName=""Helper.MySQLConnect"" />
 </ExtensionObjects>";
         
         private const string _strSrcSchemasList0 = @"Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation+KurstillfalleTillStatusEvent";
