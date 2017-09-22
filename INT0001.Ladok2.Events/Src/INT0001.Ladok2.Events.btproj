@@ -40,20 +40,28 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BizTalk.PipelineComponents.ContextToXml, Version=1.0.0.0, Culture=neutral, PublicKeyToken=47190f56632fbc76, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\BizTalk.PipelineComponents.ContextToXml\v4.0_1.0.0.0__47190f56632fbc76\BizTalk.PipelineComponents.ContextToXml.dll</HintPath>
+      <HintPath>..\packages\BizTalk.PipelineComponents.ContextToXml.1.0.0\lib\net45\BizTalk.PipelineComponents.ContextToXml.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="BizTalk.PipelineComponents.PromoteContext, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2dbe33dac94b8972, processorArchitecture=MSIL" />
-    <Reference Include="BizTalkComponents.PipelineComponents.XSLTransform, Version=1.0.0.1, Culture=neutral, PublicKeyToken=47190f56632fbc76, processorArchitecture=MSIL" />
-    <Reference Include="INT0001.Ladok2.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\INT0001.Ladok2.Helper\v4.0_1.0.0.0__b64e3957dd28061a\INT0001.Ladok2.Helper.dll</HintPath>
+    <Reference Include="BizTalk.PipelineComponents.PromoteContext, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2dbe33dac94b8972, processorArchitecture=MSIL">
+      <HintPath>..\packages\BizTalk.PipelineComponents.PromoteContext.1.0.1\lib\net45\BizTalk.PipelineComponents.PromoteContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BizTalkComponents.PipelineComponents.XSLTransform, Version=1.0.0.1, Culture=neutral, PublicKeyToken=47190f56632fbc76, processorArchitecture=MSIL">
+      <HintPath>..\packages\BizTalkComponents.PipelineComponents.XSLTransform.1.0.0\lib\net45\BizTalkComponents.PipelineComponents.XSLTransform.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.BizTalk.ExplorerOM, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Microsoft BizTalk Server 2016\Developer Tools\Microsoft.BizTalk.ExplorerOM.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Shared.PipelineComponents.TerminateBasedOnXPath, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2dbe33dac94b8972, processorArchitecture=MSIL" />
+    <Reference Include="Shared.Schemas.Ladok, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Ladok\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Schemas.Ladok.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -92,6 +100,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk.pfx" />
+    <None Include="packages.config" />
+    <Schema Include="Schemas\getNext\getNext.ResultSet.xsd">
+      <SubType>Task</SubType>
+      <TypeName>getNext_resultSet</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Schemas.getNext</Namespace>
+    </Schema>
+    <Schema Include="Schemas\updateId\Procedure.updateId.xsd">
+      <TypeName>procedure_updateId</TypeName>
+      <Namespace>INT0001.Ladok2.Events</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
     <Schema Include="Schemas\updateNext\Procedure.updateNextResponse.xsd">
       <SubType>Task</SubType>
       <TypeName>Procedure_updateNext_Response</TypeName>
@@ -115,11 +134,58 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Maps\Ack_To_updateId.xsl" />
+    <Content Include="Schemas\updateId\INT0001.Ladok2.Send_Update_Custom.bindinginfo.xml" />
+    <Map Include="Maps\studentinformation\MembershipEvent_to_StudentAvlidenmarkeringEvent.btm">
+      <SubType>Task</SubType>
+      <TypeName>MembershipEvent_to_StudentAvlidenmarkeringEvent</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps.studentinformation</Namespace>
+    </Map>
+    <Map Include="Maps\studiedeltagande\MembershipEvent_to_RegistreringEvent.btm">
+      <SubType>Task</SubType>
+      <TypeName>MembershipEvent_to_RegistreringEvent</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps.studiedeltagande</Namespace>
+    </Map>
     <Map Include="Maps\updateNext_To_getNext.btm">
       <TypeName>updateNext_To_getNext</TypeName>
       <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
       <SubType>Task</SubType>
     </Map>
+    <Map Include="Maps\studiedeltagande\MembershipEvent_to_AterbudEvent.btm">
+      <TypeName>MembershipEventSingle_to_AterbudEvent</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\studiedeltagande\MembershipEvent_to_AterkalladOmregistreringEvent.btm">
+      <TypeName>MembershipEventSingle_to_AterkalladOmregistreringEvent</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\studiedeltagande\MembershipEvent_to_AterkalladregistreringEvent.btm">
+      <TypeName>MembershipEventSingle_to_AterkalladregistreringEvent</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\studiedeltagande\MembershipEvent_to_ForvantatDeltagandeSkapadEvent.btm">
+      <TypeName>MembershipEventSingle_to_ForvantatDeltagandeSkapadEvent</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\utbildningsinformation\MembershipEvent_to_KurspaketeringstillfalleTillStatusEvent.btm">
+      <TypeName>MembershipEventSingle_to_KurspaketeringstillfalleTillStatusEvent</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\utbildningsinformation\MembershipEvent_to_KurstillfalleTillStatusEvent.btm">
+      <TypeName>MembershipEventSingle_to_KurstillfalleTillStatusEvent</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\studiedeltagande\MembershipEvent_to_OmregistreringEvent.btm">
+      <TypeName>MembershipEventSingle_to_OmregistreringEvent</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="README.txt" />
     <Content Include="Schemas\getNext\WcfReceivePort_SqlAdapterBinding_Custom.bindinginfo.xml" />
     <Content Include="Schemas\updateNext\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
   </ItemGroup>
