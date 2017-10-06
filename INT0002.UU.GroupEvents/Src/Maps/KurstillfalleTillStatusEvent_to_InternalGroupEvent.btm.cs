@@ -13,10 +13,11 @@ namespace INT0002.UU.GroupEvents.Maps {
   </xsl:template>
   <xsl:template match=""/s3:KurstillfalleTillStatusEvent"">
     <xsl:variable name=""var:v1"" select=""userCSharp:StringTrimLeft(&quot;GroupCreateRequestEvent&quot;)"" />
-    <xsl:variable name=""var:v2"" select=""userCSharp:StringTrimRight(&quot;GroupCreateRequestEvent&quot;)"" />
+    <xsl:variable name=""var:v2"" select=""userCSharp:StringTrimRight(&quot;CourseInstanceGroup&quot;)"" />
     <xsl:variable name=""var:v3"" select=""userCSharp:StringConcat(string(s3:StartperiodID/text()) , &quot;_&quot; , string(s3:Utbildningstillfalleskod/text()))"" />
     <xsl:variable name=""var:v37"" select=""string(s3:StartperiodID/text())"" />
     <xsl:variable name=""var:v38"" select=""string(s3:Utbildningstillfalleskod/text())"" />
+    <xsl:variable name=""var:v40"" select=""userCSharp:StringTrimRight(&quot;Kurstillfalle&quot;)"" />
     <ns0:GroupEvent>
       <xsl:attribute name=""type"">
         <xsl:value-of select=""$var:v1"" />
@@ -83,6 +84,9 @@ namespace INT0002.UU.GroupEvents.Maps {
         <xsl:call-template name=""WritePropertyNodeTemplate"">
           <xsl:with-param name=""GetDB"" select=""string($var:v39)"" />
         </xsl:call-template>
+        <uuig:Type>
+          <xsl:value-of select=""$var:v40"" />
+        </uuig:Type>
       </uuig:Group>
     </ns0:GroupEvent>
   </xsl:template>

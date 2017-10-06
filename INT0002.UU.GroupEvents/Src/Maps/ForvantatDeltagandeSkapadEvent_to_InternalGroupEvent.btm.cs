@@ -13,7 +13,8 @@ namespace INT0002.UU.GroupEvents.Maps {
   </xsl:template>
   <xsl:template match=""/s3:ForvantatDeltagandeSkapadEvent"">
     <xsl:variable name=""var:v1"" select=""userCSharp:StringTrimRight(&quot;GroupMembershipCreateRequestEvent&quot;)"" />
-    <xsl:variable name=""var:v2"" select=""userCSharp:StringTrimRight(&quot;ForvantatDeltagande&quot;)"" />
+    <xsl:variable name=""var:v2"" select=""userCSharp:StringTrimRight(&quot;StudentGroup&quot;)"" />
+    <xsl:variable name=""var:v3"" select=""userCSharp:StringTrimRight(&quot;ForvantatDeltagande&quot;)"" />
     <ns0:GroupEvent>
       <xsl:attribute name=""type"">
         <xsl:value-of select=""$var:v1"" />
@@ -22,11 +23,12 @@ namespace INT0002.UU.GroupEvents.Maps {
         <xsl:attribute name=""type"">
           <xsl:value-of select=""$var:v2"" />
         </xsl:attribute>
-        <uuig:Names>
-          <uuig:Name>
-            <xsl:value-of select=""s3:UtbildningstillfalleUID/text()"" />
-          </uuig:Name>
-        </uuig:Names>
+        <uuig:Id>
+          <xsl:value-of select=""s3:UtbildningstillfalleUID/text()"" />
+        </uuig:Id>
+        <uuig:Type>
+          <xsl:value-of select=""$var:v3"" />
+        </uuig:Type>
       </uuig:Group>
       <ns0:GroupEventData>
         <uuii:NewMember>
