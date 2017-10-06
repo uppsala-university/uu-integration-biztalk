@@ -2,7 +2,7 @@ namespace INT0001.Ladok2.Events.Maps {
     
     
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"INT0001.Ladok2.Events.Schemas.updateNext.Procedure_updateNext_Response", typeof(global::INT0001.Ladok2.Events.Schemas.updateNext.Procedure_updateNext_Response))]
-    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"INT0001.Ladok2.Events.procedure_getNext+TypedPolling", typeof(global::INT0001.Ladok2.Events.procedure_getNext.TypedPolling))]
+    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"INT0001.Ladok2.Events.procedure_getNext", typeof(global::INT0001.Ladok2.Events.procedure_getNext))]
     public sealed class updateNext_To_getNext : global::Microsoft.XLANGs.BaseTypes.TransformBase {
         
         private const string _strMap = @"<?xml version=""1.0"" encoding=""UTF-16""?>
@@ -258,9 +258,9 @@ namespace INT0001.Ladok2.Events.Maps {
         
         private const global::INT0001.Ladok2.Events.Schemas.updateNext.Procedure_updateNext_Response _srcSchemaTypeReference0 = null;
         
-        private const string _strTrgSchemasList0 = @"INT0001.Ladok2.Events.procedure_getNext+TypedPolling";
+        private const string _strTrgSchemasList0 = @"INT0001.Ladok2.Events.procedure_getNext";
         
-        private const global::INT0001.Ladok2.Events.procedure_getNext.TypedPolling _trgSchemaTypeReference0 = null;
+        private const global::INT0001.Ladok2.Events.procedure_getNext _trgSchemaTypeReference0 = null;
         
         public override string XmlContent {
             get {
@@ -291,7 +291,7 @@ namespace INT0001.Ladok2.Events.Maps {
         public override string[] TargetSchemas {
             get {
                 string[] _TrgSchemas = new string [1];
-                _TrgSchemas[0] = @"INT0001.Ladok2.Events.procedure_getNext+TypedPolling";
+                _TrgSchemas[0] = @"INT0001.Ladok2.Events.procedure_getNext";
                 return _TrgSchemas;
             }
         }
