@@ -11,7 +11,28 @@ namespace INT0001.Ladok2.Events.Maps {
   <xsl:template match=""/"">
     <xsl:apply-templates select=""/s0:TypedPollingResultSet0"" />
   </xsl:template>
-  <xsl:template match=""/s0:TypedPollingResultSet0"" />
+  <xsl:template match=""/s0:TypedPollingResultSet0"">
+    <ns0:KurspaketeringstillfalleTillStatusEvent>
+      <ns0:Status>
+        <xsl:text>S</xsl:text>
+      </ns0:Status>
+      <xsl:if test=""s0:courseCode"">
+        <ns0:UtbildningUID>
+          <xsl:value-of select=""s0:courseCode/text()"" />
+        </ns0:UtbildningUID>
+      </xsl:if>
+      <xsl:if test=""s0:startSemester"">
+        <ns0:StartperiodID>
+          <xsl:value-of select=""s0:startSemester/text()"" />
+        </ns0:StartperiodID>
+      </xsl:if>
+      <xsl:if test=""s0:reportCode"">
+        <ns0:Utbildningstillfalleskod>
+          <xsl:value-of select=""s0:reportCode/text()"" />
+        </ns0:Utbildningstillfalleskod>
+      </xsl:if>
+    </ns0:KurspaketeringstillfalleTillStatusEvent>
+  </xsl:template>
 </xsl:stylesheet>";
         
         private const int _useXSLTransform = 0;
