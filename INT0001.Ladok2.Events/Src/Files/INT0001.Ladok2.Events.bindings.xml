@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2017-09-22T10:49:42.3520254+02:00</Timestamp>
+  <Timestamp>2017-10-16T13:47:19.9822173+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0001.Ladok2.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0001.Ladok2.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -34,154 +34,6 @@
     </ModuleRef>
   </ModuleRefCollection>
   <SendPortCollection>
-    <SendPort Name="INT0001.Ladok2.Send_Events" IsStatic="true" IsTwoWay="false" BindingOption="0">
-      <Description>sd-distribution QUEUE</Description>
-      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
-      <PrimaryTransport>
-        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\sd-distribution</Address>
-        <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\sd-distribution&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\sd-distribution&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;256&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;false&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
-        <RetryCount>0</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
-        <Primary>true</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralSend" HostTrusted="false">
-          <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
-        </SendHandler>
-      </PrimaryTransport>
-      <SecondaryTransport>
-        <Address />
-        <RetryCount>3</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
-        <Primary>false</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler xsi:nil="true" />
-      </SecondaryTransport>
-      <ReceivePipelineData xsi:nil="true" />
-      <Tracking>204</Tracking>
-      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Sql/2008/05/TypedPolling/ladokevents#TypedPollingResultSet0" /&gt;
-    &lt;Statement Property="INT0001.Ladok2.Events.Schemas.EventId" Operator="6" /&gt;
-    &lt;Statement Property="BTS.SPName" Operator="0" Value="INT0001.Ladok2.Send_Update" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Sql/2008/05/TypedPolling/ladokevents#TypedPollingResultSet0" /&gt;
-    &lt;Statement Property="INT0001.Ladok2.Events.Schemas.EventId" Operator="6" /&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
-  &lt;/Group&gt;
-&lt;/Filter&gt;</Filter>
-      <Transforms />
-      <OrderedDelivery>false</OrderedDelivery>
-      <Priority>5</Priority>
-      <StopSendingOnFailure>false</StopSendingOnFailure>
-      <RouteFailedMessage>false</RouteFailedMessage>
-      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
-    </SendPort>
-    <SendPort Name="INT0001.BTS.Send_CatchNoSubscribers" IsStatic="true" IsTwoWay="false" BindingOption="0">
-      <Description>ENDAST test hantering av routing</Description>
-      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
-      <PrimaryTransport>
-        <Address>null://INT001.Ladok2.Events</Address>
-        <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;name&amp;gt;INT001.Ladok2.Events&amp;lt;/name&amp;gt;&amp;lt;logMessages&amp;gt;false&amp;lt;/logMessages&amp;gt;&amp;lt;uri&amp;gt;null://INT001.Ladok2.Events&amp;lt;/uri&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
-        <RetryCount>0</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
-        <Primary>true</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralSend" HostTrusted="false">
-          <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
-        </SendHandler>
-      </PrimaryTransport>
-      <SecondaryTransport>
-        <Address />
-        <RetryCount>3</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
-        <Primary>false</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler xsi:nil="true" />
-      </SecondaryTransport>
-      <ReceivePipelineData xsi:nil="true" />
-      <Tracking>204</Tracking>
-      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="ErrorReport.ErrorType" Operator="0" Value="FailedMessage" /&gt;
-    &lt;Statement Property="ErrorReport.SendPortName" Operator="0" Value="INT0001.Ladok2.Send_Update" /&gt;
-  &lt;/Group&gt;
-&lt;/Filter&gt;</Filter>
-      <Transforms />
-      <OrderedDelivery>false</OrderedDelivery>
-      <Priority>5</Priority>
-      <StopSendingOnFailure>false</StopSendingOnFailure>
-      <RouteFailedMessage>true</RouteFailedMessage>
-      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
-    </SendPort>
-    <SendPort Name="INT0001.Ladok2.ProcessAck" IsStatic="true" IsTwoWay="false" BindingOption="0">
-      <Description xsi:nil="true" />
-      <TransmitPipeline Name="INT0001.Ladok2.Events.Pipelines.ProcessAck_SendPipeline" FullyQualifiedName="INT0001.Ladok2.Events.Pipelines.ProcessAck_SendPipeline, INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
-      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4101-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="BizTalkComponents.PipelineComponents.ContextToXml"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e4108-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="BizTalkComponents.PipelineComponents.XSLTTransform"&gt;&lt;Properties&gt;&lt;MapName vt="8"&gt;INT0001.Ladok2.Events.Maps.Ack_To_updateId, INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a&lt;/MapName&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
-      <PrimaryTransport>
-        <Address>C:\integrations\INT0001.Ladok2.Events\sd-distribution\ack-%MessageID%.xml</Address>
-        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;ack-%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
-        <RetryCount>0</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
-        <Primary>true</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralSend" HostTrusted="false">
-          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
-        </SendHandler>
-      </PrimaryTransport>
-      <SecondaryTransport>
-        <Address />
-        <RetryCount>3</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
-        <Primary>false</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler xsi:nil="true" />
-      </SecondaryTransport>
-      <ReceivePipelineData xsi:nil="true" />
-      <Tracking>0</Tracking>
-      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.AckType" Operator="0" Value="ACK" /&gt;
-    &lt;Statement Property="BTS.AckSendPortName" Operator="0" Value="INT0001.Ladok2.Send_Events" /&gt;
-  &lt;/Group&gt;
-&lt;/Filter&gt;</Filter>
-      <Transforms />
-      <OrderedDelivery>false</OrderedDelivery>
-      <Priority>5</Priority>
-      <StopSendingOnFailure>false</StopSendingOnFailure>
-      <RouteFailedMessage>false</RouteFailedMessage>
-      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
-    </SendPort>
     <SendPort Name="INT0001.Ladok2.Send_Update" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description>INT0001.Ladok2.Send_Update</Description>
       <TransmitPipeline Name="INT0001.Ladok2.Events.Pipelines.ProcessAck_SendPipeline" FullyQualifiedName="INT0001.Ladok2.Events.Pipelines.ProcessAck_SendPipeline, INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
@@ -215,14 +67,535 @@
         <SendHandler xsi:nil="true" />
       </SecondaryTransport>
       <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;Group&gt;
+        &lt;Statement Property="BTS.AckReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+        &lt;Statement Property="BTS.AckType" Operator="0" Value="ACK" /&gt;
+        &lt;/Group&gt;
+        &lt;/Filter&gt;
+      </Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0001.Ladok2.Send_StudentAvlidenmarkeringEvent" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description>sd-distribution QUEUE</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\sd-distribution</Address>
+        <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\sd-distribution&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\sd-distribution&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;256&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>true</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;Group&gt;
+        &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Sql/2008/05/TypedPolling/ladokevents#TypedPollingResultSet0" /&gt;
+        &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+        &lt;Statement Property="INT0001.Ladok2.Events.Schemas.EventType" Operator="0" Value="StudentAvlidenmarkeringEvent" /&gt;
+        &lt;/Group&gt;
+        &lt;/Filter&gt;
+      </Filter>
+      <Transforms>
+        <Transform FullName="INT0001.Ladok2.Events.Maps.studentinformation.MembershipEvent_to_StudentAvlidenmarkeringEvent" AssemblyQualifiedName="INT0001.Ladok2.Events.Maps.studentinformation.MembershipEvent_to_StudentAvlidenmarkeringEvent,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+      </Transforms>
+      <OrderedDelivery>true</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0001.Ladok2.Send_AterbudEvent" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description>sd-distribution QUEUE</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION</Address>
+        <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;256&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>true</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;Group&gt;
+        &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Sql/2008/05/TypedPolling/ladokevents#TypedPollingResultSet0" /&gt;
+        &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+        &lt;Statement Property="INT0001.Ladok2.Events.Schemas.EventType" Operator="0" Value="AterbudEvent" /&gt;
+        &lt;/Group&gt;
+        &lt;/Filter&gt;
+      </Filter>
+      <Transforms />
+      <OrderedDelivery>true</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0001.Ladok2.Send_AterkalladOmregistreringEvent" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description>sd-distribution QUEUE</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION</Address>
+        <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;256&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>true</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;Group&gt;
+        &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Sql/2008/05/TypedPolling/ladokevents#TypedPollingResultSet0" /&gt;
+        &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+        &lt;Statement Property="INT0001.Ladok2.Events.Schemas.EventType" Operator="0" Value="AterkalladOmregistreringEvent" /&gt;
+        &lt;/Group&gt;
+        &lt;/Filter&gt;
+      </Filter>
+      <Transforms>
+        <Transform FullName="INT0001.Ladok2.Events.Maps.MembershipEventSingle_to_AterkalladOmregistreringEvent" AssemblyQualifiedName="INT0001.Ladok2.Events.Maps.MembershipEventSingle_to_AterkalladOmregistreringEvent,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+      </Transforms>
+      <OrderedDelivery>true</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0001.Ladok2.Send_AterkalladregistreringEvent" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description>sd-distribution QUEUE</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION</Address>
+        <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;256&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>true</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;Group&gt;
+        &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Sql/2008/05/TypedPolling/ladokevents#TypedPollingResultSet0" /&gt;
+        &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+        &lt;Statement Property="INT0001.Ladok2.Events.Schemas.EventType" Operator="0" Value="AterkalladregistreringEvent" /&gt;
+        &lt;/Group&gt;
+        &lt;/Filter&gt;
+      </Filter>
+      <Transforms>
+        <Transform FullName="INT0001.Ladok2.Events.Maps.MembershipEventSingle_to_AterkalladregistreringEvent" AssemblyQualifiedName="INT0001.Ladok2.Events.Maps.MembershipEventSingle_to_AterkalladregistreringEvent,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+      </Transforms>
+      <OrderedDelivery>true</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0001.Ladok2.Send_ForvantatDeltagandeSkapadEvent" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description>sd-distribution QUEUE</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION</Address>
+        <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;256&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>true</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;Group&gt;
+        &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Sql/2008/05/TypedPolling/ladokevents#TypedPollingResultSet0" /&gt;
+        &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+        &lt;Statement Property="INT0001.Ladok2.Events.Schemas.EventType" Operator="0" Value="ForvantatDeltagandeSkapadEvent" /&gt;
+        &lt;/Group&gt;
+        &lt;/Filter&gt;
+      </Filter>
+      <Transforms>
+        <Transform FullName="INT0001.Ladok2.Events.Maps.MembershipEventSingle_to_ForvantatDeltagandeSkapadEvent" AssemblyQualifiedName="INT0001.Ladok2.Events.Maps.MembershipEventSingle_to_ForvantatDeltagandeSkapadEvent,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+      </Transforms>
+      <OrderedDelivery>true</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0001.Ladok2.Send_OmregistreringEvent" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description>sd-distribution QUEUE</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION</Address>
+        <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;256&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>true</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;Group&gt;
+        &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Sql/2008/05/TypedPolling/ladokevents#TypedPollingResultSet0" /&gt;
+        &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+        &lt;Statement Property="INT0001.Ladok2.Events.Schemas.EventType" Operator="0" Value="OmregistreringEvent" /&gt;
+        &lt;/Group&gt;
+        &lt;/Filter&gt;
+      </Filter>
+      <Transforms>
+        <Transform FullName="INT0001.Ladok2.Events.Maps.MembershipEventSingle_to_OmregistreringEvent" AssemblyQualifiedName="INT0001.Ladok2.Events.Maps.MembershipEventSingle_to_OmregistreringEvent,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+      </Transforms>
+      <OrderedDelivery>true</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0001.Ladok2.Send_RegistreringEvent" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description>sd-distribution QUEUE</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION</Address>
+        <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;256&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>true</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;Group&gt;
+        &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Sql/2008/05/TypedPolling/ladokevents#TypedPollingResultSet0" /&gt;
+        &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+        &lt;Statement Property="INT0001.Ladok2.Events.Schemas.EventType" Operator="0" Value="RegistreringEvent" /&gt;
+        &lt;/Group&gt;
+        &lt;/Filter&gt;
+      </Filter>
+      <Transforms>
+        <Transform FullName="INT0001.Ladok2.Events.Maps.studiedeltagande.MembershipEvent_to_RegistreringEvent" AssemblyQualifiedName="INT0001.Ladok2.Events.Maps.studiedeltagande.MembershipEvent_to_RegistreringEvent,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+      </Transforms>
+      <OrderedDelivery>true</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0001.Ladok2.Send_KurspaketeringstillfalleTillStatusEvent" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description>sd-distribution QUEUE</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION</Address>
+        <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;256&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>true</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;Group&gt;
+        &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Sql/2008/05/TypedPolling/ladokevents#TypedPollingResultSet0" /&gt;
+        &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+        &lt;Statement Property="INT0001.Ladok2.Events.Schemas.EventType" Operator="0" Value="KurspaketeringstillfalleTillStatusEvent" /&gt;
+        &lt;/Group&gt;
+        &lt;/Filter&gt;
+      </Filter>
+      <Transforms>
+        <Transform FullName="INT0001.Ladok2.Events.Maps.MembershipEventSingle_to_KurspaketeringstillfalleTillStatusEvent" AssemblyQualifiedName="INT0001.Ladok2.Events.Maps.MembershipEventSingle_to_KurspaketeringstillfalleTillStatusEvent,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+      </Transforms>
+      <OrderedDelivery>true</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0001.Ladok2.Send_KurstillfalleTillStatusEvent" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description>sd-distribution QUEUE</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION</Address>
+        <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;256&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>true</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter>
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;Group&gt;
+        &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Sql/2008/05/TypedPolling/ladokevents#TypedPollingResultSet0" /&gt;
+        &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+        &lt;Statement Property="INT0001.Ladok2.Events.Schemas.EventType" Operator="0" Value="KurstillfalleTillStatusEvent" /&gt;
+        &lt;/Group&gt;
+        &lt;/Filter&gt;
+      </Filter>
+      <Transforms>
+        <Transform FullName="INT0001.Ladok2.Events.Maps.MembershipEventSingle_to_KurstillfalleTillStatusEvent" AssemblyQualifiedName="INT0001.Ladok2.Events.Maps.MembershipEventSingle_to_KurstillfalleTillStatusEvent,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+      </Transforms>
+      <OrderedDelivery>true</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0001.Ladok2.NoSubscriber.Send_Routing" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>null://ladok2-unknown-subscriber</Address>
+        <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;name&amp;gt;ladok2-unknown-subscriber&amp;lt;/name&amp;gt;&amp;lt;logMessages&amp;gt;false&amp;lt;/logMessages&amp;gt;&amp;lt;uri&amp;gt;null://ladok2-unknown-subscriber&amp;lt;/uri&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-15T22:00:00</FromTime>
+        <ToTime>2017-10-16T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-15T22:00:00</FromTime>
+        <ToTime>2017-10-16T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
       <Tracking>0</Tracking>
-      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.AckSendPortName" Operator="0" Value="INT0001.Ladok2.Send_Events" /&gt;
-    &lt;Statement Property="BTS.AckType" Operator="0" Value="ACK" /&gt;
-  &lt;/Group&gt;
-&lt;/Filter&gt;</Filter>
+      <Filter>
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;Group&gt;
+        &lt;Statement Property="ErrorReport.FailureCode" Operator="0" Value="0xc0c016a2" /&gt;
+        &lt;Statement Property="ErrorReport.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+        &lt;/Group&gt;
+        &lt;Group&gt;
+        &lt;Statement Property="ErrorReport.FailureCode" Operator="0" Value="0xc0c01680" /&gt;
+        &lt;Statement Property="ErrorReport.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+        &lt;/Group&gt;
+        &lt;/Filter&gt;
+      </Filter>
       <Transforms />
       <OrderedDelivery>false</OrderedDelivery>
       <Priority>5</Priority>
@@ -249,9 +622,9 @@
           <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
           <ReceiveLocationEndDate>2017-09-07T23:59:59</ReceiveLocationEndDate>
           <ReceiveLocationTransportType Name="WCF-SQL" Capabilities="779" ConfigurationClsid="59b35d03-6a06-4734-a249-ef561254ecf7" />
-          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" polledDataAvailableStatement="exec [INT0001.Ladok2.Events.checkNext]" pollingStatement="exec [INT0001.Ladok2.Events.getNext]" pollingIntervalInSeconds="5" inboundOperationType="TypedPolling" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;DisableLocationOnFailure vt="11"&gt;0&lt;/DisableLocationOnFailure&gt;&lt;UserName vt="8" /&gt;&lt;ServiceBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="ServiceBehavior" /&amp;gt;&lt;/ServiceBehaviorConfiguration&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;IncludeExceptionDetailInFaults vt="11"&gt;0&lt;/IncludeExceptionDetailInFaults&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;CredentialType vt="8"&gt;None&lt;/CredentialType&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;SuspendMessageOnFailure vt="11"&gt;0&lt;/SuspendMessageOnFailure&gt;&lt;OrderedProcessing vt="11"&gt;0&lt;/OrderedProcessing&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" polledDataAvailableStatement="exec [INT0001.Ladok2.Events.checkNext]" pollingStatement="exec [INT0001.Ladok2.Events.getNext]" pollingIntervalInSeconds="5" inboundOperationType="TypedPolling" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;DisableLocationOnFailure vt="11"&gt;0&lt;/DisableLocationOnFailure&gt;&lt;UserName vt="8" /&gt;&lt;ServiceBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="ServiceBehavior" /&amp;gt;&lt;/ServiceBehaviorConfiguration&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;IncludeExceptionDetailInFaults vt="11"&gt;-1&lt;/IncludeExceptionDetailInFaults&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;CredentialType vt="8"&gt;None&lt;/CredentialType&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;SuspendMessageOnFailure vt="11"&gt;-1&lt;/SuspendMessageOnFailure&gt;&lt;OrderedProcessing vt="11"&gt;0&lt;/OrderedProcessing&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
           <ReceivePipeline Name="INT0001.Ladok2.Events.Pipelines.PromoteAck_ReceivePipeline" FullyQualifiedName="INT0001.Ladok2.Events.Pipelines.PromoteAck_ReceivePipeline, INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
-          <ReceivePipelineData xsi:nil="true" />
+          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlDasmComp"&gt;&lt;Properties&gt;&lt;RecoverableInterchangeProcessing vt="11"&gt;-1&lt;/RecoverableInterchangeProcessing&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e410d-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="BizTalkComponents.PipelineComponents.SetProperty.SetProperty"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
           <Enable>true</Enable>
@@ -264,7 +637,7 @@
       <Authentication>0</Authentication>
       <Tracking>51</Tracking>
       <Transforms />
-      <RouteFailedMessage>false</RouteFailedMessage>
+      <RouteFailedMessage>true</RouteFailedMessage>
       <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
     </ReceivePort>
   </ReceivePortCollection>
