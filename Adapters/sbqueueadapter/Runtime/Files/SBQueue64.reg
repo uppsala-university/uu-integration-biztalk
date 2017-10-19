@@ -1,0 +1,51 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{615E18EE-7694-4CBD-80EC-3691511ACCF2}]
+@="SBQueue adapter"
+
+[HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{615E18EE-7694-4CBD-80EC-3691511ACCF2}\BizTalk]
+@="BizTalk"
+'Type of the transport adapter
+"TransportType"="SBQueue"
+
+'Constraints define the capabilities of the adapter: e.g send, receive, request-response, etc
+"Constraints"=dword:1809
+
+'============= Registration for receive side of adapter ==============
+'Adapter framwork property page for receive handler configuration
+"InboundProtocol_PageProv"="{2DE93EE6-CB01-4007-93E9-C3D71689A281}"
+
+'Adapter framework property page for receive location configuration
+"ReceiveLocation_PageProv"="{2DE93EE6-CB01-4007-93E9-C3D71689A280}"
+
+'Class ID of the class that implements receiving part of adapter
+"InboundEngineCLSID"="{12F8CA70-4DE4-44E8-8F78-D947523F8AAA}"
+
+'Type name of the class that implements receiving part of the adapter
+"InboundTypeName"="BizTalk.Adapter.SBQueue.SBQueueReceiver"
+
+'Path to the assembly that implements receiving part of the adapter
+"InboundAssemblyPath"="%BTSCOMMONFILES%\\SBQueueAdapter\\BizTalk.Adapter.SBQueue.dll"
+
+'SSO registration of the adapter framework property page for receive handler
+"ReceiveHandlerPropertiesXML"="<CustomProps><AdapterConfig vt=\"8\"/></CustomProps>"
+
+'SSO registration of the adapter framework property page for receive location
+"ReceiveLocationPropertiesXML"="<CustomProps><AdapterConfig vt=\"8\"/></CustomProps>"
+'============= End of registration for receive side of adapter ==============
+
+"AliasesXML"="<AdapterAliasList><AdapterAlias>sbqueue://</AdapterAlias></AdapterAliasList>"
+
+'Namespace of the adapter properties. The properties will be stored on message context under this namespace
+"PropertyNameSpace"="http://schemas.microsoft.com/BizTalk/2012/Adapter/BrokeredMessage-properties"
+
+'Type name of the class that provides UI for adapter property pages
+"AdapterMgmtTypeName"="BizTalk.Adapter.SBQueueAdmin.SBQueueAdapterManagement"
+
+'Path to the assembly that implments UI for adapter property pages
+"AdapterMgmtAssemblyPath"="%BTSCOMMONFILES%\\SBQueueAdapter\\BizTalk.Adapter.SBQueueAdmin.dll"
+
+
+[HKEY_CLASSES_ROOT\CLSID\{615E18EE-7694-4CBD-80EC-3691511ACCF2}\Implemented Categories]
+
+[HKEY_CLASSES_ROOT\CLSID\{615E18EE-7694-4CBD-80EC-3691511ACCF2}\Implemented Categories\{7F46FC3E-3C2C-405B-A47F-8D17942BA8F9}]
