@@ -30,13 +30,7 @@
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="IndividualGroupEvent" />
             <om:Property Name="Signal" Value="True" />
-            <om:Element Type="PropertyRef" OID="a6e16f28-9ad1-4abb-8052-e1abad151ea8" ParentLink="CorrelationType_PropertyRef" LowerBound="13.9" HigherBound="13.45">
-                <om:Property Name="Ref" Value="Shared.Schemas.Common.GroupEventType" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="PropertyRef_1" />
-                <om:Property Name="Signal" Value="False" />
-            </om:Element>
-            <om:Element Type="PropertyRef" OID="11a9f0c6-6e9b-4b5f-83eb-f2ac9abcdd17" ParentLink="CorrelationType_PropertyRef" LowerBound="13.47" HigherBound="13.81">
+            <om:Element Type="PropertyRef" OID="42b26221-e6c2-4130-8c2a-7d20ccac8340" ParentLink="CorrelationType_PropertyRef" LowerBound="13.9" HigherBound="13.43">
                 <om:Property Name="Ref" Value="Shared.Schemas.Common.PersonNumber" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="PropertyRef_1" />
@@ -81,7 +75,7 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="IndividualGroupEventSet" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="StatementRef" OID="c96d00ff-9b90-4c9d-a2f6-038a950fb4a5" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="33.172" HigherBound="33.206">
+                <om:Element Type="StatementRef" OID="c96d00ff-9b90-4c9d-a2f6-038a950fb4a5" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="33.253" HigherBound="33.287">
                     <om:Property Name="Initializes" Value="True" />
                     <om:Property Name="Ref" Value="c51e65f5-427c-4823-b7b6-b810a4ad701c" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -128,9 +122,16 @@
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="ReceiveGroupEvent" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="DNFPredicate" OID="a89d238e-2b81-4053-92e3-7da756ea11cb" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="768fb315-9b91-41aa-babc-7c79b3ace853" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="Shared.Schemas.Common.GroupEventType" />
                         <om:Property Name="RHS" Value="&quot;GroupMembershipCreateRequestEvent&quot;" />
+                        <om:Property Name="Grouping" Value="OR" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="f4a37f34-f887-4253-bf28-68db8722a0da" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="Shared.Schemas.Common.GroupEventType" />
+                        <om:Property Name="RHS" Value="&quot;GroupMembershipRemoveRequestEvent&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
@@ -328,7 +329,7 @@ module INT0003.AD.Distribution
     };
     internal correlationtype IndividualGroupEvent
     {
-        Shared.Schemas.Common.GroupEventType, Shared.Schemas.Common.PersonNumber
+        Shared.Schemas.Common.PersonNumber
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
     internal service GroupEventsIndividualToAD
@@ -348,7 +349,7 @@ module INT0003.AD.Distribution
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("c51e65f5-427c-4823-b7b6-b810a4ad701c")]
-            activate ((Shared.Schemas.Common.GroupEventType == "GroupMembershipCreateRequestEvent"))receive (ReceiveGroupEventPort.ReceiveGroupEventOperation, GroupEvent, initialize IndividualGroupEventSet);
+            activate ((Shared.Schemas.Common.GroupEventType == "GroupMembershipCreateRequestEvent") || (Shared.Schemas.Common.GroupEventType == "GroupMembershipRemoveRequestEvent"))receive (ReceiveGroupEventPort.ReceiveGroupEventOperation, GroupEvent, initialize IndividualGroupEventSet);
             xPathMessageType = "";
             messageType = "";
             loop = true;
