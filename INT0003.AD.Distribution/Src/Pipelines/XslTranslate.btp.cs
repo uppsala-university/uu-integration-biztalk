@@ -29,7 +29,7 @@ namespace INT0003.AD.Distribution.Pipelines
 "n</CachedDisplayName>          <CachedIsManaged>true</CachedIsManaged>        </Component>      </Co"+
 "mponents>    </Stage>  </Stages></Document>";
         
-        private const string _versionDependentGuid = "c4018ee4-d84d-4011-b647-8273a18c17aa";
+        private const string _versionDependentGuid = "235cc8b9-a7d7-4b6c-8767-e4cdbce24eea";
         
         public XslTranslate()
         {
