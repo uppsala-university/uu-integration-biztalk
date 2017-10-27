@@ -28,7 +28,7 @@ namespace INT0003.AD.Distribution.Pipelines
 "urs=\"0\" maxOccurs=\"-1\" execMethod=\"All\" stageId=\"9d0e4108-4cce-4536-83fa-4a5040674ad6\" />      <Comp"+
 "onents />    </Stage>  </Stages></Document>";
         
-        private const string _versionDependentGuid = "4cb94ad4-9b87-4197-b0e3-e612c1d5c57d";
+        private const string _versionDependentGuid = "6bddb900-07f3-4786-b33b-4e05e4f9ddd4";
         
         public XSLTransform()
         {
