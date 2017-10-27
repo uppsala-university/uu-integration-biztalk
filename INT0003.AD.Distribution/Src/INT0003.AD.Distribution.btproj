@@ -47,6 +47,10 @@
       <HintPath>..\packages\BizTalkComponents.PipelineComponents.SetProperty.1.7.0.0\lib\net40\BizTalkComponents.PipelineComponents.SetProperty.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="BizTalkComponents.PipelineComponents.XSLTransform, Version=1.0.0.1, Culture=neutral, PublicKeyToken=47190f56632fbc76, processorArchitecture=MSIL">
+      <HintPath>..\packages\BizTalkComponents.PipelineComponents.XSLTransform.1.0.0\lib\net45\BizTalkComponents.PipelineComponents.XSLTransform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Shared.Schemas.ADEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -103,9 +107,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Map Include="Maps\InternalGroupEvent_to_ADSendAdapterOneWayUpdate.btm">
-      <TypeName>InternalGroupEvent_to_ADSendAdapterOneWayUpdate</TypeName>
-      <Namespace>INT0003.AD.Distribution</Namespace>
+    <Map Include="Maps\InternalGroupEvent_to_ADAddIndividualToGroup.btm">
+      <TypeName>InternalGroupEvent_to_ADAddIndividualToGroup</TypeName>
+      <Namespace>INT0003.AD.Distribution.Maps</Namespace>
       <SubType>Task</SubType>
     </Map>
     <Map Include="Maps\ADQueryResultsChangeObjectAdded_to_ADNewGroup.btm">
@@ -145,6 +149,17 @@
     </Pipeline>
     <Content Include="Files\INT0003.AD.Distribution.BindingInfo.xml" />
     <Content Include="Maps\InternalGroupEvent_to_ADAddGroupOutgoing.xsl" />
+    <XLang Include="Processing\SendIndividualUpdateToAD.odx">
+      <TypeName>SendIndividualUpdateToAD</TypeName>
+      <Namespace>INT0003.AD.Distribution.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <Pipeline Include="Pipelines\XSLTransform.btp">
+      <TypeName>XSLTransform</TypeName>
+      <Namespace>INT0003.AD.Distribution.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+    <Content Include="Maps\InternalGroupEvent_to_ADAddIndividualToGroup.xsl" />
     <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -168,7 +183,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <XLang Include="Processing\CheckAndWaitForADGroup.odx">
+    <XLang Include="Processing\AddIndividualToADGroup.odx">
       <SubType>Task</SubType>
       <TypeName>CheckAndWaitForADGroup</TypeName>
       <Namespace>INT0003.AD.Distribution.Processing</Namespace>

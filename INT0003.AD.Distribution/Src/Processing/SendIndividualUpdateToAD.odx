@@ -1,0 +1,377 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="536b24f9-51a3-45ee-8448-623b96f51e86" LowerBound="1.1" HigherBound="105.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="INT0003.AD.Distribution" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="dff3a752-48de-4ec4-ac1b-131f4d30a364" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendAcceptedUpdatePortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="eca12041-d2ed-4ae7-90a6-68e816803e71" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="8c681742-3fc6-4d39-8642-d7d370a65072" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.58">
+                    <om:Property Name="Ref" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="157aad09-726d-4402-ab35-7813fdec18ca" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendRegisteredPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="104547d2-7958-49b3-89f6-380880e46d1c" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="c08dc44b-0fad-4f1f-8d4a-f48f64133d9d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.58">
+                    <om:Property Name="Ref" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="c263d33e-5d1e-4a4b-88aa-a43d97ff15bf" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendReregisteredPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="93e968eb-7c32-48cf-bc85-5bb5489808d6" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="a4f27bef-7953-4a6d-b317-69a6812a8287" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.58">
+                    <om:Property Name="Ref" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="7a98dbbd-9180-4a6c-bf69-35df0a050a49" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="104.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendIndividualUpdateToAD" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="90b33716-e585-44df-a9d9-b54fc9ce3488" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xpathStr" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="8594de7c-7b13-4990-be3a-5df1ec7661d4" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageDeclaration" OID="f9577bb3-daed-44d7-80e5-559de00ccff6" ParentLink="ServiceBody_Declaration" LowerBound="35.15" HigherBound="35.79">
+                    <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                    <om:Property Name="ParamDirection" Value="In" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GroupEvent" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableDeclaration" OID="31c0d50b-a12e-49e9-be51-bba13a05ff00" ParentLink="ServiceBody_Declaration" LowerBound="35.81" HigherBound="35.106">
+                    <om:Property Name="UseDefaultConstructor" Value="False" />
+                    <om:Property Name="Type" Value="System.String" />
+                    <om:Property Name="ParamDirection" Value="In" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="groupSuffix" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Decision" OID="f44f5272-3a21-44b1-8851-492c21a10f15" ParentLink="ServiceBody_Statement" LowerBound="38.1" HigherBound="102.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="CheckGroupSuffix" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="838a3e0a-1872-4d7c-ab04-e6dc45f3f486" ParentLink="ReallyComplexStatement_Branch" LowerBound="39.13" HigherBound="60.1">
+                        <om:Property Name="Expression" Value="groupSuffix == &quot;accepted&quot;" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Accepted" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Scope" OID="e3ec9eca-8ca0-48cf-baa8-47d9af25d1bc" ParentLink="ComplexStatement_Statement" LowerBound="41.1" HigherBound="59.1">
+                            <om:Property Name="InitializedTransactionType" Value="True" />
+                            <om:Property Name="IsSynchronized" Value="False" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="AddConnectionToADScope" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Send" OID="aff1051f-2412-44c2-beb9-40478538f7b1" ParentLink="ComplexStatement_Statement" LowerBound="46.1" HigherBound="48.1">
+                                <om:Property Name="PortName" Value="SendAcceptedUpdatePort" />
+                                <om:Property Name="MessageName" Value="GroupEvent" />
+                                <om:Property Name="OperationName" Value="Operation_1" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="SendADIndividualUpdate" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Catch" OID="dd44eb3c-e50d-467d-b982-6aeaf9711aac" ParentLink="Scope_Catch" LowerBound="51.1" HigherBound="57.1">
+                                <om:Property Name="ExceptionName" Value="ex" />
+                                <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
+                                <om:Property Name="IsFaultMessage" Value="False" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="CatchDeliveryFailureException" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Suspend" OID="d509f8a5-bd4d-4f97-a494-70ed4b5f2fa9" ParentLink="Catch_Statement" LowerBound="54.1" HigherBound="56.1">
+                                    <om:Property Name="ErrorMessage" Value="&quot;Fel när kurstillfälle skulle läggas in i AD: &quot; + xpathStr;" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Suspend" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="abf2077a-db55-4789-848e-59a64ec2f957" ParentLink="ReallyComplexStatement_Branch" LowerBound="60.18" HigherBound="81.1">
+                        <om:Property Name="Expression" Value="groupSuffix == &quot;registered&quot;" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Registered" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Scope" OID="be063796-edb1-4307-bbc2-488b0b923e28" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="80.1">
+                            <om:Property Name="InitializedTransactionType" Value="True" />
+                            <om:Property Name="IsSynchronized" Value="False" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="AddConnectionToADScope" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Send" OID="a0700956-091e-4112-8797-503a6f7d6983" ParentLink="ComplexStatement_Statement" LowerBound="67.1" HigherBound="69.1">
+                                <om:Property Name="PortName" Value="SendRegisteredPort" />
+                                <om:Property Name="MessageName" Value="GroupEvent" />
+                                <om:Property Name="OperationName" Value="Operation_1" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="SendADIndividualUpdate" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Catch" OID="472f4f56-e184-478f-b857-f119fc6a209d" ParentLink="Scope_Catch" LowerBound="72.1" HigherBound="78.1">
+                                <om:Property Name="ExceptionName" Value="ex" />
+                                <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
+                                <om:Property Name="IsFaultMessage" Value="False" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="CatchDeliveryFailureException" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Suspend" OID="3fedb72c-d36a-47a7-973b-5b0d73061dc1" ParentLink="Catch_Statement" LowerBound="75.1" HigherBound="77.1">
+                                    <om:Property Name="ErrorMessage" Value="&quot;Fel när kurstillfälle skulle läggas in i AD: &quot; + xpathStr;" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Suspend" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="f2a5a16f-7e8c-4b0d-8d3f-81aea1fefdb8" ParentLink="ReallyComplexStatement_Branch" LowerBound="81.18" HigherBound="102.1">
+                        <om:Property Name="Expression" Value="groupSuffix == &quot;reregistered&quot;" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Reregistered" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Scope" OID="d9381e94-e32b-45b4-8517-bf1dcf95e48e" ParentLink="ComplexStatement_Statement" LowerBound="83.1" HigherBound="101.1">
+                            <om:Property Name="InitializedTransactionType" Value="True" />
+                            <om:Property Name="IsSynchronized" Value="False" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="AddConnectionToADScope" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Send" OID="fa6d0da0-b0ab-423d-b807-fe51a327801a" ParentLink="ComplexStatement_Statement" LowerBound="88.1" HigherBound="90.1">
+                                <om:Property Name="PortName" Value="SendReregisteredPort" />
+                                <om:Property Name="MessageName" Value="GroupEvent" />
+                                <om:Property Name="OperationName" Value="Operation_1" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="SendADIndividualUpdate" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Catch" OID="83116dd8-9af4-4811-a657-21c496289ed1" ParentLink="Scope_Catch" LowerBound="93.1" HigherBound="99.1">
+                                <om:Property Name="ExceptionName" Value="ex" />
+                                <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
+                                <om:Property Name="IsFaultMessage" Value="False" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="CatchDeliveryFailureException" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Suspend" OID="0195da7e-b598-48cd-bcd7-991994518008" ParentLink="Catch_Statement" LowerBound="96.1" HigherBound="98.1">
+                                    <om:Property Name="ErrorMessage" Value="&quot;Fel när kurstillfälle skulle läggas in i AD: &quot; + xpathStr;" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Suspend" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="2afcceb7-d3dd-4f29-8ed6-5028382a3ad6" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="3d472e26-28c7-437b-b352-d99e02f83ada" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="13" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.SendAcceptedUpdatePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendAcceptedUpdatePort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="c6cc0b69-564e-4387-895d-ae016239b3d4" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="bde53c85-1160-443d-8a1f-0cc101c50f10" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="30.1" HigherBound="32.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="16" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.SendRegisteredPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendRegisteredPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="26b03d3b-2062-4c27-be9c-03a562f9e58e" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="53029f63-7950-4250-9ee9-0f8be8ba4f8b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="19" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.SendReregisteredPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendReregisteredPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="b81dfcc7-cf04-479b-9280-dbbf61565661" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module INT0003.AD.Distribution
+{
+    internal porttype SendAcceptedUpdatePortType
+    {
+        oneway Operation_1
+        {
+            Shared.Schemas.GroupEvents.InternalGroupEvent
+        };
+    };
+    internal porttype SendRegisteredPortType
+    {
+        oneway Operation_1
+        {
+            Shared.Schemas.GroupEvents.InternalGroupEvent
+        };
+    };
+    internal porttype SendReregisteredPortType
+    {
+        oneway Operation_1
+        {
+            Shared.Schemas.GroupEvents.InternalGroupEvent
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service SendIndividualUpdateToAD
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendAcceptedUpdatePortType SendAcceptedUpdatePort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendRegisteredPortType SendRegisteredPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendReregisteredPortType SendReregisteredPort;
+        System.String xpathStr;
+        body (message Shared.Schemas.GroupEvents.InternalGroupEvent GroupEvent, System.String groupSuffix)
+        {
+            xpathStr = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f44f5272-3a21-44b1-8851-492c21a10f15")]
+            if (groupSuffix == "accepted")
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e3ec9eca-8ca0-48cf-baa8-47d9af25d1bc")]
+                scope
+                {
+                    body
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("aff1051f-2412-44c2-beb9-40478538f7b1")]
+                        send (SendAcceptedUpdatePort.Operation_1, GroupEvent);
+                    }
+                    exceptions
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("dd44eb3c-e50d-467d-b982-6aeaf9711aac")]
+                        catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d509f8a5-bd4d-4f97-a494-70ed4b5f2fa9")]
+                            suspend "Fel när kurstillfälle skulle läggas in i AD: " + xpathStr;
+                        }
+                    }
+                }
+            }
+            else if (groupSuffix == "registered")
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("be063796-edb1-4307-bbc2-488b0b923e28")]
+                scope
+                {
+                    body
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("a0700956-091e-4112-8797-503a6f7d6983")]
+                        send (SendRegisteredPort.Operation_1, GroupEvent);
+                    }
+                    exceptions
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("472f4f56-e184-478f-b857-f119fc6a209d")]
+                        catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3fedb72c-d36a-47a7-973b-5b0d73061dc1")]
+                            suspend "Fel när kurstillfälle skulle läggas in i AD: " + xpathStr;
+                        }
+                    }
+                }
+            }
+            else if (groupSuffix == "reregistered")
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("d9381e94-e32b-45b4-8517-bf1dcf95e48e")]
+                scope
+                {
+                    body
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("fa6d0da0-b0ab-423d-b807-fe51a327801a")]
+                        send (SendReregisteredPort.Operation_1, GroupEvent);
+                    }
+                    exceptions
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("83116dd8-9af4-4811-a657-21c496289ed1")]
+                        catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0195da7e-b598-48cd-bcd7-991994518008")]
+                            suspend "Fel när kurstillfälle skulle läggas in i AD: " + xpathStr;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
