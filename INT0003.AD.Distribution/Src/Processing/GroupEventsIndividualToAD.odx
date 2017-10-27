@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="1f08f38f-c019-40fd-a476-8aa2fcbefccf" LowerBound="1.1" HigherBound="82.1">
+    <om:Element Type="Module" OID="1f08f38f-c019-40fd-a476-8aa2fcbefccf" LowerBound="1.1" HigherBound="112.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="INT0003.AD.Distribution" />
         <om:Property Name="Signal" Value="False" />
@@ -37,14 +37,14 @@
                 <om:Property Name="Signal" Value="False" />
             </om:Element>
         </om:Element>
-        <om:Element Type="ServiceDeclaration" OID="07670a2f-418e-4950-ad0a-c245492d987f" ParentLink="Module_ServiceDeclaration" LowerBound="15.1" HigherBound="81.1">
+        <om:Element Type="ServiceDeclaration" OID="07670a2f-418e-4950-ad0a-c245492d987f" ParentLink="Module_ServiceDeclaration" LowerBound="15.1" HigherBound="111.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="GroupEventsIndividualToAD" />
             <om:Property Name="Signal" Value="False" />
-            <om:Element Type="VariableDeclaration" OID="82291cba-f492-40e2-bc83-7d5f4a4bb3c2" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+            <om:Element Type="VariableDeclaration" OID="82291cba-f492-40e2-bc83-7d5f4a4bb3c2" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="24.1" HigherBound="25.1">
                 <om:Property Name="UseDefaultConstructor" Value="False" />
                 <om:Property Name="Type" Value="System.String" />
                 <om:Property Name="ParamDirection" Value="In" />
@@ -52,15 +52,15 @@
                 <om:Property Name="Name" Value="xPathMessageType" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
-            <om:Element Type="VariableDeclaration" OID="4c67959c-5800-460a-9548-4db6f16b5210" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+            <om:Element Type="VariableDeclaration" OID="4c67959c-5800-460a-9548-4db6f16b5210" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="25.1" HigherBound="26.1">
                 <om:Property Name="UseDefaultConstructor" Value="False" />
                 <om:Property Name="Type" Value="System.String" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="messageType" />
+                <om:Property Name="Name" Value="eventType" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
-            <om:Element Type="VariableDeclaration" OID="a4dc21d6-e0cd-44fa-a985-7b1314356f37" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="29.1" HigherBound="30.1">
+            <om:Element Type="VariableDeclaration" OID="a4dc21d6-e0cd-44fa-a985-7b1314356f37" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="26.1" HigherBound="27.1">
                 <om:Property Name="InitialValue" Value="true" />
                 <om:Property Name="UseDefaultConstructor" Value="False" />
                 <om:Property Name="Type" Value="System.Boolean" />
@@ -69,20 +69,36 @@
                 <om:Property Name="Name" Value="loop" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
-            <om:Element Type="CorrelationDeclaration" OID="17d73013-ed26-4a4f-8f8f-ba4ff7a0d3a5" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="23.1" HigherBound="24.1">
+            <om:Element Type="VariableDeclaration" OID="dad9bf4e-86a7-4feb-94c0-92d497be368d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mainGroupEventType" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="4c0c7ad3-5772-4391-8a9e-e929644bfa61" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="groupSuffix" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="CorrelationDeclaration" OID="17d73013-ed26-4a4f-8f8f-ba4ff7a0d3a5" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="21.1" HigherBound="22.1">
                 <om:Property Name="Type" Value="INT0003.AD.Distribution.IndividualGroupEvent" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="IndividualGroupEventSet" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="StatementRef" OID="c96d00ff-9b90-4c9d-a2f6-038a950fb4a5" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="33.253" HigherBound="33.287">
+                <om:Element Type="StatementRef" OID="c96d00ff-9b90-4c9d-a2f6-038a950fb4a5" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="32.253" HigherBound="32.287">
                     <om:Property Name="Initializes" Value="True" />
                     <om:Property Name="Ref" Value="c51e65f5-427c-4823-b7b6-b810a4ad701c" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="StatementRef_1" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
-                <om:Element Type="StatementRef" OID="dbca111f-dd02-4791-a6e7-ea5ff80038fe" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="68.98" HigherBound="68.121">
+                <om:Element Type="StatementRef" OID="dbca111f-dd02-4791-a6e7-ea5ff80038fe" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="98.98" HigherBound="98.121">
                     <om:Property Name="Initializes" Value="False" />
                     <om:Property Name="Ref" Value="58b4a239-87fc-4b0d-b6a9-f2d92edb2c70" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -90,30 +106,23 @@
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
-            <om:Element Type="MessageDeclaration" OID="01c1c54e-81ad-4560-9436-642ab9e3a238" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="24.1" HigherBound="25.1">
+            <om:Element Type="MessageDeclaration" OID="01c1c54e-81ad-4560-9436-642ab9e3a238" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="22.1" HigherBound="23.1">
                 <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="GroupEvent" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
-            <om:Element Type="MessageDeclaration" OID="cc627e42-7ada-4d02-a862-b761020c40b2" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
-                <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.ADNewIndividual" />
-                <om:Property Name="ParamDirection" Value="Out" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ADNewIndividual" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="MessageDeclaration" OID="ba9e89c6-091a-4110-82cb-9cfe41d74788" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
-                <om:Property Name="Type" Value="Shared.Schemas.ADEvents.ADSendAdapterOneWayUpdate" />
+            <om:Element Type="MessageDeclaration" OID="f941cb62-f41c-48c2-8bd7-95f3eda22175" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="23.1" HigherBound="24.1">
+                <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ADIndividualUpdate" />
+                <om:Property Name="Name" Value="GroupEventUpdated" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="ServiceBody" OID="fea427d0-9cfa-44e7-9385-388e70000eea" ParentLink="ServiceDeclaration_ServiceBody">
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="Receive" OID="c51e65f5-427c-4823-b7b6-b810a4ad701c" ParentLink="ServiceBody_Statement" LowerBound="32.1" HigherBound="37.1">
+                <om:Element Type="Receive" OID="c51e65f5-427c-4823-b7b6-b810a4ad701c" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="38.1">
                     <om:Property Name="Activate" Value="True" />
                     <om:Property Name="PortName" Value="ReceiveGroupEventPort" />
                     <om:Property Name="MessageName" Value="GroupEvent" />
@@ -137,119 +146,284 @@
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
                 </om:Element>
-                <om:Element Type="VariableAssignment" OID="33e866c6-6667-4f6d-bfd7-b5c60e93e7d4" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="39.1">
+                <om:Element Type="VariableAssignment" OID="33e866c6-6667-4f6d-bfd7-b5c60e93e7d4" ParentLink="ServiceBody_Statement" LowerBound="38.1" HigherBound="40.1">
                     <om:Property Name="Expression" Value="loop = true;" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="InitializeLoop" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
-                <om:Element Type="While" OID="d36df2af-0210-4bba-8c9a-4d7a20b0044b" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="79.1">
+                <om:Element Type="While" OID="d36df2af-0210-4bba-8c9a-4d7a20b0044b" ParentLink="ServiceBody_Statement" LowerBound="40.1" HigherBound="109.1">
                     <om:Property Name="Expression" Value="loop == true" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Wait for GroupEvents" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="Parallel" OID="8ef7a172-6a65-4bd2-9131-7058dc483dc2" ParentLink="ComplexStatement_Statement" LowerBound="42.1" HigherBound="56.1">
+                    <om:Element Type="Call" OID="32b25979-4ffa-4a94-ae07-d9f58e457bf6" ParentLink="ComplexStatement_Statement" LowerBound="43.1" HigherBound="45.1">
+                        <om:Property Name="Identifier" Value="WaitForADIndividual" />
+                        <om:Property Name="Invokee" Value="INT0003.AD.Distribution.CheckAndWaitForADIndividual" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="CheckIfGroupAndPersonExistsInAD" />
-                        <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="ParallelBranch" OID="8f22f3cb-ed75-4aa0-9ce2-43f82eef65fe" ParentLink="ReallyComplexStatement_Branch" LowerBound="47.1" HigherBound="49.1">
-                            <om:Property Name="IsGhostBranch" Value="True" />
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="ParallelBranch_1" />
+                        <om:Property Name="Name" Value="CheckAndWaitForADIndividual" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Parameter" OID="04d63759-a481-4db3-9479-c689302c912d" ParentLink="InvokeStatement_Parameter">
+                            <om:Property Name="Direction" Value="In" />
+                            <om:Property Name="Name" Value="GroupEvent" />
+                            <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
                             <om:Property Name="Signal" Value="False" />
-                            <om:Element Type="Call" OID="29bc9bd8-e740-4653-8e9a-8c132f2135d3" ParentLink="ComplexStatement_Statement" LowerBound="47.1" HigherBound="49.1">
-                                <om:Property Name="Identifier" Value="WaitForADGroup" />
-                                <om:Property Name="Invokee" Value="INT0003.AD.Distribution.CheckAndWaitForADGroup" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="CheckAndWaitForADGroup" />
-                                <om:Property Name="Signal" Value="False" />
-                                <om:Element Type="Parameter" OID="84eff541-d10e-4f56-a1ff-f605936403d8" ParentLink="InvokeStatement_Parameter">
-                                    <om:Property Name="Direction" Value="In" />
-                                    <om:Property Name="Name" Value="GroupEvent" />
-                                    <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
-                                    <om:Property Name="Signal" Value="False" />
-                                </om:Element>
-                            </om:Element>
                         </om:Element>
-                        <om:Element Type="ParallelBranch" OID="2aaa03c4-6d57-453d-9da1-6866075c55fc" ParentLink="ReallyComplexStatement_Branch" LowerBound="52.1" HigherBound="54.1">
+                        <om:Element Type="Parameter" OID="426226bb-fe17-4e1d-b295-f9baf0237506" ParentLink="InvokeStatement_Parameter">
+                            <om:Property Name="Direction" Value="Out" />
+                            <om:Property Name="Name" Value="GroupEventUpdated" />
+                            <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="90686b87-7e6e-4d5d-bb65-837a4b79d630" ParentLink="ComplexStatement_Statement" LowerBound="45.1" HigherBound="49.1">
+                        <om:Property Name="Expression" Value="mainGroupEventType = xpath(GroupEventUpdated,&quot;/*[local-name()='GroupEvent' and namespace-uri()='http://UU.Integrations.Common.Schemas.InternalGroupEvent']/@*[local-name()='type' and namespace-uri()='']&quot;);&#xD;&#xA;&#xD;&#xA;eventType = xpath(GroupEventUpdated,&quot;string(/*[local-name()='GroupEvent' and namespace-uri()='http://UU.Integrations.Common.Schemas.InternalGroupEvent']/*[local-name()='Group' and namespace-uri()='http://UU.Integrations.Common.Schemas.Internal.Group']/*[local-name()='Type' and namespace-uri()='http://UU.Integrations.Common.Schemas.Internal.Group'])&quot;);&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="GetEventTypes" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Decision" OID="39658906-e492-4ef2-9d40-4cc241621d3f" ParentLink="ComplexStatement_Statement" LowerBound="49.1" HigherBound="94.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CheckMainEventType" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="DecisionBranch" OID="4e78bb9d-d63d-4838-b8aa-70afa405d314" ParentLink="ReallyComplexStatement_Branch" LowerBound="50.17" HigherBound="79.1">
+                            <om:Property Name="Expression" Value="mainGroupEventType == &quot;GroupMembershipCreateRequestEvent&quot;" />
                             <om:Property Name="IsGhostBranch" Value="True" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="ParallelBranch_2" />
+                            <om:Property Name="Name" Value="GroupMembershipCreateRequestEvent" />
                             <om:Property Name="Signal" Value="False" />
-                            <om:Element Type="Call" OID="32b25979-4ffa-4a94-ae07-d9f58e457bf6" ParentLink="ComplexStatement_Statement" LowerBound="52.1" HigherBound="54.1">
-                                <om:Property Name="Identifier" Value="WaitForADIndividual" />
-                                <om:Property Name="Invokee" Value="INT0003.AD.Distribution.CheckAndWaitForADIndividual" />
+                            <om:Element Type="Decision" OID="a6673e9a-41ab-4dcc-a335-dcd463884f5b" ParentLink="ComplexStatement_Statement" LowerBound="52.1" HigherBound="78.1">
                                 <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="CheckAndWaitForADIndividual" />
+                                <om:Property Name="Name" Value="CheckGroupEventType" />
                                 <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="Parameter" OID="ee63ef53-7017-4203-8db9-c3727c58e6df" ParentLink="InvokeStatement_Parameter">
+                                <om:Element Type="DecisionBranch" OID="715518da-ed94-436e-91c0-410d3a7a8200" ParentLink="ReallyComplexStatement_Branch" LowerBound="53.21" HigherBound="60.1">
+                                    <om:Property Name="Expression" Value="eventType == &quot;ForvantatDeltagande&quot;" />
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="ForvantatDeltagande" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="VariableAssignment" OID="372c48d8-f5ab-4d25-997e-5f95adccc9cc" ParentLink="ComplexStatement_Statement" LowerBound="55.1" HigherBound="57.1">
+                                        <om:Property Name="Expression" Value="groupSuffix = &quot;accepted&quot;;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="SetGroupSuffix" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="Call" OID="4046d63f-dbcf-429d-9e21-dd71f2353275" ParentLink="ComplexStatement_Statement" LowerBound="57.1" HigherBound="59.1">
+                                        <om:Property Name="Identifier" Value="CallOrchestration_1" />
+                                        <om:Property Name="Invokee" Value="INT0003.AD.Distribution.AddIndividualToADGroup" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="AddIndividualToADGroup" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="Parameter" OID="f8b2cb7b-1096-446e-a0d1-0cb165e23954" ParentLink="InvokeStatement_Parameter">
+                                            <om:Property Name="Direction" Value="In" />
+                                            <om:Property Name="Name" Value="GroupEventUpdated" />
+                                            <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="Parameter" OID="646cd3b7-b36d-4215-bbf1-b063503f02ba" ParentLink="InvokeStatement_Parameter">
+                                            <om:Property Name="Direction" Value="In" />
+                                            <om:Property Name="Name" Value="groupSuffix" />
+                                            <om:Property Name="Type" Value="System.String" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="DecisionBranch" OID="8adbe44e-26f6-40db-b425-a71a084d0856" ParentLink="ReallyComplexStatement_Branch" LowerBound="60.26" HigherBound="67.1">
+                                    <om:Property Name="Expression" Value="eventType == &quot;Registrering&quot;" />
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Registrering" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="VariableAssignment" OID="64654b9d-73b5-46d8-8f5c-cf84812e3b9b" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="64.1">
+                                        <om:Property Name="Expression" Value="groupSuffix = &quot;registered&quot;;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="SetGroupSuffix" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                    <om:Element Type="Call" OID="b17c7726-4446-42d9-951f-ea1d5ed2fec4" ParentLink="ComplexStatement_Statement" LowerBound="64.1" HigherBound="66.1">
+                                        <om:Property Name="Identifier" Value="CallOrchestration_2" />
+                                        <om:Property Name="Invokee" Value="INT0003.AD.Distribution.AddIndividualToADGroup" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="AddIndividualToADGroup" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="Parameter" OID="8d940533-ac60-45ca-98af-132adb8e2a58" ParentLink="InvokeStatement_Parameter">
+                                            <om:Property Name="Direction" Value="In" />
+                                            <om:Property Name="Name" Value="GroupEventUpdated" />
+                                            <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="Parameter" OID="196a2ab2-57b9-4dc3-82ab-2a92e05e6cf9" ParentLink="InvokeStatement_Parameter">
+                                            <om:Property Name="Direction" Value="In" />
+                                            <om:Property Name="Name" Value="groupSuffix" />
+                                            <om:Property Name="Type" Value="System.String" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="DecisionBranch" OID="f2b899dd-a167-4128-b525-4129a3014709" ParentLink="ReallyComplexStatement_Branch" LowerBound="67.26" HigherBound="78.1">
+                                    <om:Property Name="Expression" Value="eventType == &quot;Omregistrering&quot;" />
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Omregistrering" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="VariableAssignment" OID="4dc055e7-56ec-4b43-870f-070e70a7b9c1" ParentLink="ComplexStatement_Statement" LowerBound="69.1" HigherBound="71.1">
+                                        <om:Property Name="Expression" Value="groupSuffix = &quot;registered&quot;;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="SetGroupSuffix" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                    <om:Element Type="Call" OID="abed26b4-b16d-4b9a-97c1-2727464019be" ParentLink="ComplexStatement_Statement" LowerBound="71.1" HigherBound="73.1">
+                                        <om:Property Name="Identifier" Value="CallOrchestration_3" />
+                                        <om:Property Name="Invokee" Value="INT0003.AD.Distribution.AddIndividualToADGroup" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="AddIndividualToADGroup" />
+                                        <om:Property Name="Signal" Value="False" />
+                                        <om:Element Type="Parameter" OID="bf708c40-35b1-455f-8b1a-6a90857de946" ParentLink="InvokeStatement_Parameter">
+                                            <om:Property Name="Direction" Value="In" />
+                                            <om:Property Name="Name" Value="GroupEventUpdated" />
+                                            <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="Parameter" OID="bdc00926-1842-40c7-bf9f-857c42b74b73" ParentLink="InvokeStatement_Parameter">
+                                            <om:Property Name="Direction" Value="In" />
+                                            <om:Property Name="Name" Value="groupSuffix" />
+                                            <om:Property Name="Type" Value="System.String" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                    </om:Element>
+                                    <om:Element Type="VariableAssignment" OID="7b08163b-f134-40ba-95d9-6f081af7f752" ParentLink="ComplexStatement_Statement" LowerBound="73.1" HigherBound="75.1">
+                                        <om:Property Name="Expression" Value="groupSuffix = &quot;reregistered&quot;;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="SetGroupSuffix" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="Call" OID="290c4569-92ef-43c6-a51f-9c3fee586be4" ParentLink="ComplexStatement_Statement" LowerBound="75.1" HigherBound="77.1">
+                                        <om:Property Name="Identifier" Value="CallOrchestration_4" />
+                                        <om:Property Name="Invokee" Value="INT0003.AD.Distribution.AddIndividualToADGroup" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="AddIndividualToADGroup" />
+                                        <om:Property Name="Signal" Value="False" />
+                                        <om:Element Type="Parameter" OID="32a58aa0-8982-4954-8510-3a33ac919396" ParentLink="InvokeStatement_Parameter">
+                                            <om:Property Name="Direction" Value="In" />
+                                            <om:Property Name="Name" Value="GroupEventUpdated" />
+                                            <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="Parameter" OID="84d0e524-cf46-4231-8b59-308853bb10a1" ParentLink="InvokeStatement_Parameter">
+                                            <om:Property Name="Direction" Value="In" />
+                                            <om:Property Name="Name" Value="groupSuffix" />
+                                            <om:Property Name="Type" Value="System.String" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="DecisionBranch" OID="cd86faba-d049-4f7e-b810-2f804c884080" ParentLink="ReallyComplexStatement_Branch">
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Else" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="DecisionBranch" OID="2c501107-e5d3-49ad-824a-97e9ab261f0a" ParentLink="ReallyComplexStatement_Branch" LowerBound="79.22" HigherBound="94.1">
+                            <om:Property Name="Expression" Value="mainGroupEventType == &quot;GroupMembershipRemoveRequestEvent&quot;" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="GroupMembershipRemoveRequestEvent" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="VariableAssignment" OID="1cd36e45-722f-4c1d-aefa-7e8f2916ce5f" ParentLink="ComplexStatement_Statement" LowerBound="81.1" HigherBound="83.1">
+                                <om:Property Name="Expression" Value="groupSuffix = &quot;_accepted&quot;;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="SetGroupSuffix" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Call" OID="fb58b04a-464a-4e04-984a-a35fe085dafa" ParentLink="ComplexStatement_Statement" LowerBound="83.1" HigherBound="85.1">
+                                <om:Property Name="Identifier" Value="CallSendIndividualUpdateToAD" />
+                                <om:Property Name="Invokee" Value="INT0003.AD.Distribution.SendIndividualUpdateToAD" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="SendIndividualUpdateToAD" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Parameter" OID="b66c6eac-deee-4c1b-920e-3a3ecbbaddf8" ParentLink="InvokeStatement_Parameter">
                                     <om:Property Name="Direction" Value="In" />
-                                    <om:Property Name="Name" Value="GroupEvent" />
+                                    <om:Property Name="Name" Value="GroupEventUpdated" />
                                     <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
                                     <om:Property Name="Signal" Value="False" />
                                 </om:Element>
-                                <om:Element Type="Parameter" OID="41912f64-bb3f-4ad9-af37-e719e1a09dce" ParentLink="InvokeStatement_Parameter">
-                                    <om:Property Name="Direction" Value="Out" />
-                                    <om:Property Name="Name" Value="ADNewIndividual" />
-                                    <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.ADNewIndividual" />
+                                <om:Element Type="Parameter" OID="4b6f817d-4ac8-465f-b0a0-b078449b88a6" ParentLink="InvokeStatement_Parameter">
+                                    <om:Property Name="Direction" Value="In" />
+                                    <om:Property Name="Name" Value="xPathMessageType" />
+                                    <om:Property Name="Type" Value="System.String" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="5dd12508-213c-425c-918f-d4573926606b" ParentLink="ComplexStatement_Statement" LowerBound="85.1" HigherBound="87.1">
+                                <om:Property Name="Expression" Value="groupSuffix = &quot;_registered&quot;;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="SetGroupSuffix" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Call" OID="aea0c44c-ddda-4519-8291-2840443d3a4f" ParentLink="ComplexStatement_Statement" LowerBound="87.1" HigherBound="89.1">
+                                <om:Property Name="Identifier" Value="CallOrchestration_5" />
+                                <om:Property Name="Invokee" Value="INT0003.AD.Distribution.SendIndividualUpdateToAD" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="SendIndividualUpdateToAD" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Parameter" OID="24210f13-c648-4536-b664-e7d91d2cbea9" ParentLink="InvokeStatement_Parameter">
+                                    <om:Property Name="Direction" Value="In" />
+                                    <om:Property Name="Name" Value="GroupEventUpdated" />
+                                    <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Parameter" OID="f7aca27e-4e28-4d78-9809-09d48e580ac2" ParentLink="InvokeStatement_Parameter">
+                                    <om:Property Name="Direction" Value="In" />
+                                    <om:Property Name="Name" Value="xPathMessageType" />
+                                    <om:Property Name="Type" Value="System.String" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="c71443a0-4490-4f83-9790-20e5413ce476" ParentLink="ComplexStatement_Statement" LowerBound="89.1" HigherBound="91.1">
+                                <om:Property Name="Expression" Value="groupSuffix = &quot;registered&quot;;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="SetGroupSuffix" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Call" OID="f09b1038-e9d1-4103-9c78-2052ace19593" ParentLink="ComplexStatement_Statement" LowerBound="91.1" HigherBound="93.1">
+                                <om:Property Name="Identifier" Value="CallOrchestration_6" />
+                                <om:Property Name="Invokee" Value="INT0003.AD.Distribution.SendIndividualUpdateToAD" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="SendIndividualUpdateToAD" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Parameter" OID="bbbea0f9-8a0b-4503-ac02-4786ab567d42" ParentLink="InvokeStatement_Parameter">
+                                    <om:Property Name="Direction" Value="In" />
+                                    <om:Property Name="Name" Value="GroupEventUpdated" />
+                                    <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Parameter" OID="663202c4-b313-4054-af3b-8dc3a2eca5e2" ParentLink="InvokeStatement_Parameter">
+                                    <om:Property Name="Direction" Value="In" />
+                                    <om:Property Name="Name" Value="xPathMessageType" />
+                                    <om:Property Name="Type" Value="System.String" />
                                     <om:Property Name="Signal" Value="False" />
                                 </om:Element>
                             </om:Element>
                         </om:Element>
-                    </om:Element>
-                    <om:Element Type="Construct" OID="17b9d4f1-e28c-4a59-92a4-f94e83d97b16" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="62.1">
-                        <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="ConstructADIndividualUpdate" />
-                        <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="Transform" OID="2d73ab3d-0ee2-48de-a3fc-38801b5d9469" ParentLink="ComplexStatement_Statement" LowerBound="59.1" HigherBound="61.1">
-                            <om:Property Name="ClassName" Value="INT0003.AD.Distribution.InternalGroupEvent_to_ADSendAdapterOneWayUpdate" />
+                        <om:Element Type="DecisionBranch" OID="2d41baee-f575-4df3-9c6c-a2f3e99cc3a7" ParentLink="ReallyComplexStatement_Branch">
+                            <om:Property Name="IsGhostBranch" Value="True" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="GroupEvent_To_ADIndividualUpdate" />
-                            <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="MessagePartRef" OID="f388419b-2bec-4d6f-ae22-8deb5570b5db" ParentLink="Transform_InputMessagePartRef" LowerBound="60.127" HigherBound="60.137">
-                                <om:Property Name="MessageRef" Value="GroupEvent" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="MessagePartReference_1" />
-                                <om:Property Name="Signal" Value="False" />
-                            </om:Element>
-                            <om:Element Type="MessagePartRef" OID="e7ee321d-59ed-4edb-aed2-d6f2695f3d4f" ParentLink="Transform_InputMessagePartRef" LowerBound="60.139" HigherBound="60.154">
-                                <om:Property Name="MessageRef" Value="ADNewIndividual" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="MessagePartReference_2" />
-                                <om:Property Name="Signal" Value="False" />
-                            </om:Element>
-                            <om:Element Type="MessagePartRef" OID="9ef70537-2db3-4613-a6e3-8b3c8d566b55" ParentLink="Transform_OutputMessagePartRef" LowerBound="60.32" HigherBound="60.50">
-                                <om:Property Name="MessageRef" Value="ADIndividualUpdate" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="MessagePartReference_3" />
-                                <om:Property Name="Signal" Value="False" />
-                            </om:Element>
-                        </om:Element>
-                        <om:Element Type="MessageRef" OID="9a2e68a0-e31b-485b-9519-1798b3b5bc12" ParentLink="Construct_MessageRef" LowerBound="57.27" HigherBound="57.45">
-                            <om:Property Name="Ref" Value="ADIndividualUpdate" />
-                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Else" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
                     </om:Element>
-                    <om:Element Type="Send" OID="78855f22-1843-48b4-9f28-f5f2ac11aab2" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="64.1">
-                        <om:Property Name="PortName" Value="SendADIndividualUpdatePort" />
-                        <om:Property Name="MessageName" Value="ADIndividualUpdate" />
-                        <om:Property Name="OperationName" Value="Operation_1" />
-                        <om:Property Name="OperationMessageName" Value="Request" />
-                        <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="SendADIndividualUpdate" />
-                        <om:Property Name="Signal" Value="True" />
-                    </om:Element>
-                    <om:Element Type="Listen" OID="40f5dbc7-1ab2-4ab3-8ce1-3fb45a3fbec8" ParentLink="ComplexStatement_Statement" LowerBound="64.1" HigherBound="78.1">
+                    <om:Element Type="Listen" OID="40f5dbc7-1ab2-4ab3-8ce1-3fb45a3fbec8" ParentLink="ComplexStatement_Statement" LowerBound="94.1" HigherBound="108.1">
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="NextBatchOrTimeout" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="ListenBranch" OID="6b48418a-01a1-4bf3-aee8-c16ebd7a218b" ParentLink="ReallyComplexStatement_Branch" LowerBound="64.1" HigherBound="64.1">
+                        <om:Element Type="ListenBranch" OID="6b48418a-01a1-4bf3-aee8-c16ebd7a218b" ParentLink="ReallyComplexStatement_Branch" LowerBound="94.1" HigherBound="94.1">
                             <om:Property Name="IsGhostBranch" Value="True" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="ListenBranch_1" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="Receive" OID="58b4a239-87fc-4b0d-b6a9-f2d92edb2c70" ParentLink="ListenBranch_Statement" LowerBound="67.1" HigherBound="68.122">
+                            <om:Element Type="Receive" OID="58b4a239-87fc-4b0d-b6a9-f2d92edb2c70" ParentLink="ListenBranch_Statement" LowerBound="97.1" HigherBound="98.122">
                                 <om:Property Name="Activate" Value="False" />
                                 <om:Property Name="PortName" Value="ReceiveGroupEventPort" />
                                 <om:Property Name="MessageName" Value="GroupEvent" />
@@ -260,18 +434,18 @@
                                 <om:Property Name="Signal" Value="True" />
                             </om:Element>
                         </om:Element>
-                        <om:Element Type="ListenBranch" OID="6eb19b06-5ae1-4a60-b722-39db4f66ff33" ParentLink="ReallyComplexStatement_Branch" LowerBound="64.1" HigherBound="64.1">
+                        <om:Element Type="ListenBranch" OID="6eb19b06-5ae1-4a60-b722-39db4f66ff33" ParentLink="ReallyComplexStatement_Branch" LowerBound="94.1" HigherBound="94.1">
                             <om:Property Name="IsGhostBranch" Value="True" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="ListenBranch_2" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="Delay" OID="0d6aef11-311c-43e4-8670-739b99f8c94e" ParentLink="ListenBranch_Statement" LowerBound="71.1" HigherBound="72.57">
+                            <om:Element Type="Delay" OID="0d6aef11-311c-43e4-8670-739b99f8c94e" ParentLink="ListenBranch_Statement" LowerBound="101.1" HigherBound="102.57">
                                 <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,5,0)" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="WaitForNextMessageEventBatch" />
                                 <om:Property Name="Signal" Value="True" />
                             </om:Element>
-                            <om:Element Type="VariableAssignment" OID="1e5d2735-055a-46c7-b0e0-f79332e06334" ParentLink="ComplexStatement_Statement" LowerBound="74.1" HigherBound="76.1">
+                            <om:Element Type="VariableAssignment" OID="1e5d2735-055a-46c7-b0e0-f79332e06334" ParentLink="ComplexStatement_Statement" LowerBound="104.1" HigherBound="106.1">
                                 <om:Property Name="Expression" Value="loop = false;" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="ExitLoop" />
@@ -281,23 +455,7 @@
                     </om:Element>
                 </om:Element>
             </om:Element>
-            <om:Element Type="PortDeclaration" OID="092afcf1-5f95-4d33-85d1-8afa84563e39" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="18.1" HigherBound="20.1">
-                <om:Property Name="PortModifier" Value="Uses" />
-                <om:Property Name="Orientation" Value="Right" />
-                <om:Property Name="PortIndex" Value="47" />
-                <om:Property Name="IsWebPort" Value="False" />
-                <om:Property Name="OrderedDelivery" Value="False" />
-                <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="INT0003.AD.Distribution.SendADIndividualUpdatePortType" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="SendADIndividualUpdatePort" />
-                <om:Property Name="Signal" Value="False" />
-                <om:Element Type="LogicalBindingAttribute" OID="8f42874b-0374-4d5d-9b0f-b08028ca2532" ParentLink="PortDeclaration_CLRAttribute" LowerBound="18.1" HigherBound="19.1">
-                    <om:Property Name="Signal" Value="False" />
-                </om:Element>
-            </om:Element>
-            <om:Element Type="PortDeclaration" OID="1649f06e-c48b-4543-9f6a-2775375ff6d8" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="20.1" HigherBound="23.1">
+            <om:Element Type="PortDeclaration" OID="1649f06e-c48b-4543-9f6a-2775375ff6d8" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="18.1" HigherBound="21.1">
                 <om:Property Name="PortModifier" Value="Implements" />
                 <om:Property Name="Orientation" Value="Left" />
                 <om:Property Name="PortIndex" Value="-1" />
@@ -309,7 +467,7 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReceiveGroupEventPort" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="LogicalBindingAttribute" OID="2086a3fc-6b21-4ada-8c3c-62111a4538ce" ParentLink="PortDeclaration_CLRAttribute" LowerBound="20.1" HigherBound="21.1">
+                <om:Element Type="LogicalBindingAttribute" OID="2086a3fc-6b21-4ada-8c3c-62111a4538ce" ParentLink="PortDeclaration_CLRAttribute" LowerBound="18.1" HigherBound="19.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
@@ -335,51 +493,81 @@ module INT0003.AD.Distribution
     internal service GroupEventsIndividualToAD
     {
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port uses SendADIndividualUpdatePortType SendADIndividualUpdatePort;
-        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         [Microsoft.XLANGs.BaseTypes.OrderedDelivery()]
         port implements ReceiveGroupEventPortType ReceiveGroupEventPort;
         correlation IndividualGroupEvent IndividualGroupEventSet;
         message Shared.Schemas.GroupEvents.InternalGroupEvent GroupEvent;
-        message Shared.Schemas.GroupEvents.ADNewIndividual ADNewIndividual;
-        message Shared.Schemas.ADEvents.ADSendAdapterOneWayUpdate ADIndividualUpdate;
+        message Shared.Schemas.GroupEvents.InternalGroupEvent GroupEventUpdated;
         System.String xPathMessageType;
-        System.String messageType;
+        System.String eventType;
         System.Boolean loop;
+        System.String mainGroupEventType;
+        System.String groupSuffix;
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("c51e65f5-427c-4823-b7b6-b810a4ad701c")]
             activate ((Shared.Schemas.Common.GroupEventType == "GroupMembershipCreateRequestEvent") || (Shared.Schemas.Common.GroupEventType == "GroupMembershipRemoveRequestEvent"))receive (ReceiveGroupEventPort.ReceiveGroupEventOperation, GroupEvent, initialize IndividualGroupEventSet);
             xPathMessageType = "";
-            messageType = "";
+            eventType = "";
             loop = true;
+            mainGroupEventType = "";
+            groupSuffix = "";
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("33e866c6-6667-4f6d-bfd7-b5c60e93e7d4")]
             loop = true;
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("d36df2af-0210-4bba-8c9a-4d7a20b0044b")]
             while (loop == true)
             {
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("8ef7a172-6a65-4bd2-9131-7058dc483dc2")]
-                parallel
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("32b25979-4ffa-4a94-ae07-d9f58e457bf6")]
+                call INT0003.AD.Distribution.CheckAndWaitForADIndividual (GroupEvent, out GroupEventUpdated);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("90686b87-7e6e-4d5d-bb65-837a4b79d630")]
+                mainGroupEventType = xpath(GroupEventUpdated,"/*[local-name()='GroupEvent' and namespace-uri()='http://UU.Integrations.Common.Schemas.InternalGroupEvent']/@*[local-name()='type' and namespace-uri()='']");
+                
+                eventType = xpath(GroupEventUpdated,"string(/*[local-name()='GroupEvent' and namespace-uri()='http://UU.Integrations.Common.Schemas.InternalGroupEvent']/*[local-name()='Group' and namespace-uri()='http://UU.Integrations.Common.Schemas.Internal.Group']/*[local-name()='Type' and namespace-uri()='http://UU.Integrations.Common.Schemas.Internal.Group'])");
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("39658906-e492-4ef2-9d40-4cc241621d3f")]
+                if (mainGroupEventType == "GroupMembershipCreateRequestEvent")
                 {
-                    task
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a6673e9a-41ab-4dcc-a335-dcd463884f5b")]
+                    if (eventType == "ForvantatDeltagande")
                     {
-                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("29bc9bd8-e740-4653-8e9a-8c132f2135d3")]
-                        call INT0003.AD.Distribution.CheckAndWaitForADGroup (GroupEvent);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("372c48d8-f5ab-4d25-997e-5f95adccc9cc")]
+                        groupSuffix = "accepted";
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("4046d63f-dbcf-429d-9e21-dd71f2353275")]
+                        call INT0003.AD.Distribution.AddIndividualToADGroup (GroupEventUpdated, groupSuffix);
                     }
-                    task
+                    else if (eventType == "Registrering")
                     {
-                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("32b25979-4ffa-4a94-ae07-d9f58e457bf6")]
-                        call INT0003.AD.Distribution.CheckAndWaitForADIndividual (GroupEvent, out ADNewIndividual);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("64654b9d-73b5-46d8-8f5c-cf84812e3b9b")]
+                        groupSuffix = "registered";
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("b17c7726-4446-42d9-951f-ea1d5ed2fec4")]
+                        call INT0003.AD.Distribution.AddIndividualToADGroup (GroupEventUpdated, groupSuffix);
+                    }
+                    else if (eventType == "Omregistrering")
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("4dc055e7-56ec-4b43-870f-070e70a7b9c1")]
+                        groupSuffix = "registered";
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("abed26b4-b16d-4b9a-97c1-2727464019be")]
+                        call INT0003.AD.Distribution.AddIndividualToADGroup (GroupEventUpdated, groupSuffix);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("7b08163b-f134-40ba-95d9-6f081af7f752")]
+                        groupSuffix = "reregistered";
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("290c4569-92ef-43c6-a51f-9c3fee586be4")]
+                        call INT0003.AD.Distribution.AddIndividualToADGroup (GroupEventUpdated, groupSuffix);
                     }
                 }
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("17b9d4f1-e28c-4a59-92a4-f94e83d97b16")]
-                construct ADIndividualUpdate
+                else if (mainGroupEventType == "GroupMembershipRemoveRequestEvent")
                 {
-                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("2d73ab3d-0ee2-48de-a3fc-38801b5d9469")]
-                    transform (ADIndividualUpdate) = INT0003.AD.Distribution.InternalGroupEvent_to_ADSendAdapterOneWayUpdate (GroupEvent, ADNewIndividual);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("1cd36e45-722f-4c1d-aefa-7e8f2916ce5f")]
+                    groupSuffix = "_accepted";
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("fb58b04a-464a-4e04-984a-a35fe085dafa")]
+                    call INT0003.AD.Distribution.SendIndividualUpdateToAD (GroupEventUpdated, xPathMessageType);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("5dd12508-213c-425c-918f-d4573926606b")]
+                    groupSuffix = "_registered";
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("aea0c44c-ddda-4519-8291-2840443d3a4f")]
+                    call INT0003.AD.Distribution.SendIndividualUpdateToAD (GroupEventUpdated, xPathMessageType);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c71443a0-4490-4f83-9790-20e5413ce476")]
+                    groupSuffix = "registered";
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f09b1038-e9d1-4103-9c78-2052ace19593")]
+                    call INT0003.AD.Distribution.SendIndividualUpdateToAD (GroupEventUpdated, xPathMessageType);
                 }
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("78855f22-1843-48b4-9f28-f5f2ac11aab2")]
-                send (SendADIndividualUpdatePort.Operation_1, ADIndividualUpdate);
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("40f5dbc7-1ab2-4ab3-8ce1-3fb45a3fbec8")]
                 listen
                 {
