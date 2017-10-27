@@ -59,10 +59,12 @@
     <Reference Include="Shared.Schemas.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Common\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Schemas.Common.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Shared.Schemas.GroupEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.GroupEvents\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Schemas.GroupEvents.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Shared.Schemas.PersonEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -107,9 +109,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Map Include="Maps\InternalGroupEvent_to_ADAddIndividualToGroup.btm">
-      <TypeName>InternalGroupEvent_to_ADAddIndividualToGroup</TypeName>
-      <Namespace>INT0003.AD.Distribution.Maps</Namespace>
+    <Map Include="Maps\InternalGroupEvent_to_ADSendAdapterOneWayUpdate.btm">
+      <TypeName>InternalGroupEvent_to_ADSendAdapterOneWayUpdate</TypeName>
+      <Namespace>INT0003.AD.Distribution</Namespace>
       <SubType>Task</SubType>
     </Map>
     <Map Include="Maps\ADQueryResultsChangeObjectAdded_to_ADNewGroup.btm">
@@ -149,17 +151,16 @@
     </Pipeline>
     <Content Include="Files\INT0003.AD.Distribution.BindingInfo.xml" />
     <Content Include="Maps\InternalGroupEvent_to_ADAddGroupOutgoing.xsl" />
-    <XLang Include="Processing\SendIndividualUpdateToAD.odx">
-      <TypeName>SendIndividualUpdateToAD</TypeName>
+    <XLang Include="Processing\GroupEventsGroupToAD.odx">
+      <TypeName>GroupEventsGroupToAD_Copy</TypeName>
       <Namespace>INT0003.AD.Distribution.Processing</Namespace>
       <SubType>Task</SubType>
     </XLang>
-    <Pipeline Include="Pipelines\XSLTransform.btp">
-      <TypeName>XSLTransform</TypeName>
+    <Pipeline Include="Pipelines\XslTranslate.btp">
+      <TypeName>XslTranslate</TypeName>
       <Namespace>INT0003.AD.Distribution.Pipelines</Namespace>
       <SubType>Task</SubType>
     </Pipeline>
-    <Content Include="Maps\InternalGroupEvent_to_ADAddIndividualToGroup.xsl" />
     <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -183,7 +184,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <XLang Include="Processing\AddIndividualToADGroup.odx">
+    <XLang Include="Processing\CheckAndWaitForADGroup.odx">
       <SubType>Task</SubType>
       <TypeName>CheckAndWaitForADGroup</TypeName>
       <Namespace>INT0003.AD.Distribution.Processing</Namespace>
@@ -191,10 +192,6 @@
     <XLang Include="Processing\CheckAndWaitForADIndividual.odx">
       <SubType>Task</SubType>
       <TypeName>CheckAndWaitForADIndividual</TypeName>
-      <Namespace>INT0003.AD.Distribution.Processing</Namespace>
-    </XLang>
-    <XLang Include="Processing\GroupEventsGroupToAD.odx">
-      <TypeName>GroupEventsGroupToAD</TypeName>
       <Namespace>INT0003.AD.Distribution.Processing</Namespace>
     </XLang>
     <XLang Include="Processing\GroupEventsIndividualToAD.odx">
