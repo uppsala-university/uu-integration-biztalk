@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="10" TotalEndpoints="10">
-  <Timestamp>2017-10-25T14:30:48.9090519+02:00</Timestamp>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="12" TotalEndpoints="12">
+  <Timestamp>2017-10-27T10:58:17.7724805+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0003.AD.Distribution]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0003.AD.Distribution], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -8,7 +8,7 @@
     </ModuleRef>
     <ModuleRef Name="INT0003.AD.Distribution" Version="1.0.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0003.AD.Distribution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services>
-        <Service Name="INT0003.AD.Distribution.GroupEventsGroupToAD" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents">
+        <Service Name="INT0003.AD.Distribution.GroupEventsGroupToAD" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="ReceiveGroupEventsPort" Modifier="2" BindingOption="1">
               <SendPortRef xsi:nil="true" />
@@ -39,10 +39,31 @@
           <Roles />
           <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0003.AD.Distribution.CheckAndWaitForADGroup" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0003.AD.Distribution.AddIndividualToADGroup" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="ADGroupQueryPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0003.AD.QueryGroup" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="INT0003.AD.Distribution.SendIndividualUpdateToAD" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports>
+            <Port Name="SendAcceptedUpdatePort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0003.AD.UpdateAccepted" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendRegisteredPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0003.AD.UpdateRegistered" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendReregisteredPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0003.AD.UpdateReregistered" />
               <DistributionListRef xsi:nil="true" />
               <ReceivePortRef xsi:nil="true" />
             </Port>
@@ -73,11 +94,6 @@
               <DistributionListRef xsi:nil="true" />
               <ReceivePortRef Name="INT0003.Group.Events" />
             </Port>
-            <Port Name="SendADIndividualUpdatePort" Modifier="1" BindingOption="1">
-              <SendPortRef Name="INT0003.AD.Send_UserUpdate" />
-              <DistributionListRef xsi:nil="true" />
-              <ReceivePortRef xsi:nil="true" />
-            </Port>
           </Ports>
           <Roles />
           <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
@@ -87,6 +103,301 @@
     </ModuleRef>
   </ModuleRefCollection>
   <SendPortCollection>
+    <SendPort Name="INT0003.AD.QueryGroup" IsStatic="true" IsTwoWay="true" BindingOption="1">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>activedirectory://activedirectory://QueryGroup</Address>
+        <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps&amp;gt;&amp;lt;name&amp;gt;activedirectory://QueryGroup&amp;lt;/name&amp;gt;&amp;lt;uri&amp;gt;activedirectory://activedirectory://QueryGroup&amp;lt;/uri&amp;gt;&amp;lt;LogLevel&amp;gt;1&amp;lt;/LogLevel&amp;gt;&amp;lt;OverWhereToBind&amp;gt;LDAP://&amp;lt;/OverWhereToBind&amp;gt;&amp;lt;OverObjectTypeFilter&amp;gt;(objectCategory=*)&amp;lt;/OverObjectTypeFilter&amp;gt;&amp;lt;OverSearchScope&amp;gt;onelevel&amp;lt;/OverSearchScope&amp;gt;&amp;lt;OverMaxObjects&amp;gt;0&amp;lt;/OverMaxObjects&amp;gt;&amp;lt;boolOverWhereToBind&amp;gt;False&amp;lt;/boolOverWhereToBind&amp;gt;&amp;lt;boolOverObjectTypeFilter&amp;gt;False&amp;lt;/boolOverObjectTypeFilter&amp;gt;&amp;lt;boolOverSearchScope&amp;gt;False&amp;lt;/boolOverSearchScope&amp;gt;&amp;lt;boolOverMaxObjects&amp;gt;False&amp;lt;/boolOverMaxObjects&amp;gt;&amp;lt;OverSRWhereToBind&amp;gt;LDAP://exchange-test.its.uu.se:389/OU=Courses,OU=Student,OU=Akka,DC=exchange-test,DC=its,DC=uu,DC=se&amp;lt;/OverSRWhereToBind&amp;gt;&amp;lt;OverSRObjectTypeFilter&amp;gt;(objectCategory=*)&amp;lt;/OverSRObjectTypeFilter&amp;gt;&amp;lt;OverSRSearchScope&amp;gt;onelevel&amp;lt;/OverSRSearchScope&amp;gt;&amp;lt;OverSRPropertiesToReturn /&amp;gt;&amp;lt;OverSRNamespace /&amp;gt;&amp;lt;boolSROverWhereToBind&amp;gt;True&amp;lt;/boolSROverWhereToBind&amp;gt;&amp;lt;boolSROverObjectTypeFilter&amp;gt;False&amp;lt;/boolSROverObjectTypeFilter&amp;gt;&amp;lt;boolSROverSearchScope&amp;gt;False&amp;lt;/boolSROverSearchScope&amp;gt;&amp;lt;boolSROverPropertiesToReturn&amp;gt;False&amp;lt;/boolSROverPropertiesToReturn&amp;gt;&amp;lt;boolSROverNamespace&amp;gt;False&amp;lt;/boolSROverNamespace&amp;gt;&amp;lt;boolOverAuth&amp;gt;False&amp;lt;/boolOverAuth&amp;gt;&amp;lt;OverUsername /&amp;gt;&amp;lt;OverPassword /&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <InboundTransforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0003.AD.Distribution</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0003.AD.AddGroup" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="INT0003.AD.Distribution.Pipelines.DemoteADValues" FullyQualifiedName="INT0003.AD.Distribution.Pipelines.DemoteADValues, INT0003.AD.Distribution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4101-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="BizTalkComponents.PipelineComponents.SetProperty.SetProperty"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlAsmComp"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
+      <PrimaryTransport>
+        <Address>activedirectory://activedirectory://AddGroup</Address>
+        <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps&amp;gt;&amp;lt;name&amp;gt;activedirectory://AddGroup&amp;lt;/name&amp;gt;&amp;lt;uri&amp;gt;activedirectory://activedirectory://AddGroup&amp;lt;/uri&amp;gt;&amp;lt;LogLevel&amp;gt;1&amp;lt;/LogLevel&amp;gt;&amp;lt;OverWhereToBind&amp;gt;LDAP://exchange-test.its.uu.se:389/OU=Courses,OU=Student,OU=Akka,DC=exchange-test,DC=its,DC=uu,DC=se&amp;lt;/OverWhereToBind&amp;gt;&amp;lt;OverObjectTypeFilter&amp;gt;(objectCategory=*)&amp;lt;/OverObjectTypeFilter&amp;gt;&amp;lt;OverSearchScope&amp;gt;onelevel&amp;lt;/OverSearchScope&amp;gt;&amp;lt;OverMaxObjects&amp;gt;0&amp;lt;/OverMaxObjects&amp;gt;&amp;lt;boolOverWhereToBind&amp;gt;True&amp;lt;/boolOverWhereToBind&amp;gt;&amp;lt;boolOverObjectTypeFilter&amp;gt;False&amp;lt;/boolOverObjectTypeFilter&amp;gt;&amp;lt;boolOverSearchScope&amp;gt;False&amp;lt;/boolOverSearchScope&amp;gt;&amp;lt;boolOverMaxObjects&amp;gt;False&amp;lt;/boolOverMaxObjects&amp;gt;&amp;lt;OverSRWhereToBind&amp;gt;LDAP://&amp;lt;/OverSRWhereToBind&amp;gt;&amp;lt;OverSRObjectTypeFilter&amp;gt;(objectCategory=*)&amp;lt;/OverSRObjectTypeFilter&amp;gt;&amp;lt;OverSRSearchScope&amp;gt;onelevel&amp;lt;/OverSRSearchScope&amp;gt;&amp;lt;OverSRPropertiesToReturn /&amp;gt;&amp;lt;OverSRNamespace /&amp;gt;&amp;lt;boolSROverWhereToBind&amp;gt;False&amp;lt;/boolSROverWhereToBind&amp;gt;&amp;lt;boolSROverObjectTypeFilter&amp;gt;False&amp;lt;/boolSROverObjectTypeFilter&amp;gt;&amp;lt;boolSROverSearchScope&amp;gt;False&amp;lt;/boolSROverSearchScope&amp;gt;&amp;lt;boolSROverPropertiesToReturn&amp;gt;False&amp;lt;/boolSROverPropertiesToReturn&amp;gt;&amp;lt;boolSROverNamespace&amp;gt;False&amp;lt;/boolSROverNamespace&amp;gt;&amp;lt;boolOverAuth&amp;gt;False&amp;lt;/boolOverAuth&amp;gt;&amp;lt;OverUsername /&amp;gt;&amp;lt;OverPassword /&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0003.AD.Distribution</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0003.AD.QueryIndividual" IsStatic="true" IsTwoWay="true" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>activedirectory://QueryIndividual</Address>
+        <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps&amp;gt;&amp;lt;name&amp;gt;QueryIndividual&amp;lt;/name&amp;gt;&amp;lt;uri&amp;gt;activedirectory://QueryIndividual&amp;lt;/uri&amp;gt;&amp;lt;LogLevel&amp;gt;1&amp;lt;/LogLevel&amp;gt;&amp;lt;OverWhereToBind&amp;gt;LDAP://&amp;lt;/OverWhereToBind&amp;gt;&amp;lt;OverObjectTypeFilter&amp;gt;(objectCategory=*)&amp;lt;/OverObjectTypeFilter&amp;gt;&amp;lt;OverSearchScope&amp;gt;onelevel&amp;lt;/OverSearchScope&amp;gt;&amp;lt;OverMaxObjects&amp;gt;0&amp;lt;/OverMaxObjects&amp;gt;&amp;lt;boolOverWhereToBind&amp;gt;False&amp;lt;/boolOverWhereToBind&amp;gt;&amp;lt;boolOverObjectTypeFilter&amp;gt;False&amp;lt;/boolOverObjectTypeFilter&amp;gt;&amp;lt;boolOverSearchScope&amp;gt;False&amp;lt;/boolOverSearchScope&amp;gt;&amp;lt;boolOverMaxObjects&amp;gt;False&amp;lt;/boolOverMaxObjects&amp;gt;&amp;lt;OverSRWhereToBind&amp;gt;LDAP://exchange-test.its.uu.se:389/OU=Users,OU=Student,OU=Akka,DC=exchange-test,DC=its,DC=uu,DC=se&amp;lt;/OverSRWhereToBind&amp;gt;&amp;lt;OverSRObjectTypeFilter&amp;gt;(objectCategory=*)&amp;lt;/OverSRObjectTypeFilter&amp;gt;&amp;lt;OverSRSearchScope&amp;gt;onelevel&amp;lt;/OverSRSearchScope&amp;gt;&amp;lt;OverSRPropertiesToReturn /&amp;gt;&amp;lt;OverSRNamespace /&amp;gt;&amp;lt;boolSROverWhereToBind&amp;gt;True&amp;lt;/boolSROverWhereToBind&amp;gt;&amp;lt;boolSROverObjectTypeFilter&amp;gt;False&amp;lt;/boolSROverObjectTypeFilter&amp;gt;&amp;lt;boolSROverSearchScope&amp;gt;False&amp;lt;/boolSROverSearchScope&amp;gt;&amp;lt;boolSROverPropertiesToReturn&amp;gt;False&amp;lt;/boolSROverPropertiesToReturn&amp;gt;&amp;lt;boolSROverNamespace&amp;gt;False&amp;lt;/boolSROverNamespace&amp;gt;&amp;lt;boolOverAuth&amp;gt;False&amp;lt;/boolOverAuth&amp;gt;&amp;lt;OverUsername /&amp;gt;&amp;lt;OverPassword /&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-24T22:00:00</FromTime>
+        <ToTime>2017-10-25T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-24T22:00:00</FromTime>
+        <ToTime>2017-10-25T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <InboundTransforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0003.AD.Distribution</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0003.AD.Send_IdentityEvents" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\IDENTITY-DISTRIBUTION</Address>
+        <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\IDENTITY-DISTRIBUTION&amp;lt;/queue&amp;gt;&amp;lt;maximumMessageSize&amp;gt;1024&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;false&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\IDENTITY-DISTRIBUTION&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-24T22:00:00</FromTime>
+        <ToTime>2017-10-25T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>true</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-24T22:00:00</FromTime>
+        <ToTime>2017-10-25T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>true</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0003.AD.Distribution</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0003.AD.UpdateAccepted" IsStatic="true" IsTwoWay="false" BindingOption="1">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="INT0003.AD.Distribution.Pipelines.XSLTransform" FullyQualifiedName="INT0003.AD.Distribution.Pipelines.XSLTransform, INT0003.AD.Distribution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4101-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="BizTalkComponents.PipelineComponents.XSLTTransform"&gt;&lt;Properties&gt;&lt;MapName vt="8"&gt;INT0003.AD.Distribution.Maps.InternalGroupEvent_to_ADAddIndividualToGroup, INT0003.AD.Distribution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a&lt;/MapName&gt;&lt;Parameters vt="8"&gt;groupSuffix=accepted|URI=exchange-test.its.uu.se:389|path=OU EQ Users,OU EQ Student,OU EQ Akka,DC EQ exchange-test,DC EQ its,DC EQ uu,DC EQ se&lt;/Parameters&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
+      <PrimaryTransport>
+        <Address>activedirectory://UpdateAccepted</Address>
+        <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps&amp;gt;&amp;lt;name&amp;gt;UpdateAccepted&amp;lt;/name&amp;gt;&amp;lt;uri&amp;gt;activedirectory://UpdateAccepted&amp;lt;/uri&amp;gt;&amp;lt;LogLevel&amp;gt;1&amp;lt;/LogLevel&amp;gt;&amp;lt;OverWhereToBind&amp;gt;LDAP://exchange-test.its.uu.se:389/OU=Courses,OU=Student,OU=Akka,DC=exchange-test,DC=its,DC=uu,DC=se&amp;lt;/OverWhereToBind&amp;gt;&amp;lt;OverObjectTypeFilter&amp;gt;(objectCategory=*)&amp;lt;/OverObjectTypeFilter&amp;gt;&amp;lt;OverSearchScope&amp;gt;onelevel&amp;lt;/OverSearchScope&amp;gt;&amp;lt;OverMaxObjects&amp;gt;0&amp;lt;/OverMaxObjects&amp;gt;&amp;lt;boolOverWhereToBind&amp;gt;True&amp;lt;/boolOverWhereToBind&amp;gt;&amp;lt;boolOverObjectTypeFilter&amp;gt;False&amp;lt;/boolOverObjectTypeFilter&amp;gt;&amp;lt;boolOverSearchScope&amp;gt;False&amp;lt;/boolOverSearchScope&amp;gt;&amp;lt;boolOverMaxObjects&amp;gt;False&amp;lt;/boolOverMaxObjects&amp;gt;&amp;lt;OverSRWhereToBind&amp;gt;LDAP://&amp;lt;/OverSRWhereToBind&amp;gt;&amp;lt;OverSRObjectTypeFilter&amp;gt;(objectCategory=*)&amp;lt;/OverSRObjectTypeFilter&amp;gt;&amp;lt;OverSRSearchScope&amp;gt;onelevel&amp;lt;/OverSRSearchScope&amp;gt;&amp;lt;OverSRPropertiesToReturn /&amp;gt;&amp;lt;OverSRNamespace /&amp;gt;&amp;lt;boolSROverWhereToBind&amp;gt;False&amp;lt;/boolSROverWhereToBind&amp;gt;&amp;lt;boolSROverObjectTypeFilter&amp;gt;False&amp;lt;/boolSROverObjectTypeFilter&amp;gt;&amp;lt;boolSROverSearchScope&amp;gt;False&amp;lt;/boolSROverSearchScope&amp;gt;&amp;lt;boolSROverPropertiesToReturn&amp;gt;False&amp;lt;/boolSROverPropertiesToReturn&amp;gt;&amp;lt;boolSROverNamespace&amp;gt;False&amp;lt;/boolSROverNamespace&amp;gt;&amp;lt;boolOverAuth&amp;gt;False&amp;lt;/boolOverAuth&amp;gt;&amp;lt;OverUsername /&amp;gt;&amp;lt;OverPassword /&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-24T22:00:00</FromTime>
+        <ToTime>2017-10-25T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-24T22:00:00</FromTime>
+        <ToTime>2017-10-25T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>204</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0003.AD.Distribution</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0003.AD.UpdateRegistered" IsStatic="true" IsTwoWay="false" BindingOption="1">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="INT0003.AD.Distribution.Pipelines.XSLTransform" FullyQualifiedName="INT0003.AD.Distribution.Pipelines.XSLTransform, INT0003.AD.Distribution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4101-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="BizTalkComponents.PipelineComponents.XSLTTransform"&gt;&lt;Properties&gt;&lt;MapName vt="8"&gt;INT0003.AD.Distribution.Maps.InternalGroupEvent_to_ADAddIndividualToGroup, INT0003.AD.Distribution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a&lt;/MapName&gt;&lt;Parameters vt="8"&gt;groupSuffix=registered|URI=exchange-test.its.uu.se:389|path=OU EQ Users,OU EQ Student,OU EQ Akka,DC EQ exchange-test,DC EQ its,DC EQ uu,DC EQ se&lt;/Parameters&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
+      <PrimaryTransport>
+        <Address>activedirectory://UpdateRegistered</Address>
+        <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps&amp;gt;&amp;lt;name&amp;gt;UpdateRegistered&amp;lt;/name&amp;gt;&amp;lt;uri&amp;gt;activedirectory://UpdateRegistered&amp;lt;/uri&amp;gt;&amp;lt;LogLevel&amp;gt;1&amp;lt;/LogLevel&amp;gt;&amp;lt;OverWhereToBind&amp;gt;LDAP://exchange-test.its.uu.se:389/OU=Courses,OU=Student,OU=Akka,DC=exchange-test,DC=its,DC=uu,DC=se&amp;lt;/OverWhereToBind&amp;gt;&amp;lt;OverObjectTypeFilter&amp;gt;(objectCategory=*)&amp;lt;/OverObjectTypeFilter&amp;gt;&amp;lt;OverSearchScope&amp;gt;onelevel&amp;lt;/OverSearchScope&amp;gt;&amp;lt;OverMaxObjects&amp;gt;0&amp;lt;/OverMaxObjects&amp;gt;&amp;lt;boolOverWhereToBind&amp;gt;True&amp;lt;/boolOverWhereToBind&amp;gt;&amp;lt;boolOverObjectTypeFilter&amp;gt;False&amp;lt;/boolOverObjectTypeFilter&amp;gt;&amp;lt;boolOverSearchScope&amp;gt;False&amp;lt;/boolOverSearchScope&amp;gt;&amp;lt;boolOverMaxObjects&amp;gt;False&amp;lt;/boolOverMaxObjects&amp;gt;&amp;lt;OverSRWhereToBind&amp;gt;LDAP://&amp;lt;/OverSRWhereToBind&amp;gt;&amp;lt;OverSRObjectTypeFilter&amp;gt;(objectCategory=*)&amp;lt;/OverSRObjectTypeFilter&amp;gt;&amp;lt;OverSRSearchScope&amp;gt;onelevel&amp;lt;/OverSRSearchScope&amp;gt;&amp;lt;OverSRPropertiesToReturn /&amp;gt;&amp;lt;OverSRNamespace /&amp;gt;&amp;lt;boolSROverWhereToBind&amp;gt;False&amp;lt;/boolSROverWhereToBind&amp;gt;&amp;lt;boolSROverObjectTypeFilter&amp;gt;False&amp;lt;/boolSROverObjectTypeFilter&amp;gt;&amp;lt;boolSROverSearchScope&amp;gt;False&amp;lt;/boolSROverSearchScope&amp;gt;&amp;lt;boolSROverPropertiesToReturn&amp;gt;False&amp;lt;/boolSROverPropertiesToReturn&amp;gt;&amp;lt;boolSROverNamespace&amp;gt;False&amp;lt;/boolSROverNamespace&amp;gt;&amp;lt;boolOverAuth&amp;gt;False&amp;lt;/boolOverAuth&amp;gt;&amp;lt;OverUsername /&amp;gt;&amp;lt;OverPassword /&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-24T22:00:00</FromTime>
+        <ToTime>2017-10-25T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-24T22:00:00</FromTime>
+        <ToTime>2017-10-25T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0003.AD.Distribution</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0003.AD.UpdateReregistered" IsStatic="true" IsTwoWay="false" BindingOption="1">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="INT0003.AD.Distribution.Pipelines.XSLTransform" FullyQualifiedName="INT0003.AD.Distribution.Pipelines.XSLTransform, INT0003.AD.Distribution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4101-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="BizTalkComponents.PipelineComponents.XSLTTransform"&gt;&lt;Properties&gt;&lt;MapName vt="8"&gt;INT0003.AD.Distribution.Maps.InternalGroupEvent_to_ADAddIndividualToGroup, INT0003.AD.Distribution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a&lt;/MapName&gt;&lt;Parameters vt="8"&gt;groupSuffix=reregistered|URI=exchange-test.its.uu.se:389|path=OU EQ Users,OU EQ Student,OU EQ Akka,DC EQ exchange-test,DC EQ its,DC EQ uu,DC EQ se&lt;/Parameters&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
+      <PrimaryTransport>
+        <Address>activedirectory://UpdateReregistered</Address>
+        <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps&amp;gt;&amp;lt;name&amp;gt;UpdateReregistered&amp;lt;/name&amp;gt;&amp;lt;uri&amp;gt;activedirectory://UpdateReregistered&amp;lt;/uri&amp;gt;&amp;lt;LogLevel&amp;gt;1&amp;lt;/LogLevel&amp;gt;&amp;lt;OverWhereToBind&amp;gt;LDAP://exchange-test.its.uu.se:389/OU=Courses,OU=Student,OU=Akka,DC=exchange-test,DC=its,DC=uu,DC=se&amp;lt;/OverWhereToBind&amp;gt;&amp;lt;OverObjectTypeFilter&amp;gt;(objectCategory=*)&amp;lt;/OverObjectTypeFilter&amp;gt;&amp;lt;OverSearchScope&amp;gt;onelevel&amp;lt;/OverSearchScope&amp;gt;&amp;lt;OverMaxObjects&amp;gt;0&amp;lt;/OverMaxObjects&amp;gt;&amp;lt;boolOverWhereToBind&amp;gt;True&amp;lt;/boolOverWhereToBind&amp;gt;&amp;lt;boolOverObjectTypeFilter&amp;gt;False&amp;lt;/boolOverObjectTypeFilter&amp;gt;&amp;lt;boolOverSearchScope&amp;gt;False&amp;lt;/boolOverSearchScope&amp;gt;&amp;lt;boolOverMaxObjects&amp;gt;False&amp;lt;/boolOverMaxObjects&amp;gt;&amp;lt;OverSRWhereToBind&amp;gt;LDAP://&amp;lt;/OverSRWhereToBind&amp;gt;&amp;lt;OverSRObjectTypeFilter&amp;gt;(objectCategory=*)&amp;lt;/OverSRObjectTypeFilter&amp;gt;&amp;lt;OverSRSearchScope&amp;gt;onelevel&amp;lt;/OverSRSearchScope&amp;gt;&amp;lt;OverSRPropertiesToReturn /&amp;gt;&amp;lt;OverSRNamespace /&amp;gt;&amp;lt;boolSROverWhereToBind&amp;gt;False&amp;lt;/boolSROverWhereToBind&amp;gt;&amp;lt;boolSROverObjectTypeFilter&amp;gt;False&amp;lt;/boolSROverObjectTypeFilter&amp;gt;&amp;lt;boolSROverSearchScope&amp;gt;False&amp;lt;/boolSROverSearchScope&amp;gt;&amp;lt;boolSROverPropertiesToReturn&amp;gt;False&amp;lt;/boolSROverPropertiesToReturn&amp;gt;&amp;lt;boolSROverNamespace&amp;gt;False&amp;lt;/boolSROverNamespace&amp;gt;&amp;lt;boolOverAuth&amp;gt;False&amp;lt;/boolOverAuth&amp;gt;&amp;lt;OverUsername /&amp;gt;&amp;lt;OverPassword /&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-24T22:00:00</FromTime>
+        <ToTime>2017-10-25T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-24T22:00:00</FromTime>
+        <ToTime>2017-10-25T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0003.AD.Distribution</ApplicationName>
+    </SendPort>
     <SendPort Name="INT0003.AD.Send_CourseQuery" IsStatic="true" IsTwoWay="true" BindingOption="0">
       <Description xsi:nil="true" />
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
@@ -176,7 +487,7 @@
       <RouteFailedMessage>false</RouteFailedMessage>
       <ApplicationName>INT0003.AD.Distribution</ApplicationName>
     </SendPort>
-    <SendPort Name="INT0003.AD.Send_UserUpdate" IsStatic="true" IsTwoWay="false" BindingOption="1">
+    <SendPort Name="INT0003.AD.Send_UserUpdate" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
@@ -295,49 +606,6 @@
       <Tracking>0</Tracking>
       <Filter />
       <Transforms />
-      <OrderedDelivery>false</OrderedDelivery>
-      <Priority>5</Priority>
-      <StopSendingOnFailure>false</StopSendingOnFailure>
-      <RouteFailedMessage>false</RouteFailedMessage>
-      <ApplicationName>INT0003.AD.Distribution</ApplicationName>
-    </SendPort>
-    <SendPort Name="INT0003.AD.QueryGroup" IsStatic="true" IsTwoWay="true" BindingOption="1">
-      <Description xsi:nil="true" />
-      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
-      <PrimaryTransport>
-        <Address>activedirectory://activedirectory://QueryGroup</Address>
-        <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps&amp;gt;&amp;lt;name&amp;gt;activedirectory://QueryGroup&amp;lt;/name&amp;gt;&amp;lt;uri&amp;gt;activedirectory://activedirectory://QueryGroup&amp;lt;/uri&amp;gt;&amp;lt;LogLevel&amp;gt;1&amp;lt;/LogLevel&amp;gt;&amp;lt;OverWhereToBind&amp;gt;LDAP://&amp;lt;/OverWhereToBind&amp;gt;&amp;lt;OverObjectTypeFilter&amp;gt;(objectCategory=*)&amp;lt;/OverObjectTypeFilter&amp;gt;&amp;lt;OverSearchScope&amp;gt;onelevel&amp;lt;/OverSearchScope&amp;gt;&amp;lt;OverMaxObjects&amp;gt;0&amp;lt;/OverMaxObjects&amp;gt;&amp;lt;boolOverWhereToBind&amp;gt;False&amp;lt;/boolOverWhereToBind&amp;gt;&amp;lt;boolOverObjectTypeFilter&amp;gt;False&amp;lt;/boolOverObjectTypeFilter&amp;gt;&amp;lt;boolOverSearchScope&amp;gt;False&amp;lt;/boolOverSearchScope&amp;gt;&amp;lt;boolOverMaxObjects&amp;gt;False&amp;lt;/boolOverMaxObjects&amp;gt;&amp;lt;OverSRWhereToBind&amp;gt;LDAP://exchange-test.its.uu.se:389/OU=Courses,OU=Student,OU=Akka,DC=exchange-test,DC=its,DC=uu,DC=se&amp;lt;/OverSRWhereToBind&amp;gt;&amp;lt;OverSRObjectTypeFilter&amp;gt;(objectCategory=*)&amp;lt;/OverSRObjectTypeFilter&amp;gt;&amp;lt;OverSRSearchScope&amp;gt;onelevel&amp;lt;/OverSRSearchScope&amp;gt;&amp;lt;OverSRPropertiesToReturn /&amp;gt;&amp;lt;OverSRNamespace /&amp;gt;&amp;lt;boolSROverWhereToBind&amp;gt;True&amp;lt;/boolSROverWhereToBind&amp;gt;&amp;lt;boolSROverObjectTypeFilter&amp;gt;False&amp;lt;/boolSROverObjectTypeFilter&amp;gt;&amp;lt;boolSROverSearchScope&amp;gt;False&amp;lt;/boolSROverSearchScope&amp;gt;&amp;lt;boolSROverPropertiesToReturn&amp;gt;False&amp;lt;/boolSROverPropertiesToReturn&amp;gt;&amp;lt;boolSROverNamespace&amp;gt;False&amp;lt;/boolSROverNamespace&amp;gt;&amp;lt;boolOverAuth&amp;gt;False&amp;lt;/boolOverAuth&amp;gt;&amp;lt;OverUsername /&amp;gt;&amp;lt;OverPassword /&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
-        <RetryCount>3</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
-        <Primary>true</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralSend" HostTrusted="false">
-          <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
-        </SendHandler>
-      </PrimaryTransport>
-      <SecondaryTransport>
-        <Address />
-        <RetryCount>3</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
-        <Primary>false</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler xsi:nil="true" />
-      </SecondaryTransport>
-      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
-      <ReceivePipelineData xsi:nil="true" />
-      <Tracking>0</Tracking>
-      <Filter />
-      <Transforms />
-      <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
       <Priority>5</Priority>
       <StopSendingOnFailure>false</StopSendingOnFailure>
@@ -587,6 +855,29 @@
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>
         </ReceiveLocation>
+        <ReceiveLocation Name="INT0003.Group.Events.FromFile">
+          <Description xsi:nil="true" />
+          <Address>E:\BizTalk Test\INT0003.AD.Distribution\In\*.xml</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2017-10-24T22:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2017-10-25T21:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-10-25T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-10-26T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.xml&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>false</Enable>
+          <ReceiveHandler Name="GeneralReceive" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
         <ReceiveLocation Name="INT0003.Group.Events.FILE">
           <Description xsi:nil="true" />
           <Address>C:\integrations\INT0003.GroupEvents\*.xml</Address>
@@ -605,7 +896,7 @@
           <ReceivePipelineData xsi:nil="true" />
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
-          <Enable>true</Enable>
+          <Enable>false</Enable>
           <ReceiveHandler Name="GeneralReceive" HostTrusted="false">
             <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
           </ReceiveHandler>
