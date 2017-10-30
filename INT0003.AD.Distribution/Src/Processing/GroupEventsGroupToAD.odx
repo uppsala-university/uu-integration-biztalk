@@ -359,10 +359,10 @@
                                 <om:Property Name="Name" Value="ConstructMailMessage" />
                                 <om:Property Name="Signal" Value="True" />
                                 <om:Element Type="MessageAssignment" OID="7ba7e1c6-3a9e-4b60-b44f-a0551701ce86" ParentLink="ComplexStatement_Statement" LowerBound="161.1" HigherBound="166.1">
-                                    <om:Property Name="Expression" Value="SupportMail = System.String.Empty;&#xD;&#xA;SupportMail(*) = GroupEvent(*);&#xD;&#xA;SupportMail(SMTP.Subject) = System.String.Format(&quot;Group {0} could not be created!&quot;,GroupEvent(Shared.Schemas.Common.GroupName));&#xD;&#xA;SupportMail(SMTP.EmailBodyText) = System.String.Format(&quot;Please create 3 ActiveDirectory groups as specified bellow\n{0}_accepted\n{0}_registered\n{0}_reregistrered&quot;,GroupEvent(Shared.Schemas.Common.GroupName));" />
+                                    <om:Property Name="Expression" Value="SupportMail = System.String.Empty;&#xD;&#xA;SupportMail(*) = GroupEvent(*);&#xD;&#xA;SupportMail(SMTP.Subject) = System.String.Format(&quot;Group {0} could not be created!&quot;,GroupEvent(Shared.Schemas.Common.GroupName));&#xD;&#xA;SupportMail(SMTP.EmailBodyText) = System.String.Format(&quot;Please create 3 ActiveDirectory groups as specified bellow\n{0}_accepted\n{0}_registered\n{0}_reregistered&quot;,GroupEvent(Shared.Schemas.Common.GroupName));" />
                                     <om:Property Name="ReportToAnalyst" Value="False" />
                                     <om:Property Name="Name" Value="MessageAssignment_1" />
-                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
                                 </om:Element>
                                 <om:Element Type="MessageRef" OID="cefa135f-2338-4839-b725-6b1e87cd1796" ParentLink="Construct_MessageRef" LowerBound="159.31" HigherBound="159.42">
                                     <om:Property Name="Ref" Value="SupportMail" />
@@ -694,7 +694,7 @@ module INT0003.AD.Distribution
                         SupportMail = System.String.Empty;
                         SupportMail(*) = GroupEvent(*);
                         SupportMail(SMTP.Subject) = System.String.Format("Group {0} could not be created!",GroupEvent(Shared.Schemas.Common.GroupName));
-                        SupportMail(SMTP.EmailBodyText) = System.String.Format("Please create 3 ActiveDirectory groups as specified bellow\n{0}_accepted\n{0}_registered\n{0}_reregistrered",GroupEvent(Shared.Schemas.Common.GroupName));
+                        SupportMail(SMTP.EmailBodyText) = System.String.Format("Please create 3 ActiveDirectory groups as specified bellow\n{0}_accepted\n{0}_registered\n{0}_reregistered",GroupEvent(Shared.Schemas.Common.GroupName));
                     }
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("15ee2e7a-6da4-457d-bf4d-e3df69e54f98")]
                     send (SendSupportMail.Support, SupportMail);
