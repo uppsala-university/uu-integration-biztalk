@@ -3,7 +3,7 @@ namespace INT0001.Ladok2.Events.Maps {
     
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"INT0001.Ladok2.Events.Schemas.getNext.getNext_resultSet", typeof(global::INT0001.Ladok2.Events.Schemas.getNext.getNext_resultSet))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation+KurstillfalleTillStatusEvent", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent))]
-    public sealed class MembershipEventSingle_to_KurstillfalleTillStatusEvent : global::Microsoft.XLANGs.BaseTypes.TransformBase {
+    public sealed class MembershipEvent_to_KurstillfalleTillStatusEvent : global::Microsoft.XLANGs.BaseTypes.TransformBase {
         
         private const string _strMap = @"<?xml version=""1.0"" encoding=""UTF-16""?>
 <xsl:stylesheet xmlns:xsl=""http://www.w3.org/1999/XSL/Transform"" xmlns:msxsl=""urn:schemas-microsoft-com:xslt"" xmlns:var=""http://schemas.microsoft.com/BizTalk/2003/var"" exclude-result-prefixes=""msxsl var s0 userCSharp"" version=""1.0"" xmlns:events=""http://schemas.ladok.se/events"" xmlns:ns0=""http://schemas.ladok.se/utbildningsinformation"" xmlns:dap=""http://schemas.ladok.se/dap"" xmlns:base=""http://schemas.ladok.se"" xmlns:s0=""http://schemas.microsoft.com/Sql/2008/05/TypedPolling/ladokevents"" xmlns:userCSharp=""http://schemas.microsoft.com/BizTalk/2003/userCSharp"">
@@ -14,6 +14,19 @@ namespace INT0001.Ladok2.Events.Maps {
   <xsl:template match=""/s0:TypedPollingResultSet0"">
     <xsl:variable name=""var:v1"" select=""userCSharp:StringTrimLeft(&quot;2&quot;)"" />
     <ns0:KurstillfalleTillStatusEvent>
+      <events:EventContext>
+        <events:Anvandarnamn>
+          <xsl:text>ladok</xsl:text>
+        </events:Anvandarnamn>
+        <events:LarosateID>
+          <xsl:text>0</xsl:text>
+        </events:LarosateID>
+      </events:EventContext>
+      <xsl:if test=""s0:Id"">
+        <events:HandelseUID>
+          <xsl:value-of select=""s0:Id/text()"" />
+        </events:HandelseUID>
+      </xsl:if>
       <ns0:Status>
         <xsl:value-of select=""$var:v1"" />
       </ns0:Status>
@@ -32,6 +45,11 @@ namespace INT0001.Ladok2.Events.Maps {
           <xsl:value-of select=""s0:reportCode/text()"" />
         </ns0:Utbildningstillfalleskod>
       </xsl:if>
+      <ns0:Kurstillfallesattribut>
+        <ns0:Finansieringsform>
+          <xsl:text>0</xsl:text>
+        </ns0:Finansieringsform>
+      </ns0:Kurstillfallesattribut>
     </ns0:KurstillfalleTillStatusEvent>
   </xsl:template>
   <msxsl:script language=""C#"" implements-prefix=""userCSharp""><![CDATA[

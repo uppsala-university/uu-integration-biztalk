@@ -12,16 +12,61 @@ namespace INT0001.Ladok2.Events.Maps.studiedeltagande {
     <xsl:apply-templates select=""/s0:TypedPollingResultSet0"" />
   </xsl:template>
   <xsl:template match=""/s0:TypedPollingResultSet0"">
-    <xsl:variable name=""var:v1"" select=""userCSharp:StringConcat(string(s0:startSemester/text()) , &quot;:&quot; , string(s0:reportCode/text()))"" />
+    <xsl:variable name=""var:v1"" select=""userCSharp:StringConcat(string(s0:startSemester/text()) , &quot;_&quot; , string(s0:reportCode/text()))"" />
     <ns0:RegistreringEvent>
+      <events:EventContext>
+        <events:Anvandarnamn>
+          <xsl:text>ladok</xsl:text>
+        </events:Anvandarnamn>
+        <events:LarosateID>
+          <xsl:text>0</xsl:text>
+        </events:LarosateID>
+      </events:EventContext>
+      <xsl:if test=""s0:Id"">
+        <events:HandelseUID>
+          <xsl:value-of select=""s0:Id/text()"" />
+        </events:HandelseUID>
+      </xsl:if>
+      <xsl:if test=""s0:courseCode"">
+        <ns0:KursUID>
+          <xsl:value-of select=""s0:courseCode/text()"" />
+        </ns0:KursUID>
+      </xsl:if>
       <ns0:KurstillfalleUID>
         <xsl:value-of select=""$var:v1"" />
       </ns0:KurstillfalleUID>
+      <ns0:Period>
+        <xsl:text>0</xsl:text>
+      </ns0:Period>
+      <ns0:RegistreringUID>
+        <xsl:text />
+      </ns0:RegistreringUID>
       <xsl:if test=""s0:pnr"">
         <ns0:StudentUID>
           <xsl:value-of select=""s0:pnr/text()"" />
         </ns0:StudentUID>
       </xsl:if>
+      <ns0:TillfallesantagningUID>
+        <xsl:text />
+      </ns0:TillfallesantagningUID>
+      <ns0:UtbildningsinstansUID>
+        <xsl:text />
+      </ns0:UtbildningsinstansUID>
+      <ns0:Omfattningsvarde>
+        <xsl:text />
+      </ns0:Omfattningsvarde>
+      <ns0:Studieavgiftsbetalning>
+        <xsl:text>studiedeltagande.domain.studieavgiftsbetalningsvarde.ej_aktuell</xsl:text>
+      </ns0:Studieavgiftsbetalning>
+      <ns0:StudieperiodSlut>
+        <xsl:text>2999-01-01</xsl:text>
+      </ns0:StudieperiodSlut>
+      <ns0:StudieperiodStart>
+        <xsl:text>1999-01-01</xsl:text>
+      </ns0:StudieperiodStart>
+      <ns0:ArAnpassad>
+        <xsl:text>false</xsl:text>
+      </ns0:ArAnpassad>
     </ns0:RegistreringEvent>
   </xsl:template>
   <msxsl:script language=""C#"" implements-prefix=""userCSharp""><![CDATA[
