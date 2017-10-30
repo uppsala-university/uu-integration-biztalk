@@ -7,7 +7,7 @@ namespace INT0003.AD.Distribution.Pipelines
     using Microsoft.BizTalk.Component.Interop;
     
     
-    public sealed class XslTranslate : Microsoft.BizTalk.PipelineOM.SendPipeline
+    public sealed class XSLTransform : Microsoft.BizTalk.PipelineOM.SendPipeline
     {
         
         private const string _strPipeline = "<?xml version=\"1.0\" encoding=\"utf-16\"?><Document xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instanc"+
@@ -15,32 +15,30 @@ namespace INT0003.AD.Distribution.Pipelines
 " <CategoryId>8c6b051c-0ff5-4fc2-9ae5-5016cb726282</CategoryId>  <FriendlyName>Transmit</FriendlyName"+
 ">  <Stages>    <Stage>      <PolicyFileStage _locAttrData=\"Name\" _locID=\"1\" Name=\"Pre-Assemble\" minO"+
 "ccurs=\"0\" maxOccurs=\"-1\" execMethod=\"All\" stageId=\"9d0e4101-4cce-4536-83fa-4a5040674ad6\" />      <Co"+
-"mponents />    </Stage>    <Stage>      <PolicyFileStage _locAttrData=\"Name\" _locID=\"2\" Name=\"Assemb"+
-"le\" minOccurs=\"0\" maxOccurs=\"1\" execMethod=\"All\" stageId=\"9d0e4107-4cce-4536-83fa-4a5040674ad6\" />  "+
-"    <Components />    </Stage>    <Stage>      <PolicyFileStage _locAttrData=\"Name\" _locID=\"3\" Name="+
-"\"Encode\" minOccurs=\"0\" maxOccurs=\"-1\" execMethod=\"All\" stageId=\"9d0e4108-4cce-4536-83fa-4a5040674ad6"+
-"\" />      <Components>        <Component>          <Name>BizTalkComponents.PipelineComponents.XSLTTr"+
-"ansform,BizTalkComponents.PipelineComponents.XSLTransform, Version=1.0.0.1, Culture=neutral, PublicK"+
-"eyToken=47190f56632fbc76</Name>          <ComponentName>XSLT Transformation</ComponentName>         "+
-" <Description>Pipeline Component to apply BizTalk map with context as argument.</Description>       "+
-"   <Version>1.0.0</Version>          <Properties>            <Property Name=\"MapName\" />            "+
-"<Property Name=\"Parameters\">              <Value xsi:type=\"xsd:string\">groupPrefix=?|EqualToValue=?<"+
-"/Value>            </Property>          </Properties>          <CachedDisplayName>XSLT Transformatio"+
-"n</CachedDisplayName>          <CachedIsManaged>true</CachedIsManaged>        </Component>      </Co"+
-"mponents>    </Stage>  </Stages></Document>";
+"mponents>        <Component>          <Name>BizTalkComponents.PipelineComponents.XSLTTransform,BizTa"+
+"lkComponents.PipelineComponents.XSLTransform, Version=1.0.0.1, Culture=neutral, PublicKeyToken=47190"+
+"f56632fbc76</Name>          <ComponentName>XSLT Transformation</ComponentName>          <Description"+
+">Pipeline Component to apply BizTalk map with context as argument.</Description>          <Version>1"+
+".0.0</Version>          <Properties>            <Property Name=\"MapName\" />            <Property Nam"+
+"e=\"Parameters\" />          </Properties>          <CachedDisplayName>XSLT Transformation</CachedDisp"+
+"layName>          <CachedIsManaged>true</CachedIsManaged>        </Component>      </Components>    "+
+"</Stage>    <Stage>      <PolicyFileStage _locAttrData=\"Name\" _locID=\"2\" Name=\"Assemble\" minOccurs=\""+
+"0\" maxOccurs=\"1\" execMethod=\"All\" stageId=\"9d0e4107-4cce-4536-83fa-4a5040674ad6\" />      <Components"+
+" />    </Stage>    <Stage>      <PolicyFileStage _locAttrData=\"Name\" _locID=\"3\" Name=\"Encode\" minOcc"+
+"urs=\"0\" maxOccurs=\"-1\" execMethod=\"All\" stageId=\"9d0e4108-4cce-4536-83fa-4a5040674ad6\" />      <Comp"+
+"onents />    </Stage>  </Stages></Document>";
         
-        private const string _versionDependentGuid = "e0580498-d36d-4b78-b7a8-28ef30fcd6d0";
+        private const string _versionDependentGuid = "18b59ee5-36ca-45a0-9df8-a1105990a642";
         
-        public XslTranslate()
+        public XSLTransform()
         {
-            Microsoft.BizTalk.PipelineOM.Stage stage = this.AddStage(new System.Guid("9d0e4108-4cce-4536-83fa-4a5040674ad6"), Microsoft.BizTalk.PipelineOM.ExecutionMode.all);
+            Microsoft.BizTalk.PipelineOM.Stage stage = this.AddStage(new System.Guid("9d0e4101-4cce-4536-83fa-4a5040674ad6"), Microsoft.BizTalk.PipelineOM.ExecutionMode.all);
             IBaseComponent comp0 = Microsoft.BizTalk.PipelineOM.PipelineManager.CreateComponent("BizTalkComponents.PipelineComponents.XSLTTransform,BizTalkComponents.PipelineComponents.XSLTransform, Version=1.0.0.1, Culture=neutral, PublicKeyToken=47190f56632fbc76");;
             if (comp0 is IPersistPropertyBag)
             {
                 string comp0XmlProperties = "<?xml version=\"1.0\" encoding=\"utf-16\"?><PropertyBag xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-inst"+
 "ance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">  <Properties>    <Property Name=\"MapName\" />    "+
-"<Property Name=\"Parameters\">      <Value xsi:type=\"xsd:string\">groupPrefix=?|EqualToValue=?</Value> "+
-"   </Property>  </Properties></PropertyBag>";
+"<Property Name=\"Parameters\" />  </Properties></PropertyBag>";
                 PropertyBag pb = PropertyBag.DeserializeFromXml(comp0XmlProperties);;
                 ((IPersistPropertyBag)(comp0)).Load(pb, 0);
             }
