@@ -12,8 +12,21 @@ namespace INT0001.Ladok2.Events.Maps.studentinformation {
     <xsl:apply-templates select=""/s0:TypedPollingResultSet0"" />
   </xsl:template>
   <xsl:template match=""/s0:TypedPollingResultSet0"">
-    <xsl:variable name=""var:v1"" select=""userCSharp:StringTrimLeft(&quot;True&quot;)"" />
+    <xsl:variable name=""var:v1"" select=""userCSharp:StringTrimLeft(&quot;true&quot;)"" />
     <ns0:StudentAvlidenmarkeringEvent>
+      <events:EventContext>
+        <events:Anvandarnamn>
+          <xsl:text>ladok</xsl:text>
+        </events:Anvandarnamn>
+        <events:LarosateID>
+          <xsl:text>0</xsl:text>
+        </events:LarosateID>
+      </events:EventContext>
+      <xsl:if test=""s0:Id"">
+        <events:HandelseUID>
+          <xsl:value-of select=""s0:Id/text()"" />
+        </events:HandelseUID>
+      </xsl:if>
       <ns0:avliden>
         <xsl:value-of select=""$var:v1"" />
       </ns0:avliden>
