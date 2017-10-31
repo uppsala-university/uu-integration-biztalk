@@ -1,16 +1,13 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Diagnostics;
+using System.Text;
 
 namespace Shared.Utilities.MySQLClientHelper
 {
     public class MySQLConnect
     {
         private MySqlConnection connection;
-        private string server;
-        private string database;
-        private string uid;
-        private string password;
 
         public MySQLConnect()
         {
@@ -18,18 +15,14 @@ namespace Shared.Utilities.MySQLClientHelper
         }
 
         private void Initialize()
-        {
-            this.server = Shared.Utilities.SSOClientHelper.SSOClientHelper.Read("Shared.Utilities.MySQLClientHelper", "server");
-            this.database = Shared.Utilities.SSOClientHelper.SSOClientHelper.Read("Shared.Utilities.MySQLClientHelper", "database");
-            this.uid = Shared.Utilities.SSOClientHelper.SSOClientHelper.Read("Shared.Utilities.MySQLClientHelper", "uid");
-            this.password = Shared.Utilities.SSOClientHelper.SSOClientHelper.Read("Shared.Utilities.MySQLClientHelper", "password");
-            this.connection = new MySqlConnection(string.Format("SERVER=\"{0}\";DATABASE=\"{1}\";UID=\"{2}\";PASSWORD=\"{3}\";", new object[4]
-            {
-        (object) this.server,
-        (object) this.database,
-        (object) this.uid,
-        (object) this.password
-            }));
+        { 
+             string server = Shared.Utilities.SSOClientHelper.SSOClientHelper.Read("Shared.Utilities.MySQLClientHelper", "server");
+             string database = Shared.Utilities.SSOClientHelper.SSOClientHelper.Read("Shared.Utilities.MySQLClientHelper", "database");
+             string uid = Shared.Utilities.SSOClientHelper.SSOClientHelper.Read("Shared.Utilities.MySQLClientHelper", "uid");
+             string password = Shared.Utilities.SSOClientHelper.SSOClientHelper.Read("Shared.Utilities.MySQLClientHelper", "password");
+
+            connection = new MySqlConnection(String.Format("SERVER=\"{0}\";DATABASE=\"{1}\";UID=\"{2}\";PASSWORD=\"{3}\";", server, database, uid, password));
+
         }
 
         private bool OpenConnection()
@@ -70,13 +63,13 @@ namespace Shared.Utilities.MySQLClientHelper
 
         public string GetFullname(string pnr)
         {
-            string cmdText = "SELECT tnamn + ',' + enamn as fullname FROM uu.namn where pnr='" + pnr + "'";
+            string cmdText = "SELECT tnamn, enamn FROM uu.namn where pnr='" + pnr + "'";
             string str = "";
             if (this.OpenConnection())
             {
                 MySqlDataReader mySqlDataReader = new MySqlCommand(cmdText, this.connection).ExecuteReader();
                 if (mySqlDataReader.Read())
-                    str = mySqlDataReader["fullname"].ToString();
+                    str = String.Format("{0},{1}",mySqlDataReader[0], mySqlDataReader[1]);
                 mySqlDataReader.Close();
                 this.CloseConnection();
             }

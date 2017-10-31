@@ -14,6 +14,7 @@ namespace Shared.Utilities.SSOClientHelper
         private HybridDictionary properties;
         internal ConfigurationPropertyBag()
         {
+           
             properties = new HybridDictionary();
         }
 
