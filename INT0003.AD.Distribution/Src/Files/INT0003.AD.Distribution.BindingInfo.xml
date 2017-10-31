@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="12" TotalEndpoints="12">
-  <Timestamp>2017-10-31T11:20:20.3507862+01:00</Timestamp>
+  <Timestamp>2017-10-31T15:05:47.3808051+01:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0003.AD.Distribution]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0003.AD.Distribution], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -8,7 +8,7 @@
     </ModuleRef>
     <ModuleRef Name="INT0003.AD.Distribution" Version="1.0.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0003.AD.Distribution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services>
-        <Service Name="INT0003.AD.Distribution.GroupEventsGroupToAD" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0003.AD.Distribution.GroupEventsGroupToAD" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="ReceiveGroupEventsPort" Modifier="2" BindingOption="1">
               <SendPortRef xsi:nil="true" />
@@ -39,7 +39,7 @@
           <Roles />
           <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0003.AD.Distribution.AddIndividualToADGroup" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0003.AD.Distribution.AddIndividualToADGroup" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="ADGroupQueryPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0003.AD.Send_CourseQuery" />
@@ -50,7 +50,7 @@
           <Roles />
           <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0003.AD.Distribution.SendIndividualUpdateToAD" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0003.AD.Distribution.SendIndividualUpdateToAD" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="SendAcceptedUpdatePort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0003.AD.Send_UpdateAcceptedGroup" />
@@ -71,7 +71,7 @@
           <Roles />
           <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0003.AD.Distribution.CheckAndWaitForADIndividual" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0003.AD.Distribution.CheckAndWaitForADIndividual" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="ADQueryIndividualPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0003.AD.Send_UserQuery" />
@@ -87,7 +87,7 @@
           <Roles />
           <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0003.AD.Distribution.GroupEventsIndividualToAD" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0003.AD.Distribution.GroupEventsIndividualToAD" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="ReceiveGroupEventPort" Modifier="2" BindingOption="1">
               <SendPortRef xsi:nil="true" />
@@ -349,7 +349,9 @@
       <ReceivePipelineData xsi:nil="true" />
       <Tracking>0</Tracking>
       <Filter />
-      <Transforms />
+      <Transforms>
+        <Transform FullName="INT0003.AD.Distribution.Maps.InternalGroupEvent_to_InternalPersonEvent" AssemblyQualifiedName="INT0003.AD.Distribution.Maps.InternalGroupEvent_to_InternalPersonEvent,INT0003.AD.Distribution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+      </Transforms>
       <OrderedDelivery>false</OrderedDelivery>
       <Priority>5</Priority>
       <StopSendingOnFailure>false</StopSendingOnFailure>
@@ -570,6 +572,52 @@
       <RouteFailedMessage>false</RouteFailedMessage>
       <ApplicationName>INT0003.AD.Distribution</ApplicationName>
     </SendPort>
+    <SendPort Name="JonasTest" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>E:\BizTalk Test\Jonas\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-30T23:00:00</FromTime>
+        <ToTime>2017-10-31T22:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-30T23:00:00</FromTime>
+        <ToTime>2017-10-31T22:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0003.AD.UserEvents" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0003.AD.Distribution</ApplicationName>
+    </SendPort>
   </SendPortCollection>
   <DistributionListCollection />
   <ReceivePortCollection>
@@ -594,7 +642,7 @@
           <ReceivePipelineData xsi:nil="true" />
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
-          <Enable>true</Enable>
+          <Enable>false</Enable>
           <ReceiveHandler Name="GeneralReceive" HostTrusted="false">
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>
@@ -617,7 +665,7 @@
           <ReceivePipelineData xsi:nil="true" />
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
-          <Enable>true</Enable>
+          <Enable>false</Enable>
           <ReceiveHandler Name="GeneralReceive" HostTrusted="false">
             <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
           </ReceiveHandler>
@@ -674,7 +722,7 @@
           <ReceivePipelineData xsi:nil="true" />
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
-          <Enable>true</Enable>
+          <Enable>false</Enable>
           <ReceiveHandler Name="GeneralReceive" HostTrusted="false">
             <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
           </ReceiveHandler>
@@ -710,7 +758,7 @@
           <ReceivePipelineData xsi:nil="true" />
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
-          <Enable>true</Enable>
+          <Enable>false</Enable>
           <ReceiveHandler Name="GeneralReceive" HostTrusted="false">
             <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
           </ReceiveHandler>
