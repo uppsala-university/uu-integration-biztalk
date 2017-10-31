@@ -6,15 +6,13 @@ namespace INT0004.AKKA.Identity.Maps {
     public sealed class InternalPersonEvent_To_AkkaStudentAccount : global::Microsoft.XLANGs.BaseTypes.TransformBase {
         
         private const string _strMap = @"<?xml version=""1.0"" encoding=""UTF-16""?>
-<xsl:stylesheet xmlns:xsl=""http://www.w3.org/1999/XSL/Transform"" xmlns:msxsl=""urn:schemas-microsoft-com:xslt"" xmlns:var=""http://schemas.microsoft.com/BizTalk/2003/var"" exclude-result-prefixes=""msxsl var s0 s1 userCSharp"" version=""1.0"" xmlns:ns0=""http://call.authsrv.its.uu.se/"" xmlns:s1=""http://UU.Integrations.Common.Schemas.InternalPersonEvent"" xmlns:ns1=""http://cxf.akkaappl.akka.its.uu.se/"" xmlns:s0=""http://UU.Integrations.Common.Schemas.Internal.Person"" xmlns:userCSharp=""http://schemas.microsoft.com/BizTalk/2003/userCSharp"">
+<xsl:stylesheet xmlns:xsl=""http://www.w3.org/1999/XSL/Transform"" xmlns:msxsl=""urn:schemas-microsoft-com:xslt"" xmlns:var=""http://schemas.microsoft.com/BizTalk/2003/var"" exclude-result-prefixes=""msxsl var s0 s1 userCSharp ScriptNS0"" version=""1.0"" xmlns:ns0=""http://call.authsrv.its.uu.se/"" xmlns:s1=""http://UU.Integrations.Common.Schemas.InternalPersonEvent"" xmlns:ns1=""http://cxf.akkaappl.akka.its.uu.se/"" xmlns:s0=""http://UU.Integrations.Common.Schemas.Internal.Person"" xmlns:userCSharp=""http://schemas.microsoft.com/BizTalk/2003/userCSharp"" xmlns:ScriptNS0=""http://schemas.microsoft.com/BizTalk/2003/ScriptNS0"">
   <xsl:output omit-xml-declaration=""yes"" method=""xml"" version=""1.0"" />
   <xsl:template match=""/"">
     <xsl:apply-templates select=""/s1:PersonEvent"" />
   </xsl:template>
   <xsl:template match=""/s1:PersonEvent"">
     <xsl:variable name=""var:v1"" select=""userCSharp:StringTrimRight(&quot;ESB&quot;)"" />
-    <xsl:variable name=""var:v2"" select=""userCSharp:StringTrimLeft(&quot;Förnamn&quot;)"" />
-    <xsl:variable name=""var:v3"" select=""userCSharp:StringTrimLeft(&quot;Efternamn&quot;)"" />
     <ns1:etableraEjAktiveratStudentkontoMedNamn>
       <applikation>
         <xsl:value-of select=""$var:v1"" />
@@ -22,12 +20,10 @@ namespace INT0004.AKKA.Identity.Maps {
       <pnr>
         <xsl:value-of select=""s0:Person/s0:PersonNumber/text()"" />
       </pnr>
-      <fornamn>
-        <xsl:value-of select=""$var:v2"" />
-      </fornamn>
-      <efternamn>
-        <xsl:value-of select=""$var:v3"" />
-      </efternamn>
+      <xsl:variable name=""var:v2"" select=""ScriptNS0:GetFullname(string(s0:Person/s0:PersonNumber/text()))"" />
+      <xsl:call-template name=""AddNamn"">
+        <xsl:with-param name=""fullname"" select=""string($var:v2)"" />
+      </xsl:call-template>
     </ns1:etableraEjAktiveratStudentkontoMedNamn>
   </xsl:template>
   <msxsl:script language=""C#"" implements-prefix=""userCSharp""><![CDATA[
@@ -41,23 +37,26 @@ public string StringTrimRight(string str)
 }
 
 
-public string StringTrimLeft(string str)
-{
-	if (str == null)
-	{
-		return """";
-	}
-	return str.TrimStart(null);
-}
-
-
 
 ]]></msxsl:script>
+  <xsl:template name=""AddNamn"">
+<xsl:param name=""fullname"" />
+  
+  <fornamn>
+    <xsl:value-of select=""substring-before($fullname,',')"" />
+</fornamn>
+<efternamn>
+  <xsl:value-of select=""substring-after($fullname,',')"" />
+</efternamn>
+
+</xsl:template>
 </xsl:stylesheet>";
         
         private const int _useXSLTransform = 0;
         
-        private const string _strArgList = @"<ExtensionObjects />";
+        private const string _strArgList = @"<ExtensionObjects>
+  <ExtensionObject Namespace=""http://schemas.microsoft.com/BizTalk/2003/ScriptNS0"" AssemblyName=""Shared.Utilities.MySQLClientHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a"" ClassName=""Shared.Utilities.MySQLClientHelper.MySQLConnect"" />
+</ExtensionObjects>";
         
         private const string _strSrcSchemasList0 = @"Shared.Schemas.PersonEvents.InternalPersonEvent";
         
