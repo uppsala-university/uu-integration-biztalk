@@ -18,7 +18,7 @@
                 <om:Property Name="Name" Value="Operation_1" />
                 <om:Property Name="Signal" Value="False" />
                 <om:Element Type="MessageRef" OID="8c681742-3fc6-4d39-8642-d7d370a65072" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.58">
-                    <om:Property Name="Ref" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                    <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="False" />
@@ -37,7 +37,7 @@
                 <om:Property Name="Name" Value="Operation_1" />
                 <om:Property Name="Signal" Value="False" />
                 <om:Element Type="MessageRef" OID="c08dc44b-0fad-4f1f-8d4a-f48f64133d9d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.58">
-                    <om:Property Name="Ref" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                    <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="False" />
@@ -56,7 +56,7 @@
                 <om:Property Name="Name" Value="Operation_1" />
                 <om:Property Name="Signal" Value="False" />
                 <om:Element Type="MessageRef" OID="a4f27bef-7953-4a6d-b317-69a6812a8287" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.58">
-                    <om:Property Name="Ref" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                    <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="False" />
@@ -81,7 +81,7 @@
             <om:Element Type="ServiceBody" OID="8594de7c-7b13-4990-be3a-5df1ec7661d4" ParentLink="ServiceDeclaration_ServiceBody">
                 <om:Property Name="Signal" Value="False" />
                 <om:Element Type="MessageDeclaration" OID="f9577bb3-daed-44d7-80e5-559de00ccff6" ParentLink="ServiceBody_Declaration" LowerBound="35.15" HigherBound="35.79">
-                    <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                    <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                     <om:Property Name="ParamDirection" Value="In" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="GroupEvent" />
@@ -277,21 +277,21 @@ module INT0003.AD.Distribution
     {
         oneway Operation_1
         {
-            Shared.Schemas.GroupEvents.InternalGroupEvent
+            INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent
         };
     };
     internal porttype SendRegisteredPortType
     {
         oneway Operation_1
         {
-            Shared.Schemas.GroupEvents.InternalGroupEvent
+            INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent
         };
     };
     internal porttype SendReregisteredPortType
     {
         oneway Operation_1
         {
-            Shared.Schemas.GroupEvents.InternalGroupEvent
+            INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent
         };
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
@@ -304,7 +304,7 @@ module INT0003.AD.Distribution
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses SendReregisteredPortType SendReregisteredPort;
         System.String xpathStr;
-        body (message Shared.Schemas.GroupEvents.InternalGroupEvent GroupEvent, System.String groupSuffix)
+        body (message INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent GroupEvent, System.String groupSuffix)
         {
             xpathStr = "";
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("f44f5272-3a21-44b1-8851-492c21a10f15")]

@@ -39,9 +39,9 @@
     <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BizTalk.PipelineComponents.PromoteContext, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2dbe33dac94b8972, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\BizTalk.PipelineComponents.PromoteContext\v4.0_1.0.0.0__2dbe33dac94b8972\BizTalk.PipelineComponents.PromoteContext.dll</HintPath>
+    <Reference Include="BizTalk.PipelineComponents.PromoteTypedContext, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2dbe33dac94b8972, processorArchitecture=MSIL">
+      <HintPath>..\packages\BizTalk.PipelineComponents.PromoteTypedContext.1.0.0\lib\net45\BizTalk.PipelineComponents.PromoteTypedContext.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="BizTalkComponents.PipelineComponents.SetProperty, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4b1b8e566f75fed3, processorArchitecture=MSIL">
       <HintPath>..\packages\BizTalkComponents.PipelineComponents.SetProperty.1.7.0.0\lib\net40\BizTalkComponents.PipelineComponents.SetProperty.dll</HintPath>
@@ -107,6 +107,101 @@
     <None Include="Files\INT0003.AD.Distribution.Operations.docx" />
     <None Include="key.snk.pfx" />
     <None Include="packages.config" />
+    <Schema Include="Schemas\PersonEvents\InternalPerson.xsd">
+      <TypeName>InternalPerson</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.PersonEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\PersonEvents\InternalPersonEvent.xsd">
+      <TypeName>InternalPersonEvent</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.PersonEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\GroupEvents\ADNewGroup.xsd">
+      <TypeName>ADNewGroup</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.GroupEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\GroupEvents\ADNewIndividual.xsd">
+      <TypeName>ADNewIndividual</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.GroupEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\GroupEvents\InternalGroup.xsd">
+      <TypeName>InternalGroup</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.GroupEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\GroupEvents\InternalGroupEvent.xsd">
+      <TypeName>InternalGroupEvent</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.GroupEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\GroupEvents\InternalIdentity.xsd">
+      <TypeName>InternalIdentity</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.GroupEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\ADEvents\ADNewGroup.xsd">
+      <TypeName>ADNewGroup</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.ADEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\ADEvents\ADNewIndividual.xsd">
+      <TypeName>ADNewIndividual</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.ADEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\ADEvents\ADQueryResults.xsd">
+      <TypeName>ADQueryResults</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.ADEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\ADEvents\ADQueryResultsChange.xsd">
+      <TypeName>ADQueryResultsChange</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.ADEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\ADEvents\ADQueryResultsChangeObjectAdded.xsd">
+      <TypeName>ADQueryResultsChangeObjectAdded</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.ADEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\ADEvents\ADQueryResultsChangeObjectRemoved.xsd">
+      <TypeName>ADQueryResultsChangeObjectRemoved</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.ADEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\ADEvents\ADQueryResultsChangePropertyChanged.xsd">
+      <TypeName>ADQueryResultsChangePropertyChanged</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.ADEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\ADEvents\ADSendAdapterOneWayUpdate.xsd">
+      <TypeName>ADSendAdapterOneWayUpdate</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.ADEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\ADEvents\ADSendAdapterSolicitResponseGroupQuery.xsd">
+      <TypeName>ADSendAdapterSolicitResponseGroupQuery</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.ADEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\ADEvents\ADSendAdapterSolicitResponseIndividualQuery.xsd">
+      <TypeName>ADSendAdapterSolicitResponseIndividualQuery</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.ADEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\ADEvents\ADSendAdapterSolicitResponseQuery.xsd">
+      <TypeName>ADSendAdapterSolicitResponseQuery</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas.ADEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\PropertySchema.xsd">
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>INT0003.AD.Distribution.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
   </ItemGroup>
   <ItemGroup>
     <Map Include="Maps\ADQueryResultsChangeObjectAdded_to_ADNewGroup.btm">
@@ -139,32 +234,27 @@
       <Namespace>INT0003.AD.Distribution.Maps</Namespace>
       <SubType>Task</SubType>
     </Map>
-    <Pipeline Include="Pipelines\DemoteADValues.btp">
-      <TypeName>DemoteADValues</TypeName>
-      <Namespace>INT0003.AD.Distribution.Pipelines</Namespace>
-      <SubType>Task</SubType>
-    </Pipeline>
     <Content Include="Files\INT0003.AD.Distribution.BindingInfo.xml" />
     <Content Include="Maps\InternalGroupEvent_to_ADAddGroupOutgoing.xsl" />
+    <XLang Include="Processing\AddIndividualToADGroup.odx">
+      <SubType>Designer</SubType>
+      <TypeName>AddIndividualToADGroup</TypeName>
+      <Namespace>INT0003.AD.Distribution.Processing</Namespace>
+    </XLang>
     <XLang Include="Processing\GroupEventsGroupToAD.odx">
       <TypeName>GroupEventsGroupToAD_Copy</TypeName>
       <Namespace>INT0003.AD.Distribution.Processing</Namespace>
-      <SubType>Task</SubType>
+      <SubType>Designer</SubType>
     </XLang>
-    <Pipeline Include="Pipelines\XslTranslate.btp">
-      <TypeName>XslTranslate</TypeName>
-      <Namespace>INT0003.AD.Distribution.Pipelines</Namespace>
-      <SubType>Task</SubType>
-    </Pipeline>
-    <XLang Include="Processing\AddIndividualToADGroup.odx">
-      <TypeName>AddIndividualToADGroup</TypeName>
+    <XLang Include="Processing\GroupEventsIndividualToAD.odx">
+      <SubType>Designer</SubType>
+      <TypeName>GroupEventsIndividualToAD</TypeName>
       <Namespace>INT0003.AD.Distribution.Processing</Namespace>
-      <SubType>Task</SubType>
     </XLang>
     <XLang Include="Processing\SendIndividualUpdateToAD.odx">
       <TypeName>SendIndividualUpdateToAD</TypeName>
       <Namespace>INT0003.AD.Distribution.Processing</Namespace>
-      <SubType>Task</SubType>
+      <SubType>Designer</SubType>
     </XLang>
     <Pipeline Include="Pipelines\XSLTransform.btp">
       <TypeName>XSLTransform</TypeName>
@@ -196,22 +286,11 @@
       <Namespace>INT0003.AD.Distribution.Maps</Namespace>
     </Map>
   </ItemGroup>
-  <ItemGroup>
-    <Pipeline Include="Pipelines\SuppressRoutingFailure.btp">
-      <SubType>Task</SubType>
-      <TypeName>SuppressRoutingFailure</TypeName>
-      <Namespace>INT0003.AD.Distribution.Pipelines</Namespace>
-    </Pipeline>
-  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <XLang Include="Processing\CheckAndWaitForADIndividual.odx">
-      <SubType>Task</SubType>
+      <SubType>Designer</SubType>
       <TypeName>CheckAndWaitForADIndividual</TypeName>
-      <Namespace>INT0003.AD.Distribution.Processing</Namespace>
-    </XLang>
-    <XLang Include="Processing\GroupEventsIndividualToAD.odx">
-      <TypeName>GroupEventsIndividualToAD</TypeName>
       <Namespace>INT0003.AD.Distribution.Processing</Namespace>
     </XLang>
   </ItemGroup>

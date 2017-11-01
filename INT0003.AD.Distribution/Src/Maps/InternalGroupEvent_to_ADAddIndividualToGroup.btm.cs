@@ -1,8 +1,8 @@
 namespace INT0003.AD.Distribution.Maps {
     
     
-    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.GroupEvents.InternalGroupEvent", typeof(global::Shared.Schemas.GroupEvents.InternalGroupEvent))]
-    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.ADEvents.ADSendAdapterOneWayUpdate", typeof(global::Shared.Schemas.ADEvents.ADSendAdapterOneWayUpdate))]
+    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent", typeof(global::INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent))]
+    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"INT0003.AD.Distribution.Schemas.ADEvents.ADSendAdapterOneWayUpdate", typeof(global::INT0003.AD.Distribution.Schemas.ADEvents.ADSendAdapterOneWayUpdate))]
     public sealed class InternalGroupEvent_to_ADAddIndividualToGroup : global::Microsoft.XLANGs.BaseTypes.TransformBase {
         
         private const string _strMap = @"<?xml version=""1.0"" encoding=""UTF-16""?>
@@ -80,13 +80,13 @@ public string ReplacePlaceholders(string input)
         
         private const string _strArgList = @"<ExtensionObjects />";
         
-        private const string _strSrcSchemasList0 = @"Shared.Schemas.GroupEvents.InternalGroupEvent";
+        private const string _strSrcSchemasList0 = @"INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent";
         
-        private const global::Shared.Schemas.GroupEvents.InternalGroupEvent _srcSchemaTypeReference0 = null;
+        private const global::INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent _srcSchemaTypeReference0 = null;
         
-        private const string _strTrgSchemasList0 = @"Shared.Schemas.ADEvents.ADSendAdapterOneWayUpdate";
+        private const string _strTrgSchemasList0 = @"INT0003.AD.Distribution.Schemas.ADEvents.ADSendAdapterOneWayUpdate";
         
-        private const global::Shared.Schemas.ADEvents.ADSendAdapterOneWayUpdate _trgSchemaTypeReference0 = null;
+        private const global::INT0003.AD.Distribution.Schemas.ADEvents.ADSendAdapterOneWayUpdate _trgSchemaTypeReference0 = null;
         
         public override string XmlContent {
             get {
@@ -109,7 +109,7 @@ public string ReplacePlaceholders(string input)
         public override string[] SourceSchemas {
             get {
                 string[] _SrcSchemas = new string [1];
-                _SrcSchemas[0] = @"Shared.Schemas.GroupEvents.InternalGroupEvent";
+                _SrcSchemas[0] = @"INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent";
                 return _SrcSchemas;
             }
         }
@@ -117,7 +117,7 @@ public string ReplacePlaceholders(string input)
         public override string[] TargetSchemas {
             get {
                 string[] _TrgSchemas = new string [1];
-                _TrgSchemas[0] = @"Shared.Schemas.ADEvents.ADSendAdapterOneWayUpdate";
+                _TrgSchemas[0] = @"INT0003.AD.Distribution.Schemas.ADEvents.ADSendAdapterOneWayUpdate";
                 return _TrgSchemas;
             }
         }

@@ -18,7 +18,7 @@
                 <om:Property Name="Name" Value="Operation_1" />
                 <om:Property Name="Signal" Value="False" />
                 <om:Element Type="MessageRef" OID="0233abfb-ffd0-4711-b6b6-2e8c060915e9" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.62">
-                    <om:Property Name="Ref" Value="Shared.Schemas.ADEvents.ADSendAdapterOneWayUpdate" />
+                    <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.ADEvents.ADSendAdapterOneWayUpdate" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="False" />
@@ -31,7 +31,7 @@
             <om:Property Name="Name" Value="IndividualGroupEvent" />
             <om:Property Name="Signal" Value="True" />
             <om:Element Type="PropertyRef" OID="42b26221-e6c2-4130-8c2a-7d20ccac8340" ParentLink="CorrelationType_PropertyRef" LowerBound="13.9" HigherBound="13.43">
-                <om:Property Name="Ref" Value="Shared.Schemas.Common.PersonNumber" />
+                <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.PersonNumber" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="PropertyRef_1" />
                 <om:Property Name="Signal" Value="False" />
@@ -107,14 +107,14 @@
                 </om:Element>
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="01c1c54e-81ad-4560-9436-642ab9e3a238" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="22.1" HigherBound="23.1">
-                <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="GroupEvent" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="f941cb62-f41c-48c2-8bd7-95f3eda22175" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="23.1" HigherBound="24.1">
-                <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="GroupEventUpdated" />
@@ -132,14 +132,14 @@
                     <om:Property Name="Name" Value="ReceiveGroupEvent" />
                     <om:Property Name="Signal" Value="True" />
                     <om:Element Type="DNFPredicate" OID="768fb315-9b91-41aa-babc-7c79b3ace853" ParentLink="Receive_DNFPredicate">
-                        <om:Property Name="LHS" Value="Shared.Schemas.Common.GroupEventType" />
+                        <om:Property Name="LHS" Value="INT0003.AD.Distribution.Schemas.GroupEventType" />
                         <om:Property Name="RHS" Value="&quot;GroupMembershipCreateRequestEvent&quot;" />
                         <om:Property Name="Grouping" Value="OR" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
                     <om:Element Type="DNFPredicate" OID="f4a37f34-f887-4253-bf28-68db8722a0da" ParentLink="Receive_DNFPredicate">
-                        <om:Property Name="LHS" Value="Shared.Schemas.Common.GroupEventType" />
+                        <om:Property Name="LHS" Value="INT0003.AD.Distribution.Schemas.GroupEventType" />
                         <om:Property Name="RHS" Value="&quot;GroupMembershipRemoveRequestEvent&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
@@ -166,13 +166,13 @@
                         <om:Element Type="Parameter" OID="04d63759-a481-4db3-9479-c689302c912d" ParentLink="InvokeStatement_Parameter">
                             <om:Property Name="Direction" Value="In" />
                             <om:Property Name="Name" Value="GroupEvent" />
-                            <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                            <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
                         <om:Element Type="Parameter" OID="426226bb-fe17-4e1d-b295-f9baf0237506" ParentLink="InvokeStatement_Parameter">
                             <om:Property Name="Direction" Value="Out" />
                             <om:Property Name="Name" Value="GroupEventUpdated" />
-                            <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                            <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
                     </om:Element>
@@ -217,7 +217,7 @@
                                         <om:Element Type="Parameter" OID="f8b2cb7b-1096-446e-a0d1-0cb165e23954" ParentLink="InvokeStatement_Parameter">
                                             <om:Property Name="Direction" Value="In" />
                                             <om:Property Name="Name" Value="GroupEventUpdated" />
-                                            <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                                            <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                                             <om:Property Name="Signal" Value="False" />
                                         </om:Element>
                                         <om:Element Type="Parameter" OID="646cd3b7-b36d-4215-bbf1-b063503f02ba" ParentLink="InvokeStatement_Parameter">
@@ -249,7 +249,7 @@
                                         <om:Element Type="Parameter" OID="8d940533-ac60-45ca-98af-132adb8e2a58" ParentLink="InvokeStatement_Parameter">
                                             <om:Property Name="Direction" Value="In" />
                                             <om:Property Name="Name" Value="GroupEventUpdated" />
-                                            <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                                            <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                                             <om:Property Name="Signal" Value="False" />
                                         </om:Element>
                                         <om:Element Type="Parameter" OID="196a2ab2-57b9-4dc3-82ab-2a92e05e6cf9" ParentLink="InvokeStatement_Parameter">
@@ -281,7 +281,7 @@
                                         <om:Element Type="Parameter" OID="bf708c40-35b1-455f-8b1a-6a90857de946" ParentLink="InvokeStatement_Parameter">
                                             <om:Property Name="Direction" Value="In" />
                                             <om:Property Name="Name" Value="GroupEventUpdated" />
-                                            <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                                            <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                                             <om:Property Name="Signal" Value="False" />
                                         </om:Element>
                                         <om:Element Type="Parameter" OID="bdc00926-1842-40c7-bf9f-857c42b74b73" ParentLink="InvokeStatement_Parameter">
@@ -306,7 +306,7 @@
                                         <om:Element Type="Parameter" OID="32a58aa0-8982-4954-8510-3a33ac919396" ParentLink="InvokeStatement_Parameter">
                                             <om:Property Name="Direction" Value="In" />
                                             <om:Property Name="Name" Value="GroupEventUpdated" />
-                                            <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                                            <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                                             <om:Property Name="Signal" Value="False" />
                                         </om:Element>
                                         <om:Element Type="Parameter" OID="84d0e524-cf46-4231-8b59-308853bb10a1" ParentLink="InvokeStatement_Parameter">
@@ -346,7 +346,7 @@
                                 <om:Element Type="Parameter" OID="b66c6eac-deee-4c1b-920e-3a3ecbbaddf8" ParentLink="InvokeStatement_Parameter">
                                     <om:Property Name="Direction" Value="In" />
                                     <om:Property Name="Name" Value="GroupEventUpdated" />
-                                    <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                                    <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                                     <om:Property Name="Signal" Value="False" />
                                 </om:Element>
                                 <om:Element Type="Parameter" OID="4b6f817d-4ac8-465f-b0a0-b078449b88a6" ParentLink="InvokeStatement_Parameter">
@@ -371,7 +371,7 @@
                                 <om:Element Type="Parameter" OID="24210f13-c648-4536-b664-e7d91d2cbea9" ParentLink="InvokeStatement_Parameter">
                                     <om:Property Name="Direction" Value="In" />
                                     <om:Property Name="Name" Value="GroupEventUpdated" />
-                                    <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                                    <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                                     <om:Property Name="Signal" Value="False" />
                                 </om:Element>
                                 <om:Element Type="Parameter" OID="f7aca27e-4e28-4d78-9809-09d48e580ac2" ParentLink="InvokeStatement_Parameter">
@@ -396,7 +396,7 @@
                                 <om:Element Type="Parameter" OID="bbbea0f9-8a0b-4503-ac02-4786ab567d42" ParentLink="InvokeStatement_Parameter">
                                     <om:Property Name="Direction" Value="In" />
                                     <om:Property Name="Name" Value="GroupEventUpdated" />
-                                    <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                                    <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                                     <om:Property Name="Signal" Value="False" />
                                 </om:Element>
                                 <om:Element Type="Parameter" OID="663202c4-b313-4054-af3b-8dc3a2eca5e2" ParentLink="InvokeStatement_Parameter">
@@ -482,12 +482,12 @@ module INT0003.AD.Distribution
     {
         oneway Operation_1
         {
-            Shared.Schemas.ADEvents.ADSendAdapterOneWayUpdate
+            INT0003.AD.Distribution.Schemas.ADEvents.ADSendAdapterOneWayUpdate
         };
     };
     internal correlationtype IndividualGroupEvent
     {
-        Shared.Schemas.Common.PersonNumber
+        INT0003.AD.Distribution.Schemas.PersonNumber
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
     internal service GroupEventsIndividualToAD
@@ -496,8 +496,8 @@ module INT0003.AD.Distribution
         [Microsoft.XLANGs.BaseTypes.OrderedDelivery()]
         port implements ReceiveGroupEventPortType ReceiveGroupEventPort;
         correlation IndividualGroupEvent IndividualGroupEventSet;
-        message Shared.Schemas.GroupEvents.InternalGroupEvent GroupEvent;
-        message Shared.Schemas.GroupEvents.InternalGroupEvent GroupEventUpdated;
+        message INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent GroupEvent;
+        message INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent GroupEventUpdated;
         System.String xPathMessageType;
         System.String eventType;
         System.Boolean loop;
@@ -506,7 +506,7 @@ module INT0003.AD.Distribution
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("c51e65f5-427c-4823-b7b6-b810a4ad701c")]
-            activate ((Shared.Schemas.Common.GroupEventType == "GroupMembershipCreateRequestEvent") || (Shared.Schemas.Common.GroupEventType == "GroupMembershipRemoveRequestEvent"))receive (ReceiveGroupEventPort.ReceiveGroupEventOperation, GroupEvent, initialize IndividualGroupEventSet);
+            activate ((INT0003.AD.Distribution.Schemas.GroupEventType == "GroupMembershipCreateRequestEvent") || (INT0003.AD.Distribution.Schemas.GroupEventType == "GroupMembershipRemoveRequestEvent"))receive (ReceiveGroupEventPort.ReceiveGroupEventOperation, GroupEvent, initialize IndividualGroupEventSet);
             xPathMessageType = "";
             eventType = "";
             loop = true;

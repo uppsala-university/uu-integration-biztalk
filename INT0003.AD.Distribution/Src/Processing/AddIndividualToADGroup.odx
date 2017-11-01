@@ -17,8 +17,8 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReceiveCreateGroupEventsOperation" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="24ec1920-7ac6-4857-9c24-4d2fb13b1fab" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.50">
-                    <om:Property Name="Ref" Value="Shared.Schemas.GroupEvents.ADNewGroup" />
+                <om:Element Type="MessageRef" OID="24ec1920-7ac6-4857-9c24-4d2fb13b1fab" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.40">
+                    <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.ADEvents.ADNewGroup" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="False" />
@@ -30,8 +30,8 @@
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="ADGroupName" />
             <om:Property Name="Signal" Value="True" />
-            <om:Element Type="PropertyRef" OID="85235db5-e4c2-47dd-8281-f65c13b0c8be" ParentLink="CorrelationType_PropertyRef" LowerBound="13.9" HigherBound="13.40">
-                <om:Property Name="Ref" Value="Shared.Schemas.Common.GroupName" />
+            <om:Element Type="PropertyRef" OID="85235db5-e4c2-47dd-8281-f65c13b0c8be" ParentLink="CorrelationType_PropertyRef" LowerBound="13.9" HigherBound="13.26">
+                <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupName" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="PropertyRef_1" />
                 <om:Property Name="Signal" Value="False" />
@@ -83,21 +83,21 @@
                 </om:Element>
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="b52b5226-d7cb-44aa-9d85-0866ef4bc12e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="23.1" HigherBound="24.1">
-                <om:Property Name="Type" Value="Shared.Schemas.ADEvents.ADQueryResults" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.ADEvents.ADQueryResults" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ADGroupQueryResults" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="03c5b2e7-3559-4062-a8fc-2f7c9dd32b11" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="24.1" HigherBound="25.1">
-                <om:Property Name="Type" Value="Shared.Schemas.ADEvents.ADSendAdapterSolicitResponseGroupQuery" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.ADEvents.ADSendAdapterSolicitResponseGroupQuery" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ADGroupQuery" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="c92b6bf2-c0fa-4cc0-bec2-9a9bdf005c2f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
-                <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.ADNewGroup" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.ADEvents.ADNewGroup" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="CreateGroupsEventResult" />
@@ -105,14 +105,14 @@
             </om:Element>
             <om:Element Type="ServiceBody" OID="fb4e3bac-1894-46ed-abb5-e560678ad057" ParentLink="ServiceDeclaration_ServiceBody">
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="MessageDeclaration" OID="dd2cd8fe-9d89-444a-9fae-4544787b288e" ParentLink="ServiceBody_Declaration" LowerBound="28.15" HigherBound="28.79">
-                    <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                <om:Element Type="MessageDeclaration" OID="dd2cd8fe-9d89-444a-9fae-4544787b288e" ParentLink="ServiceBody_Declaration" LowerBound="28.15" HigherBound="28.72">
+                    <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
                     <om:Property Name="ParamDirection" Value="In" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="GroupEvent" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="VariableDeclaration" OID="9d20bc75-5da9-4434-9282-57feeeb8dbec" ParentLink="ServiceBody_Declaration" LowerBound="28.81" HigherBound="28.106">
+                <om:Element Type="VariableDeclaration" OID="9d20bc75-5da9-4434-9282-57feeeb8dbec" ParentLink="ServiceBody_Declaration" LowerBound="28.74" HigherBound="28.99">
                     <om:Property Name="UseDefaultConstructor" Value="False" />
                     <om:Property Name="Type" Value="System.String" />
                     <om:Property Name="ParamDirection" Value="In" />
@@ -239,7 +239,7 @@
                     <om:Element Type="Parameter" OID="c1d1a929-de78-474d-8111-bd6e0a6eea1e" ParentLink="InvokeStatement_Parameter">
                         <om:Property Name="Direction" Value="In" />
                         <om:Property Name="Name" Value="GroupEvent" />
-                        <om:Property Name="Type" Value="Shared.Schemas.GroupEvents.InternalGroupEvent" />
+                        <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.ADEvents.InternalGroupEvent" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
                     <om:Element Type="Parameter" OID="20bdaa31-f562-4848-a18f-27efaeee9487" ParentLink="InvokeStatement_Parameter">
@@ -294,12 +294,12 @@ module INT0003.AD.Distribution
     {
         oneway ReceiveCreateGroupEventsOperation
         {
-            Shared.Schemas.GroupEvents.ADNewGroup
+            Schemas.ADEvents.ADNewGroup
         };
     };
     internal correlationtype ADGroupName
     {
-        Shared.Schemas.Common.GroupName
+        Schemas.GroupName
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
     internal service AddIndividualToADGroup
@@ -309,12 +309,12 @@ module INT0003.AD.Distribution
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses ADGroupQueryPortType ADGroupQueryPort;
         correlation ADGroupName ADGroupNameSet;
-        message Shared.Schemas.ADEvents.ADQueryResults ADGroupQueryResults;
-        message Shared.Schemas.ADEvents.ADSendAdapterSolicitResponseGroupQuery ADGroupQuery;
-        message Shared.Schemas.GroupEvents.ADNewGroup CreateGroupsEventResult;
+        message Schemas.ADEvents.ADQueryResults ADGroupQueryResults;
+        message Schemas.ADEvents.ADSendAdapterSolicitResponseGroupQuery ADGroupQuery;
+        message Schemas.ADEvents.ADNewGroup CreateGroupsEventResult;
         System.String xpathStr;
         System.Int32 resultCountGroup;
-        body (message Shared.Schemas.GroupEvents.InternalGroupEvent GroupEvent, System.String groupSuffix)
+        body (message Schemas.GroupEvents.InternalGroupEvent GroupEvent, System.String groupSuffix)
         {
             xpathStr = "";
             resultCountGroup = 0;
