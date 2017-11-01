@@ -39,14 +39,6 @@
     <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Shared.Schemas.GroupEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Shared.Schemas\GroupEvents\bin\Debug\Shared.Schemas.GroupEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Shared.Schemas.Ladok, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Shared.Schemas\Ladok\bin\Debug\Shared.Schemas.Ladok.dll</HintPath>
-    </Reference>
     <Reference Include="Shared.Utilities.MySQLClientHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Utilities.MySQLClientHelper\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Utilities.MySQLClientHelper.dll</HintPath>
@@ -87,6 +79,51 @@
   <ItemGroup>
     <None Include="Files\INT0002.UU.GroupEvents.maps.xlsx" />
     <None Include="key.snk.pfx" />
+    <Schema Include="Schemas\GroupEvents\InternalGroup.xsd">
+      <TypeName>InternalGroup</TypeName>
+      <Namespace>INT0002.UU.GroupEvents.Schemas.GroupEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\GroupEvents\InternalGroupEvent.xsd">
+      <TypeName>InternalGroupEvent</TypeName>
+      <Namespace>INT0002.UU.GroupEvents.Schemas.GroupEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\GroupEvents\InternalIdentity.xsd">
+      <TypeName>InternalIdentity</TypeName>
+      <Namespace>INT0002.UU.GroupEvents.Schemas.GroupEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\schemas.ladok.se-dap.xsd">
+      <TypeName>schemas_ladok_se_dap</TypeName>
+      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\schemas.ladok.se-events.xsd">
+      <TypeName>schemas_ladok_se_events</TypeName>
+      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\schemas.ladok.se-studentinformation.xsd">
+      <TypeName>schemas_ladok_se_studentinformation</TypeName>
+      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\schemas.ladok.se-studiedeltagande.xsd">
+      <TypeName>schemas_ladok_se_studiedeltagande</TypeName>
+      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\schemas.ladok.se-utbildningsinformation.xsd">
+      <TypeName>schemas_ladok_se_utbildningsinformation</TypeName>
+      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\schemas.ladok.se.xsd">
+      <TypeName>schemas_ladok_se</TypeName>
+      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
   </ItemGroup>
   <ItemGroup>
     <Map Include="Maps\ForvantatDeltagandeSkapadEvent_to_InternalGroupEvent.btm">
