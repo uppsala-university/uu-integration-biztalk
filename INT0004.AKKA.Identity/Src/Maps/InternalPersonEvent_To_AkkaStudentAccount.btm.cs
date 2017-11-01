@@ -1,7 +1,7 @@
 namespace INT0004.AKKA.Identity.Maps {
     
     
-    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.PersonEvents.InternalPersonEvent", typeof(global::Shared.Schemas.PersonEvents.InternalPersonEvent))]
+    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPersonEvent", typeof(global::INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPersonEvent))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"INT0004.AKKA.Identity.Schemas.cxf_akkaappl_akka_its_uu_se+etableraEjAktiveratStudentkontoMedNamn", typeof(global::INT0004.AKKA.Identity.Schemas.cxf_akkaappl_akka_its_uu_se.etableraEjAktiveratStudentkontoMedNamn))]
     public sealed class InternalPersonEvent_To_AkkaStudentAccount : global::Microsoft.XLANGs.BaseTypes.TransformBase {
         
@@ -58,9 +58,9 @@ public string StringTrimRight(string str)
   <ExtensionObject Namespace=""http://schemas.microsoft.com/BizTalk/2003/ScriptNS0"" AssemblyName=""Shared.Utilities.MySQLClientHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a"" ClassName=""Shared.Utilities.MySQLClientHelper.MySQLConnect"" />
 </ExtensionObjects>";
         
-        private const string _strSrcSchemasList0 = @"Shared.Schemas.PersonEvents.InternalPersonEvent";
+        private const string _strSrcSchemasList0 = @"INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPersonEvent";
         
-        private const global::Shared.Schemas.PersonEvents.InternalPersonEvent _srcSchemaTypeReference0 = null;
+        private const global::INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPersonEvent _srcSchemaTypeReference0 = null;
         
         private const string _strTrgSchemasList0 = @"INT0004.AKKA.Identity.Schemas.cxf_akkaappl_akka_its_uu_se+etableraEjAktiveratStudentkontoMedNamn";
         
@@ -87,7 +87,7 @@ public string StringTrimRight(string str)
         public override string[] SourceSchemas {
             get {
                 string[] _SrcSchemas = new string [1];
-                _SrcSchemas[0] = @"Shared.Schemas.PersonEvents.InternalPersonEvent";
+                _SrcSchemas[0] = @"INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPersonEvent";
                 return _SrcSchemas;
             }
         }

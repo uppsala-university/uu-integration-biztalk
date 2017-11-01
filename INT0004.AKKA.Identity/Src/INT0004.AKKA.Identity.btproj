@@ -39,10 +39,6 @@
     <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Shared.Schemas.PersonEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Shared.Schemas\PersonEvents\bin\Debug\Shared.Schemas.PersonEvents.dll</HintPath>
-    </Reference>
     <Reference Include="Shared.Utilities.MySQLClientHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Utilities.MySQLClientHelper\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Utilities.MySQLClientHelper.dll</HintPath>
@@ -84,6 +80,16 @@
     <None Include="app.config" />
     <None Include="Bindings\INT0004.AKKA.Identity.vsdx" />
     <None Include="key.snk.pfx" />
+    <Schema Include="Schemas\PersonEvents\InternalPerson.xsd">
+      <TypeName>InternalPerson</TypeName>
+      <Namespace>INT0004.AKKA.Identity.Schemas.PersonEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\PersonEvents\InternalPersonEvent.xsd">
+      <TypeName>InternalPersonEvent</TypeName>
+      <Namespace>INT0004.AKKA.Identity.Schemas.PersonEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
   </ItemGroup>
   <ItemGroup>
     <Map Include="Maps\InternalPersonEvent_To_AkkaStudentAccount.btm">
