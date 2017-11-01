@@ -2,7 +2,7 @@ namespace INT0001.Ladok2.Events.Maps {
     
     
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"INT0001.Ladok2.Events.Schemas.getNext.getNext_resultSet", typeof(global::INT0001.Ladok2.Events.Schemas.getNext.getNext_resultSet))]
-    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation+KurstillfalleTillStatusEvent", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent))]
+    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"INT0001.Ladok2.Events.Schemas.Ladok.schemas_ladok_se_utbildningsinformation+KurstillfalleTillStatusEvent", typeof(global::INT0001.Ladok2.Events.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent))]
     public sealed class MembershipEvent_to_KurstillfalleTillStatusEvent : global::Microsoft.XLANGs.BaseTypes.TransformBase {
         
         private const string _strMap = @"<?xml version=""1.0"" encoding=""UTF-16""?>
@@ -75,9 +75,9 @@ public string StringTrimLeft(string str)
         
         private const global::INT0001.Ladok2.Events.Schemas.getNext.getNext_resultSet _srcSchemaTypeReference0 = null;
         
-        private const string _strTrgSchemasList0 = @"Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation+KurstillfalleTillStatusEvent";
+        private const string _strTrgSchemasList0 = @"INT0001.Ladok2.Events.Schemas.Ladok.schemas_ladok_se_utbildningsinformation+KurstillfalleTillStatusEvent";
         
-        private const global::Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent _trgSchemaTypeReference0 = null;
+        private const global::INT0001.Ladok2.Events.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent _trgSchemaTypeReference0 = null;
         
         public override string XmlContent {
             get {
@@ -108,7 +108,7 @@ public string StringTrimLeft(string str)
         public override string[] TargetSchemas {
             get {
                 string[] _TrgSchemas = new string [1];
-                _TrgSchemas[0] = @"Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation+KurstillfalleTillStatusEvent";
+                _TrgSchemas[0] = @"INT0001.Ladok2.Events.Schemas.Ladok.schemas_ladok_se_utbildningsinformation+KurstillfalleTillStatusEvent";
                 return _TrgSchemas;
             }
         }

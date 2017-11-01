@@ -2,7 +2,7 @@ namespace INT0001.Ladok2.Events.Maps {
     
     
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"INT0001.Ladok2.Events.Schemas.getNext.getNext_resultSet", typeof(global::INT0001.Ladok2.Events.Schemas.getNext.getNext_resultSet))]
-    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande+AterbudEvent", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande.AterbudEvent))]
+    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"INT0001.Ladok2.Events.Schemas.Ladok.schemas_ladok_se_studiedeltagande+AterbudEvent", typeof(global::INT0001.Ladok2.Events.Schemas.Ladok.schemas_ladok_se_studiedeltagande.AterbudEvent))]
     public sealed class MembershipEvent_to_AterbudEvent : global::Microsoft.XLANGs.BaseTypes.TransformBase {
         
         private const string _strMap = @"<?xml version=""1.0"" encoding=""UTF-16""?>
@@ -65,9 +65,9 @@ public string StringConcat(string param0, string param1, string param2)
         
         private const global::INT0001.Ladok2.Events.Schemas.getNext.getNext_resultSet _srcSchemaTypeReference0 = null;
         
-        private const string _strTrgSchemasList0 = @"Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande+AterbudEvent";
+        private const string _strTrgSchemasList0 = @"INT0001.Ladok2.Events.Schemas.Ladok.schemas_ladok_se_studiedeltagande+AterbudEvent";
         
-        private const global::Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande.AterbudEvent _trgSchemaTypeReference0 = null;
+        private const global::INT0001.Ladok2.Events.Schemas.Ladok.schemas_ladok_se_studiedeltagande.AterbudEvent _trgSchemaTypeReference0 = null;
         
         public override string XmlContent {
             get {
@@ -98,7 +98,7 @@ public string StringConcat(string param0, string param1, string param2)
         public override string[] TargetSchemas {
             get {
                 string[] _TrgSchemas = new string [1];
-                _TrgSchemas[0] = @"Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande+AterbudEvent";
+                _TrgSchemas[0] = @"INT0001.Ladok2.Events.Schemas.Ladok.schemas_ladok_se_studiedeltagande+AterbudEvent";
                 return _TrgSchemas;
             }
         }
