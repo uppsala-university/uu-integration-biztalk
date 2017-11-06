@@ -36,18 +36,29 @@ namespace INT0001.Ladok2.Events.Pipelines
 "    </Components>    </Stage>    <Stage>      <PolicyFileStage _locAttrData=\"Name\" _locID=\"3\" Name=\""+
 "Validate\" minOccurs=\"0\" maxOccurs=\"-1\" execMethod=\"All\" stageId=\"9d0e410d-4cce-4536-83fa-4a5040674ad"+
 "6\" />      <Components>        <Component>          <Name>BizTalk.PipelineComponents.AddContextPrope"+
-"rties,BizTalk.PipelineComponents.PromoteContext, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2d"+
-"be33dac94b8972</Name>          <ComponentName>ContextAdder</ComponentName>          <Description>Con"+
-"text Adder</Description>          <Version>1.0.0.0</Version>          <Properties>            <Prope"+
-"rty Name=\"Properties\">              <Value xsi:type=\"xsd:string\">http://schemas.microsoft.com/BizTal"+
-"k/2003/system-properties#AckRequired@3=true;http://schemas.microsoft.com/BizTalk/2003/system-propert"+
-"ies#SuppressRoutingFailureDiagnosticInfo@3=true;</Value>            </Property>          </Propertie"+
-"s>          <CachedDisplayName>ContextAdder</CachedDisplayName>          <CachedIsManaged>true</Cach"+
-"edIsManaged>        </Component>      </Components>    </Stage>    <Stage>      <PolicyFileStage _lo"+
-"cAttrData=\"Name\" _locID=\"4\" Name=\"ResolveParty\" minOccurs=\"0\" maxOccurs=\"-1\" execMethod=\"All\" stageI"+
-"d=\"9d0e410e-4cce-4536-83fa-4a5040674ad6\" />      <Components />    </Stage>  </Stages></Document>";
+"rties,BizTalk.PipelineComponents.PromoteTypedContext, Version=1.0.0.0, Culture=neutral, PublicKeyTok"+
+"en=2dbe33dac94b8972</Name>          <ComponentName>Context Adder</ComponentName>          <Descripti"+
+"on>Add typed context properties</Description>          <Version>1.0.0.0</Version>          <Properti"+
+"es>            <Property Name=\"Namespaces\">              <Value xsi:type=\"xsd:string\" />            "+
+"</Property>            <Property Name=\"Properties\">              <Value xsi:type=\"xsd:string\">&lt;Ar"+
+"rayOfContextValue xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org"+
+"/2001/XMLSchema\"&gt;&lt;ContextValue&gt;&lt;Prefix&gt;BTS&lt;/Prefix&gt;&lt;Value&gt;True&lt;/Value&"+
+"gt;&lt;Key&gt;AckRequired&lt;/Key&gt;&lt;Namespace&gt;http://schemas.microsoft.com/BizTalk/2003/syst"+
+"em-properties&lt;/Namespace&gt;&lt;Code&gt;Boolean&lt;/Code&gt;&lt;/ContextValue&gt;&lt;ContextValue"+
+"&gt;&lt;Prefix&gt;BTS&lt;/Prefix&gt;&lt;Value&gt;True&lt;/Value&gt;&lt;Key&gt;SuppressRoutingFailure"+
+"DiagnosticInfo&lt;/Key&gt;&lt;Namespace&gt;http://schemas.microsoft.com/BizTalk/2003/system-properti"+
+"es&lt;/Namespace&gt;&lt;Code&gt;Boolean&lt;/Code&gt;&lt;/ContextValue&gt;&lt;/ArrayOfContextValue&gt"+
+";</Value>            </Property>            <Property Name=\"BTS.AckRequired\">              <Value xs"+
+"i:type=\"xsd:string\">True</Value>            </Property>            <Property Name=\"BTS.SuppressRouti"+
+"ngFailureDiagnosticInfo\">              <Value xsi:type=\"xsd:string\">True</Value>            </Proper"+
+"ty>            <Property Name=\"HiddenProperties\">              <Value xsi:type=\"xsd:string\">Properti"+
+"es,Namespaces</Value>            </Property>          </Properties>          <CachedDisplayName>Cont"+
+"ext Adder</CachedDisplayName>          <CachedIsManaged>true</CachedIsManaged>        </Component>  "+
+"    </Components>    </Stage>    <Stage>      <PolicyFileStage _locAttrData=\"Name\" _locID=\"4\" Name=\""+
+"ResolveParty\" minOccurs=\"0\" maxOccurs=\"-1\" execMethod=\"All\" stageId=\"9d0e410e-4cce-4536-83fa-4a50406"+
+"74ad6\" />      <Components />    </Stage>  </Stages></Document>";
         
-        private const string _versionDependentGuid = "2ed47036-9c9b-4f2e-95f6-783250b04c7a";
+        private const string _versionDependentGuid = "075e6cd9-bf7c-4872-add0-3d49232c1790";
         
         public PromoteAck_ReceivePipeline()
         {
@@ -71,14 +82,24 @@ namespace INT0001.Ladok2.Events.Pipelines
             }
             this.AddComponent(stage, comp0);
             stage = this.AddStage(new System.Guid("9d0e410d-4cce-4536-83fa-4a5040674ad6"), Microsoft.BizTalk.PipelineOM.ExecutionMode.all);
-            IBaseComponent comp1 = Microsoft.BizTalk.PipelineOM.PipelineManager.CreateComponent("BizTalk.PipelineComponents.AddContextProperties,BizTalk.PipelineComponents.PromoteContext, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2dbe33dac94b8972");;
+            IBaseComponent comp1 = Microsoft.BizTalk.PipelineOM.PipelineManager.CreateComponent("BizTalk.PipelineComponents.AddContextProperties,BizTalk.PipelineComponents.PromoteTypedContext, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2dbe33dac94b8972");;
             if (comp1 is IPersistPropertyBag)
             {
                 string comp1XmlProperties = "<?xml version=\"1.0\" encoding=\"utf-16\"?><PropertyBag xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-inst"+
-"ance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">  <Properties>    <Property Name=\"Properties\">   "+
-"   <Value xsi:type=\"xsd:string\">http://schemas.microsoft.com/BizTalk/2003/system-properties#AckRequi"+
-"red@3=true;http://schemas.microsoft.com/BizTalk/2003/system-properties#SuppressRoutingFailureDiagnos"+
-"ticInfo@3=true;</Value>    </Property>  </Properties></PropertyBag>";
+"ance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">  <Properties>    <Property Name=\"Namespaces\">   "+
+"   <Value xsi:type=\"xsd:string\" />    </Property>    <Property Name=\"Properties\">      <Value xsi:ty"+
+"pe=\"xsd:string\">&lt;ArrayOfContextValue xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:"+
+"xsd=\"http://www.w3.org/2001/XMLSchema\"&gt;&lt;ContextValue&gt;&lt;Prefix&gt;BTS&lt;/Prefix&gt;&lt;Va"+
+"lue&gt;True&lt;/Value&gt;&lt;Key&gt;AckRequired&lt;/Key&gt;&lt;Namespace&gt;http://schemas.microsoft"+
+".com/BizTalk/2003/system-properties&lt;/Namespace&gt;&lt;Code&gt;Boolean&lt;/Code&gt;&lt;/ContextVal"+
+"ue&gt;&lt;ContextValue&gt;&lt;Prefix&gt;BTS&lt;/Prefix&gt;&lt;Value&gt;True&lt;/Value&gt;&lt;Key&gt;"+
+"SuppressRoutingFailureDiagnosticInfo&lt;/Key&gt;&lt;Namespace&gt;http://schemas.microsoft.com/BizTal"+
+"k/2003/system-properties&lt;/Namespace&gt;&lt;Code&gt;Boolean&lt;/Code&gt;&lt;/ContextValue&gt;&lt;/"+
+"ArrayOfContextValue&gt;</Value>    </Property>    <Property Name=\"BTS.AckRequired\">      <Value xsi:"+
+"type=\"xsd:string\">True</Value>    </Property>    <Property Name=\"BTS.SuppressRoutingFailureDiagnosti"+
+"cInfo\">      <Value xsi:type=\"xsd:string\">True</Value>    </Property>    <Property Name=\"HiddenPrope"+
+"rties\">      <Value xsi:type=\"xsd:string\">Properties,Namespaces</Value>    </Property>  </Properties"+
+"></PropertyBag>";
                 PropertyBag pb = PropertyBag.DeserializeFromXml(comp1XmlProperties);;
                 ((IPersistPropertyBag)(comp1)).Load(pb, 0);
             }
