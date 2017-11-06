@@ -39,37 +39,12 @@
     <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BizTalk.PipelineComponents.PromoteTypedContext, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2dbe33dac94b8972, processorArchitecture=MSIL">
-      <HintPath>..\packages\BizTalk.PipelineComponents.PromoteTypedContext.1.0.0\lib\net45\BizTalk.PipelineComponents.PromoteTypedContext.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="BizTalkComponents.PipelineComponents.SetProperty, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4b1b8e566f75fed3, processorArchitecture=MSIL">
-      <HintPath>..\packages\BizTalkComponents.PipelineComponents.SetProperty.1.7.0.0\lib\net40\BizTalkComponents.PipelineComponents.SetProperty.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="BizTalk.PipelineComponents.PromoteTypedContext, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2dbe33dac94b8972, processorArchitecture=MSIL" />
     <Reference Include="BizTalkComponents.PipelineComponents.XSLTransform, Version=1.0.0.1, Culture=neutral, PublicKeyToken=47190f56632fbc76, processorArchitecture=MSIL">
       <HintPath>..\packages\BizTalkComponents.PipelineComponents.XSLTransform.1.0.0\lib\net45\BizTalkComponents.PipelineComponents.XSLTransform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Shared.Schemas.ADEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.ADEvents\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Schemas.ADEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Shared.Schemas.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Common\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Schemas.Common.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Shared.Schemas.GroupEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.GroupEvents\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Schemas.GroupEvents.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Shared.Schemas.PersonEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.PersonEvents\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Schemas.PersonEvents.dll</HintPath>
-    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -272,6 +247,11 @@
       <Namespace>INT0003.AD.Distribution.Maps</Namespace>
       <SubType>Task</SubType>
     </Map>
+    <Pipeline Include="Pipelines\SuppressDebugInfo.btp">
+      <TypeName>SuppressDebugInfo</TypeName>
+      <Namespace>INT0003.AD.Distribution.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
     <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
