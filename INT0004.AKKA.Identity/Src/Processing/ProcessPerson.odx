@@ -1,0 +1,229 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="44bccbb9-4a75-410e-ad23-cdccf74b9b31" LowerBound="1.1" HigherBound="48.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="INT0004.AKKA.Identity" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="1f66caaf-51d8-441a-b6a6-124628d5508e" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="RcvPersonEventsPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="364e5fb3-8205-43c8-ba16-1fcf2ef93a72" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PersonEvent" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="25f612b9-513c-4552-88cf-bb5a3455c0cc" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.53">
+                    <om:Property Name="Ref" Value="INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPersonEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="f17003f2-a69c-47dc-86eb-930f5493de1f" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CreatePersonPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="3cc66710-0d7a-49f6-9250-7659036ab5e6" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AKKA" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="47bc4da9-8441-45c9-8765-5947c36f7ec0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.53">
+                    <om:Property Name="Ref" Value="INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPersonEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="92c30540-d2ec-4cfb-813d-df135e93b65e" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="15.55" HigherBound="15.137">
+                    <om:Property Name="Ref" Value="INT0004.AKKA.Identity.Schemas.cxf_akkaappl_akka_its_uu_se.etableraEjAktiveratStudentkontoMedNamnResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="dbd472a6-6668-4e77-9d1b-6c5ac91937dc" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="47.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessPerson" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="4f2edb9b-3df7-46bd-9c2c-9899ae6b6de3" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="returnCode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="cbaf130c-7ad8-4166-a1bf-3ebea8ebafbe" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="returnText" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="911f1437-76cf-4fd5-9c40-45c24cbde84b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPersonEvent" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Person" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="7b2e8fd9-d46a-4ae4-af56-19ba6eec1a7a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="INT0004.AKKA.Identity.Schemas.cxf_akkaappl_akka_its_uu_se.etableraEjAktiveratStudentkontoMedNamnResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AKKAResponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="156e3ed8-be5e-4a36-813f-efef0dbb062e" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="076781a5-b8fe-4186-81b7-df5e6d5d4c57" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="35.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="RcvPersonEventsPort" />
+                    <om:Property Name="MessageName" Value="Person" />
+                    <om:Property Name="OperationName" Value="PersonEvent" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="RcvPersonEvent" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="ac45c314-7eba-4639-bd3f-cd3098deab9e" ParentLink="ServiceBody_Statement" LowerBound="35.1" HigherBound="37.1">
+                    <om:Property Name="PortName" Value="CreatePersonPort" />
+                    <om:Property Name="MessageName" Value="Person" />
+                    <om:Property Name="OperationName" Value="AKKA" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SndPersonEvent" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="6c659c74-ea76-46db-80fb-63fbe6b4f3a4" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="39.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="CreatePersonPort" />
+                    <om:Property Name="MessageName" Value="AKKAResponse" />
+                    <om:Property Name="OperationName" Value="AKKA" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="RcvAKKAResponse" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Decision" OID="6a67128a-797e-4b79-bfce-2b49680cd264" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="45.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="HasError" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="c7caa333-9fea-4250-84ed-7fb2d7b3a3a0" ParentLink="ReallyComplexStatement_Branch" LowerBound="40.13" HigherBound="45.1">
+                        <om:Property Name="Expression" Value="AKKAResponse.return.returncode != &quot;0&quot;" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ErrorExists" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Suspend" OID="4f325d0d-f898-4427-8a1e-1e2d73f127aa" ParentLink="ComplexStatement_Statement" LowerBound="42.1" HigherBound="44.1">
+                            <om:Property Name="ErrorMessage" Value="AKKAResponse.return.returntext;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Handle and terminate" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="006ea061-909c-40a3-a6a2-061e3eb803ae" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="5bddcb3f-18f2-4e63-8c82-1c217ae6c347" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0004.AKKA.Identity.RcvPersonEventsPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RcvPersonEventsPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="348f47b1-8c57-4e72-a1bc-e71770a3a5f9" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="e3ba572d-ecf0-4d53-b04e-228c6f0f082a" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0004.AKKA.Identity.CreatePersonPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CreatePersonPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="ece7c05b-6787-421e-8eab-73eb9c63c5ec" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module INT0004.AKKA.Identity
+{
+    internal porttype RcvPersonEventsPortType
+    {
+        oneway PersonEvent
+        {
+            Schemas.PersonEvents.InternalPersonEvent
+        };
+    };
+    internal porttype CreatePersonPortType
+    {
+        requestresponse AKKA
+        {
+            Schemas.PersonEvents.InternalPersonEvent, Schemas.cxf_akkaappl_akka_its_uu_se.etableraEjAktiveratStudentkontoMedNamnResponse
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessPerson
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements RcvPersonEventsPortType RcvPersonEventsPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses CreatePersonPortType CreatePersonPort;
+        message Schemas.PersonEvents.InternalPersonEvent Person;
+        message Schemas.cxf_akkaappl_akka_its_uu_se.etableraEjAktiveratStudentkontoMedNamnResponse AKKAResponse;
+        System.String returnCode;
+        System.String returnText;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("076781a5-b8fe-4186-81b7-df5e6d5d4c57")]
+            activate receive (RcvPersonEventsPort.PersonEvent, Person);
+            returnCode = "";
+            returnText = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ac45c314-7eba-4639-bd3f-cd3098deab9e")]
+            send (CreatePersonPort.AKKA, Person);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6c659c74-ea76-46db-80fb-63fbe6b4f3a4")]
+            receive (CreatePersonPort.AKKA, AKKAResponse);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6a67128a-797e-4b79-bfce-2b49680cd264")]
+            if (AKKAResponse.return.returncode != "0")
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("4f325d0d-f898-4427-8a1e-1e2d73f127aa")]
+                suspend AKKAResponse.return.returntext;
+            }
+        }
+    }
+}
+
