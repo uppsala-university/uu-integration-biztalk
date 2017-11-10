@@ -266,9 +266,9 @@ GO
 		Id int
 	  )
 
-	   insert into [ACK_EVENTS](event_id,object_key)
-		output INSERTED.event_id into @Ack
-			select Id,object_key from [dbo].[READY_FOR_PROCESSING]
+	    insert into [ACK_EVENTS](event_id,object_key)
+			output INSERTED.event_id into @Ack
+				select top 100 Id,object_key from [dbo].[READY_FOR_PROCESSING]
 
 
 			SELECT 

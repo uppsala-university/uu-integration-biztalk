@@ -7,11 +7,11 @@ using Microsoft.BizTalk.XLANGs.BTXEngine;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("INT0004.AKKA.Student")]
+[assembly: AssemblyTitle("Shared.Pipelines.SuppressDebugInfo")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("UU")]
-[assembly: AssemblyProduct("INT0004.AKKA.Student")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Shared.Pipelines.SuppressDebugInfo")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -23,7 +23,7 @@ using Microsoft.BizTalk.XLANGs.BTXEngine;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("796293c5-9c6d-4b4e-8854-0b77165306ee")]
+[assembly: Guid("ecf0df18-6484-48b5-a79d-e96774b22887")]
 
 // Version information for an assembly consists of the following four values:
 //
