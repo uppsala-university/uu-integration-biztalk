@@ -7,11 +7,11 @@ using Microsoft.BizTalk.XLANGs.BTXEngine;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("INT0005.AKKA.Student")]
+[assembly: AssemblyTitle("INT0004.AKKA.Student")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("UU")]
-[assembly: AssemblyProduct("INT0005.AKKA.Student")]
+[assembly: AssemblyProduct("INT0004.AKKA.Student")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
