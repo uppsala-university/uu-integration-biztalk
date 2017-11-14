@@ -538,8 +538,14 @@
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="GroupName" />
             <om:Property Name="Signal" Value="True" />
-            <om:Element Type="PropertyRef" OID="4c0566e0-08ad-45ca-9c49-3d87e6f85315" ParentLink="CorrelationType_PropertyRef" LowerBound="34.9" HigherBound="34.26">
+            <om:Element Type="PropertyRef" OID="7606b2e1-798b-4608-9b77-1dc89c521534" ParentLink="CorrelationType_PropertyRef" LowerBound="34.9" HigherBound="34.26">
                 <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupName" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="PropertyRef" OID="3a81bcfc-21f1-4b7c-a0f4-d4f1d7cc19d2" ParentLink="CorrelationType_PropertyRef" LowerBound="34.28" HigherBound="34.45">
+                <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupType" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="PropertyRef_1" />
                 <om:Property Name="Signal" Value="False" />
@@ -581,7 +587,7 @@ module INT0003.AD.Distribution
     };
     internal correlationtype GroupName
     {
-        Schemas.GroupName
+        Schemas.GroupName, Schemas.GroupType
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
     internal service GroupEventsGroupToAD
