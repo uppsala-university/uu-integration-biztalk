@@ -75,8 +75,28 @@ CREATE CLUSTERED INDEX [ACK_EVENTS_MAIN] ON [dbo].[ACK_EVENTS]
 (
 	[object_key] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
 END
 
+GO
+
+IF (EXISTS (SELECT * 
+                 FROM INFORMATION_SCHEMA.VIEWS 
+                 WHERE TABLE_SCHEMA = 'dbo' 
+                 AND  TABLE_NAME = 'GET_PROCESSED_GROUP_IDS'))
+BEGIN
+	DROP VIEW [dbo].[GET_PROCESSED_GROUP_IDS]
+END
+
+GO
+
+create view [dbo].[GET_PROCESSED_GROUP_IDS]
+as
+select concat(reportCode,'_',startSemester) as course
+  FROM [dbo].[MEMBERSHIP_EVENTS]
+	where pnr is null and processed = 1
+
+GO
 
 IF (EXISTS (SELECT * 
                  FROM INFORMATION_SCHEMA.VIEWS 
@@ -160,6 +180,10 @@ as
 		 where 
 		--not(pnr is null) and --inkludera även grupper
 		 processed = 0
+		 --Make sure group exists before individual is processed
+		 and (pnr is null or (concat(ev.reportCode,'_',ev.startSemester) in
+		 (select course from [dbo].[GET_PROCESSED_GROUP_IDS])
+		 ))
 		  group by  case when (ev.pnr is null) then	
 			concat(ev.reportCode,'_',ev.startSemester)
 			else
@@ -319,3 +343,4 @@ GO
 				where Id = @ackId
 
 GO
+	
