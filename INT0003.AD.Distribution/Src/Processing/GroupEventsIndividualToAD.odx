@@ -175,11 +175,11 @@
                                 <om:Property Name="Name" Value="CheckGroupEventType" />
                                 <om:Property Name="Signal" Value="True" />
                                 <om:Element Type="DecisionBranch" OID="715518da-ed94-436e-91c0-410d3a7a8200" ParentLink="ReallyComplexStatement_Branch" LowerBound="45.21" HigherBound="52.1">
-                                    <om:Property Name="Expression" Value="GroupEventUpdated.Group.type == &quot;ForvantatDeltagande&quot;" />
+                                    <om:Property Name="Expression" Value="GroupEventUpdated.Group.Type == &quot;ForvantatDeltagande&quot;" />
                                     <om:Property Name="IsGhostBranch" Value="True" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="ForvantatDeltagande" />
-                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
                                     <om:Element Type="VariableAssignment" OID="372c48d8-f5ab-4d25-997e-5f95adccc9cc" ParentLink="ComplexStatement_Statement" LowerBound="47.1" HigherBound="49.1">
                                         <om:Property Name="Expression" Value="groupSuffix = &quot;accepted&quot;;" />
                                         <om:Property Name="ReportToAnalyst" Value="True" />
@@ -207,11 +207,11 @@
                                     </om:Element>
                                 </om:Element>
                                 <om:Element Type="DecisionBranch" OID="8adbe44e-26f6-40db-b425-a71a084d0856" ParentLink="ReallyComplexStatement_Branch" LowerBound="52.26" HigherBound="59.1">
-                                    <om:Property Name="Expression" Value="GroupEventUpdated.Group.type == &quot;Registrering&quot;" />
+                                    <om:Property Name="Expression" Value="GroupEventUpdated.Group.Type == &quot;Registrering&quot;" />
                                     <om:Property Name="IsGhostBranch" Value="True" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="Registrering" />
-                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Property Name="Signal" Value="True" />
                                     <om:Element Type="VariableAssignment" OID="64654b9d-73b5-46d8-8f5c-cf84812e3b9b" ParentLink="ComplexStatement_Statement" LowerBound="54.1" HigherBound="56.1">
                                         <om:Property Name="Expression" Value="groupSuffix = &quot;registered&quot;;" />
                                         <om:Property Name="ReportToAnalyst" Value="True" />
@@ -239,11 +239,11 @@
                                     </om:Element>
                                 </om:Element>
                                 <om:Element Type="DecisionBranch" OID="f2b899dd-a167-4128-b525-4129a3014709" ParentLink="ReallyComplexStatement_Branch" LowerBound="59.26" HigherBound="70.1">
-                                    <om:Property Name="Expression" Value="GroupEventUpdated.Group.type == &quot;Omregistrering&quot;" />
+                                    <om:Property Name="Expression" Value="GroupEventUpdated.Group.Type == &quot;Omregistrering&quot;" />
                                     <om:Property Name="IsGhostBranch" Value="True" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="Omregistrering" />
-                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
                                     <om:Element Type="VariableAssignment" OID="4dc055e7-56ec-4b43-870f-070e70a7b9c1" ParentLink="ComplexStatement_Statement" LowerBound="61.1" HigherBound="63.1">
                                         <om:Property Name="Expression" Value="groupSuffix = &quot;registered&quot;;" />
                                         <om:Property Name="ReportToAnalyst" Value="True" />
@@ -497,21 +497,21 @@ module INT0003.AD.Distribution
                 if (GroupEventUpdated.type == "GroupMembershipCreateRequestEvent")
                 {
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("a6673e9a-41ab-4dcc-a335-dcd463884f5b")]
-                    if (GroupEventUpdated.Group.type == "ForvantatDeltagande")
+                    if (GroupEventUpdated.Group.Type == "ForvantatDeltagande")
                     {
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("372c48d8-f5ab-4d25-997e-5f95adccc9cc")]
                         groupSuffix = "accepted";
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("4046d63f-dbcf-429d-9e21-dd71f2353275")]
                         call INT0003.AD.Distribution.AddIndividualToADGroup (GroupEventUpdated, groupSuffix);
                     }
-                    else if (GroupEventUpdated.Group.type == "Registrering")
+                    else if (GroupEventUpdated.Group.Type == "Registrering")
                     {
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("64654b9d-73b5-46d8-8f5c-cf84812e3b9b")]
                         groupSuffix = "registered";
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("b17c7726-4446-42d9-951f-ea1d5ed2fec4")]
                         call INT0003.AD.Distribution.AddIndividualToADGroup (GroupEventUpdated, groupSuffix);
                     }
-                    else if (GroupEventUpdated.Group.type == "Omregistrering")
+                    else if (GroupEventUpdated.Group.Type == "Omregistrering")
                     {
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("4dc055e7-56ec-4b43-870f-070e70a7b9c1")]
                         groupSuffix = "registered";
