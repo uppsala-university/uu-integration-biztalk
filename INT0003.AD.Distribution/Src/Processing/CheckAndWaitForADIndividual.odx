@@ -305,11 +305,11 @@
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="ListenBranch_2" />
                                 <om:Property Name="Signal" Value="False" />
-                                <om:Element Type="Delay" OID="b2ccb2b7-0dfe-4a8a-9e86-f68ba6c53356" ParentLink="ListenBranch_Statement" LowerBound="91.1" HigherBound="92.57">
-                                    <om:Property Name="Timeout" Value="new System.TimeSpan(1,0,0,0)" />
+                                <om:Element Type="Delay" OID="b2ccb2b7-0dfe-4a8a-9e86-f68ba6c53356" ParentLink="ListenBranch_Statement" LowerBound="91.1" HigherBound="92.58">
+                                    <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,30,0)" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="WaitForIndividualInADTimeout" />
-                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
                                 </om:Element>
                                 <om:Element Type="Send" OID="ab3b8717-59f0-49f0-8641-97dc9bbf0c7e" ParentLink="ComplexStatement_Statement" LowerBound="94.1" HigherBound="96.1">
                                     <om:Property Name="PortName" Value="ADQueryIndividualPort" />
@@ -566,7 +566,7 @@ module INT0003.AD.Distribution
                         cn = ADNewIndividual.cn;
                     }
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("b2ccb2b7-0dfe-4a8a-9e86-f68ba6c53356")]
-                    timeout new System.TimeSpan(1,0,0,0)
+                    timeout new System.TimeSpan(0,0,30,0)
                     {
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("ab3b8717-59f0-49f0-8641-97dc9bbf0c7e")]
                         send (ADQueryIndividualPort.ADQueryIndividualOperation, ADIndividualQuery);
