@@ -41,6 +41,11 @@
   <ItemGroup>
     <Reference Include="BizTalk.PipelineComponents.PromoteTypedContext, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2dbe33dac94b8972, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Shared.Utilities.Calculate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Utilities.Calculate\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Utilities.Calculate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Shared.Utilities.MySQLClientHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Utilities.MySQLClientHelper\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Utilities.MySQLClientHelper.dll</HintPath>
@@ -82,6 +87,11 @@
     <None Include="app.config" />
     <None Include="Bindings\INT0004.AKKA.Identity.vsdx" />
     <None Include="key.snk.pfx" />
+    <Schema Include="Schemas\PersonEvents\PersonEvent.PropertySchema.xsd">
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>INT0004.AKKA.Identity.Schemas.PersonEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
     <Schema Include="Schemas\PersonEvents\InternalPerson.xsd">
       <TypeName>InternalPerson</TypeName>
       <Namespace>INT0004.AKKA.Identity.Schemas.PersonEvents</Namespace>
@@ -94,9 +104,9 @@
     </Schema>
   </ItemGroup>
   <ItemGroup>
-    <Map Include="Maps\InternalPersonEvent_To_AkkaStudentAccount.btm">
+    <Map Include="Maps\InternalPersonEvent_To_etableraEjAktiveratStudentkontoMedNamn.btm">
       <SubType>Task</SubType>
-      <TypeName>InternalPersonEvent_To_AkkaStudentAccount</TypeName>
+      <TypeName>InternalPersonEvent_To_etableraEjAktiveratStudentkontoMedNamn</TypeName>
       <Namespace>INT0004.AKKA.Identity.Maps</Namespace>
     </Map>
   </ItemGroup>
@@ -108,16 +118,28 @@
       <Namespace>INT0004.AKKA.Identity.Pipelines</Namespace>
       <SubType>Task</SubType>
     </Pipeline>
-    <Map Include="Maps\Test_InternalPersonEvent_To_AkkaStudentAccount.btm">
-      <SubType>Task</SubType>
-      <TypeName>Test_InternalPersonEvent_To_AkkaStudentAccount</TypeName>
-      <Namespace>INT0004.AKKA.Identity.Maps</Namespace>
-    </Map>
     <XLang Include="Processing\ProcessPerson.odx">
       <TypeName>CreatePerson</TypeName>
       <Namespace>INT0004.AKKA.Identity.Processing</Namespace>
       <SubType>Task</SubType>
     </XLang>
+    <Map Include="Maps\InternalPersonEvent_To_justeraStudentKontoGiltighetsdatum.btm">
+      <TypeName>InternalPersonEvent_To_justeraStudentKontoGiltighetsdatum</TypeName>
+      <Namespace>INT0004.AKKA.Identity.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\InternalPersonEvent_To_inaktiveraStudentKonto.btm">
+      <TypeName>InternalPersonEvent_To_inaktiveraStudentKonto</TypeName>
+      <Namespace>INT0004.AKKA.Identity.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\InternalPersonEvent_To_reaktiveraStudentKonto.btm">
+      <TypeName>InternalPersonEvent_To_reaktiveraStudentKonto</TypeName>
+      <Namespace>INT0004.AKKA.Identity.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\InternalPersonEvent_To_etableraEjAktiveratStudentkontoMedNamn.xsl" />
+    <Content Include="Maps\InternalPersonEvent_To_etableraEjAktiveratStudentkontoMedNamn_extxml.xml" />
     <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
