@@ -33,7 +33,7 @@ namespace BizTalk.Adapter.Atom
     {
         //  timer and buffer
         Timer timer;
-        private ManualResetEvent batchFinished = new ManualResetEvent(false);
+        //private ManualResetEvent batchFinished = new ManualResetEvent(false);
         //  properties
         private AtomReceiveProperties properties;
 
@@ -138,7 +138,11 @@ namespace BizTalk.Adapter.Atom
         SystemMessageContext context = new SystemMessageContext(msg.Context);
         context.InboundTransportLocation = this.uri;
         context.InboundTransportType = this.transportType;
-           
+        //Set ActionOnFailure to zero in the context property of each messaqe that you do not want BizTalk Server to suspend on a processing exception. 
+        //Failure to set this property allows BizTalk Server to fall back to its default behavior 
+        //of suspending the message on a processing exception. 
+        context.ActionOnFailure = 0;
+        
             //we could promote entity id and updated, msg.Context.Promote(ns, message.Id
         return msg;
     }
@@ -175,31 +179,48 @@ namespace BizTalk.Adapter.Atom
 
                 while ((feed = atom.NextFeed()) != null && feed.Entries.Count > 0)
                 {
-                    SyncReceiveSubmitBatch batch = new SyncReceiveSubmitBatch(this.transportProxy, this.control, 1);
+                    ManualResetEvent orderedEvent = null;
+                    CommittableTransaction transaction = null;
 
-                    Entry entry = feed.Entries.PopOrNUll();
 
-                    while (entry != null)
-                    {
+                    //using (SyncReceiveSubmitBatch batch = new SyncReceiveSubmitBatch(this.transportProxy, this.control, 1))
+                   
+                        Entry entry = feed.Entries.PopOrNUll();
 
-                        if (discard == false)
+                        while (entry != null)
                         {
-                            batch.SubmitMessage(CreateMessage(entry));
-                            // SubmitMessage(entry, feed);
-                            lastId = entry.Id;
+
+                            if (discard == false)
+                            {
+                                orderedEvent = new ManualResetEvent(false);
+                                transaction = new CommittableTransaction();
+
+                                atomState.LastEntryId = entry.Id;
+                                atomState.LastUpdated = feed.Updated;
+                                atomState.LastFeed = feed.Uri;
+
+                                SaveState(transaction);
+
+                                using (SingleMessageReceiveTxnBatch batch = new SingleMessageReceiveTxnBatch(this.transportProxy, this.control, transaction, orderedEvent))
+                                {
+                                    batch.SubmitMessage(CreateMessage(entry));
+                                    batch.Done();
+
+                                    orderedEvent.WaitOne();
+
+                                }
+                            }
+
+
+                            if (stateId == entry.Id)
+                                discard = false;
+
+                            entry = feed.Entries.PopOrNUll();
                         }
 
 
-                        if (stateId == entry.Id)
-                            discard = false;
-
-                        entry = feed.Entries.PopOrNUll();
                     }
-
-                    if (SubmitBatch(batch, feed, lastId) == false)
-                        break;
-
-                }
+                
 
 
 
@@ -232,57 +253,6 @@ namespace BizTalk.Adapter.Atom
 
             }
 }
-
-    private bool SubmitBatch(SyncReceiveSubmitBatch batch,Feed feed,string entryId)
-    {
-            if(batch.IsEmpty)
-                return false;
-
-            batch.Done();
-
-            if (batch.Wait() == true)
-            {
-                atomState.LastEntryId = entryId;
-                atomState.LastUpdated = feed.Updated;
-                atomState.LastFeed = feed.Uri;
-
-                SaveState();
-            }
-               
-
-            return batch.OverallSuccess;
-           
-        }
-    private bool SubmitMessage(Shared.Components.Entry message,Feed feed)
-    {
-//not used
-        try
-        {
-
-            SyncReceiveSubmitBatch batch = new SyncReceiveSubmitBatch(this.transportProxy, this.control, 1);
-            //for performance reasons we could put all entries in a feed into the batch
-            batch.SubmitMessage(CreateMessage(message));
-               
-            batch.Done();
-
-            if (batch.Wait() == true)
-               atomState.LastEntryId = message.Id;
-                atomState.LastUpdated = feed.Updated;
-                atomState.LastFeed = feed.Uri;
-
-                return batch.OverallSuccess;
-
-        }
-        catch (Exception e)
-        {
-            this.transportProxy.SetErrorInfo(e);
-        }
-
-        return false;
-          
-
-
-    }
    
         private void Start()
         {
@@ -302,12 +272,28 @@ namespace BizTalk.Adapter.Atom
             this.timer.Change(0, this.properties.PollingInterval);
         }
 
+        private void SaveState(System.Transactions.Transaction transaction)
+        {
+           
+            if(TransactionalFile.WriteStateFileTransacted(this.properties.StateFile, stateSerializer, atomState, transaction) == false)
+                throw new Exception(String.Format("State file {0} could not be written!", this.properties.StateFile));
+
+        }
         private void SaveState()
         {
-            using (FileStream stateFile = new FileStream(this.properties.StateFile, FileMode.Create, FileAccess.ReadWrite))
+            try
             {
-                stateSerializer.Serialize(stateFile, atomState);
+                using (FileStream stateFile = new FileStream(this.properties.StateFile, FileMode.Create, FileAccess.ReadWrite))
+                {
+                    stateSerializer.Serialize(stateFile, atomState);
+                }
             }
+            catch (Exception ex)
+            {
+
+                throw new Exception(String.Format("State file {0} could not be written!", this.properties.StateFile), ex);
+            }
+           
         }
         private void Stop()
         {
