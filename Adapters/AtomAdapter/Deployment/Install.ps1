@@ -28,11 +28,11 @@ If((Test-Path $adminDLL) -and (Test-Path $receiveDLL) -and (Test-Path $baseAdapt
 
     #Registry entries
     Write-Host "Merging registry entries";
-    regedit /S .\AtomAdapter.reg
+    regedit /S .\Atom.reg
 
     if($Is64Bit) {
         Write-Host "Merging 32-bit on 64-bit registry entries";
-        regedit /S .\AtomAdapter64.reg
+        regedit /S .\Atom64.reg
     }
 
 
