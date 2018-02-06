@@ -53,6 +53,10 @@
       <HintPath>..\..\..\..\Program Files (x86)\Microsoft BizTalk Server 2016\Developer Tools\Microsoft.BizTalk.ExplorerOM.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Shared.Utilities.MySQLClientHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Utilities.MySQLClientHelper\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Utilities.MySQLClientHelper.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -96,6 +100,46 @@
     <None Include="Files\INT0001.Ladok2.maps.xlsx" />
     <None Include="key.snk.pfx" />
     <None Include="packages.config" />
+    <Schema Include="Schemas\Ladok\Envelopes\StudentAvlidenmarkeringEnvelope.xsd">
+      <SubType>Task</SubType>
+      <TypeName>StudentAvlidenmarkeringEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Schemas.Ladok.Envelopes</Namespace>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\KurstillfalleTillStatusEnvelope.xsd">
+      <SubType>Task</SubType>
+      <TypeName>KurstillfalleTillStatusEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Schemas.Ladok.Envelopes</Namespace>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\OmregistreringEnvelope.xsd">
+      <SubType>Task</SubType>
+      <TypeName>OmregistreringEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Schemas.Ladok.Envelopes</Namespace>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\RegistreringEnvelope.xsd">
+      <SubType>Task</SubType>
+      <TypeName>RegistreringEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Schemas.Ladok.Envelopes</Namespace>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\ForvantatDeltagandeSkapadEnvelope.xsd">
+      <SubType>Task</SubType>
+      <TypeName>ForvantatDeltagandeSkapadEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Schemas.Ladok.Envelopes</Namespace>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\AterkalladRegistreringEnvelope.xsd">
+      <SubType>Task</SubType>
+      <TypeName>AterkalladRegistreringEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Schemas.Ladok.Envelopes</Namespace>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\AterkalladOmregistreringEnvelope.xsd">
+      <SubType>Task</SubType>
+      <TypeName>AterkalladOmregistreringEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Schemas.Ladok.Envelopes</Namespace>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\AterbudEnvelope.xsd">
+      <TypeName>AterbudEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
     <Schema Include="Schemas\Ladok\schemas.ladok.se-dap.xsd">
       <TypeName>schemas_ladok_se_dap</TypeName>
       <Namespace>INT0001.Ladok2.Events.Schemas.Ladok</Namespace>
@@ -161,7 +205,51 @@
     <Content Include="Files\INT0001.Ladok2.Events.bindings_Test.xml" />
     <Content Include="Files\INT0001.Ladok2.Events.bindings_Dev.xml" />
     <Content Include="Files\INT0001.Ladok2.Events.sql" />
+    <Content Include="Files\trigger.ladok.events.sql" />
     <Content Include="Maps\Ack_To_updateId.xsl" />
+    <Map Include="Maps\ladok\MembershipEvent_to_AterbudEnvelope.btm">
+      <SubType>Task</SubType>
+      <TypeName>MembershipEvent_to_AterbudEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\ladok\MembershipEvent_to_AterkalladOmregistreringEnvelope.btm">
+      <SubType>Task</SubType>
+      <TypeName>MembershipEvent_to_AterkalladOmregistreringEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\ladok\MembershipEvent_to_AterkalladRegistreringEnvelope.btm">
+      <SubType>Task</SubType>
+      <TypeName>MembershipEvent_to_AterkalladRegistreringEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\ladok\MembershipEvent_to_ForvantatDeltagandeSkapadEnvelope.btm">
+      <SubType>Task</SubType>
+      <TypeName>MembershipEvent_to_ForvantatDeltagandeSkapadEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\ladok\MembershipEvent_to_OmregistreringEnvelope.btm">
+      <SubType>Designer</SubType>
+      <TypeName>MembershipEvent_to_OmregistreringEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\ladok\MembershipEvent_to_RegistreringEnvelope.btm">
+      <SubType>Designer</SubType>
+      <TypeName>MembershipEvent_to_RegistreringEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\ladok\MembershipEvent_to_KurstillfalleTillStatusEnvelope.btm">
+      <SubType>Task</SubType>
+      <TypeName>MembershipEvent_to_KurstillfalleTillStatusEnvelope</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps</Namespace>
+    </Map>
+    <Content Include="Maps\ladok\map_extensions.xml" />
+    <Content Include="Maps\ladok\MembershipEvent_to_KurstillfalleTillStatusEnvelope.xsl" />
+    <Content Include="Maps\ladok\MembershipEvent_to_RegistreringEnvelope.xsl" />
+    <Map Include="Maps\ladok\MembershipEvent_to_StudentAvlidenmarkeringEnvelope.btm">
+      <SubType>Task</SubType>
+      <TypeName>MembershipEvent_to_StudentAvlidenmarkeringEvent</TypeName>
+      <Namespace>INT0001.Ladok2.Events.Maps.ladok</Namespace>
+    </Map>
     <Content Include="Schemas\updateId\INT0001.Ladok2.Send_Update_Custom.bindinginfo.xml" />
     <Map Include="Maps\studentinformation\MembershipEvent_to_StudentAvlidenmarkeringEvent.btm">
       <SubType>Task</SubType>
