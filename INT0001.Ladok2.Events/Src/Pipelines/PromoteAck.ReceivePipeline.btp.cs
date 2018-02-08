@@ -58,7 +58,7 @@ namespace INT0001.Ladok2.Events.Pipelines
 "ResolveParty\" minOccurs=\"0\" maxOccurs=\"-1\" execMethod=\"All\" stageId=\"9d0e410e-4cce-4536-83fa-4a50406"+
 "74ad6\" />      <Components />    </Stage>  </Stages></Document>";
         
-        private const string _versionDependentGuid = "070a0cc3-1df5-4ab0-ac39-db5ece65de11";
+        private const string _versionDependentGuid = "a5d5c78a-dbaa-49f8-89bb-9a58b2b0680f";
         
         public PromoteAck_ReceivePipeline()
         {
