@@ -17,9 +17,11 @@ namespace INT0004.AKKA.Identity.Maps {
       <applikation>
         <xsl:value-of select=""$var:v1"" />
       </applikation>
-      <pnr>
-        <xsl:value-of select=""s0:Person/s0:PersonNumber/text()"" />
-      </pnr>
+      <xsl:if test=""s0:Person/s0:PersonNumber"">
+        <pnr>
+          <xsl:value-of select=""s0:Person/s0:PersonNumber/text()"" />
+        </pnr>
+      </xsl:if>
       <xsl:variable name=""var:v2"" select=""ScriptNS0:GetFullname(string(s0:Person/s0:PersonNumber/text()))"" />
       <xsl:call-template name=""AddNamn"">
         <xsl:with-param name=""fullname"" select=""string($var:v2)"" />
@@ -43,7 +45,8 @@ public string StringTrimRight(string str)
 <xsl:param name=""fullname"" />
   
   <fornamn>
-    <xsl:value-of select=""substring-before($fullname,',')"" />
+  <!--  <xsl:value-of select=""substring-before($fullname,',')"" /> -->
+  <xsl:value-of select=""$fullname"" />
 </fornamn>
 <efternamn>
   <xsl:value-of select=""substring-after($fullname,',')"" />
