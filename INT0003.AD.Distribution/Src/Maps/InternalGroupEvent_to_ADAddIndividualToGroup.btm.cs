@@ -6,7 +6,10 @@ namespace INT0003.AD.Distribution.Maps {
     public sealed class InternalGroupEvent_to_ADAddIndividualToGroup : global::Microsoft.XLANGs.BaseTypes.TransformBase {
         
         private const string _strMap = @"<?xml version=""1.0"" encoding=""UTF-16""?>
-<xsl:stylesheet xmlns:xsl=""http://www.w3.org/1999/XSL/Transform"" xmlns:msxsl=""urn:schemas-microsoft-com:xslt"" xmlns:var=""http://schemas.microsoft.com/BizTalk/2003/var"" exclude-result-prefixes=""msxsl var s2 s1 s0 userCSharp"" version=""1.0"" xmlns:s2=""http://UU.Integrations.Common.Schemas.InternalGroupEvent"" xmlns:ns0=""http://UU.Integrations.Common.Schemas.ADSendAdapterOneWayUpdate"" xmlns:s1=""http://UU.Integrations.Common.Schemas.Internal.Group"" xmlns:s0=""http://UU.Integrations.Common.Schemas.Internal.Identity"" xmlns:userCSharp=""http://schemas.microsoft.com/BizTalk/2003/userCSharp"">
+<xsl:stylesheet xmlns:xsl=""http://www.w3.org/1999/XSL/Transform"" xmlns:msxsl=""urn:schemas-microsoft-com:xslt"" xmlns:var=""http://schemas.microsoft.com/BizTalk/2003/var"" 
+                exclude-result-prefixes=""msxsl var s2 s1 s0 userCSharp"" version=""1.0"" xmlns:s2=""http://UU.Integrations.Common.Schemas.InternalGroupEvent"" 
+                xmlns:ns0=""http://UU.Integrations.Common.Schemas.ADSendAdapterOneWayUpdate"" xmlns:s1=""http://UU.Integrations.Common.Schemas.Internal.Group"" 
+  xmlns:s0=""http://UU.Integrations.Common.Schemas.Internal.Identity"" xmlns:userCSharp=""http://schemas.microsoft.com/BizTalk/2003/userCSharp"">
   <xsl:output omit-xml-declaration=""yes"" method=""xml"" version=""1.0"" />
   <xsl:param name=""groupSuffix"" select=""'accepted'""/>
   <xsl:param name=""URI"" select=""'exchange-test.its.uu.se:389'""/>
@@ -52,7 +55,7 @@ namespace INT0003.AD.Distribution.Maps {
 
         </xsl:attribute>
         <xsl:attribute name=""ChangeToValue"">
-           <xsl:value-of select=""concat('LDAP://', userCSharp:ReplacePlaceholders($URI), '/cn=', string(/*[local-name()='GroupEvent' and namespace-uri()='http://UU.Integrations.Common.Schemas.InternalGroupEvent']/*[local-name()='GroupEventData' and namespace-uri()='http://UU.Integrations.Common.Schemas.InternalGroupEvent']/*[local-name()='NewMember' and namespace-uri()='http://UU.Integrations.Common.Schemas.Internal.Identity']/@*[local-name()='identifier' and namespace-uri()='']), ',', userCSharp:ReplacePlaceholders($path))"" />
+           <xsl:value-of select=""concat('LDAP://', userCSharp:ReplacePlaceholders($URI), '/cn=', string(s2:GroupEventData/s0:NewMember/@identifier), ',', userCSharp:ReplacePlaceholders($path))"" />
         </xsl:attribute>
         <xsl:attribute name=""ChangeType"">
           <xsl:text>invoke</xsl:text>
