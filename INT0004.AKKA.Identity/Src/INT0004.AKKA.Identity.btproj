@@ -85,7 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Bindings\INT0004.AKKA.Identity.vsdx" />
+    <None Include="Files\INT0004.AKKA.Identity.docx" />
+    <None Include="Files\INT0004.AKKA.Identity.Installation.docx" />
+    <None Include="Files\INT0004.AKKA.Identity.vsdx" />
     <None Include="key.snk.pfx" />
     <Schema Include="Schemas\PersonEvents\PersonEvent.PropertySchema.xsd">
       <TypeName>PropertySchema</TypeName>
@@ -111,8 +113,6 @@
     </Map>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Bindings\AkkaCallService_Custom.BindingInfo.xml" />
-    <Content Include="Bindings\INT0004.AKKA.Identity.BindingInfo.xml" />
     <Pipeline Include="Pipelines\SuppressDebugInfo.btp">
       <TypeName>SuppressDebugInfo</TypeName>
       <Namespace>INT0004.AKKA.Identity.Pipelines</Namespace>
@@ -133,11 +133,7 @@
       <Namespace>INT0004.AKKA.Identity.Maps</Namespace>
       <SubType>Task</SubType>
     </Map>
-    <Map Include="Maps\InternalPersonEvent_To_reaktiveraStudentKonto.btm">
-      <TypeName>InternalPersonEvent_To_reaktiveraStudentKonto</TypeName>
-      <Namespace>INT0004.AKKA.Identity.Maps</Namespace>
-      <SubType>Task</SubType>
-    </Map>
+    <Content Include="Files\INT0004.AKKA.Identity.BindingInfo.xml" />
     <Content Include="Maps\InternalPersonEvent_To_etableraEjAktiveratStudentkontoMedNamn.xsl" />
     <Content Include="Maps\InternalPersonEvent_To_etableraEjAktiveratStudentkontoMedNamn_extxml.xml" />
     <Content Include="README.txt" />
@@ -154,6 +150,7 @@
       <Namespace>INT0004.AKKA.Identity.Schemas</Namespace>
     </Schema>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
 </Project>
