@@ -213,10 +213,6 @@
     </Map>
     <Content Include="Files\INT0003.AD.Distribution.BindingInfo.xml" />
     <Content Include="Maps\InternalGroupEvent_to_ADAddGroupOutgoing.xsl" />
-    <XLang Include="Processing\AddIndividualToADGroup.odx">
-      <TypeName>AddIndividualToADGroup</TypeName>
-      <Namespace>INT0003.AD.Distribution.Processing</Namespace>
-    </XLang>
     <XLang Include="Processing\GroupEventsGroupToAD.odx">
       <TypeName>GroupEventsGroupToAD_Copy</TypeName>
       <Namespace>INT0003.AD.Distribution.Processing</Namespace>
@@ -225,9 +221,10 @@
       <TypeName>GroupEventsIndividualToAD</TypeName>
       <Namespace>INT0003.AD.Distribution.Processing</Namespace>
     </XLang>
-    <XLang Include="Processing\SendIndividualUpdateToAD.odx">
+    <XLang Include="Processing\UpdateGroupAffiliation.odx">
       <TypeName>SendIndividualUpdateToAD</TypeName>
       <Namespace>INT0003.AD.Distribution.Processing</Namespace>
+      <SubType>Task</SubType>
     </XLang>
     <Pipeline Include="Pipelines\XSLTransform.btp">
       <TypeName>XSLTransform</TypeName>
@@ -239,7 +236,9 @@
       <Namespace>INT0003.AD.Distribution.Maps</Namespace>
       <SubType>Task</SubType>
     </Map>
-    <Content Include="Maps\InternalGroupEvent_to_ADAddIndividualToGroup.xsl" />
+    <Content Include="Maps\InternalGroupEvent_to_ADAddIndividualToGroup.xsl">
+      <SubType>Designer</SubType>
+    </Content>
     <Map Include="Maps\InternalGroupEvent_to_InternalPersonEvent.btm">
       <TypeName>InternalGroupEvent_to_InternalPersonEvent</TypeName>
       <Namespace>INT0003.AD.Distribution.Maps</Namespace>
@@ -250,13 +249,8 @@
       <Namespace>INT0003.AD.Distribution.Pipelines</Namespace>
       <SubType>Task</SubType>
     </Pipeline>
-    <XLang Include="Processing\TestSuspendMaster.odx">
-      <TypeName>TestSuspendMaster</TypeName>
-      <Namespace>INT0003.AD.Distribution.Processing</Namespace>
-      <SubType>Task</SubType>
-    </XLang>
-    <XLang Include="Processing\TestSuspendChild.odx">
-      <TypeName>TestSuspendChild</TypeName>
+    <XLang Include="Processing\ProcessGroupAffiliation.odx">
+      <TypeName>UpdateGroupAffiliation</TypeName>
       <Namespace>INT0003.AD.Distribution.Processing</Namespace>
       <SubType>Task</SubType>
     </XLang>
@@ -276,9 +270,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <XLang Include="Processing\CheckAndWaitForADIndividual.odx">
+    <XLang Include="Processing\GetAccount.odx">
       <TypeName>CheckAndWaitForADIndividual</TypeName>
       <Namespace>INT0003.AD.Distribution.Processing</Namespace>
+      <SubType>Task</SubType>
     </XLang>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
