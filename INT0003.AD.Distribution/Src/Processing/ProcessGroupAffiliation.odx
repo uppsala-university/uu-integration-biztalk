@@ -215,10 +215,10 @@
                                 <om:Property Name="Name" Value="Else" />
                                 <om:Property Name="Signal" Value="False" />
                                 <om:Element Type="VariableAssignment" OID="60842f8a-81d0-4f81-ac53-e42119161a7f" ParentLink="ComplexStatement_Statement" LowerBound="74.1" HigherBound="80.1">
-                                    <om:Property Name="Expression" Value="success = false;&#xD;&#xA;errorText = System.String.Format(&quot;Ogiltig händelse {0}, group {1}&quot;,GroupEventUpdated.type,GroupEventUpdated.Group.Type);&#xD;&#xA;emailSubject = System.String.Empty;//mail should not be sent&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                    <om:Property Name="Expression" Value="success = false;&#xD;&#xA;errorText = System.String.Format(&quot;Unknown event {0}, group {1}&quot;,GroupEventUpdated.type,GroupEventUpdated.Group.Type);&#xD;&#xA;emailSubject = System.String.Empty;//mail should not be sent&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="Set error" />
-                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
                                 </om:Element>
                             </om:Element>
                         </om:Element>
@@ -310,7 +310,7 @@ module INT0003.AD.Distribution
                 {
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("60842f8a-81d0-4f81-ac53-e42119161a7f")]
                     success = false;
-                    errorText = System.String.Format("Ogiltig händelse {0}, group {1}",GroupEventUpdated.type,GroupEventUpdated.Group.Type);
+                    errorText = System.String.Format("Unknown event {0}, group {1}",GroupEventUpdated.type,GroupEventUpdated.Group.Type);
                     emailSubject = System.String.Empty;//mail should not be sent
                     
                     

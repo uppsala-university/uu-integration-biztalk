@@ -249,10 +249,10 @@
                                     </om:Element>
                                 </om:Element>
                                 <om:Element Type="Suspend" OID="d99a2bb8-6563-4570-8ec9-206ad8e84d6f" ParentLink="ComplexStatement_Statement" LowerBound="67.1" HigherBound="69.1">
-                                    <om:Property Name="ErrorMessage" Value="System.String.Format(&quot;{0}. {1}&quot;,errorText, &quot;Var vänlig åtgärda och återstarta (resume) eller avsluta processen (terminate)&quot;);" />
+                                    <om:Property Name="ErrorMessage" Value="System.String.Format(&quot;{0}. {1}&quot;,errorText, &quot;Var vänlig åtgärda och återstarta (resume) processen&quot;);" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="Admin request" />
-                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
                                 </om:Element>
                             </om:Element>
                             <om:Element Type="DecisionBranch" OID="b28ad02b-e726-40ad-a3fa-28489e7cb348" ParentLink="ReallyComplexStatement_Branch">
@@ -407,7 +407,7 @@ module INT0003.AD.Distribution
                             send (SendSupportMail.Support, SupportMail);
                         }
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("d99a2bb8-6563-4570-8ec9-206ad8e84d6f")]
-                        suspend System.String.Format("{0}. {1}",errorText, "Var vänlig åtgärda och återstarta (resume) eller avsluta processen (terminate)");
+                        suspend System.String.Format("{0}. {1}",errorText, "Var vänlig åtgärda och återstarta (resume) processen");
                     }
                 }
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("40f5dbc7-1ab2-4ab3-8ce1-3fb45a3fbec8")]
