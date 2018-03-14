@@ -90,11 +90,19 @@ END
 
 GO
 
-create view [dbo].[GET_PROCESSED_GROUP_IDS]
+/*
+create view [dbo].[GET_NOT_PROCESSED_GROUP_IDS]
 as
 select concat(reportCode,'_',startSemester) as course
   FROM [dbo].[MEMBERSHIP_EVENTS]
 	where pnr is null and processed = 1
+	*/
+
+create view [dbo].[GET_NOT_PROCESSED_GROUPS]
+as
+select concat(reportCode,'_',startSemester) as course
+  FROM [dbo].[MEMBERSHIP_EVENTS]
+	where pnr is null and processed = 0
 
 GO
 
@@ -181,8 +189,8 @@ as
 		--not(pnr is null) and --inkludera även grupper
 		 processed = 0
 		 --Make sure group exists before individual is processed
-		 and (pnr is null or (concat(ev.reportCode,'_',ev.startSemester) in
-		 (select course from [dbo].[GET_PROCESSED_GROUP_IDS])
+		 and (pnr is null or (concat(ev.reportCode,'_',ev.startSemester) not in
+		 (select course from [dbo].GET_NOT_PROCESSED_GROUPS)
 		 ))
 		  group by  case when (ev.pnr is null) then	
 			concat(ev.reportCode,'_',ev.startSemester)
