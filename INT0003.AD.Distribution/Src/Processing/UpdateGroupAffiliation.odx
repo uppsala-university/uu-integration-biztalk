@@ -153,10 +153,10 @@
                                 <om:Property Name="Name" Value="CatchDeliveryFailureException" />
                                 <om:Property Name="Signal" Value="True" />
                                 <om:Element Type="VariableAssignment" OID="bf57dbac-4df0-4f4b-90be-de821568e56b" ParentLink="Catch_Statement" LowerBound="59.1" HigherBound="72.1">
-                                    <om:Property Name="Expression" Value="   &#xD;&#xA;if(GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot;)&#xD;&#xA;{&#xD;&#xA;    success = false;&#xD;&#xA;   errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot; ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);&#xD;&#xA;   emailSubject = System.String.Format(&quot;Error trying to update AD group {0}_{1}!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                    <om:Property Name="Expression" Value="   &#xD;&#xA;if(GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot; &amp;&amp; ex.ErrorDescription.Contains(&quot;target of an invocation&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    success = false;&#xD;&#xA;   errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot; ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);&#xD;&#xA;   emailSubject = System.String.Format(&quot;Error trying to update AD group {0}_{1}!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="Set error" />
-                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
                                 </om:Element>
                             </om:Element>
                         </om:Element>
@@ -189,11 +189,11 @@
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="CatchDeliveryFailureException" />
                                 <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="VariableAssignment" OID="42eccfa7-06da-48f9-ab81-349fdb185996" ParentLink="Catch_Statement" LowerBound="91.1" HigherBound="104.1">
-                                    <om:Property Name="Expression" Value="   &#xD;&#xA;if(GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot;)&#xD;&#xA;{&#xD;&#xA;    success = false;&#xD;&#xA;   errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot; ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);&#xD;&#xA;   emailSubject = System.String.Format(&quot;Error trying to update AD group {0}_{1}!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Element Type="VariableAssignment" OID="2aafa03d-9f35-4d23-b7e8-549dc00b93bd" ParentLink="Catch_Statement" LowerBound="91.1" HigherBound="104.1">
+                                    <om:Property Name="Expression" Value="   &#xD;&#xA;if(GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot; &amp;&amp; ex.ErrorDescription.Contains(&quot;target of an invocation&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    success = false;&#xD;&#xA;   errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot; ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);&#xD;&#xA;   emailSubject = System.String.Format(&quot;Error trying to update AD group {0}_{1}!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="Set error" />
-                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
                                 </om:Element>
                             </om:Element>
                         </om:Element>
@@ -226,11 +226,11 @@
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="CatchDeliveryFailureException" />
                                 <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="VariableAssignment" OID="8a4b7c0f-09ae-4ed8-9901-ff61825c583d" ParentLink="Catch_Statement" LowerBound="123.1" HigherBound="136.1">
-                                    <om:Property Name="Expression" Value="   &#xD;&#xA;if(GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot;)&#xD;&#xA;{&#xD;&#xA;    success = false;&#xD;&#xA;   errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot; ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);&#xD;&#xA;   emailSubject = System.String.Format(&quot;Error trying to update AD group {0}_{1}!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Element Type="VariableAssignment" OID="a5ce5a6a-82a3-4822-8a88-88fa1e3c5f07" ParentLink="Catch_Statement" LowerBound="123.1" HigherBound="136.1">
+                                    <om:Property Name="Expression" Value="   &#xD;&#xA;if(GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot; &amp;&amp; ex.ErrorDescription.Contains(&quot;target of an invocation&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    success = false;&#xD;&#xA;   errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot; ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);&#xD;&#xA;   emailSubject = System.String.Format(&quot;Error trying to update AD group {0}_{1}!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="Set error" />
-                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
                                 </om:Element>
                             </om:Element>
                         </om:Element>
@@ -355,7 +355,7 @@ module INT0003.AD.Distribution
                         {
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("bf57dbac-4df0-4f4b-90be-de821568e56b")]
                                
-                            if(GroupEvent.type == "GroupMembershipCreateRequestEvent")
+                            if(GroupEvent.type == "GroupMembershipCreateRequestEvent" && ex.ErrorDescription.Contains("target of an invocation") == false)
                             {
                                 success = false;
                                errorText = System.String.Format("Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}" ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);
@@ -385,9 +385,9 @@ module INT0003.AD.Distribution
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("472f4f56-e184-478f-b857-f119fc6a209d")]
                         catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
                         {
-                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("42eccfa7-06da-48f9-ab81-349fdb185996")]
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("2aafa03d-9f35-4d23-b7e8-549dc00b93bd")]
                                
-                            if(GroupEvent.type == "GroupMembershipCreateRequestEvent")
+                            if(GroupEvent.type == "GroupMembershipCreateRequestEvent" && ex.ErrorDescription.Contains("target of an invocation") == false)
                             {
                                 success = false;
                                errorText = System.String.Format("Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}" ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);
@@ -417,9 +417,9 @@ module INT0003.AD.Distribution
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("83116dd8-9af4-4811-a657-21c496289ed1")]
                         catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
                         {
-                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("8a4b7c0f-09ae-4ed8-9901-ff61825c583d")]
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a5ce5a6a-82a3-4822-8a88-88fa1e3c5f07")]
                                
-                            if(GroupEvent.type == "GroupMembershipCreateRequestEvent")
+                            if(GroupEvent.type == "GroupMembershipCreateRequestEvent" && ex.ErrorDescription.Contains("target of an invocation") == false)
                             {
                                 success = false;
                                errorText = System.String.Format("Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}" ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);

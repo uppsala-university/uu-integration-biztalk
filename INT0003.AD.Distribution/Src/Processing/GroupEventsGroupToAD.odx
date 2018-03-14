@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="7d73eca5-ca6e-4ec5-93b8-06ecd766bf61" LowerBound="1.1" HigherBound="194.1">
+    <om:Element Type="Module" OID="7d73eca5-ca6e-4ec5-93b8-06ecd766bf61" LowerBound="1.1" HigherBound="213.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="INT0003.AD.Distribution" />
         <om:Property Name="Signal" Value="False" />
@@ -88,32 +88,41 @@
                 </om:Element>
             </om:Element>
         </om:Element>
-        <om:Element Type="ServiceDeclaration" OID="3a8cbaaa-835a-4475-be05-12e9eea5deac" ParentLink="Module_ServiceDeclaration" LowerBound="36.1" HigherBound="193.1">
-            <om:Property Name="InitializedTransactionType" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="3a8cbaaa-835a-4475-be05-12e9eea5deac" ParentLink="Module_ServiceDeclaration" LowerBound="36.1" HigherBound="212.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
             <om:Property Name="IsInvokable" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="GroupEventsGroupToAD" />
             <om:Property Name="Signal" Value="True" />
-            <om:Element Type="VariableDeclaration" OID="22abb83e-356e-4eda-bff9-712320d393ac" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="59.1" HigherBound="60.1">
+            <om:Element Type="VariableDeclaration" OID="e1d2d6f9-998a-43ea-be1d-df7be52d7ea7" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="59.1" HigherBound="60.1">
+                <om:Property Name="InitialValue" Value="&quot;&quot;" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="Ref" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="emailSubject" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="6e8c091b-e11c-40fd-9d7c-f325288fabf0" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="60.1" HigherBound="61.1">
+                <om:Property Name="InitialValue" Value="false" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="Ref" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="success" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="22abb83e-356e-4eda-bff9-712320d393ac" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="61.1" HigherBound="62.1">
                 <om:Property Name="InitialValue" Value="0" />
                 <om:Property Name="UseDefaultConstructor" Value="False" />
                 <om:Property Name="Type" Value="System.Int32" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="resultAccepted" />
+                <om:Property Name="Name" Value="resultAD" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
-            <om:Element Type="VariableDeclaration" OID="9a673691-05f8-42bc-9cd7-c726eedb5f9b" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="60.1" HigherBound="61.1">
-                <om:Property Name="InitialValue" Value="0" />
-                <om:Property Name="UseDefaultConstructor" Value="False" />
-                <om:Property Name="Type" Value="System.Int32" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="resultReRegistered" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="VariableDeclaration" OID="d00f548b-d247-4129-9e44-8592c6f3c27e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="61.1" HigherBound="62.1">
+            <om:Element Type="VariableDeclaration" OID="d00f548b-d247-4129-9e44-8592c6f3c27e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="62.1" HigherBound="63.1">
                 <om:Property Name="InitialValue" Value="true" />
                 <om:Property Name="UseDefaultConstructor" Value="False" />
                 <om:Property Name="Type" Value="System.Boolean" />
@@ -122,7 +131,7 @@
                 <om:Property Name="Name" Value="loop" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
-            <om:Element Type="VariableDeclaration" OID="17a85190-709d-4310-88cb-278cfb3701b5" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="62.1" HigherBound="63.1">
+            <om:Element Type="VariableDeclaration" OID="17a85190-709d-4310-88cb-278cfb3701b5" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="63.1" HigherBound="64.1">
                 <om:Property Name="UseDefaultConstructor" Value="False" />
                 <om:Property Name="Type" Value="System.String" />
                 <om:Property Name="ParamDirection" Value="In" />
@@ -130,7 +139,7 @@
                 <om:Property Name="Name" Value="xpathStr" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
-            <om:Element Type="VariableDeclaration" OID="66698102-d412-444f-95e1-f8471061abf2" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="63.1" HigherBound="64.1">
+            <om:Element Type="VariableDeclaration" OID="66698102-d412-444f-95e1-f8471061abf2" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="64.1" HigherBound="65.1">
                 <om:Property Name="UseDefaultConstructor" Value="False" />
                 <om:Property Name="Type" Value="System.Int32" />
                 <om:Property Name="ParamDirection" Value="In" />
@@ -138,7 +147,7 @@
                 <om:Property Name="Name" Value="counter" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
-            <om:Element Type="VariableDeclaration" OID="52b6f6db-8261-4d17-9003-3d73fd6c9536" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="64.1" HigherBound="65.1">
+            <om:Element Type="VariableDeclaration" OID="52b6f6db-8261-4d17-9003-3d73fd6c9536" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="65.1" HigherBound="66.1">
                 <om:Property Name="UseDefaultConstructor" Value="False" />
                 <om:Property Name="Type" Value="System.String" />
                 <om:Property Name="ParamDirection" Value="In" />
@@ -146,7 +155,7 @@
                 <om:Property Name="Name" Value="groupSuffix" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
-            <om:Element Type="VariableDeclaration" OID="30f89330-a52f-4432-a687-bdaaf34ba7b3" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="65.1" HigherBound="66.1">
+            <om:Element Type="VariableDeclaration" OID="30f89330-a52f-4432-a687-bdaaf34ba7b3" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="66.1" HigherBound="67.1">
                 <om:Property Name="UseDefaultConstructor" Value="False" />
                 <om:Property Name="Type" Value="System.String" />
                 <om:Property Name="ParamDirection" Value="In" />
@@ -154,14 +163,10 @@
                 <om:Property Name="Name" Value="resultText" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
-            <om:Element Type="VariableDeclaration" OID="8b178a14-6097-45aa-bdd5-c18c0c57bdcc" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="66.1" HigherBound="67.1">
-                <om:Property Name="InitialValue" Value="0" />
-                <om:Property Name="UseDefaultConstructor" Value="False" />
-                <om:Property Name="Type" Value="System.Int32" />
-                <om:Property Name="ParamDirection" Value="In" />
+            <om:Element Type="LongRunningTransaction" OID="a3a8e342-4cfa-4cb8-835f-247afa8d13e6" ParentLink="ServiceDeclaration_Transaction" LowerBound="37.21" HigherBound="37.66">
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="resultRegistered" />
-                <om:Property Name="Signal" Value="True" />
+                <om:Property Name="Name" Value="MainTransaction" />
+                <om:Property Name="Signal" Value="False" />
             </om:Element>
             <om:Element Type="CorrelationDeclaration" OID="1ce88e4f-f8db-4927-8d08-a76ec3a5271f" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="53.1" HigherBound="54.1">
                 <om:Property Name="Type" Value="INT0003.AD.Distribution.GroupName" />
@@ -176,7 +181,7 @@
                     <om:Property Name="Name" Value="StatementRef_1" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
-                <om:Element Type="StatementRef" OID="df7cfcfa-4990-4b63-a19c-0914d1f2b17f" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="180.93" HigherBound="180.105">
+                <om:Element Type="StatementRef" OID="df7cfcfa-4990-4b63-a19c-0914d1f2b17f" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="197.93" HigherBound="197.105">
                     <om:Property Name="Initializes" Value="False" />
                     <om:Property Name="Ref" Value="f4312c41-e10c-43d4-8a00-d2513aba91b1" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -230,7 +235,7 @@
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="ReceiveGroupEvent" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="DNFPredicate" OID="da452ce5-8b54-47bb-9957-64e5dc8b1543" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="0d4fdb7c-4da1-4569-8fae-2e8a928cf6b9" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="INT0003.AD.Distribution.Schemas.GroupEventType" />
                         <om:Property Name="RHS" Value="&quot;GroupCreateRequestEvent&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
@@ -244,183 +249,207 @@
                     <om:Property Name="Name" Value="InitializeLoop" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
-                <om:Element Type="While" OID="20afdbf1-c4b2-4e0f-80a8-e45fcb65d234" ParentLink="ServiceBody_Statement" LowerBound="80.1" HigherBound="191.1">
+                <om:Element Type="While" OID="20afdbf1-c4b2-4e0f-80a8-e45fcb65d234" ParentLink="ServiceBody_Statement" LowerBound="80.1" HigherBound="210.1">
                     <om:Property Name="Expression" Value="loop == true" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Wait for GroupEvents" />
                     <om:Property Name="Signal" Value="False" />
-                    <om:Element Type="Parallel" OID="f4724ea5-2e25-4c82-ab30-f5e68d45c989" ParentLink="ComplexStatement_Statement" LowerBound="83.1" HigherBound="159.1">
+                    <om:Element Type="VariableAssignment" OID="f37afee9-5956-4b4c-ad24-6c0c44fe28c6" ParentLink="ComplexStatement_Statement" LowerBound="83.1" HigherBound="85.1">
+                        <om:Property Name="Expression" Value="resultAD = 1;" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="CreateGroups" />
+                        <om:Property Name="Name" Value="result  = 1" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="ParallelBranch" OID="867786d9-4de5-4d96-98f8-75a75c007528" ParentLink="ReallyComplexStatement_Branch" LowerBound="88.1" HigherBound="109.1">
-                            <om:Property Name="IsGhostBranch" Value="True" />
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="ParallelBranch_1" />
-                            <om:Property Name="Signal" Value="False" />
-                            <om:Element Type="Scope" OID="ad9f18b8-052b-4b02-ab56-e526ab00024e" ParentLink="ComplexStatement_Statement" LowerBound="88.1" HigherBound="109.1">
-                                <om:Property Name="InitializedTransactionType" Value="True" />
-                                <om:Property Name="IsSynchronized" Value="False" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="CreateADReRegisteredGroup" />
-                                <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="Send" OID="78fb26c1-6f34-4f85-8a48-e72289202dc9" ParentLink="ComplexStatement_Statement" LowerBound="93.1" HigherBound="95.1">
-                                    <om:Property Name="PortName" Value="CreateADReRegisteredGroupPort" />
-                                    <om:Property Name="MessageName" Value="GroupEvent" />
-                                    <om:Property Name="OperationName" Value="CreateADGroupOperation" />
-                                    <om:Property Name="OperationMessageName" Value="Request" />
-                                    <om:Property Name="ReportToAnalyst" Value="True" />
-                                    <om:Property Name="Name" Value="SendCreateADGroup" />
-                                    <om:Property Name="Signal" Value="True" />
-                                </om:Element>
-                                <om:Element Type="Catch" OID="f4535054-6b42-4db5-ace6-3ff5597a17d0" ParentLink="Scope_Catch" LowerBound="98.1" HigherBound="107.1">
-                                    <om:Property Name="ExceptionName" Value="ex" />
-                                    <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
-                                    <om:Property Name="IsFaultMessage" Value="False" />
-                                    <om:Property Name="ReportToAnalyst" Value="True" />
-                                    <om:Property Name="Name" Value="CatchDeliveryFailureException" />
-                                    <om:Property Name="Signal" Value="True" />
-                                    <om:Element Type="VariableAssignment" OID="c137a237-3626-4e1c-ad04-b464da6aeb52" ParentLink="Catch_Statement" LowerBound="101.1" HigherBound="106.1">
-                                        <om:Property Name="Expression" Value="if(ex.ErrorDescription.Contains(&quot;The object already exists&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    resultReRegistered = 1;&#xD;&#xA;}" />
-                                        <om:Property Name="ReportToAnalyst" Value="True" />
-                                        <om:Property Name="Name" Value="Expression_1" />
-                                        <om:Property Name="Signal" Value="False" />
-                                    </om:Element>
-                                </om:Element>
-                            </om:Element>
-                        </om:Element>
-                        <om:Element Type="ParallelBranch" OID="84f6f4b9-2c86-479b-954f-8b13101734c0" ParentLink="ReallyComplexStatement_Branch" LowerBound="112.1" HigherBound="133.1">
-                            <om:Property Name="IsGhostBranch" Value="True" />
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="ParallelBranch_2" />
-                            <om:Property Name="Signal" Value="False" />
-                            <om:Element Type="Scope" OID="db39e0da-cb81-4e3b-9343-3cb9b7ea7f74" ParentLink="ComplexStatement_Statement" LowerBound="112.1" HigherBound="133.1">
-                                <om:Property Name="InitializedTransactionType" Value="True" />
-                                <om:Property Name="IsSynchronized" Value="False" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="CreateADRegisteredGroup" />
-                                <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="Send" OID="71521971-2a28-4c39-83b2-acaf4cee441f" ParentLink="ComplexStatement_Statement" LowerBound="117.1" HigherBound="119.1">
-                                    <om:Property Name="PortName" Value="CreateADRegisteredGroupPort" />
-                                    <om:Property Name="MessageName" Value="GroupEvent" />
-                                    <om:Property Name="OperationName" Value="CreateADGroupOperation" />
-                                    <om:Property Name="OperationMessageName" Value="Request" />
-                                    <om:Property Name="ReportToAnalyst" Value="True" />
-                                    <om:Property Name="Name" Value="SendCreateADGroup" />
-                                    <om:Property Name="Signal" Value="True" />
-                                </om:Element>
-                                <om:Element Type="Catch" OID="0207d549-9034-489e-8ef5-e54deb473463" ParentLink="Scope_Catch" LowerBound="122.1" HigherBound="131.1">
-                                    <om:Property Name="ExceptionName" Value="ex" />
-                                    <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
-                                    <om:Property Name="IsFaultMessage" Value="False" />
-                                    <om:Property Name="ReportToAnalyst" Value="True" />
-                                    <om:Property Name="Name" Value="CatchDeliveryFailureException" />
-                                    <om:Property Name="Signal" Value="True" />
-                                    <om:Element Type="VariableAssignment" OID="f358863a-f71f-40c4-9162-7356ded8c0b0" ParentLink="Catch_Statement" LowerBound="125.1" HigherBound="130.1">
-                                        <om:Property Name="Expression" Value="if(ex.ErrorDescription.Contains(&quot;The object already exists&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    resultRegistered = 1;&#xD;&#xA;}" />
-                                        <om:Property Name="ReportToAnalyst" Value="True" />
-                                        <om:Property Name="Name" Value="Expression_1" />
-                                        <om:Property Name="Signal" Value="False" />
-                                    </om:Element>
-                                </om:Element>
-                            </om:Element>
-                        </om:Element>
-                        <om:Element Type="ParallelBranch" OID="50da3a91-6f9f-4d75-92df-a5af1a18aeb0" ParentLink="ReallyComplexStatement_Branch" LowerBound="136.1" HigherBound="157.1">
-                            <om:Property Name="IsGhostBranch" Value="True" />
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="ParallelBranch_3" />
-                            <om:Property Name="Signal" Value="False" />
-                            <om:Element Type="Scope" OID="020dd7c4-80da-4b63-ab4d-6954b17dd7c5" ParentLink="ComplexStatement_Statement" LowerBound="136.1" HigherBound="157.1">
-                                <om:Property Name="InitializedTransactionType" Value="True" />
-                                <om:Property Name="IsSynchronized" Value="False" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="CreateADAcceptedGroup" />
-                                <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="Send" OID="d5fecc79-8bdb-4f7a-8b21-d35a77fb47d8" ParentLink="ComplexStatement_Statement" LowerBound="141.1" HigherBound="143.1">
-                                    <om:Property Name="PortName" Value="CreateADAcceptedGroupPort" />
-                                    <om:Property Name="MessageName" Value="GroupEvent" />
-                                    <om:Property Name="OperationName" Value="CreateADGroupOperation" />
-                                    <om:Property Name="OperationMessageName" Value="Request" />
-                                    <om:Property Name="ReportToAnalyst" Value="True" />
-                                    <om:Property Name="Name" Value="SendCreateADGroup" />
-                                    <om:Property Name="Signal" Value="True" />
-                                </om:Element>
-                                <om:Element Type="Catch" OID="384f9a21-f140-46eb-9be0-0567757472e4" ParentLink="Scope_Catch" LowerBound="146.1" HigherBound="155.1">
-                                    <om:Property Name="ExceptionName" Value="ex" />
-                                    <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
-                                    <om:Property Name="IsFaultMessage" Value="False" />
-                                    <om:Property Name="ReportToAnalyst" Value="True" />
-                                    <om:Property Name="Name" Value="CatchDeliveryFailureException" />
-                                    <om:Property Name="Signal" Value="True" />
-                                    <om:Element Type="VariableAssignment" OID="ffceb1a1-c907-48ef-abd1-57b84a16752f" ParentLink="Catch_Statement" LowerBound="149.1" HigherBound="154.1">
-                                        <om:Property Name="Expression" Value="if(ex.ErrorDescription.Contains(&quot;The object already exists&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    resultAccepted = 1;&#xD;&#xA;}" />
-                                        <om:Property Name="ReportToAnalyst" Value="True" />
-                                        <om:Property Name="Name" Value="Expression_1" />
-                                        <om:Property Name="Signal" Value="False" />
-                                    </om:Element>
-                                </om:Element>
-                            </om:Element>
-                        </om:Element>
                     </om:Element>
-                    <om:Element Type="Decision" OID="f8f65bbf-9c81-4c76-93de-37ae9ab021ff" ParentLink="ComplexStatement_Statement" LowerBound="159.1" HigherBound="176.1">
+                    <om:Element Type="While" OID="a317c1e2-8060-455c-90cc-e02a42c75378" ParentLink="ComplexStatement_Statement" LowerBound="85.1" HigherBound="193.1">
+                        <om:Property Name="Expression" Value="resultAD &gt; 0" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="Check requests" />
+                        <om:Property Name="Name" Value="Retry" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="DecisionBranch" OID="dd27ae4c-7b04-4f72-995c-acc3f1533715" ParentLink="ReallyComplexStatement_Branch" LowerBound="160.17" HigherBound="176.1">
-                            <om:Property Name="Expression" Value="(resultReRegistered + resultRegistered + resultAccepted) &gt; 0" />
-                            <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="676af5d5-a8e5-4186-8512-c838a862db8f" ParentLink="ComplexStatement_Statement" LowerBound="88.1" HigherBound="90.1">
+                            <om:Property Name="Expression" Value="resultAD = 0;" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="Error(s) occured" />
+                            <om:Property Name="Name" Value="result = 0" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Parallel" OID="02f02013-ac68-4f9e-883f-4072f7ccc131" ParentLink="ComplexStatement_Statement" LowerBound="90.1" HigherBound="175.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ParallelActions_1" />
                             <om:Property Name="Signal" Value="False" />
-                            <om:Element Type="Construct" OID="04e1ffa7-7035-45c2-822f-0cbfcfb4ac85" ParentLink="ComplexStatement_Statement" LowerBound="162.1" HigherBound="171.1">
+                            <om:Element Type="ParallelBranch" OID="9737dbf2-0f4d-4850-b437-6cbc0c330cf1" ParentLink="ReallyComplexStatement_Branch" LowerBound="95.1" HigherBound="119.1">
+                                <om:Property Name="IsGhostBranch" Value="True" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="ConstructMailMessage" />
-                                <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="MessageAssignment" OID="7ba7e1c6-3a9e-4b60-b44f-a0551701ce86" ParentLink="ComplexStatement_Statement" LowerBound="165.1" HigherBound="170.1">
-                                    <om:Property Name="Expression" Value="SupportMail = System.String.Empty;&#xD;&#xA;SupportMail(*) = GroupEvent(*);&#xD;&#xA;SupportMail(SMTP.Subject) = System.String.Format(&quot;Group {0} could not be created!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName));&#xD;&#xA;SupportMail(SMTP.EmailBodyText) = System.String.Format(&quot;Please create 3 ActiveDirectory groups as specified below\n{0}_accepted\n{0}_registered\n{0}_reregistered&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName));" />
-                                    <om:Property Name="ReportToAnalyst" Value="False" />
-                                    <om:Property Name="Name" Value="MessageAssignment_1" />
+                                <om:Property Name="Name" Value="ParallelBranch_1" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="Scope" OID="020dd7c4-80da-4b63-ab4d-6954b17dd7c5" ParentLink="ComplexStatement_Statement" LowerBound="95.1" HigherBound="119.1">
+                                    <om:Property Name="InitializedTransactionType" Value="True" />
+                                    <om:Property Name="IsSynchronized" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="CreateADAcceptedGroup" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="Send" OID="d5fecc79-8bdb-4f7a-8b21-d35a77fb47d8" ParentLink="ComplexStatement_Statement" LowerBound="100.1" HigherBound="102.1">
+                                        <om:Property Name="PortName" Value="CreateADAcceptedGroupPort" />
+                                        <om:Property Name="MessageName" Value="GroupEvent" />
+                                        <om:Property Name="OperationName" Value="CreateADGroupOperation" />
+                                        <om:Property Name="OperationMessageName" Value="Request" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="SendCreateADGroup" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                    <om:Element Type="Catch" OID="384f9a21-f140-46eb-9be0-0567757472e4" ParentLink="Scope_Catch" LowerBound="105.1" HigherBound="117.1">
+                                        <om:Property Name="ExceptionName" Value="ex" />
+                                        <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
+                                        <om:Property Name="IsFaultMessage" Value="False" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="CatchDeliveryFailureException" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="VariableAssignment" OID="7b708ad1-fcbb-4bbf-aa6b-dbefcd4b46dc" ParentLink="Catch_Statement" LowerBound="108.1" HigherBound="116.1">
+                                            <om:Property Name="Expression" Value="&#xD;&#xA;if(ex.ErrorDescription.Contains(&quot;The object already exists&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    resultAD = resultAD + 1;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\n&quot; + ex.ErrorDescription);" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="WriteEntry" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="ParallelBranch" OID="871e681a-8a29-4ebe-a72b-f2c45ece6a00" ParentLink="ReallyComplexStatement_Branch" LowerBound="122.1" HigherBound="146.1">
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ParallelBranch_2" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="Scope" OID="e3e4d7da-e367-457e-97e7-d71225521532" ParentLink="ComplexStatement_Statement" LowerBound="122.1" HigherBound="146.1">
+                                    <om:Property Name="InitializedTransactionType" Value="True" />
+                                    <om:Property Name="IsSynchronized" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="CreateADRegisteredGroup" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="Send" OID="ce93631c-5cb3-4c40-a65d-c8fee41fc376" ParentLink="ComplexStatement_Statement" LowerBound="127.1" HigherBound="129.1">
+                                        <om:Property Name="PortName" Value="CreateADRegisteredGroupPort" />
+                                        <om:Property Name="MessageName" Value="GroupEvent" />
+                                        <om:Property Name="OperationName" Value="CreateADGroupOperation" />
+                                        <om:Property Name="OperationMessageName" Value="Request" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="SendCreateADGroup" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                    <om:Element Type="Catch" OID="522fcc08-6e48-4b38-baa9-812b291faa27" ParentLink="Scope_Catch" LowerBound="132.1" HigherBound="144.1">
+                                        <om:Property Name="ExceptionName" Value="ex" />
+                                        <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
+                                        <om:Property Name="IsFaultMessage" Value="False" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="CatchDeliveryFailureException" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="VariableAssignment" OID="42495dbf-6038-4c85-9f53-f0c02aa0bb36" ParentLink="Catch_Statement" LowerBound="135.1" HigherBound="143.1">
+                                            <om:Property Name="Expression" Value="&#xD;&#xA;if(ex.ErrorDescription.Contains(&quot;The object already exists&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    resultAD = resultAD + 1;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\n&quot; + ex.ErrorDescription);" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="WriteEntry" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="ParallelBranch" OID="a28bc793-78e9-48e7-98d4-ca628a11f588" ParentLink="ReallyComplexStatement_Branch" LowerBound="149.1" HigherBound="173.1">
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ParallelBranch_3" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="Scope" OID="1a76b348-980b-4d93-9aca-d05d13d2a27a" ParentLink="ComplexStatement_Statement" LowerBound="149.1" HigherBound="173.1">
+                                    <om:Property Name="InitializedTransactionType" Value="True" />
+                                    <om:Property Name="IsSynchronized" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="CreateADReregisteredGroup" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="Send" OID="0233eb84-ca10-4baf-9d99-703b5d0fe4ad" ParentLink="ComplexStatement_Statement" LowerBound="154.1" HigherBound="156.1">
+                                        <om:Property Name="PortName" Value="CreateADReRegisteredGroupPort" />
+                                        <om:Property Name="MessageName" Value="GroupEvent" />
+                                        <om:Property Name="OperationName" Value="CreateADGroupOperation" />
+                                        <om:Property Name="OperationMessageName" Value="Request" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="SendCreateADGroup" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                    <om:Element Type="Catch" OID="093f69c0-b333-4171-8120-2e9b05807d23" ParentLink="Scope_Catch" LowerBound="159.1" HigherBound="171.1">
+                                        <om:Property Name="ExceptionName" Value="ex" />
+                                        <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
+                                        <om:Property Name="IsFaultMessage" Value="False" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="CatchDeliveryFailureException" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="VariableAssignment" OID="7c1c3b04-fa29-4705-ac5f-62f9d430d361" ParentLink="Catch_Statement" LowerBound="162.1" HigherBound="170.1">
+                                            <om:Property Name="Expression" Value="&#xD;&#xA;if(ex.ErrorDescription.Contains(&quot;The object already exists&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    resultAD = resultAD + 1;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\n&quot; + ex.ErrorDescription);" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="WriteEntry" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Decision" OID="83cd0942-7a81-45e0-96e5-9818daae5d7e" ParentLink="ComplexStatement_Statement" LowerBound="175.1" HigherBound="192.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Check requests" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="DecisionBranch" OID="a127557a-1a02-4bba-884c-2e4b19b3dcd6" ParentLink="ReallyComplexStatement_Branch" LowerBound="176.21" HigherBound="192.1">
+                                <om:Property Name="Expression" Value="resultAD &gt; 0" />
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Error(s) occured" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="Construct" OID="e1a9c1c8-bc2f-447c-960a-43d0c5a93176" ParentLink="ComplexStatement_Statement" LowerBound="178.1" HigherBound="187.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="ConstructMailMessage" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessageRef" OID="e600b888-6878-4e3e-b83a-73a860889c1b" ParentLink="Construct_MessageRef" LowerBound="179.35" HigherBound="179.46">
+                                        <om:Property Name="Ref" Value="SupportMail" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessageAssignment" OID="46fcdc61-5a11-4739-95c4-89439110bdf6" ParentLink="ComplexStatement_Statement" LowerBound="181.1" HigherBound="186.1">
+                                        <om:Property Name="Expression" Value="SupportMail = System.String.Empty;&#xD;&#xA;SupportMail(*) = GroupEvent(*);&#xD;&#xA;SupportMail(SMTP.Subject) = System.String.Format(&quot;Group {0} could not be created!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName));&#xD;&#xA;SupportMail(SMTP.EmailBodyText) = System.String.Format(&quot;Please create 3 ActiveDirectory groups as specified below\n{0}_accepted\n{0}_registered\n{0}_reregistered&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName));" />
+                                        <om:Property Name="ReportToAnalyst" Value="False" />
+                                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="Send" OID="0ab909eb-6395-4cff-8390-06c0ba6ecfb3" ParentLink="ComplexStatement_Statement" LowerBound="187.1" HigherBound="189.1">
+                                    <om:Property Name="PortName" Value="SendSupportMail" />
+                                    <om:Property Name="MessageName" Value="SupportMail" />
+                                    <om:Property Name="OperationName" Value="Support" />
+                                    <om:Property Name="OperationMessageName" Value="Request" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="SendSupportMail" />
                                     <om:Property Name="Signal" Value="True" />
                                 </om:Element>
-                                <om:Element Type="MessageRef" OID="cefa135f-2338-4839-b725-6b1e87cd1796" ParentLink="Construct_MessageRef" LowerBound="163.31" HigherBound="163.42">
-                                    <om:Property Name="Ref" Value="SupportMail" />
+                                <om:Element Type="Suspend" OID="a3100400-2dde-4f81-81be-5f66ab1bd29b" ParentLink="ComplexStatement_Statement" LowerBound="189.1" HigherBound="191.1">
+                                    <om:Property Name="ErrorMessage" Value="&quot;Group(s) could not be created, please create group(s) manually and resume orchestration instance!&quot;;" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Group(s) could not be created" />
                                     <om:Property Name="Signal" Value="False" />
                                 </om:Element>
                             </om:Element>
-                            <om:Element Type="Send" OID="15ee2e7a-6da4-457d-bf4d-e3df69e54f98" ParentLink="ComplexStatement_Statement" LowerBound="171.1" HigherBound="173.1">
-                                <om:Property Name="PortName" Value="SendSupportMail" />
-                                <om:Property Name="MessageName" Value="SupportMail" />
-                                <om:Property Name="OperationName" Value="Support" />
-                                <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Element Type="DecisionBranch" OID="52758f36-1fb9-4751-8d12-c0b19803610b" ParentLink="ReallyComplexStatement_Branch">
+                                <om:Property Name="IsGhostBranch" Value="True" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="SendSupportMail" />
-                                <om:Property Name="Signal" Value="True" />
-                            </om:Element>
-                            <om:Element Type="Suspend" OID="a0f2d9ae-4dcc-4a32-9de4-1e87ef36168e" ParentLink="ComplexStatement_Statement" LowerBound="173.1" HigherBound="175.1">
-                                <om:Property Name="ErrorMessage" Value="&quot;Group(s) could not be created, please create group(s) manually and resume orchestration instance!&quot;;" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="Group(s) could not be created" />
+                                <om:Property Name="Name" Value="Else" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
                         </om:Element>
-                        <om:Element Type="DecisionBranch" OID="6aa97270-f559-41ee-9ddf-4de1e26141ea" ParentLink="ReallyComplexStatement_Branch">
-                            <om:Property Name="IsGhostBranch" Value="True" />
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="Else" />
-                            <om:Property Name="Signal" Value="False" />
-                        </om:Element>
                     </om:Element>
-                    <om:Element Type="Listen" OID="c491e70d-9591-4465-bc2f-8683ba2c5b65" ParentLink="ComplexStatement_Statement" LowerBound="176.1" HigherBound="190.1">
+                    <om:Element Type="Listen" OID="c491e70d-9591-4465-bc2f-8683ba2c5b65" ParentLink="ComplexStatement_Statement" LowerBound="193.1" HigherBound="209.1">
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="NextOrTimeout" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="ListenBranch" OID="a9c2d94b-6ebd-4dd2-8c8d-3130719439b8" ParentLink="ReallyComplexStatement_Branch" LowerBound="176.1" HigherBound="176.1">
+                        <om:Element Type="ListenBranch" OID="a9c2d94b-6ebd-4dd2-8c8d-3130719439b8" ParentLink="ReallyComplexStatement_Branch" LowerBound="193.1" HigherBound="193.1">
                             <om:Property Name="IsGhostBranch" Value="True" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="ListenBranch_1" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="Receive" OID="f4312c41-e10c-43d4-8a00-d2513aba91b1" ParentLink="ListenBranch_Statement" LowerBound="179.1" HigherBound="180.106">
+                            <om:Element Type="VariableAssignment" OID="20e9aa6a-3305-40b8-8188-a68feffba42b" ParentLink="ComplexStatement_Statement" LowerBound="199.1" HigherBound="201.1">
+                                <om:Property Name="Expression" Value="resultAD = 0;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Reset variables" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Receive" OID="f4312c41-e10c-43d4-8a00-d2513aba91b1" ParentLink="ListenBranch_Statement" LowerBound="196.1" HigherBound="197.106">
                                 <om:Property Name="Activate" Value="False" />
                                 <om:Property Name="PortName" Value="ReceiveGroupEventsPort" />
                                 <om:Property Name="MessageName" Value="GroupEvent" />
@@ -431,19 +460,19 @@
                                 <om:Property Name="Signal" Value="True" />
                             </om:Element>
                         </om:Element>
-                        <om:Element Type="ListenBranch" OID="6929cf4e-65af-4a47-9de1-c2ded40df616" ParentLink="ReallyComplexStatement_Branch" LowerBound="176.1" HigherBound="176.1">
+                        <om:Element Type="ListenBranch" OID="6929cf4e-65af-4a47-9de1-c2ded40df616" ParentLink="ReallyComplexStatement_Branch" LowerBound="193.1" HigherBound="193.1">
                             <om:Property Name="IsGhostBranch" Value="True" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="ListenBranch_2" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="VariableAssignment" OID="165d7d86-a9ff-4c91-a0a4-1dbaf871e71c" ParentLink="ComplexStatement_Statement" LowerBound="186.1" HigherBound="188.1">
+                            <om:Element Type="VariableAssignment" OID="d5c3e718-633b-474d-b4b8-b1a42063484e" ParentLink="ComplexStatement_Statement" LowerBound="205.1" HigherBound="207.1">
                                 <om:Property Name="Expression" Value="loop = false;" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="ExitLoop" />
-                                <om:Property Name="Signal" Value="False" />
+                                <om:Property Name="Name" Value="Stop loop" />
+                                <om:Property Name="Signal" Value="True" />
                             </om:Element>
-                            <om:Element Type="Delay" OID="8b3ca5c9-3301-4a0c-bff3-5a9fd2e55ad7" ParentLink="ListenBranch_Statement" LowerBound="183.1" HigherBound="184.56">
-                                <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,30)" />
+                            <om:Element Type="Delay" OID="8b3ca5c9-3301-4a0c-bff3-5a9fd2e55ad7" ParentLink="ListenBranch_Statement" LowerBound="202.1" HigherBound="203.55">
+                                <om:Property Name="Timeout" Value="new System.TimeSpan(0,1,0)" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="WaitForNextMessageEventBatch" />
                                 <om:Property Name="Signal" Value="False" />
@@ -538,13 +567,13 @@
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="GroupName" />
             <om:Property Name="Signal" Value="True" />
-            <om:Element Type="PropertyRef" OID="7606b2e1-798b-4608-9b77-1dc89c521534" ParentLink="CorrelationType_PropertyRef" LowerBound="34.9" HigherBound="34.26">
+            <om:Element Type="PropertyRef" OID="4c4f5e8d-7ce6-4bce-9105-4c077ab1d70a" ParentLink="CorrelationType_PropertyRef" LowerBound="34.9" HigherBound="34.26">
                 <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupName" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="PropertyRef_1" />
                 <om:Property Name="Signal" Value="False" />
             </om:Element>
-            <om:Element Type="PropertyRef" OID="3a81bcfc-21f1-4b7c-a0f4-d4f1d7cc19d2" ParentLink="CorrelationType_PropertyRef" LowerBound="34.28" HigherBound="34.45">
+            <om:Element Type="PropertyRef" OID="06369a93-dafe-49aa-b214-f6b678e32595" ParentLink="CorrelationType_PropertyRef" LowerBound="34.28" HigherBound="34.45">
                 <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupType" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="PropertyRef_1" />
@@ -590,7 +619,7 @@ module INT0003.AD.Distribution
         Schemas.GroupName, Schemas.GroupType
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
-    internal service GroupEventsGroupToAD
+    internal service longrunning transaction GroupEventsGroupToAD
     {
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         [Microsoft.XLANGs.BaseTypes.OrderedDelivery()]
@@ -612,122 +641,139 @@ module INT0003.AD.Distribution
         message Schemas.ADEvents.ADQueryResults ADGroupQueryResults;
         message Schemas.ADEvents.ADSendAdapterOneWayUpdate ADCreateGroup;
         message System.String SupportMail;
-        System.Int32 resultAccepted;
-        System.Int32 resultReRegistered;
+        System.String emailSubject;
+        System.Boolean success;
+        System.Int32 resultAD;
         System.Boolean loop;
         System.String xpathStr;
         System.Int32 counter;
         System.String groupSuffix;
         System.String resultText;
-        System.Int32 resultRegistered;
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("83d5aff1-7aca-442b-a4a5-f61d482ddaea")]
             activate ((INT0003.AD.Distribution.Schemas.GroupEventType == "GroupCreateRequestEvent"))receive (ReceiveGroupEventsPort.GroupEventsOperation, GroupEvent, initialize GroupNameSet);
-            resultAccepted = 0;
-            resultReRegistered = 0;
+            emailSubject = "";
+            success = false;
+            resultAD = 0;
             loop = true;
             xpathStr = "";
             groupSuffix = "";
             resultText = "";
-            resultRegistered = 0;
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("63688e50-9258-47b9-a01f-d37b267751b6")]
             loop = true;
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("20afdbf1-c4b2-4e0f-80a8-e45fcb65d234")]
             while (loop == true)
             {
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("f4724ea5-2e25-4c82-ab30-f5e68d45c989")]
-                parallel
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("f37afee9-5956-4b4c-ad24-6c0c44fe28c6")]
+                resultAD = 1;
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("a317c1e2-8060-455c-90cc-e02a42c75378")]
+                while (resultAD > 0)
                 {
-                    task
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("676af5d5-a8e5-4186-8512-c838a862db8f")]
+                    resultAD = 0;
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("02f02013-ac68-4f9e-883f-4072f7ccc131")]
+                    parallel
                     {
-                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("ad9f18b8-052b-4b02-ab56-e526ab00024e")]
-                        scope
+                        task
                         {
-                            body
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("020dd7c4-80da-4b63-ab4d-6954b17dd7c5")]
+                            scope synchronized
                             {
-                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("78fb26c1-6f34-4f85-8a48-e72289202dc9")]
-                                send (CreateADReRegisteredGroupPort.CreateADGroupOperation, GroupEvent);
-                            }
-                            exceptions
-                            {
-                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("f4535054-6b42-4db5-ace6-3ff5597a17d0")]
-                                catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
+                                body
                                 {
-                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c137a237-3626-4e1c-ad04-b464da6aeb52")]
-                                    if(ex.ErrorDescription.Contains("The object already exists") == false)
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("d5fecc79-8bdb-4f7a-8b21-d35a77fb47d8")]
+                                    send (CreateADAcceptedGroupPort.CreateADGroupOperation, GroupEvent);
+                                }
+                                exceptions
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("384f9a21-f140-46eb-9be0-0567757472e4")]
+                                    catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
                                     {
-                                        resultReRegistered = 1;
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("7b708ad1-fcbb-4bbf-aa6b-dbefcd4b46dc")]
+                                        
+                                        if(ex.ErrorDescription.Contains("The object already exists") == false)
+                                        {
+                                            resultAD = resultAD + 1;
+                                        }
+                                        
+                                        System.Diagnostics.EventLog.WriteEntry("BizTalk Application","GroupEventsGroupToAD\n" + ex.ErrorDescription);
+                                    }
+                                }
+                            }
+                        }
+                        task
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e3e4d7da-e367-457e-97e7-d71225521532")]
+                            scope synchronized
+                            {
+                                body
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("ce93631c-5cb3-4c40-a65d-c8fee41fc376")]
+                                    send (CreateADRegisteredGroupPort.CreateADGroupOperation, GroupEvent);
+                                }
+                                exceptions
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("522fcc08-6e48-4b38-baa9-812b291faa27")]
+                                    catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
+                                    {
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("42495dbf-6038-4c85-9f53-f0c02aa0bb36")]
+                                        
+                                        if(ex.ErrorDescription.Contains("The object already exists") == false)
+                                        {
+                                            resultAD = resultAD + 1;
+                                        }
+                                        
+                                        System.Diagnostics.EventLog.WriteEntry("BizTalk Application","GroupEventsGroupToAD\n" + ex.ErrorDescription);
+                                    }
+                                }
+                            }
+                        }
+                        task
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1a76b348-980b-4d93-9aca-d05d13d2a27a")]
+                            scope synchronized
+                            {
+                                body
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("0233eb84-ca10-4baf-9d99-703b5d0fe4ad")]
+                                    send (CreateADReRegisteredGroupPort.CreateADGroupOperation, GroupEvent);
+                                }
+                                exceptions
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("093f69c0-b333-4171-8120-2e9b05807d23")]
+                                    catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
+                                    {
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("7c1c3b04-fa29-4705-ac5f-62f9d430d361")]
+                                        
+                                        if(ex.ErrorDescription.Contains("The object already exists") == false)
+                                        {
+                                            resultAD = resultAD + 1;
+                                        }
+                                        
+                                        System.Diagnostics.EventLog.WriteEntry("BizTalk Application","GroupEventsGroupToAD\n" + ex.ErrorDescription);
                                     }
                                 }
                             }
                         }
                     }
-                    task
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("83cd0942-7a81-45e0-96e5-9818daae5d7e")]
+                    if (resultAD > 0)
                     {
-                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("db39e0da-cb81-4e3b-9343-3cb9b7ea7f74")]
-                        scope
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("e1a9c1c8-bc2f-447c-960a-43d0c5a93176")]
+                        construct SupportMail
                         {
-                            body
-                            {
-                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("71521971-2a28-4c39-83b2-acaf4cee441f")]
-                                send (CreateADRegisteredGroupPort.CreateADGroupOperation, GroupEvent);
-                            }
-                            exceptions
-                            {
-                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("0207d549-9034-489e-8ef5-e54deb473463")]
-                                catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
-                                {
-                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f358863a-f71f-40c4-9162-7356ded8c0b0")]
-                                    if(ex.ErrorDescription.Contains("The object already exists") == false)
-                                    {
-                                        resultRegistered = 1;
-                                    }
-                                }
-                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("46fcdc61-5a11-4739-95c4-89439110bdf6")]
+                            SupportMail = System.String.Empty;
+                            SupportMail(*) = GroupEvent(*);
+                            SupportMail(SMTP.Subject) = System.String.Format("Group {0} could not be created!",GroupEvent(INT0003.AD.Distribution.Schemas.GroupName));
+                            SupportMail(SMTP.EmailBodyText) = System.String.Format("Please create 3 ActiveDirectory groups as specified below\n{0}_accepted\n{0}_registered\n{0}_reregistered",GroupEvent(INT0003.AD.Distribution.Schemas.GroupName));
                         }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("0ab909eb-6395-4cff-8390-06c0ba6ecfb3")]
+                        send (SendSupportMail.Support, SupportMail);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("a3100400-2dde-4f81-81be-5f66ab1bd29b")]
+                        suspend "Group(s) could not be created, please create group(s) manually and resume orchestration instance!";
                     }
-                    task
-                    {
-                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("020dd7c4-80da-4b63-ab4d-6954b17dd7c5")]
-                        scope
-                        {
-                            body
-                            {
-                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("d5fecc79-8bdb-4f7a-8b21-d35a77fb47d8")]
-                                send (CreateADAcceptedGroupPort.CreateADGroupOperation, GroupEvent);
-                            }
-                            exceptions
-                            {
-                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("384f9a21-f140-46eb-9be0-0567757472e4")]
-                                catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
-                                {
-                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("ffceb1a1-c907-48ef-abd1-57b84a16752f")]
-                                    if(ex.ErrorDescription.Contains("The object already exists") == false)
-                                    {
-                                        resultAccepted = 1;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("f8f65bbf-9c81-4c76-93de-37ae9ab021ff")]
-                if ((resultReRegistered + resultRegistered + resultAccepted) > 0)
-                {
-                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("04e1ffa7-7035-45c2-822f-0cbfcfb4ac85")]
-                    construct SupportMail
-                    {
-                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("7ba7e1c6-3a9e-4b60-b44f-a0551701ce86")]
-                        SupportMail = System.String.Empty;
-                        SupportMail(*) = GroupEvent(*);
-                        SupportMail(SMTP.Subject) = System.String.Format("Group {0} could not be created!",GroupEvent(INT0003.AD.Distribution.Schemas.GroupName));
-                        SupportMail(SMTP.EmailBodyText) = System.String.Format("Please create 3 ActiveDirectory groups as specified below\n{0}_accepted\n{0}_registered\n{0}_reregistered",GroupEvent(INT0003.AD.Distribution.Schemas.GroupName));
-                    }
-                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("15ee2e7a-6da4-457d-bf4d-e3df69e54f98")]
-                    send (SendSupportMail.Support, SupportMail);
-                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a0f2d9ae-4dcc-4a32-9de4-1e87ef36168e")]
-                    suspend "Group(s) could not be created, please create group(s) manually and resume orchestration instance!";
                 }
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("c491e70d-9591-4465-bc2f-8683ba2c5b65")]
                 listen
@@ -735,11 +781,13 @@ module INT0003.AD.Distribution
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("f4312c41-e10c-43d4-8a00-d2513aba91b1")]
                     until receive (ReceiveGroupEventsPort.GroupEventsOperation, GroupEvent, GroupNameSet)
                     {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("20e9aa6a-3305-40b8-8188-a68feffba42b")]
+                        resultAD = 0;
                     }
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("8b3ca5c9-3301-4a0c-bff3-5a9fd2e55ad7")]
-                    timeout new System.TimeSpan(0,0,30)
+                    timeout new System.TimeSpan(0,1,0)
                     {
-                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("165d7d86-a9ff-4c91-a0a4-1dbaf871e71c")]
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("d5c3e718-633b-474d-b4b8-b1a42063484e")]
                         loop = false;
                     }
                 }
