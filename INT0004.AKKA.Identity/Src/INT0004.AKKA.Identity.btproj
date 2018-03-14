@@ -40,6 +40,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BizTalk.PipelineComponents.PromoteTypedContext, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2dbe33dac94b8972, processorArchitecture=MSIL" />
+    <Reference Include="BizTalkComponents.PipelineComponents.XSLTransform, Version=1.0.0.1, Culture=neutral, PublicKeyToken=47190f56632fbc76, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\BizTalkComponents.PipelineComponents.XSLTransform\v4.0_1.0.0.1__47190f56632fbc76\BizTalkComponents.PipelineComponents.XSLTransform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Shared.Utilities.Calculate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -86,6 +90,7 @@
     <None Include="Files\INT0004.AKKA.Identity.maps.xlsx" />
     <None Include="Files\INT0004.AKKA.Identity.vsdx" />
     <None Include="key.snk.pfx" />
+    <None Include="packages.config" />
     <Schema Include="Schemas\PersonEvents\PersonEvent.PropertySchema.xsd">
       <TypeName>PropertySchema</TypeName>
       <Namespace>INT0004.AKKA.Identity.Schemas.PersonEvents</Namespace>
@@ -131,8 +136,24 @@
       <SubType>Task</SubType>
     </Map>
     <Content Include="Files\INT0004.AKKA.Identity.BindingInfo.xml" />
+    <Map Include="Maps\getSenastEtableradeKontokatalogResponse_To_InternalPersonEvent.btm">
+      <TypeName>getSenastEtableradeKontokatalogResponse_To_InternalPersonEvent</TypeName>
+      <Namespace>INT0004.AKKA.Identity.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\getSenastEtableradeKontokatalogResponse_To_InternalPersonEvent.xsl" />
     <Content Include="Maps\InternalPersonEvent_To_etableraEjAktiveratStudentkontoMedNamn.xsl" />
     <Content Include="Maps\InternalPersonEvent_To_etableraEjAktiveratStudentkontoMedNamn_extxml.xml" />
+    <Map Include="Maps\InternalPersonEvent_To_getSenastEtableradeKontokatalog.btm">
+      <TypeName>InternalPersonEvent_To_getSenastEtableradeKontokatalog</TypeName>
+      <Namespace>INT0004.AKKA.Identity.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Pipeline Include="Pipelines\XSLTransform.btp">
+      <TypeName>XSLTransform</TypeName>
+      <Namespace>INT0004.AKKA.Identity.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
     <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
