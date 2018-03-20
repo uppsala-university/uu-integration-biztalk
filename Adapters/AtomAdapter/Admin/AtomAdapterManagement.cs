@@ -12,6 +12,7 @@ using Microsoft.Win32;
 using Microsoft.BizTalk.Adapter.Framework;
 using Microsoft.BizTalk.Component.Interop;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace BizTalk.Adapter.AtomAdmin
 {
@@ -128,7 +129,13 @@ namespace BizTalk.Adapter.AtomAdmin
 
             uri.InnerText = address.InnerText;
 
-
+            XmlNode clientCertificate = document.SelectSingleNode("Config/clientCertificate");
+            if (null != clientCertificate)
+            {
+                if (clientCertificate.InnerText.Length > 40)
+                    clientCertificate.InnerText = Regex.Replace(clientCertificate.InnerText, @"[^\da-fA-F]", string.Empty);
+            }
+              
 
             return document.OuterXml;
         }

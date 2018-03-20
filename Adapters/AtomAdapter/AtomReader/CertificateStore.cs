@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography.X509Certificates;
 using System.Collections.Concurrent;
+using System.Text.RegularExpressions;
 
 namespace Shared.Components
 {
@@ -24,6 +25,9 @@ namespace Shared.Components
         public static X509Certificate2 GetCertByThumbprint(string thumbprint)
         {
             X509Certificate2 cert = null;
+           
+            if (thumbprint.Length > 40)
+                thumbprint = Regex.Replace(thumbprint, @"[^\da-fA-F]", string.Empty);
 
             if (Certificates.TryGetValue(thumbprint, out cert) == false)
             {
