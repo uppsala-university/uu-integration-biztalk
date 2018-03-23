@@ -32,7 +32,14 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -65,6 +72,103 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk.pfx" />
+    <Schema Include="Schemas\Sesam\KursEvent.xsd">
+      <TypeName>KursEvent</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Sesam</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\PropertySchema.xsd">
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\AterbudEnvelope.xsd">
+      <TypeName>AterbudEnvelope</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\AterkalladOmregistreringEnvelope.xsd">
+      <TypeName>AterkalladOmregistreringEnvelope</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\AterkalladRegistreringEnvelope.xsd">
+      <TypeName>AterkalladRegistreringEnvelope</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\ForvantatDeltagandeSkapadEnvelope.xsd">
+      <TypeName>ForvantatDeltagandeSkapadEnvelope</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\KurstillfalleTillStatusEnvelope.xsd">
+      <TypeName>KurstillfalleTillStatusEnvelope</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\OmregistreringEnvelope.xsd">
+      <TypeName>OmregistreringEnvelope</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\RegistreringEnvelope.xsd">
+      <TypeName>RegistreringEnvelope</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\StudentAvlidenmarkeringEnvelope.xsd">
+      <TypeName>StudentAvlidenmarkeringEnvelope</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\schemas.ladok.se-dap.xsd">
+      <TypeName>schemas_ladok_se_dap</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\schemas.ladok.se-events.xsd">
+      <TypeName>schemas_ladok_se_events</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\schemas.ladok.se-studentinformation.xsd">
+      <TypeName>schemas_ladok_se_studentinformation</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\schemas.ladok.se-studiedeltagande.xsd">
+      <TypeName>schemas_ladok_se_studiedeltagande</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\schemas.ladok.se-utbildningsinformation.xsd">
+      <TypeName>schemas_ladok_se_utbildningsinformation</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\schemas.ladok.se.xsd">
+      <TypeName>schemas_ladok_se</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\KurstillfalleTillStatusEnvelope_to_SesamEvent.btm">
+      <TypeName>KurstillfalleTillStatusEnvelope_to_SesamEvent</TypeName>
+      <Namespace>INT0009.Sesam.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="Pipelines\FlatFile.SendPipeline.btp">
+      <TypeName>FlatFile_SendPipeline</TypeName>
+      <Namespace>INT0009.Sesam.Events.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
