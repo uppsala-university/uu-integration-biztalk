@@ -23,7 +23,8 @@ namespace Shared.Components
 
         bool idFound = false;
 
-
+        private int feedDeepth = 0;
+        private int feedMax = 10;
 
         /// <summary>
         /// Reads archive type Atom+xml feeds
@@ -31,11 +32,17 @@ namespace Shared.Components
         /// <param name="uri">Recent Atom feed</param>
         /// <param name="stateSettings">State settings</param>
         /// <param name="securitysettings">Security settings</param>
-        public AtomReader(string uri, StateSettings stateSettings, SecuritySettings securitysettings)
+        public AtomReader(string uri, StateSettings stateSettings, SecuritySettings securitysettings, int max)
         {
 
             StateSettings = stateSettings;
             SecuritySettings = securitysettings;
+
+            feedMax = max;
+
+            if (stateSettings.Id == String.Empty)
+                feedMax = Int32.MaxValue;
+
 
             nextFeed = uri;
 
@@ -70,6 +77,11 @@ namespace Shared.Components
 
         }
 
+        public AtomReader(string uri, StateSettings stateSettings, SecuritySettings securitysettings):this(uri, stateSettings, securitysettings,10)
+        {
+           
+        }
+
 
         /// <summary>
         ///  Finds the first feed and inits the inner reader
@@ -80,6 +92,11 @@ namespace Shared.Components
             Dictionary<string, string> links = new Dictionary<string, string>();
             //continue from reader where prev- is missing
             this.reader = secReader.Create(uri);
+
+            this.feedDeepth++;
+
+            if (feedDeepth > feedMax)
+                throw new MaxDeepthException(feedMax);
 
             while (reader.Read())
             {

@@ -29,13 +29,16 @@ namespace BizTalk.Adapter.Atom
         private string firstFeed;
         private bool findFirst;
 
-        private string clientCertificate;
+        private int feedMax = 0;
+
+        //private string clientCertificate;
         public SecuritySettings SecuritySettings {
             get {
                 return securitySettings;
             }
         }
-       
+
+        public int FeedMax { get { return feedMax; } }
         public string StateFile { get { return stateFile; } }
         public string Uri { get { return uri; } }
 
@@ -67,9 +70,10 @@ namespace BizTalk.Adapter.Atom
                 this.address = String.Empty;
                 this.userName = String.Empty;
                 this.password = String.Empty;
-                this.clientCertificate = String.Empty;
+                //this.clientCertificate = String.Empty;
                 this.findFirst = false;
                 this.firstFeed = String.Empty;
+                this.feedMax = 10;
 
             }
             finally
@@ -161,6 +165,14 @@ namespace BizTalk.Adapter.Atom
                     this.findFirst = Boolean.Parse(findFirst.InnerText);
                 }
 
+                XmlNode feedMax = configDOM.SelectSingleNode("Config/feedMax");
+
+                if (feedMax != null)
+                {
+                    this.feedMax = Int32.Parse(feedMax.InnerText);
+                }
+                
+                
 
             }
             catch (Exception ex)

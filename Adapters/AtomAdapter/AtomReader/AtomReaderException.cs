@@ -35,4 +35,13 @@ namespace Shared.Components
 
         protected InvalidConfiguration(SerializationInfo info, StreamingContext context) : base(info, context) { }
     }
+
+    [Serializable()]
+    public class MaxDeepthException : AtomReaderException
+    {
+        public MaxDeepthException(string message) : base(message) { }
+
+        public MaxDeepthException(int max) : base(String.Format("Maximum feeds to search has been reached, {0} feeds have been searched!", max)) { }
+    }
+
 }

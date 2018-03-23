@@ -141,9 +141,9 @@ namespace BizTalk.Adapter.Atom
         //Set ActionOnFailure to zero in the context property of each messaqe that you do not want BizTalk Server to suspend on a processing exception. 
         //Failure to set this property allows BizTalk Server to fall back to its default behavior 
         //of suspending the message on a processing exception. 
-        context.ActionOnFailure = 0;
+        //context.ActionOnFailure = 0;
         
-            //we could promote entity id and updated, msg.Context.Promote(ns, message.Id
+        //we could promote entity id and updated, msg.Context.Promote(ns, message.Id
         return msg;
     }
 
@@ -170,7 +170,8 @@ namespace BizTalk.Adapter.Atom
                 stateSettings.WorkingFeed = this.properties.FirstFeed;
                 stateSettings.Id = atomState.LastEntryId;
 
-                AtomReader atom = new AtomReader(this.properties.Uri, stateSettings, this.properties.SecuritySettings);
+               
+                AtomReader atom = new AtomReader(this.properties.Uri, stateSettings, this.properties.SecuritySettings, this.properties.FeedMax);
 
                 Feed feed = null;
                 bool discard = atom.IdFound;
@@ -232,9 +233,18 @@ namespace BizTalk.Adapter.Atom
 
 
             }
+            catch (MaxDeepthException deepth)
+            {
+                this.transportProxy.ReceiverShuttingdown(this.properties.Uri, deepth);
+            }
             catch (InvalidConfiguration arg)
             {
                 this.transportProxy.ReceiverShuttingdown(this.properties.Uri, arg);
+
+            }
+            catch (WebException ex)
+            {
+                this.transportProxy.ReceiverShuttingdown(this.properties.Uri, ex);
 
             }
             catch (Exception e)

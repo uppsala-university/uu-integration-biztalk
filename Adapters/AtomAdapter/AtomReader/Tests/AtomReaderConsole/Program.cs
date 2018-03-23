@@ -26,13 +26,14 @@ namespace BizTalk.Adapter
             Console.WriteLine("START...");
 
             //   FileStream stm = new FileStream(root + filename, FileMode.CreateNew);
-           
+
+
             X509Certificate2 ClientCertificate = CertificateStore.GetCertByThumbprint("b6e3448a8d92572cc9273b833f0d08248da681e7");
-            string Id = "e9d44e9c-df1d-11e7-a6e2-462f5acf4560";
-            string initFeed = "https://api.mit-integration.ladok.se/uppfoljning/feed/276358";
+            string Id = "23acff5e-0be0-11e8-8f5b-0f7a53ac4427";
+            string initFeed = "https://api.mit-integration.ladok.se:443/uppfoljning/feed/276367";
             //inner state cannot be the same as stae i reader ....
             StateSettings state = new StateSettings { Id = Id, WorkingFeed = initFeed,LastUpdated = DateTime.Parse("2018-01-15T08:27:42.873Z") };
-       AtomReader atom = new AtomReader("https://api.mit-integration.ladok.se/uppfoljning/feed/recent", state, new SecuritySettings { ClientCertificate = CertificateStore.GetCertByThumbprint("b6e3448a8d92572cc9273b833f0d08248da681e7") });
+        AtomReader atom = new AtomReader("https://api.mit-integration.ladok.se/uppfoljning/feed/recent", state, new SecuritySettings { ClientCertificate = CertificateStore.GetCertByThumbprint("b6e3448a8d92572cc9273b833f0d08248da681e7") },2);
             //atom.MoveToFirstFeed();
 
            
