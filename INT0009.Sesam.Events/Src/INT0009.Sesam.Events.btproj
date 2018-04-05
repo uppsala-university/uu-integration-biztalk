@@ -38,6 +38,9 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System">
@@ -71,10 +74,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="key.snk.pfx" />
+    <Schema Include="Schemas\Ladok\Envelopes\KurspaketeringUppdateradEnvelope.xsd">
+      <TypeName>KurspaketeringUpdateradEnvelope</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
     <Schema Include="Schemas\Sesam\KursEvent.xsd">
       <TypeName>KursEvent</TypeName>
       <Namespace>INT0009.Sesam.Events.Schemas.Sesam</Namespace>
@@ -169,6 +174,16 @@
       <Namespace>INT0009.Sesam.Events.Pipelines</Namespace>
       <SubType>Task</SubType>
     </Pipeline>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\KurspaketeringUppdateradEnvelope_to_SesamEvent.btm">
+      <TypeName>KurspaketeringUppdateradEnvelope_to_SesamEvent</TypeName>
+      <Namespace>INT0009.Sesam.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
