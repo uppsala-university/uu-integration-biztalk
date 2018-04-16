@@ -1,7 +1,7 @@
 namespace INT0001.Ladok2.Events.Maps {
     
     
-    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"BizTalk.PipelineComponents.ContextToXml.Context", typeof(global::BizTalk.PipelineComponents.ContextToXml.Context))]
+    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"BizTalk.PipelineComponents.Context", typeof(global::BizTalk.PipelineComponents.Context))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"INT0001.Ladok2.Events.procedure_updateId", typeof(global::INT0001.Ladok2.Events.procedure_updateId))]
     public sealed class Ack_To_updateId : global::Microsoft.XLANGs.BaseTypes.TransformBase {
         
@@ -27,9 +27,9 @@ namespace INT0001.Ladok2.Events.Maps {
         
         private const string _strArgList = @"<ExtensionObjects />";
         
-        private const string _strSrcSchemasList0 = @"BizTalk.PipelineComponents.ContextToXml.Context";
+        private const string _strSrcSchemasList0 = @"BizTalk.PipelineComponents.Context";
         
-        private const global::BizTalk.PipelineComponents.ContextToXml.Context _srcSchemaTypeReference0 = null;
+        private const global::BizTalk.PipelineComponents.Context _srcSchemaTypeReference0 = null;
         
         private const string _strTrgSchemasList0 = @"INT0001.Ladok2.Events.procedure_updateId";
         
@@ -56,7 +56,7 @@ namespace INT0001.Ladok2.Events.Maps {
         public override string[] SourceSchemas {
             get {
                 string[] _SrcSchemas = new string [1];
-                _SrcSchemas[0] = @"BizTalk.PipelineComponents.ContextToXml.Context";
+                _SrcSchemas[0] = @"BizTalk.PipelineComponents.Context";
                 return _SrcSchemas;
             }
         }

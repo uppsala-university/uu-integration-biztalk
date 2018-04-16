@@ -34,7 +34,7 @@ namespace INT0001.Ladok2.Events.Pipelines
 "playName>          <CachedIsManaged>true</CachedIsManaged>        </Component>      </Components>   "+
 " </Stage>  </Stages></Document>";
         
-        private const string _versionDependentGuid = "927b330e-5624-4b62-a20d-2310fc7f09a8";
+        private const string _versionDependentGuid = "3ac80383-5c14-4ec4-a6d5-2507f421d134";
         
         public ProcessAck_SendPipeline()
         {
