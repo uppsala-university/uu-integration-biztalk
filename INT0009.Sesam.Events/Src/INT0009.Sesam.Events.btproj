@@ -75,6 +75,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk.pfx" />
+    <Schema Include="Schemas\Sesam\PersonEvent.xsd">
+      <TypeName>PersonEvent</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Sesam</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
     <Schema Include="Schemas\Ladok\Envelopes\KurspaketeringUppdateradEnvelope.xsd">
       <TypeName>KurspaketeringUpdateradEnvelope</TypeName>
       <Namespace>INT0009.Sesam.Events.Schemas.Ladok.Envelopes</Namespace>
@@ -184,6 +189,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\RegistreringEnvelope_to_PersonEvent.btm">
+      <TypeName>RegistreringEnvelope_to_PersonEvent</TypeName>
+      <Namespace>INT0009.Sesam.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\RegistreringEnvelope_to_PersonEvent.xsl" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
