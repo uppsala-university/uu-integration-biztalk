@@ -11,6 +11,7 @@ namespace Shared.Utilities.MySQLClientHelper
 
         public MySQLConnect()
         {
+            System.Diagnostics.EventLog.WriteEntry("MySQLClientHelper", "Creating MySQLConnect", EventLogEntryType.Information);            
             this.Initialize();
         }
 
@@ -34,11 +35,10 @@ namespace Shared.Utilities.MySQLClientHelper
             }
             catch (Exception ex)
             {
-                using (EventLog eventLog = new EventLog("Application"))
-                {
-                    eventLog.Source = "Application";
-                    eventLog.WriteEntry(ex.Message, EventLogEntryType.Error);
-                }
+                System.Diagnostics.EventLog.WriteEntry("MySQLClientHelper", ex.Message, EventLogEntryType.Error);
+                if(ex.InnerException != null)
+                    System.Diagnostics.EventLog.WriteEntry("MySQLClientHelper", ex.InnerException.Message, EventLogEntryType.Error);
+               
                 return false;
             }
         }
@@ -52,11 +52,9 @@ namespace Shared.Utilities.MySQLClientHelper
             }
             catch (Exception ex)
             {
-                using (EventLog eventLog = new EventLog("Application"))
-                {
-                    eventLog.Source = "Application";
-                    eventLog.WriteEntry(ex.Message, EventLogEntryType.Error);
-                }
+                System.Diagnostics.EventLog.WriteEntry("MySQLClientHelper", ex.Message, EventLogEntryType.Error);
+                if (ex.InnerException != null)
+                    System.Diagnostics.EventLog.WriteEntry("MySQLClientHelper", ex.InnerException.Message, EventLogEntryType.Error);
                 return false;
             }
         }
@@ -65,12 +63,20 @@ namespace Shared.Utilities.MySQLClientHelper
         {
             string cmdText = "SELECT tnamn, enamn FROM uu.namn where pnr='" + pnr + "'";
             string str = "";
-            if (this.OpenConnection())
+            try
+            { 
+                if (this.OpenConnection())
+                {
+                    using (MySqlDataReader mySqlDataReader = new MySqlCommand(cmdText, this.connection).ExecuteReader())
+                    {
+                        if (mySqlDataReader.Read())
+                            str = String.Format("{0},{1}", mySqlDataReader[0], mySqlDataReader[1]);
+                        mySqlDataReader.Close();
+                    }
+                }
+            }
+            finally
             {
-                MySqlDataReader mySqlDataReader = new MySqlCommand(cmdText, this.connection).ExecuteReader();
-                if (mySqlDataReader.Read())
-                    str = String.Format("{0},{1}",mySqlDataReader[0], mySqlDataReader[1]);
-                mySqlDataReader.Close();
                 this.CloseConnection();
             }
             return str;
@@ -80,13 +86,22 @@ namespace Shared.Utilities.MySQLClientHelper
         {
             string cmdText = "SELECT * FROM uu.kurs where kod='" + utbildningsinstansUID + "'";
             string str = "";
-            if (!this.OpenConnection())
-                return str;
-            MySqlDataReader mySqlDataReader = new MySqlCommand(cmdText, this.connection).ExecuteReader();
-            while (mySqlDataReader.Read())
-                str = mySqlDataReader["benamns"].ToString() + "~" + mySqlDataReader["benamne"];
-            mySqlDataReader.Close();
-            this.CloseConnection();
+            try
+            {
+                if (this.OpenConnection())
+                {
+                    using (MySqlDataReader mySqlDataReader = new MySqlCommand(cmdText, this.connection).ExecuteReader())
+                    { 
+                        while (mySqlDataReader.Read())
+                            str = mySqlDataReader["benamns"].ToString() + "~" + mySqlDataReader["benamne"];
+                        mySqlDataReader.Close();
+                    }
+                }
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
             return str;
         }
 
@@ -94,14 +109,25 @@ namespace Shared.Utilities.MySQLClientHelper
         {
             string cmdText = "SELECT termin, termordn FROM uu.ktfort2 WHERE kod='" + utbildningstillfalleskod + "' AND startter='" + startperiodID + "' ORDER BY termordn";
             string str = startperiodID;
-            if (!this.OpenConnection())
-                return str;
-            MySqlDataReader mySqlDataReader = new MySqlCommand(cmdText, this.connection).ExecuteReader();
-            while (mySqlDataReader.Read())
-                str = str + "~" + mySqlDataReader["termin"];
-            mySqlDataReader.Close();
-            this.CloseConnection();
+            try
+            {
+                if (this.OpenConnection())
+                {
+                    using (MySqlDataReader mySqlDataReader = new MySqlCommand(cmdText, this.connection).ExecuteReader())
+                    {
+                        while (mySqlDataReader.Read())
+                            str = str + "~" + mySqlDataReader["termin"];
+                        mySqlDataReader.Close();
+                    }
+                }
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
             return str;
         }
+
+     
     }
 }
