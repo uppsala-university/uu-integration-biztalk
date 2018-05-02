@@ -1278,6 +1278,89 @@
       <RouteFailedMessage>false</RouteFailedMessage>
       <ApplicationName>INT0009.Sesam.Events</ApplicationName>
     </SendPort>
+	 <SendPort Name="INT0009.Sesam.CreateSesamImportfiles" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>C:\integrations\INT0009.Sesam.Events\SesamImport\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-05-01T11:30:00</FromTime>
+        <ToTime>2018-05-02T12:04:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-05-01T22:00:00</FromTime>
+        <ToTime>2018-05-02T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0009.Sesam.Events</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0009.Sesam.CreateBackupImportfiles" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>C:\integrations\INT0009.Sesam.Events\SesamImportBackup\%datetime%_%MessageID%_%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%datetime%_%MessageID%_%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-05-01T22:00:00</FromTime>
+        <ToTime>2018-05-02T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralSend" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-05-01T22:00:00</FromTime>
+        <ToTime>2018-05-02T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0009.Sesam.Events</ApplicationName>
+    </SendPort>
   </SendPortCollection>
   <DistributionListCollection>
     <DistributionList Name="INT0009.Sesam.SendGroup.sesamfiles">
@@ -1304,9 +1387,9 @@
           <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-SESAM</Address>
           <PublicAddress />
           <Primary>true</Primary>
-          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
-          <ReceiveLocationFromTime>2000-01-01T23:00:00</ReceiveLocationFromTime>
-          <ReceiveLocationToTime>2000-01-01T22:59:59</ReceiveLocationToTime>
+          <ReceiveLocationServiceWindowEnabled>true</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T10:35:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T09:55:50</ReceiveLocationToTime>
           <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
           <ReceiveLocationStartDate>2018-03-20T00:00:00</ReceiveLocationStartDate>
           <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
@@ -1339,8 +1422,8 @@
           <PublicAddress />
           <Primary>true</Primary>
           <ReceiveLocationServiceWindowEnabled>true</ReceiveLocationServiceWindowEnabled>
-          <ReceiveLocationFromTime>2018-05-01T12:15:00</ReceiveLocationFromTime>
-          <ReceiveLocationToTime>2018-05-02T13:30:59</ReceiveLocationToTime>
+          <ReceiveLocationFromTime>2000-01-01T10:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T10:30:00</ReceiveLocationToTime>
           <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
           <ReceiveLocationStartDate>2018-05-02T00:00:00</ReceiveLocationStartDate>
           <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
