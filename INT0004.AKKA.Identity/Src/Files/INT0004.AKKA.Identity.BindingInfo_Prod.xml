@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="2" TotalEndpoints="2">
-  <Timestamp>2018-05-04T12:14:36.2870999+02:00</Timestamp>
+  <Timestamp>2018-05-04T15:04:55.8267542+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0004.AKKA.Identity]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0004.AKKA.Identity], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -3506,7 +3506,7 @@
             </Port>
           </Ports>
           <Roles />
-          <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+          <Host Name="CluIdentityOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
       </Services>
       <TrackedSchemas />
@@ -3528,7 +3528,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralSend" HostTrusted="false">
+        <SendHandler Name="CluIdentitySend" HostTrusted="false">
           <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
         </SendHandler>
       </PrimaryTransport>
@@ -3575,7 +3575,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralWCFSend" HostTrusted="false">
+        <SendHandler Name="CluIdentitySend" HostTrusted="false">
           <TransportType Name="WCF-BasicHttp" Capabilities="899" ConfigurationClsid="467c1a52-373f-4f09-9008-27af6b985f14" />
         </SendHandler>
       </PrimaryTransport>
@@ -3626,7 +3626,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralWCFSend" HostTrusted="false">
+        <SendHandler Name="CluIdentitySend" HostTrusted="false">
           <TransportType Name="WCF-BasicHttp" Capabilities="899" ConfigurationClsid="467c1a52-373f-4f09-9008-27af6b985f14" />
         </SendHandler>
       </PrimaryTransport>
@@ -3677,7 +3677,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralWCFSend" HostTrusted="false">
+        <SendHandler Name="CluIdentitySend" HostTrusted="false">
           <TransportType Name="WCF-BasicHttp" Capabilities="899" ConfigurationClsid="467c1a52-373f-4f09-9008-27af6b985f14" />
         </SendHandler>
       </PrimaryTransport>
@@ -3728,7 +3728,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralWCFSend" HostTrusted="false">
+        <SendHandler Name="CluIdentitySend" HostTrusted="false">
           <TransportType Name="WCF-BasicHttp" Capabilities="899" ConfigurationClsid="467c1a52-373f-4f09-9008-27af6b985f14" />
         </SendHandler>
       </PrimaryTransport>
@@ -3780,7 +3780,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralSend" HostTrusted="false">
+        <SendHandler Name="CluIdentitySend" HostTrusted="false">
           <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
         </SendHandler>
       </PrimaryTransport>
@@ -3831,7 +3831,7 @@
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
           <Enable>false</Enable>
-          <ReceiveHandler Name="GeneralReceive" HostTrusted="false">
+          <ReceiveHandler Name="CluIdentityReceive" HostTrusted="false">
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>
         </ReceiveLocation>

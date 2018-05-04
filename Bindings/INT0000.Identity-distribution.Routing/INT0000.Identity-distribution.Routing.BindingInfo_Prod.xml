@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-05-04T10:52:36.4778393+02:00</Timestamp>
+  <Timestamp>2018-05-04T15:03:25.1314095+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0000.Identity-distribution.Routing]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0000.Identity-distribution.Routing], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -23,7 +23,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralSend" HostTrusted="false">
+        <SendHandler Name="CluIdentitySend" HostTrusted="false">
           <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
         </SendHandler>
       </PrimaryTransport>
@@ -69,7 +69,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralSend" HostTrusted="false">
+        <SendHandler Name="CluIdentitySend" HostTrusted="false">
           <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
         </SendHandler>
       </PrimaryTransport>
@@ -126,7 +126,7 @@
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
           <Enable>false</Enable>
-          <ReceiveHandler Name="GeneralReceive" HostTrusted="false">
+          <ReceiveHandler Name="CluIdentityReceive" HostTrusted="false">
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>
         </ReceiveLocation>

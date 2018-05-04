@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-04-25T12:53:27.2853642+02:00</Timestamp>
+  <Timestamp>2018-05-04T14:43:20.7927631+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0000.Identity-distribution.Routing]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0000.Identity-distribution.Routing], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -14,7 +14,7 @@
       <PrimaryTransport>
         <Address>FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\IDENTITY-AKKA</Address>
         <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\IDENTITY-AKKA&amp;lt;/queue&amp;gt;&amp;lt;maximumMessageSize&amp;gt;1024&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\IDENTITY-AKKA&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\IDENTITY-AKKA&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\IDENTITY-AKKA&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;1024&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
@@ -23,7 +23,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralSend" HostTrusted="false">
+        <SendHandler Name="CluIdentitySend" HostTrusted="false">
           <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
         </SendHandler>
       </PrimaryTransport>
@@ -69,7 +69,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralSend" HostTrusted="false">
+        <SendHandler Name="CluIdentitySend" HostTrusted="false">
           <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
         </SendHandler>
       </PrimaryTransport>
@@ -120,13 +120,13 @@
           <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
           <ReceiveLocationEndDate>2017-09-16T23:59:59</ReceiveLocationEndDate>
           <ReceiveLocationTransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
-          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\IDENTITY-DISTRIBUTION&amp;lt;/queue&amp;gt;&amp;lt;batchSize&amp;gt;1&amp;lt;/batchSize&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;serialProcessing&amp;gt;true&amp;lt;/serialProcessing&amp;gt;&amp;lt;onFailure&amp;gt;suspendResumable&amp;lt;/onFailure&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\IDENTITY-DISTRIBUTION&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\IDENTITY-DISTRIBUTION&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\IDENTITY-DISTRIBUTION&amp;lt;/uri&amp;gt;&amp;lt;batchSize&amp;gt;1&amp;lt;/batchSize&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;serialProcessing&amp;gt;true&amp;lt;/serialProcessing&amp;gt;&amp;lt;onFailure&amp;gt;suspendResumable&amp;lt;/onFailure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
           <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
           <ReceivePipelineData xsi:nil="true" />
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
           <Enable>false</Enable>
-          <ReceiveHandler Name="GeneralReceive" HostTrusted="false">
+          <ReceiveHandler Name="CluIdentityReceive" HostTrusted="false">
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>
         </ReceiveLocation>
