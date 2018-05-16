@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-05-03T08:42:03.2501947+02:00</Timestamp>
+  <Timestamp>2018-05-16T13:24:02.012515+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0001.Ladok2.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0001.Ladok2.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
       <TrackedSchemas>
-        <Schema FullName="INT0001.Ladok2.Events.PropertySchema.PropertySchema" AssemblyQualifiedName="INT0001.Ladok2.Events.PropertySchema.PropertySchema,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
+        <Schema FullName="INT0001.Ladok2.Events.PropertySchema.PropertySchema" AssemblyQualifiedName="INT0001.Ladok2.Events.PropertySchema.PropertySchema,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
           <TrackedPropertyNames />
         </Schema>
         <Schema FullName="INT0001.Ladok2.Events.Schemas.PropertySchema" AssemblyQualifiedName="INT0001.Ladok2.Events.Schemas.PropertySchema,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
@@ -32,7 +32,7 @@
         <Schema FullName="INT0001.Ladok2.Events.Schemas.Ladok.Envelopes.StudentAvlidenmarkeringEnvelope" RootName="StudentAvlidenmarkeringEnvelope" AssemblyQualifiedName="INT0001.Ladok2.Events.Schemas.Ladok.Envelopes.StudentAvlidenmarkeringEnvelope,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
           <TrackedPropertyNames />
         </Schema>
-        <Schema FullName="INT0001.Ladok2.Events.Schemas.Ladok.Envelopes.Schema1" RootName="KurspaketeringUppdateradEnvelope" AssemblyQualifiedName="INT0001.Ladok2.Events.Schemas.Ladok.Envelopes.Schema1,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
+        <Schema FullName="INT0001.Ladok2.Events.Schemas.Ladok.Envelopes.KurspaketeringUpdateradEnvelope" RootName="KurspaketeringUppdateradEnvelope" AssemblyQualifiedName="INT0001.Ladok2.Events.Schemas.Ladok.Envelopes.KurspaketeringUpdateradEnvelope,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
           <TrackedPropertyNames />
         </Schema>
         <Schema FullName="INT0001.Ladok2.Events.Schemas.Ladok.schemas_ladok_se" RootName="AntagningsforfarandeElement" AssemblyQualifiedName="INT0001.Ladok2.Events.Schemas.Ladok.schemas_ladok_se,INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
@@ -1180,6 +1180,7 @@
     <SendPort Name="INT0001.SD.Send_AterbudEvent" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description>sd-distribution QUEUE</Description>
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlAsmComp"&gt;&lt;Properties&gt;&lt;DocumentSpecNames vt="8"&gt;INT0001.Ladok2.Events.Schemas.getNext.getNextEvent, INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a&lt;/DocumentSpecNames&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
       <PrimaryTransport>
         <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION</Address>
         <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
@@ -1230,6 +1231,7 @@
     <SendPort Name="INT0001.SD.Send_AterkalladOmregistreringEvent" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description>sd-distribution QUEUE</Description>
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlAsmComp"&gt;&lt;Properties&gt;&lt;DocumentSpecNames vt="8"&gt;INT0001.Ladok2.Events.Schemas.getNext.getNextEvent, INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a&lt;/DocumentSpecNames&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
       <PrimaryTransport>
         <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION</Address>
         <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
@@ -1430,6 +1432,7 @@
     <SendPort Name="INT0001.SD.Send_RegistreringEvent" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description>sd-distribution QUEUE</Description>
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlAsmComp"&gt;&lt;Properties&gt;&lt;DocumentSpecNames vt="8"&gt;INT0001.Ladok2.Events.Schemas.getNext.getNextEvent, INT0001.Ladok2.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a&lt;/DocumentSpecNames&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
       <PrimaryTransport>
         <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION</Address>
         <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
@@ -1532,7 +1535,7 @@
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
         <Address>null://INT0001.Ladok2.NoSubscriber</Address>
-        <TransportType Name="NullAdapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
+        <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
         <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;name&amp;gt;INT0001.Ladok2.NoSubscriber&amp;lt;/name&amp;gt;&amp;lt;logMessages&amp;gt;true&amp;lt;/logMessages&amp;gt;&amp;lt;uri&amp;gt;null://INT0001.Ladok2.NoSubscriber&amp;lt;/uri&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
@@ -1543,7 +1546,7 @@
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
         <SendHandler Name="CluSDSend" HostTrusted="false">
-          <TransportType Name="NullAdapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
+          <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
         </SendHandler>
       </PrimaryTransport>
       <SecondaryTransport>
@@ -1564,6 +1567,10 @@
 &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;Group&gt;
     &lt;Statement Property="ErrorReport.FailureCode" Operator="0" Value="0xc0c016a2" /&gt;
+    &lt;Statement Property="ErrorReport.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="ErrorReport.FailureCode" Operator="0" Value="0xC0C01B4e" /&gt;
     &lt;Statement Property="ErrorReport.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
   &lt;/Group&gt;
 &lt;/Filter&gt;</Filter>
@@ -1625,7 +1632,18 @@
       <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
     </SendPort>
   </SendPortCollection>
-  <DistributionListCollection />
+  <DistributionListCollection>
+    <DistributionList Name="SendPortGroup1">
+      <SendPorts>
+        <SendPortRef Name="INT0001.SD.Send_AterbudEvent" />
+        <SendPortRef Name="INT0001.SD.Send_AterkalladregistreringEvent" />
+        <SendPortRef Name="INT0001.SD.Send_RegistreringEvent" />
+      </SendPorts>
+      <Filter />
+      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
+      <Description xsi:nil="true" />
+    </DistributionList>
+  </DistributionListCollection>
   <ReceivePortCollection>
     <ReceivePort Name="INT0001.Ladok2.Events" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
