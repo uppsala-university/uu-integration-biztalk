@@ -80,6 +80,11 @@
     <None Include="Files\INT0009.Sesam.Events.Operations.docx" />
     <None Include="Files\INT0009.Sesam.Events.vsdx" />
     <None Include="key.snk.pfx" />
+    <Schema Include="Schemas\Sesam\Schema1.xsd">
+      <TypeName>Schema1</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Sesam</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
     <Schema Include="Schemas\Sesam\PersonEvent.xsd">
       <TypeName>PersonEvent</TypeName>
       <Namespace>INT0009.Sesam.Events.Schemas.Sesam</Namespace>
@@ -205,7 +210,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\INT0009.Sesam.Events.BindingInfo_Dev.xml" />
+    <Map Include="Maps\TestRESTApi.btm">
+      <TypeName>Map1</TypeName>
+      <Namespace>INT0009.Sesam.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
     <Content Include="Maps\OmregistreringEnvelope_to_PersonEvent.xsl" />
+    <Pipeline Include="Pipelines\JSON.ReceiveREST.btp">
+      <TypeName>ReceivePipeline1</TypeName>
+      <Namespace>INT0009.Sesam.Events.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+    <Pipeline Include="Pipelines\JSON.SendREST.btp">
+      <TypeName>SendPipeline1</TypeName>
+      <Namespace>INT0009.Sesam.Events.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
     <Map Include="Maps\OmregistreringEnvelope_to_PersonEvent.btm">
       <TypeName>OmregistreringEnvelope_to_PersonEvent</TypeName>
       <Namespace>INT0009.Sesam.Events.Maps</Namespace>
