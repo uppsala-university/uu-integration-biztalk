@@ -39,6 +39,14 @@
     <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="INT0002.UU.GroupEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\INT0002.UU.GroupEvents\v4.0_1.0.0.0__b64e3957dd28061a\INT0002.UU.GroupEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="INT0003.AD.Distribution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\INT0003.AD.Distribution\v4.0_1.0.0.0__b64e3957dd28061a\INT0003.AD.Distribution.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -72,11 +80,20 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Map Include="Maps\ADGroupAdded_to_ADAddDummyIndividualToGroup.btm">
+      <TypeName>ADGroupAdded_to_ADAddDummyIndividualToGroup</TypeName>
+      <Namespace>INT0003.AD.Test.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Files\Create Groups\create_dummy_groups.ps1" />
     <None Include="Files\Create Groups\dummy.orginal" />
     <None Include="key.snk.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\test_ad_poll_response.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
