@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-05-22T17:38:45.6801324+02:00</Timestamp>
+  <Timestamp>2018-05-23T11:41:29.977252+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0003.AD.Test]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0003.AD.Test], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -59,11 +59,11 @@
       <RouteFailedMessage>false</RouteFailedMessage>
       <ApplicationName>INT0003.AD.Test</ApplicationName>
     </SendPort>
-    <SendPort Name="AdToFile" IsStatic="true" IsTwoWay="false" BindingOption="0">
+    <SendPort Name="INT0003.Test.Send_AdEventsToFile" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
-      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
-        <Address>E:\fromad\%MessageID%.xml</Address>
+        <Address>E:\AdTest\GroupEventsFromAd\%MessageID%.xml</Address>
         <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
         <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
         <RetryCount>3</RetryCount>
@@ -95,10 +95,12 @@
       <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="listentoad" /&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0003.Test.Receive_CreatedGroupsFromAd" /&gt;
   &lt;/Group&gt;
 &lt;/Filter&gt;</Filter>
-      <Transforms />
+      <Transforms>
+        <Transform FullName="INT0003.AD.Test.Maps.ADGroupAdded_to_ADAddDummyIndividualToGroup" AssemblyQualifiedName="INT0003.AD.Test.Maps.ADGroupAdded_to_ADAddDummyIndividualToGroup,INT0003.AD.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+      </Transforms>
       <OrderedDelivery>false</OrderedDelivery>
       <Priority>5</Priority>
       <StopSendingOnFailure>false</StopSendingOnFailure>
@@ -158,8 +160,8 @@
           <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
           <ReceiveLocationEndDate>2018-05-19T23:59:59</ReceiveLocationEndDate>
           <ReceiveLocationTransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
-          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps&amp;gt;&amp;lt;name&amp;gt;ListenToAdGroups&amp;lt;/name&amp;gt;&amp;lt;uri&amp;gt;activedirectory://ListenToAdGroups&amp;lt;/uri&amp;gt;&amp;lt;filter&amp;gt;&amp;amp;amp;(objectCategory=group)(cn=*)(whenCreated&amp;amp;gt;=20180521000000.0Z)&amp;lt;/filter&amp;gt;&amp;lt;wheretobind&amp;gt;LDAP://exchange-test.its.uu.se:389/OU=Courses,OU=Student,OU=Akka,DC=exchange-test,DC=its,DC=uu,DC=se&amp;lt;/wheretobind&amp;gt;&amp;lt;props&amp;gt;cn&amp;lt;/props&amp;gt;&amp;lt;scope&amp;gt;ONELEVEL&amp;lt;/scope&amp;gt;&amp;lt;maxerrors&amp;gt;3&amp;lt;/maxerrors&amp;gt;&amp;lt;overpagesize&amp;gt;True&amp;lt;/overpagesize&amp;gt;&amp;lt;returnallprops&amp;gt;True&amp;lt;/returnallprops&amp;gt;&amp;lt;pagesize&amp;gt;500&amp;lt;/pagesize&amp;gt;&amp;lt;targetns /&amp;gt;&amp;lt;baselinefile&amp;gt;\\uuc-biz008-t\BizTalk\AdTest\GroupsBaseLine\base.txt&amp;lt;/baselinefile&amp;gt;&amp;lt;onchangemode&amp;gt;1&amp;lt;/onchangemode&amp;gt;&amp;lt;pollingInterval&amp;gt;30&amp;lt;/pollingInterval&amp;gt;&amp;lt;pollingIntervalUnit&amp;gt;seconds&amp;lt;/pollingIntervalUnit&amp;gt;&amp;lt;boolOverAuth&amp;gt;False&amp;lt;/boolOverAuth&amp;gt;&amp;lt;adusername /&amp;gt;&amp;lt;adpassword /&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
-          <ReceivePipeline Name="INT0003.AD.Distribution.Pipelines.SuppressDebugInfo" FullyQualifiedName="INT0003.AD.Distribution.Pipelines.SuppressDebugInfo, INT0003.AD.Distribution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps&amp;gt;&amp;lt;name&amp;gt;ListenToAdGroups&amp;lt;/name&amp;gt;&amp;lt;uri&amp;gt;activedirectory://ListenToAdGroups&amp;lt;/uri&amp;gt;&amp;lt;filter&amp;gt;&amp;amp;amp;(objectCategory=group)(cn=*)&amp;lt;/filter&amp;gt;&amp;lt;wheretobind&amp;gt;LDAP://exchange-test.its.uu.se:389/OU=Courses,OU=Student,OU=Akka,DC=exchange-test,DC=its,DC=uu,DC=se&amp;lt;/wheretobind&amp;gt;&amp;lt;props&amp;gt;cn&amp;lt;/props&amp;gt;&amp;lt;scope&amp;gt;ONELEVEL&amp;lt;/scope&amp;gt;&amp;lt;maxerrors&amp;gt;3&amp;lt;/maxerrors&amp;gt;&amp;lt;overpagesize&amp;gt;True&amp;lt;/overpagesize&amp;gt;&amp;lt;returnallprops&amp;gt;True&amp;lt;/returnallprops&amp;gt;&amp;lt;pagesize&amp;gt;500&amp;lt;/pagesize&amp;gt;&amp;lt;targetns /&amp;gt;&amp;lt;baselinefile&amp;gt;E:\AdTest\GroupsBaseLine\base.txt&amp;lt;/baselinefile&amp;gt;&amp;lt;onchangemode&amp;gt;0&amp;lt;/onchangemode&amp;gt;&amp;lt;pollingInterval&amp;gt;30&amp;lt;/pollingInterval&amp;gt;&amp;lt;pollingIntervalUnit&amp;gt;seconds&amp;lt;/pollingIntervalUnit&amp;gt;&amp;lt;boolOverAuth&amp;gt;False&amp;lt;/boolOverAuth&amp;gt;&amp;lt;adusername /&amp;gt;&amp;lt;adpassword /&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody" Description="" />
           <ReceivePipelineData xsi:nil="true" />
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
