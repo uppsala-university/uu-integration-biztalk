@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-05-22T09:54:08.0637023+02:00</Timestamp>
+  <Timestamp>2018-05-28T10:55:46.2075915+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0001.Ladok2.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0001.Ladok2.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -1574,8 +1574,9 @@
     &lt;Statement Property="ErrorReport.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
   &lt;/Group&gt;
   &lt;Group&gt;
-    &lt;Statement Property="ErrorReport.FailureCode" Operator="0" Value="0xc0c01680" /&gt;
-    &lt;Statement Property="ErrorReport.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Sql/2008/05/TypedPolling/ladokevents#TypedPollingResultSet0" /&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0001.Ladok2.Events" /&gt;
+    &lt;Statement Property="INT0001.Ladok2.Events.Schemas.EventType" Operator="0" Value="AvbrottEvent" /&gt;
   &lt;/Group&gt;
 &lt;/Filter&gt;</Filter>
       <Transforms />
@@ -1586,7 +1587,18 @@
       <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
     </SendPort>
   </SendPortCollection>
-  <DistributionListCollection />
+  <DistributionListCollection>
+    <DistributionList Name="SendPortGroup1">
+      <SendPorts>
+        <SendPortRef Name="INT0001.SD.Send_AterbudEvent" />
+        <SendPortRef Name="INT0001.SD.Send_AterkalladregistreringEvent" />
+        <SendPortRef Name="INT0001.SD.Send_RegistreringEvent" />
+      </SendPorts>
+      <Filter />
+      <ApplicationName>INT0001.Ladok2.Events</ApplicationName>
+      <Description xsi:nil="true" />
+    </DistributionList>
+  </DistributionListCollection>
   <ReceivePortCollection>
     <ReceivePort Name="INT0001.Ladok2.Events" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
