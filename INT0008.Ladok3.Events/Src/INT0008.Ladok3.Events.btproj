@@ -39,6 +39,10 @@
     <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.BizTalk.Adapter.Wcf.Common, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.BizTalk.Adapter.Wcf.Common\v4.0_3.0.1.0__31bf3856ad364e35\Microsoft.BizTalk.Adapter.Wcf.Common.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Shared.PipelineComponents.Discard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2dbe33dac94b8972, processorArchitecture=MSIL" />
     <Reference Include="Shared.PipelineComponents.XmlDisassembler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2dbe33dac94b8972, processorArchitecture=MSIL" />
@@ -220,6 +224,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Processing\GetAutentiserad.odx">
+      <TypeName>GetAutentiserad</TypeName>
+      <Namespace>INT0008.Ladok3.Events.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\RegistreringEvent_to_ BtsHttpUrlMapping.btm">
+      <TypeName>RegistreringEvent_to_BtsHttpUrlMapping</TypeName>
+      <Namespace>INT0008.Ladok3.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
