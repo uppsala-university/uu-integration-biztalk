@@ -96,7 +96,7 @@
             <om:Property Name="Name" Value="UpdateGroupAffiliation" />
             <om:Property Name="Signal" Value="True" />
             <om:Element Type="VariableDeclaration" OID="e2dfbad6-1812-4959-9d35-8f471a948979" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="47.1" HigherBound="48.1">
-                <om:Property Name="InitialValue" Value="true" />
+                <om:Property Name="InitialValue" Value="false" />
                 <om:Property Name="UseDefaultConstructor" Value="False" />
                 <om:Property Name="Type" Value="System.Boolean" />
                 <om:Property Name="ParamDirection" Value="In" />
@@ -486,7 +486,7 @@ module INT0003.AD.Distribution
         System.String errorMessage;
         body (ref System.String emailSubject, ref System.String errorText, ref System.Boolean success, message Schemas.GroupEvents.InternalGroupEvent GroupEvent, System.String groupSuffix)
         {
-            checkExisting = true;
+            checkExisting = false;
             errorMessage = "";
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("441a095d-1484-4951-9891-2ae364354d25")]
             success = true;
