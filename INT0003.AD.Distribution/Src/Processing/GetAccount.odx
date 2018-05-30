@@ -126,13 +126,6 @@
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="GetAccount" />
             <om:Property Name="Signal" Value="True" />
-            <om:Element Type="CorrelationDeclaration" OID="89f194a8-d060-4372-afde-501deb810361" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="50.1" HigherBound="51.1">
-                <om:Property Name="Type" Value="INT0003.AD.Distribution.IndividualID" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="IndividualIDSet" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
             <om:Element Type="VariableDeclaration" OID="ba9a7bd5-896b-4b7b-b776-568b2752fd12" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="54.1" HigherBound="55.1">
                 <om:Property Name="InitialValue" Value="0" />
                 <om:Property Name="UseDefaultConstructor" Value="False" />
@@ -167,37 +160,12 @@
                 <om:Property Name="Name" Value="retries" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
-            <om:Element Type="PortDeclaration" OID="db81983f-ba0a-4c8d-a17e-839486ab8cda" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="46.1" HigherBound="48.1">
-                <om:Property Name="PortModifier" Value="Uses" />
-                <om:Property Name="Orientation" Value="Right" />
-                <om:Property Name="PortIndex" Value="23" />
-                <om:Property Name="IsWebPort" Value="False" />
-                <om:Property Name="OrderedDelivery" Value="False" />
-                <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="INT0003.AD.Distribution.ADQueryIndividualPortType" />
+            <om:Element Type="CorrelationDeclaration" OID="89f194a8-d060-4372-afde-501deb810361" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.IndividualID" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ADQueryIndividualPort" />
-                <om:Property Name="Signal" Value="False" />
-                <om:Element Type="LogicalBindingAttribute" OID="0820e473-0ac1-451f-9eaa-ba7ea95969ba" ParentLink="PortDeclaration_CLRAttribute" LowerBound="46.1" HigherBound="47.1">
-                    <om:Property Name="Signal" Value="False" />
-                </om:Element>
-            </om:Element>
-            <om:Element Type="PortDeclaration" OID="afe4586f-ede8-4651-b8d5-d9621d0da9fe" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="48.1" HigherBound="50.1">
-                <om:Property Name="PortModifier" Value="Uses" />
-                <om:Property Name="Orientation" Value="Right" />
-                <om:Property Name="PortIndex" Value="47" />
-                <om:Property Name="IsWebPort" Value="False" />
-                <om:Property Name="OrderedDelivery" Value="False" />
-                <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="INT0003.AD.Distribution.SendADNewIndividualPortType" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="SendADNewIndividualPort" />
-                <om:Property Name="Signal" Value="False" />
-                <om:Element Type="LogicalBindingAttribute" OID="c1dc876c-7d4f-439f-a6e2-16385e3878f9" ParentLink="PortDeclaration_CLRAttribute" LowerBound="48.1" HigherBound="49.1">
-                    <om:Property Name="Signal" Value="False" />
-                </om:Element>
+                <om:Property Name="Name" Value="IndividualIDSet" />
+                <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="3648002d-f14d-4540-8860-b56c14d76070" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="51.1" HigherBound="52.1">
                 <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.ADEvents.ADQueryResults" />
@@ -292,10 +260,10 @@
                     </om:Element>
                 </om:Element>
                 <om:Element Type="VariableAssignment" OID="fa923df5-95c6-4c25-b9ef-8c1dbd411b42" ParentLink="ServiceBody_Statement" LowerBound="68.1" HigherBound="77.1">
-                    <om:Property Name="Expression" Value="success = false;&#xD;&#xA;sentToAKKA = false;&#xD;&#xA;&#xD;&#xA;retries = 5;&#xD;&#xA;System.Int32.TryParse(Shared.Utilities.SSOClientHelper.SSOClientHelper.Read(&quot;INT0003ADDistribution&quot;, &quot;numberOfAKKARetries&quot;), out retries);&#xD;&#xA;waitTimeInMinutes = 10;&#xD;&#xA;System.Int32.TryParse(Shared.Utilities.SSOClientHelper.SSOClientHelper.Read(&quot;INT0003ADDistribution&quot;, &quot;AKKAWaittimeInMinutes&quot;), out waitTimeInMinutes);&#xD;&#xA;&#xD;&#xA;" />
+                    <om:Property Name="Expression" Value="success = false;&#xD;&#xA;sentToAKKA = false;&#xD;&#xA;&#xD;&#xA;retries = 5;&#xD;&#xA;System.Int32.TryParse(Shared.Utilities.SSOClientHelper.SSOClientHelper.Read(&quot;INT0003ADDistribution&quot;, &quot;NumberOfAKKARetries&quot;), out retries);&#xD;&#xA;waitTimeInMinutes = 10;&#xD;&#xA;System.Int32.TryParse(Shared.Utilities.SSOClientHelper.SSOClientHelper.Read(&quot;INT0003ADDistribution&quot;, &quot;AKKAWaittimeInMinutes&quot;), out waitTimeInMinutes);&#xD;&#xA;&#xD;&#xA;" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Init" />
-                    <om:Property Name="Signal" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
                 </om:Element>
                 <om:Element Type="While" OID="160ef27b-3eb3-4be7-a697-006c0769527a" ParentLink="ServiceBody_Statement" LowerBound="77.1" HigherBound="126.1">
                     <om:Property Name="Expression" Value="success == false &amp;&amp; retries &gt; 0" />
@@ -478,6 +446,38 @@
                     </om:Element>
                 </om:Element>
             </om:Element>
+            <om:Element Type="PortDeclaration" OID="db81983f-ba0a-4c8d-a17e-839486ab8cda" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="46.1" HigherBound="48.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="23" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.ADQueryIndividualPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ADQueryIndividualPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="0820e473-0ac1-451f-9eaa-ba7ea95969ba" ParentLink="PortDeclaration_CLRAttribute" LowerBound="46.1" HigherBound="47.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="afe4586f-ede8-4651-b8d5-d9621d0da9fe" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="48.1" HigherBound="50.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="47" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.SendADNewIndividualPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendADNewIndividualPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="c1dc876c-7d4f-439f-a6e2-16385e3878f9" ParentLink="PortDeclaration_CLRAttribute" LowerBound="48.1" HigherBound="49.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
         </om:Element>
     </om:Element>
 </om:MetaModel>
@@ -554,7 +554,7 @@ module INT0003.AD.Distribution
             sentToAKKA = false;
             
             retries = 5;
-            System.Int32.TryParse(Shared.Utilities.SSOClientHelper.SSOClientHelper.Read("INT0003ADDistribution", "numberOfAKKARetries"), out retries);
+            System.Int32.TryParse(Shared.Utilities.SSOClientHelper.SSOClientHelper.Read("INT0003ADDistribution", "NumberOfAKKARetries"), out retries);
             waitTimeInMinutes = 10;
             System.Int32.TryParse(Shared.Utilities.SSOClientHelper.SSOClientHelper.Read("INT0003ADDistribution", "AKKAWaittimeInMinutes"), out waitTimeInMinutes);
             
