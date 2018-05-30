@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-05-28T10:51:32.6350275+02:00</Timestamp>
+  <Timestamp>2018-05-30T09:49:58.7525047+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0001.Ladok2.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0001.Ladok2.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -1535,7 +1535,7 @@
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
         <Address>null://INT0001.Ladok2.NoSubscriber</Address>
-        <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
+        <TransportType Name="NullAdapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
         <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;name&amp;gt;INT0001.Ladok2.NoSubscriber&amp;lt;/name&amp;gt;&amp;lt;logMessages&amp;gt;true&amp;lt;/logMessages&amp;gt;&amp;lt;uri&amp;gt;null://INT0001.Ladok2.NoSubscriber&amp;lt;/uri&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
@@ -1546,7 +1546,7 @@
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
         <SendHandler Name="CluSDSend" HostTrusted="false">
-          <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
+          <TransportType Name="NullAdapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
         </SendHandler>
       </PrimaryTransport>
       <SecondaryTransport>
@@ -1616,7 +1616,7 @@
           <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
           <ReceiveLocationEndDate>2017-09-07T23:59:59</ReceiveLocationEndDate>
           <ReceiveLocationTransportType Name="WCF-SQL" Capabilities="779" ConfigurationClsid="59b35d03-6a06-4734-a249-ef561254ecf7" />
-          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" useAmbientTransaction="false" polledDataAvailableStatement="exec [INT0001.Ladok2.Events.checkNextSingleEvent]" pollingStatement="exec [INT0001.Ladok2.Events.getNextSingleEvent]" pollingIntervalInSeconds="5" pollWhileDataFound="true" inboundOperationType="TypedPolling" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8"&gt;getUpdoctestDB&lt;/AffiliateApplicationName&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;DisableLocationOnFailure vt="11"&gt;0&lt;/DisableLocationOnFailure&gt;&lt;UserName vt="8" /&gt;&lt;ServiceBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="ServiceBehavior" /&amp;gt;&lt;/ServiceBehaviorConfiguration&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;IncludeExceptionDetailInFaults vt="11"&gt;-1&lt;/IncludeExceptionDetailInFaults&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;CredentialType vt="8"&gt;None&lt;/CredentialType&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;SuspendMessageOnFailure vt="11"&gt;-1&lt;/SuspendMessageOnFailure&gt;&lt;OrderedProcessing vt="11"&gt;0&lt;/OrderedProcessing&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" polledDataAvailableStatement="exec [INT0001.Ladok2.Events.checkNext]" pollingStatement="exec [INT0001.Ladok2.Events.getNext]" pollingIntervalInSeconds="19" inboundOperationType="TypedPolling" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8"&gt;getUpdoctestDB&lt;/AffiliateApplicationName&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;DisableLocationOnFailure vt="11"&gt;0&lt;/DisableLocationOnFailure&gt;&lt;UserName vt="8" /&gt;&lt;ServiceBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="ServiceBehavior" /&amp;gt;&lt;/ServiceBehaviorConfiguration&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;IncludeExceptionDetailInFaults vt="11"&gt;-1&lt;/IncludeExceptionDetailInFaults&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;CredentialType vt="8"&gt;None&lt;/CredentialType&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;SuspendMessageOnFailure vt="11"&gt;-1&lt;/SuspendMessageOnFailure&gt;&lt;OrderedProcessing vt="11"&gt;0&lt;/OrderedProcessing&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
           <ReceivePipeline Name="INT0001.Ladok2.Events.Pipelines.PromoteAck_ReceivePipeline" FullyQualifiedName="INT0001.Ladok2.Events.Pipelines.PromoteAck_ReceivePipeline, INT0001.Ladok2.Events, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
           <ReceivePipelineData xsi:nil="true" />
           <SendPipeline xsi:nil="true" />
