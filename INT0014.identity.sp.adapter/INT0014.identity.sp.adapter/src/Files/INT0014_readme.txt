@@ -10,7 +10,7 @@ Deployment
 
 prerequisites:
 
-There must be a SSO-key named sp2restpwd with the value <AWELLKEPTSECRET>
+There must be a SSO-key named sp2restpwd with the value <AWELLKEPTSECRET> for the application INT0014.identity.sp.adapter
 There must be a MSMQ queue name IDENTITY-SP
 
 Bindings
