@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-05-03T08:08:38.8373913+02:00</Timestamp>
+  <Timestamp>2018-05-31T14:56:37.3871573+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0000.Group-distribution.Routing]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0000.Group-distribution.Routing], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -40,7 +40,7 @@
         <SendHandler xsi:nil="true" />
       </SecondaryTransport>
       <ReceivePipelineData xsi:nil="true" />
-      <Tracking>136</Tracking>
+      <Tracking>0</Tracking>
       <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;Group&gt;
@@ -50,7 +50,7 @@
       <Transforms />
       <OrderedDelivery>true</OrderedDelivery>
       <Priority>5</Priority>
-      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <StopSendingOnFailure>true</StopSendingOnFailure>
       <RouteFailedMessage>false</RouteFailedMessage>
       <ApplicationName>INT0000.Group-distribution.Routing</ApplicationName>
     </SendPort>
@@ -59,7 +59,7 @@
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
         <Address>null://group-distribution-unknown-subscriber</Address>
-        <TransportType Name="NullAdapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
+        <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
         <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;name&amp;gt;group-distribution-unknown-subscriber&amp;lt;/name&amp;gt;&amp;lt;logMessages&amp;gt;true&amp;lt;/logMessages&amp;gt;&amp;lt;uri&amp;gt;null://group-distribution-unknown-subscriber&amp;lt;/uri&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
         <RetryCount>0</RetryCount>
         <RetryInterval>5</RetryInterval>
@@ -70,7 +70,7 @@
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
         <SendHandler Name="CluGroupSend" HostTrusted="false">
-          <TransportType Name="NullAdapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
+          <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
         </SendHandler>
       </PrimaryTransport>
       <SecondaryTransport>
@@ -86,7 +86,7 @@
         <SendHandler xsi:nil="true" />
       </SecondaryTransport>
       <ReceivePipelineData xsi:nil="true" />
-      <Tracking>136</Tracking>
+      <Tracking>8</Tracking>
       <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;Group&gt;
@@ -133,7 +133,7 @@
       </ReceiveLocations>
       <SendPipelineData xsi:nil="true" />
       <Authentication>0</Authentication>
-      <Tracking>17</Tracking>
+      <Tracking>0</Tracking>
       <Transforms />
       <RouteFailedMessage>true</RouteFailedMessage>
       <ApplicationName>INT0000.Group-distribution.Routing</ApplicationName>
