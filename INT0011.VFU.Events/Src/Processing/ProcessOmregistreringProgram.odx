@@ -1,0 +1,345 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="c0acf64e-111a-4897-a1e5-5c4bb645e0ab" LowerBound="1.1" HigherBound="63.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="INT0011.VFU.Events" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="03f7b47d-d253-48e7-9bce-24d061697acc" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ADQueryIndividualOmregistreringPortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="4d668052-a860-454c-9b63-9c8b9ddc11fa" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ADQueryIndividualOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="67be8273-e4b9-412a-abcc-ff5cfc9aaa13" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.73">
+                    <om:Property Name="Ref" Value="INT0011.VFU.Events.Schemas.ADEvents.ADSendAdapterSolicitResponseIndividualQuery" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="7be447ee-8ecb-4c7a-88c7-ffc0090be998" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.75" HigherBound="8.106">
+                    <om:Property Name="Ref" Value="INT0011.VFU.Events.Schemas.ADEvents.ADQueryResults" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="556f699e-afc8-44b4-9fbc-97d801a62730" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendVFUProgramdeltagandeOmregistreringPortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="6e508b55-aba3-4a48-9c20-581ba0b649b7" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="VFUProgramdeltagande" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="77707693-9961-41e2-b886-17961bf1df57" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.42">
+                    <om:Property Name="Ref" Value="INT0011.VFU.Events.Schemas.VFU.Programdeltagande" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="c05914a8-815f-454c-a87f-a5874dfebcf3" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveLadokProgramdeltagandeOmregistreradePortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="e805b2c0-fec8-4320-8a8d-7e92b47508e6" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="LadokProgramdeltagande" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="12451e36-3daa-4160-82ce-80300e74ec91" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.59">
+                    <om:Property Name="Ref" Value="INT0011.VFU.Events.Schemas.Ladok.Envelopes.OmregistreringEnvelope" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="0bffa50d-de06-4b71-bf7d-b0c6abca63de" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="62.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessOmregistreringProgram" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="MessageDeclaration" OID="3ab19fd2-8032-4f00-975a-e5578cbaf19a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="INT0011.VFU.Events.Schemas.ADEvents.ADSendAdapterSolicitResponseIndividualQuery" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ADIndividualQuery" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="54119d2a-3409-44de-9caa-a7ce03589a33" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="Type" Value="INT0011.VFU.Events.Schemas.ADEvents.ADQueryResults" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ADIndividualQueryResult" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ead2cd4b-d37c-4d24-a54e-ec1012923f55" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="Type" Value="INT0011.VFU.Events.Schemas.Ladok.Envelopes.OmregistreringEnvelope" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OmregistreringEnvelope" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ecb5efb7-8421-4270-bd5b-b48197d5e9f2" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="Type" Value="INT0011.VFU.Events.Schemas.VFU.Programdeltagande" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Programdeltagande" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="c73c9188-e6db-4be3-927d-9fe58bb2cc40" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="54a14d67-5669-422c-bbcc-7a4cf2017229" ParentLink="ServiceBody_Statement" LowerBound="40.1" HigherBound="42.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveLadokProgramdeltagande" />
+                    <om:Property Name="MessageName" Value="OmregistreringEnvelope" />
+                    <om:Property Name="OperationName" Value="LadokProgramdeltagande" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveOmregistreringEnvelope" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="25c9ca50-a8df-4246-958e-c15e6c489e36" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.ReceivePortName" />
+                        <om:Property Name="RHS" Value="&quot;ADStudentQueryTest&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="0931ecbb-75bf-4fe0-b3dc-0a2986409ebb" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#OmregistreringEnvelope&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="40bb03df-12fa-48c6-80c1-3a2bf0eeb114" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="INT0011.VFU.Events.Schemas.Utbildningskod" />
+                        <om:Property Name="RHS" Value="&quot;UFÖ1Y&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Construct" OID="fd2246e2-6ff5-414c-a8c5-729d38ee2a29" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="48.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructQueryIndividual" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="c822798b-4bc5-45ea-9acc-1f1bd660a75a" ParentLink="ComplexStatement_Statement" LowerBound="45.1" HigherBound="47.1">
+                        <om:Property Name="ClassName" Value="INT0011.VFU.Events.Omregestrering_to_ADQueryIndividual" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Regestrering_ADQueryIndividual" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="a921d7f4-7b61-40f7-9cf4-9bf9a7fc6ee2" ParentLink="Transform_InputMessagePartRef" LowerBound="46.105" HigherBound="46.127">
+                            <om:Property Name="MessageRef" Value="OmregistreringEnvelope" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="147a3772-e851-434f-82ee-3e2bf6906f0f" ParentLink="Transform_OutputMessagePartRef" LowerBound="46.28" HigherBound="46.45">
+                            <om:Property Name="MessageRef" Value="ADIndividualQuery" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="7ff08e27-34c9-481d-84c9-2d05e934afd8" ParentLink="Construct_MessageRef" LowerBound="43.23" HigherBound="43.40">
+                        <om:Property Name="Ref" Value="ADIndividualQuery" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="615a29fb-be7f-4269-bbaf-df70f0cb45b7" ParentLink="ServiceBody_Statement" LowerBound="48.1" HigherBound="50.1">
+                    <om:Property Name="PortName" Value="ADQueryIndividualPort" />
+                    <om:Property Name="MessageName" Value="ADIndividualQuery" />
+                    <om:Property Name="OperationName" Value="ADQueryIndividualOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SendADQueryIndividual" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="71f31658-6bec-4ddf-b78a-7b034c27a5e8" ParentLink="ServiceBody_Statement" LowerBound="50.1" HigherBound="52.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="ADQueryIndividualPort" />
+                    <om:Property Name="MessageName" Value="ADIndividualQueryResult" />
+                    <om:Property Name="OperationName" Value="ADQueryIndividualOperation" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveADQueryIndividualResult" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="b3f62d29-9b45-49b9-80bd-873fa099d91f" ParentLink="ServiceBody_Statement" LowerBound="52.1" HigherBound="58.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructProgramdeltagande" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="844ff95b-c0a3-486b-8c1a-113bcab0907b" ParentLink="ComplexStatement_Statement" LowerBound="55.1" HigherBound="57.1">
+                        <om:Property Name="ClassName" Value="INT0011.VFU.Events.Omregistrering_to_Programdeltagande" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="RegestreringProgramdeltagande" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="84649800-44dc-4be4-b822-5f5529d87981" ParentLink="Transform_InputMessagePartRef" LowerBound="56.105" HigherBound="56.128">
+                            <om:Property Name="MessageRef" Value="ADIndividualQueryResult" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="0af74546-980d-4537-82ea-e2ee1e879621" ParentLink="Transform_InputMessagePartRef" LowerBound="56.130" HigherBound="56.152">
+                            <om:Property Name="MessageRef" Value="OmregistreringEnvelope" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_4" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="8d30acb6-8c96-4efe-a377-26486b4ce852" ParentLink="Transform_OutputMessagePartRef" LowerBound="56.28" HigherBound="56.45">
+                            <om:Property Name="MessageRef" Value="Programdeltagande" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_5" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="577ee752-2d72-4260-bedf-91fe94729324" ParentLink="Construct_MessageRef" LowerBound="53.23" HigherBound="53.40">
+                        <om:Property Name="Ref" Value="Programdeltagande" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="527923b6-8c9c-44de-a395-bb5df6f66d02" ParentLink="ServiceBody_Statement" LowerBound="58.1" HigherBound="60.1">
+                    <om:Property Name="PortName" Value="SendPortVFUProgramdeltagande" />
+                    <om:Property Name="MessageName" Value="Programdeltagande" />
+                    <om:Property Name="OperationName" Value="VFUProgramdeltagande" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SendProgramdeltagande" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="bc9dee6e-b6fc-4961-b2ae-6bd962f397b7" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0011.VFU.Events.ADQueryIndividualOmregistreringPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ADQueryIndividualPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="d452c96f-51af-4eae-ae5d-040e25500de9" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="52c2918d-dbea-41e1-9f92-27b6fc268da3" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="30.1" HigherBound="32.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="0" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0011.VFU.Events.ReceiveLadokProgramdeltagandeOmregistreradePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveLadokProgramdeltagande" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="5cb63eed-a6cb-4b65-90da-3a5c71dd4553" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="572eb76f-0095-42f9-b4a5-6a80c91bb9ac" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="47" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0011.VFU.Events.SendVFUProgramdeltagandeOmregistreringPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendPortVFUProgramdeltagande" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="bbb795d1-fddd-4ff4-9ef6-bdc12652b7d5" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module INT0011.VFU.Events
+{
+    internal porttype ADQueryIndividualOmregistreringPortType
+    {
+        requestresponse ADQueryIndividualOperation
+        {
+            Schemas.ADEvents.ADSendAdapterSolicitResponseIndividualQuery, Schemas.ADEvents.ADQueryResults
+        };
+    };
+    internal porttype SendVFUProgramdeltagandeOmregistreringPortType
+    {
+        oneway VFUProgramdeltagande
+        {
+            Schemas.VFU.Programdeltagande
+        };
+    };
+    internal porttype ReceiveLadokProgramdeltagandeOmregistreradePortType
+    {
+        oneway LadokProgramdeltagande
+        {
+            Schemas.Ladok.Envelopes.OmregistreringEnvelope
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessOmregistreringProgram
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses ADQueryIndividualOmregistreringPortType ADQueryIndividualPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceiveLadokProgramdeltagandeOmregistreradePortType ReceiveLadokProgramdeltagande;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendVFUProgramdeltagandeOmregistreringPortType SendPortVFUProgramdeltagande;
+        message Schemas.ADEvents.ADSendAdapterSolicitResponseIndividualQuery ADIndividualQuery;
+        message Schemas.ADEvents.ADQueryResults ADIndividualQueryResult;
+        message Schemas.Ladok.Envelopes.OmregistreringEnvelope OmregistreringEnvelope;
+        message Schemas.VFU.Programdeltagande Programdeltagande;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("54a14d67-5669-422c-bbcc-7a4cf2017229")]
+            activate ((BTS.ReceivePortName == "ADStudentQueryTest") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#OmregistreringEnvelope") && (INT0011.VFU.Events.Schemas.Utbildningskod == "UFÖ1Y"))receive (ReceiveLadokProgramdeltagande.LadokProgramdeltagande, OmregistreringEnvelope);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fd2246e2-6ff5-414c-a8c5-729d38ee2a29")]
+            construct ADIndividualQuery
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("c822798b-4bc5-45ea-9acc-1f1bd660a75a")]
+                transform (ADIndividualQuery) = INT0011.VFU.Events.Omregestrering_to_ADQueryIndividual (OmregistreringEnvelope);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("615a29fb-be7f-4269-bbaf-df70f0cb45b7")]
+            send (ADQueryIndividualPort.ADQueryIndividualOperation, ADIndividualQuery);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("71f31658-6bec-4ddf-b78a-7b034c27a5e8")]
+            receive (ADQueryIndividualPort.ADQueryIndividualOperation, ADIndividualQueryResult);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b3f62d29-9b45-49b9-80bd-873fa099d91f")]
+            construct Programdeltagande
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("844ff95b-c0a3-486b-8c1a-113bcab0907b")]
+                transform (Programdeltagande) = INT0011.VFU.Events.Omregistrering_to_Programdeltagande (ADIndividualQueryResult, OmregistreringEnvelope);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("527923b6-8c9c-44de-a395-bb5df6f66d02")]
+            send (SendPortVFUProgramdeltagande.VFUProgramdeltagande, Programdeltagande);
+        }
+    }
+}
+

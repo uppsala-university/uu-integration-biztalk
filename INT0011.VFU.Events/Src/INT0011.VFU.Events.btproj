@@ -204,13 +204,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Map Include="Maps\ForvantatDeltagandeSkapad_to_Programdeltagande.btm">
-      <TypeName>ForvantatDeltagandeSkapad__to_Programdeltagande</TypeName>
-      <Namespace>INT0011.VFU.Events.Maps</Namespace>
-      <SubType>Task</SubType>
-    </Map>
-  </ItemGroup>
-  <ItemGroup>
     <Map Include="Maps\OmregistreringEnvelope_to_Kursdeltagande.btm">
       <TypeName>OmregistreringEnvelope_to_Kursdeltagande</TypeName>
       <Namespace>INT0011.VFU.Events.Maps</Namespace>
@@ -239,7 +232,7 @@
     </Map>
   </ItemGroup>
   <ItemGroup>
-    <XLang Include="Processing\GetStudentAccount.odx">
+    <XLang Include="Processing\ProcessRegistreringProgram.odx">
       <TypeName>BizTalk_Orchestration1</TypeName>
       <Namespace>INT0011.VFU.Events.Processing</Namespace>
       <SubType>Task</SubType>
@@ -253,15 +246,92 @@
     </Map>
   </ItemGroup>
   <ItemGroup>
-    <Map Include="Regestrering_ADQueryIndividual.btm">
-      <TypeName>Regestrering_ADQueryIndividual</TypeName>
+    <XLang Include="Processing\ProcessOmregistreringProgram.odx">
+      <SubType>Task</SubType>
+      <TypeName>ProcessRegistreringProgram_Copy</TypeName>
+      <Namespace>INT0011.VFU.Events.Processing</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Processing\ProcessAterkalladRegistreringProgram.odx">
+      <SubType>Task</SubType>
+      <TypeName>ProcessRegistreringProgram_Copy_2_</TypeName>
+      <Namespace>INT0011.VFU.Events.Processing</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Processing\ProcessForvantatDeltagandeProgram.odx">
+      <SubType>Task</SubType>
+      <TypeName>ProcessRegistreringProgram_Copy_3_</TypeName>
+      <Namespace>INT0011.VFU.Events.Processing</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Processing\ProcessAterkalladOmregistreringProgram.odx">
+      <SubType>Task</SubType>
+      <TypeName>ProcessRegistreringProgram_Copy_4_</TypeName>
+      <Namespace>INT0011.VFU.Events.Processing</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="AterkalladOmRegestrering_to_Programdeltagande.btm">
+      <TypeName>AterkalladOmRegestrering_to_Programdeltagande</TypeName>
       <Namespace>INT0011.VFU.Events</Namespace>
       <SubType>Task</SubType>
     </Map>
   </ItemGroup>
   <ItemGroup>
-    <Map Include="RegestreringProgramdeltagande.btm">
-      <TypeName>RegestreringProgramdeltagande</TypeName>
+    <Map Include="AterkalladRegestrering_to_Programdeltagande.btm">
+      <TypeName>AterkalladRegestrering_to_Programdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ForvantatDeltagande_to_Programdeltagande.btm">
+      <TypeName>ForvantatDeltagande_to_Programdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Registrering_to_Programdeltagande.btm">
+      <TypeName>Registrering_to_Programdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Omregistrering_to_Programdeltagande.btm">
+      <TypeName>Omregistrering_to_Programdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="AterKalladOmregistrering_to_ADQueryIndividual.btm">
+      <TypeName>AterKalladOmregistrering_to_ADQueryIndividual</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="AterkalladRegistrering_to_ADQueryIndividual.btm">
+      <TypeName>AterkalladRegistrering_to_ADQueryIndividual</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ForvantatDeltagande_to_ADQueryIndividual.btm">
+      <TypeName>ForvantatDeltagande_to_ADQueryIndividual</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Omregestrering_to_ADQueryIndividual.btm">
+      <TypeName>Omregestrering_to_ADQueryIndividual</TypeName>
       <Namespace>INT0011.VFU.Events</Namespace>
       <SubType>Task</SubType>
     </Map>
