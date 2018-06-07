@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="15" TotalEndpoints="15">
-  <Timestamp>2018-06-05T15:20:40.3231577+02:00</Timestamp>
+  <Timestamp>2018-06-07T13:04:42.9994461+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0011.VFU.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0011.VFU.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -1220,167 +1220,6 @@
     </ModuleRef>
   </ModuleRefCollection>
   <SendPortCollection>
-    <SendPort Name="INT0011.Send.Kurstillfalle" IsStatic="true" IsTwoWay="true" BindingOption="0">
-      <Description xsi:nil="true" />
-      <TransmitPipeline Name="INT0011.VFU.Events.Pipelines.JSON_SendPipeline" FullyQualifiedName="INT0011.VFU.Events.Pipelines.JSON_SendPipeline, INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
-      <PrimaryTransport>
-        <Address>https://vfu-test.edu.uu.se/vfutest/rest/integration</Address>
-        <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;ServiceCertificate vt="8" /&gt;&lt;HttpHeaders vt="8"&gt;Content-Type: application/json&lt;/HttpHeaders&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;HttpMethodAndUrl vt="8"&gt;&amp;lt;BtsHttpUrlMapping&amp;gt; &amp;lt;Operation Method="POST" Url="/courseInstance?pwd={password}" /&amp;gt;&amp;lt;/BtsHttpUrlMapping&amp;gt;&lt;/HttpMethodAndUrl&gt;&lt;MaxReceivedMessageSize vt="3"&gt;65536&lt;/MaxReceivedMessageSize&gt;&lt;ClientCertificate vt="8" /&gt;&lt;ProxyUserName vt="8" /&gt;&lt;UseAcsAuthentication vt="11"&gt;0&lt;/UseAcsAuthentication&gt;&lt;SuppressMessageBodyForHttpVerbs vt="8" /&gt;&lt;VariablePropertyMapping vt="8"&gt;&amp;lt;BtsVariablePropertyMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;
-  &amp;lt;Variable Name="PASSWORD" PropertyName="password" PropertyNamespace="https://INT0001.Ladok2.Schemas.PropertySchema" /&amp;gt;
-&amp;lt;/BtsVariablePropertyMapping&amp;gt;&lt;/VariablePropertyMapping&gt;&lt;SecurityMode vt="8"&gt;Transport&lt;/SecurityMode&gt;&lt;ProxyToUse vt="8"&gt;Default&lt;/ProxyToUse&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;TransportClientCredentialType vt="8"&gt;Basic&lt;/TransportClientCredentialType&gt;&lt;OpenTimeout vt="8"&gt;00:01:00&lt;/OpenTimeout&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;UseSasAuthentication vt="11"&gt;0&lt;/UseSasAuthentication&gt;&lt;CloseTimeout vt="8"&gt;00:01:00&lt;/CloseTimeout&gt;&lt;SendTimeout vt="8"&gt;00:01:00&lt;/SendTimeout&gt;&lt;UserName vt="8"&gt;localserviceaccount&lt;/UserName&gt;&lt;/CustomProps&gt;</TransportTypeData>
-        <RetryCount>3</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
-        <Primary>true</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralWCFSend" HostTrusted="false">
-          <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
-        </SendHandler>
-      </PrimaryTransport>
-      <SecondaryTransport>
-        <Address />
-        <RetryCount>3</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
-        <Primary>false</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler xsi:nil="true" />
-      </SecondaryTransport>
-      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
-      <ReceivePipelineData xsi:nil="true" />
-      <Tracking>0</Tracking>
-      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0011.VFU.Events" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#KurstillfalleTillStatusEnvelope" /&gt;
-  &lt;/Group&gt;
-&lt;/Filter&gt;</Filter>
-      <Transforms>
-        <Transform FullName="INT0011.VFU.Events.Maps.KurstillfalleTillStatusEnvelope_to_Kurstillfalle" AssemblyQualifiedName="INT0011.VFU.Events.Maps.KurstillfalleTillStatusEnvelope_to_Kurstillfalle,INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" />
-      </Transforms>
-      <InboundTransforms />
-      <OrderedDelivery>false</OrderedDelivery>
-      <Priority>5</Priority>
-      <StopSendingOnFailure>false</StopSendingOnFailure>
-      <RouteFailedMessage>false</RouteFailedMessage>
-      <ApplicationName>INT0011.VFU.Events</ApplicationName>
-    </SendPort>
-    <SendPort Name="INT0011.Send.Kursdeltagande" IsStatic="true" IsTwoWay="true" BindingOption="0">
-      <Description xsi:nil="true" />
-      <TransmitPipeline Name="INT0011.VFU.Events.Pipelines.JSON_SendPipeline" FullyQualifiedName="INT0011.VFU.Events.Pipelines.JSON_SendPipeline, INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
-      <PrimaryTransport>
-        <Address>https://vfu-test.edu.uu.se/vfutest/rest/integration</Address>
-        <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;ServiceCertificate vt="8" /&gt;&lt;HttpHeaders vt="8"&gt;Content-Type: application/json&lt;/HttpHeaders&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;HttpMethodAndUrl vt="8"&gt;&amp;lt;BtsHttpUrlMapping&amp;gt; &amp;lt;Operation Method="POST" Url="/wish?pwd={password}" /&amp;gt;&amp;lt;/BtsHttpUrlMapping&amp;gt;&lt;/HttpMethodAndUrl&gt;&lt;MaxReceivedMessageSize vt="3"&gt;65536&lt;/MaxReceivedMessageSize&gt;&lt;ClientCertificate vt="8" /&gt;&lt;ProxyUserName vt="8" /&gt;&lt;UseAcsAuthentication vt="11"&gt;0&lt;/UseAcsAuthentication&gt;&lt;SuppressMessageBodyForHttpVerbs vt="8" /&gt;&lt;VariablePropertyMapping vt="8"&gt;&amp;lt;BtsVariablePropertyMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;
-  &amp;lt;Variable Name="PASSWORD" PropertyName="password" PropertyNamespace="https://INT0001.Ladok2.Schemas.PropertySchema" /&amp;gt;
-&amp;lt;/BtsVariablePropertyMapping&amp;gt;&lt;/VariablePropertyMapping&gt;&lt;SecurityMode vt="8"&gt;Transport&lt;/SecurityMode&gt;&lt;ProxyToUse vt="8"&gt;Default&lt;/ProxyToUse&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;TransportClientCredentialType vt="8"&gt;Basic&lt;/TransportClientCredentialType&gt;&lt;OpenTimeout vt="8"&gt;00:01:00&lt;/OpenTimeout&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;UseSasAuthentication vt="11"&gt;0&lt;/UseSasAuthentication&gt;&lt;CloseTimeout vt="8"&gt;00:01:00&lt;/CloseTimeout&gt;&lt;SendTimeout vt="8"&gt;00:01:00&lt;/SendTimeout&gt;&lt;UserName vt="8"&gt;localserviceaccount&lt;/UserName&gt;&lt;/CustomProps&gt;</TransportTypeData>
-        <RetryCount>3</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
-        <Primary>true</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralWCFSend" HostTrusted="false">
-          <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
-        </SendHandler>
-      </PrimaryTransport>
-      <SecondaryTransport>
-        <Address />
-        <RetryCount>3</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
-        <Primary>false</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler xsi:nil="true" />
-      </SecondaryTransport>
-      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
-      <ReceivePipelineData xsi:nil="true" />
-      <Tracking>0</Tracking>
-      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0011.VFU.Events" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#RegistreringEnvelope" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UFÖ1Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UGR0Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UGY2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UGR2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="ULÄRY" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UKL2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="ULÄ0Y" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0011.VFU.Events" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#OmregistreringEnvelope" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UFÖ1Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UGR0Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UGY2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UGR2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="ULÄRY" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UKL2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="ULÄ0Y" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0011.VFU.Events" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#ForvantatDeltagandeSkapadEnvelope" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UFÖ1Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UGR0Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UGY2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UGR2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="ULÄRY" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UKL2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="ULÄ0Y" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0011.VFU.Events" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UFÖ1Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UGR0Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UGY2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UGR2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="ULÄRY" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UKL2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="ULÄ0Y" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0011.VFU.Events" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#AterkalladOmregistreringEnvelope" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UGY2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UGR2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="ULÄRY" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="UKL2Y" /&gt;
-    &lt;Statement Property="INT0011.VFU.Events.Schemas.Utbildningskod" Operator="5" Value="ULÄ0Y" /&gt;
-  &lt;/Group&gt;
-&lt;/Filter&gt;</Filter>
-      <Transforms>
-        <Transform FullName="INT0011.VFU.Events.Maps.RegistreringEnvelope_to_Kursdeltagande" AssemblyQualifiedName="INT0011.VFU.Events.Maps.RegistreringEnvelope_to_Kursdeltagande,INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" />
-        <Transform FullName="INT0011.VFU.Events.Maps.OmregistreringEnvelope_to_Kursdeltagande" AssemblyQualifiedName="INT0011.VFU.Events.Maps.OmregistreringEnvelope_to_Kursdeltagande,INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" />
-        <Transform FullName="INT0011.VFU.Events.Maps.AterkalladOmregistreringEnvelope_to_Kursdeltagande" AssemblyQualifiedName="INT0011.VFU.Events.Maps.AterkalladOmregistreringEnvelope_to_Kursdeltagande,INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" />
-        <Transform FullName="INT0011.VFU.Events.Maps.AterkalladRegistreringEnvelope_to_Kursdeltagande" AssemblyQualifiedName="INT0011.VFU.Events.Maps.AterkalladRegistreringEnvelope_to_Kursdeltagande,INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" />
-        <Transform FullName="INT0011.VFU.Events.Maps.ForvantatDeltagandeSkapad_to_Kursdeltagande" AssemblyQualifiedName="INT0011.VFU.Events.Maps.ForvantatDeltagandeSkapad_to_Kursdeltagande,INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" />
-      </Transforms>
-      <InboundTransforms />
-      <OrderedDelivery>false</OrderedDelivery>
-      <Priority>5</Priority>
-      <StopSendingOnFailure>false</StopSendingOnFailure>
-      <RouteFailedMessage>false</RouteFailedMessage>
-      <ApplicationName>INT0011.VFU.Events</ApplicationName>
-    </SendPort>
     <SendPort Name="INT0011.AD.GetStudentAccount" IsStatic="true" IsTwoWay="true" BindingOption="1">
       <Description xsi:nil="true" />
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
@@ -1463,6 +1302,128 @@
       <Tracking>0</Tracking>
       <Filter />
       <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0011.VFU.Events</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0011.Send.Kurstillfalle" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="INT0011.VFU.Events.Pipelines.JSON_SendPipeline" FullyQualifiedName="INT0011.VFU.Events.Pipelines.JSON_SendPipeline, INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>https://vfu-test.edu.uu.se/vfutest/rest/integration</Address>
+        <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;ServiceCertificate vt="8" /&gt;&lt;HttpHeaders vt="8"&gt;Content-Type: application/json&lt;/HttpHeaders&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;HttpMethodAndUrl vt="8"&gt;&amp;lt;BtsHttpUrlMapping&amp;gt; &amp;lt;Operation Method="POST" Url="/courseInstance?pwd={password}" /&amp;gt;&amp;lt;/BtsHttpUrlMapping&amp;gt;&lt;/HttpMethodAndUrl&gt;&lt;MaxReceivedMessageSize vt="3"&gt;65536&lt;/MaxReceivedMessageSize&gt;&lt;ClientCertificate vt="8" /&gt;&lt;ProxyUserName vt="8" /&gt;&lt;UseAcsAuthentication vt="11"&gt;0&lt;/UseAcsAuthentication&gt;&lt;SuppressMessageBodyForHttpVerbs vt="8" /&gt;&lt;VariablePropertyMapping vt="8"&gt;&amp;lt;BtsVariablePropertyMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;
+  &amp;lt;Variable Name="PASSWORD" PropertyName="password" PropertyNamespace="https://INT0001.Ladok2.Schemas.PropertySchema" /&amp;gt;
+&amp;lt;/BtsVariablePropertyMapping&amp;gt;&lt;/VariablePropertyMapping&gt;&lt;SecurityMode vt="8"&gt;Transport&lt;/SecurityMode&gt;&lt;ProxyToUse vt="8"&gt;Default&lt;/ProxyToUse&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;Password vt="1" /&gt;&lt;OpenTimeout vt="8"&gt;00:01:00&lt;/OpenTimeout&gt;&lt;TransportClientCredentialType vt="8"&gt;Basic&lt;/TransportClientCredentialType&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;UseSasAuthentication vt="11"&gt;0&lt;/UseSasAuthentication&gt;&lt;CloseTimeout vt="8"&gt;00:01:00&lt;/CloseTimeout&gt;&lt;SendTimeout vt="8"&gt;00:01:00&lt;/SendTimeout&gt;&lt;UserName vt="8"&gt;localserviceaccount&lt;/UserName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-06-04T22:00:00</FromTime>
+        <ToTime>2018-06-05T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralWCFSend" HostTrusted="false">
+          <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-06-04T22:00:00</FromTime>
+        <ToTime>2018-06-05T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0011.VFU.Events" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#KurstillfalleTillStatusEnvelope" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms>
+        <Transform FullName="INT0011.VFU.Events.Maps.KurstillfalleTillStatusEnvelope_to_Kurstillfalle" AssemblyQualifiedName="INT0011.VFU.Events.Maps.KurstillfalleTillStatusEnvelope_to_Kurstillfalle,INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" />
+      </Transforms>
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0011.VFU.Events</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0011.Send.Kursdeltagande" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="INT0011.VFU.Events.Pipelines.JSON_SendPipeline" FullyQualifiedName="INT0011.VFU.Events.Pipelines.JSON_SendPipeline, INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>https://vfu-test.edu.uu.se/vfutest/rest/integration</Address>
+        <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;ServiceCertificate vt="8" /&gt;&lt;HttpHeaders vt="8"&gt;Content-Type: application/json&lt;/HttpHeaders&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;HttpMethodAndUrl vt="8"&gt;&amp;lt;BtsHttpUrlMapping&amp;gt; &amp;lt;Operation Method="POST" Url="/wish?pwd={password}" /&amp;gt;&amp;lt;/BtsHttpUrlMapping&amp;gt;&lt;/HttpMethodAndUrl&gt;&lt;MaxReceivedMessageSize vt="3"&gt;65536&lt;/MaxReceivedMessageSize&gt;&lt;ClientCertificate vt="8" /&gt;&lt;ProxyUserName vt="8" /&gt;&lt;UseAcsAuthentication vt="11"&gt;0&lt;/UseAcsAuthentication&gt;&lt;SuppressMessageBodyForHttpVerbs vt="8" /&gt;&lt;VariablePropertyMapping vt="8"&gt;&amp;lt;BtsVariablePropertyMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;
+  &amp;lt;Variable Name="PASSWORD" PropertyName="password" PropertyNamespace="https://INT0001.Ladok2.Schemas.PropertySchema" /&amp;gt;
+&amp;lt;/BtsVariablePropertyMapping&amp;gt;&lt;/VariablePropertyMapping&gt;&lt;SecurityMode vt="8"&gt;Transport&lt;/SecurityMode&gt;&lt;ProxyToUse vt="8"&gt;Default&lt;/ProxyToUse&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;Password vt="1" /&gt;&lt;OpenTimeout vt="8"&gt;00:01:00&lt;/OpenTimeout&gt;&lt;TransportClientCredentialType vt="8"&gt;Basic&lt;/TransportClientCredentialType&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;UseSasAuthentication vt="11"&gt;0&lt;/UseSasAuthentication&gt;&lt;CloseTimeout vt="8"&gt;00:01:00&lt;/CloseTimeout&gt;&lt;SendTimeout vt="8"&gt;00:01:00&lt;/SendTimeout&gt;&lt;UserName vt="8"&gt;localserviceaccount&lt;/UserName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-06-04T22:00:00</FromTime>
+        <ToTime>2018-06-05T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="GeneralWCFSend" HostTrusted="false">
+          <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-06-04T22:00:00</FromTime>
+        <ToTime>2018-06-05T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0011.VFU.Events" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#RegistreringEnvelope " /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0011.VFU.Events" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#ForvantatDeltagandeSkapadEnvelope " /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0011.VFU.Events " /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#OmregistreringEnvelope " /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0011.VFU.Events " /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#AterkalladOmregistreringEnvelope " /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0011.VFU.Events " /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope " /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms>
+        <Transform FullName="INT0011.VFU.Events.Maps.AterkalladOmregistreringEnvelope_to_Kursdeltagande" AssemblyQualifiedName="INT0011.VFU.Events.Maps.AterkalladOmregistreringEnvelope_to_Kursdeltagande,INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" />
+        <Transform FullName="INT0011.VFU.Events.Maps.AterkalladRegistreringEnvelope_to_Kursdeltagande" AssemblyQualifiedName="INT0011.VFU.Events.Maps.AterkalladRegistreringEnvelope_to_Kursdeltagande,INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" />
+        <Transform FullName="INT0011.VFU.Events.Maps.ForvantatDeltagandeSkapad_to_Kursdeltagande" AssemblyQualifiedName="INT0011.VFU.Events.Maps.ForvantatDeltagandeSkapad_to_Kursdeltagande,INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" />
+        <Transform FullName="INT0011.VFU.Events.Maps.OmregistreringEnvelope_to_Kursdeltagande" AssemblyQualifiedName="INT0011.VFU.Events.Maps.OmregistreringEnvelope_to_Kursdeltagande,INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" />
+        <Transform FullName="INT0011.VFU.Events.Maps.RegistreringEnvelope_to_Kursdeltagande" AssemblyQualifiedName="INT0011.VFU.Events.Maps.RegistreringEnvelope_to_Kursdeltagande,INT0011.VFU.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06b0902bc2f0fce6" />
+      </Transforms>
       <OrderedDelivery>false</OrderedDelivery>
       <Priority>5</Priority>
       <StopSendingOnFailure>false</StopSendingOnFailure>
