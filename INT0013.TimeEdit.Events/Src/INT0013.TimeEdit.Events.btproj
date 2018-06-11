@@ -40,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.BizTalk.ReliableMessaging, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -91,6 +92,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk.pfx" />
+    <Schema Include="Schemas\ladok\Envelopes\UtbildningstillfalleAteraktiveratEnvelope.xsd">
+      <SubType>Task</SubType>
+      <TypeName>UtbildningstillfalleAteraktiveratEnvelope</TypeName>
+      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
+    </Schema>
+    <Schema Include="Schemas\ladok\Envelopes\UtbildningstillfalleInstalltEnvelope.xsd">
+      <SubType>Task</SubType>
+      <TypeName>UtbildningstillfalleInstalltEnvelope</TypeName>
+      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
+    </Schema>
+    <Schema Include="Schemas\property\kurstillfalleProperty.xsd">
+      <TypeName>kurstillfalleProperty</TypeName>
+      <Namespace>INT0013.TimeEdit.Events.KurstillfalleProperty</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\ladok\Envelopes\KurstillfalleUppdateratEnvelope.xsd">
+      <TypeName>KurstillfalleUppdateratEnvelope</TypeName>
+      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
     <Schema Include="Schemas\ladok\Envelopes\AterbudEnvelope.xsd">
       <TypeName>AterbudEnvelope</TypeName>
       <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
@@ -181,10 +202,31 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Map Include="Maps\myMap.btm">
-      <TypeName>myMap</TypeName>
+    <Map Include="Maps\KurstillfalleTillStatusMap.btm">
+      <TypeName>KurstillfalleTillStatusMap</TypeName>
       <Namespace>INT0013.TimeEdit.Events.Maps</Namespace>
+      <SubType>Designer</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\KurstillfalleUppdateratMap.btm">
       <SubType>Task</SubType>
+      <TypeName>KurstillfalleUppdateratMap</TypeName>
+      <Namespace>INT0013.TimeEdit.Events.Maps</Namespace>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\UtbildningstillfalleInstalltMap.btm">
+      <SubType>Task</SubType>
+      <TypeName>UtbildningstillfalleInstalltMap</TypeName>
+      <Namespace>INT0013.TimeEdit.Events.Maps</Namespace>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\UtbildningstillfalleAteraktiveratMap.btm">
+      <SubType>Task</SubType>
+      <TypeName>UtbildningstillfalleAteraktiveratMap</TypeName>
+      <Namespace>INT0013.TimeEdit.Events.Maps</Namespace>
     </Map>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

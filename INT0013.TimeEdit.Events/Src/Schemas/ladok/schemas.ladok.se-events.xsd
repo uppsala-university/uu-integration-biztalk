@@ -5,6 +5,16 @@
 
   <xs:element name="EventContext" type="events:eventContext"/>
 
+  <xs:complexType abstract="true" name="BaseEventRepresentationMedHandelsetyp">
+    <xs:complexContent>
+      <xs:extension base="events:BaseEvent">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Handelsetyp" type="base:Handelsetyp"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType abstract="true" name="BaseEvent">
     <xs:sequence>
       <xs:element ref="events:EventContext"/>
@@ -17,16 +27,6 @@
       <xs:element name="Anvandarnamn" type="xs:string"/>
       <xs:element name="LarosateID" type="xs:int"/>
     </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType abstract="true" name="BaseEventRepresentationMedHandelsetyp">
-    <xs:complexContent>
-      <xs:extension base="events:BaseEvent">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Handelsetyp" type="base:Handelsetyp"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
   </xs:complexType>
 
   <xs:complexType abstract="true" name="grunddataBaseEvent">
