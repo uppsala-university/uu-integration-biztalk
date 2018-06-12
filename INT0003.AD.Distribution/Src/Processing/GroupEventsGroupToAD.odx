@@ -319,10 +319,10 @@
                                         <om:Property Name="Name" Value="CatchDeliveryFailureException" />
                                         <om:Property Name="Signal" Value="True" />
                                         <om:Element Type="VariableAssignment" OID="7b708ad1-fcbb-4bbf-aa6b-dbefcd4b46dc" ParentLink="Catch_Statement" LowerBound="111.1" HigherBound="121.1">
-                                            <om:Property Name="Expression" Value="if(ex.ErrorDescription.Contains(&quot;The object already exists&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    resultAD = resultAD + 1; &#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\nGroup &quot; + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + &quot;_accepted could not be created.\n&quot;  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{    &#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\nGroup &quot; + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + &quot;_accepted could not be created.\n The group already exists. Ignoring event.&quot;  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}" />
+                                            <om:Property Name="Expression" Value="if(ex.ErrorDescription.Contains(&quot;The object already exists&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    resultAD = resultAD + 1; &#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\nGroup &quot; + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + &quot;_accepted could not be created.\n&quot;  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{    &#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\nGroup &quot; + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + &quot;_accepted could not be created.\n The group already exists. Ignoring event.\n&quot;  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}" />
                                             <om:Property Name="ReportToAnalyst" Value="True" />
                                             <om:Property Name="Name" Value="WriteEntry" />
-                                            <om:Property Name="Signal" Value="True" />
+                                            <om:Property Name="Signal" Value="False" />
                                         </om:Element>
                                     </om:Element>
                                     <om:Element Type="Catch" OID="26d4691f-89b8-455f-8c04-3153173704da" ParentLink="Scope_Catch" LowerBound="122.1" HigherBound="129.1">
@@ -369,10 +369,10 @@
                                         <om:Property Name="Name" Value="CatchDeliveryFailureException" />
                                         <om:Property Name="Signal" Value="True" />
                                         <om:Element Type="VariableAssignment" OID="42495dbf-6038-4c85-9f53-f0c02aa0bb36" ParentLink="Catch_Statement" LowerBound="147.1" HigherBound="158.1">
-                                            <om:Property Name="Expression" Value="&#xD;&#xA;if(ex.ErrorDescription.Contains(&quot;The object already exists&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    resultAD = resultAD + 1;&#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\nGroup &quot; + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + &quot;_registered could not be created.\n&quot;  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\nGroup &quot; + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + &quot;_registered could not be created.\nThe group already exists. Ignoring event.&quot;  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}&#xD;&#xA;" />
+                                            <om:Property Name="Expression" Value="&#xD;&#xA;if(ex.ErrorDescription.Contains(&quot;The object already exists&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    resultAD = resultAD + 1;&#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\nGroup &quot; + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + &quot;_registered could not be created.\n&quot;  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\nGroup &quot; + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + &quot;_registered could not be created.\nThe group already exists. Ignoring event.\n&quot;  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}&#xD;&#xA;" />
                                             <om:Property Name="ReportToAnalyst" Value="True" />
                                             <om:Property Name="Name" Value="WriteEntry" />
-                                            <om:Property Name="Signal" Value="True" />
+                                            <om:Property Name="Signal" Value="False" />
                                         </om:Element>
                                     </om:Element>
                                     <om:Element Type="Catch" OID="3b5967b6-6069-464c-a106-6b2509e033bc" ParentLink="Scope_Catch" LowerBound="159.1" HigherBound="166.1">
@@ -419,10 +419,10 @@
                                         <om:Property Name="Name" Value="CatchDeliveryFailureException" />
                                         <om:Property Name="Signal" Value="True" />
                                         <om:Element Type="VariableAssignment" OID="7c1c3b04-fa29-4705-ac5f-62f9d430d361" ParentLink="Catch_Statement" LowerBound="184.1" HigherBound="195.1">
-                                            <om:Property Name="Expression" Value="&#xD;&#xA;if(ex.ErrorDescription.Contains(&quot;The object already exists&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    resultAD = resultAD + 1;  &#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\nGroup &quot; + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + &quot;_reregistered could not be created.\n&quot;  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\nGroup &quot; + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + &quot;_reregistered could not be created.\nThe group already exists. Ignoring event.&quot;  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}" />
+                                            <om:Property Name="Expression" Value="&#xD;&#xA;if(ex.ErrorDescription.Contains(&quot;The object already exists&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    resultAD = resultAD + 1;  &#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\nGroup &quot; + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + &quot;_reregistered could not be created.\n&quot;  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;GroupEventsGroupToAD\nGroup &quot; + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + &quot;_reregistered could not be created.\nThe group already exists. Ignoring event.\n&quot;  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}" />
                                             <om:Property Name="ReportToAnalyst" Value="True" />
                                             <om:Property Name="Name" Value="WriteEntry" />
-                                            <om:Property Name="Signal" Value="False" />
+                                            <om:Property Name="Signal" Value="True" />
                                         </om:Element>
                                     </om:Element>
                                     <om:Element Type="Catch" OID="7924548f-d913-44d0-9e71-ca7f78787625" ParentLink="Scope_Catch" LowerBound="196.1" HigherBound="203.1">
@@ -759,7 +759,7 @@ module INT0003.AD.Distribution
                                         }
                                         else
                                         {    
-                                            System.Diagnostics.EventLog.WriteEntry("BizTalk Application","GroupEventsGroupToAD\nGroup " + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + "_accepted could not be created.\n The group already exists. Ignoring event."  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Information);
+                                            System.Diagnostics.EventLog.WriteEntry("BizTalk Application","GroupEventsGroupToAD\nGroup " + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + "_accepted could not be created.\n The group already exists. Ignoring event.\n"  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Information);
                                         }
                                     }
                                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("26d4691f-89b8-455f-8c04-3153173704da")]
@@ -796,7 +796,7 @@ module INT0003.AD.Distribution
                                         }
                                         else
                                         {
-                                            System.Diagnostics.EventLog.WriteEntry("BizTalk Application","GroupEventsGroupToAD\nGroup " + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + "_registered could not be created.\nThe group already exists. Ignoring event."  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Information);
+                                            System.Diagnostics.EventLog.WriteEntry("BizTalk Application","GroupEventsGroupToAD\nGroup " + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + "_registered could not be created.\nThe group already exists. Ignoring event.\n"  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Information);
                                         }
                                     }
                                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("3b5967b6-6069-464c-a106-6b2509e033bc")]
@@ -833,7 +833,7 @@ module INT0003.AD.Distribution
                                         }
                                         else
                                         {
-                                            System.Diagnostics.EventLog.WriteEntry("BizTalk Application","GroupEventsGroupToAD\nGroup " + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + "_reregistered could not be created.\nThe group already exists. Ignoring event."  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Information);
+                                            System.Diagnostics.EventLog.WriteEntry("BizTalk Application","GroupEventsGroupToAD\nGroup " + GroupEvent(INT0003.AD.Distribution.Schemas.GroupName) + "_reregistered could not be created.\nThe group already exists. Ignoring event.\n"  + ex.ErrorDescription, System.Diagnostics.EventLogEntryType.Information);
                                         }
                                     }
                                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("7924548f-d913-44d0-9e71-ca7f78787625")]
