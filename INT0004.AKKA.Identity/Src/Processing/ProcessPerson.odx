@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="44bccbb9-4a75-410e-ad23-cdccf74b9b31" LowerBound="1.1" HigherBound="117.1">
+    <om:Element Type="Module" OID="44bccbb9-4a75-410e-ad23-cdccf74b9b31" LowerBound="1.1" HigherBound="114.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="INT0004.AKKA.Identity" />
         <om:Property Name="Signal" Value="False" />
@@ -75,7 +75,7 @@
                 </om:Element>
             </om:Element>
         </om:Element>
-        <om:Element Type="ServiceDeclaration" OID="dbd472a6-6668-4e77-9d1b-6c5ac91937dc" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="116.1">
+        <om:Element Type="ServiceDeclaration" OID="dbd472a6-6668-4e77-9d1b-6c5ac91937dc" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="113.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
@@ -141,7 +141,7 @@
                     <om:Property Name="Name" Value="RcvPersonEvent" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="While" OID="ad114f80-bc64-49fd-8bde-3c848712af44" ParentLink="ServiceBody_Statement" LowerBound="48.1" HigherBound="114.1">
+                <om:Element Type="While" OID="ad114f80-bc64-49fd-8bde-3c848712af44" ParentLink="ServiceBody_Statement" LowerBound="48.1" HigherBound="111.1">
                     <om:Property Name="Expression" Value="returncode != &quot;0&quot;" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Retry loop" />
@@ -262,23 +262,17 @@
                             </om:Element>
                         </om:Element>
                     </om:Element>
-                    <om:Element Type="Decision" OID="6a67128a-797e-4b79-bfce-2b49680cd264" ParentLink="ComplexStatement_Statement" LowerBound="104.1" HigherBound="113.1">
+                    <om:Element Type="Decision" OID="6a67128a-797e-4b79-bfce-2b49680cd264" ParentLink="ComplexStatement_Statement" LowerBound="104.1" HigherBound="110.1">
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="HasError" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="DecisionBranch" OID="c7caa333-9fea-4250-84ed-7fb2d7b3a3a0" ParentLink="ReallyComplexStatement_Branch" LowerBound="105.17" HigherBound="113.1">
+                        <om:Element Type="DecisionBranch" OID="c7caa333-9fea-4250-84ed-7fb2d7b3a3a0" ParentLink="ReallyComplexStatement_Branch" LowerBound="105.17" HigherBound="110.1">
                             <om:Property Name="Expression" Value="returncode != &quot;0&quot;" />
                             <om:Property Name="IsGhostBranch" Value="True" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="ErrorExists" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="VariableAssignment" OID="6183bdff-ded4-430a-beda-d4cb573e1bab" ParentLink="ComplexStatement_Statement" LowerBound="107.1" HigherBound="110.1">
-                                <om:Property Name="Expression" Value="Shared.Utilities.PortController.PortController.RecieveLocationStateChange(&quot;INT0003.Group.Events&quot;, &quot;INT0003.Group.Events&quot;, Shared.Utilities.PortController.Active.Stop);&#xD;&#xA;Shared.Utilities.PortController.PortController.RecieveLocationStateChange(&quot;INT0002.UU.LadokEvents&quot;, &quot;INT0002.UU.LadokEvents&quot;, Shared.Utilities.PortController.Active.Stop);" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="Disable receive locations" />
-                                <om:Property Name="Signal" Value="False" />
-                            </om:Element>
-                            <om:Element Type="Suspend" OID="4f325d0d-f898-4427-8a1e-1e2d73f127aa" ParentLink="ComplexStatement_Statement" LowerBound="110.1" HigherBound="112.1">
+                            <om:Element Type="Suspend" OID="4f325d0d-f898-4427-8a1e-1e2d73f127aa" ParentLink="ComplexStatement_Statement" LowerBound="107.1" HigherBound="109.1">
                                 <om:Property Name="ErrorMessage" Value="System.String.Format(&quot;Error returned from AKKA ,{0}\n , resume to retry or terminate!&quot;,returntext);" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="Handle and terminate" />
@@ -453,9 +447,6 @@ module INT0004.AKKA.Identity
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("6a67128a-797e-4b79-bfce-2b49680cd264")]
                 if (returncode != "0")
                 {
-                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("6183bdff-ded4-430a-beda-d4cb573e1bab")]
-                    Shared.Utilities.PortController.PortController.RecieveLocationStateChange("INT0003.Group.Events", "INT0003.Group.Events", Shared.Utilities.PortController.Active.Stop);
-                    Shared.Utilities.PortController.PortController.RecieveLocationStateChange("INT0002.UU.LadokEvents", "INT0002.UU.LadokEvents", Shared.Utilities.PortController.Active.Stop);
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("4f325d0d-f898-4427-8a1e-1e2d73f127aa")]
                     suspend System.String.Format("Error returned from AKKA ,{0}\n , resume to retry or terminate!",returntext);
                 }
