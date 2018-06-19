@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
       <Name>System</Name>
@@ -67,49 +73,34 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Schema Include="Schemas\Ladok\Envelopes\AterbudEnvelope.xsd">
-      <TypeName>AterbudEnvelope</TypeName>
-      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
+    <XLang Include="Processing\HandleKurstillfalleTillStatusEvent.odx">
+      <TypeName>HandleKurstillfalleTillStatusEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
       <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\AterkalladOmregistreringEnvelope.xsd">
-      <TypeName>AterkalladOmregistreringEnvelope</TypeName>
-      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\lokalstudentevent.xml" />
+    <Content Include="Maps\Ladok3Event_to_ReturnMessage.xml" />
+    <Content Include="Maps\Ladok3Event_to_ReturnMessage.xsl" />
+    <XLang Include="Processing\HandleOtherEvents.odx">
       <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\AterkalladRegistreringEnvelope.xsd">
-      <TypeName>AterkalladRegistreringEnvelope</TypeName>
-      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
+      <TypeName>HandleKurstillfalleTillStatusEvent_Copy</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+    </XLang>
+    <Map Include="Maps\Ladok3Event_to_ReturnMessage.btm">
+      <TypeName>Ladok3Event_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
       <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\ForvantatDeltagandeSkapadEnvelope.xsd">
-      <TypeName>ForvantatDeltagandeSkapadEnvelope</TypeName>
-      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\KurspaketeringUppdateradEnvelope.xsd">
-      <TypeName>KurspaketeringUppdateradEnvelope</TypeName>
-      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\KurstillfalleTillStatusEnvelope.xsd">
-      <TypeName>KurstillfalleTillStatusEnvelope</TypeName>
-      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\OmregistreringEnvelope.xsd">
-      <TypeName>OmregistreringEnvelope</TypeName>
-      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\RegistreringEnvelope.xsd">
-      <TypeName>RegistreringEnvelope</TypeName>
-      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\StudentAvlidenmarkeringEnvelope.xsd">
-      <TypeName>StudentAvlidenmarkeringEnvelope</TypeName>
-      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="Schemas\InternalReturnMessage.xsd">
+      <TypeName>InternalReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Schemas</Namespace>
       <SubType>Task</SubType>
     </Schema>
   </ItemGroup>
@@ -146,17 +137,50 @@
     </Schema>
   </ItemGroup>
   <ItemGroup>
-    <XLang Include="Processing\HandleKurstillfalleTillStatusEvent.odx">
-      <TypeName>HandleKurstillfalleTillStatusEvent</TypeName>
-      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+    <Schema Include="Schemas\Ladok\Envelopes\AterbudEnvelope.xsd">
+      <TypeName>AterbudEnvelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
       <SubType>Task</SubType>
-    </XLang>
-  </ItemGroup>
-  <ItemGroup>
-    <Schema Include="Schemas\InternalReturnEnvelope.xsd">
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\AterkalladOmregistreringEnvelope.xsd">
+      <TypeName>AterkalladOmregistreringEnvelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
       <SubType>Task</SubType>
-      <TypeName>InternalReturnEnvelope</TypeName>
-      <Namespace>INT0016.Ladok3.Client.Schemas</Namespace>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\AterkalladRegistreringEnvelope.xsd">
+      <TypeName>AterkalladRegistreringEnvelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\ForvantatDeltagandeSkapadEnvelope.xsd">
+      <TypeName>ForvantatDeltagandeSkapadEnvelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\KurspaketeringUpdateradEnvelope.xsd">
+      <TypeName>KurspaketeringUpdateradEnvelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\KurstillfalleTillStatusEnvelope.xsd">
+      <TypeName>KurstillfalleTillStatusEnvelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\OmregistreringEnvelope.xsd">
+      <TypeName>OmregistreringEnvelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\RegistreringEnvelope.xsd">
+      <TypeName>RegistreringEnvelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Ladok\Envelopes\StudentAvlidenmarkeringEnvelope.xsd">
+      <TypeName>StudentAvlidenmarkeringEnvelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Schemas.Ladok.Envelopes</Namespace>
+      <SubType>Task</SubType>
     </Schema>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
