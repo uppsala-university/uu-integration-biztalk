@@ -29,8 +29,8 @@
             <om:Property Name="Synchronous" Value="True" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="PortType_2" />
-            <om:Property Name="Signal" Value="False" />
+            <om:Property Name="Name" Value="SendEventsForRoutingType" />
+            <om:Property Name="Signal" Value="True" />
             <om:Element Type="OperationDeclaration" OID="3a508f4a-243d-40c5-852d-3fffeab81835" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
                 <om:Property Name="OperationType" Value="RequestResponse" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
@@ -254,15 +254,13 @@
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="INT0008.Ladok3.Events.PortType_2" />
+                <om:Property Name="Type" Value="INT0008.Ladok3.Events.SendEventsForRoutingType" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Port_1" />
                 <om:Property Name="Signal" Value="True" />
                 <om:Element Type="DirectBindingAttribute" OID="2f5794c6-32d0-41ec-b58a-4f3a2d56c4db" ParentLink="PortDeclaration_CLRAttribute" LowerBound="34.1" HigherBound="35.1">
-                    <om:Property Name="PartnerPort" Value="Port_1" />
-                    <om:Property Name="PartnerService" Value="INT0008.Ladok3.Events.ProcessLadok3Events" />
-                    <om:Property Name="DirectBindingType" Value="PartnerPort" />
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
@@ -296,7 +294,7 @@ module INT0008.Ladok3.Events
             System.Xml.XmlDocument
         };
     };
-    internal porttype PortType_2
+    internal porttype SendEventsForRoutingType
     {
         requestresponse Operation_1
         {
@@ -319,8 +317,8 @@ module INT0008.Ladok3.Events
     {
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port implements ReceiveLadok3EventsType ReceiveLadok3Events;
-        [Microsoft.XLANGs.BaseTypes.DirectBinding(typeof(INT0008.Ladok3.Events.ProcessLadok3Events), "Port_1")]
-        port uses PortType_2 Port_1;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port uses SendEventsForRoutingType Port_1;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses SendToQueueType SendToQueue;
         correlation ReceivePortNameCorrelationType ReceivePortNameCorrelation;
