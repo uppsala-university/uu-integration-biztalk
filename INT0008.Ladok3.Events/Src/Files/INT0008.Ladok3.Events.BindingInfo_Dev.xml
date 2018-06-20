@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="2" TotalEndpoints="2">
-  <Timestamp>2018-06-19T13:54:31.1792691+02:00</Timestamp>
+  <Timestamp>2018-06-19T16:18:16.5746442+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0008.Ladok3.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0008.Ladok3.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -3027,17 +3027,22 @@
     </ModuleRef>
     <ModuleRef Name="INT0008.Ladok3.Events" Version="1.0.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0008.Ladok3.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services>
-        <Service Name="INT0008.Ladok3.Events.HandleOtherEvents" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents">
+        <Service Name="INT0008.Ladok3.Events.SendToRoutingOrchestration" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents">
           <Ports />
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0008.Ladok3.Events.HandleKurstillfalleTillStatusEvent" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents">
+        <Service Name="INT0008.Ladok3.Events.HandleOtherEvents" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody OrchestrationEvents TrackPropertiesForIncomingMessages TrackPropertiesForOutgoingMessages" Description="">
           <Ports />
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0008.Ladok3.Events.ProcessLadok3Events" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0008.Ladok3.Events.HandleKurstillfalleTillStatusEvent" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody OrchestrationEvents TrackPropertiesForIncomingMessages TrackPropertiesForOutgoingMessages" Description="">
+          <Ports />
+          <Roles />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="INT0008.Ladok3.Events.ProcessLadok3Events" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody OrchestrationEvents TrackPropertiesForIncomingMessages TrackPropertiesForOutgoingMessages" Description="">
           <Ports>
             <Port Name="ReceiveLadok3Events" Modifier="2" BindingOption="1">
               <SendPortRef xsi:nil="true" />
@@ -3090,7 +3095,7 @@
         <SendHandler xsi:nil="true" />
       </SecondaryTransport>
       <ReceivePipelineData xsi:nil="true" />
-      <Tracking>0</Tracking>
+      <Tracking>204</Tracking>
       <Filter />
       <Transforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -3131,7 +3136,7 @@
       </ReceiveLocations>
       <SendPipelineData xsi:nil="true" />
       <Authentication>0</Authentication>
-      <Tracking>0</Tracking>
+      <Tracking>51</Tracking>
       <Transforms />
       <RouteFailedMessage>false</RouteFailedMessage>
       <ApplicationName>INT0008.Ladok3.Events</ApplicationName>
