@@ -30,21 +30,21 @@
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="a040fcc3-4668-4579-84d1-8e9e7ccc2591" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="16.1" HigherBound="17.1">
-                <om:Property Name="Type" Value="INT0016.Ladok3.Client.Schemas.InternalReturnMessage" />
+                <om:Property Name="Type" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReturnMessage" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="b75e2102-8161-49e5-bf15-4d3c6a890a20" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="17.1" HigherBound="18.1">
-                <om:Property Name="Type" Value="INT0016.Ladok3.Client.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent" />
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Ladok3Event" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="44013b62-9975-43ca-b899-9f184f6ba445" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="18.1" HigherBound="19.1">
-                <om:Property Name="Type" Value="INT0016.Ladok3.Client.Schemas.Ladok.Envelopes.KurstillfalleTillStatusEnvelope" />
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.KurstillfalleTillStatusEnvelope" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="EventEnvelope" />
@@ -174,17 +174,17 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Operation_1" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="MessageRef" OID="77055df5-e496-4964-b735-f4a466fa5591" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.95">
-                    <om:Property Name="Ref" Value="INT0016.Ladok3.Client.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent" />
+                <om:Element Type="MessageRef" OID="77055df5-e496-4964-b735-f4a466fa5591" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.102">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
-                    <om:Property Name="Signal" Value="False" />
+                    <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="MessageRef" OID="3649bad0-b700-4edd-b8e6-17f2957b6d4d" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.97" HigherBound="8.126">
-                    <om:Property Name="Ref" Value="INT0016.Ladok3.Client.Schemas.InternalReturnMessage" />
+                <om:Element Type="MessageRef" OID="3649bad0-b700-4edd-b8e6-17f2957b6d4d" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.104" HigherBound="8.149">
+                    <om:Property Name="Ref" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Response" />
-                    <om:Property Name="Signal" Value="False" />
+                    <om:Property Name="Signal" Value="True" />
                 </om:Element>
             </om:Element>
         </om:Element>
@@ -198,7 +198,7 @@ module INT0016.Ladok3.Client
     {
         requestresponse Operation_1
         {
-            Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent, Schemas.InternalReturnMessage
+            Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent, Shared.Schemas.SdEvents.InternalReturnMessage
         };
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
@@ -206,9 +206,9 @@ module INT0016.Ladok3.Client
     {
         [Microsoft.XLANGs.BaseTypes.DirectBinding()]
         port implements ReceiveKurstillfalleTillStatusEventType ReceiveKurstillfalleTillStatusEvent;
-        message Schemas.InternalReturnMessage ReturnMessage;
-        message Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent Ladok3Event;
-        message Schemas.Ladok.Envelopes.KurstillfalleTillStatusEnvelope EventEnvelope;
+        message Shared.Schemas.SdEvents.InternalReturnMessage ReturnMessage;
+        message Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent Ladok3Event;
+        message Shared.Schemas.Ladok.KurstillfalleTillStatusEnvelope EventEnvelope;
         System.Xml.XmlDocument TempXML;
         System.String ackMessage;
         body ()

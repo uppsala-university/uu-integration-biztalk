@@ -23,8 +23,8 @@
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="MessageRef" OID="8d15eab5-f005-4a12-bfeb-30cac4af924e" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.37" HigherBound="8.66">
-                    <om:Property Name="Ref" Value="INT0016.Ladok3.Client.Schemas.InternalReturnMessage" />
+                <om:Element Type="MessageRef" OID="8d15eab5-f005-4a12-bfeb-30cac4af924e" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.37" HigherBound="8.82">
+                    <om:Property Name="Ref" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Response" />
                     <om:Property Name="Signal" Value="True" />
@@ -47,7 +47,7 @@
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="a040fcc3-4668-4579-84d1-8e9e7ccc2591" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="16.1" HigherBound="17.1">
-                <om:Property Name="Type" Value="INT0016.Ladok3.Client.Schemas.InternalReturnMessage" />
+                <om:Property Name="Type" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReturnMessage" />
@@ -140,7 +140,7 @@ module INT0016.Ladok3.Client
     {
         requestresponse Operation_1
         {
-            System.Xml.XmlDocument, Schemas.InternalReturnMessage
+            System.Xml.XmlDocument, Shared.Schemas.SdEvents.InternalReturnMessage
         };
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
@@ -148,7 +148,7 @@ module INT0016.Ladok3.Client
     {
         [Microsoft.XLANGs.BaseTypes.DirectBinding()]
         port implements ReceiveOtherEventType ReceiveOtherEvent;
-        message Schemas.InternalReturnMessage ReturnMessage;
+        message Shared.Schemas.SdEvents.InternalReturnMessage ReturnMessage;
         message System.Xml.XmlDocument Ladok3Event;
         System.Xml.XmlDocument TempXML;
         body ()
