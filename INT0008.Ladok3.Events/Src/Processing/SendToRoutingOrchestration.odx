@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="3f09017b-3597-40e5-a999-85d048223c29" LowerBound="1.1" HigherBound="76.1">
+    <om:Element Type="Module" OID="3f09017b-3597-40e5-a999-85d048223c29" LowerBound="1.1" HigherBound="75.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="INT0008.Ladok3.Events" />
         <om:Property Name="Signal" Value="False" />
@@ -23,11 +23,11 @@
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
-                <om:Element Type="MessageRef" OID="c160df4a-94e8-4c87-9705-b59c983af3dc" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.37" HigherBound="8.66">
-                    <om:Property Name="Ref" Value="INT0008.Ladok3.Events.Schemas.InternalReturnMessage" />
+                <om:Element Type="MessageRef" OID="c160df4a-94e8-4c87-9705-b59c983af3dc" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.37" HigherBound="8.82">
+                    <om:Property Name="Ref" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Response" />
-                    <om:Property Name="Signal" Value="False" />
+                    <om:Property Name="Signal" Value="True" />
                 </om:Element>
             </om:Element>
         </om:Element>
@@ -43,7 +43,7 @@
                 <om:Property Name="Signal" Value="False" />
             </om:Element>
         </om:Element>
-        <om:Element Type="ServiceDeclaration" OID="f2bae2f4-6857-4efe-b156-74d2ac18d728" ParentLink="Module_ServiceDeclaration" LowerBound="15.1" HigherBound="75.1">
+        <om:Element Type="ServiceDeclaration" OID="f2bae2f4-6857-4efe-b156-74d2ac18d728" ParentLink="Module_ServiceDeclaration" LowerBound="15.1" HigherBound="74.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="True" />
             <om:Property Name="TypeModifier" Value="Internal" />
@@ -73,7 +73,7 @@
                 </om:Element>
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="c20b11a2-99b3-4abb-9b25-d00c15a0df21" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="21.1" HigherBound="22.1">
-                <om:Property Name="Type" Value="INT0008.Ladok3.Events.Schemas.InternalReturnMessage" />
+                <om:Property Name="Type" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
                 <om:Property Name="ParamDirection" Value="Out" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReturnMessage" />
@@ -119,7 +119,7 @@
                     <om:Property Name="Name" Value="outMessage" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="Scope" OID="81501b26-3b56-4980-ac64-3928f0d3a2cb" ParentLink="ServiceBody_Statement" LowerBound="27.1" HigherBound="73.1">
+                <om:Element Type="Scope" OID="81501b26-3b56-4980-ac64-3928f0d3a2cb" ParentLink="ServiceBody_Statement" LowerBound="27.1" HigherBound="72.1">
                     <om:Property Name="InitializedTransactionType" Value="True" />
                     <om:Property Name="IsSynchronized" Value="False" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -160,52 +160,52 @@
                         <om:Property Name="Name" Value="Receive_1" />
                         <om:Property Name="Signal" Value="True" />
                     </om:Element>
-                    <om:Element Type="VariableAssignment" OID="4cd48d86-fcc6-4d98-968d-afc598c8699d" ParentLink="ComplexStatement_Statement" LowerBound="46.1" HigherBound="49.1">
+                    <om:Element Type="VariableAssignment" OID="4cd48d86-fcc6-4d98-968d-afc598c8699d" ParentLink="ComplexStatement_Statement" LowerBound="46.1" HigherBound="48.1">
                         <om:Property Name="Expression" Value="success = ReturnMessage.Ack;&#xD;&#xA;outMessage = ReturnMessage.AckMessage;&#xD;&#xA;" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Asign out variables" />
                         <om:Property Name="Signal" Value="True" />
                     </om:Element>
-                    <om:Element Type="Construct" OID="e1e99ecf-79aa-4dcf-bec0-94466bba9b0b" ParentLink="ComplexStatement_Statement" LowerBound="49.1" HigherBound="55.1">
+                    <om:Element Type="Construct" OID="e1e99ecf-79aa-4dcf-bec0-94466bba9b0b" ParentLink="ComplexStatement_Statement" LowerBound="48.1" HigherBound="54.1">
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Construct ReturnEnvelope" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="MessageAssignment" OID="8af22202-929a-47a9-8bc5-effe006d206c" ParentLink="ComplexStatement_Statement" LowerBound="52.1" HigherBound="54.1">
+                        <om:Element Type="MessageAssignment" OID="8af22202-929a-47a9-8bc5-effe006d206c" ParentLink="ComplexStatement_Statement" LowerBound="51.1" HigherBound="53.1">
                             <om:Property Name="Expression" Value="Ladok3Envelope = xmlDoc; " />
                             <om:Property Name="ReportToAnalyst" Value="False" />
                             <om:Property Name="Name" Value="MessageAssignment_1" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessageRef" OID="996ee4bf-f83a-47d3-b4b3-6dcb2c034ff1" ParentLink="Construct_MessageRef" LowerBound="50.31" HigherBound="50.45">
+                        <om:Element Type="MessageRef" OID="996ee4bf-f83a-47d3-b4b3-6dcb2c034ff1" ParentLink="Construct_MessageRef" LowerBound="49.31" HigherBound="49.45">
                             <om:Property Name="Ref" Value="Ladok3Envelope" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
                     </om:Element>
-                    <om:Element Type="Catch" OID="fe40a659-e525-471a-8732-253198d5258e" ParentLink="Scope_Catch" LowerBound="58.1" HigherBound="71.1">
+                    <om:Element Type="Catch" OID="fe40a659-e525-471a-8732-253198d5258e" ParentLink="Scope_Catch" LowerBound="57.1" HigherBound="70.1">
                         <om:Property Name="ExceptionName" Value="ex" />
                         <om:Property Name="ExceptionType" Value="System.Exception" />
                         <om:Property Name="IsFaultMessage" Value="False" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="CatchException_1" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="VariableAssignment" OID="58274655-74bb-4288-9fda-1f5b41d05965" ParentLink="Catch_Statement" LowerBound="61.1" HigherBound="64.1">
+                        <om:Element Type="VariableAssignment" OID="58274655-74bb-4288-9fda-1f5b41d05965" ParentLink="Catch_Statement" LowerBound="60.1" HigherBound="63.1">
                             <om:Property Name="Expression" Value="success = false;&#xD;&#xA;outMessage = ex.Message;" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="Asign out variables" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="Construct" OID="adcea030-10c2-443b-bfd6-97cd93daf180" ParentLink="Catch_Statement" LowerBound="64.1" HigherBound="70.1">
+                        <om:Element Type="Construct" OID="adcea030-10c2-443b-bfd6-97cd93daf180" ParentLink="Catch_Statement" LowerBound="63.1" HigherBound="69.1">
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="Construct ReturnEnvelope" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="MessageAssignment" OID="e145a3e0-54ad-4228-9353-cbedfbbe8131" ParentLink="ComplexStatement_Statement" LowerBound="67.1" HigherBound="69.1">
+                            <om:Element Type="MessageAssignment" OID="e145a3e0-54ad-4228-9353-cbedfbbe8131" ParentLink="ComplexStatement_Statement" LowerBound="66.1" HigherBound="68.1">
                                 <om:Property Name="Expression" Value="Ladok3Envelope = xmlDoc; " />
                                 <om:Property Name="ReportToAnalyst" Value="False" />
                                 <om:Property Name="Name" Value="MessageAssignment_1" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
-                            <om:Element Type="MessageRef" OID="5ea8d718-3dc4-4e29-a419-9fd5bbe75a0e" ParentLink="Construct_MessageRef" LowerBound="65.35" HigherBound="65.49">
+                            <om:Element Type="MessageRef" OID="5ea8d718-3dc4-4e29-a419-9fd5bbe75a0e" ParentLink="Construct_MessageRef" LowerBound="64.35" HigherBound="64.49">
                                 <om:Property Name="Ref" Value="Ladok3Envelope" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Signal" Value="False" />
@@ -242,7 +242,7 @@ module INT0008.Ladok3.Events
     {
         requestresponse RouteEventsOperation
         {
-            System.Xml.XmlDocument, Schemas.InternalReturnMessage
+            System.Xml.XmlDocument, Shared.Schemas.SdEvents.InternalReturnMessage
         };
     };
     internal correlationtype MessageTypeCorrelationType
@@ -255,7 +255,7 @@ module INT0008.Ladok3.Events
         [Microsoft.XLANGs.BaseTypes.DirectBinding()]
         port uses SendEventsForRoutingType Send_EventsForRouting;
         correlation MessageTypeCorrelationType MessageTypeCorrelation;
-        message Schemas.InternalReturnMessage ReturnMessage;
+        message Shared.Schemas.SdEvents.InternalReturnMessage ReturnMessage;
         message System.Xml.XmlDocument Ladok3EventToType;
         System.Xml.XmlDocument xmlDoc;
         body (message System.Xml.XmlDocument Ladok3Event, out message System.Xml.XmlDocument Ladok3Envelope, out System.Boolean success, out System.String outMessage)
@@ -280,9 +280,8 @@ module INT0008.Ladok3.Events
                     send (Send_EventsForRouting.RouteEventsOperation, Ladok3Event, initialize MessageTypeCorrelation);
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("d64f6b50-b248-4d3d-8f5d-eeb6a29db5ce")]
                     receive (Send_EventsForRouting.RouteEventsOperation, ReturnMessage);
-                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("4cd48d86-fcc6-4d98-968d-afc598c8699d")]
-                    success = ReturnMessage.Ack;
-                    outMessage = ReturnMessage.AckMessage;
+
+#error "The expression that you have entered is not valid."
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("e1e99ecf-79aa-4dcf-bec0-94466bba9b0b")]
                     construct Ladok3Envelope
                     {

@@ -118,7 +118,7 @@
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="8e66d074-b18c-428c-b672-e163e228f0ab" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="31.1" HigherBound="32.1">
-                <om:Property Name="Type" Value="INT0008.Ladok3.Events.Schemas.InternalReturnMessage" />
+                <om:Property Name="Type" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReturnMessage" />
@@ -325,7 +325,7 @@ module INT0008.Ladok3.Events
         port uses SendToQueueType SendToQueue;
         correlation ReceivePortNameCorrelationType ReceivePortNameCorrelation;
         message System.Xml.XmlDocument Ladok3Event;
-        message Schemas.InternalReturnMessage ReturnMessage;
+        message Shared.Schemas.SdEvents.InternalReturnMessage ReturnMessage;
         message System.Xml.XmlDocument EventEnvelope;
         System.Boolean loop;
         System.Boolean success;
