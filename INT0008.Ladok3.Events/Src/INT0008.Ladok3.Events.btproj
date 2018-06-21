@@ -85,6 +85,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk.pfx" />
+    <Schema Include="Schemas\InternalReturnMessage.xsd">
+      <TypeName>InternalReturnMessage</TypeName>
+      <Namespace>INT0008.Ladok3.Events.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
     <Schema Include="Schemas\PropertySchema.xsd">
       <TypeName>PropertySchema</TypeName>
       <Namespace>INT0008.Ladok3.Events.Schemas</Namespace>
@@ -200,36 +205,16 @@
       <TypeName>AterbudEnvelope</TypeName>
       <Namespace>INT0008.Ladok3.Events.Schemas.Ladok.Envelopes</Namespace>
     </Schema>
-    <Schema Include="Schemas\InternalReturnMessage.xsd">
-      <TypeName>InternalReturnMessage</TypeName>
-      <Namespace>INT0008.Ladok3.Events.Schemas</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Maps\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Files\INT0008.Ladok3.Events.BindingInfo_Dev.xml" />
-    <Content Include="Maps\Ladok3Event_to_ReturnMessage.xml" />
-    <Content Include="Maps\Ladok3Event_to_ReturnMessage.xsl" />
     <XLang Include="Processing\SendToRoutingOrchestration.odx">
       <TypeName>SendToRoutingOrchestration</TypeName>
       <Namespace>INT0008.Ladok3.Events.Processing</Namespace>
       <SubType>Task</SubType>
-    </XLang>
-    <Map Include="Maps\Ladok3Event_to_ReturnMessage.btm">
-      <SubType>Task</SubType>
-      <TypeName>Ladok3Event_to_ReturnMessage</TypeName>
-      <Namespace>INT0008.Ladok3.Events.Maps</Namespace>
-    </Map>
-    <XLang Include="Processing\HandleOtherEvents.odx">
-      <SubType>Task</SubType>
-      <TypeName>HandleOtherEvents</TypeName>
-      <Namespace>INT0008.Ladok3.Events.Processing</Namespace>
-    </XLang>
-    <XLang Include="Processing\HandleKurstillfalleTillStatusEvent.odx">
-      <SubType>Task</SubType>
-      <TypeName>HandleKurstillfalleTillStatusEvent</TypeName>
-      <Namespace>INT0008.Ladok3.Events.Processing</Namespace>
     </XLang>
     <XLang Include="Processing\ProcessLadok3Events.odx">
       <TypeName>ProcessLadok3Events</TypeName>
