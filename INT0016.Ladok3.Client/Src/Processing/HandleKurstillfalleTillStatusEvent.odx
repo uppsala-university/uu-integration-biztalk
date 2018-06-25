@@ -127,10 +127,10 @@
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
                             <om:Element Type="MessageAssignment" OID="c806f054-2327-4245-9cd1-66fb55dbead6" ParentLink="ComplexStatement_Statement" LowerBound="47.1" HigherBound="51.1">
-                                <om:Property Name="Expression" Value="ackMessage = System.String.Format(&quot;HandleKurstillfalleTillStatusEvent. Exception message:\r\n{0}&quot;, ex.Message);&#xD;&#xA;TempXML.LoadXml(&quot;&lt;ns0:InternalReturnMessage xmlns:ns0=\&quot;http://Shared.Schemas.InternalReturnMessage\&quot;&gt;&lt;Ack&gt;false&lt;/Ack&gt;&lt;AckMessage&gt;&quot; + ackMessage + &quot;&lt;/AckMessage&gt;&lt;ReturnMessage /&gt;&lt;/ns0:InternalReturnMessage&gt;&quot;);&#xD;&#xA;ReturnMessage = TempXML;" />
+                                <om:Property Name="Expression" Value="ackMessage = System.String.Format(&quot;HandleKurstillfalleTillStatusEvent. Exception message:\r\n{0}&quot;, ex.Message);&#xD;&#xA;TempXML.LoadXml(&quot;&lt;ns0:InternalReturnMessage xmlns:ns0=\&quot;http://Shared.Schemas.SdEvents.InternalReturnMessage\&quot;&gt;&lt;Ack&gt;false&lt;/Ack&gt;&lt;AckMessage&gt;&quot; + ackMessage + &quot;&lt;/AckMessage&gt;&lt;ReturnMessage /&gt;&lt;/ns0:InternalReturnMessage&gt;&quot;);&#xD;&#xA;ReturnMessage = TempXML;" />
                                 <om:Property Name="ReportToAnalyst" Value="False" />
                                 <om:Property Name="Name" Value="MessageAssignment_1" />
-                                <om:Property Name="Signal" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
                             </om:Element>
                         </om:Element>
                     </om:Element>
@@ -239,7 +239,7 @@ module INT0016.Ladok3.Client
                         {
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("c806f054-2327-4245-9cd1-66fb55dbead6")]
                             ackMessage = System.String.Format("HandleKurstillfalleTillStatusEvent. Exception message:\r\n{0}", ex.Message);
-                            TempXML.LoadXml("<ns0:InternalReturnMessage xmlns:ns0=\"http://Shared.Schemas.InternalReturnMessage\"><Ack>false</Ack><AckMessage>" + ackMessage + "</AckMessage><ReturnMessage /></ns0:InternalReturnMessage>");
+                            TempXML.LoadXml("<ns0:InternalReturnMessage xmlns:ns0=\"http://Shared.Schemas.SdEvents.InternalReturnMessage\"><Ack>false</Ack><AckMessage>" + ackMessage + "</AckMessage><ReturnMessage /></ns0:InternalReturnMessage>");
                             ReturnMessage = TempXML;
                         }
                     }
