@@ -39,9 +39,6 @@
     <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Shared.Schemas.Common">
-      <HintPath>..\Common\bin\Debug\Shared.Schemas.Common.dll</HintPath>
-    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -76,6 +73,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Schema Include="PropertySchema.xsd">
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>Shared.Schemas.GroupEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
     <Schema Include="InternalIdentity.xsd">
       <TypeName>InternalIdentity</TypeName>
       <Namespace>Shared.Schemas.GroupEvents</Namespace>

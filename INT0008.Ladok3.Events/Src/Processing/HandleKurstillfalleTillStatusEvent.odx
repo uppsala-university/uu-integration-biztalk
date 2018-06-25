@@ -45,9 +45,16 @@
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Receive_1" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="DNFPredicate" OID="b01249ca-384f-4010-abbd-3a418e48e3cf" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="7a2945f0-7330-479c-8376-24501c9278f7" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
                         <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="46523b3f-143b-486d-ba73-482754ac00dc" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.Operation" />
+                        <om:Property Name="RHS" Value="&quot;RouteEventsOperation&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
@@ -158,7 +165,7 @@ module INT0008.Ladok3.Events
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("895a176a-3d5d-43b4-9aa4-de8ad3d7cab6")]
-            activate ((BTS.MessageType == "http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent"))receive (ReceiveKurstillfalleToStatusEvent.Operation_1, Ladok3Event);
+            activate ((BTS.MessageType == "http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent") && (BTS.Operation == "RouteEventsOperation"))receive (ReceiveKurstillfalleToStatusEvent.Operation_1, Ladok3Event);
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("e1d65e80-4439-4db7-8737-beb6935f2506")]
             construct ReturnMessage
             {

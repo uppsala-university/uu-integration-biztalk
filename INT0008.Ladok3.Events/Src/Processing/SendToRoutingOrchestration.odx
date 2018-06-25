@@ -15,19 +15,19 @@
             <om:Element Type="OperationDeclaration" OID="11de42c4-a219-436d-a2bb-f95d36bcb0af" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
                 <om:Property Name="OperationType" Value="RequestResponse" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="Operation_1" />
-                <om:Property Name="Signal" Value="False" />
+                <om:Property Name="Name" Value="RouteEventsOperation" />
+                <om:Property Name="Signal" Value="True" />
                 <om:Element Type="MessageRef" OID="cdf59907-b54c-41c4-a278-956ba4235c88" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
                     <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
-                <om:Element Type="MessageRef" OID="c160df4a-94e8-4c87-9705-b59c983af3dc" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.37" HigherBound="8.66">
-                    <om:Property Name="Ref" Value="INT0008.Ladok3.Events.Schemas.InternalReturnMessage" />
+                <om:Element Type="MessageRef" OID="c160df4a-94e8-4c87-9705-b59c983af3dc" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.37" HigherBound="8.82">
+                    <om:Property Name="Ref" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Response" />
-                    <om:Property Name="Signal" Value="False" />
+                    <om:Property Name="Signal" Value="True" />
                 </om:Element>
             </om:Element>
         </om:Element>
@@ -64,7 +64,7 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="MessageTypeCorrelation" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="StatementRef" OID="3174e7ac-a41c-4f6c-83ab-c34cc5aad599" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="43.60" HigherBound="43.93">
+                <om:Element Type="StatementRef" OID="3174e7ac-a41c-4f6c-83ab-c34cc5aad599" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="43.84" HigherBound="43.117">
                     <om:Property Name="Initializes" Value="True" />
                     <om:Property Name="Ref" Value="0e84db4d-965b-4efd-a1d3-4c3729dfcdcc" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -73,7 +73,7 @@
                 </om:Element>
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="c20b11a2-99b3-4abb-9b25-d00c15a0df21" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="21.1" HigherBound="22.1">
-                <om:Property Name="Type" Value="INT0008.Ladok3.Events.Schemas.InternalReturnMessage" />
+                <om:Property Name="Type" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
                 <om:Property Name="ParamDirection" Value="Out" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReturnMessage" />
@@ -142,9 +142,9 @@
                         </om:Element>
                     </om:Element>
                     <om:Element Type="Send" OID="0e84db4d-965b-4efd-a1d3-4c3729dfcdcc" ParentLink="ComplexStatement_Statement" LowerBound="42.1" HigherBound="44.1">
-                        <om:Property Name="PortName" Value="Port_1" />
+                        <om:Property Name="PortName" Value="Send_EventsForRouting" />
                         <om:Property Name="MessageName" Value="Ladok3Event" />
-                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationName" Value="RouteEventsOperation" />
                         <om:Property Name="OperationMessageName" Value="Request" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Send_1" />
@@ -152,16 +152,16 @@
                     </om:Element>
                     <om:Element Type="Receive" OID="d64f6b50-b248-4d3d-8f5d-eeb6a29db5ce" ParentLink="ComplexStatement_Statement" LowerBound="44.1" HigherBound="46.1">
                         <om:Property Name="Activate" Value="False" />
-                        <om:Property Name="PortName" Value="Port_1" />
+                        <om:Property Name="PortName" Value="Send_EventsForRouting" />
                         <om:Property Name="MessageName" Value="ReturnMessage" />
-                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationName" Value="RouteEventsOperation" />
                         <om:Property Name="OperationMessageName" Value="Response" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Receive_1" />
                         <om:Property Name="Signal" Value="True" />
                     </om:Element>
                     <om:Element Type="VariableAssignment" OID="4cd48d86-fcc6-4d98-968d-afc598c8699d" ParentLink="ComplexStatement_Statement" LowerBound="46.1" HigherBound="49.1">
-                        <om:Property Name="Expression" Value="success = ReturnMessage.Ack;&#xD;&#xA;outMessage = ReturnMessage.AckMessage;&#xD;&#xA;" />
+                        <om:Property Name="Expression" Value="success = ReturnMessage.Ack;&#xD;&#xA;outMessage = ReturnMessage.AckMessage;" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Asign out variables" />
                         <om:Property Name="Signal" Value="True" />
@@ -224,8 +224,8 @@
                 <om:Property Name="Type" Value="INT0008.Ladok3.Events.SendEventsForRoutingType" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="Port_1" />
-                <om:Property Name="Signal" Value="False" />
+                <om:Property Name="Name" Value="Send_EventsForRouting" />
+                <om:Property Name="Signal" Value="True" />
                 <om:Element Type="DirectBindingAttribute" OID="55c4f00c-7e0f-487a-919b-abce838c74bd" ParentLink="PortDeclaration_CLRAttribute" LowerBound="18.1" HigherBound="19.1">
                     <om:Property Name="DirectBindingType" Value="MessageBox" />
                     <om:Property Name="Signal" Value="False" />
@@ -240,9 +240,9 @@ module INT0008.Ladok3.Events
 {
     internal porttype SendEventsForRoutingType
     {
-        requestresponse Operation_1
+        requestresponse RouteEventsOperation
         {
-            System.Xml.XmlDocument, Schemas.InternalReturnMessage
+            System.Xml.XmlDocument, Shared.Schemas.SdEvents.InternalReturnMessage
         };
     };
     internal correlationtype MessageTypeCorrelationType
@@ -253,9 +253,9 @@ module INT0008.Ladok3.Events
     internal service SendToRoutingOrchestration
     {
         [Microsoft.XLANGs.BaseTypes.DirectBinding()]
-        port uses SendEventsForRoutingType Port_1;
+        port uses SendEventsForRoutingType Send_EventsForRouting;
         correlation MessageTypeCorrelationType MessageTypeCorrelation;
-        message Schemas.InternalReturnMessage ReturnMessage;
+        message Shared.Schemas.SdEvents.InternalReturnMessage ReturnMessage;
         message System.Xml.XmlDocument Ladok3EventToType;
         System.Xml.XmlDocument xmlDoc;
         body (message System.Xml.XmlDocument Ladok3Event, out message System.Xml.XmlDocument Ladok3Envelope, out System.Boolean success, out System.String outMessage)
@@ -277,9 +277,9 @@ module INT0008.Ladok3.Events
                             DetermineMessageType(Ladok3EventToType); 
                     }
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("0e84db4d-965b-4efd-a1d3-4c3729dfcdcc")]
-                    send (Port_1.Operation_1, Ladok3Event, initialize MessageTypeCorrelation);
+                    send (Send_EventsForRouting.RouteEventsOperation, Ladok3Event, initialize MessageTypeCorrelation);
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("d64f6b50-b248-4d3d-8f5d-eeb6a29db5ce")]
-                    receive (Port_1.Operation_1, ReturnMessage);
+                    receive (Send_EventsForRouting.RouteEventsOperation, ReturnMessage);
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("4cd48d86-fcc6-4d98-968d-afc598c8699d")]
                     success = ReturnMessage.Ack;
                     outMessage = ReturnMessage.AckMessage;
