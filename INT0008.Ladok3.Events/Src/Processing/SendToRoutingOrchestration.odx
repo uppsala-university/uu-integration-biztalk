@@ -59,8 +59,8 @@
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="VariableDeclaration" OID="d0ebb8d0-6634-4c73-972a-c72c1074bbbd" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="24.1" HigherBound="25.1">
-                <om:Property Name="UseDefaultConstructor" Value="True" />
-                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="cdata" />
@@ -189,7 +189,7 @@
                                 <om:Property Name="Name" Value="Construct ReturnEnvelope" />
                                 <om:Property Name="Signal" Value="True" />
                                 <om:Element Type="MessageAssignment" OID="8af22202-929a-47a9-8bc5-effe006d206c" ParentLink="ComplexStatement_Statement" LowerBound="57.1" HigherBound="62.1">
-                                    <om:Property Name="Expression" Value="xmlDoc = new System.Xml.XmlDocument();&#xD;&#xA;cdata = xpath(ReturnMessage, &quot;/*[local-name()='InternalReturnMessage']/*[local-name()='ReturnMessage']/text()&quot;);&#xD;&#xA;xmlDoc.LoadXml(cdata.InnerText);&#xD;&#xA;Ladok3Envelope = xmlDoc; " />
+                                    <om:Property Name="Expression" Value="xmlDoc = new System.Xml.XmlDocument();&#xD;&#xA;cdata = xpath(ReturnMessage, &quot;string(/*[local-name()='InternalReturnMessage']/*[local-name()='ReturnMessage']/text())&quot;);&#xD;&#xA;xmlDoc.LoadXml(cdata);&#xD;&#xA;Ladok3Envelope = xmlDoc;" />
                                     <om:Property Name="ReportToAnalyst" Value="False" />
                                     <om:Property Name="Name" Value="MessageAssignment_1" />
                                     <om:Property Name="Signal" Value="True" />
@@ -300,11 +300,11 @@ module INT0008.Ladok3.Events
         message Shared.Schemas.SdEvents.InternalReturnMessage ReturnMessage;
         message System.Xml.XmlDocument Ladok3EventToType;
         System.Xml.XmlDocument xmlDoc;
-        System.Xml.XmlDocument cdata;
+        System.String cdata;
         body (message System.Xml.XmlDocument Ladok3Event, out message System.Xml.XmlDocument Ladok3Envelope, out System.Boolean success, out System.String outMessage)
         {
             xmlDoc = new System.Xml.XmlDocument();
-            cdata = new System.Xml.XmlDocument();
+            cdata = "";
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("81501b26-3b56-4980-ac64-3928f0d3a2cb")]
             scope
             {
@@ -335,9 +335,9 @@ module INT0008.Ladok3.Events
                         {
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("8af22202-929a-47a9-8bc5-effe006d206c")]
                             xmlDoc = new System.Xml.XmlDocument();
-                            cdata = xpath(ReturnMessage, "/*[local-name()='InternalReturnMessage']/*[local-name()='ReturnMessage']/text()");
-                            xmlDoc.LoadXml(cdata.InnerText);
-                            Ladok3Envelope = xmlDoc; 
+                            cdata = xpath(ReturnMessage, "string(/*[local-name()='InternalReturnMessage']/*[local-name()='ReturnMessage']/text())");
+                            xmlDoc.LoadXml(cdata);
+                            Ladok3Envelope = xmlDoc;
                         }
                     }
                     else 
