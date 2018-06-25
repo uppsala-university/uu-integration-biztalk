@@ -2,11 +2,11 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="fc81a5d3-f45c-4b43-9e93-5050f966fbac" LowerBound="1.1" HigherBound="60.1">
+    <om:Element Type="Module" OID="fc81a5d3-f45c-4b43-9e93-5050f966fbac" LowerBound="1.1" HigherBound="66.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="INT0016.Ladok3.Client" />
         <om:Property Name="Signal" Value="False" />
-        <om:Element Type="ServiceDeclaration" OID="2fc2074f-38de-460b-8bf5-4e904f0c194f" ParentLink="Module_ServiceDeclaration" LowerBound="11.1" HigherBound="59.1">
+        <om:Element Type="ServiceDeclaration" OID="2fc2074f-38de-460b-8bf5-4e904f0c194f" ParentLink="Module_ServiceDeclaration" LowerBound="11.1" HigherBound="65.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
@@ -76,66 +76,94 @@
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
                 </om:Element>
-                <om:Element Type="Scope" OID="65a610e6-4080-4390-b5b7-b25bb814d6e8" ParentLink="ServiceBody_Statement" LowerBound="27.1" HigherBound="55.1">
+                <om:Element Type="Scope" OID="65a610e6-4080-4390-b5b7-b25bb814d6e8" ParentLink="ServiceBody_Statement" LowerBound="27.1" HigherBound="61.1">
                     <om:Property Name="InitializedTransactionType" Value="True" />
                     <om:Property Name="IsSynchronized" Value="False" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="PopulateEnvelopeScope" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="Construct" OID="e1d65e80-4439-4db7-8737-beb6935f2506" ParentLink="ComplexStatement_Statement" LowerBound="32.1" HigherBound="38.1">
+                    <om:Element Type="Construct" OID="db303335-dd8d-4811-aff2-5317b2879f59" ParentLink="ComplexStatement_Statement" LowerBound="32.1" HigherBound="38.1">
                         <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="ConstructMessage_1" />
+                        <om:Property Name="Name" Value="ConstructEnvelope" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="Transform" OID="4ca3785d-ed77-4f4e-a632-ab210943af09" ParentLink="ComplexStatement_Statement" LowerBound="35.1" HigherBound="37.1">
+                        <om:Element Type="Transform" OID="b57bbc7c-61a8-43af-80e1-cb85314dae65" ParentLink="ComplexStatement_Statement" LowerBound="35.1" HigherBound="37.1">
+                            <om:Property Name="ClassName" Value="INT0016.Ladok3.Client.Maps.KurstillfalleTillStatusEvent_to_KurstillfalleToStatusEnvelope" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform_to_Envelope" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="MessagePartRef" OID="4c97c0e1-57e9-4e0a-9fcd-cb9bfe4bcf4d" ParentLink="Transform_InputMessagePartRef" LowerBound="36.143" HigherBound="36.154">
+                                <om:Property Name="MessageRef" Value="Ladok3Event" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_3" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="7b4698f1-4aae-4236-aaca-47c6fadfb755" ParentLink="Transform_OutputMessagePartRef" LowerBound="36.36" HigherBound="36.49">
+                                <om:Property Name="MessageRef" Value="EventEnvelope" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_4" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="d01e9c28-113c-4744-a5b4-64a82cc49136" ParentLink="Construct_MessageRef" LowerBound="33.31" HigherBound="33.44">
+                            <om:Property Name="Ref" Value="EventEnvelope" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Construct" OID="e1d65e80-4439-4db7-8737-beb6935f2506" ParentLink="ComplexStatement_Statement" LowerBound="38.1" HigherBound="44.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructReturnMessage" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Transform" OID="4ca3785d-ed77-4f4e-a632-ab210943af09" ParentLink="ComplexStatement_Statement" LowerBound="41.1" HigherBound="43.1">
                             <om:Property Name="ClassName" Value="INT0016.Ladok3.Client.Maps.Ladok3Event_to_ReturnMessage" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="Transform_1" />
+                            <om:Property Name="Name" Value="Transform_to_ReturnMessage" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="MessagePartRef" OID="bb17c7a7-68fc-43a4-8230-b0a9cb2d8bec" ParentLink="Transform_InputMessagePartRef" LowerBound="36.110" HigherBound="36.121">
-                                <om:Property Name="MessageRef" Value="Ladok3Event" />
+                            <om:Element Type="MessagePartRef" OID="7186041f-c709-41c4-8d31-00b2d091b95d" ParentLink="Transform_InputMessagePartRef" LowerBound="42.110" HigherBound="42.123">
+                                <om:Property Name="MessageRef" Value="EventEnvelope" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_1" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
-                            <om:Element Type="MessagePartRef" OID="d8a8bfd6-0f2f-43eb-9bc4-1bc8af3513fa" ParentLink="Transform_OutputMessagePartRef" LowerBound="36.36" HigherBound="36.49">
+                            <om:Element Type="MessagePartRef" OID="07aa2b5d-6dbc-44ea-a4ac-b624eda05b07" ParentLink="Transform_OutputMessagePartRef" LowerBound="42.36" HigherBound="42.49">
                                 <om:Property Name="MessageRef" Value="ReturnMessage" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_2" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
                         </om:Element>
-                        <om:Element Type="MessageRef" OID="5b56c5da-3971-4201-9602-6e94553a3bc3" ParentLink="Construct_MessageRef" LowerBound="33.31" HigherBound="33.44">
+                        <om:Element Type="MessageRef" OID="5b56c5da-3971-4201-9602-6e94553a3bc3" ParentLink="Construct_MessageRef" LowerBound="39.31" HigherBound="39.44">
                             <om:Property Name="Ref" Value="ReturnMessage" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
                     </om:Element>
-                    <om:Element Type="Catch" OID="ca1f0c8b-ec57-4f17-8f41-3a7ea8f2256c" ParentLink="Scope_Catch" LowerBound="41.1" HigherBound="53.1">
+                    <om:Element Type="Catch" OID="ca1f0c8b-ec57-4f17-8f41-3a7ea8f2256c" ParentLink="Scope_Catch" LowerBound="47.1" HigherBound="59.1">
                         <om:Property Name="ExceptionName" Value="ex" />
                         <om:Property Name="ExceptionType" Value="System.Exception" />
                         <om:Property Name="IsFaultMessage" Value="False" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="CatchException" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="Construct" OID="06d3d138-807c-4b09-9e97-602e008f84fb" ParentLink="Catch_Statement" LowerBound="44.1" HigherBound="52.1">
+                        <om:Element Type="Construct" OID="06d3d138-807c-4b09-9e97-602e008f84fb" ParentLink="Catch_Statement" LowerBound="50.1" HigherBound="58.1">
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="ConstructErrorMessage" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="MessageRef" OID="b42406e7-9b3b-4868-93e1-e0a6cb3d687b" ParentLink="Construct_MessageRef" LowerBound="45.35" HigherBound="45.48">
+                            <om:Element Type="MessageRef" OID="b42406e7-9b3b-4868-93e1-e0a6cb3d687b" ParentLink="Construct_MessageRef" LowerBound="51.35" HigherBound="51.48">
                                 <om:Property Name="Ref" Value="ReturnMessage" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
-                            <om:Element Type="MessageAssignment" OID="c806f054-2327-4245-9cd1-66fb55dbead6" ParentLink="ComplexStatement_Statement" LowerBound="47.1" HigherBound="51.1">
-                                <om:Property Name="Expression" Value="ackMessage = System.String.Format(&quot;HandleKurstillfalleTillStatusEvent. Exception message:\r\n{0}&quot;, ex.Message);&#xD;&#xA;TempXML.LoadXml(&quot;&lt;ns0:InternalReturnMessage xmlns:ns0=\&quot;http://Shared.Schemas.SdEvents.InternalReturnMessage\&quot;&gt;&lt;Ack&gt;false&lt;/Ack&gt;&lt;AckMessage&gt;&quot; + ackMessage + &quot;&lt;/AckMessage&gt;&lt;ReturnMessage /&gt;&lt;/ns0:InternalReturnMessage&gt;&quot;);&#xD;&#xA;ReturnMessage = TempXML;" />
+                            <om:Element Type="MessageAssignment" OID="c806f054-2327-4245-9cd1-66fb55dbead6" ParentLink="ComplexStatement_Statement" LowerBound="53.1" HigherBound="57.1">
+                                <om:Property Name="Expression" Value="ackMessage = System.String.Format(&quot;HandleKurstillfalleTillStatusEvent. Exception message:\r\n{0}&quot;, ex.Message);&#xD;&#xA;TempXML.LoadXml(&quot;&lt;ns0:InternalReturnMessage xmlns:ns0=\&quot;http://Shared.Schemas.SdEvents.InternalReturnMessage\&quot;&gt;&lt;Ack&gt;false&lt;/Ack&gt;&lt;AckMessage&gt;&quot; + ackMessage + &quot;&lt;/AckMessage&gt;&lt;ReturnMessage&gt;&lt;![CDATA[]]&gt;&lt;/ReturnMessage&gt;&lt;/ns0:InternalReturnMessage&gt;&quot;);&#xD;&#xA;ReturnMessage = TempXML;" />
                                 <om:Property Name="ReportToAnalyst" Value="False" />
                                 <om:Property Name="Name" Value="MessageAssignment_1" />
-                                <om:Property Name="Signal" Value="False" />
+                                <om:Property Name="Signal" Value="True" />
                             </om:Element>
                         </om:Element>
                     </om:Element>
                 </om:Element>
-                <om:Element Type="Send" OID="9b423249-1d41-4a6a-85a8-0be64c3c6819" ParentLink="ServiceBody_Statement" LowerBound="55.1" HigherBound="57.1">
+                <om:Element Type="Send" OID="9b423249-1d41-4a6a-85a8-0be64c3c6819" ParentLink="ServiceBody_Statement" LowerBound="61.1" HigherBound="63.1">
                     <om:Property Name="PortName" Value="ReceiveKurstillfalleTillStatusEvent" />
                     <om:Property Name="MessageName" Value="ReturnMessage" />
                     <om:Property Name="OperationName" Value="Operation_1" />
@@ -222,11 +250,17 @@ module INT0016.Ladok3.Client
             {
                 body
                 {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("db303335-dd8d-4811-aff2-5317b2879f59")]
+                    construct EventEnvelope
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("b57bbc7c-61a8-43af-80e1-cb85314dae65")]
+                        transform (EventEnvelope) = INT0016.Ladok3.Client.Maps.KurstillfalleTillStatusEvent_to_KurstillfalleToStatusEnvelope (Ladok3Event);
+                    }
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("e1d65e80-4439-4db7-8737-beb6935f2506")]
                     construct ReturnMessage
                     {
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("4ca3785d-ed77-4f4e-a632-ab210943af09")]
-                        transform (ReturnMessage) = INT0016.Ladok3.Client.Maps.Ladok3Event_to_ReturnMessage (Ladok3Event);
+                        transform (ReturnMessage) = INT0016.Ladok3.Client.Maps.Ladok3Event_to_ReturnMessage (EventEnvelope);
                     }
                 }
                 exceptions
@@ -239,7 +273,7 @@ module INT0016.Ladok3.Client
                         {
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("c806f054-2327-4245-9cd1-66fb55dbead6")]
                             ackMessage = System.String.Format("HandleKurstillfalleTillStatusEvent. Exception message:\r\n{0}", ex.Message);
-                            TempXML.LoadXml("<ns0:InternalReturnMessage xmlns:ns0=\"http://Shared.Schemas.SdEvents.InternalReturnMessage\"><Ack>false</Ack><AckMessage>" + ackMessage + "</AckMessage><ReturnMessage /></ns0:InternalReturnMessage>");
+                            TempXML.LoadXml("<ns0:InternalReturnMessage xmlns:ns0=\"http://Shared.Schemas.SdEvents.InternalReturnMessage\"><Ack>false</Ack><AckMessage>" + ackMessage + "</AckMessage><ReturnMessage><![CDATA[]]></ReturnMessage></ns0:InternalReturnMessage>");
                             ReturnMessage = TempXML;
                         }
                     }
