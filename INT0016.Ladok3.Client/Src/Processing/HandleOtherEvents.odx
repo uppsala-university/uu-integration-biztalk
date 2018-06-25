@@ -88,10 +88,10 @@
                 </om:Element>
                 <om:Element Type="Construct" OID="c82030f5-750f-473a-820e-e368b411cf44" ParentLink="ServiceBody_Statement" LowerBound="24.1" HigherBound="31.1">
                     <om:Property Name="ReportToAnalyst" Value="True" />
-                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Name" Value="ConstructReturnMessage" />
                     <om:Property Name="Signal" Value="True" />
                     <om:Element Type="MessageAssignment" OID="8712faad-8faa-4816-bbed-00d7d8650496" ParentLink="ComplexStatement_Statement" LowerBound="27.1" HigherBound="30.1">
-                        <om:Property Name="Expression" Value="TempXML.LoadXml(&quot;&lt;ns0:InternalReturnMessage xmlns:ns0=\&quot;http://Shared.Schemas.SdEvents.InternalReturnMessage\&quot;&gt;&lt;Ack&gt;true&lt;/Ack&gt;&lt;AckMessage&gt;Ok&lt;/AckMessage&gt;&lt;ReturnMessage /&gt;&lt;/ns0:InternalReturnMessage&gt;&quot;);&#xD;&#xA;ReturnMessage = TempXML;" />
+                        <om:Property Name="Expression" Value="TempXML.LoadXml(&quot;&lt;ns0:InternalReturnMessage xmlns:ns0=\&quot;http://Shared.Schemas.SdEvents.InternalReturnMessage\&quot;&gt;&lt;Ack&gt;true&lt;/Ack&gt;&lt;AckMessage&gt;Ok&lt;/AckMessage&gt;&lt;ReturnMessage&gt;&lt;![CDATA[&quot; + Ladok3Event.OuterXml + &quot;]]&gt;&lt;/ReturnMessage&gt;&lt;/ns0:InternalReturnMessage&gt;&quot;);&#xD;&#xA;ReturnMessage = TempXML;" />
                         <om:Property Name="ReportToAnalyst" Value="False" />
                         <om:Property Name="Name" Value="MessageAssignment_1" />
                         <om:Property Name="Signal" Value="False" />
@@ -160,7 +160,7 @@ module INT0016.Ladok3.Client
             construct ReturnMessage
             {
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("8712faad-8faa-4816-bbed-00d7d8650496")]
-                TempXML.LoadXml("<ns0:InternalReturnMessage xmlns:ns0=\"http://Shared.Schemas.SdEvents.InternalReturnMessage\"><Ack>true</Ack><AckMessage>Ok</AckMessage><ReturnMessage /></ns0:InternalReturnMessage>");
+                TempXML.LoadXml("<ns0:InternalReturnMessage xmlns:ns0=\"http://Shared.Schemas.SdEvents.InternalReturnMessage\"><Ack>true</Ack><AckMessage>Ok</AckMessage><ReturnMessage><![CDATA[" + Ladok3Event.OuterXml + "]]></ReturnMessage></ns0:InternalReturnMessage>");
                 ReturnMessage = TempXML;
             }
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("9b423249-1d41-4a6a-85a8-0be64c3c6819")]
