@@ -17,11 +17,11 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="PersonEvent" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="25f612b9-513c-4552-88cf-bb5a3455c0cc" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.53">
-                    <om:Property Name="Ref" Value="INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPersonEvent" />
+                <om:Element Type="MessageRef" OID="25f612b9-513c-4552-88cf-bb5a3455c0cc" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.68">
+                    <om:Property Name="Ref" Value="Shared.Schemas.GroupAndPersonEvents.InternalPersonEvent" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
-                    <om:Property Name="Signal" Value="False" />
+                    <om:Property Name="Signal" Value="True" />
                 </om:Element>
             </om:Element>
         </om:Element>
@@ -36,19 +36,19 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="AKKA" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="47bc4da9-8441-45c9-8765-5947c36f7ec0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.53">
-                    <om:Property Name="Ref" Value="INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPersonEvent" />
+                <om:Element Type="MessageRef" OID="47bc4da9-8441-45c9-8765-5947c36f7ec0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.68">
+                    <om:Property Name="Ref" Value="Shared.Schemas.GroupAndPersonEvents.InternalPersonEvent" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
-                    <om:Property Name="Signal" Value="False" />
+                    <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="MessageRef" OID="92c30540-d2ec-4cfb-813d-df135e93b65e" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="15.55" HigherBound="15.77">
+                <om:Element Type="MessageRef" OID="92c30540-d2ec-4cfb-813d-df135e93b65e" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="15.70" HigherBound="15.92">
                     <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Response" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="MessageRef" OID="736efa6d-2c59-427c-8c09-051cb2c8fa00" ParentLink="OperationDeclaration_FaultMessageRef" LowerBound="15.79" HigherBound="15.119">
+                <om:Element Type="MessageRef" OID="736efa6d-2c59-427c-8c09-051cb2c8fa00" ParentLink="OperationDeclaration_FaultMessageRef" LowerBound="15.94" HigherBound="15.134">
                     <om:Property Name="Ref" Value="BTS.soap_envelope_1__1.Fault" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="AKKAFault" />
@@ -116,7 +116,7 @@
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="911f1437-76cf-4fd5-9c40-45c24cbde84b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
-                <om:Property Name="Type" Value="INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPersonEvent" />
+                <om:Property Name="Type" Value="Shared.Schemas.GroupAndPersonEvents.InternalPersonEvent" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Person" />
@@ -172,10 +172,10 @@
                             <om:Property Name="Signal" Value="True" />
                         </om:Element>
                         <om:Element Type="VariableAssignment" OID="a91b7ff1-6d7f-449d-8407-00c6dee895e4" ParentLink="ComplexStatement_Statement" LowerBound="60.1" HigherBound="64.1">
-                            <om:Property Name="Expression" Value="eventType = Person(INT0004.AKKA.Identity.Schemas.PersonEvents.EventType);&#xD;&#xA;returncode = xpath(AKKAResponse,&quot;string(/*[1]/*[local-name()='return']/*[local-name()='returncode'])&quot;);&#xD;&#xA;returntext = xpath(AKKAResponse,&quot;string(/*[1]/*[local-name()='return']/*[local-name()='returntext'])&quot;);" />
+                            <om:Property Name="Expression" Value="eventType = Person(Shared.Schemas.GroupAndPersonEvents.EventType);&#xD;&#xA;returncode = xpath(AKKAResponse,&quot;string(/*[1]/*[local-name()='return']/*[local-name()='returncode'])&quot;);&#xD;&#xA;returntext = xpath(AKKAResponse,&quot;string(/*[1]/*[local-name()='return']/*[local-name()='returntext'])&quot;);" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="GetReturnInfo" />
-                            <om:Property Name="Signal" Value="False" />
+                            <om:Property Name="Signal" Value="True" />
                         </om:Element>
                         <om:Element Type="Decision" OID="475955bb-d3c6-4092-bbe2-6ddb8277583d" ParentLink="ComplexStatement_Statement" LowerBound="64.1" HigherBound="78.1">
                             <om:Property Name="ReportToAnalyst" Value="True" />
@@ -192,7 +192,7 @@
                                     <om:Property Name="Name" Value="ConstructAKKAResponse" />
                                     <om:Property Name="Signal" Value="True" />
                                     <om:Element Type="MessageAssignment" OID="8f1c48c3-064a-4cb7-8401-7a81f57318a8" ParentLink="ComplexStatement_Statement" LowerBound="70.1" HigherBound="74.1">
-                                        <om:Property Name="Expression" Value="AKKAPromotedResponse = AKKAResponse;&#xD;&#xA;AKKAPromotedResponse(*) = AKKAResponse(*);&#xD;&#xA;AKKAPromotedResponse(INT0004.AKKA.Identity.Schemas.PersonEvents.PersonNumber) = Person(INT0004.AKKA.Identity.Schemas.PersonEvents.PersonNumber);" />
+                                        <om:Property Name="Expression" Value="AKKAPromotedResponse = AKKAResponse;&#xD;&#xA;AKKAPromotedResponse(*) = AKKAResponse(*);&#xD;&#xA;AKKAPromotedResponse(INT0004.AKKA.Identity.Schemas.PersonNumber) = Person(Shared.Schemas.GroupAndPersonEvents.PersonNumber);" />
                                         <om:Property Name="ReportToAnalyst" Value="False" />
                                         <om:Property Name="Name" Value="MessageAKKAResponseAssignment" />
                                         <om:Property Name="Signal" Value="True" />
@@ -348,14 +348,14 @@ module INT0004.AKKA.Identity
     {
         oneway PersonEvent
         {
-            Schemas.PersonEvents.InternalPersonEvent
+            Shared.Schemas.GroupAndPersonEvents.InternalPersonEvent
         };
     };
     internal porttype SndPersonRequestPortType
     {
         requestresponse AKKA
         {
-            Schemas.PersonEvents.InternalPersonEvent, System.Xml.XmlDocument, AKKAFault = BTS.soap_envelope_1__1.Fault
+            Shared.Schemas.GroupAndPersonEvents.InternalPersonEvent, System.Xml.XmlDocument, AKKAFault = BTS.soap_envelope_1__1.Fault
         };
     };
     internal porttype SndPersonResponsePortType
@@ -376,7 +376,7 @@ module INT0004.AKKA.Identity
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses SndPersonResponsePortType SndPersonResponsePort;
         message System.Xml.XmlDocument AKKAPromotedResponse;
-        message Schemas.PersonEvents.InternalPersonEvent Person;
+        message Shared.Schemas.GroupAndPersonEvents.InternalPersonEvent Person;
         message System.Xml.XmlDocument AKKAResponse;
         System.String returncode;
         System.String returntext;
@@ -401,7 +401,7 @@ module INT0004.AKKA.Identity
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("6c659c74-ea76-46db-80fb-63fbe6b4f3a4")]
                         receive (SndPersonRequestPort.AKKA, AKKAResponse);
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("a91b7ff1-6d7f-449d-8407-00c6dee895e4")]
-                        eventType = Person(INT0004.AKKA.Identity.Schemas.PersonEvents.EventType);
+                        eventType = Person(Shared.Schemas.GroupAndPersonEvents.EventType);
                         returncode = xpath(AKKAResponse,"string(/*[1]/*[local-name()='return']/*[local-name()='returncode'])");
                         returntext = xpath(AKKAResponse,"string(/*[1]/*[local-name()='return']/*[local-name()='returntext'])");
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("475955bb-d3c6-4092-bbe2-6ddb8277583d")]
@@ -413,7 +413,7 @@ module INT0004.AKKA.Identity
                                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("8f1c48c3-064a-4cb7-8401-7a81f57318a8")]
                                 AKKAPromotedResponse = AKKAResponse;
                                 AKKAPromotedResponse(*) = AKKAResponse(*);
-                                AKKAPromotedResponse(INT0004.AKKA.Identity.Schemas.PersonEvents.PersonNumber) = Person(INT0004.AKKA.Identity.Schemas.PersonEvents.PersonNumber);
+                                AKKAPromotedResponse(INT0004.AKKA.Identity.Schemas.PersonNumber) = Person(Shared.Schemas.GroupAndPersonEvents.PersonNumber);
                             }
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("b6e6dd18-1c5c-4a4e-bb67-3753190aecee")]
                             send (SndPersonResponsePort.PersonResponse, AKKAPromotedResponse);
