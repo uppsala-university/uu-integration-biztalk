@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="21f3d4f6-8be0-4985-a532-802065521a27" LowerBound="1.1" HigherBound="139.1">
+    <om:Element Type="Module" OID="21f3d4f6-8be0-4985-a532-802065521a27" LowerBound="1.1" HigherBound="147.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="INT0003.AD.Distribution" />
         <om:Property Name="Signal" Value="False" />
@@ -119,7 +119,7 @@
                 <om:Property Name="Signal" Value="False" />
             </om:Element>
         </om:Element>
-        <om:Element Type="ServiceDeclaration" OID="d07ac1fa-4480-4a86-9d65-afb7c3f334df" ParentLink="Module_ServiceDeclaration" LowerBound="43.1" HigherBound="138.1">
+        <om:Element Type="ServiceDeclaration" OID="d07ac1fa-4480-4a86-9d65-afb7c3f334df" ParentLink="Module_ServiceDeclaration" LowerBound="43.1" HigherBound="146.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="True" />
             <om:Property Name="TypeModifier" Value="Internal" />
@@ -265,7 +265,7 @@
                     <om:Property Name="Name" Value="Init" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
-                <om:Element Type="While" OID="160ef27b-3eb3-4be7-a697-006c0769527a" ParentLink="ServiceBody_Statement" LowerBound="77.1" HigherBound="126.1">
+                <om:Element Type="While" OID="160ef27b-3eb3-4be7-a697-006c0769527a" ParentLink="ServiceBody_Statement" LowerBound="77.1" HigherBound="134.1">
                     <om:Property Name="Expression" Value="success == false &amp;&amp; retries &gt; 0" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Process loop" />
@@ -295,7 +295,7 @@
                         <om:Property Name="Name" Value="CheckQueryResult" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="Decision" OID="0f839c7f-55fe-45b2-9e5e-5a123472a60d" ParentLink="ComplexStatement_Statement" LowerBound="86.1" HigherBound="125.1">
+                    <om:Element Type="Decision" OID="0f839c7f-55fe-45b2-9e5e-5a123472a60d" ParentLink="ComplexStatement_Statement" LowerBound="86.1" HigherBound="133.1">
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Individual exists in AD" />
                         <om:Property Name="Signal" Value="True" />
@@ -368,22 +368,35 @@
                                 <om:Property Name="Signal" Value="True" />
                             </om:Element>
                         </om:Element>
+                        <om:Element Type="DecisionBranch" OID="41d48e3a-eb76-4b52-ae30-b6d18c24a59f" ParentLink="ReallyComplexStatement_Branch" LowerBound="106.22" HigherBound="114.1">
+                            <om:Property Name="Expression" Value="resultCountIndividual == 0 &amp;&amp; GroupEvent.type == &quot;GroupMembershipRemoveRequestEvent&quot;" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="No Match and GroupMembershipRemoveRequestEvent" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="VariableAssignment" OID="935af11a-c6bb-4ccb-820c-945919acb66b" ParentLink="ComplexStatement_Statement" LowerBound="108.1" HigherBound="113.1">
+                                <om:Property Name="Expression" Value="success = true;&#xD;&#xA;cn = &quot;&quot;;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Set success" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
                         <om:Element Type="DecisionBranch" OID="0da4265b-3191-406f-b72a-81feb8e2d05b" ParentLink="ReallyComplexStatement_Branch">
                             <om:Property Name="IsGhostBranch" Value="True" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="Else" />
                             <om:Property Name="Signal" Value="False" />
-                            <om:Element Type="Decision" OID="dcaa77c0-ed00-400a-8d25-e051ea087036" ParentLink="ComplexStatement_Statement" LowerBound="108.1" HigherBound="118.1">
+                            <om:Element Type="Decision" OID="dcaa77c0-ed00-400a-8d25-e051ea087036" ParentLink="ComplexStatement_Statement" LowerBound="116.1" HigherBound="126.1">
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="CreateStudent" />
                                 <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="DecisionBranch" OID="f6331317-2314-4f3b-a073-6dddcfc68e3f" ParentLink="ReallyComplexStatement_Branch" LowerBound="109.21" HigherBound="118.1">
+                                <om:Element Type="DecisionBranch" OID="f6331317-2314-4f3b-a073-6dddcfc68e3f" ParentLink="ReallyComplexStatement_Branch" LowerBound="117.21" HigherBound="126.1">
                                     <om:Property Name="Expression" Value="sentToAKKA == false" />
                                     <om:Property Name="IsGhostBranch" Value="True" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="CheckSent" />
                                     <om:Property Name="Signal" Value="False" />
-                                    <om:Element Type="Send" OID="52764a75-6fcd-4576-83bf-2e967b6643b4" ParentLink="ComplexStatement_Statement" LowerBound="111.1" HigherBound="113.1">
+                                    <om:Element Type="Send" OID="52764a75-6fcd-4576-83bf-2e967b6643b4" ParentLink="ComplexStatement_Statement" LowerBound="119.1" HigherBound="121.1">
                                         <om:Property Name="PortName" Value="SendADNewIndividualPort" />
                                         <om:Property Name="MessageName" Value="GroupEvent" />
                                         <om:Property Name="OperationName" Value="NewIndividual" />
@@ -392,7 +405,7 @@
                                         <om:Property Name="Name" Value="SendADNewIndividual" />
                                         <om:Property Name="Signal" Value="True" />
                                     </om:Element>
-                                    <om:Element Type="VariableAssignment" OID="57dd8a89-d63f-424d-848c-329ad1aba023" ParentLink="ComplexStatement_Statement" LowerBound="113.1" HigherBound="117.1">
+                                    <om:Element Type="VariableAssignment" OID="57dd8a89-d63f-424d-848c-329ad1aba023" ParentLink="ComplexStatement_Statement" LowerBound="121.1" HigherBound="125.1">
                                         <om:Property Name="Expression" Value="sentToAKKA = true;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
                                         <om:Property Name="ReportToAnalyst" Value="True" />
                                         <om:Property Name="Name" Value="Set sent" />
@@ -406,13 +419,13 @@
                                     <om:Property Name="Signal" Value="False" />
                                 </om:Element>
                             </om:Element>
-                            <om:Element Type="Delay" OID="b2ccb2b7-0dfe-4a8a-9e86-f68ba6c53356" ParentLink="ComplexStatement_Statement" LowerBound="118.1" HigherBound="120.1">
+                            <om:Element Type="Delay" OID="b2ccb2b7-0dfe-4a8a-9e86-f68ba6c53356" ParentLink="ComplexStatement_Statement" LowerBound="126.1" HigherBound="128.1">
                                 <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,waitTimeInMinutes,0);" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="WaitForIndividualInADTimeout" />
                                 <om:Property Name="Signal" Value="True" />
                             </om:Element>
-                            <om:Element Type="VariableAssignment" OID="2f759f9e-4215-480d-a565-25fecb8d4b6f" ParentLink="ComplexStatement_Statement" LowerBound="120.1" HigherBound="124.1">
+                            <om:Element Type="VariableAssignment" OID="2f759f9e-4215-480d-a565-25fecb8d4b6f" ParentLink="ComplexStatement_Statement" LowerBound="128.1" HigherBound="132.1">
                                 <om:Property Name="Expression" Value="retries = retries -1;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="Set retries" />
@@ -421,17 +434,17 @@
                         </om:Element>
                     </om:Element>
                 </om:Element>
-                <om:Element Type="Decision" OID="d54f8395-b001-4c5f-8640-22e33aa44872" ParentLink="ServiceBody_Statement" LowerBound="126.1" HigherBound="136.1">
+                <om:Element Type="Decision" OID="d54f8395-b001-4c5f-8640-22e33aa44872" ParentLink="ServiceBody_Statement" LowerBound="134.1" HigherBound="144.1">
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="CheckError" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="DecisionBranch" OID="58401b4c-89b8-440a-bad4-33b0e5d1cbcd" ParentLink="ReallyComplexStatement_Branch" LowerBound="127.13" HigherBound="136.1">
+                    <om:Element Type="DecisionBranch" OID="58401b4c-89b8-440a-bad4-33b0e5d1cbcd" ParentLink="ReallyComplexStatement_Branch" LowerBound="135.13" HigherBound="144.1">
                         <om:Property Name="Expression" Value="success == false" />
                         <om:Property Name="IsGhostBranch" Value="True" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Error" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="VariableAssignment" OID="4e8c4873-2d7f-48ef-ada2-56c8e06799b5" ParentLink="ComplexStatement_Statement" LowerBound="129.1" HigherBound="135.1">
+                        <om:Element Type="VariableAssignment" OID="4e8c4873-2d7f-48ef-ada2-56c8e06799b5" ParentLink="ComplexStatement_Statement" LowerBound="137.1" HigherBound="143.1">
                             <om:Property Name="Expression" Value="success = false;&#xD;&#xA;errorText = System.String.Format(&quot;Person vid pnr {0} is missing in the ActiveDirectory.&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber));&#xD;&#xA;emailSubject = System.String.Format(&quot;Person vid pnr {0} is missing in the ActiveDirectory!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber));&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="Set error" />
@@ -584,6 +597,14 @@ module INT0003.AD.Distribution
                     
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("74306d35-f40d-468e-8402-9ea801670156")]
                     success = true;
+                    
+                    
+                }
+                else if (resultCountIndividual == 0 && GroupEvent.type == "GroupMembershipRemoveRequestEvent")
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("935af11a-c6bb-4ccb-820c-945919acb66b")]
+                    success = true;
+                    cn = "";
                     
                     
                 }
