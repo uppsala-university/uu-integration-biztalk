@@ -17,11 +17,11 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ActiveAccount" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="db3534e6-1d52-4f8e-9a20-3a5562f7b3d0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.51">
-                    <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
+                <om:Element Type="MessageRef" OID="db3534e6-1d52-4f8e-9a20-3a5562f7b3d0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.67">
+                    <om:Property Name="Ref" Value="Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
-                    <om:Property Name="Signal" Value="False" />
+                    <om:Property Name="Signal" Value="True" />
                 </om:Element>
             </om:Element>
         </om:Element>
@@ -36,8 +36,8 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ActiveAccount" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="c0264b60-7b8d-45d0-8735-af8424d3d9ab" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.53">
-                    <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.PersonEvents.InternalPersonEvent" />
+                <om:Element Type="MessageRef" OID="c0264b60-7b8d-45d0-8735-af8424d3d9ab" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.68">
+                    <om:Property Name="Ref" Value="Shared.Schemas.GroupAndPersonEvents.InternalPersonEvent" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Response" />
                     <om:Property Name="Signal" Value="True" />
@@ -73,7 +73,7 @@
                 </om:Element>
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="d9546e3d-7433-4641-ab39-73a3be5d1800" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
-                <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.PersonEvents.InternalPersonEvent" />
+                <om:Property Name="Type" Value="Shared.Schemas.GroupAndPersonEvents.InternalPersonEvent" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="PersonResponse" />
@@ -89,14 +89,14 @@
                     <om:Property Name="Name" Value="emailSubject" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="MessageDeclaration" OID="dfea8e98-7e80-48d0-9ad1-98f018751616" ParentLink="ServiceBody_Declaration" LowerBound="27.47" HigherBound="27.104">
-                    <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
+                <om:Element Type="MessageDeclaration" OID="dfea8e98-7e80-48d0-9ad1-98f018751616" ParentLink="ServiceBody_Declaration" LowerBound="27.47" HigherBound="27.120">
+                    <om:Property Name="Type" Value="Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent" />
                     <om:Property Name="ParamDirection" Value="In" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="GroupEvent" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="VariableDeclaration" OID="8ffb01a3-225c-41b1-a4a2-34e543407da0" ParentLink="ServiceBody_Declaration" LowerBound="27.106" HigherBound="27.126">
+                <om:Element Type="VariableDeclaration" OID="8ffb01a3-225c-41b1-a4a2-34e543407da0" ParentLink="ServiceBody_Declaration" LowerBound="27.122" HigherBound="27.142">
                     <om:Property Name="UseDefaultConstructor" Value="False" />
                     <om:Property Name="Type" Value="System.String" />
                     <om:Property Name="ParamDirection" Value="Ref" />
@@ -104,7 +104,7 @@
                     <om:Property Name="Name" Value="cn" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="VariableDeclaration" OID="8123a0e1-05d6-4294-a46c-5b8a7c403d84" ParentLink="ServiceBody_Declaration" LowerBound="27.128" HigherBound="27.154">
+                <om:Element Type="VariableDeclaration" OID="8123a0e1-05d6-4294-a46c-5b8a7c403d84" ParentLink="ServiceBody_Declaration" LowerBound="27.144" HigherBound="27.170">
                     <om:Property Name="InitialValue" Value="true" />
                     <om:Property Name="UseDefaultConstructor" Value="False" />
                     <om:Property Name="Type" Value="System.Boolean" />
@@ -113,7 +113,7 @@
                     <om:Property Name="Name" Value="success" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="VariableDeclaration" OID="59652f2a-2b20-407c-8322-a7d76e19ecd8" ParentLink="ServiceBody_Declaration" LowerBound="27.156" HigherBound="27.183">
+                <om:Element Type="VariableDeclaration" OID="59652f2a-2b20-407c-8322-a7d76e19ecd8" ParentLink="ServiceBody_Declaration" LowerBound="27.172" HigherBound="27.199">
                     <om:Property Name="InitialValue" Value="&quot;&quot;" />
                     <om:Property Name="UseDefaultConstructor" Value="False" />
                     <om:Property Name="Type" Value="System.String" />
@@ -141,7 +141,7 @@
                         <om:Property Name="Name" Value="ListenBranch_1" />
                         <om:Property Name="Signal" Value="False" />
                         <om:Element Type="VariableAssignment" OID="b7edddd1-0978-42b3-8e6f-1e40a5ae46eb" ParentLink="ComplexStatement_Statement" LowerBound="37.1" HigherBound="43.1">
-                            <om:Property Name="Expression" Value="success = false;&#xD;&#xA;errorText = System.String.Format(&quot;Could not retrieve account information for Person with pnr {0}!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber));&#xD;&#xA;emailSubject = errorText;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                            <om:Property Name="Expression" Value="success = false;&#xD;&#xA;errorText = System.String.Format(&quot;Could not retrieve account information for Person with pnr {0}!&quot;,GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber));&#xD;&#xA;emailSubject = errorText;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="Set error" />
                             <om:Property Name="Signal" Value="False" />
@@ -220,14 +220,14 @@ module INT0003.AD.Distribution
     {
         oneway ActiveAccount
         {
-            Schemas.GroupEvents.InternalGroupEvent
+            Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent
         };
     };
     internal porttype ActiveAccountResponsePortType
     {
         oneway ActiveAccount
         {
-            Schemas.PersonEvents.InternalPersonEvent
+            Shared.Schemas.GroupAndPersonEvents.InternalPersonEvent
         };
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
@@ -238,8 +238,8 @@ module INT0003.AD.Distribution
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port implements ActiveAccountResponsePortType ActiveAccountResponsePort;
         correlation IndividualID IDSet;
-        message Schemas.PersonEvents.InternalPersonEvent PersonResponse;
-        body (ref System.String emailSubject, message Schemas.GroupEvents.InternalGroupEvent GroupEvent, ref System.String cn, ref System.Boolean success, ref System.String errorText)
+        message Shared.Schemas.GroupAndPersonEvents.InternalPersonEvent PersonResponse;
+        body (ref System.String emailSubject, message Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent GroupEvent, ref System.String cn, ref System.Boolean success, ref System.String errorText)
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("3f97fdbf-3a3b-4e67-88a3-c81717beef73")]
             send (CheckActiveAccountPort.ActiveAccount, GroupEvent, initialize IDSet);
@@ -251,7 +251,7 @@ module INT0003.AD.Distribution
                 {
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("b7edddd1-0978-42b3-8e6f-1e40a5ae46eb")]
                     success = false;
-                    errorText = System.String.Format("Could not retrieve account information for Person with pnr {0}!",GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber));
+                    errorText = System.String.Format("Could not retrieve account information for Person with pnr {0}!",GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber));
                     emailSubject = errorText;
                     
                     

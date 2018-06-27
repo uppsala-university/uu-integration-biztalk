@@ -81,8 +81,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Map Include="Maps\KurstillfalleTillStatusEvent_to_KurstillfalleToStatusEnvelope.btm">
-      <TypeName>KurstillfalleTillStatusEvent_to_KurstillfalleToStatusEnvelope</TypeName>
+    <Map Include="Maps\KurstillfalleTillStatusEvent_to_UtbildningsinstansQueryParameters.btm">
+      <TypeName>KurstillfalleTillStatusEvent_to_UtbildningsinstansQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\KurstillfalleTillStatusEvent_to_Envelope.btm">
+      <TypeName>KurstillfalleTillStatusEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Files\INT0016.Ladok3.Client.BindingInfo_Dev.xml" />
+    <Content Include="Files\INT0016.Ladok3.Client.BindingInfo_Pelles.xml" />
+    <Map Include="Maps\KurstillfalleTillStatusEvent_to_OrganisationQueryParameters.btm">
+      <TypeName>KurstillfalleTillStatusEvent_to_OrganisationQueryParameters</TypeName>
       <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
       <SubType>Task</SubType>
     </Map>
@@ -106,10 +118,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk.pfx" />
+    <Schema Include="Schemas\PropertySchema.xsd">
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\QueryParameters.xsd">
+      <TypeName>QueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Files\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
 </Project>

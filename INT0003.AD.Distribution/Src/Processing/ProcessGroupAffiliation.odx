@@ -38,7 +38,7 @@
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="f3345e71-c306-4c34-88a5-bd2a1198dde0" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="7.1" HigherBound="8.1">
-                <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
+                <om:Property Name="Type" Value="Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent" />
                 <om:Property Name="ParamDirection" Value="Out" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="GroupEventUpdated" />
@@ -73,8 +73,8 @@
                     <om:Property Name="Name" Value="emailSubject" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="MessageDeclaration" OID="71ad798c-7c2c-456f-be5f-d95f01c1f343" ParentLink="ServiceBody_Declaration" LowerBound="11.104" HigherBound="11.161">
-                    <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
+                <om:Element Type="MessageDeclaration" OID="71ad798c-7c2c-456f-be5f-d95f01c1f343" ParentLink="ServiceBody_Declaration" LowerBound="11.104" HigherBound="11.177">
+                    <om:Property Name="Type" Value="Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent" />
                     <om:Property Name="ParamDirection" Value="In" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="GroupEvent" />
@@ -241,11 +241,11 @@ module INT0003.AD.Distribution
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
     internal service ProcessGroupAffiliation
     {
-        message Schemas.GroupEvents.InternalGroupEvent GroupEventUpdated;
+        message Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent GroupEventUpdated;
         System.String groupSuffix;
         System.String groupSuffixes;
         System.String cn;
-        body (ref System.Boolean success, ref System.String errorText, ref System.String emailSubject, message Schemas.GroupEvents.InternalGroupEvent GroupEvent)
+        body (ref System.Boolean success, ref System.String errorText, ref System.String emailSubject, message Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent GroupEvent)
         {
             groupSuffix = "";
             groupSuffixes = "";
