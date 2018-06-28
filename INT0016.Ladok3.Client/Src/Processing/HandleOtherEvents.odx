@@ -71,18 +71,25 @@
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Receive_1" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="DNFPredicate" OID="876cc026-4d6f-4ffc-ac5b-c5e3067034d0" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="3b17cdb0-b093-45f6-9d2f-a6ae57d8263c" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
                         <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="NotEquals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="f193478b-68b6-4804-a356-538824f5f5dc" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="0fc782ee-61bc-43b3-a7b6-cac1fe4ca407" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.Operation" />
                         <om:Property Name="RHS" Value="&quot;RouteEventsOperation&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="5d2716ef-9761-4107-8583-383273f89ee2" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/utbildningsinformation#KurstillfalleUppdateratEvent&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="NotEquals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
                 </om:Element>
@@ -154,7 +161,7 @@ module INT0016.Ladok3.Client
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("d8577408-6671-4292-8106-2b44185d17c8")]
-            activate ((BTS.MessageType != "http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent") && (BTS.Operation == "RouteEventsOperation"))receive (ReceiveOtherEvent.Operation_1, Ladok3Event);
+            activate ((BTS.MessageType != "http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent") && (BTS.Operation == "RouteEventsOperation") && (BTS.MessageType != "http://schemas.ladok.se/utbildningsinformation#KurstillfalleUppdateratEvent"))receive (ReceiveOtherEvent.Operation_1, Ladok3Event);
             TempXML = new System.Xml.XmlDocument();
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("c82030f5-750f-473a-820e-e368b411cf44")]
             construct ReturnMessage
