@@ -122,11 +122,11 @@
                     <om:Property Name="Name" Value="Account found" />
                     <om:Property Name="Signal" Value="True" />
                     <om:Element Type="DecisionBranch" OID="cfdf845c-bd1e-4f70-b057-0fb260465f49" ParentLink="ReallyComplexStatement_Branch" LowerBound="19.13" HigherBound="82.1">
-                        <om:Property Name="Expression" Value="success == true" />
+                        <om:Property Name="Expression" Value="success == true &amp;&amp; cn != &quot;&quot;" />
                         <om:Property Name="IsGhostBranch" Value="True" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Yes" />
-                        <om:Property Name="Signal" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
                         <om:Element Type="Construct" OID="1cc370c9-6740-4550-b919-71969643dad3" ParentLink="ComplexStatement_Statement" LowerBound="21.1" HigherBound="30.1">
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="Add CN to Event" />
@@ -253,7 +253,7 @@ module INT0003.AD.Distribution
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("1ae0b90e-de29-4ba6-a2f8-96bec4a89f5e")]
             call INT0003.AD.Distribution.GetAccount (ref cn, ref errorText, ref success, GroupEvent, ref emailSubject);
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("03cde3f0-50ab-4914-88ed-8b4ee102f8ab")]
-            if (success == true)
+            if (success == true && cn != "")
             {
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("1cc370c9-6740-4550-b919-71969643dad3")]
                 construct GroupEventUpdated
