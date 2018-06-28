@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="2" TotalEndpoints="2">
-  <Timestamp>2018-05-04T15:04:55.8267542+02:00</Timestamp>
+  <Timestamp>2018-06-28T08:06:34.8926391+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0004.AKKA.Identity]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0004.AKKA.Identity], Version=, Culture=, PublicKeyToken=">
       <Services />
       <TrackedSchemas>
-        <Schema FullName="INT0004.AKKA.Identity.Schemas.PersonEvents.PropertySchema" AssemblyQualifiedName="INT0004.AKKA.Identity.Schemas.PersonEvents.PropertySchema,INT0004.AKKA.Identity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
+        <Schema FullName="INT0004.AKKA.Identity.Schemas.PersonEvent_PropertySchema" AssemblyQualifiedName="INT0004.AKKA.Identity.Schemas.PersonEvent_PropertySchema,INT0004.AKKA.Identity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
           <TrackedPropertyNames />
         </Schema>
         <Schema FullName="INT0004.AKKA.Identity.Schemas.call_authsrv_its_uu_se" RootName="addGrouperMember" AssemblyQualifiedName="INT0004.AKKA.Identity.Schemas.call_authsrv_its_uu_se,INT0004.AKKA.Identity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
@@ -3482,12 +3482,6 @@
         <Schema FullName="INT0004.AKKA.Identity.Schemas.cxf_akkaappl_akka_its_uu_se" RootName="uppdateraStudentkontoResponse" AssemblyQualifiedName="INT0004.AKKA.Identity.Schemas.cxf_akkaappl_akka_its_uu_se,INT0004.AKKA.Identity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
           <TrackedPropertyNames />
         </Schema>
-        <Schema FullName="INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPerson" RootName="Person" AssemblyQualifiedName="INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPerson,INT0004.AKKA.Identity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
-          <TrackedPropertyNames />
-        </Schema>
-        <Schema FullName="INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPersonEvent" RootName="PersonEvent" AssemblyQualifiedName="INT0004.AKKA.Identity.Schemas.PersonEvents.InternalPersonEvent,INT0004.AKKA.Identity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
-          <TrackedPropertyNames />
-        </Schema>
       </TrackedSchemas>
     </ModuleRef>
     <ModuleRef Name="INT0004.AKKA.Identity" Version="1.0.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0004.AKKA.Identity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
@@ -3597,7 +3591,7 @@
       <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;Group&gt;
-    &lt;Statement Property="INT0004.AKKA.Identity.Schemas.PersonEvents.EventType" Operator="0" Value="PersonStudentValidPeriodEvent" /&gt;
+    &lt;Statement Property="INT0004.AKKA.Identity.Schemas.EventType" Operator="0" Value="PersonStudentValidPeriodEvent" /&gt;
     &lt;Statement Property="BTS.Operation" Operator="0" Value="AKKA" /&gt;
   &lt;/Group&gt;
 &lt;/Filter&gt;</Filter>
@@ -3648,7 +3642,7 @@
       <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;Group&gt;
-    &lt;Statement Property="INT0004.AKKA.Identity.Schemas.PersonEvents.EventType" Operator="0" Value="PersonStudentAffiliationCreateRequestEvent" /&gt;
+    &lt;Statement Property="INT0004.AKKA.Identity.Schemas.EventType" Operator="0" Value="PersonStudentAffiliationCreateRequestEvent" /&gt;
     &lt;Statement Property="BTS.Operation" Operator="0" Value="AKKA" /&gt;
   &lt;/Group&gt;
 &lt;/Filter&gt;</Filter>
@@ -3699,7 +3693,7 @@
       <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;Group&gt;
-    &lt;Statement Property="INT0004.AKKA.Identity.Schemas.PersonEvents.EventType" Operator="0" Value="PersonStudentDeceasedEvent" /&gt;
+    &lt;Statement Property="INT0004.AKKA.Identity.Schemas.EventType" Operator="0" Value="PersonStudentDeceasedEvent" /&gt;
     &lt;Statement Property="BTS.Operation" Operator="0" Value="AKKA" /&gt;
   &lt;/Group&gt;
 &lt;/Filter&gt;</Filter>
@@ -3750,7 +3744,7 @@
       <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;Group&gt;
-    &lt;Statement Property="INT0004.AKKA.Identity.Schemas.PersonEvents.EventType" Operator="0" Value="PersonStudentActiveAccountRequest" /&gt;
+    &lt;Statement Property="INT0004.AKKA.Identity.Schemas.EventType" Operator="0" Value="PersonStudentActiveAccountRequest" /&gt;
     &lt;Statement Property="BTS.Operation" Operator="0" Value="AKKA" /&gt;
   &lt;/Group&gt;
 &lt;/Filter&gt;</Filter>
