@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="24" TotalEndpoints="24">
-  <Timestamp>2018-06-29T11:19:52.06061+02:00</Timestamp>
+  <Timestamp>2018-06-29T15:07:04.7806764+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0016.Ladok3.Client]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0016.Ladok3.Client], Version=, Culture=, PublicKeyToken=">
       <Services />
       <TrackedSchemas>
-        <Schema FullName="INT0016.Ladok3.Client.Schemas.PropertySchema" AssemblyQualifiedName="INT0016.Ladok3.Client.Schemas.PropertySchema,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
+        <Schema FullName="INT0016.Ladok3.Client.Schemas.PropertySchema" AssemblyQualifiedName="INT0016.Ladok3.Client.Schemas.PropertySchema,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
           <TrackedPropertyNames />
         </Schema>
-        <Schema FullName="INT0016.Ladok3.Client.Schemas.QueryParameters" RootName="Parameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Schemas.QueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
+        <Schema FullName="INT0016.Ladok3.Client.Schemas.QueryParameters" RootName="Parameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Schemas.QueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
           <TrackedPropertyNames />
         </Schema>
       </TrackedSchemas>
     </ModuleRef>
     <ModuleRef Name="INT0016.Ladok3.Client" Version="1.0.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services>
-        <Service Name="INT0016.Ladok3.Client.HandleOmregistreringEvent" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents">
+        <Service Name="INT0016.Ladok3.Client.HandleKurspaketeringUppdateradEvent" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents">
+          <Ports />
+          <Roles />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="INT0016.Ladok3.Client.HandleOmregistreringEvent" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="SendGetKurstillfalle_OmegistreringEventPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetKurstillfalle" />
