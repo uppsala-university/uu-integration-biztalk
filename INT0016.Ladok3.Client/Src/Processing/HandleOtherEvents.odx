@@ -71,51 +71,58 @@
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Receive_1" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="DNFPredicate" OID="f7ce44a1-11a4-4f26-a7dd-2f4154a4d33c" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="445dfcd7-6108-4ef7-b32f-b49cb8f2a120" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.Operation" />
                         <om:Property Name="RHS" Value="&quot;RouteEventsOperation&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="2d76e1be-4f2f-457c-845d-1e7618415830" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="4d39a666-585f-4e18-a744-123b49db8db9" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
                         <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="NotEquals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="5ac935e7-e35f-4f84-bd47-e8c2ae42bb84" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="d14a7198-2e67-4f98-a9b0-61b2cea551be" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
                         <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/utbildningsinformation#KurstillfalleUppdateratEvent&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="NotEquals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="4a532ba6-3386-4c6e-9fc7-740a91f07c98" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="f400a5d1-48f1-43ae-8102-ed9786eca615" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
                         <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/utbildningsinformation#UtbildningstillfalleInstalltEvent&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="NotEquals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="181c1cb8-2f07-4479-8166-f60255d4b695" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="25319468-e6e5-4afd-b458-aa9a7d27cde9" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
                         <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/utbildningsinformation#UtbildningstillfalleAteraktiveratEvent&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="NotEquals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="bd1c75d7-12c5-4a60-920b-55e978cc7702" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="602ef3dd-a1f4-4a7f-8097-189820602426" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
                         <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/studiedeltagande#RegistreringEvent&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="NotEquals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="1ca1db55-51bc-4a73-ae31-3e546aa6d578" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="b1741bfb-ef32-41ac-a4d9-667fc722f21c" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
                         <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/studiedeltagande#OmregistreringEvent&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="NotEquals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="6eb38865-2524-4da1-a213-1cc04b856492" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/utbildningsinformation#KurspaketeringUppdateradEvent&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="NotEquals" />
                         <om:Property Name="Signal" Value="False" />
@@ -189,7 +196,7 @@ module INT0016.Ladok3.Client
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("d8577408-6671-4292-8106-2b44185d17c8")]
-            activate ((BTS.Operation == "RouteEventsOperation") && (BTS.MessageType != "http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent") && (BTS.MessageType != "http://schemas.ladok.se/utbildningsinformation#KurstillfalleUppdateratEvent") && (BTS.MessageType != "http://schemas.ladok.se/utbildningsinformation#UtbildningstillfalleInstalltEvent") && (BTS.MessageType != "http://schemas.ladok.se/utbildningsinformation#UtbildningstillfalleAteraktiveratEvent") && (BTS.MessageType != "http://schemas.ladok.se/studiedeltagande#RegistreringEvent") && (BTS.MessageType != "http://schemas.ladok.se/studiedeltagande#OmregistreringEvent"))receive (ReceiveOtherEvent.Operation_1, Ladok3Event);
+            activate ((BTS.Operation == "RouteEventsOperation") && (BTS.MessageType != "http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent") && (BTS.MessageType != "http://schemas.ladok.se/utbildningsinformation#KurstillfalleUppdateratEvent") && (BTS.MessageType != "http://schemas.ladok.se/utbildningsinformation#UtbildningstillfalleInstalltEvent") && (BTS.MessageType != "http://schemas.ladok.se/utbildningsinformation#UtbildningstillfalleAteraktiveratEvent") && (BTS.MessageType != "http://schemas.ladok.se/studiedeltagande#RegistreringEvent") && (BTS.MessageType != "http://schemas.ladok.se/studiedeltagande#OmregistreringEvent") && (BTS.MessageType != "http://schemas.ladok.se/utbildningsinformation#KurspaketeringUppdateradEvent"))receive (ReceiveOtherEvent.Operation_1, Ladok3Event);
             TempXML = new System.Xml.XmlDocument();
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("c82030f5-750f-473a-820e-e368b411cf44")]
             construct ReturnMessage
