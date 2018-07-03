@@ -113,6 +113,48 @@
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="HandleUtbildningstillfalleBorttagetEvent" />
             <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="4ccf1f1b-776c-4b10-92d8-3cac62271f72" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="43.1" HigherBound="44.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.UtbildningstillfalleBorttagetEvent" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="LadokMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a832018a-1e0b-45c8-b6fe-eff3459519ad" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="44.1" HigherBound="45.1">
+                <om:Property Name="Type" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReturnMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="22114703-6475-46f0-b590-e3c5afb0dd16" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="45.1" HigherBound="46.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Utbildningstillfalle" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="UtbildningstillfalleMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="8e9e2131-0d9d-4e5c-b920-7a6480c48d51" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="46.1" HigherBound="47.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Utbildningsinstans" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="UtbildningsinstansMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="31c5fe90-68b1-475f-b386-a9be16a56b04" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="47.1" HigherBound="48.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_kataloginformation.Organisation" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OrganisationMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ff31d92c-9494-4410-8e3f-f02f1701c3bd" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="48.1" HigherBound="49.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.Envelopes.UtbildningstillfalleBorttagetEnvelope" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EventEnvalope" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
             <om:Element Type="ServiceBody" OID="503838a6-1fe6-4f9d-9de6-3db1eee70766" ParentLink="ServiceDeclaration_ServiceBody">
                 <om:Property Name="Signal" Value="False" />
                 <om:Element Type="Receive" OID="f28d3007-7010-452c-8ca0-8c93f1522060" ParentLink="ServiceBody_Statement" LowerBound="51.1" HigherBound="53.1">
@@ -124,6 +166,20 @@
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Receive_1" />
                     <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="9dae0f5c-0eb1-4717-b5d5-bb5af1a4627d" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/utbildningsinformation#UtbildningstillfalleBorttagetEvent&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="b465e311-1182-4b10-bdcc-e451f65e39f8" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.Operation" />
+                        <om:Property Name="RHS" Value="&quot;RouteEventsOperation&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
                 </om:Element>
                 <om:Element Type="Scope" OID="589889c5-a17b-4075-b936-366cb341d679" ParentLink="ServiceBody_Statement" LowerBound="53.1" HigherBound="94.1">
                     <om:Property Name="InitializedTransactionType" Value="True" />
@@ -355,48 +411,6 @@
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
-            <om:Element Type="MessageDeclaration" OID="4ccf1f1b-776c-4b10-92d8-3cac62271f72" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="43.1" HigherBound="44.1">
-                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.UtbildningstillfalleBorttagetEvent" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="LadokMessage" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="MessageDeclaration" OID="a832018a-1e0b-45c8-b6fe-eff3459519ad" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="44.1" HigherBound="45.1">
-                <om:Property Name="Type" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ReturnMessage" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="MessageDeclaration" OID="22114703-6475-46f0-b590-e3c5afb0dd16" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="45.1" HigherBound="46.1">
-                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Utbildningstillfalle" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="UtbildningstillfalleMessage" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="MessageDeclaration" OID="8e9e2131-0d9d-4e5c-b920-7a6480c48d51" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="46.1" HigherBound="47.1">
-                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Utbildningsinstans" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="UtbildningsinstansMessage" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="MessageDeclaration" OID="31c5fe90-68b1-475f-b386-a9be16a56b04" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="47.1" HigherBound="48.1">
-                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_kataloginformation.Organisation" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="OrganisationMessage" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="MessageDeclaration" OID="ff31d92c-9494-4410-8e3f-f02f1701c3bd" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="48.1" HigherBound="49.1">
-                <om:Property Name="Type" Value="Shared.Schemas.Ladok.Envelopes.UtbildningstillfalleBorttagetEnvelope" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="EventEnvalope" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
         </om:Element>
     </om:Element>
 </om:MetaModel>
@@ -452,7 +466,7 @@ module INT0016.Ladok3.Client
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("f28d3007-7010-452c-8ca0-8c93f1522060")]
-            activate receive (ReceveUtbildningstillfalleBorttagetEvent.Operation_1, LadokMessage);
+            activate ((BTS.MessageType == "http://schemas.ladok.se/utbildningsinformation#UtbildningstillfalleBorttagetEvent") && (BTS.Operation == "RouteEventsOperation"))receive (ReceveUtbildningstillfalleBorttagetEvent.Operation_1, LadokMessage);
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("589889c5-a17b-4075-b936-366cb341d679")]
             scope
             {
