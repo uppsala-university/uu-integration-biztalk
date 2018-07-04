@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-05-22T13:06:19.8923163+02:00</Timestamp>
+  <Timestamp>2018-07-04T17:14:03.2894813+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0010.Studentportalen.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0010.Studentportalen.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -14,7 +14,7 @@
   <SendPortCollection>
     <SendPort Name="INT0010.SP.Send_REST" IsStatic="true" IsTwoWay="true" BindingOption="0">
       <Description xsi:nil="true" />
-      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
         <Address>https://spl3t.studentportalen.uu.se/uusp-webapp/spring/ladok-event?pw=CHANGEME</Address>
         <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
@@ -22,12 +22,12 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-05-14T22:00:00</FromTime>
-        <ToTime>2018-05-15T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>true</Primary>
         <OrderedDelivery>true</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="BizTalkServerApplication" HostTrusted="false">
+        <SendHandler Name="CluSdSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -36,14 +36,14 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-05-14T22:00:00</FromTime>
-        <ToTime>2018-05-15T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>false</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
         <SendHandler xsi:nil="true" />
       </SecondaryTransport>
-      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
       <ReceivePipelineData xsi:nil="true" />
       <Tracking>0</Tracking>
       <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
@@ -52,9 +52,22 @@
     &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0010.SP.LadokEvents" /&gt;
   &lt;/Group&gt;
 &lt;/Filter&gt;</Filter>
-      <Transforms />
-      <InboundTransforms>
-      </InboundTransforms>
+      <Transforms>
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.AterbudEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.AterbudEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.AterkalladOmregistreringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.AterkalladOmregistreringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.AterkalladRegistreringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.AterkalladRegistreringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.ForvantatDeltagandeSkapadEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.ForvantatDeltagandeSkapadEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.KurspaketeringUppdateradEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.KurspaketeringUppdateradEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.KurstillfalleTillStatusEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.KurstillfalleTillStatusEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.OmregistreringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.OmregistreringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.KurstillfalleUppdateratEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.KurstillfalleUppdateratEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.RegistreringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.RegistreringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.StudentAvlidenmarkeringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.StudentAvlidenmarkeringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleAteraktiveratEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleAteraktiveratEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleBorttagetEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleBorttagetEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleInstalltEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleInstalltEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+      </Transforms>
+      <InboundTransforms />
       <OrderedDelivery>true</OrderedDelivery>
       <Priority>5</Priority>
       <StopSendingOnFailure>true</StopSendingOnFailure>
@@ -73,12 +86,12 @@
           <PublicAddress />
           <Primary>true</Primary>
           <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
-          <ReceiveLocationFromTime>2018-05-10T22:00:00</ReceiveLocationFromTime>
-          <ReceiveLocationToTime>2018-05-11T21:59:59</ReceiveLocationToTime>
+          <ReceiveLocationFromTime>2000-01-01T22:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T21:59:59</ReceiveLocationToTime>
           <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
           <ReceiveLocationStartDate>2018-05-11T00:00:00</ReceiveLocationStartDate>
           <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
-          <ReceiveLocationEndDate>2018-05-12T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationEndDate>2018-05-12T23:59:59</ReceiveLocationEndDate>
           <ReceiveLocationTransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-SP&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-SP&amp;lt;/uri&amp;gt;&amp;lt;batchSize&amp;gt;20&amp;lt;/batchSize&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;serialProcessing&amp;gt;false&amp;lt;/serialProcessing&amp;gt;&amp;lt;onFailure&amp;gt;suspendResumable&amp;lt;/onFailure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
           <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
