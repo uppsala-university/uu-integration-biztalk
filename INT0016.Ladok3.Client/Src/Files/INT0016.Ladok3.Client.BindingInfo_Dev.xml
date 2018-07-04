@@ -1,26 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="24" TotalEndpoints="24">
-  <Timestamp>2018-06-29T15:07:04.7806764+02:00</Timestamp>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="33" TotalEndpoints="33">
+  <Timestamp>2018-07-04T13:13:17.4204415+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0016.Ladok3.Client]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0016.Ladok3.Client], Version=, Culture=, PublicKeyToken=">
       <Services />
       <TrackedSchemas>
-        <Schema FullName="INT0016.Ladok3.Client.Schemas.PropertySchema" AssemblyQualifiedName="INT0016.Ladok3.Client.Schemas.PropertySchema,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
+        <Schema FullName="INT0016.Ladok3.Client.Schemas.PropertySchema" AssemblyQualifiedName="INT0016.Ladok3.Client.Schemas.PropertySchema,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
           <TrackedPropertyNames />
         </Schema>
-        <Schema FullName="INT0016.Ladok3.Client.Schemas.QueryParameters" RootName="Parameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Schemas.QueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
+        <Schema FullName="INT0016.Ladok3.Client.Schemas.QueryParameters" RootName="Parameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Schemas.QueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
           <TrackedPropertyNames />
         </Schema>
       </TrackedSchemas>
     </ModuleRef>
     <ModuleRef Name="INT0016.Ladok3.Client" Version="1.0.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services>
-        <Service Name="INT0016.Ladok3.Client.HandleKurspaketeringUppdateradEvent" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents">
+        <Service Name="INT0016.Ladok3.Client.HandleAterkalladOmregistreringEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports>
+            <Port Name="SendGetStudent_AterkalladOmregistreringEventRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetStudent" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetUtbildningsinstans_AterkalladOmregistreringEventRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningsinstans" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetUtbildningstillfalle_AterkalladOmregistreringEventRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningstillfalle" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="INT0016.Ladok3.Client.HandleAterkalladregistreringEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports>
+            <Port Name="SendGetUtbildningsinstans_AterkalladregistreringEventRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningsinstans" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetStudent_AterkalladregistreringEventRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetStudent" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetUtbildningstillfalle_AterkalladregistreringEventRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningstillfalle" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="INT0016.Ladok3.Client.HandleForvantatDeltagandeSkapadEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports>
+            <Port Name="SendGetUtbildningstillfalle_ForvantatDeltagandeSkapadEventRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningstillfalle" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetStudent_ForvantatDeltagandeSkapadEventRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetStudent" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetUtbildningsinstans_ForvantatDeltagandeSkapadEventRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningsinstans" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="INT0016.Ladok3.Client.HandleKurspaketeringUppdateradEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports />
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleOmregistreringEvent" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleOmregistreringEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="SendGetKurstillfalle_OmegistreringEventPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetKurstillfalle" />
@@ -61,7 +124,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleUtbildningstillfalleAteraktiveratEvent" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleUtbildningstillfalleAteraktiveratEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="SendGetUtbildningstillfalle_UtbildningstillfalleAteraktiveratEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningstillfalle" />
@@ -82,7 +145,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleUtbildningstillfalleInstalltEvent" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody OrchestrationEvents TrackPropertiesForIncomingMessages TrackPropertiesForOutgoingMessages" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleUtbildningstillfalleInstalltEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody OrchestrationEvents TrackPropertiesForIncomingMessages TrackPropertiesForOutgoingMessages" Description="">
           <Ports>
             <Port Name="SendGetUtbildningstillfalle_UtbildningstillfalleInstalltRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningstillfalle" />
@@ -103,7 +166,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleKurstillfalleUppdateratEvent" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody OrchestrationEvents TrackPropertiesForIncomingMessages TrackPropertiesForOutgoingMessages" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleKurstillfalleUppdateratEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody OrchestrationEvents TrackPropertiesForIncomingMessages TrackPropertiesForOutgoingMessages" Description="">
           <Ports>
             <Port Name="SendGetUtbildningsinstansRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningsinstans" />
@@ -119,7 +182,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleRegistreringEvent" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleRegistreringEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="SendGetKurstillfalle_RegistreringEventPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetKurstillfalle" />
@@ -160,7 +223,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleKurstillfalleTillStatusEvent" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody OrchestrationEvents TrackPropertiesForIncomingMessages TrackPropertiesForOutgoingMessages" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleKurstillfalleTillStatusEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody OrchestrationEvents TrackPropertiesForIncomingMessages TrackPropertiesForOutgoingMessages" Description="">
           <Ports>
             <Port Name="SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningsinstans" />
@@ -176,7 +239,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleOtherEvents" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleOtherEvents" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports />
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
@@ -203,7 +266,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSDSend" HostTrusted="false">
+        <SendHandler Name="CluSdSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -229,6 +292,8 @@
         <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0016.Ladok3.Client.Maps.Common.Utbildningstillfalle_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.Common.Utbildningstillfalle_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEven_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEven_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -254,7 +319,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSDSend" HostTrusted="false">
+        <SendHandler Name="CluSdSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -305,7 +370,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSDSend" HostTrusted="false">
+        <SendHandler Name="CluSdSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -328,6 +393,9 @@
       <Transforms>
         <Transform FullName="INT0016.Ladok3.Client.Maps.RegistreringEvent.RegistreringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.RegistreringEvent.RegistreringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0016.Ladok3.Client.Maps.OmregistreringEvent.OmregistreringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.OmregistreringEvent.OmregistreringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -353,7 +421,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSDSend" HostTrusted="false">
+        <SendHandler Name="CluSdSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -400,7 +468,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSDSend" HostTrusted="false">
+        <SendHandler Name="CluSdSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -448,7 +516,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSDSend" HostTrusted="false">
+        <SendHandler Name="CluSdSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -496,7 +564,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSDSend" HostTrusted="false">
+        <SendHandler Name="CluSdSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -519,6 +587,10 @@
       <Transforms>
         <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleBorttagetEvent.UtbildningstillfalleBorttagetEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleBorttagetEvent.UtbildningstillfalleBorttagetEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_UtbildningstillfalleQueryParameters_btm" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_UtbildningstillfalleQueryParameters_btm,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
