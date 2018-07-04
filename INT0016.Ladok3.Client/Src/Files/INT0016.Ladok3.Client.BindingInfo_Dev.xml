@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="33" TotalEndpoints="33">
-  <Timestamp>2018-07-04T13:13:17.4204415+02:00</Timestamp>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="36" TotalEndpoints="36">
+  <Timestamp>2018-07-04T16:09:59.5328177+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0016.Ladok3.Client]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0016.Ladok3.Client], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -15,6 +15,27 @@
     </ModuleRef>
     <ModuleRef Name="INT0016.Ladok3.Client" Version="1.0.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services>
+        <Service Name="INT0016.Ladok3.Client.HandleAterbudEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents">
+          <Ports>
+            <Port Name="SendGetStudent_RequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetStudent" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetUtbildningstillfalle_AterbudEventRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningstillfalle" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetUtbildningsinstans_AterbudEventRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningsinstans" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
         <Service Name="INT0016.Ladok3.Client.HandleAterkalladOmregistreringEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="SendGetStudent_AterkalladOmregistreringEventRequestPort" Modifier="1" BindingOption="1">
@@ -396,6 +417,7 @@
         <Transform FullName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterbudEvent.AterbudEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterbudEvent.AterbudEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -591,6 +613,7 @@
         <Transform FullName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_UtbildningstillfalleQueryParameters_btm" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_UtbildningstillfalleQueryParameters_btm,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterbudEvent.AterbudEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterbudEvent.AterbudEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
