@@ -61,8 +61,8 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="LadokProgramdeltagande" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="5434b2d7-d414-4511-82d3-b77ffd63c112" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.70">
-                    <om:Property Name="Ref" Value="INT0011.VFU.Events.Schemas.Ladok.Envelopes.ForvantatDeltagandeSkapadEnvelope" />
+                <om:Element Type="MessageRef" OID="5434b2d7-d414-4511-82d3-b77ffd63c112" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.67">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.ForvantatDeltagandeSkapadEnvelope" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="True" />
@@ -91,7 +91,7 @@
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="ead2cd4b-d37c-4d24-a54e-ec1012923f55" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="41.1" HigherBound="42.1">
-                <om:Property Name="Type" Value="INT0011.VFU.Events.Schemas.Ladok.Envelopes.ForvantatDeltagandeSkapadEnvelope" />
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.ForvantatDeltagandeSkapadEnvelope" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ForvantatDeltagande" />
@@ -271,14 +271,14 @@
                         <om:Property Name="ClassName" Value="INT0011.VFU.Events.ForvantatDeltagande_to_ADQueryIndividual" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Regestrering_ADQueryIndividual" />
-                        <om:Property Name="Signal" Value="False" />
-                        <om:Element Type="MessagePartRef" OID="304ce8a8-703c-4526-9178-e7620393ed2d" ParentLink="Transform_InputMessagePartRef" LowerBound="51.110" HigherBound="51.129">
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="c7e89515-3751-4be1-b56c-b47954c4c0c4" ParentLink="Transform_InputMessagePartRef" LowerBound="51.110" HigherBound="51.129">
                             <om:Property Name="MessageRef" Value="ForvantatDeltagande" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_1" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessagePartRef" OID="25561d00-5c68-49e1-a7e5-178535bc8f9f" ParentLink="Transform_OutputMessagePartRef" LowerBound="51.28" HigherBound="51.45">
+                        <om:Element Type="MessagePartRef" OID="d93cd06f-98d2-4089-bc64-5f57c9924828" ParentLink="Transform_OutputMessagePartRef" LowerBound="51.28" HigherBound="51.45">
                             <om:Property Name="MessageRef" Value="ADIndividualQuery" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_2" />
@@ -318,20 +318,20 @@
                         <om:Property Name="ClassName" Value="INT0011.VFU.Events.ForvantatDeltagande_to_Programdeltagande" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="RegestreringProgramdeltagande" />
-                        <om:Property Name="Signal" Value="False" />
-                        <om:Element Type="MessagePartRef" OID="689aa685-d598-4a07-b709-cb6fc9430d9b" ParentLink="Transform_InputMessagePartRef" LowerBound="61.110" HigherBound="61.133">
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="b6555880-b823-4a6f-9beb-ccde32cd5727" ParentLink="Transform_InputMessagePartRef" LowerBound="61.110" HigherBound="61.133">
                             <om:Property Name="MessageRef" Value="ADIndividualQueryResult" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_3" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessagePartRef" OID="280ed63e-e1ec-4a97-a2bf-163e9bb1aa79" ParentLink="Transform_InputMessagePartRef" LowerBound="61.135" HigherBound="61.154">
+                        <om:Element Type="MessagePartRef" OID="dff3c424-8358-4ab6-9d46-a7d45bb0df6e" ParentLink="Transform_InputMessagePartRef" LowerBound="61.135" HigherBound="61.154">
                             <om:Property Name="MessageRef" Value="ForvantatDeltagande" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_4" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessagePartRef" OID="28f062c5-3702-4ce5-bd6d-4f4ea7f7b8ce" ParentLink="Transform_OutputMessagePartRef" LowerBound="61.28" HigherBound="61.45">
+                        <om:Element Type="MessagePartRef" OID="e1c690e7-b5e7-4bc9-a0d5-d1dae605b078" ParentLink="Transform_OutputMessagePartRef" LowerBound="61.28" HigherBound="61.45">
                             <om:Property Name="MessageRef" Value="Programdeltagande" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_5" />
@@ -453,7 +453,7 @@ module INT0011.VFU.Events
     {
         oneway LadokProgramdeltagande
         {
-            Schemas.Ladok.Envelopes.ForvantatDeltagandeSkapadEnvelope
+            Shared.Schemas.Ladok.ForvantatDeltagandeSkapadEnvelope
         };
     };
     internal correlationtype Utbildningskod
@@ -472,7 +472,7 @@ module INT0011.VFU.Events
         correlation Utbildningskod UtbildningskodSet;
         message Schemas.ADEvents.ADSendAdapterSolicitResponseIndividualQuery ADIndividualQuery;
         message Schemas.ADEvents.ADQueryResults ADIndividualQueryResult;
-        message Schemas.Ladok.Envelopes.ForvantatDeltagandeSkapadEnvelope ForvantatDeltagande;
+        message Shared.Schemas.Ladok.ForvantatDeltagandeSkapadEnvelope ForvantatDeltagande;
         message Schemas.VFU.Programdeltagande Programdeltagande;
         body ()
         {
