@@ -39,6 +39,7 @@
     <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Shared.Schemas.Ladok, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Ladok\v4.0_2.0.0.0__b64e3957dd28061a\Shared.Schemas.Ladok.dll</HintPath>
@@ -78,6 +79,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Pipeline Include="INT0017.Usmr.Pipeline.btp">
+      <TypeName>INT0017_Usmr_Pipeline</TypeName>
+      <Namespace>INT0017.Usmr.Events</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
     <Map Include="Maps\OmregistreringEventToUsmrRecord.btm">
       <TypeName>OmregistreringEventToUsmrRecord</TypeName>
       <Namespace>INT0017.Usmr.Events.Maps</Namespace>
@@ -86,6 +92,11 @@
     <Content Include="Files\INT0017.Create.storedprocedures.usmr.sql" />
     <Content Include="Files\INT0017.DEV.Bindings.xml" />
     <Content Include="Files\Readme.txt" />
+    <Map Include="Maps\INT0017.UsmrRecordTofile.btm">
+      <TypeName>INT0017_UsmrRecordTofile</TypeName>
+      <Namespace>INT0017.Usmr.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
     <Content Include="Maps\OmregistreringEventToUsmrRecord.xsl">
       <SubType>Designer</SubType>
     </Content>
@@ -99,6 +110,46 @@
     </Map>
   </ItemGroup>
   <ItemGroup>
+    <Schema Include="Schemas\INT0017.Usmr.fileformat - Copy.xsd">
+      <SubType>Task</SubType>
+      <TypeName>INT0017_Usmr_fileformat_Copy</TypeName>
+      <Namespace>INT0017.Usmr.Events.Schemas</Namespace>
+    </Schema>
+    <Schema Include="Schemas\INT0017.Usmr.fileformat.xsd">
+      <TypeName>INT0017_Usmr_fileformat</TypeName>
+      <Namespace>INT0017.Usmr.Events.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\INT0017.Usmr.Filerecord.xsd">
+      <TypeName>INT0017_Usmr_Filerecord</TypeName>
+      <Namespace>INT0017.Usmr.Events.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\INT0017.Usmr.PolledData.xsd">
+      <TypeName>INT0017_Usmr_PolledData</TypeName>
+      <Namespace>INT0017.Usmr.Events.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\INT0017.UsmrRecord.xsd">
+      <TypeName>Schema1000</TypeName>
+      <Namespace>INT0017.Usmr.Events.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\SqlTypes.xsd">
+      <TypeName>SqlTypes</TypeName>
+      <Namespace>INT0017.Usmr.Events.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\INT0017selectRecordsView.dbo.xsd">
+      <TypeName>INT0017selectRecordsView_dbo</TypeName>
+      <Namespace>INT0017.Usmr.Events</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\INT0017selectRecordsViewOperation.dbo.viewUsmrSelectAll.xsd">
+      <TypeName>INT0017selectRecordsViewOperation_dbo_viewUsmrSelectAll</TypeName>
+      <Namespace>INT0017.Usmr.Events</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
     <None Include="key.snk.pfx" />
     <Schema Include="Schemas\usmrCreateRecordStoredDataSetSchema.xsd">
       <TypeName>usmrCreateRecordStoredDataSetSchema</TypeName>
