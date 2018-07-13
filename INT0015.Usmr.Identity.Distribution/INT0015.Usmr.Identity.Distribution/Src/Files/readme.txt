@@ -1,5 +1,6 @@
 INT0015 Usmr.identity.distribution
 
+
 Adapter for transmitting changes in personnummer for Uppsala studentkårs medlemsregister (Usmr).
 
 The change event is read from the MSMQ queue identity-sp. A map transforms the change event to
