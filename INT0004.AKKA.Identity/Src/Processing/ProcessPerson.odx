@@ -236,7 +236,7 @@
                                     <om:Property Name="Name" Value="ConstructAKKAResponse" />
                                     <om:Property Name="Signal" Value="True" />
                                     <om:Element Type="MessageAssignment" OID="8f1c48c3-064a-4cb7-8401-7a81f57318a8" ParentLink="ComplexStatement_Statement" LowerBound="81.1" HigherBound="85.1">
-                                        <om:Property Name="Expression" Value="AKKAPromotedResponse = AKKAResponse;&#xD;&#xA;AKKAPromotedResponse(*) = AKKAResponse(*);&#xD;&#xA;AKKAPromotedResponse(INT0004.AKKA.Identity.Schemas.PersonNumber) = Person(Shared.Schemas.GroupAndPersonEvents.PersonNumber);" />
+                                        <om:Property Name="Expression" Value="AKKAPromotedResponse = AKKAResponse;&#xD;&#xA;AKKAPromotedResponse(*) = AKKAResponse(*);&#xD;&#xA;AKKAPromotedResponse(Shared.Schemas.GroupAndPersonEvents.PersonNumber) = Person(Shared.Schemas.GroupAndPersonEvents.PersonNumber);" />
                                         <om:Property Name="ReportToAnalyst" Value="False" />
                                         <om:Property Name="Name" Value="MessageAKKAResponseAssignment" />
                                         <om:Property Name="Signal" Value="True" />
@@ -537,7 +537,7 @@ module INT0004.AKKA.Identity
                                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("8f1c48c3-064a-4cb7-8401-7a81f57318a8")]
                                 AKKAPromotedResponse = AKKAResponse;
                                 AKKAPromotedResponse(*) = AKKAResponse(*);
-                                AKKAPromotedResponse(INT0004.AKKA.Identity.Schemas.PersonNumber) = Person(Shared.Schemas.GroupAndPersonEvents.PersonNumber);
+                                AKKAPromotedResponse(Shared.Schemas.GroupAndPersonEvents.PersonNumber) = Person(Shared.Schemas.GroupAndPersonEvents.PersonNumber);
                             }
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("b6e6dd18-1c5c-4a4e-bb67-3753190aecee")]
                             send (SndPersonResponsePort.PersonResponse, AKKAPromotedResponse);
