@@ -68,7 +68,7 @@
                 <om:Property Name="Signal" Value="False" />
                 <om:Element Type="Receive" OID="895a176a-3d5d-43b4-9aa4-de8ad3d7cab6" ParentLink="ServiceBody_Statement" LowerBound="43.1" HigherBound="47.1">
                     <om:Property Name="Activate" Value="True" />
-                    <om:Property Name="PortName" Value="ReceiveKurstillfalleTillStatusEvent" />
+                    <om:Property Name="PortName" Value="ReceiveKurstillfalleTillStatusEventPort" />
                     <om:Property Name="MessageName" Value="Ladok3Event" />
                     <om:Property Name="OperationName" Value="HandleKurstillfalleTillStatusEventOperation" />
                     <om:Property Name="OperationMessageName" Value="Request" />
@@ -106,7 +106,7 @@
                             <om:Property Name="Name" Value="ParallelBranch_1" />
                             <om:Property Name="Signal" Value="False" />
                             <om:Element Type="Send" OID="d585506b-66a1-4bd8-8819-4bdc35454d94" ParentLink="ComplexStatement_Statement" LowerBound="57.1" HigherBound="59.1">
-                                <om:Property Name="PortName" Value="SendGetUtbildningsinstansRequestPort" />
+                                <om:Property Name="PortName" Value="SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPort" />
                                 <om:Property Name="MessageName" Value="Ladok3Event" />
                                 <om:Property Name="OperationName" Value="GetUtbildningsinstansOperation" />
                                 <om:Property Name="OperationMessageName" Value="Request" />
@@ -116,7 +116,7 @@
                             </om:Element>
                             <om:Element Type="Receive" OID="4f4b1acc-9422-4125-ab86-8f098683e061" ParentLink="ComplexStatement_Statement" LowerBound="59.1" HigherBound="61.1">
                                 <om:Property Name="Activate" Value="False" />
-                                <om:Property Name="PortName" Value="SendGetUtbildningsinstansRequestPort" />
+                                <om:Property Name="PortName" Value="SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPort" />
                                 <om:Property Name="MessageName" Value="Utbildningsinstans" />
                                 <om:Property Name="OperationName" Value="GetUtbildningsinstansOperation" />
                                 <om:Property Name="OperationMessageName" Value="Response" />
@@ -131,7 +131,7 @@
                             <om:Property Name="Name" Value="ParallelBranch_2" />
                             <om:Property Name="Signal" Value="False" />
                             <om:Element Type="Send" OID="7c718b1f-0d6d-413c-8409-cc35044b2c3e" ParentLink="ComplexStatement_Statement" LowerBound="64.1" HigherBound="66.1">
-                                <om:Property Name="PortName" Value="SendGetOrganisationRequestPort" />
+                                <om:Property Name="PortName" Value="SendGetOrganisation_KurstillfalleTillStatusEventRequestPort" />
                                 <om:Property Name="MessageName" Value="Ladok3Event" />
                                 <om:Property Name="OperationName" Value="SendGetOrganisationOperation" />
                                 <om:Property Name="OperationMessageName" Value="Request" />
@@ -141,7 +141,7 @@
                             </om:Element>
                             <om:Element Type="Receive" OID="4bedc67c-dbef-4105-9265-8888df1313a2" ParentLink="ComplexStatement_Statement" LowerBound="66.1" HigherBound="68.1">
                                 <om:Property Name="Activate" Value="False" />
-                                <om:Property Name="PortName" Value="SendGetOrganisationRequestPort" />
+                                <om:Property Name="PortName" Value="SendGetOrganisation_KurstillfalleTillStatusEventRequestPort" />
                                 <om:Property Name="MessageName" Value="Organisation" />
                                 <om:Property Name="OperationName" Value="SendGetOrganisationOperation" />
                                 <om:Property Name="OperationMessageName" Value="Response" />
@@ -245,7 +245,7 @@
                     </om:Element>
                 </om:Element>
                 <om:Element Type="Send" OID="9b423249-1d41-4a6a-85a8-0be64c3c6819" ParentLink="ServiceBody_Statement" LowerBound="101.1" HigherBound="103.1">
-                    <om:Property Name="PortName" Value="ReceiveKurstillfalleTillStatusEvent" />
+                    <om:Property Name="PortName" Value="ReceiveKurstillfalleTillStatusEventPort" />
                     <om:Property Name="MessageName" Value="ReturnMessage" />
                     <om:Property Name="OperationName" Value="HandleKurstillfalleTillStatusEventOperation" />
                     <om:Property Name="OperationMessageName" Value="Response" />
@@ -261,11 +261,11 @@
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="INT0016.Ladok3.Client.ReceiveKurstillfalleTillStatusEventType" />
+                <om:Property Name="Type" Value="INT0016.Ladok3.Client.ReceiveKurstillfalleTillStatusEventPortType" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ReceiveKurstillfalleTillStatusEvent" />
-                <om:Property Name="Signal" Value="False" />
+                <om:Property Name="Name" Value="ReceiveKurstillfalleTillStatusEventPort" />
+                <om:Property Name="Signal" Value="True" />
                 <om:Element Type="DirectBindingAttribute" OID="62ae358b-252b-4d5d-83d1-1f121adf0887" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
                     <om:Property Name="DirectBindingType" Value="MessageBox" />
                     <om:Property Name="Signal" Value="False" />
@@ -278,10 +278,10 @@
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="INT0016.Ladok3.Client.SendGetOrganisationRequestPortType" />
+                <om:Property Name="Type" Value="INT0016.Ladok3.Client.SendGetOrganisation_KurstillfalleTillStatusEventRequestPortType" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="SendGetOrganisationRequestPort" />
+                <om:Property Name="Name" Value="SendGetOrganisation_KurstillfalleTillStatusEventRequestPort" />
                 <om:Property Name="Signal" Value="True" />
                 <om:Element Type="LogicalBindingAttribute" OID="01cb39d6-5523-4057-ab26-b34412926bdf" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
                     <om:Property Name="Signal" Value="False" />
@@ -294,10 +294,10 @@
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="INT0016.Ladok3.Client.SendGetUtbildningsinstansRequestPortType" />
+                <om:Property Name="Type" Value="INT0016.Ladok3.Client.SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPortType" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="SendGetUtbildningsinstansRequestPort" />
+                <om:Property Name="Name" Value="SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPort" />
                 <om:Property Name="Signal" Value="True" />
                 <om:Element Type="LogicalBindingAttribute" OID="571e8d76-e8a4-474f-bbaa-dbdf61fbf1a5" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
                     <om:Property Name="Signal" Value="False" />
@@ -308,8 +308,8 @@
             <om:Property Name="Synchronous" Value="True" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="ReceiveKurstillfalleTillStatusEventType" />
-            <om:Property Name="Signal" Value="False" />
+            <om:Property Name="Name" Value="ReceiveKurstillfalleTillStatusEventPortType" />
+            <om:Property Name="Signal" Value="True" />
             <om:Element Type="OperationDeclaration" OID="29ae33da-7964-4f6b-b1f7-7074ba52e890" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
                 <om:Property Name="OperationType" Value="RequestResponse" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
@@ -333,7 +333,7 @@
             <om:Property Name="Synchronous" Value="True" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="SendGetUtbildningsinstansRequestPortType" />
+            <om:Property Name="Name" Value="SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPortType" />
             <om:Property Name="Signal" Value="True" />
             <om:Element Type="OperationDeclaration" OID="77bb4ee5-efb3-42df-a865-a5b98257d5b7" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
                 <om:Property Name="OperationType" Value="RequestResponse" />
@@ -358,7 +358,7 @@
             <om:Property Name="Synchronous" Value="True" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="SendGetOrganisationRequestPortType" />
+            <om:Property Name="Name" Value="SendGetOrganisation_KurstillfalleTillStatusEventRequestPortType" />
             <om:Property Name="Signal" Value="True" />
             <om:Element Type="OperationDeclaration" OID="cf83aafd-b9a9-4bbc-a9b4-3d0d05fc0489" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
                 <om:Property Name="OperationType" Value="RequestResponse" />
@@ -385,21 +385,21 @@
 [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
 module INT0016.Ladok3.Client
 {
-    internal porttype ReceiveKurstillfalleTillStatusEventType
+    internal porttype ReceiveKurstillfalleTillStatusEventPortType
     {
         requestresponse HandleKurstillfalleTillStatusEventOperation
         {
             Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent, Shared.Schemas.SdEvents.InternalReturnMessage
         };
     };
-    internal porttype SendGetUtbildningsinstansRequestPortType
+    internal porttype SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPortType
     {
         requestresponse GetUtbildningsinstansOperation
         {
             Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent, Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Utbildningsinstans
         };
     };
-    internal porttype SendGetOrganisationRequestPortType
+    internal porttype SendGetOrganisation_KurstillfalleTillStatusEventRequestPortType
     {
         requestresponse SendGetOrganisationOperation
         {
@@ -410,11 +410,11 @@ module INT0016.Ladok3.Client
     internal service HandleKurstillfalleTillStatusEvent
     {
         [Microsoft.XLANGs.BaseTypes.DirectBinding()]
-        port implements ReceiveKurstillfalleTillStatusEventType ReceiveKurstillfalleTillStatusEvent;
+        port implements ReceiveKurstillfalleTillStatusEventPortType ReceiveKurstillfalleTillStatusEventPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port uses SendGetOrganisationRequestPortType SendGetOrganisationRequestPort;
+        port uses SendGetOrganisation_KurstillfalleTillStatusEventRequestPortType SendGetOrganisation_KurstillfalleTillStatusEventRequestPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port uses SendGetUtbildningsinstansRequestPortType SendGetUtbildningsinstansRequestPort;
+        port uses SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPortType SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPort;
         message Shared.Schemas.SdEvents.InternalReturnMessage ReturnMessage;
         message Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent Ladok3Event;
         message Shared.Schemas.Ladok.KurstillfalleTillStatusEnvelope EventEnvelope;
@@ -425,7 +425,7 @@ module INT0016.Ladok3.Client
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("895a176a-3d5d-43b4-9aa4-de8ad3d7cab6")]
-            activate ((BTS.MessageType == "http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent") && (BTS.Operation == "RouteEventsOperation"))receive (ReceiveKurstillfalleTillStatusEvent.HandleKurstillfalleTillStatusEventOperation, Ladok3Event);
+            activate ((BTS.MessageType == "http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent") && (BTS.Operation == "RouteEventsOperation"))receive (ReceiveKurstillfalleTillStatusEventPort.HandleKurstillfalleTillStatusEventOperation, Ladok3Event);
             TempXML = new System.Xml.XmlDocument();
             ackMessage = "";
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("65a610e6-4080-4390-b5b7-b25bb814d6e8")]
@@ -439,16 +439,16 @@ module INT0016.Ladok3.Client
                         task
                         {
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("d585506b-66a1-4bd8-8819-4bdc35454d94")]
-                            send (SendGetUtbildningsinstansRequestPort.GetUtbildningsinstansOperation, Ladok3Event);
+                            send (SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPort.GetUtbildningsinstansOperation, Ladok3Event);
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("4f4b1acc-9422-4125-ab86-8f098683e061")]
-                            receive (SendGetUtbildningsinstansRequestPort.GetUtbildningsinstansOperation, Utbildningsinstans);
+                            receive (SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPort.GetUtbildningsinstansOperation, Utbildningsinstans);
                         }
                         task
                         {
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("7c718b1f-0d6d-413c-8409-cc35044b2c3e")]
-                            send (SendGetOrganisationRequestPort.SendGetOrganisationOperation, Ladok3Event);
+                            send (SendGetOrganisation_KurstillfalleTillStatusEventRequestPort.SendGetOrganisationOperation, Ladok3Event);
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("4bedc67c-dbef-4105-9265-8888df1313a2")]
-                            receive (SendGetOrganisationRequestPort.SendGetOrganisationOperation, Organisation);
+                            receive (SendGetOrganisation_KurstillfalleTillStatusEventRequestPort.SendGetOrganisationOperation, Organisation);
                         }
                     }
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("db303335-dd8d-4811-aff2-5317b2879f59")]
@@ -483,7 +483,7 @@ module INT0016.Ladok3.Client
                 }
             }
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("9b423249-1d41-4a6a-85a8-0be64c3c6819")]
-            send (ReceiveKurstillfalleTillStatusEvent.HandleKurstillfalleTillStatusEventOperation, ReturnMessage);
+            send (ReceiveKurstillfalleTillStatusEventPort.HandleKurstillfalleTillStatusEventOperation, ReturnMessage);
         }
     }
 }
