@@ -138,7 +138,7 @@
                     <om:Property Name="Name" Value="StatementRef_1" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
-                <om:Element Type="StatementRef" OID="e6a75ed1-06cd-4035-8b62-ce0a7e742230" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="131.77" HigherBound="131.92">
+                <om:Element Type="StatementRef" OID="e6a75ed1-06cd-4035-8b62-ce0a7e742230" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="129.77" HigherBound="129.92">
                     <om:Property Name="Initializes" Value="False" />
                     <om:Property Name="Ref" Value="036e2b78-1ab9-48c7-82c3-0861031f9b22" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -334,24 +334,18 @@
                 <om:Element Type="While" OID="076529e0-7503-4b56-9aec-5bbdf53a9938" ParentLink="ServiceBody_Statement" LowerBound="122.1" HigherBound="142.1">
                     <om:Property Name="Expression" Value="loop == true" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
-                    <om:Property Name="Name" Value="Wait fior events" />
-                    <om:Property Name="Signal" Value="False" />
-                    <om:Element Type="VariableAssignment" OID="9385314a-7a2d-4bb6-9cd5-cd48626f9aa5" ParentLink="ComplexStatement_Statement" LowerBound="125.1" HigherBound="127.1">
-                        <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;Multiple calls to AKKA with same person number. Ignoring.\nPerson number: &quot; + Person(INT0004.AKKA.Identity.Schemas.PersonNumber), System.Diagnostics.EventLogEntryType.Information);" />
-                        <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="Log" />
-                        <om:Property Name="Signal" Value="True" />
-                    </om:Element>
-                    <om:Element Type="Listen" OID="65c8c49e-8946-45ce-85ff-741fd24f8baa" ParentLink="ComplexStatement_Statement" LowerBound="127.1" HigherBound="141.1">
+                    <om:Property Name="Name" Value="Wait for events" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Listen" OID="65c8c49e-8946-45ce-85ff-741fd24f8baa" ParentLink="ComplexStatement_Statement" LowerBound="125.1" HigherBound="141.1">
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="NextBatchOrTimeout" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="ListenBranch" OID="45fee155-69a2-4e87-ab0c-3c9875790f73" ParentLink="ReallyComplexStatement_Branch" LowerBound="127.1" HigherBound="127.1">
+                        <om:Element Type="ListenBranch" OID="45fee155-69a2-4e87-ab0c-3c9875790f73" ParentLink="ReallyComplexStatement_Branch" LowerBound="125.1" HigherBound="125.1">
                             <om:Property Name="IsGhostBranch" Value="True" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="ListenBranch_1" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="Receive" OID="036e2b78-1ab9-48c7-82c3-0861031f9b22" ParentLink="ListenBranch_Statement" LowerBound="130.1" HigherBound="131.93">
+                            <om:Element Type="Receive" OID="036e2b78-1ab9-48c7-82c3-0861031f9b22" ParentLink="ListenBranch_Statement" LowerBound="128.1" HigherBound="129.93">
                                 <om:Property Name="Activate" Value="False" />
                                 <om:Property Name="PortName" Value="RcvPersonEventsPort" />
                                 <om:Property Name="MessageName" Value="Person" />
@@ -361,8 +355,14 @@
                                 <om:Property Name="Name" Value="RcvPersonEvent" />
                                 <om:Property Name="Signal" Value="True" />
                             </om:Element>
+                            <om:Element Type="VariableAssignment" OID="9385314a-7a2d-4bb6-9cd5-cd48626f9aa5" ParentLink="ComplexStatement_Statement" LowerBound="131.1" HigherBound="133.1">
+                                <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;Multiple calls to AKKA with same person number. Ignoring.\nPerson number: &quot; + Person(Shared.Schemas.GroupAndPersonEvents.PersonNumber), System.Diagnostics.EventLogEntryType.Information);" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Log" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
                         </om:Element>
-                        <om:Element Type="ListenBranch" OID="b1effc98-9f68-480c-84b4-33003e98dbf8" ParentLink="ReallyComplexStatement_Branch" LowerBound="127.1" HigherBound="127.1">
+                        <om:Element Type="ListenBranch" OID="b1effc98-9f68-480c-84b4-33003e98dbf8" ParentLink="ReallyComplexStatement_Branch" LowerBound="125.1" HigherBound="125.1">
                             <om:Property Name="IsGhostBranch" Value="True" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="ListenBranch_2" />
@@ -578,14 +578,14 @@ module INT0004.AKKA.Identity
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("076529e0-7503-4b56-9aec-5bbdf53a9938")]
             while (loop == true)
             {
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("9385314a-7a2d-4bb6-9cd5-cd48626f9aa5")]
-                System.Diagnostics.EventLog.WriteEntry("BizTalk Application","Multiple calls to AKKA with same person number. Ignoring.\nPerson number: " + Person(INT0004.AKKA.Identity.Schemas.PersonNumber), System.Diagnostics.EventLogEntryType.Information);
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("65c8c49e-8946-45ce-85ff-741fd24f8baa")]
                 listen
                 {
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("036e2b78-1ab9-48c7-82c3-0861031f9b22")]
                     until receive (RcvPersonEventsPort.PersonEvent, Person, PersonNumberSet)
                     {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("9385314a-7a2d-4bb6-9cd5-cd48626f9aa5")]
+                        System.Diagnostics.EventLog.WriteEntry("BizTalk Application","Multiple calls to AKKA with same person number. Ignoring.\nPerson number: " + Person(Shared.Schemas.GroupAndPersonEvents.PersonNumber), System.Diagnostics.EventLogEntryType.Information);
                     }
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("ecb03cc5-86d5-49c1-842d-50532e2eb23e")]
                     timeout new System.TimeSpan(0,waitForNextMessageInMinutes,0)
