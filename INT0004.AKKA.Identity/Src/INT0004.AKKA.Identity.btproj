@@ -100,6 +100,16 @@
     <None Include="Files\INT0004.AKKA.Identity.vsdx" />
     <None Include="key.snk.pfx" />
     <None Include="packages.config" />
+    <Schema Include="Schemas\call_authsrv_its_uu_se.xsd">
+      <Namespace>INT0004.AKKA.Identity.Schemas</Namespace>
+      <TypeName>call_authsrv_its_uu_se</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\cxf_akkaappl_akka_its_uu_se.xsd">
+      <Namespace>INT0004.AKKA.Identity.Schemas</Namespace>
+      <TypeName>cxf_akkaappl_akka_its_uu_se</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
     <Schema Include="Schemas\PersonEvent.PropertySchema.xsd">
       <TypeName>PersonEvent_PropertySchema</TypeName>
       <Namespace>INT0004.AKKA.Identity.Schemas</Namespace>
@@ -155,19 +165,12 @@
       <Namespace>INT0004.AKKA.Identity.Pipelines</Namespace>
       <SubType>Task</SubType>
     </Pipeline>
+    <Map Include="Maps\InternalPersonEvent_to_uppdateraStudentKonto.btm">
+      <TypeName>InternalPersonEvent_to_uppdateraStudentKonto</TypeName>
+      <Namespace>INT0004.AKKA.Identity.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
     <Content Include="README.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Schema Include="Schemas\call_authsrv_its_uu_se.xsd">
-      <SubType>Task</SubType>
-      <TypeName>call_authsrv_its_uu_se</TypeName>
-      <Namespace>INT0004.AKKA.Identity.Schemas</Namespace>
-    </Schema>
-    <Schema Include="Schemas\cxf_akkaappl_akka_its_uu_se.xsd">
-      <SubType>Task</SubType>
-      <TypeName>cxf_akkaappl_akka_its_uu_se</TypeName>
-      <Namespace>INT0004.AKKA.Identity.Schemas</Namespace>
-    </Schema>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
