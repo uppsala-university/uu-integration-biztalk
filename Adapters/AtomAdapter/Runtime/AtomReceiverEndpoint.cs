@@ -1,20 +1,17 @@
 
-using System;
-using System.IO;
-using System.Xml;
-using System.Threading;
-using System.Text;
-using System.Transactions;
-using System.Data.SqlClient;
+using Microsoft.BizTalk.Adapter.Common;
 using Microsoft.BizTalk.Component.Interop;
 using Microsoft.BizTalk.Message.Interop;
 using Microsoft.BizTalk.TransportProxy.Interop;
-using Microsoft.BizTalk.Adapter.Common;
-using System.Collections;
-using System.Collections.Generic;
 using Shared.Components;
-using System.Xml.Serialization;
+using System;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Threading;
+using System.Transactions;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace BizTalk.Adapter.Atom
 {
@@ -37,7 +34,7 @@ namespace BizTalk.Adapter.Atom
         //  properties
         private AtomReceiveProperties properties;
 
-        private bool busy = false; 
+        private bool busy = false;
         //  handle to the EPM
         private IBTTransportProxy transportProxy;
         private IBaseMessageFactory messageFactory;
@@ -59,9 +56,9 @@ namespace BizTalk.Adapter.Atom
             try
             {
                 this.properties = new AtomReceiveProperties(uri);
-              
+
                 XmlDocument locationConfigDom = ConfigProperties.ExtractConfigDom(config);
-                this.properties.LocationConfiguration(locationConfigDom,false);
+                this.properties.LocationConfiguration(locationConfigDom, false);
 
                 //  this is our handle back to the EPM
                 this.transportProxy = transportProxy;
@@ -88,7 +85,7 @@ namespace BizTalk.Adapter.Atom
         }
 
         //  update and delete
-        public override void Update (IPropertyBag config, IPropertyBag bizTalkConfig, IPropertyBag handlerPropertyBag)
+        public override void Update(IPropertyBag config, IPropertyBag bizTalkConfig, IPropertyBag handlerPropertyBag)
         {
             try
             {
@@ -97,7 +94,7 @@ namespace BizTalk.Adapter.Atom
                 this.properties = new AtomReceiveProperties(this.properties.Uri);
 
                 XmlDocument locationConfigDom = ConfigProperties.ExtractConfigDom(config);
-                this.properties.LocationConfiguration(locationConfigDom,true);
+                this.properties.LocationConfiguration(locationConfigDom, true);
 
                 Start();
             }
@@ -106,7 +103,7 @@ namespace BizTalk.Adapter.Atom
             }
         }
 
-        public override void Dispose ()
+        public override void Dispose()
         {
             try
             {
@@ -121,37 +118,37 @@ namespace BizTalk.Adapter.Atom
             }
         }
 
-    private IBaseMessage CreateMessage(Shared.Components.Entry message)
-    {
+        private IBaseMessage CreateMessage(Shared.Components.Entry message)
+        {
 
-        MemoryStream mem = new MemoryStream(UTF8Encoding.UTF8.GetBytes(message.Content));
-            
-        IBaseMessageFactory factory = this.transportProxy.GetMessageFactory();
-        IBaseMessagePart part = factory.CreateMessagePart();
+            MemoryStream mem = new MemoryStream(UTF8Encoding.UTF8.GetBytes(message.Content));
 
-        part.Data = mem;
+            IBaseMessageFactory factory = this.transportProxy.GetMessageFactory();
+            IBaseMessagePart part = factory.CreateMessagePart();
 
-        IBaseMessage msg = factory.CreateMessage();
-        msg.AddPart("body", part, true);
+            part.Data = mem;
 
-        //  We must add these context properties
-        SystemMessageContext context = new SystemMessageContext(msg.Context);
-        context.InboundTransportLocation = this.uri;
-        context.InboundTransportType = this.transportType;
-        //Set ActionOnFailure to zero in the context property of each messaqe that you do not want BizTalk Server to suspend on a processing exception. 
-        //Failure to set this property allows BizTalk Server to fall back to its default behavior 
-        //of suspending the message on a processing exception. 
-        //context.ActionOnFailure = 0;
-        
-        //we could promote entity id and updated, msg.Context.Promote(ns, message.Id
-        return msg;
-    }
+            IBaseMessage msg = factory.CreateMessage();
+            msg.AddPart("body", part, true);
 
-    public void ProcessBatch()
-    {
-        bool needToLeave = false;
+            //  We must add these context properties
+            SystemMessageContext context = new SystemMessageContext(msg.Context);
+            context.InboundTransportLocation = this.uri;
+            context.InboundTransportType = this.transportType;
+            //Set ActionOnFailure to zero in the context property of each messaqe that you do not want BizTalk Server to suspend on a processing exception. 
+            //Failure to set this property allows BizTalk Server to fall back to its default behavior 
+            //of suspending the message on a processing exception. 
+            //context.ActionOnFailure = 0;
 
-        busy = true;
+            //we could promote entity id and updated, msg.Context.Promote(ns, message.Id
+            return msg;
+        }
+
+        public void ProcessBatch()
+        {
+            bool needToLeave = false;
+
+            busy = true;
 
 
             try
@@ -170,7 +167,7 @@ namespace BizTalk.Adapter.Atom
                 stateSettings.WorkingFeed = this.properties.FirstFeed;
                 stateSettings.Id = atomState.LastEntryId;
 
-               
+
                 AtomReader atom = new AtomReader(this.properties.Uri, stateSettings, this.properties.SecuritySettings, this.properties.FeedMax);
 
                 Feed feed = null;
@@ -185,43 +182,43 @@ namespace BizTalk.Adapter.Atom
 
 
                     //using (SyncReceiveSubmitBatch batch = new SyncReceiveSubmitBatch(this.transportProxy, this.control, 1))
-                   
-                        Entry entry = feed.Entries.PopOrNUll();
 
-                        while (entry != null)
+                    Entry entry = feed.Entries.PopOrNUll();
+
+                    while (entry != null)
+                    {
+
+                        if (discard == false)
                         {
+                            orderedEvent = new ManualResetEvent(false);
+                            transaction = new CommittableTransaction();
 
-                            if (discard == false)
+                            atomState.LastEntryId = entry.Id;
+                            atomState.LastUpdated = feed.Updated;
+                            atomState.LastFeed = feed.Uri;
+
+                            SaveState(transaction);
+
+                            using (SingleMessageReceiveTxnBatch batch = new SingleMessageReceiveTxnBatch(this.transportProxy, this.control, transaction, orderedEvent))
                             {
-                                orderedEvent = new ManualResetEvent(false);
-                                transaction = new CommittableTransaction();
+                                batch.SubmitMessage(CreateMessage(entry));
+                                batch.Done();
 
-                                atomState.LastEntryId = entry.Id;
-                                atomState.LastUpdated = feed.Updated;
-                                atomState.LastFeed = feed.Uri;
+                                orderedEvent.WaitOne();
 
-                                SaveState(transaction);
-
-                                using (SingleMessageReceiveTxnBatch batch = new SingleMessageReceiveTxnBatch(this.transportProxy, this.control, transaction, orderedEvent))
-                                {
-                                    batch.SubmitMessage(CreateMessage(entry));
-                                    batch.Done();
-
-                                    orderedEvent.WaitOne();
-
-                                }
                             }
-
-
-                            if (stateId == entry.Id)
-                                discard = false;
-
-                            entry = feed.Entries.PopOrNUll();
                         }
 
 
+                        if (stateId == entry.Id)
+                            discard = false;
+
+                        entry = feed.Entries.PopOrNUll();
                     }
-                
+
+
+                }
+
 
 
 
@@ -262,11 +259,11 @@ namespace BizTalk.Adapter.Atom
 
 
             }
-}
-   
+        }
+
         private void Start()
         {
-            if(File.Exists(this.properties.StateFile))
+            if (File.Exists(this.properties.StateFile))
             {
                 using (FileStream stateFile = new FileStream(this.properties.StateFile, FileMode.Open, FileAccess.Read))
                 {
@@ -284,8 +281,8 @@ namespace BizTalk.Adapter.Atom
 
         private void SaveState(System.Transactions.Transaction transaction)
         {
-           
-            if(TransactionalFile.WriteStateFileTransacted(this.properties.StateFile, stateSerializer, atomState, transaction) == false)
+
+            if (TransactionalFile.WriteStateFileTransacted(this.properties.StateFile, stateSerializer, atomState, transaction) == false)
                 throw new Exception(String.Format("State file {0} could not be written!", this.properties.StateFile));
 
         }
@@ -303,7 +300,7 @@ namespace BizTalk.Adapter.Atom
 
                 throw new Exception(String.Format("State file {0} could not be written!", this.properties.StateFile), ex);
             }
-           
+
         }
         private void Stop()
         {
@@ -314,25 +311,25 @@ namespace BizTalk.Adapter.Atom
             catch (Exception ex)
             {
 
-                throw new FileLoadException(String.Format("File {0} could not be written!", this.properties.StateFile),ex);
+                throw new FileLoadException(String.Format("File {0} could not be written!", this.properties.StateFile), ex);
 
             }
             finally
             {
                 this.timer.Dispose();
             }
-           
 
-            
+
+
         }
 
         private void TimerTask(object state)
         {
-            if(busy == false)
+            if (busy == false)
                 ProcessBatch();//if busy wait for next timer
 
         }
-        
-       
+
+
     }
 }
