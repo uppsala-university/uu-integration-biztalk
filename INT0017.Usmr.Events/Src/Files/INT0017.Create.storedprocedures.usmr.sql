@@ -74,3 +74,39 @@ FIN != 'EES' and FIN != 'SLU'  and FIN != 'SWB' and FIN != 'U' and FIN != 'UCI' 
 and FIN != 'UKU' and FIN != 'UL' and FIN != 'UMD' )
  for xml auto 
 END
+
+go
+
+Create PROCEDURE  [dbo].[uusmrUpdateStudentRecord]  
+            @PNR CHAR(11),
+            @EFTERNAMN VARCHAR(255),
+            @FORNAMN VARCHAR(255),
+            @INLDATUM_PERS CHAR(10),
+            @COADRESS VARCHAR(255),
+            @GATUADRESS VARCHAR(255),
+            @POSTNR VARCHAR(10),
+            @ORT VARCHAR(255),
+            @LAND VARCHAR(255),
+            @INLDATUM_ADRESS CHAR(10),
+            @TELNR VARCHAR(255),
+            @INLDATUM_TELNR CHAR(10),
+            @EPOSTADRESS VARCHAR(255)            
+AS
+BEGIN  
+    SET NOCOUNT ON;      
+    UPDATE [dbo].["UUSKLIST"] SET
+            efternamn=@EFTERNAMN,
+            fornamn=@FORNAMN,
+            inldatum_pers=@INLDATUM_PERS,
+            coadress=@COADRESS,
+            gatuadress=@GATUADRESS,
+            postnr=@POSTNR,
+            ort=@ORT,
+            land=@LAND,
+            inldatum_adress=@INLDATUM_ADRESS,
+            telnr=@TELNR,
+            inldatum_telnr=@INLDATUM_TELNR,
+            epostadress=@EPOSTADRESS 
+			where pnr=@PNR
+           
+       END
