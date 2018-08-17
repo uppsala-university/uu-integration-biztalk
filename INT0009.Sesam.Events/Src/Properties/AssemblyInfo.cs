@@ -7,12 +7,12 @@ using Microsoft.BizTalk.XLANGs.BTXEngine;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("INT0002.Ladok3")]
+[assembly: AssemblyTitle("INT0009.Sesam.Events")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("INT0002.Ladok3")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyProduct("INT0009.Sesam.Events")]
+[assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: Microsoft.XLANGs.BaseTypes.BizTalkAssemblyAttribute(typeof(BTXService))]
@@ -23,7 +23,7 @@ using Microsoft.BizTalk.XLANGs.BTXEngine;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bb176d8e-4290-4fb5-a10c-c8877f802494")]
+[assembly: Guid("5a27dac8-0a2e-4533-905d-53d2682211b2")]
 
 // Version information for an assembly consists of the following four values:
 //
