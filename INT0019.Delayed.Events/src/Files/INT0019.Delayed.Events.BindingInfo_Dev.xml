@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="Unbound" BoundEndpoints="0" TotalEndpoints="2">
+  <Timestamp>2018-08-20T15:09:17.1623464+02:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:INT0019.Delayed.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0019.Delayed.Events], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas>
+        <Schema FullName="INT0019.Delayed.Events.Schemas.sqlBinding_delayedevents" RootName="ArrayOfTypedPollingResultSet0" AssemblyQualifiedName="INT0019.Delayed.Events.Schemas.sqlBinding_delayedevents,INT0019.Delayed.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="INT0019.Delayed.Events.Schemas.sqlBinding_delayedevents" RootName="TypedPolling" AssemblyQualifiedName="INT0019.Delayed.Events.Schemas.sqlBinding_delayedevents,INT0019.Delayed.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="INT0019.Delayed.Events.Schemas.sqlBinding_delayedevents" RootName="TypedPollingResultSet0" AssemblyQualifiedName="INT0019.Delayed.Events.Schemas.sqlBinding_delayedevents,INT0019.Delayed.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+      </TrackedSchemas>
+    </ModuleRef>
+    <ModuleRef Name="INT0019.Delayed.Events" Version="1.0.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0019.Delayed.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
+      <Services>
+        <Service Name="INT0019.Delayed.Events.ProcessedDelayedEvents" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents">
+          <Ports>
+            <Port Name="ReceiveDelayedEvents" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendDelayedEvent" Modifier="1" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host xsi:nil="true" />
+        </Service>
+      </Services>
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+		<SendPort Name="INT019.Send_DelayedEvent" IsStatic="true" IsTwoWay="false" BindingOption="1">
+			<Description xsi:nil="true" />
+			<TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+			<SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlAsmComp"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
+			<PrimaryTransport>
+				<Address>C:\integrations\INT0019.Delayed.Events\Out\%MessageID%.xml</Address>
+				<TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+				<TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+				<RetryCount>3</RetryCount>
+				<RetryInterval>5</RetryInterval>
+				<ServiceWindowEnabled>false</ServiceWindowEnabled>
+				<FromTime>2000-01-01T22:00:00</FromTime>
+				<ToTime>2000-01-01T21:59:59</ToTime>
+				<Primary>true</Primary>
+				<OrderedDelivery>false</OrderedDelivery>
+				<DeliveryNotification>1</DeliveryNotification>
+				<SendHandler Name="CluSDSend" HostTrusted="false">
+					<TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+				</SendHandler>
+			</PrimaryTransport>
+			<SecondaryTransport>
+				<Address />
+				<RetryCount>3</RetryCount>
+				<RetryInterval>5</RetryInterval>
+				<ServiceWindowEnabled>false</ServiceWindowEnabled>
+				<FromTime>2000-01-01T22:00:00</FromTime>
+				<ToTime>2000-01-01T21:59:59</ToTime>
+				<Primary>false</Primary>
+				<OrderedDelivery>false</OrderedDelivery>
+				<DeliveryNotification>1</DeliveryNotification>
+				<SendHandler xsi:nil="true" />
+			</SecondaryTransport>
+			<ReceivePipelineData xsi:nil="true" />
+			<Tracking>0</Tracking>
+			<Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Filter>
+			<Transforms />
+			<OrderedDelivery>false</OrderedDelivery>
+			<Priority>5</Priority>
+			<StopSendingOnFailure>false</StopSendingOnFailure>
+			<RouteFailedMessage>false</RouteFailedMessage>
+			<ApplicationName>INT0019.Delayed.Events</ApplicationName>
+		</SendPort>
+	</SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+		<ReceivePort Name="INT0019.Delayed.Events" IsTwoWay="false" BindingOption="1">
+			<Description xsi:nil="true" />
+			<ReceiveLocations>
+				<ReceiveLocation Name="INT019.Delayed.Events">
+					<Description xsi:nil="true" />
+					<Address>mssql://.//sd-delayed-test-db?InboundId=delayedevents</Address>
+					<PublicAddress />
+					<Primary>true</Primary>
+					<ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+					<ReceiveLocationFromTime>2000-01-01T22:00:00</ReceiveLocationFromTime>
+					<ReceiveLocationToTime>2000-01-01T21:59:59</ReceiveLocationToTime>
+					<ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+					<ReceiveLocationStartDate>2018-08-01T00:00:00</ReceiveLocationStartDate>
+					<ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+					<ReceiveLocationEndDate>2018-08-02T23:59:59</ReceiveLocationEndDate>
+					<ReceiveLocationTransportType Name="WCF-SQL" Capabilities="779" ConfigurationClsid="59b35d03-6a06-4734-a249-ef561254ecf7" />
+					<ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" polledDataAvailableStatement="exec [INT0019.Delayed.Events.checkNext]" pollingStatement="exec [INT0019.Delayed.Events.getNext]" pollingIntervalInSeconds="10" inboundOperationType="TypedPolling" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;DisableLocationOnFailure vt="11"&gt;0&lt;/DisableLocationOnFailure&gt;&lt;UserName vt="8"&gt;sd-delayed-test-writer&lt;/UserName&gt;&lt;ServiceBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="ServiceBehavior" /&amp;gt;&lt;/ServiceBehaviorConfiguration&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;IncludeExceptionDetailInFaults vt="11"&gt;0&lt;/IncludeExceptionDetailInFaults&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;CredentialType vt="8"&gt;None&lt;/CredentialType&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;SuspendMessageOnFailure vt="11"&gt;0&lt;/SuspendMessageOnFailure&gt;&lt;OrderedProcessing vt="11"&gt;0&lt;/OrderedProcessing&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+					<ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody" Description="" />
+					<ReceivePipelineData xsi:nil="true" />
+					<SendPipeline xsi:nil="true" />
+					<SendPipelineData xsi:nil="true" />
+					<Enable>true</Enable>
+					<ReceiveHandler Name="CluSDReceive" HostTrusted="false">
+						<TransportType Name="WCF-SQL" Capabilities="779" ConfigurationClsid="59b35d03-6a06-4734-a249-ef561254ecf7" />
+					</ReceiveHandler>
+				</ReceiveLocation>
+			</ReceiveLocations>
+			<SendPipelineData xsi:nil="true" />
+			<Authentication>0</Authentication>
+			<Tracking>0</Tracking>
+			<Transforms />
+			<RouteFailedMessage>false</RouteFailedMessage>
+			<ApplicationName>INT0019.Delayed.Events</ApplicationName>
+		</ReceivePort>
+	</ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>
