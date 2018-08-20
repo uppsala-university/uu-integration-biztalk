@@ -5,7 +5,7 @@ INT0017 Stores data needed for Uppsala Studentkår and produces
 the file UUSKLIST for export to the Melos system.
 
 Data is received as events from the queue sd-usmr and
-stored into a snapshot database. A
+stored into a snapshot database named sd-usmr-test-db for test and dev. For production name should be sd-usmr-test-db 
 
 Data that are updated are student participation in courses and personal
 information such as name, emailadress and postal adress. Note that
@@ -14,6 +14,17 @@ changes in personalnumbers are processed in application INT0015.
 Application have two receive ports:
 INT0017.ReceiveUsmrSdEvents   reads data from queue    (service window will need to be set for executing file output job once a day)
 INT0017.getPolledData         reads data from the database (polling intervall will need to be set for executing file output job once/service window)
+
+Application have four send ports:
+INT0017.Create.UsmrRecord             stores a registration event in snaphot database
+INT0017.Create.UsmrRecordReregister   stores a rregistration event
+INT0017.Create.UpdateUsmrRecord       updates a student record with new name & contact information. The
+                                      origin of the new data is the Ladok event LokalStudentEvent enriched with contact information
+INT0017.Create.File                   Outputs the file UUSKLIST for further processing by the system Melos.
+                                      Data for the file is received from receive location INT0017.getPolledData
+									  which is a sql polling job that periodically reads the content of the whole snaphot databse.
+                                                                        
+
 
 Installation
 Requirements
