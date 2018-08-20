@@ -10,6 +10,8 @@ stored into a snapshot database named sd-usmr-test-db for test and dev. For prod
 Data that are updated are student participation in courses and personal
 information such as name, emailadress and postal adress. Note that
 changes in personalnumbers are processed in application INT0015.
+This solution needs to stop receiving events during a certain time and during this interval the output file 
+should be created.
 
 Application have two receive ports:
 INT0017.ReceiveUsmrSdEvents   reads data from queue    (service window will need to be set for executing file output job once a day)
@@ -40,6 +42,22 @@ Bindings
 
 INT0017.DEV.Bindings.xml    Bindings for DEV. The job that produces the output file is set to run very often.
                             PROD bindings will have to set this job to run once a day.  
+
+Needed Changes in bindings for test & prod:
+Password, username and databseserver needs to be set for
+INT0017.Create.UsmrRecord              
+INT0017.Create.UsmrRecordReregister     
+INT0017.Create.UpdateUsmrRecord 
+INT0017.getPolledData
+
+Needed Service windows
+
+Receive location INT0017.ReceiveUsmrSdEvents needs to be disabled at a suitable time of day and
+INT0017.GetPolledData needs a corresponding service window time when its active and should create the output file. 
+Verify that this binding has a corecctPollingInterval set so it only runs once during the service window.  
+
+
+
 
 
 
