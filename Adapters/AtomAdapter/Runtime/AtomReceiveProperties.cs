@@ -13,12 +13,14 @@ namespace BizTalk.Adapter.Atom
         private string address;
         private int pollingInterval;
         private string pollingIntervalUnit;
+        private int numberOfEvents;
         private string stateFile;
         private string userName;
         private string password;
         private SecuritySettings securitySettings = null;
 
         private string firstFeed;
+        private string firstEntry;
         private bool findFirst;
 
         private int feedMax = 0;
@@ -38,9 +40,10 @@ namespace BizTalk.Adapter.Atom
         public string Address { get { return address; } }
         public int PollingInterval { get { return pollingInterval; } }
         public string PollingIntervalUnit { get { return pollingIntervalUnit; } }
-
+        public int NumberOfEvents { get { return numberOfEvents; } }
 
         public string FirstFeed { get { return firstFeed; } }
+        public string FirstEntry { get { return firstEntry; } }
         public bool FirdFirst { get { return findFirst; } }
 
         public AtomReceiveProperties(string uri)
@@ -50,12 +53,14 @@ namespace BizTalk.Adapter.Atom
                 this.uri = uri;
                 this.pollingInterval = 3000;
                 this.pollingIntervalUnit = "seconds";
+                this.numberOfEvents = 10;
                 this.stateFile = String.Empty;
                 this.address = String.Empty;
                 this.userName = String.Empty;
                 this.password = String.Empty;
                 this.findFirst = false;
                 this.firstFeed = String.Empty;
+                this.firstEntry = String.Empty;
                 this.feedMax = 10;
             }
             finally
@@ -71,8 +76,18 @@ namespace BizTalk.Adapter.Atom
         {
             try
             {
-                int pollingIntervalMultiplier = 1;
 
+                XmlNode nodeAddress = configDOM.SelectSingleNode("Config/address");
+                if (nodeAddress == null)
+                    throw new ArgumentNullException("NodeAddress", "Atom feed address must be specified!");
+                this.address = nodeAddress.InnerText;
+
+                XmlNode nodeStateFile = configDOM.SelectSingleNode("Config/stateFile");
+                if (nodeStateFile == null)
+                    throw new ArgumentNullException("NodeStateFile", "Path to state file must be specified!");
+                this.stateFile = nodeStateFile.InnerText;
+
+                int pollingIntervalMultiplier = 1;
                 XmlNode nodePollingIntervalUnit = configDOM.SelectSingleNode("Config/pollingIntervalUnit");
                 switch (nodePollingIntervalUnit.InnerText.ToLower())
                 {
@@ -88,22 +103,11 @@ namespace BizTalk.Adapter.Atom
                 }
 
                 XmlNode nodePollingInterval = configDOM.SelectSingleNode("Config/pollingInterval");
-
-                XmlNode nodeAddress = configDOM.SelectSingleNode("Config/address");
-                if (nodeAddress == null)
-                    throw new ArgumentNullException("NodeAddress", "Atom feed address must be specified!");
-
-                this.address = nodeAddress.InnerText;
-
                 int pollingIntervalValue = int.Parse(nodePollingInterval.InnerText);
-
                 this.pollingInterval = pollingIntervalMultiplier * pollingIntervalValue;
 
-                XmlNode nodeStateFile = configDOM.SelectSingleNode("Config/stateFile");
-                if (nodeStateFile == null)
-                    throw new ArgumentNullException("NodeStateFile", "Path to state file must be specified!");
-
-                this.stateFile = nodeStateFile.InnerText;
+                XmlNode nodeNumberOfEvents = configDOM.SelectSingleNode("Config/numberOfEvents");
+                this.numberOfEvents = int.Parse(nodeNumberOfEvents.InnerText);
 
                 XmlNode userName = configDOM.SelectSingleNode("Config/userName");
                 if (userName != null)
@@ -133,6 +137,12 @@ namespace BizTalk.Adapter.Atom
                     this.firstFeed = firstFeed.InnerText;
                 }
 
+                XmlNode nodeFirstEntry = configDOM.SelectSingleNode("Config/firstEntry");
+                if (firstFeed != null)
+                {
+                    this.firstEntry = nodeFirstEntry.InnerText;
+                }          
+                      
                 XmlNode findFirst = configDOM.SelectSingleNode("Config/findFirst");
                 if (findFirst != null)
                 {
@@ -140,7 +150,6 @@ namespace BizTalk.Adapter.Atom
                 }
 
                 XmlNode feedMax = configDOM.SelectSingleNode("Config/feedMax");
-
                 if (feedMax != null)
                 {
                     this.feedMax = Int32.Parse(feedMax.InnerText);

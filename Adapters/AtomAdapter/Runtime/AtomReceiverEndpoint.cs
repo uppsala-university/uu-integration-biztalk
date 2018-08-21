@@ -72,7 +72,6 @@ namespace BizTalk.Adapter.Atom
                 this.messageFactory = this.transportProxy.GetMessageFactory();
                 stateSerializer = new XmlSerializer(typeof(AtomState));
 
-
                 Start();
             }
             catch (Exception)
@@ -159,35 +158,33 @@ namespace BizTalk.Adapter.Atom
                     needToLeave = false;
                     return;
                 }
-
                 needToLeave = true;
 
                 StateSettings stateSettings = new StateSettings();
                 stateSettings.FindFirst = this.properties.FirdFirst;
-                stateSettings.WorkingFeed = this.properties.FirstFeed;
-                stateSettings.Id = atomState.LastEntryId;
-
+                stateSettings.WorkingFeed = string.IsNullOrWhiteSpace(atomState.LastFeed) ? this.properties.FirstFeed : atomState.LastFeed;
+                stateSettings.Id = string.IsNullOrWhiteSpace(atomState.LastEntryId) ? this.properties.FirstEntry : atomState.LastEntryId;
 
                 AtomReader atom = new AtomReader(this.properties.Uri, stateSettings, this.properties.SecuritySettings, this.properties.FeedMax);
 
                 Feed feed = null;
                 bool discard = atom.IdFound;
-                string stateId = atomState.LastEntryId;
+                string stateId = stateSettings.Id;
                 string lastId = String.Empty;
 
-                while ((feed = atom.NextFeed()) != null && feed.Entries.Count > 0)
+                bool getAllEntries = properties.NumberOfEvents == 0;
+                int entryCounter = 0;
+                bool getEntry = getAllEntries || entryCounter < properties.NumberOfEvents;
+
+                while (getEntry && (feed = atom.NextFeed()) != null && feed.Entries.Count > 0)
                 {
                     ManualResetEvent orderedEvent = null;
                     CommittableTransaction transaction = null;
 
-
-                    //using (SyncReceiveSubmitBatch batch = new SyncReceiveSubmitBatch(this.transportProxy, this.control, 1))
-
                     Entry entry = feed.Entries.PopOrNUll();
 
-                    while (entry != null)
+                    while (getEntry && entry != null)
                     {
-
                         if (discard == false)
                         {
                             orderedEvent = new ManualResetEvent(false);
@@ -203,32 +200,21 @@ namespace BizTalk.Adapter.Atom
                             {
                                 batch.SubmitMessage(CreateMessage(entry));
                                 batch.Done();
-
                                 orderedEvent.WaitOne();
-
                             }
+                            entryCounter++;
+                            getEntry = getAllEntries || entryCounter < properties.NumberOfEvents;
                         }
-
 
                         if (stateId == entry.Id)
                             discard = false;
 
-                        entry = feed.Entries.PopOrNUll();
+                        if (getEntry)
+                            entry = feed.Entries.PopOrNUll();
                     }
-
-
                 }
 
-
-
-
-
-
-
-                //  no exception in Done so we will be getting a BatchComplete which will do the necessary Leave
                 needToLeave = false;
-
-
             }
             catch (MaxDeepthException deepth)
             {
@@ -255,9 +241,6 @@ namespace BizTalk.Adapter.Atom
                 //  if this is true there must have been some exception in or before Done
                 if (needToLeave)
                     this.control.Leave();
-
-
-
             }
         }
 
