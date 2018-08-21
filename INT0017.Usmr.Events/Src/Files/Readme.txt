@@ -37,6 +37,16 @@ for databse sd-usmr-test-db (called test and dev):
 Create database tables in Files/INT0017.Create.DatabaseTables.sql
 Create stored procedures in Files/INT0017.Create.storedProcedures.sql
 
+Populate database
+The database needs to be initialized with data in the latest Usmr expåort file UUSKLIST.
+Run the import with the following command:
+files\INT0017InitUsmrDB.exe <path/importfile> <dbuser> <dbpassword> <dbname> <dbserver>
+example:
+INT0017InitUsmrDB.exe E:\UUSKLIST usmr password sd-usmr-test-db localhost
+After initializing the databse the content can be checked with:
+select * from ["UUSKLIST"]
+
+
 
 Bindings
 
