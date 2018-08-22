@@ -1,3 +1,3 @@
-CREATE PROCEDURE addDelayedEvent @body varchar(MAX), @eventTime datetime, @ack int
+CREATE PROCEDURE addDelayedEvent @body varchar(MAX), @eventTime datetime, @eventUID varchar(MAX)
 AS
-INSERT INTO dbo.delayed_events (body,eventTime,ack) VALUES (@body, @eventTime, @ack);
+INSERT INTO dbo.delayed_events (body,eventTime,eventUID) VALUES (@body, @eventTime, @eventUID);

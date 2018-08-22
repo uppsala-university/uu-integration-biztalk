@@ -39,7 +39,7 @@
     <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Shared.Schemas.Ladok, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+    <Reference Include="Shared.Schemas.Ladok, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\schemas\Shared.Schemas\Ladok\bin\Debug\Shared.Schemas.Ladok.dll</HintPath>
     </Reference>
@@ -77,59 +77,73 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Map Include="Maps\AterbudEnvelope_to_Query.btm">
-      <TypeName>AterbudEnvelope_to_Query</TypeName>
-      <Namespace>INT0018.Delayed.Events.Maps</Namespace>
+    <Schema Include="Schemas\addDelayedDataSetSchema.xsd">
+      <TypeName>addDeleyedDataSetSchema</TypeName>
+      <Namespace>INT0018.Delayed.Events</Namespace>
       <SubType>Task</SubType>
-    </Map>
-    <Map Include="Maps\AterkalladOmregistreringEnvelope_to_Query.btm">
-      <TypeName>AterkalladOmregistreringEnvelope_to_Query</TypeName>
-      <Namespace>INT0018.Delayed.Events.Maps</Namespace>
+    </Schema>
+    <Schema Include="Schemas\addDelayedProcedure.dbo.xsd">
+      <TypeName>addDeleyedProcedure_dbo</TypeName>
+      <Namespace>INT0018.Delayed.Events</Namespace>
       <SubType>Task</SubType>
-    </Map>
-    <Map Include="Maps\AterkalladRegistreringEnvelope_to_Query.btm">
-      <TypeName>AterkalladRegistreringEnvelope_to_Query</TypeName>
-      <Namespace>INT0018.Delayed.Events.Maps</Namespace>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Processing\HandleUppehalEvent.odx">
+      <TypeName>HandleUppehalEvent</TypeName>
+      <Namespace>INT0018.Delayed.Events.Processing</Namespace>
       <SubType>Task</SubType>
-    </Map>
-    <Map Include="Maps\AvbrottEvent_to_Query.btm">
-      <TypeName>AvbrottEvent_to_Query</TypeName>
-      <Namespace>INT0018.Delayed.Events.Maps</Namespace>
-      <SubType>Task</SubType>
-    </Map>
-    <Map Include="Maps\UppehallBorttagetEvent_to_Query.btm">
-      <TypeName>UppehallBorttagetEvent_to_Query</TypeName>
-      <Namespace>INT0018.Delayed.Events.Maps</Namespace>
-      <SubType>Task</SubType>
-    </Map>
-    <Map Include="Maps\UppehallEvent_to_Query.btm">
-      <TypeName>UppehallEvent_to_Query</TypeName>
-      <Namespace>INT0018.Delayed.Events.Maps</Namespace>
-      <SubType>Task</SubType>
-    </Map>
-    <Map Include="Maps\UppehallUppdateratEvent_to_Query.btm">
-      <TypeName>UppehallUppdateratEvent_to_Query</TypeName>
-      <Namespace>INT0018.Delayed.Events.Maps</Namespace>
-      <SubType>Task</SubType>
-    </Map>
-    <Map Include="Maps\StudentrestriktionEvent_to_Query.btm">
-      <TypeName>StudentrestriktionEvent_to_Query</TypeName>
-      <Namespace>INT0018.Delayed.Events.Maps</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\DelayedUppehallStartEnvelpe\UppehallEvent_to_DelayedUppehallStartEnvelpe.btm">
+      <TypeName>UppehallEvent_to_DelayedUppehallStartEnvelpe</TypeName>
+      <Namespace>INT0018.Delayed.Events.Maps.DelayedUppehallStartEnvelpe</Namespace>
       <SubType>Task</SubType>
     </Map>
   </ItemGroup>
   <ItemGroup>
-    <Schema Include="Schemas\DataSetSchema.xsd">
-      <TypeName>DataSetSchema</TypeName>
+    <Map Include="Maps\DelayedUppehallStopEnvelpe\UppehallEvent_to_DelayedUppehallStopEnvelpe.btm">
+      <TypeName>UppehallEvent_to_DelayedUppehallStopEnvelpe</TypeName>
+      <Namespace>INT0018.Delayed.Events.Maps.DelayedUppehallStopEnvelpe</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\DelayedUppehallStartEnvelpe\DelayedUppehallStartEnvelope_to_Query.btm">
+      <TypeName>DelayedUppehallStartEnvelope_to_Query</TypeName>
+      <Namespace>INT0018.Delayed.Events.Maps.DelayedUppehallStartEnvelpe</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\DelayedUppehallStopEnvelpe\DelayedUppehallStopEnvelope_to_Query.btm">
+      <TypeName>DelayedUppehallStopEnvelope_to_Query</TypeName>
+      <Namespace>INT0018.Delayed.Events.Maps.DelayedUppehallStopEnvelpe</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="Schemas\delDeleyedDataSetSchema.xsd">
+      <TypeName>delDeleyedDataSetSchema</TypeName>
       <Namespace>INT0018.Delayed.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
+    <Schema Include="Schemas\delDeleyedProcedure.dbo.xsd">
+      <TypeName>delDeleyedProcedure_dbo</TypeName>
+      <Namespace>INT0018.Delayed.Events</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\UppehallBorttagetEvent\UppehallBorttagetEvent_to_query.btm">
+      <TypeName>UppehallBorttagetEvent_to_query</TypeName>
+      <Namespace>INT0018.Delayed.Events.Maps.UppehallBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="key.snk.pfx" />
-    <Schema Include="Schemas\Procedure.dbo.xsd">
-      <TypeName>Procedure_dbo</TypeName>
-      <Namespace>INT0018.Delayed.Events</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
