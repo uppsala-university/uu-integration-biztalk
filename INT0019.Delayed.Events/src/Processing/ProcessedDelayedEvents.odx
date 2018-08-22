@@ -1,0 +1,570 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="2e345629-4a25-47c7-a53a-78d29a7ec023" LowerBound="1.1" HigherBound="145.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="INT0019.Delayed.Events" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="ba560858-f440-41b4-9d06-8b1a1381bd56" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveDelayedEventsType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="1750a114-68ad-4583-be55-824b0c736fa0" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="ff1e66fa-5052-4c75-84ed-2a81b97907c9" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.58">
+                    <om:Property Name="Ref" Value="INT0019.Delayed.Events.Schemas.sqlBinding_delayedevents.TypedPolling" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="b6aa59b2-1a43-4ff4-b577-14b971b1c843" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendDelayedEventType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="48b0233b-4c5c-413e-b5e2-025e5409d07c" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="b34c00c3-55bf-4f89-8889-f1cfad14db62" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="67964c28-b705-4ac8-8232-42c643e1e1c8" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Send_EventsForEnrichmentType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="538f4424-73c5-4705-a88d-a94768ef752a" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RouteEventsOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="e1cbc510-6092-4406-9665-f72951ecce47" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="053bf9de-9f14-42e6-95ac-e5a7f3c341ea" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="22.37" HigherBound="22.82">
+                    <om:Property Name="Ref" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="3099860e-b28f-4d9d-8684-026907d27008" ParentLink="Module_ServiceDeclaration" LowerBound="29.1" HigherBound="144.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessedDelayedEvents" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="d99078b3-614e-4d76-a8a9-99a826e875bf" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="42.1" HigherBound="43.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="cdata" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="9e20bc69-8018-41fc-ba0e-fbd7d54c4065" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="43.1" HigherBound="44.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="Out" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="outMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="11b9946d-f0d7-44f5-a652-b124e407f9c7" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="44.1" HigherBound="45.1">
+                <om:Property Name="InitialValue" Value="true" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="success" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="07eb8459-c23f-4134-a867-7c9159d8fe06" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="45.1" HigherBound="46.1">
+                <om:Property Name="InitialValue" Value="true" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="tryAgain" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="269269e1-b3d7-4f87-82c2-4ba6a640d2dc" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="46.1" HigherBound="47.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="9402c613-fb34-4c8e-8edb-aeebf0841dd7" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="Type" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
+                <om:Property Name="ParamDirection" Value="Out" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReturnMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="38503ba5-4c73-4be1-a8c8-9da239c08077" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="39.1" HigherBound="40.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IncomingEventToType" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="47e34ad9-6c13-4921-8529-16565f692afd" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="40.1" HigherBound="41.1">
+                <om:Property Name="Type" Value="INT0019.Delayed.Events.Schemas.sqlBinding_delayedevents.TypedPolling" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IncomingEvent" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="612d04e3-d198-44ee-8cac-0a34f16dda96" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="41.1" HigherBound="42.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Ladok3Envelope" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="61d3e6e7-06b1-46d9-b182-c7f295b16004" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="a6b7d7a8-9acb-4d36-a2fe-2226eb768c48" ParentLink="ServiceBody_Statement" LowerBound="49.1" HigherBound="56.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveDelayedEvents" />
+                    <om:Property Name="MessageName" Value="IncomingEvent" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveDelayedEvent" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="aad70b0b-180d-4ece-937c-144ca7068b92" ParentLink="ServiceBody_Statement" LowerBound="56.1" HigherBound="58.1">
+                    <om:Property Name="Expression" Value="tryAgain = true;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Init Try Again" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="While" OID="670bede7-22bc-4f46-90e4-92945c53f6fb" ParentLink="ServiceBody_Statement" LowerBound="58.1" HigherBound="142.1">
+                    <om:Property Name="Expression" Value="tryAgain" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="TryAgain" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Scope" OID="4a0506d7-e6f1-4cfe-aa66-a22212c1b961" ParentLink="ComplexStatement_Statement" LowerBound="61.1" HigherBound="126.1">
+                        <om:Property Name="InitializedTransactionType" Value="True" />
+                        <om:Property Name="IsSynchronized" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Scope_1" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="CorrelationDeclaration" OID="bdc65a63-b19b-4c60-a7cc-131674988696" ParentLink="Scope_CorrelationDeclaration" LowerBound="64.1" HigherBound="65.1">
+                            <om:Property Name="Type" Value="INT0019.Delayed.Events.MessageTypeCorrelationType" />
+                            <om:Property Name="ParamDirection" Value="In" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessageTypeCorrelation" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="StatementRef" OID="21166dcd-4450-46bd-932d-ba9a52ecf907" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="78.99" HigherBound="78.132">
+                                <om:Property Name="Initializes" Value="True" />
+                                <om:Property Name="Ref" Value="974809dc-d34a-4a6f-8014-28610be04bd2" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="StatementRef_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Construct" OID="2d4180d3-c924-4710-9c6c-cc3dd18afa9c" ParentLink="ComplexStatement_Statement" LowerBound="67.1" HigherBound="77.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructXML" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="fddd9e3d-bac3-4012-afc3-6b1ede707d13" ParentLink="ComplexStatement_Statement" LowerBound="70.1" HigherBound="76.1">
+                                <om:Property Name="Expression" Value="xmlDoc = new System.Xml.XmlDocument();&#xD;&#xA;xmlDoc.LoadXml(xpath(IncomingEvent, &quot;string(/*[local-name()='TypedPolling']/*[local-name()='TypedPollingResultSet0']/*[local-name()='TypedPollingResultSet0' ]/*[local-name()='body'])&quot;));&#xD;&#xA;IncomingEventToType = xmlDoc;&#xD;&#xA;Shared.Utilities.PropertyPromotor.Helper.DetermineMessageType(IncomingEventToType); &#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="AssignDelayedEvent" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="834c54a0-4587-44e2-9c17-46c217ee0b80" ParentLink="Construct_MessageRef" LowerBound="68.35" HigherBound="68.54">
+                                <om:Property Name="Ref" Value="IncomingEventToType" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="974809dc-d34a-4a6f-8014-28610be04bd2" ParentLink="ComplexStatement_Statement" LowerBound="77.1" HigherBound="79.1">
+                            <om:Property Name="PortName" Value="Send_EventsForEnrichment" />
+                            <om:Property Name="MessageName" Value="IncomingEventToType" />
+                            <om:Property Name="OperationName" Value="RouteEventsOperation" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_1" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Receive" OID="d356e7bd-3f3c-45b9-88bd-0e5f4f7d7eed" ParentLink="ComplexStatement_Statement" LowerBound="79.1" HigherBound="81.1">
+                            <om:Property Name="Activate" Value="False" />
+                            <om:Property Name="PortName" Value="Send_EventsForEnrichment" />
+                            <om:Property Name="MessageName" Value="ReturnMessage" />
+                            <om:Property Name="OperationName" Value="RouteEventsOperation" />
+                            <om:Property Name="OperationMessageName" Value="Response" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Receive_1" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="dca93c99-16be-4b05-9b8b-1a13d34e674d" ParentLink="ComplexStatement_Statement" LowerBound="81.1" HigherBound="84.1">
+                            <om:Property Name="Expression" Value="success = ReturnMessage.Ack;&#xD;&#xA;outMessage = ReturnMessage.AckMessage;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Asign out variables" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Decision" OID="de01ae1d-f5bf-4e97-ae34-ea643b4ddd0f" ParentLink="ComplexStatement_Statement" LowerBound="84.1" HigherBound="107.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Success" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="DecisionBranch" OID="fa0da1ae-e4e7-46fd-ab16-759c2169f135" ParentLink="ReallyComplexStatement_Branch" LowerBound="85.25" HigherBound="97.1">
+                                <om:Property Name="Expression" Value="success" />
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Yes" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Construct" OID="0c4bd820-c125-44a7-aa2b-b2f5f3bb2cd6" ParentLink="ComplexStatement_Statement" LowerBound="87.1" HigherBound="96.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Construct ReturnEnvelope" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessageAssignment" OID="e57132a5-f20b-48d7-8a57-e098c91d790b" ParentLink="ComplexStatement_Statement" LowerBound="90.1" HigherBound="95.1">
+                                        <om:Property Name="Expression" Value="xmlDoc = new System.Xml.XmlDocument();&#xD;&#xA;cdata = xpath(ReturnMessage, &quot;string(/*[local-name()='InternalReturnMessage']/*[local-name()='ReturnMessage']/text())&quot;);&#xD;&#xA;xmlDoc.LoadXml(cdata);&#xD;&#xA;Ladok3Envelope = xmlDoc;" />
+                                        <om:Property Name="ReportToAnalyst" Value="False" />
+                                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                    <om:Element Type="MessageRef" OID="0fc5fabb-536b-471c-9158-3474ac6517be" ParentLink="Construct_MessageRef" LowerBound="88.39" HigherBound="88.53">
+                                        <om:Property Name="Ref" Value="Ladok3Envelope" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="DecisionBranch" OID="336730e3-0894-4c34-aef8-86a0f816b352" ParentLink="ReallyComplexStatement_Branch">
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="No" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Construct" OID="a247be6e-b834-4d8d-a8b0-a79f40843443" ParentLink="ComplexStatement_Statement" LowerBound="99.1" HigherBound="106.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Construct ReturnEvent" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessageAssignment" OID="ef0dce16-41d3-4ed2-8b99-ec98ec7bbba6" ParentLink="ComplexStatement_Statement" LowerBound="102.1" HigherBound="105.1">
+                                        <om:Property Name="Expression" Value="//Incomming event&#xD;&#xA;Ladok3Envelope = xmlDoc; " />
+                                        <om:Property Name="ReportToAnalyst" Value="False" />
+                                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                    <om:Element Type="MessageRef" OID="ad8a8d92-8d7f-4c95-87f7-b655a011a057" ParentLink="Construct_MessageRef" LowerBound="100.39" HigherBound="100.53">
+                                        <om:Property Name="Ref" Value="Ladok3Envelope" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Catch" OID="695b4c5b-706b-4f28-af0c-9457edb1176e" ParentLink="Scope_Catch" LowerBound="110.1" HigherBound="124.1">
+                            <om:Property Name="ExceptionName" Value="ex" />
+                            <om:Property Name="ExceptionType" Value="System.SystemException" />
+                            <om:Property Name="IsFaultMessage" Value="False" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="CatchException" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="VariableAssignment" OID="b04b5f93-4078-49e2-b619-5ad8850f9c1a" ParentLink="Catch_Statement" LowerBound="113.1" HigherBound="116.1">
+                                <om:Property Name="Expression" Value="success = false;&#xD;&#xA;outMessage = ex.Message;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Asign out variables" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Construct" OID="950080f3-d435-4a5b-8599-f4e78f35dcee" ParentLink="Catch_Statement" LowerBound="116.1" HigherBound="123.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Construct ReturnEvent" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessageRef" OID="92e1e59d-4bfc-4a68-a7f7-819165aebd20" ParentLink="Construct_MessageRef" LowerBound="117.39" HigherBound="117.53">
+                                    <om:Property Name="Ref" Value="Ladok3Envelope" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessageAssignment" OID="288b6131-2b27-4fcc-becf-b76eb3571900" ParentLink="ComplexStatement_Statement" LowerBound="119.1" HigherBound="122.1">
+                                    <om:Property Name="Expression" Value="//Incomming event&#xD;&#xA;Ladok3Envelope = xmlDoc; " />
+                                    <om:Property Name="ReportToAnalyst" Value="False" />
+                                    <om:Property Name="Name" Value="MessageAssignment_1" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Decision" OID="a094bbd0-bd00-4789-9aac-0a1a406e66bf" ParentLink="ComplexStatement_Statement" LowerBound="126.1" HigherBound="141.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Success" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="DecisionBranch" OID="97ed1486-12ae-436b-9c57-3d59f02380d3" ParentLink="ReallyComplexStatement_Branch" LowerBound="127.17" HigherBound="134.1">
+                            <om:Property Name="Expression" Value="success" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Yes" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Send" OID="70ed6db9-abb1-4174-acc5-9ad802b76e1a" ParentLink="ComplexStatement_Statement" LowerBound="129.1" HigherBound="131.1">
+                                <om:Property Name="PortName" Value="SendDelayedEvent" />
+                                <om:Property Name="MessageName" Value="Ladok3Envelope" />
+                                <om:Property Name="OperationName" Value="Operation_1" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="SendDelayedEvent" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="d984740e-8c9f-4058-a8e6-a40d98a918d0" ParentLink="ComplexStatement_Statement" LowerBound="131.1" HigherBound="133.1">
+                                <om:Property Name="Expression" Value="tryAgain = false;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Do not try again" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="DecisionBranch" OID="2feb2a8b-55ca-4f27-874c-885aab5ec4d4" ParentLink="ReallyComplexStatement_Branch">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Else" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Suspend" OID="04253bc0-7d8e-4e94-a123-b61a1740213c" ParentLink="ComplexStatement_Statement" LowerBound="136.1" HigherBound="138.1">
+                                <om:Property Name="ErrorMessage" Value="outMessage;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Suspend" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="b4903e1b-2f86-44e0-b9df-d69de6867d1f" ParentLink="ComplexStatement_Statement" LowerBound="138.1" HigherBound="140.1">
+                                <om:Property Name="Expression" Value="tryAgain = true;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Try again" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="970ffbfb-df0b-40d8-b71e-f15a2c14ab8d" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="0" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0019.Delayed.Events.ReceiveDelayedEventsType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveDelayedEvents" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="b9c6d654-a19c-4109-8744-b2e0182b6b8a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0664154c-426c-48e1-a764-ba260f286350" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="34.1" HigherBound="36.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="94" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0019.Delayed.Events.SendDelayedEventType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendDelayedEvent" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="d22eca97-2647-4373-a045-f9d1667f7774" ParentLink="PortDeclaration_CLRAttribute" LowerBound="34.1" HigherBound="35.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="cb59be20-9f34-4c6b-8e41-a09da867bd75" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="36.1" HigherBound="38.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="30" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0019.Delayed.Events.Send_EventsForEnrichmentType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_EventsForEnrichment" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="34665169-cd3e-4e6b-b74c-81be6fc6a0a9" ParentLink="PortDeclaration_CLRAttribute" LowerBound="36.1" HigherBound="37.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="6b566820-1544-47fa-995a-810d299d277d" ParentLink="Module_CorrelationType" LowerBound="25.1" HigherBound="29.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MessageTypeCorrelationType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="8d52a8f2-c301-4f09-8b4a-f0ccd7d9877f" ParentLink="CorrelationType_PropertyRef" LowerBound="27.9" HigherBound="27.24">
+                <om:Property Name="Ref" Value="BTS.MessageType" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module INT0019.Delayed.Events
+{
+    internal porttype ReceiveDelayedEventsType
+    {
+        oneway Operation_1
+        {
+            Schemas.sqlBinding_delayedevents.TypedPolling
+        };
+    };
+    internal porttype SendDelayedEventType
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype Send_EventsForEnrichmentType
+    {
+        requestresponse RouteEventsOperation
+        {
+            System.Xml.XmlDocument, Shared.Schemas.SdEvents.InternalReturnMessage
+        };
+    };
+    internal correlationtype MessageTypeCorrelationType
+    {
+        BTS.MessageType
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessedDelayedEvents
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceiveDelayedEventsType ReceiveDelayedEvents;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendDelayedEventType SendDelayedEvent;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port uses Send_EventsForEnrichmentType Send_EventsForEnrichment;
+        message Shared.Schemas.SdEvents.InternalReturnMessage ReturnMessage;
+        message System.Xml.XmlDocument IncomingEventToType;
+        message Schemas.sqlBinding_delayedevents.TypedPolling IncomingEvent;
+        message System.Xml.XmlDocument Ladok3Envelope;
+        System.String cdata;
+        System.String outMessage;
+        System.Boolean success;
+        System.Boolean tryAgain;
+        System.Xml.XmlDocument xmlDoc;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a6b7d7a8-9acb-4d36-a2fe-2226eb768c48")]
+            activate receive (ReceiveDelayedEvents.Operation_1, IncomingEvent);
+            cdata = "";
+            outMessage = "";
+            success = true;
+            tryAgain = true;
+            xmlDoc = new System.Xml.XmlDocument();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("aad70b0b-180d-4ece-937c-144ca7068b92")]
+            tryAgain = true;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("670bede7-22bc-4f46-90e4-92945c53f6fb")]
+            while (tryAgain)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("4a0506d7-e6f1-4cfe-aa66-a22212c1b961")]
+                scope
+                {
+                    correlation MessageTypeCorrelationType MessageTypeCorrelation;
+                    body
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("2d4180d3-c924-4710-9c6c-cc3dd18afa9c")]
+                        construct IncomingEventToType
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fddd9e3d-bac3-4012-afc3-6b1ede707d13")]
+                            xmlDoc = new System.Xml.XmlDocument();
+                            xmlDoc.LoadXml(xpath(IncomingEvent, "string(/*[local-name()='TypedPolling']/*[local-name()='TypedPollingResultSet0']/*[local-name()='TypedPollingResultSet0' ]/*[local-name()='body'])"));
+                            IncomingEventToType = xmlDoc;
+                            Shared.Utilities.PropertyPromotor.Helper.DetermineMessageType(IncomingEventToType); 
+                            
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("974809dc-d34a-4a6f-8014-28610be04bd2")]
+                        send (Send_EventsForEnrichment.RouteEventsOperation, IncomingEventToType, initialize MessageTypeCorrelation);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("d356e7bd-3f3c-45b9-88bd-0e5f4f7d7eed")]
+                        receive (Send_EventsForEnrichment.RouteEventsOperation, ReturnMessage);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("dca93c99-16be-4b05-9b8b-1a13d34e674d")]
+                        success = ReturnMessage.Ack;
+                        outMessage = ReturnMessage.AckMessage;
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("de01ae1d-f5bf-4e97-ae34-ea643b4ddd0f")]
+                        if (success)
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0c4bd820-c125-44a7-aa2b-b2f5f3bb2cd6")]
+                            construct Ladok3Envelope
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e57132a5-f20b-48d7-8a57-e098c91d790b")]
+                                xmlDoc = new System.Xml.XmlDocument();
+                                cdata = xpath(ReturnMessage, "string(/*[local-name()='InternalReturnMessage']/*[local-name()='ReturnMessage']/text())");
+                                xmlDoc.LoadXml(cdata);
+                                Ladok3Envelope = xmlDoc;
+                            }
+                        }
+                        else 
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a247be6e-b834-4d8d-a8b0-a79f40843443")]
+                            construct Ladok3Envelope
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("ef0dce16-41d3-4ed2-8b99-ec98ec7bbba6")]
+                                //Incomming event
+                                Ladok3Envelope = xmlDoc; 
+                            }
+                        }
+                    }
+                    exceptions
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("695b4c5b-706b-4f28-af0c-9457edb1176e")]
+                        catch (System.SystemException ex)
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b04b5f93-4078-49e2-b619-5ad8850f9c1a")]
+                            success = false;
+                            outMessage = ex.Message;
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("950080f3-d435-4a5b-8599-f4e78f35dcee")]
+                            construct Ladok3Envelope
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("288b6131-2b27-4fcc-becf-b76eb3571900")]
+                                //Incomming event
+                                Ladok3Envelope = xmlDoc; 
+                            }
+                        }
+                    }
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("a094bbd0-bd00-4789-9aac-0a1a406e66bf")]
+                if (success)
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("70ed6db9-abb1-4174-acc5-9ad802b76e1a")]
+                    send (SendDelayedEvent.Operation_1, Ladok3Envelope);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("d984740e-8c9f-4058-a8e6-a40d98a918d0")]
+                    tryAgain = false;
+                }
+                else 
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("04253bc0-7d8e-4e94-a123-b61a1740213c")]
+                    suspend outMessage;
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("b4903e1b-2f86-44e0-b9df-d69de6867d1f")]
+                    tryAgain = true;
+                }
+            }
+        }
+    }
+}
+
