@@ -63,7 +63,7 @@
       <Description>SendPort for SqlAdapterBinding.</Description>
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
-        <Address>mssql://.//sd-delayed-test-db?</Address>
+        <Address>mssql://SQL-AG1.exchange-test.its.uu.se//sd-delayed-test-db?</Address>
         <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
         <TransportTypeData>&lt;CustomProps&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="SqlAdapterBinding" maxConnectionPoolSize="100" encrypt="false" workstationId="" useAmbientTransaction="true" batchSize="20" ApplicationIntent="ReadWrite" MultiSubnetFailover="true" polledDataAvailableStatement="" pollingStatement="" pollingIntervalInSeconds="30" pollWhileDataFound="false" notificationStatement="" notifyOnListenerStart="true" enableBizTalkCompatibilityMode="true" chunkSize="4194304" inboundOperationType="Polling" useDatabaseNameInXsdNamespace="false" allowIdentityInsert="false" acceptCredentialsInUri="false" enablePerformanceCounters="false" xmlStoredProcedureRootNodeName="" xmlStoredProcedureRootNodeNamespace="" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;StaticAction vt="8"&gt;&amp;lt;BtsActionMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;
   &amp;lt;Operation Name="addDelayedEvent" Action="Procedure/dbo/addDelayedEvent" /&amp;gt;
@@ -108,7 +108,7 @@
       <Description xsi:nil="true" />
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
-        <Address>mssql://.//sd-delayed-test-db?</Address>
+        <Address>mssql://SQL-AG1.exchange-test.its.uu.se//sd-delayed-test-db?</Address>
         <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
         <TransportTypeData>&lt;CustomProps&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;StaticAction vt="8"&gt;&amp;lt;BtsActionMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;
   &amp;lt;Operation Name="delDelayedEvent" Action="Procedure/dbo/delDelayedEvent" /&amp;gt;
@@ -163,7 +163,7 @@
       <ReceiveLocations>
         <ReceiveLocation Name="INT0018.Delayed.Events">
           <Description xsi:nil="true" />
-          <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DELAYEDEVENT</Address>
+          <Address>FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-DELAYEDEVENT</Address>
           <PublicAddress />
           <Primary>true</Primary>
           <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
@@ -174,7 +174,7 @@
           <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
           <ReceiveLocationEndDate>2018-08-02T23:59:59</ReceiveLocationEndDate>
           <ReceiveLocationTransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
-          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DELAYEDEVENT&amp;lt;/queue&amp;gt;&amp;lt;batchSize&amp;gt;20&amp;lt;/batchSize&amp;gt;&amp;lt;transactional&amp;gt;false&amp;lt;/transactional&amp;gt;&amp;lt;serialProcessing&amp;gt;false&amp;lt;/serialProcessing&amp;gt;&amp;lt;onFailure&amp;gt;suspendResumable&amp;lt;/onFailure&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DELAYEDEVENT&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-DELAYEDEVENT&amp;lt;/queue&amp;gt;&amp;lt;batchSize&amp;gt;20&amp;lt;/batchSize&amp;gt;&amp;lt;transactional&amp;gt;false&amp;lt;/transactional&amp;gt;&amp;lt;serialProcessing&amp;gt;false&amp;lt;/serialProcessing&amp;gt;&amp;lt;onFailure&amp;gt;suspendResumable&amp;lt;/onFailure&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-DELAYEDEVENT&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
           <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody" Description="" />
           <ReceivePipelineData xsi:nil="true" />
           <SendPipeline xsi:nil="true" />
