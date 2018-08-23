@@ -48,7 +48,11 @@ namespace Shared.Components
 
             secReader = new SecureXmlReader(securitysettings);
 
-            if (stateSettings.Id == String.Empty && StateSettings.WorkingFeed == String.Empty)
+            if (stateSettings.Id != String.Empty && StateSettings.WorkingFeed != String.Empty)
+            {
+                MoveToFirstFeed(stateSettings.WorkingFeed);
+            }
+            else if (stateSettings.Id == String.Empty && StateSettings.WorkingFeed == String.Empty)
             {
                 throw  new InvalidConfiguration("Both Entry Id (state file) and First feed (configuration) cannot be empty!");
             }
