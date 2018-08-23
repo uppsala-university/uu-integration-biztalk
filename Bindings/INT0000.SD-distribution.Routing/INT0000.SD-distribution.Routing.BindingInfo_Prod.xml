@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-08-17T15:51:32.4475849+02:00</Timestamp>
+  <Timestamp>2018-08-23T09:59:58.3247074+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0000.SD-distribution.Routing]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0000.SD-distribution.Routing], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -170,8 +170,8 @@
         <RetryCount>0</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-08-16T22:00:00</FromTime>
-        <ToTime>2018-08-17T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>true</Primary>
         <OrderedDelivery>true</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
@@ -184,8 +184,8 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-08-16T22:00:00</FromTime>
-        <ToTime>2018-08-17T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>false</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
@@ -198,6 +198,18 @@
   &lt;Group&gt;
     &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
     &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#LokalStudentEnvelope" /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#OmregistreringEnvelope" /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#RegistreringEnvelope" /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing " /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studentinformation#StudentAvlidenmarkeringEvent" /&gt;
   &lt;/Group&gt;
 &lt;/Filter&gt;</Filter>
       <Transforms />
