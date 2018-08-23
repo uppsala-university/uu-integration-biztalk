@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-05-22T14:52:24.4872198+02:00</Timestamp>
+  <Timestamp>2018-08-17T15:51:32.4475849+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0000.SD-distribution.Routing]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0000.SD-distribution.Routing], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -12,9 +12,9 @@
       <Description xsi:nil="true" />
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
-        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-GROUP</Address>
+        <Address>FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-GROUP</Address>
         <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-GROUP&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-GROUP&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;256&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-GROUP&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-GROUP&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;256&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
         <RetryCount>0</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
@@ -23,7 +23,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>true</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
         </SendHandler>
       </PrimaryTransport>
@@ -45,7 +45,6 @@
 &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;Group&gt;
     &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="Shared.Schemas.Ladok.PropertySchema.Period" Operator="0" Value="1" /&gt;
   &lt;/Group&gt;
 &lt;/Filter&gt;</Filter>
       <Transforms />
@@ -70,7 +69,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
         </SendHandler>
       </PrimaryTransport>
@@ -102,13 +101,13 @@
       <RouteFailedMessage>false</RouteFailedMessage>
       <ApplicationName>INT0000.SD-distribution.Routing</ApplicationName>
     </SendPort>
-    <SendPort Name="INT0000.SD-identity.Send_Routing" IsStatic="true" IsTwoWay="false" BindingOption="0">
+    <SendPort Name="INT0000.SD-Sesam.Send_Routing" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
-        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-IDENTITY</Address>
+        <Address>FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-SESAM</Address>
         <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-IDENTITY&amp;lt;/queue&amp;gt;&amp;lt;maximumMessageSize&amp;gt;1024&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-IDENTITY&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-SESAM&amp;lt;/queue&amp;gt;&amp;lt;maximumMessageSize&amp;gt;1024&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;false&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-SESAM&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
         <RetryCount>0</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
@@ -117,7 +116,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>true</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
         </SendHandler>
       </PrimaryTransport>
@@ -134,58 +133,7 @@
         <SendHandler xsi:nil="true" />
       </SecondaryTransport>
       <ReceivePipelineData xsi:nil="true" />
-      <Tracking>136</Tracking>
-      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#ForvantatDeltagandeSkapadEnvelope" /&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#RegistreringEnvelope" /&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-  &lt;/Group&gt;
-&lt;/Filter&gt;</Filter>
-      <Transforms />
-      <OrderedDelivery>true</OrderedDelivery>
-      <Priority>5</Priority>
-      <StopSendingOnFailure>true</StopSendingOnFailure>
-      <RouteFailedMessage>false</RouteFailedMessage>
-      <ApplicationName>INT0000.SD-distribution.Routing</ApplicationName>
-    </SendPort>
-    <SendPort Name="INT0000.SD-Sesam.Send_Routing" IsStatic="true" IsTwoWay="false" BindingOption="0">
-      <Description xsi:nil="true" />
-      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
-      <PrimaryTransport>
-        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-SESAM</Address>
-        <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-SESAM&amp;lt;/queue&amp;gt;&amp;lt;maximumMessageSize&amp;gt;1024&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;false&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-SESAM&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
-        <RetryCount>3</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T23:00:00</FromTime>
-        <ToTime>2000-01-01T22:59:59</ToTime>
-        <Primary>true</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
-          <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
-        </SendHandler>
-      </PrimaryTransport>
-      <SecondaryTransport>
-        <Address />
-        <RetryCount>3</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T23:00:00</FromTime>
-        <ToTime>2000-01-01T22:59:59</ToTime>
-        <Primary>false</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler xsi:nil="true" />
-      </SecondaryTransport>
-      <ReceivePipelineData xsi:nil="true" />
-      <Tracking>136</Tracking>
+      <Tracking>0</Tracking>
       <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;Group&gt;
@@ -206,28 +154,28 @@
   &lt;/Group&gt;
 &lt;/Filter&gt;</Filter>
       <Transforms />
-      <OrderedDelivery>false</OrderedDelivery>
+      <OrderedDelivery>true</OrderedDelivery>
       <Priority>5</Priority>
-      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <StopSendingOnFailure>true</StopSendingOnFailure>
       <RouteFailedMessage>false</RouteFailedMessage>
       <ApplicationName>INT0000.SD-distribution.Routing</ApplicationName>
     </SendPort>
-    <SendPort Name="INT0000.SD-sp.Send_Routing" IsStatic="true" IsTwoWay="false" BindingOption="0">
+    <SendPort Name="INT0000.SD-Identity.Send_Routing" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
-      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
-        <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-SP</Address>
+        <Address>FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-IDENTITY</Address>
         <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-SP&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-SP&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;1024&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;false&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
-        <RetryCount>3</RetryCount>
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-IDENTITY&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-IDENTITY&amp;lt;/uri&amp;gt;&amp;lt;maximumMessageSize&amp;gt;1024&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;true&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
+        <FromTime>2018-08-16T22:00:00</FromTime>
+        <ToTime>2018-08-17T21:59:59</ToTime>
         <Primary>true</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
+        <OrderedDelivery>true</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
         </SendHandler>
       </PrimaryTransport>
@@ -236,508 +184,24 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
+        <FromTime>2018-08-16T22:00:00</FromTime>
+        <ToTime>2018-08-17T21:59:59</ToTime>
         <Primary>false</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
         <SendHandler xsi:nil="true" />
       </SecondaryTransport>
       <ReceivePipelineData xsi:nil="true" />
-      <Tracking>0</Tracking>
+      <Tracking>136</Tracking>
       <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;Group&gt;
     &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#PaborjadUtbildningEvent" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#LokalStudentEnvelope" /&gt;
   &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#AktorEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#AndradPlaceringIPlanEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#AnknytningEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#AterbudEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#AterkalladOmregistreringEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#AterkalladPaborjadUtbildningEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#AterkalladregistreringEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#RegistreringEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#AterkallatPaborjatUtbildningstillfalleEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#AvbrottBorttagetEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#AvbrottEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#AvklaradBorttagetEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#AvklaradEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#ForvantatDeltagandeSkapadEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#GruppEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#IndividuelltAtagandeBestalltEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#OmregistreringEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#PaborjadUtbildningEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#PaborjatUtbildningstillfalleEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#StatusForStudieavgiftsbetalningUppdateradEvent" /&gt;
-  &lt;/Group&gt;
-  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#StudentTillLarosateEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#StudieaktivitetBorttagetEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#StudieaktivitetDokumenteradEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#StudieaktivitetForEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#StudiefinansieringIEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#UppehallBorttagetEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studiedeltagande#UppehallEvent" /&gt;
-  &lt;/Group&gt;
-  
-  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studentinformation#KontaktuppgifterEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studentinformation#LokalStudentEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studentinformation#SkyddadePersonuppgifterEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studentinformation#StudentAvlidenmarkeringEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studentinformation#StudentEvent" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studentinformation#StudentrestriktionEvent" /&gt;
-  &lt;/Group&gt; 
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studentinformation#AvskiljningEventPart" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studentinformation#AvstangningEventPart" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/studentinformation#StudentrestriktionEventPart" /&gt;
-  &lt;/Group&gt;
-  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#AbstraktStrukturEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#BoxEventPart" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#BoxPubliceradEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#KursTillStatusEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#KursUppdateradEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#KurspaketeringTillStatusEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#KurspaketeringUppdateradEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#KurspaketeringstillfalleTillStatusEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#KurspaketeringstillfalleUppdateratEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#KurstillfalleUppdateratEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#ModulTillStatusEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#ModulUppdateradEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#UtannonseraUtbildningstillfalleEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#UtbildningAvveckladEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#UtbildningsinstansboxEventPart" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#UtbildningsmallPubliceradEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#UtbildningstillfalleInstalltEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#UtbildningstillfallesboxEventBox" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#ValboxEventPart" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#ValjOmfattningRegelEventPart" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/utbildningsinformation#ValjXRegelEventPart" /&gt;
-  &lt;/Group&gt; 
-  
-  
-  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#AktivitetSomKraverAterautentiseringEvent" /&gt;
-  &lt;/Group&gt;  
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#AktivitetstillfallestypEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#AmnesgruppEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#AmnesklassEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#AmnesordEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#AntagningsomgangEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#AnvandarbehorigheterEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#AnvandareAndradEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#AnvandareBaseEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#AnvandareSkapadEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#BehorighetsprofilEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#BetygsskalaEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#BeviskategoriEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#EnhetEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#ExternPartEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#FinansieringsformEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#FordjupningsnivaEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#ForkunskapsnivaEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#HuvudomradesgruppEvent" /&gt;
-  &lt;/Group&gt;   
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#KonfigurationsobjektEvent" /&gt;
-  &lt;/Group&gt;    
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#KravPaTidigareStudierEvent" /&gt;
-  &lt;/Group&gt;    
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#LanEvent" /&gt;
-  &lt;/Group&gt;    
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#LandEvent" /&gt;
-  &lt;/Group&gt;    
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#LarosatesinformationEvent" /&gt;
-  &lt;/Group&gt;    
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#MarkningsnyckelEvent" /&gt;
-  &lt;/Group&gt;    
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#MarkningsvardeEvent" /&gt;
-  &lt;/Group&gt;    
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#NationellExamensgruppEvent" /&gt;
-  &lt;/Group&gt;    
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#NationelltForskningsamneEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#NationelltUndervisningsamneEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#NivaInomStudieordningEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#OmradesbehorighetEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#OrganisationSkapadEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#OrganisationUppdateradEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#OrganisationsenhetstypEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#OrganisationskopplingEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#OrganisationskopplingSkapadEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#OrganisationskopplingUppdateradEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#OrganisationskopplingstypEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#OrsakAvstangningEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#OrsakEjAvgiftsskyldigEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#PeriodEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#PeriodtypEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#SakerhetsnivaForAterautentiseringEvent" /&gt;
-  &lt;/Group&gt;     
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#StudiefinansieringEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#StudielokaliseringEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#StudieordningEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#StudietaktEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#SuccessivFordjupningEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#SvenskOrtEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#TilltradesnivaEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#TypAvExternPartEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#UndervisningsformEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#UndervisningssprakEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#UndervisningstidEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#UtbildningsformEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#UtbildningsomradeEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#UtbildningssamarbeteEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#UtbildningstypEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#UtbildningstypRelationerEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#UtbytesprogramEvent" /&gt;
-  &lt;/Group&gt;      
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.ladok.se/kataloginformation#UtlandskOrtEvent" /&gt;
-  &lt;/Group&gt; 
-  
-  &lt;/Filter&gt;</Filter>
+&lt;/Filter&gt;</Filter>
       <Transforms />
-      <OrderedDelivery>false</OrderedDelivery>
+      <OrderedDelivery>true</OrderedDelivery>
       <Priority>5</Priority>
       <StopSendingOnFailure>false</StopSendingOnFailure>
       <RouteFailedMessage>false</RouteFailedMessage>
@@ -751,7 +215,7 @@
       <ReceiveLocations>
         <ReceiveLocation Name="INT0000.SD.Routing">
           <Description xsi:nil="true" />
-          <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION</Address>
+          <Address>FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-DISTRIBUTION</Address>
           <PublicAddress />
           <Primary>true</Primary>
           <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
@@ -762,13 +226,13 @@
           <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
           <ReceiveLocationEndDate>2017-09-15T23:59:59</ReceiveLocationEndDate>
           <ReceiveLocationTransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
-          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-DISTRIBUTION&amp;lt;/uri&amp;gt;&amp;lt;batchSize&amp;gt;1&amp;lt;/batchSize&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;serialProcessing&amp;gt;true&amp;lt;/serialProcessing&amp;gt;&amp;lt;onFailure&amp;gt;suspendResumable&amp;lt;/onFailure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
-          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
-          <ReceivePipelineData xsi:nil="true" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-DISTRIBUTION&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-DISTRIBUTION&amp;lt;/uri&amp;gt;&amp;lt;batchSize&amp;gt;1&amp;lt;/batchSize&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;serialProcessing&amp;gt;true&amp;lt;/serialProcessing&amp;gt;&amp;lt;onFailure&amp;gt;suspendResumable&amp;lt;/onFailure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody" Description="" />
+          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlDasmComp"&gt;&lt;Properties&gt;&lt;DocumentSpecNames vt="8"&gt;Shared.Schemas.Ladok.AterbudEnvelope, Shared.Schemas.Ladok, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a|Shared.Schemas.Ladok.AterkalladOmregistreringEnvelope, Shared.Schemas.Ladok, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a|Shared.Schemas.Ladok.AterkalladRegistreringEnvelope, Shared.Schemas.Ladok, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a|Shared.Schemas.Ladok.ForvantatDeltagandeSkapadEnvelope, Shared.Schemas.Ladok, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a|Shared.Schemas.Ladok.OmregistreringEnvelope, Shared.Schemas.Ladok, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a|Shared.Schemas.Ladok.RegistreringEnvelope, Shared.Schemas.Ladok, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a|Shared.Schemas.Ladok.KurstillfalleTillStatusEnvelope, Shared.Schemas.Ladok, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a&lt;/DocumentSpecNames&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e410e-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.PartyRes"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
-          <Enable>true</Enable>
-          <ReceiveHandler Name="CluSdReceive" HostTrusted="false">
+          <Enable>false</Enable>
+          <ReceiveHandler Name="CluSDReceive" HostTrusted="false">
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>
         </ReceiveLocation>

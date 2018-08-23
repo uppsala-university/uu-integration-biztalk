@@ -1,0 +1,649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F6AA4D84-581A-4909-83BF-1994391EDFF6}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>INT0016.Ladok3.Client</RootNamespace>
+    <AssemblyName>INT0016.Ladok3.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Shared.Schemas.Ladok, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\schemas\Shared.Schemas\Ladok\bin\Debug\Shared.Schemas.Ladok.dll</HintPath>
+    </Reference>
+    <Reference Include="Shared.Schemas.SdEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.SdEvents\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Schemas.SdEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Processing\HandleDelayedUppehallStopEnvelope.odx">
+      <TypeName>HandleDelayedUppehallStopEnvelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Processing\HandleDelayedUppehallStartEnvelope.odx">
+      <TypeName>HandleDelayedUppehallStartEnvelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Processing\HandleAvbrottBorttagetEvent.odx">
+      <TypeName>HandleAvbrottBorttagetEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Processing\HandleAvbrottEvent.odx">
+      <TypeName>HandleAvbrottEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Processing\HandleLokalStudentEvent.odx">
+      <TypeName>HandleLokalStudentEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Designer</SubType>
+    </XLang>
+    <XLang Include="Processing\HandleAterbudEvent.odx">
+      <TypeName>HandleAterbudEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Processing\HandleAterkalladOmregistreringEvent.odx">
+      <TypeName>HandleAterkalladOmregistreringEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Processing\HandleAterkalladregistreringEvent.odx">
+      <TypeName>HandleAterkalladregistreringEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Processing\HandleForvantatDeltagandeSkapadEvent.odx">
+      <TypeName>HandleForvantatDeltagandeSkapadEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <None Include="Processing\HandleUtbildningstillfalleBorttagetEvent.odx">
+      <TypeName>HandleUtbildningstillfalleBorttagetEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </None>
+    <XLang Include="Processing\HandleKurspaketeringUppdateradEvent.odx">
+      <TypeName>HandleKurspaketeringUppdateradEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Processing\HandleOmregistreringEvent.odx">
+      <TypeName>HandleOmregistreringEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Processing\HandleUtbildningstillfalleAteraktiveratEvent.odx">
+      <TypeName>HandleUtbildningstillfalleAteraktiveratEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Processing\HandleUtbildningstillfalleInstalltEvent.odx">
+      <TypeName>HandleUtbildningstillfalleInstalltEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <Map Include="Maps\UtbildningstillfalleAteraktiveratEvent\UtbildningstillfalleAteraktiveratEvent_to_Envelope.btm">
+      <TypeName>UtbildningstillfalleAteraktiveratEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UtbildningstillfalleAteraktiveratEvent\UtbildningstillfalleAteraktiveratEvent_to_OrganisationQueryParameters.btm">
+      <TypeName>UtbildningstillfalleAteraktiveratEvent_to_OrganisationQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UtbildningstillfalleAteraktiveratEvent\UtbildningstillfalleAteraktiveratEvent_to_ReturnMessage.btm">
+      <TypeName>UtbildningstillfalleAteraktiveratEvent_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\KurspaketeringUppdateradEvent\KurspaketeringUppdateradEvent_to_Envelope.btm">
+      <TypeName>KurspaketeringUppdateradEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.KurspaketeringUppdateradEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\KurspaketeringUppdateradEvent\KurspaketeringUppdateradEvent_to_ReturnMessage.btm">
+      <SubType>Task</SubType>
+      <TypeName>KurspaketeringUppdateradEvent_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.KurspaketeringUppdateradEvent</Namespace>
+    </Map>
+    <Map Include="Maps\ForvantatDeltagandeSkapadEvent\ForvantatDeltagandeSkapadEvent_to_StudentQueryParameters.btm">
+      <TypeName>ForvantatDeltagandeSkapadEvent_to_StudentQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\ForvantatDeltagandeSkapadEvent\ForvantatDeltagandeSkapadEvent_to_UtbildningstillfalleQueryParameters.btm.btm">
+      <TypeName>ForvantatDeltagandeSkapadEvent_to_UtbildningstillfalleQueryParameters_btm</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\ForvantatDeltagandeSkapadEvent\ForvantatDeltagandeSkapadEvent_to_Envelope.btm">
+      <TypeName>ForvantatDeltagandeSkapadEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\ForvantatDeltagandeSkapadEvent\ForvantatDeltagandeSkapadEvent_to_RetrunMessage.btm">
+      <TypeName>ForvantatDeltagandeSkapadEvent_to_RetrunMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterkalladregistreringEvent\AterkalladregistreringEvent_to_Envelope.btm">
+      <TypeName>AterkalladregistreringEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterkalladregistreringEvent\AterkalladregistreringEvent_to_RetrunMessage.btm">
+      <TypeName>AterkalladregistreringEvent_to_RetrunMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterkalladregistreringEvent\AterkalladregistreringEvent_to_StudentQueryParameters.btm">
+      <TypeName>AterkalladregistreringEvent_to_StudentQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterkalladregistreringEvent\AterkalladregistreringEvent_to_UtbildningstillfalleQueryParameters.btm">
+      <TypeName>AterkalladregistreringEvent_to_UtbildningstillfalleQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterkalladregistreringEvent\AterkalladregistreringEven_to_UtbildningsinstansQueryParameters.btm">
+      <TypeName>AterkalladregistreringEven_to_UtbildningsinstansQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterkalladOmregistreringEvent\AterkalladOmregistreringEvent_to_Envelope.btm">
+      <TypeName>AterkalladOmregistreringEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterkalladOmregistreringEvent\AterkalladOmregistreringEvent_to_RetrunMessage.btm">
+      <TypeName>AterkalladOmregistreringEvent_to_RetrunMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterbudEvent\AterbudEvent_to_Envelope.btm">
+      <TypeName>AterbudEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterbudEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterbudEvent\AterbudEvent_to_RetrunMessage.btm">
+      <TypeName>AterbudEvent_to_RetrunMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterbudEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\LokalStudentEvent\LokalStudentEvent_to_Envelope.btm">
+      <TypeName>LokalStudentEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Mpas.LokalStudentEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\LokalStudentEvent\LokalStudentEvent_to_ReturnMessage.btm">
+      <TypeName>LokalStudentEvent_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.LokalStudentEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\AterbudEvent\AterbudEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\AterbudEvent\AterbudEvent_to_ReturnMessage.xsl" />
+    <Map Include="Maps\AterbudEvent\AterbudEvent_to_StudentQueryParameters.btm">
+      <TypeName>AterbudEvent_to_StudentQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterbudEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterbudEvent\AterbudEvent_to_UtbildningstillfalleQueryParameters.btm">
+      <TypeName>AterbudEvent_to_UtbildningstillfalleQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterbudEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterkalladOmregistreringEvent\AterkalladOmregistreringEvent_to_KontaktuppgifterQueryParameters.btm">
+      <TypeName>AterkalladOmregistreringEvent_to_KontaktuppgifterQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\AterkalladOmregistreringEvent\AterkalladOmregistreringEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\AterkalladOmregistreringEvent\AterkalladOmregistreringEvent_to_ReturnMessage.xsl" />
+    <Map Include="Maps\AterkalladOmregistreringEvent\AterkalladOmregistreringEvent_to_UtbildningsinstansQueryParameters.btm">
+      <TypeName>AterkalladOmregistreringEvent_to_UtbildningsinstansQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterkalladOmregistreringEvent\AterkalladOmregistreringEvent_to_StudentQueryParameters.btm">
+      <TypeName>AterkalladOmregistreringEvent_to_StudentQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterkalladOmregistreringEvent\AterkalladOmregistreringEvent_to_UtbildningstillfalleQueryParameters.btm">
+      <TypeName>AterkalladOmregistreringEvent_to_UtbildningstillfalleQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\AterkalladregistreringEvent\AterkalladregistreringEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\AterkalladregistreringEvent\AterkalladregistreringEvent_to_ReturnMessage.xsl" />
+    <Map Include="Maps\AterkalladregistreringEvent\AtterkalladregistreringEvent_to_MarkningsnycklarQueryParameters.btm">
+      <TypeName>AtterkalladregistreringEvent_to_MarkningsnycklarQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterkalladregistreringEvent\AtterkalladregistreringEvent_to_KontaktuppgifterQueryParamenters.btm">
+      <TypeName>AtterkalladregistreringEvent_to_KontaktuppgifterQueryParamenters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AterkalladregistreringEvent\AterkalladregistreringEven_to_MarkeringsvardeQueryParameters.btm">
+      <TypeName>AterkalladregistreringEven_to_MarkeringsvardeQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\ForvantatDeltagandeSkapadEvent\ForvantatDeltagandeSkapadEvent_to_KontaktuppgifterQueryParameters.btm">
+      <TypeName>ForvantatDeltagandeSkapadEvent_to_KontaktuppgifterQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AvbrottEvent\AvbrottEvent_to_Envelope.btm.btm">
+      <TypeName>AvbrottEvent_to_Envelope_btm</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AvbrottEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AvbrottEvent\AvbrottEvent_to_ReturnMessage.btm">
+      <TypeName>AvbrottEvent_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AvbrottEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AvbrottEvent\AvbrottEvent_to_StudentQueryParameters.btm">
+      <TypeName>AvbrottEvent_to_StudentQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AvbrottEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AvbrottEvent\AvbrottEvent_to_UtbildningstillfelleQueryParameters.btm">
+      <TypeName>AvbrottEvent_to_UtbildningstillfelleQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AvbrottEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AvbrottEvent\AvbrottEvent_to_KontakuppgifterQueryParameters.btm.btm">
+      <TypeName>AvbrottEvent_to_KontakuppgifterQueryParameters_btm</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AvbrottEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AvbrottBorttagetEvent\AvbrottBorttagetEvent_to_Envelope.btm">
+      <TypeName>AvbrottBorttagetEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AvbrottBorttagetEvent\AvbrottBorttagetEvent_to_ReturnMessage.btm">
+      <TypeName>AvbrottBorttagetEvent_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AvbrottBorttagetEvent\AvbrottBorttagetEvent_to_StudentQueryParameters.btm">
+      <TypeName>AvbrottBorttagetEvent_to_StudentQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AvbrottBorttagetEvent\AvbrottBorttagetEvent_to_UtbildningstillfelleQueryParameters.btm">
+      <TypeName>AvbrottBorttagetEvent_to_UtbildningstillfelleQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\AvbrottBorttagetEvent\AvbrottBorttagetEvent_to_KontaktuppgifterQueryParameters.btm">
+      <TypeName>AvbrottBorttagetEvent_to_KontaktuppgifterQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\AvbrottBorttagetEvent\AvbrottBorttagetEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\AvbrottBorttagetEvent\AvbrottBorttagetEvent_to_ReturnMessage.xsl" />
+    <Content Include="Maps\AvbrottEvent\AvbrottEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\AvbrottEvent\AvbrottEvent_to_ReturnMessage.xsl" />
+    <Content Include="Maps\ForvantatDeltagandeSkapadEvent\ForvantatDeltagandeSkapadEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\ForvantatDeltagandeSkapadEvent\ForvantatDeltagandeSkapadEvent_to_ReturnMessage.xsl" />
+    <Content Include="Maps\KurspaketeringUppdateradEvent\KurspaketeringUppdateradEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\KurspaketeringUppdateradEvent\KurspaketeringUppdateradEvent_to_ReturnMessage.xsl" />
+    <Map Include="Maps\OmegistreringEvent\OmregistreringEvent_to_Envelope.btm">
+      <TypeName>OmregistreringEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.OmegistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\OmegistreringEvent\OmregistreringEvent_to_KurstillfalleQueryParameters.btm">
+      <TypeName>OmregistreringEvent_to_KurstillfalleQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.OmegistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\OmegistreringEvent\OmregistreringEvent_to_ProgramtillfalleQueryParameters.btm">
+      <TypeName>OmregistreringEvent_to_ProgramtillfalleQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.OmegistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\OmegistreringEvent\OmregistreringEvent_to_ReturnMessage.btm">
+      <TypeName>OmregistreringEvent_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.OmegistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\OmegistreringEvent\OmregistreringEventNoProgram_to_Envelope.btm">
+      <TypeName>OmregistreringEventNoProgram_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.OmegistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\LokalStudentEvent\LokalStudentEvent_to_KontaktuppgifterQueryParameters.btm">
+      <TypeName>LokalStudentEvent_to_KontaktuppgifterQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.LokalStudentEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\LokalStudentEvent\LokalStudentEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\LokalStudentEvent\LokalStudentEvent_to_ReturnMessage..xsl" />
+    <Content Include="Maps\OmegistreringEvent\OmregistreringEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\OmegistreringEvent\OmregistreringEvent_to_ReturnMessage.xsl" />
+    <Map Include="Maps\OmegistreringEvent\OmregistreringEvent_to_StudentQueryParameters.btm">
+      <TypeName>OmregistreringEvent_to_StudentQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.OmegistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UppehallEvent\DelayedUppehallStartEnvelope_to_Event.btm">
+      <TypeName>DelayedUppehallStartEnvelope_to_Event</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UppehallEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UppehallEvent\DelayedUppehallStopEnvelope_to_Event.btm.btm">
+      <TypeName>DelayedUppehallStopEnvelope_to_Event_btm</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UppehallEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UppehallEvent\UppehallEvent_to_DelayedUppehallStartEnvelope.btm">
+      <TypeName>UppehallEvent_to_DelayedUppehallStartEnvelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UppehallEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UppehallEvent\UppehallEvent_to_DelayedUppehallStopEnvelope.btm">
+      <TypeName>UppehallEvent_to_DelayedUppehallStopEnvelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UppehallEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UppehallEvent\DelayedUppehallStartEnvelope_to_ReturnMessage.btm">
+      <TypeName>DelayedUppehallStartEnvelope_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UppehallEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UppehallEvent\DelayedUppehallStopEnvelope_to_ReturnMessage.btm">
+      <TypeName>DelayedUppehallStopEnvelope_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UppehallEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\UppehallEvent\DelayedUppehallStartEnvelope_to_ReturnMessage.xml" />
+    <Content Include="Maps\UppehallEvent\DelayedUppehallStartEnvelope_to_ReturnMessage.xsl" />
+    <Content Include="Maps\UppehallEvent\DelayedUppehallStopEnvelope_to_ReturnMessage.xml" />
+    <Content Include="Maps\UppehallEvent\DelayedUppehallStopEnvelope_to_ReturnMessage.xsl" />
+    <Map Include="Maps\UppehallEvent\UppefallEvent_to_StudentQueryParameters.btm">
+      <TypeName>UppefallEvent_to_StudentQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UppehallEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UppehallEvent\UppefallEvent_to_KontaktuppgifterQueryParameters.btm">
+      <TypeName>UppefallEvent_to_KontaktuppgifterQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UppehallEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\UtbildningstillfalleAteraktiveratEvent\UtbildningstillfalleAteraktiveratEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\UtbildningstillfalleAteraktiveratEvent\UtbildningstillfalleAteraktiveratEvent_to_ReturnMessage.xsl" />
+    <Map Include="Maps\UtbildningstillfalleAteraktiveratEvent\UtbildningstillfalleAteraktiveratEvent_to_UtbildningsinstansQueryParameters.btm">
+      <TypeName>UtbildningstillfalleAteraktiveratEvent_to_UtbildningsinstansQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UtbildningstillfalleAteraktiveratEvent\UtbildningstillfalleAteraktiveratEvent_to_UtbildningstillfalleQueryParameters.btm">
+      <TypeName>UtbildningstillfalleAteraktiveratEvent_to_UtbildningstillfalleQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UtbildningstillfalleInstalltEvent\UtbildningstillfalleInstalltEvent_to_OrganisationQueryParameters.btm">
+      <TypeName>UtbildningstillfalleInstalltEvent_to_OrganisationQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UtbildningstillfalleInstalltEvent\UtbildningstillfalleInstalltEvent_to_Envelope.btm">
+      <TypeName>UtbildningstillfalleInstalltEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UtbildningstillfalleInstalltEvent\UtbildningstillfalleInstalltEvent_to_ReturnMessage.btm">
+      <TypeName>UtbildningstillfalleInstalltEvent_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UtbildningstillfalleBorttagetEvent\UtbildningstillfalleBorttagetEvent_to_Envelope.btm">
+      <TypeName>UtbildningstillfalleBorttagetEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UtbildningstillfalleBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UtbildningstillfalleBorttagetEvent\UtbildningstillfalleBorttagetEvent_to_ReturnMessage.btm">
+      <TypeName>UtbildningstillfalleBorttagetEvent_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UtbildningstillfalleBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UtbildningstillfalleBorttagetEvent\UtbildningstillfalleBorttagetEvent_to_OrganisationQueryParameters.btm">
+      <TypeName>UtbildningstillfalleBorttagetEvent_to_OrganisationQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UtbildningstillfalleBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\UtbildningstillfalleBorttagetEvent\UtbildningstillfalleBorttagetEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\UtbildningstillfalleBorttagetEvent\UtbildningstillfalleBorttagetEvent_to_ReturnMessage.xsl" />
+    <Map Include="Maps\UtbildningstillfalleBorttagetEvent\UtbildningstillfalleBorttagetEvent_to_UtbildningstillfalleQueryParameters.btm">
+      <TypeName>UtbildningstillfalleBorttagetEvent_to_UtbildningstillfalleQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UtbildningstillfalleBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UtbildningstillfalleBorttagetEvent\UtbildningstillfalleBorttagetEvent_to_UtbildningsinstansQueryParameters.btm">
+      <TypeName>UtbildningstillfalleBorttagetEvent_to_UtbildningsinstansQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UtbildningstillfalleBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\UtbildningstillfalleInstalltEvent\UtbildningstillfalleInstalltEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\UtbildningstillfalleInstalltEvent\UtbildningstillfalleInstalltEvent_to_ReturnMessage.xsl" />
+    <Map Include="Maps\UtbildningstillfalleInstalltEvent\UtbildningstillfalleInstalltEvent_to_UtbildningsinstansQueryParameters.btm">
+      <TypeName>UtbildningstillfalleInstalltEvent_to_UtbildningsinstansQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UtbildningstillfalleInstalltEvent\UtbildningstillfalleInstalltEvent_to_UtbildningstillfalleQueryParameters.btm">
+      <TypeName>UtbildningstillfalleInstalltEvent_to_UtbildningstillfalleQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <XLang Include="Processing\HandleKurstillfalleUppdateratEvent.odx">
+      <TypeName>HandleKurstillfalleUppdateratEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <Map Include="Maps\Common\Student_to_KontaktuppgifterQueryParameters.btm">
+      <SubType>Task</SubType>
+      <TypeName>Student_to_KontaktuppgifterQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.Common</Namespace>
+    </Map>
+    <Map Include="Maps\RegistreringEvent\RegistreringEvent_to_KurstillfalleQueryParameters.btm">
+      <TypeName>RegistreringEvent_to_KurstillfalleQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.RegistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\RegistreringEvent\RegistreringEvent_to_ProgramtillfalleQueryParameters.btm">
+      <TypeName>RegistreringEvent_to_ProgramtillfalleQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.RegistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\Common\Utbildningstillfalle_to_UtbildningsinstansQueryParameters.btm">
+      <TypeName>Utbildningstillfalle_to_UtbildningsinstansQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.Common</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\Common\Utbildningstillfalle_to_OrganisationQueryParameters.btm">
+      <SubType>Task</SubType>
+      <TypeName>Utbildningstillfalle_to_OrganisationQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.Common</Namespace>
+    </Map>
+    <Map Include="Maps\RegistreringEvent\RegistreringEvent_to_StudentQueryParameters.btm">
+      <SubType>Task</SubType>
+      <TypeName>RegistreringEvent_to_StudentQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.RegistreringEvent</Namespace>
+    </Map>
+    <Map Include="Maps\KurstillfalleUppdateratEvent\KurstillfalleUppdateratEvent_to_Envelope.btm">
+      <TypeName>KurstillfalleUppdateratEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\RegistreringEvent\RegistreringEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\RegistreringEvent\RegistreringEvent_to_ReturnMessage.xsl" />
+    <Map Include="Maps\RegistreringEvent\RegistreringEventNoProgram_to_Envelope.btm">
+      <TypeName>RegistreringEventNoProgram_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.RegistreringEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\RegistreringEvent\RegistreringEvent_to_ReturnMessage.btm">
+      <SubType>Task</SubType>
+      <TypeName>RegistreringEvent_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.RegistreringEvent</Namespace>
+    </Map>
+    <Map Include="Maps\RegistreringEvent\RegistreringEvent_to_Envelope.btm">
+      <TypeName>RegistreringEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <XLang Include="Processing\HandleRegistreringEvent.odx">
+      <TypeName>HandleRegistreringEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <Map Include="Maps\KurstillfalleTillStatusEvent\KurstillfalleTillStatusEvent_to_UtbildningsinstansQueryParameters.btm">
+      <TypeName>KurstillfalleTillStatusEvent_to_UtbildningsinstansQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\KurstillfalleTillStatusEvent\KurstillfalleTillStatusEvent_to_Envelope.btm">
+      <TypeName>KurstillfalleTillStatusEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Files\INT0016.Ladok3.Client.BindingInfo_Dev.xml" />
+    <Content Include="Files\INT0016.Ladok3.Client.BindingInfo_Pelles.xml" />
+    <Map Include="Maps\KurstillfalleTillStatusEvent\KurstillfalleTillStatusEvent_to_OrganisationQueryParameters.btm">
+      <TypeName>KurstillfalleTillStatusEvent_to_OrganisationQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\KurstillfalleUppdateratEvent\KurstillfalleUppdateratEvent_to_OrganisationQueryParameters.btm">
+      <TypeName>KurstillfalleUppdateratEvent_to_OrganisationQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\KurstillfalleUppdateratEvent\KurstillfalleUppdateratEvent_to_UtbildningsinstansQueryParameters.btm">
+      <TypeName>KurstillfalleUppdateratEvent_to_UtbildningsinstansQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\KurstillfalleUppdateratEvent\KurstillfaleUppdateratEvent_to_ReturnMessage.btm">
+      <SubType>Task</SubType>
+      <TypeName>KurstillfaleUppdateratEvent_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+    </Map>
+    <Content Include="Maps\KurstillfalleUppdateratEvent\KurstillfaleUppdateratEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\KurstillfalleUppdateratEvent\KurstillfaleUppdateratEvent_to_ReturnMessage.xsl" />
+    <Content Include="Maps\KurstillfalleTillStatusEvent\Ladok3Event_to_ReturnMessage.xml" />
+    <Content Include="Maps\KurstillfalleTillStatusEvent\Ladok3Event_to_ReturnMessage.xsl" />
+    <XLang Include="Processing\HandleKurstillfalleTillStatusEvent.odx">
+      <TypeName>HandleKurstillfalleTillStatusEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Designer</SubType>
+    </XLang>
+    <Map Include="Maps\KurstillfalleTillStatusEvent\Ladok3Event_to_ReturnMessage.btm">
+      <SubType>Task</SubType>
+      <TypeName>Ladok3Event_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps</Namespace>
+    </Map>
+    <XLang Include="Processing\HandleOtherEvents.odx">
+      <SubType>Designer</SubType>
+      <TypeName>HandleOtherEvents</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk.pfx" />
+    <Schema Include="Schemas\PropertySchema.xsd">
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\QueryParameters.xsd">
+      <TypeName>QueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Maps\KurstillfalleUppdateratEvent\OmegistreringEvent\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

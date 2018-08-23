@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="536b24f9-51a3-45ee-8448-623b96f51e86" LowerBound="1.1" HigherBound="197.1">
+    <om:Element Type="Module" OID="536b24f9-51a3-45ee-8448-623b96f51e86" LowerBound="1.1" HigherBound="300.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="INT0003.AD.Distribution" />
         <om:Property Name="Signal" Value="False" />
@@ -17,11 +17,11 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Accepted" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="8c681742-3fc6-4d39-8642-d7d370a65072" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.51">
-                    <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
+                <om:Element Type="MessageRef" OID="8c681742-3fc6-4d39-8642-d7d370a65072" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.67">
+                    <om:Property Name="Ref" Value="Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
-                    <om:Property Name="Signal" Value="False" />
+                    <om:Property Name="Signal" Value="True" />
                 </om:Element>
             </om:Element>
         </om:Element>
@@ -36,11 +36,11 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Registered" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="c08dc44b-0fad-4f1f-8d4a-f48f64133d9d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.51">
-                    <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
+                <om:Element Type="MessageRef" OID="c08dc44b-0fad-4f1f-8d4a-f48f64133d9d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.67">
+                    <om:Property Name="Ref" Value="Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
-                    <om:Property Name="Signal" Value="False" />
+                    <om:Property Name="Signal" Value="True" />
                 </om:Element>
             </om:Element>
         </om:Element>
@@ -55,40 +55,15 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Reregistered" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="a4f27bef-7953-4a6d-b317-69a6812a8287" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.51">
-                    <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
+                <om:Element Type="MessageRef" OID="a4f27bef-7953-4a6d-b317-69a6812a8287" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.67">
+                    <om:Property Name="Ref" Value="Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
-                    <om:Property Name="Signal" Value="False" />
+                    <om:Property Name="Signal" Value="True" />
                 </om:Element>
             </om:Element>
         </om:Element>
-        <om:Element Type="PortType" OID="d7f03a9b-2b7b-4a6b-92a5-26e742714c27" ParentLink="Module_PortType" LowerBound="25.1" HigherBound="32.1">
-            <om:Property Name="Synchronous" Value="True" />
-            <om:Property Name="TypeModifier" Value="Internal" />
-            <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="ADQueryGroupPortType" />
-            <om:Property Name="Signal" Value="False" />
-            <om:Element Type="OperationDeclaration" OID="5c43b1f3-4ee2-4efd-b08d-c916c6e78e31" ParentLink="PortType_OperationDeclaration" LowerBound="27.1" HigherBound="31.1">
-                <om:Property Name="OperationType" Value="RequestResponse" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="Operation_1" />
-                <om:Property Name="Signal" Value="False" />
-                <om:Element Type="MessageRef" OID="0ea8dfd9-df80-4a10-8257-5864161355e0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="29.13" HigherBound="29.51">
-                    <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
-                    <om:Property Name="ReportToAnalyst" Value="True" />
-                    <om:Property Name="Name" Value="Request" />
-                    <om:Property Name="Signal" Value="False" />
-                </om:Element>
-                <om:Element Type="MessageRef" OID="e08c8785-9c89-458b-981d-15c4132a7f71" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="29.53" HigherBound="29.84">
-                    <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.ADEvents.ADQueryResults" />
-                    <om:Property Name="ReportToAnalyst" Value="True" />
-                    <om:Property Name="Name" Value="Response" />
-                    <om:Property Name="Signal" Value="False" />
-                </om:Element>
-            </om:Element>
-        </om:Element>
-        <om:Element Type="ServiceDeclaration" OID="7a98dbbd-9180-4a6c-bf69-35df0a050a49" ParentLink="Module_ServiceDeclaration" LowerBound="32.1" HigherBound="196.1">
+        <om:Element Type="ServiceDeclaration" OID="7a98dbbd-9180-4a6c-bf69-35df0a050a49" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="299.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="True" />
             <om:Property Name="TypeModifier" Value="Internal" />
@@ -96,7 +71,7 @@
             <om:Property Name="Name" Value="UpdateGroupAffiliation" />
             <om:Property Name="Signal" Value="True" />
             <om:Element Type="VariableDeclaration" OID="e2dfbad6-1812-4959-9d35-8f471a948979" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="47.1" HigherBound="48.1">
-                <om:Property Name="InitialValue" Value="true" />
+                <om:Property Name="InitialValue" Value="false" />
                 <om:Property Name="UseDefaultConstructor" Value="False" />
                 <om:Property Name="Type" Value="System.Boolean" />
                 <om:Property Name="ParamDirection" Value="In" />
@@ -120,6 +95,41 @@
                 <om:Property Name="Name" Value="errorMessage" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
+            <om:Element Type="VariableDeclaration" OID="c95ae566-6b13-477a-a7ab-256236098795" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="InitialValue" Value="false" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="missingAcceptedGroupe" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="4653441c-1fc0-4bed-b95b-b4021bc3f91e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="51.1" HigherBound="52.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="timeoutInMinutesUntilGroupAddRetry" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="9af26ab3-18d3-4471-97f1-4d366285f213" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="52.1" HigherBound="53.1">
+                <om:Property Name="InitialValue" Value="false" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="missingGroup" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="8b9387fa-55ce-4c40-b63d-d05c4218db91" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="53.1" HigherBound="54.1">
+                <om:Property Name="InitialValue" Value="false" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="membershipError" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
             <om:Element Type="MessageDeclaration" OID="3c0d92e7-8f26-45a5-b6ee-fc1b2069d887" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="46.1" HigherBound="47.1">
                 <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.ADEvents.ADQueryResults" />
                 <om:Property Name="ParamDirection" Value="In" />
@@ -129,7 +139,7 @@
             </om:Element>
             <om:Element Type="ServiceBody" OID="8594de7c-7b13-4990-be3a-5df1ec7661d4" ParentLink="ServiceDeclaration_ServiceBody">
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="VariableDeclaration" OID="09c11d17-1d6c-4816-a3b3-0ef90a8db572" ParentLink="ServiceBody_Declaration" LowerBound="50.15" HigherBound="50.45">
+                <om:Element Type="VariableDeclaration" OID="09c11d17-1d6c-4816-a3b3-0ef90a8db572" ParentLink="ServiceBody_Declaration" LowerBound="54.15" HigherBound="54.45">
                     <om:Property Name="InitialValue" Value="&quot;&quot;" />
                     <om:Property Name="UseDefaultConstructor" Value="False" />
                     <om:Property Name="Type" Value="System.String" />
@@ -138,7 +148,7 @@
                     <om:Property Name="Name" Value="emailSubject" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="VariableDeclaration" OID="268a98c9-6deb-4934-a470-d5b7691db3ee" ParentLink="ServiceBody_Declaration" LowerBound="50.47" HigherBound="50.74">
+                <om:Element Type="VariableDeclaration" OID="268a98c9-6deb-4934-a470-d5b7691db3ee" ParentLink="ServiceBody_Declaration" LowerBound="54.47" HigherBound="54.74">
                     <om:Property Name="InitialValue" Value="&quot;&quot;" />
                     <om:Property Name="UseDefaultConstructor" Value="False" />
                     <om:Property Name="Type" Value="System.String" />
@@ -147,7 +157,7 @@
                     <om:Property Name="Name" Value="errorText" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="VariableDeclaration" OID="5686e159-8af0-4b69-9370-147d5fcd37fd" ParentLink="ServiceBody_Declaration" LowerBound="50.76" HigherBound="50.102">
+                <om:Element Type="VariableDeclaration" OID="5686e159-8af0-4b69-9370-147d5fcd37fd" ParentLink="ServiceBody_Declaration" LowerBound="54.76" HigherBound="54.102">
                     <om:Property Name="InitialValue" Value="false" />
                     <om:Property Name="UseDefaultConstructor" Value="False" />
                     <om:Property Name="Type" Value="System.Boolean" />
@@ -156,14 +166,14 @@
                     <om:Property Name="Name" Value="success" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="MessageDeclaration" OID="f9577bb3-daed-44d7-80e5-559de00ccff6" ParentLink="ServiceBody_Declaration" LowerBound="50.104" HigherBound="50.161">
-                    <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
+                <om:Element Type="MessageDeclaration" OID="f9577bb3-daed-44d7-80e5-559de00ccff6" ParentLink="ServiceBody_Declaration" LowerBound="54.104" HigherBound="54.177">
+                    <om:Property Name="Type" Value="Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent" />
                     <om:Property Name="ParamDirection" Value="In" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="GroupEvent" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="VariableDeclaration" OID="31c0d50b-a12e-49e9-be51-bba13a05ff00" ParentLink="ServiceBody_Declaration" LowerBound="50.163" HigherBound="50.188">
+                <om:Element Type="VariableDeclaration" OID="31c0d50b-a12e-49e9-be51-bba13a05ff00" ParentLink="ServiceBody_Declaration" LowerBound="54.179" HigherBound="54.204">
                     <om:Property Name="UseDefaultConstructor" Value="False" />
                     <om:Property Name="Type" Value="System.String" />
                     <om:Property Name="ParamDirection" Value="In" />
@@ -171,29 +181,29 @@
                     <om:Property Name="Name" Value="groupSuffix" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="VariableAssignment" OID="441a095d-1484-4951-9891-2ae364354d25" ParentLink="ServiceBody_Statement" LowerBound="54.1" HigherBound="58.1">
-                    <om:Property Name="Expression" Value="success = true;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                <om:Element Type="VariableAssignment" OID="441a095d-1484-4951-9891-2ae364354d25" ParentLink="ServiceBody_Statement" LowerBound="61.1" HigherBound="67.1">
+                    <om:Property Name="Expression" Value="success = true;&#xD;&#xA;timeoutInMinutesUntilGroupAddRetry = 5; &#xD;&#xA;System.Int32.TryParse(Shared.Utilities.SSOClientHelper.SSOClientHelper.Read(&quot;INT0003ADDistribution&quot;, &quot;TimeoutInMinutesUntilGroupAddRetry&quot;), out timeoutInMinutesUntilGroupAddRetry);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Set error" />
-                    <om:Property Name="Signal" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
                 </om:Element>
-                <om:Element Type="Decision" OID="f44f5272-3a21-44b1-8851-492c21a10f15" ParentLink="ServiceBody_Statement" LowerBound="58.1" HigherBound="170.1">
+                <om:Element Type="Decision" OID="f44f5272-3a21-44b1-8851-492c21a10f15" ParentLink="ServiceBody_Statement" LowerBound="67.1" HigherBound="194.1">
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="CheckGroupSuffix" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="DecisionBranch" OID="838a3e0a-1872-4d7c-ab04-e6dc45f3f486" ParentLink="ReallyComplexStatement_Branch" LowerBound="59.13" HigherBound="98.1">
+                    <om:Element Type="DecisionBranch" OID="838a3e0a-1872-4d7c-ab04-e6dc45f3f486" ParentLink="ReallyComplexStatement_Branch" LowerBound="68.13" HigherBound="110.1">
                         <om:Property Name="Expression" Value="groupSuffix == &quot;accepted&quot;" />
                         <om:Property Name="IsGhostBranch" Value="True" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Accepted" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="Scope" OID="e3ec9eca-8ca0-48cf-baa8-47d9af25d1bc" ParentLink="ComplexStatement_Statement" LowerBound="61.1" HigherBound="97.1">
+                        <om:Element Type="Scope" OID="e3ec9eca-8ca0-48cf-baa8-47d9af25d1bc" ParentLink="ComplexStatement_Statement" LowerBound="70.1" HigherBound="109.1">
                             <om:Property Name="InitializedTransactionType" Value="True" />
                             <om:Property Name="IsSynchronized" Value="False" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="AddConnectionToADScope" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="Send" OID="aff1051f-2412-44c2-beb9-40478538f7b1" ParentLink="ComplexStatement_Statement" LowerBound="66.1" HigherBound="68.1">
+                            <om:Element Type="Send" OID="aff1051f-2412-44c2-beb9-40478538f7b1" ParentLink="ComplexStatement_Statement" LowerBound="75.1" HigherBound="77.1">
                                 <om:Property Name="PortName" Value="SendAcceptedUpdatePort" />
                                 <om:Property Name="MessageName" Value="GroupEvent" />
                                 <om:Property Name="OperationName" Value="Accepted" />
@@ -202,35 +212,35 @@
                                 <om:Property Name="Name" Value="SendADIndividualUpdate" />
                                 <om:Property Name="Signal" Value="True" />
                             </om:Element>
-                            <om:Element Type="Catch" OID="dd44eb3c-e50d-467d-b982-6aeaf9711aac" ParentLink="Scope_Catch" LowerBound="71.1" HigherBound="95.1">
+                            <om:Element Type="Catch" OID="dd44eb3c-e50d-467d-b982-6aeaf9711aac" ParentLink="Scope_Catch" LowerBound="80.1" HigherBound="107.1">
                                 <om:Property Name="ExceptionName" Value="ex" />
                                 <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
                                 <om:Property Name="IsFaultMessage" Value="False" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="CatchDeliveryFailureException" />
                                 <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="VariableAssignment" OID="bf57dbac-4df0-4f4b-90be-de821568e56b" ParentLink="Catch_Statement" LowerBound="74.1" HigherBound="94.1">
-                                    <om:Property Name="Expression" Value="errorMessage = ex.ErrorDescription;&#xD;&#xA;&#xD;&#xA;checkExisting = false; &#xD;&#xA;&#xD;&#xA;if(GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot; &amp;&amp; ex.ErrorDescription.Contains(&quot;target of an invocation&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    success = false;&#xD;&#xA;   errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot; ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);&#xD;&#xA;   emailSubject = System.String.Format(&quot;Error trying to update AD group {0}_{1}!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix);&#xD;&#xA;    &#xD;&#xA;}&#xD;&#xA;else if (GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot; &amp;&amp; ex.ErrorDescription.Contains(&quot;target of an invocation&quot;) == true)&#xD;&#xA;{&#xD;&#xA;    checkExisting = true;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Element Type="VariableAssignment" OID="bf57dbac-4df0-4f4b-90be-de821568e56b" ParentLink="Catch_Statement" LowerBound="83.1" HigherBound="106.1">
+                                    <om:Property Name="Expression" Value="errorMessage = ex.ErrorDescription;&#xD;&#xA;&#xD;&#xA;missingGroup = errorMessage.Contains(&quot;no matches for specified filter&quot;);&#xD;&#xA;membershipError = errorMessage.Contains(&quot;target of an invocation&quot;);&#xD;&#xA;&#xD;&#xA;if (missingGroup &amp;&amp; GroupEvent.type == &quot;GroupMembershipRemoveRequestEvent&quot;)&#xD;&#xA;{&#xD;&#xA;	System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, System.String.Format(&quot;UpdateGroupAffiliation, trying to remove member {0} from the non-existing AD group {1}_{2}. Ignoring event.&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}&#xD;&#xA;else if(membershipError &amp;&amp; GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot;)&#xD;&#xA;{&#xD;&#xA;	System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, System.String.Format(&quot;UpdateGroupAffiliation, trying to add member {0} to AD group {1}_{2}. Membership already exist. Ignoring event.&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}&#xD;&#xA;else if (membershipError &amp;&amp; GroupEvent.type == &quot;GroupMembershipRemoveRequestEvent&quot;)&#xD;&#xA;{&#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, System.String.Format(&quot;UpdateGroupAffiliation, trying to remove member {0} from AD group {1}_{2}. Membership does not exist. Ignoring event.&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;	success = false;&#xD;&#xA;	errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber),GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName),groupSuffix,errorMessage);&#xD;&#xA;}&#xD;&#xA;" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="Set error" />
-                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Property Name="Signal" Value="True" />
                                 </om:Element>
                             </om:Element>
                         </om:Element>
                     </om:Element>
-                    <om:Element Type="DecisionBranch" OID="abf2077a-db55-4789-848e-59a64ec2f957" ParentLink="ReallyComplexStatement_Branch" LowerBound="98.18" HigherBound="134.1">
+                    <om:Element Type="DecisionBranch" OID="abf2077a-db55-4789-848e-59a64ec2f957" ParentLink="ReallyComplexStatement_Branch" LowerBound="110.18" HigherBound="152.1">
                         <om:Property Name="Expression" Value="groupSuffix == &quot;registered&quot;" />
                         <om:Property Name="IsGhostBranch" Value="True" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Registered" />
                         <om:Property Name="Signal" Value="False" />
-                        <om:Element Type="Scope" OID="be063796-edb1-4307-bbc2-488b0b923e28" ParentLink="ComplexStatement_Statement" LowerBound="100.1" HigherBound="133.1">
+                        <om:Element Type="Scope" OID="be063796-edb1-4307-bbc2-488b0b923e28" ParentLink="ComplexStatement_Statement" LowerBound="112.1" HigherBound="151.1">
                             <om:Property Name="InitializedTransactionType" Value="True" />
                             <om:Property Name="IsSynchronized" Value="False" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="AddConnectionToADScope" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="Send" OID="a0700956-091e-4112-8797-503a6f7d6983" ParentLink="ComplexStatement_Statement" LowerBound="105.1" HigherBound="107.1">
+                            <om:Element Type="Send" OID="a0700956-091e-4112-8797-503a6f7d6983" ParentLink="ComplexStatement_Statement" LowerBound="117.1" HigherBound="119.1">
                                 <om:Property Name="PortName" Value="SendRegisteredPort" />
                                 <om:Property Name="MessageName" Value="GroupEvent" />
                                 <om:Property Name="OperationName" Value="Registered" />
@@ -239,15 +249,15 @@
                                 <om:Property Name="Name" Value="SendADIndividualUpdate" />
                                 <om:Property Name="Signal" Value="True" />
                             </om:Element>
-                            <om:Element Type="Catch" OID="472f4f56-e184-478f-b857-f119fc6a209d" ParentLink="Scope_Catch" LowerBound="110.1" HigherBound="131.1">
+                            <om:Element Type="Catch" OID="472f4f56-e184-478f-b857-f119fc6a209d" ParentLink="Scope_Catch" LowerBound="122.1" HigherBound="149.1">
                                 <om:Property Name="ExceptionName" Value="ex" />
                                 <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
                                 <om:Property Name="IsFaultMessage" Value="False" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="CatchDeliveryFailureException" />
                                 <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="VariableAssignment" OID="2aafa03d-9f35-4d23-b7e8-549dc00b93bd" ParentLink="Catch_Statement" LowerBound="113.1" HigherBound="130.1">
-                                    <om:Property Name="Expression" Value="   &#xD;&#xA;if(GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot; &amp;&amp; ex.ErrorDescription.Contains(&quot;target of an invocation&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    success = false;&#xD;&#xA;   errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot; ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);&#xD;&#xA;   emailSubject = System.String.Format(&quot;Error trying to update AD group {0}_{1}!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,  System.String.Format(&quot;Error trying to update AD group {0}_{1}!\nException: {2}\nInner Exception: {3}&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix, ex.ErrorDescription, ex.InnerException), System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Element Type="VariableAssignment" OID="2aafa03d-9f35-4d23-b7e8-549dc00b93bd" ParentLink="Catch_Statement" LowerBound="125.1" HigherBound="148.1">
+                                    <om:Property Name="Expression" Value="errorMessage = ex.ErrorDescription;&#xD;&#xA;&#xD;&#xA;missingGroup = errorMessage.Contains(&quot;no matches for specified filter&quot;);&#xD;&#xA;membershipError = errorMessage.Contains(&quot;target of an invocation&quot;);&#xD;&#xA;&#xD;&#xA;if (missingGroup &amp;&amp; GroupEvent.type == &quot;GroupMembershipRemoveRequestEvent&quot;)&#xD;&#xA;{&#xD;&#xA;	System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, System.String.Format(&quot;UpdateGroupAffiliation, trying to remove member {0} from the non-existing AD group {1}_{2}. Ignoring event.&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}&#xD;&#xA;else if(membershipError &amp;&amp; GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot;)&#xD;&#xA;{&#xD;&#xA;	System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, System.String.Format(&quot;UpdateGroupAffiliation, trying to add member {0} to AD group {1}_{2}. Membership already exist. Ignoring event.&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}&#xD;&#xA;else if (membershipError &amp;&amp; GroupEvent.type == &quot;GroupMembershipRemoveRequestEvent&quot;)&#xD;&#xA;{&#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, System.String.Format(&quot;UpdateGroupAffiliation, trying to remove member {0} from AD group {1}_{2}. Membership does not exist. Ignoring event.&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;	success = false;&#xD;&#xA;	errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber),GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName),groupSuffix,errorMessage);&#xD;&#xA;}" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="Set error" />
                                     <om:Property Name="Signal" Value="True" />
@@ -255,19 +265,19 @@
                             </om:Element>
                         </om:Element>
                     </om:Element>
-                    <om:Element Type="DecisionBranch" OID="f2a5a16f-7e8c-4b0d-8d3f-81aea1fefdb8" ParentLink="ReallyComplexStatement_Branch" LowerBound="134.18" HigherBound="170.1">
+                    <om:Element Type="DecisionBranch" OID="f2a5a16f-7e8c-4b0d-8d3f-81aea1fefdb8" ParentLink="ReallyComplexStatement_Branch" LowerBound="152.18" HigherBound="194.1">
                         <om:Property Name="Expression" Value="groupSuffix == &quot;reregistered&quot;" />
                         <om:Property Name="IsGhostBranch" Value="True" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Reregistered" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="Scope" OID="d9381e94-e32b-45b4-8517-bf1dcf95e48e" ParentLink="ComplexStatement_Statement" LowerBound="136.1" HigherBound="169.1">
+                        <om:Element Type="Scope" OID="d9381e94-e32b-45b4-8517-bf1dcf95e48e" ParentLink="ComplexStatement_Statement" LowerBound="154.1" HigherBound="193.1">
                             <om:Property Name="InitializedTransactionType" Value="True" />
                             <om:Property Name="IsSynchronized" Value="False" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="AddConnectionToADScope" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="Send" OID="fa6d0da0-b0ab-423d-b807-fe51a327801a" ParentLink="ComplexStatement_Statement" LowerBound="141.1" HigherBound="143.1">
+                            <om:Element Type="Send" OID="fa6d0da0-b0ab-423d-b807-fe51a327801a" ParentLink="ComplexStatement_Statement" LowerBound="159.1" HigherBound="161.1">
                                 <om:Property Name="PortName" Value="SendReregisteredPort" />
                                 <om:Property Name="MessageName" Value="GroupEvent" />
                                 <om:Property Name="OperationName" Value="Reregistered" />
@@ -276,18 +286,18 @@
                                 <om:Property Name="Name" Value="SendADIndividualUpdate" />
                                 <om:Property Name="Signal" Value="True" />
                             </om:Element>
-                            <om:Element Type="Catch" OID="83116dd8-9af4-4811-a657-21c496289ed1" ParentLink="Scope_Catch" LowerBound="146.1" HigherBound="167.1">
+                            <om:Element Type="Catch" OID="83116dd8-9af4-4811-a657-21c496289ed1" ParentLink="Scope_Catch" LowerBound="164.1" HigherBound="191.1">
                                 <om:Property Name="ExceptionName" Value="ex" />
                                 <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
                                 <om:Property Name="IsFaultMessage" Value="False" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="CatchDeliveryFailureException" />
                                 <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="VariableAssignment" OID="a5ce5a6a-82a3-4822-8a88-88fa1e3c5f07" ParentLink="Catch_Statement" LowerBound="149.1" HigherBound="166.1">
-                                    <om:Property Name="Expression" Value="   &#xD;&#xA;if(GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot; &amp;&amp; ex.ErrorDescription.Contains(&quot;target of an invocation&quot;) == false)&#xD;&#xA;{&#xD;&#xA;    success = false;&#xD;&#xA;   errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot; ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);&#xD;&#xA;   emailSubject = System.String.Format(&quot;Error trying to update AD group {0}_{1}!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,  System.String.Format(&quot;Error trying to update AD group {0}_{1}!\nException: {2}\nInner Exception: {3}&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix, ex.ErrorDescription, ex.InnerException), System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Element Type="VariableAssignment" OID="a5ce5a6a-82a3-4822-8a88-88fa1e3c5f07" ParentLink="Catch_Statement" LowerBound="167.1" HigherBound="190.1">
+                                    <om:Property Name="Expression" Value="errorMessage = ex.ErrorDescription;&#xD;&#xA;&#xD;&#xA;missingGroup = errorMessage.Contains(&quot;no matches for specified filter&quot;);&#xD;&#xA;membershipError = errorMessage.Contains(&quot;target of an invocation&quot;);&#xD;&#xA;&#xD;&#xA;if (missingGroup &amp;&amp; GroupEvent.type == &quot;GroupMembershipRemoveRequestEvent&quot;)&#xD;&#xA;{&#xD;&#xA;	System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, System.String.Format(&quot;UpdateGroupAffiliation, trying to remove member {0} from the non-existing AD group {1}_{2}. Ignoring event.&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}&#xD;&#xA;else if(membershipError &amp;&amp; GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot;)&#xD;&#xA;{&#xD;&#xA;	System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, System.String.Format(&quot;UpdateGroupAffiliation, trying to add member {0} to AD group {1}_{2}. Membership already exist. Ignoring event.&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}&#xD;&#xA;else if (membershipError &amp;&amp; GroupEvent.type == &quot;GroupMembershipRemoveRequestEvent&quot;)&#xD;&#xA;{&#xD;&#xA;    System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, System.String.Format(&quot;UpdateGroupAffiliation, trying to remove member {0} from AD group {1}_{2}. Membership does not exist. Ignoring event.&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;	success = false;&#xD;&#xA;	errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber),GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName),groupSuffix,errorMessage);&#xD;&#xA;}" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="Set error" />
-                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Property Name="Signal" Value="True" />
                                 </om:Element>
                             </om:Element>
                         </om:Element>
@@ -299,59 +309,138 @@
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
                 </om:Element>
-                <om:Element Type="Decision" OID="49a9af6c-ec37-4da9-a920-d96afe27a2a5" ParentLink="ServiceBody_Statement" LowerBound="170.1" HigherBound="194.1">
+                <om:Element Type="Decision" OID="09f1b7b2-8d7c-4a1c-b797-a2c82c8fd056" ParentLink="ServiceBody_Statement" LowerBound="194.1" HigherBound="297.1">
                     <om:Property Name="ReportToAnalyst" Value="True" />
-                    <om:Property Name="Name" Value="CheckExisting" />
+                    <om:Property Name="Name" Value="Try to add again" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="DecisionBranch" OID="90a05de5-2cf4-4c6e-b5e8-1047a43d09d7" ParentLink="ReallyComplexStatement_Branch" LowerBound="171.13" HigherBound="194.1">
-                        <om:Property Name="Expression" Value="checkExisting == true" />
+                    <om:Element Type="DecisionBranch" OID="c082e51d-5e1d-4e8a-9f99-9fd42c994c28" ParentLink="ReallyComplexStatement_Branch" LowerBound="195.13" HigherBound="297.1">
+                        <om:Property Name="Expression" Value="missingGroup &amp;&amp; GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot;" />
                         <om:Property Name="IsGhostBranch" Value="True" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Yes" />
                         <om:Property Name="Signal" Value="False" />
-                        <om:Element Type="Send" OID="6a5facfa-9ab9-4e3e-a7d4-296d081bd56e" ParentLink="ComplexStatement_Statement" LowerBound="173.1" HigherBound="175.1">
-                            <om:Property Name="PortName" Value="ADQueryGroupPort" />
-                            <om:Property Name="MessageName" Value="GroupEvent" />
-                            <om:Property Name="OperationName" Value="Operation_1" />
-                            <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Element Type="Delay" OID="44c6bf58-c0aa-424d-85a4-7a84d43ecdec" ParentLink="ComplexStatement_Statement" LowerBound="197.1" HigherBound="199.1">
+                            <om:Property Name="Timeout" Value="new System.TimeSpan(0,timeoutInMinutesUntilGroupAddRetry,0);" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="ADGroupQuery" />
+                            <om:Property Name="Name" Value="Delay" />
                             <om:Property Name="Signal" Value="True" />
                         </om:Element>
-                        <om:Element Type="Receive" OID="9e07bc09-47ff-4a82-be77-2d871e1141a4" ParentLink="ComplexStatement_Statement" LowerBound="175.1" HigherBound="177.1">
-                            <om:Property Name="Activate" Value="False" />
-                            <om:Property Name="PortName" Value="ADQueryGroupPort" />
-                            <om:Property Name="MessageName" Value="ADGroupQueryResult" />
-                            <om:Property Name="OperationName" Value="Operation_1" />
-                            <om:Property Name="OperationMessageName" Value="Response" />
+                        <om:Element Type="Decision" OID="0889ce31-80e0-4cae-8776-7df09f0e3ca5" ParentLink="ComplexStatement_Statement" LowerBound="199.1" HigherBound="296.1">
                             <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="ADGroupQueryResult" />
+                            <om:Property Name="Name" Value="CheckGroupSuffix" />
                             <om:Property Name="Signal" Value="True" />
-                        </om:Element>
-                        <om:Element Type="VariableAssignment" OID="01504245-1ef3-4570-929e-8f6c7aa99501" ParentLink="ComplexStatement_Statement" LowerBound="177.1" HigherBound="179.1">
-                            <om:Property Name="Expression" Value="resultCountGroup = (System.Int32)(xpath(ADGroupQueryResult, &quot;count(/*[local-name()='ActiveDirectoryQueryResults' and namespace-uri()='']/*[local-name()='FilterMatch' and namespace-uri()=''])&quot;));&#xD;&#xA;" />
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="CheckQueryResult" />
-                            <om:Property Name="Signal" Value="False" />
-                        </om:Element>
-                        <om:Element Type="Decision" OID="7df11b5c-1bff-4fb4-acc9-16c83dfdc762" ParentLink="ComplexStatement_Statement" LowerBound="179.1" HigherBound="193.1">
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="GroupError" />
-                            <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="DecisionBranch" OID="b409857e-172e-4e15-ada5-caaeb2384e1c" ParentLink="ReallyComplexStatement_Branch" LowerBound="180.17" HigherBound="193.1">
-                                <om:Property Name="Expression" Value="(resultCountGroup &gt; 0 &amp;&amp; GroupEvent.type == &quot;GroupMembershipRemoveRequestEvent&quot;) || &#xD;&#xA;(resultCountGroup == 0 &amp;&amp; GroupEvent.type == &quot;GroupMembershipCreateRequestEvent&quot;)" />
+                            <om:Element Type="DecisionBranch" OID="2a80047d-995c-4304-8813-68a03da81502" ParentLink="ReallyComplexStatement_Branch" LowerBound="200.17" HigherBound="232.1">
+                                <om:Property Name="Expression" Value="groupSuffix == &quot;accepted&quot;" />
                                 <om:Property Name="IsGhostBranch" Value="True" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="Yes" />
-                                <om:Property Name="Signal" Value="False" />
-                                <om:Element Type="VariableAssignment" OID="c94a1e60-4b33-4ba8-986b-cb78fc91602b" ParentLink="ComplexStatement_Statement" LowerBound="183.1" HigherBound="192.1">
-                                    <om:Property Name="Expression" Value="success = false;&#xD;&#xA;errorText = System.String.Format(&quot;Error occurred trying to add/remove person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}\nType: {4}&quot; ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,errorMessage,GroupEvent.type);&#xD;&#xA;emailSubject = System.String.Format(&quot;Error trying to update AD group {0}_{1}!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix);&#xD;&#xA; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="Name" Value="Accepted" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Scope" OID="990ebcd4-c444-44d3-9e06-78000e990dde" ParentLink="ComplexStatement_Statement" LowerBound="202.1" HigherBound="231.1">
+                                    <om:Property Name="InitializedTransactionType" Value="True" />
+                                    <om:Property Name="IsSynchronized" Value="False" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
-                                    <om:Property Name="Name" Value="Set error" />
-                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Property Name="Name" Value="AddConnectionToADScope" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="Send" OID="22cb25a1-ac7c-4144-86a7-faeda44a1352" ParentLink="ComplexStatement_Statement" LowerBound="207.1" HigherBound="209.1">
+                                        <om:Property Name="PortName" Value="ResendAcceptedUpdatePort" />
+                                        <om:Property Name="MessageName" Value="GroupEvent" />
+                                        <om:Property Name="OperationName" Value="Accepted" />
+                                        <om:Property Name="OperationMessageName" Value="Request" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="SendADIndividualUpdate" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                    <om:Element Type="Catch" OID="2b178f23-7374-4c2d-ab0f-fcf158dad2c6" ParentLink="Scope_Catch" LowerBound="212.1" HigherBound="229.1">
+                                        <om:Property Name="ExceptionName" Value="ex" />
+                                        <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
+                                        <om:Property Name="IsFaultMessage" Value="False" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="CatchDeliveryFailureException" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="VariableAssignment" OID="8fab7503-d9c1-405e-8ee3-ae11f72d1e0a" ParentLink="Catch_Statement" LowerBound="215.1" HigherBound="228.1">
+                                            <om:Property Name="Expression" Value="success = false;&#xD;&#xA;errorMessage = ex.ErrorDescription;&#xD;&#xA;missingGroup = errorMessage.Contains(&quot;no matches for specified filter&quot;);&#xD;&#xA;&#xD;&#xA;if (missingGroup)&#xD;&#xA;{&#xD;&#xA;	System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, System.String.Format(&quot;UpdateGroupAffiliation, trying to add member {0} to the non-existing AD group {1}_{2}. Suspending.&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;	errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber),GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName),groupSuffix,errorMessage);&#xD;&#xA;}" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Set error" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                    </om:Element>
                                 </om:Element>
                             </om:Element>
-                            <om:Element Type="DecisionBranch" OID="772af02c-2a66-46f0-a246-2b1161090d35" ParentLink="ReallyComplexStatement_Branch">
+                            <om:Element Type="DecisionBranch" OID="037a7738-8b88-4164-afcc-731991d08866" ParentLink="ReallyComplexStatement_Branch" LowerBound="232.22" HigherBound="264.1">
+                                <om:Property Name="Expression" Value="groupSuffix == &quot;registered&quot;" />
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Registered" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Scope" OID="03d08097-6039-474e-afee-1df54ebc8adf" ParentLink="ComplexStatement_Statement" LowerBound="234.1" HigherBound="263.1">
+                                    <om:Property Name="InitializedTransactionType" Value="True" />
+                                    <om:Property Name="IsSynchronized" Value="False" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="AddConnectionToADScope" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="Send" OID="8301e164-dfe9-45ec-8da7-520245e4db65" ParentLink="ComplexStatement_Statement" LowerBound="239.1" HigherBound="241.1">
+                                        <om:Property Name="PortName" Value="ResendRegisteredPort" />
+                                        <om:Property Name="MessageName" Value="GroupEvent" />
+                                        <om:Property Name="OperationName" Value="Registered" />
+                                        <om:Property Name="OperationMessageName" Value="Request" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="SendADIndividualUpdate" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                    <om:Element Type="Catch" OID="4cad83be-a175-42c3-8d3c-8b44c5c7fd60" ParentLink="Scope_Catch" LowerBound="244.1" HigherBound="261.1">
+                                        <om:Property Name="ExceptionName" Value="ex" />
+                                        <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
+                                        <om:Property Name="IsFaultMessage" Value="False" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="CatchDeliveryFailureException" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="VariableAssignment" OID="ba6ca356-cfb3-4969-a613-abde2467154c" ParentLink="Catch_Statement" LowerBound="247.1" HigherBound="260.1">
+                                            <om:Property Name="Expression" Value="success = false;&#xD;&#xA;errorMessage = ex.ErrorDescription;&#xD;&#xA;missingGroup = errorMessage.Contains(&quot;no matches for specified filter&quot;);&#xD;&#xA;&#xD;&#xA;if (missingGroup)&#xD;&#xA;{&#xD;&#xA;	System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, System.String.Format(&quot;UpdateGroupAffiliation, trying to add member {0} to the non-existing AD group {1}_{2}. Suspending.&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;	errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber),GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName),groupSuffix,errorMessage);&#xD;&#xA;}" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Set error" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="DecisionBranch" OID="c36f5d22-9599-48cc-8a37-7f6ad127ffa0" ParentLink="ReallyComplexStatement_Branch" LowerBound="264.22" HigherBound="296.1">
+                                <om:Property Name="Expression" Value="groupSuffix == &quot;reregistered&quot;" />
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Reregistered" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Scope" OID="46b23bdc-4b84-4312-99f9-f919bb211d04" ParentLink="ComplexStatement_Statement" LowerBound="266.1" HigherBound="295.1">
+                                    <om:Property Name="InitializedTransactionType" Value="True" />
+                                    <om:Property Name="IsSynchronized" Value="False" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="AddConnectionToADScope" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="Send" OID="1efd0121-deec-4b0b-894b-6f81da1837c2" ParentLink="ComplexStatement_Statement" LowerBound="271.1" HigherBound="273.1">
+                                        <om:Property Name="PortName" Value="ResendReregisteredPort" />
+                                        <om:Property Name="MessageName" Value="GroupEvent" />
+                                        <om:Property Name="OperationName" Value="Reregistered" />
+                                        <om:Property Name="OperationMessageName" Value="Request" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="SendADIndividualUpdate" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                    <om:Element Type="Catch" OID="95bb22a4-a4cd-4656-b0db-dacbdfe4a766" ParentLink="Scope_Catch" LowerBound="276.1" HigherBound="293.1">
+                                        <om:Property Name="ExceptionName" Value="ex" />
+                                        <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
+                                        <om:Property Name="IsFaultMessage" Value="False" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="CatchDeliveryFailureException" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="VariableAssignment" OID="30d6e045-431f-46d3-a846-63ae36b1f685" ParentLink="Catch_Statement" LowerBound="279.1" HigherBound="292.1">
+                                            <om:Property Name="Expression" Value="success = false;&#xD;&#xA;errorMessage = ex.ErrorDescription;&#xD;&#xA;missingGroup = errorMessage.Contains(&quot;no matches for specified filter&quot;);&#xD;&#xA;&#xD;&#xA;if (missingGroup)&#xD;&#xA;{&#xD;&#xA;	System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, System.String.Format(&quot;UpdateGroupAffiliation, trying to add member {0} to the non-existing AD group {1}_{2}. Suspending.&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;	errorText = System.String.Format(&quot;Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}&quot;, GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber),GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName),groupSuffix,errorMessage);&#xD;&#xA;}" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Set error" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="DecisionBranch" OID="f62b2f7a-4947-42ad-8925-5376b7b70100" ParentLink="ReallyComplexStatement_Branch">
                                 <om:Property Name="IsGhostBranch" Value="True" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="Else" />
@@ -359,15 +448,15 @@
                             </om:Element>
                         </om:Element>
                     </om:Element>
-                    <om:Element Type="DecisionBranch" OID="844b7367-4276-425e-a83c-074fd70b33cf" ParentLink="ReallyComplexStatement_Branch">
+                    <om:Element Type="DecisionBranch" OID="dc8c6330-d59f-49e3-9fd3-8d58d5752508" ParentLink="ReallyComplexStatement_Branch">
                         <om:Property Name="IsGhostBranch" Value="True" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="Else" />
-                        <om:Property Name="Signal" Value="False" />
+                        <om:Property Name="Name" Value="No" />
+                        <om:Property Name="Signal" Value="True" />
                     </om:Element>
                 </om:Element>
             </om:Element>
-            <om:Element Type="PortDeclaration" OID="3d472e26-28c7-437b-b352-d99e02f83ada" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="35.1" HigherBound="38.1">
+            <om:Element Type="PortDeclaration" OID="3d472e26-28c7-437b-b352-d99e02f83ada" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="31.1">
                 <om:Property Name="PortModifier" Value="Uses" />
                 <om:Property Name="Orientation" Value="Left" />
                 <om:Property Name="PortIndex" Value="13" />
@@ -379,11 +468,11 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="SendAcceptedUpdatePort" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="LogicalBindingAttribute" OID="c6cc0b69-564e-4387-895d-ae016239b3d4" ParentLink="PortDeclaration_CLRAttribute" LowerBound="35.1" HigherBound="36.1">
+                <om:Element Type="LogicalBindingAttribute" OID="c6cc0b69-564e-4387-895d-ae016239b3d4" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
-            <om:Element Type="PortDeclaration" OID="bde53c85-1160-443d-8a1f-0cc101c50f10" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="38.1" HigherBound="41.1">
+            <om:Element Type="PortDeclaration" OID="bde53c85-1160-443d-8a1f-0cc101c50f10" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="31.1" HigherBound="34.1">
                 <om:Property Name="PortModifier" Value="Uses" />
                 <om:Property Name="Orientation" Value="Left" />
                 <om:Property Name="PortIndex" Value="16" />
@@ -395,11 +484,11 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="SendRegisteredPort" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="LogicalBindingAttribute" OID="26b03d3b-2062-4c27-be9c-03a562f9e58e" ParentLink="PortDeclaration_CLRAttribute" LowerBound="38.1" HigherBound="39.1">
+                <om:Element Type="LogicalBindingAttribute" OID="26b03d3b-2062-4c27-be9c-03a562f9e58e" ParentLink="PortDeclaration_CLRAttribute" LowerBound="31.1" HigherBound="32.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
-            <om:Element Type="PortDeclaration" OID="53029f63-7950-4250-9ee9-0f8be8ba4f8b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="41.1" HigherBound="44.1">
+            <om:Element Type="PortDeclaration" OID="53029f63-7950-4250-9ee9-0f8be8ba4f8b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="34.1" HigherBound="37.1">
                 <om:Property Name="PortModifier" Value="Uses" />
                 <om:Property Name="Orientation" Value="Left" />
                 <om:Property Name="PortIndex" Value="19" />
@@ -411,23 +500,55 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="SendReregisteredPort" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="LogicalBindingAttribute" OID="b81dfcc7-cf04-479b-9280-dbbf61565661" ParentLink="PortDeclaration_CLRAttribute" LowerBound="41.1" HigherBound="42.1">
+                <om:Element Type="LogicalBindingAttribute" OID="b81dfcc7-cf04-479b-9280-dbbf61565661" ParentLink="PortDeclaration_CLRAttribute" LowerBound="34.1" HigherBound="35.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
-            <om:Element Type="PortDeclaration" OID="ba34f991-b468-4684-8efa-64122882e897" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="44.1" HigherBound="46.1">
+            <om:Element Type="PortDeclaration" OID="ecae2264-af87-48e9-aa8f-17bdf2e2a200" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="37.1" HigherBound="40.1">
                 <om:Property Name="PortModifier" Value="Uses" />
-                <om:Property Name="Orientation" Value="Right" />
-                <om:Property Name="PortIndex" Value="52" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="54" />
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
-                <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="INT0003.AD.Distribution.ADQueryGroupPortType" />
+                <om:Property Name="DeliveryNotification" Value="Transmitted" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.SendAcceptedUpdatePortType" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ADQueryGroupPort" />
-                <om:Property Name="Signal" Value="False" />
-                <om:Element Type="LogicalBindingAttribute" OID="627a6985-f559-41ab-9809-124bc03e28f7" ParentLink="PortDeclaration_CLRAttribute" LowerBound="44.1" HigherBound="45.1">
+                <om:Property Name="Name" Value="ResendAcceptedUpdatePort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="17ec0585-a9af-4a76-9816-a4a9646df60c" ParentLink="PortDeclaration_CLRAttribute" LowerBound="37.1" HigherBound="38.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="25b3cf64-ebec-4409-a6af-ee0c0277a92c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="40.1" HigherBound="43.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="48" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="Transmitted" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.SendReregisteredPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ResendReregisteredPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="9eb57858-bcb5-4e36-b7a5-631d6b18518d" ParentLink="PortDeclaration_CLRAttribute" LowerBound="40.1" HigherBound="41.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="5813a6d9-650b-4735-8f7f-faad099bd2be" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="43.1" HigherBound="46.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="42" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="Transmitted" />
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.SendRegisteredPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ResendRegisteredPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="b3226276-1d78-4138-a49e-eb8eccee2aef" ParentLink="PortDeclaration_CLRAttribute" LowerBound="43.1" HigherBound="44.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
@@ -442,28 +563,21 @@ module INT0003.AD.Distribution
     {
         oneway Accepted
         {
-            Schemas.GroupEvents.InternalGroupEvent
+            Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent
         };
     };
     internal porttype SendRegisteredPortType
     {
         oneway Registered
         {
-            Schemas.GroupEvents.InternalGroupEvent
+            Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent
         };
     };
     internal porttype SendReregisteredPortType
     {
         oneway Reregistered
         {
-            Schemas.GroupEvents.InternalGroupEvent
-        };
-    };
-    internal porttype ADQueryGroupPortType
-    {
-        requestresponse Operation_1
-        {
-            Schemas.GroupEvents.InternalGroupEvent, Schemas.ADEvents.ADQueryResults
+            Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent
         };
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
@@ -479,17 +593,33 @@ module INT0003.AD.Distribution
         [Microsoft.XLANGs.BaseTypes.DeliveryNotification(Microsoft.XLANGs.BaseTypes.DeliveryNotification.NotificationLevel.Transmitted)]
         port uses SendReregisteredPortType SendReregisteredPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port uses ADQueryGroupPortType ADQueryGroupPort;
+        [Microsoft.XLANGs.BaseTypes.DeliveryNotification(Microsoft.XLANGs.BaseTypes.DeliveryNotification.NotificationLevel.Transmitted)]
+        port uses SendAcceptedUpdatePortType ResendAcceptedUpdatePort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        [Microsoft.XLANGs.BaseTypes.DeliveryNotification(Microsoft.XLANGs.BaseTypes.DeliveryNotification.NotificationLevel.Transmitted)]
+        port uses SendReregisteredPortType ResendReregisteredPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        [Microsoft.XLANGs.BaseTypes.DeliveryNotification(Microsoft.XLANGs.BaseTypes.DeliveryNotification.NotificationLevel.Transmitted)]
+        port uses SendRegisteredPortType ResendRegisteredPort;
         message Schemas.ADEvents.ADQueryResults ADGroupQueryResult;
         System.Boolean checkExisting;
         System.Int32 resultCountGroup;
         System.String errorMessage;
-        body (ref System.String emailSubject, ref System.String errorText, ref System.Boolean success, message Schemas.GroupEvents.InternalGroupEvent GroupEvent, System.String groupSuffix)
+        System.Boolean missingAcceptedGroupe;
+        System.Int32 timeoutInMinutesUntilGroupAddRetry;
+        System.Boolean missingGroup;
+        System.Boolean membershipError;
+        body (ref System.String emailSubject, ref System.String errorText, ref System.Boolean success, message Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent GroupEvent, System.String groupSuffix)
         {
-            checkExisting = true;
+            checkExisting = false;
             errorMessage = "";
+            missingAcceptedGroupe = false;
+            missingGroup = false;
+            membershipError = false;
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("441a095d-1484-4951-9891-2ae364354d25")]
             success = true;
+            timeoutInMinutesUntilGroupAddRetry = 5; 
+            System.Int32.TryParse(Shared.Utilities.SSOClientHelper.SSOClientHelper.Read("INT0003ADDistribution", "TimeoutInMinutesUntilGroupAddRetry"), out timeoutInMinutesUntilGroupAddRetry);
             
             
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("f44f5272-3a21-44b1-8851-492c21a10f15")]
@@ -511,23 +641,26 @@ module INT0003.AD.Distribution
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("bf57dbac-4df0-4f4b-90be-de821568e56b")]
                             errorMessage = ex.ErrorDescription;
                             
-                            checkExisting = false; 
+                            missingGroup = errorMessage.Contains("no matches for specified filter");
+                            membershipError = errorMessage.Contains("target of an invocation");
                             
-                            if(GroupEvent.type == "GroupMembershipCreateRequestEvent" && ex.ErrorDescription.Contains("target of an invocation") == false)
+                            if (missingGroup && GroupEvent.type == "GroupMembershipRemoveRequestEvent")
                             {
-                                success = false;
-                               errorText = System.String.Format("Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}" ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);
-                               emailSubject = System.String.Format("Error trying to update AD group {0}_{1}!",GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix);
-                                
+                            	System.Diagnostics.EventLog.WriteEntry("BizTalk Application", System.String.Format("UpdateGroupAffiliation, trying to remove member {0} from the non-existing AD group {1}_{2}. Ignoring event.", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);
                             }
-                            else if (GroupEvent.type == "GroupMembershipCreateRequestEvent" && ex.ErrorDescription.Contains("target of an invocation") == true)
+                            else if(membershipError && GroupEvent.type == "GroupMembershipCreateRequestEvent")
                             {
-                                checkExisting = true;
+                            	System.Diagnostics.EventLog.WriteEntry("BizTalk Application", System.String.Format("UpdateGroupAffiliation, trying to add member {0} to AD group {1}_{2}. Membership already exist. Ignoring event.", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);
                             }
-                            
-                            
-                            
-                            
+                            else if (membershipError && GroupEvent.type == "GroupMembershipRemoveRequestEvent")
+                            {
+                                System.Diagnostics.EventLog.WriteEntry("BizTalk Application", System.String.Format("UpdateGroupAffiliation, trying to remove member {0} from AD group {1}_{2}. Membership does not exist. Ignoring event.", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);
+                            }
+                            else
+                            {
+                            	success = false;
+                            	errorText = System.String.Format("Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber),GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName),groupSuffix,errorMessage);
+                            }
                         }
                     }
                 }
@@ -548,22 +681,28 @@ module INT0003.AD.Distribution
                         catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
                         {
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("2aafa03d-9f35-4d23-b7e8-549dc00b93bd")]
-                               
-                            if(GroupEvent.type == "GroupMembershipCreateRequestEvent" && ex.ErrorDescription.Contains("target of an invocation") == false)
+                            errorMessage = ex.ErrorDescription;
+                            
+                            missingGroup = errorMessage.Contains("no matches for specified filter");
+                            membershipError = errorMessage.Contains("target of an invocation");
+                            
+                            if (missingGroup && GroupEvent.type == "GroupMembershipRemoveRequestEvent")
                             {
-                                success = false;
-                               errorText = System.String.Format("Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}" ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);
-                               emailSubject = System.String.Format("Error trying to update AD group {0}_{1}!",GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix);
+                            	System.Diagnostics.EventLog.WriteEntry("BizTalk Application", System.String.Format("UpdateGroupAffiliation, trying to remove member {0} from the non-existing AD group {1}_{2}. Ignoring event.", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);
+                            }
+                            else if(membershipError && GroupEvent.type == "GroupMembershipCreateRequestEvent")
+                            {
+                            	System.Diagnostics.EventLog.WriteEntry("BizTalk Application", System.String.Format("UpdateGroupAffiliation, trying to add member {0} to AD group {1}_{2}. Membership already exist. Ignoring event.", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);
+                            }
+                            else if (membershipError && GroupEvent.type == "GroupMembershipRemoveRequestEvent")
+                            {
+                                System.Diagnostics.EventLog.WriteEntry("BizTalk Application", System.String.Format("UpdateGroupAffiliation, trying to remove member {0} from AD group {1}_{2}. Membership does not exist. Ignoring event.", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);
                             }
                             else
                             {
-                                System.Diagnostics.EventLog.WriteEntry("BizTalk Application",  System.String.Format("Error trying to update AD group {0}_{1}!\nException: {2}\nInner Exception: {3}",GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix, ex.ErrorDescription, ex.InnerException), System.Diagnostics.EventLogEntryType.Error);
+                            	success = false;
+                            	errorText = System.String.Format("Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber),GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName),groupSuffix,errorMessage);
                             }
-                            
-                            
-                            
-                            
-                            
                         }
                     }
                 }
@@ -584,48 +723,133 @@ module INT0003.AD.Distribution
                         catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
                         {
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("a5ce5a6a-82a3-4822-8a88-88fa1e3c5f07")]
-                               
-                            if(GroupEvent.type == "GroupMembershipCreateRequestEvent" && ex.ErrorDescription.Contains("target of an invocation") == false)
+                            errorMessage = ex.ErrorDescription;
+                            
+                            missingGroup = errorMessage.Contains("no matches for specified filter");
+                            membershipError = errorMessage.Contains("target of an invocation");
+                            
+                            if (missingGroup && GroupEvent.type == "GroupMembershipRemoveRequestEvent")
                             {
-                                success = false;
-                               errorText = System.String.Format("Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}" ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,ex.ErrorDescription);
-                               emailSubject = System.String.Format("Error trying to update AD group {0}_{1}!",GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix);
+                            	System.Diagnostics.EventLog.WriteEntry("BizTalk Application", System.String.Format("UpdateGroupAffiliation, trying to remove member {0} from the non-existing AD group {1}_{2}. Ignoring event.", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);
+                            }
+                            else if(membershipError && GroupEvent.type == "GroupMembershipCreateRequestEvent")
+                            {
+                            	System.Diagnostics.EventLog.WriteEntry("BizTalk Application", System.String.Format("UpdateGroupAffiliation, trying to add member {0} to AD group {1}_{2}. Membership already exist. Ignoring event.", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);
+                            }
+                            else if (membershipError && GroupEvent.type == "GroupMembershipRemoveRequestEvent")
+                            {
+                                System.Diagnostics.EventLog.WriteEntry("BizTalk Application", System.String.Format("UpdateGroupAffiliation, trying to remove member {0} from AD group {1}_{2}. Membership does not exist. Ignoring event.", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Information);
                             }
                             else
                             {
-                                System.Diagnostics.EventLog.WriteEntry("BizTalk Application",  System.String.Format("Error trying to update AD group {0}_{1}!\nException: {2}\nInner Exception: {3}",GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix, ex.ErrorDescription, ex.InnerException), System.Diagnostics.EventLogEntryType.Error);
+                            	success = false;
+                            	errorText = System.String.Format("Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber),GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName),groupSuffix,errorMessage);
                             }
-                            
-                            
-                            
-                            
-                            
                         }
                     }
                 }
             }
-            [Microsoft.XLANGs.BaseTypes.DesignerPosition("49a9af6c-ec37-4da9-a920-d96afe27a2a5")]
-            if (checkExisting == true)
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("09f1b7b2-8d7c-4a1c-b797-a2c82c8fd056")]
+            if (missingGroup && GroupEvent.type == "GroupMembershipCreateRequestEvent")
             {
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("6a5facfa-9ab9-4e3e-a7d4-296d081bd56e")]
-                send (ADQueryGroupPort.Operation_1, GroupEvent);
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("9e07bc09-47ff-4a82-be77-2d871e1141a4")]
-                receive (ADQueryGroupPort.Operation_1, ADGroupQueryResult);
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("01504245-1ef3-4570-929e-8f6c7aa99501")]
-                resultCountGroup = (System.Int32)(xpath(ADGroupQueryResult, "count(/*[local-name()='ActiveDirectoryQueryResults' and namespace-uri()='']/*[local-name()='FilterMatch' and namespace-uri()=''])"));
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("7df11b5c-1bff-4fb4-acc9-16c83dfdc762")]
-                if ((resultCountGroup > 0 && GroupEvent.type == "GroupMembershipRemoveRequestEvent") || 
-                    (resultCountGroup == 0 && GroupEvent.type == "GroupMembershipCreateRequestEvent"))
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("44c6bf58-c0aa-424d-85a4-7a84d43ecdec")]
+                delay new System.TimeSpan(0,timeoutInMinutesUntilGroupAddRetry,0);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("0889ce31-80e0-4cae-8776-7df09f0e3ca5")]
+                if (groupSuffix == "accepted")
                 {
-                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c94a1e60-4b33-4ba8-986b-cb78fc91602b")]
-                    success = false;
-                    errorText = System.String.Format("Error occurred trying to add/remove person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}\nType: {4}" ,GroupEvent(INT0003.AD.Distribution.Schemas.PersonNumber),GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix,errorMessage,GroupEvent.type);
-                    emailSubject = System.String.Format("Error trying to update AD group {0}_{1}!",GroupEvent(INT0003.AD.Distribution.Schemas.GroupName),groupSuffix);
-                     
-                    
-                    
-                    
-                    
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("990ebcd4-c444-44d3-9e06-78000e990dde")]
+                    scope
+                    {
+                        body
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("22cb25a1-ac7c-4144-86a7-faeda44a1352")]
+                            send (ResendAcceptedUpdatePort.Accepted, GroupEvent);
+                        }
+                        exceptions
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("2b178f23-7374-4c2d-ab0f-fcf158dad2c6")]
+                            catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("8fab7503-d9c1-405e-8ee3-ae11f72d1e0a")]
+                                success = false;
+                                errorMessage = ex.ErrorDescription;
+                                missingGroup = errorMessage.Contains("no matches for specified filter");
+                                
+                                if (missingGroup)
+                                {
+                                	System.Diagnostics.EventLog.WriteEntry("BizTalk Application", System.String.Format("UpdateGroupAffiliation, trying to add member {0} to the non-existing AD group {1}_{2}. Suspending.", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Error);
+                                }
+                                else
+                                {
+                                	errorText = System.String.Format("Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber),GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName),groupSuffix,errorMessage);
+                                }
+                            }
+                        }
+                    }
+                }
+                else if (groupSuffix == "registered")
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("03d08097-6039-474e-afee-1df54ebc8adf")]
+                    scope
+                    {
+                        body
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("8301e164-dfe9-45ec-8da7-520245e4db65")]
+                            send (ResendRegisteredPort.Registered, GroupEvent);
+                        }
+                        exceptions
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4cad83be-a175-42c3-8d3c-8b44c5c7fd60")]
+                            catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("ba6ca356-cfb3-4969-a613-abde2467154c")]
+                                success = false;
+                                errorMessage = ex.ErrorDescription;
+                                missingGroup = errorMessage.Contains("no matches for specified filter");
+                                
+                                if (missingGroup)
+                                {
+                                	System.Diagnostics.EventLog.WriteEntry("BizTalk Application", System.String.Format("UpdateGroupAffiliation, trying to add member {0} to the non-existing AD group {1}_{2}. Suspending.", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Error);
+                                }
+                                else
+                                {
+                                	errorText = System.String.Format("Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber),GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName),groupSuffix,errorMessage);
+                                }
+                            }
+                        }
+                    }
+                }
+                else if (groupSuffix == "reregistered")
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("46b23bdc-4b84-4312-99f9-f919bb211d04")]
+                    scope
+                    {
+                        body
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1efd0121-deec-4b0b-894b-6f81da1837c2")]
+                            send (ResendReregisteredPort.Reregistered, GroupEvent);
+                        }
+                        exceptions
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("95bb22a4-a4cd-4656-b0db-dacbdfe4a766")]
+                            catch (Microsoft.XLANGs.BaseTypes.DeliveryFailureException ex)
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("30d6e045-431f-46d3-a846-63ae36b1f685")]
+                                success = false;
+                                errorMessage = ex.ErrorDescription;
+                                missingGroup = errorMessage.Contains("no matches for specified filter");
+                                
+                                if (missingGroup)
+                                {
+                                	System.Diagnostics.EventLog.WriteEntry("BizTalk Application", System.String.Format("UpdateGroupAffiliation, trying to add member {0} to the non-existing AD group {1}_{2}. Suspending.", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber), GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName), groupSuffix), System.Diagnostics.EventLogEntryType.Error);
+                                }
+                                else
+                                {
+                                	errorText = System.String.Format("Error occurred trying to add person with pnr {0} to the AD group {1}_{2}!\nError from AD {3}", GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber),GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName),groupSuffix,errorMessage);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -1,0 +1,856 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="fc81a5d3-f45c-4b43-9e93-5050f966fbac" LowerBound="1.1" HigherBound="186.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="INT0016.Ladok3.Client" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="2fc2074f-38de-460b-8bf5-4e904f0c194f" ParentLink="Module_ServiceDeclaration" LowerBound="39.1" HigherBound="185.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="HandleKurstillfalleTillStatusEvent" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="048ba01c-e01b-4c1a-bb5b-1c416b291ade" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="61.1" HigherBound="62.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="TempXML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="74a116b5-758a-4ef9-a88c-15eeed320aeb" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="62.1" HigherBound="63.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ackMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="d0549106-f6a0-43c7-a027-f5cb930515ee" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="63.1" HigherBound="64.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="empCount" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="21744b03-e63c-4b2f-be2f-f4481a78c256" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="64.1" HigherBound="65.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="counter" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="6016c39a-d1d0-47a1-b6e9-2d4ddc3d18c0" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="65.1" HigherBound="66.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="counterStr" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="c3e6c128-4b4a-4049-83ae-7d97bd80b7a3" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="66.1" HigherBound="67.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="tmpQuery" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="6d3cd414-3789-46dc-a6d7-5885daba65ef" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="67.1" HigherBound="68.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strMsg" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a040fcc3-4668-4579-84d1-8e9e7ccc2591" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="52.1" HigherBound="53.1">
+                <om:Property Name="Type" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReturnMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="b75e2102-8161-49e5-bf15-4d3c6a890a20" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="53.1" HigherBound="54.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Ladok3Event" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="44013b62-9975-43ca-b899-9f184f6ba445" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="54.1" HigherBound="55.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.KurstillfalleTillStatusEnvelope" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EventEnvelope" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ba5f7cfc-b2dd-4f19-9f12-290ebdd103e4" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="55.1" HigherBound="56.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Utbildningsinstans" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="UtbildningsinstansMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="1b246382-de15-4816-b3ca-92bfd1308bae" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="56.1" HigherBound="57.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_kataloginformation.Organisation" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Organisation" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="6747a2d0-4d0e-4f71-809a-72a461e3eaac" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="57.1" HigherBound="58.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Markningsnycklar" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MarkningsnycklarMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="f6b8e7b8-5669-418f-8045-16958977aa59" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="58.1" HigherBound="59.1">
+                <om:Property Name="Type" Value="INT0016.Ladok3.Client.Schemas.QueryParameters" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="query" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="b68004b7-5eb6-445c-bad6-0b423ba34eed" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="59.1" HigherBound="60.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Markningsvarde" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MarkeringsvardeMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="6ad4ab2c-4362-4166-b752-9ae7ef6939fb" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="60.1" HigherBound="61.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.InternalMarkningsvarden" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InternalMarkningsvardenMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="968e359f-98e8-43ed-bc72-8f9ac391c195" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="895a176a-3d5d-43b4-9aa4-de8ad3d7cab6" ParentLink="ServiceBody_Statement" LowerBound="70.1" HigherBound="77.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveKurstillfalleTillStatusEventPort" />
+                    <om:Property Name="MessageName" Value="Ladok3Event" />
+                    <om:Property Name="OperationName" Value="HandleKurstillfalleTillStatusEventOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="7a2945f0-7330-479c-8376-24501c9278f7" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="46523b3f-143b-486d-ba73-482754ac00dc" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.Operation" />
+                        <om:Property Name="RHS" Value="&quot;RouteEventsOperation&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Scope" OID="65a610e6-4080-4390-b5b7-b25bb814d6e8" ParentLink="ServiceBody_Statement" LowerBound="77.1" HigherBound="181.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="PopulateEnvelopeScope" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Parallel" OID="c4b52bbe-1fbd-4ff1-8f87-6086775312f8" ParentLink="ComplexStatement_Statement" LowerBound="82.1" HigherBound="150.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ParallelActions_1" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="ParallelBranch" OID="10b3f06e-d4a1-44c6-8e72-f8865d5156ac" ParentLink="ReallyComplexStatement_Branch" LowerBound="87.1" HigherBound="91.1">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ParallelBranch_1" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Send" OID="0df081d1-1d32-4130-b4bd-b8bd6a5e7c59" ParentLink="ComplexStatement_Statement" LowerBound="87.1" HigherBound="89.1">
+                                <om:Property Name="PortName" Value="SendGetMarkningsnycklar_KurstillfalleTillStatusEventRequestPort" />
+                                <om:Property Name="MessageName" Value="Ladok3Event" />
+                                <om:Property Name="OperationName" Value="Operation_1" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send_3" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Receive" OID="30df7e0a-281f-4380-9af1-975ff906a87c" ParentLink="ComplexStatement_Statement" LowerBound="89.1" HigherBound="91.1">
+                                <om:Property Name="Activate" Value="False" />
+                                <om:Property Name="PortName" Value="SendGetMarkningsnycklar_KurstillfalleTillStatusEventRequestPort" />
+                                <om:Property Name="MessageName" Value="MarkningsnycklarMessage" />
+                                <om:Property Name="OperationName" Value="Operation_1" />
+                                <om:Property Name="OperationMessageName" Value="Response" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Receive_2" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="ParallelBranch" OID="78247c14-fb69-421a-902d-7ceb5b76669d" ParentLink="ReallyComplexStatement_Branch" LowerBound="94.1" HigherBound="98.1">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ParallelBranch_2" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Send" OID="7c718b1f-0d6d-413c-8409-cc35044b2c3e" ParentLink="ComplexStatement_Statement" LowerBound="94.1" HigherBound="96.1">
+                                <om:Property Name="PortName" Value="SendGetOrganisation_KurstillfalleTillStatusEventRequestPort" />
+                                <om:Property Name="MessageName" Value="Ladok3Event" />
+                                <om:Property Name="OperationName" Value="SendGetOrganisationOperation" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send_SendGetOrganisation" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Receive" OID="4bedc67c-dbef-4105-9265-8888df1313a2" ParentLink="ComplexStatement_Statement" LowerBound="96.1" HigherBound="98.1">
+                                <om:Property Name="Activate" Value="False" />
+                                <om:Property Name="PortName" Value="SendGetOrganisation_KurstillfalleTillStatusEventRequestPort" />
+                                <om:Property Name="MessageName" Value="Organisation" />
+                                <om:Property Name="OperationName" Value="SendGetOrganisationOperation" />
+                                <om:Property Name="OperationMessageName" Value="Response" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Receive_SendGetOrganisation" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="ParallelBranch" OID="58461ea9-1ef0-4b67-89ed-6ddfebbacb92" ParentLink="ReallyComplexStatement_Branch" LowerBound="101.1" HigherBound="148.1">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ParallelBranch_1" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Send" OID="d585506b-66a1-4bd8-8819-4bdc35454d94" ParentLink="ComplexStatement_Statement" LowerBound="101.1" HigherBound="103.1">
+                                <om:Property Name="PortName" Value="SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPort" />
+                                <om:Property Name="MessageName" Value="Ladok3Event" />
+                                <om:Property Name="OperationName" Value="GetUtbildningsinstansOperation" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send_GetUtbildningsinstans" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Receive" OID="4f4b1acc-9422-4125-ab86-8f098683e061" ParentLink="ComplexStatement_Statement" LowerBound="103.1" HigherBound="105.1">
+                                <om:Property Name="Activate" Value="False" />
+                                <om:Property Name="PortName" Value="SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPort" />
+                                <om:Property Name="MessageName" Value="UtbildningsinstansMessage" />
+                                <om:Property Name="OperationName" Value="GetUtbildningsinstansOperation" />
+                                <om:Property Name="OperationMessageName" Value="Response" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Receive_Utbildningsinstans" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="df32d5c2-6daf-44ab-9a5b-6aa48d334276" ParentLink="ComplexStatement_Statement" LowerBound="105.1" HigherBound="111.1">
+                                <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, &quot;start&quot;);  &#xD;&#xA;empCount = xpath(UtbildningsinstansMessage, &quot;count(/*[local-name()='Utbildningsinstans' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']/*[local-name()='Attributvarden' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation'])&quot;);&#xD;&#xA;counter = 1;&#xD;&#xA;counterStr = &quot;1&quot;;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Initialize Loop variables" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="While" OID="ec0be06c-f2b6-4299-9e47-89cd277184ec" ParentLink="ComplexStatement_Statement" LowerBound="111.1" HigherBound="141.1">
+                                <om:Property Name="Expression" Value="counter &lt;= empCount" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Loop_1" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="VariableAssignment" OID="89bdd875-34d3-42ff-832e-967f5c9d51f7" ParentLink="ComplexStatement_Statement" LowerBound="114.1" HigherBound="117.1">
+                                    <om:Property Name="Expression" Value="tmpQuery = xpath(UtbildningsinstansMessage, &quot;/*[local-name()='Utbildningsinstans' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']/*[local-name()='Attributvarden' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation'][&quot; + counterStr + &quot;]/*[local-name()='Namn' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']&quot;);&#xD;&#xA;&#xD;&#xA;" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="getName" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="Decision" OID="1fc82fc8-67a4-4631-8288-80370b851965" ParentLink="ComplexStatement_Statement" LowerBound="117.1" HigherBound="137.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Decide_1" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="DecisionBranch" OID="3be5644e-cb77-40a9-8df4-eddbb64f2ba0" ParentLink="ReallyComplexStatement_Branch" LowerBound="118.33" HigherBound="137.1">
+                                        <om:Property Name="Expression" Value="tmpQuery.InnerText == &quot;utbildning.attribut.markningsvarde&quot;" />
+                                        <om:Property Name="IsGhostBranch" Value="True" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Rule_1" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="Construct" OID="e11f7567-8239-4bff-8272-7fbba52716eb" ParentLink="ComplexStatement_Statement" LowerBound="120.1" HigherBound="129.1">
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="ConstructMessage_1" />
+                                            <om:Property Name="Signal" Value="True" />
+                                            <om:Element Type="MessageRef" OID="4ac23c98-5b70-40d3-a50a-e04b3088a987" ParentLink="Construct_MessageRef" LowerBound="121.47" HigherBound="121.52">
+                                                <om:Property Name="Ref" Value="query" />
+                                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                                <om:Property Name="Signal" Value="False" />
+                                            </om:Element>
+                                            <om:Element Type="MessageAssignment" OID="50282c37-2778-478b-ab3b-55ab899d6fd2" ParentLink="ComplexStatement_Statement" LowerBound="123.1" HigherBound="128.1">
+                                                <om:Property Name="Expression" Value="tmpQuery = xpath(UtbildningsinstansMessage, &quot;/*[local-name()='Utbildningsinstans' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']/*[local-name()='Attributvarden' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation'][&quot; + counterStr + &quot;]/*[local-name()='Varde' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']&quot;);&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;Orchestration Debug&quot;, tmpQuery.InnerText);  &#xD;&#xA;tmpQuery.LoadXml(&quot;&lt;ns0:Parameters xmlns:ns0='http://INT0016.Ladok3.Client.Schemas.QueryParameters'&gt;&lt;UID&gt;&quot;+tmpQuery.InnerText+&quot;&lt;/UID&gt;&lt;/ns0:Parameters&gt;&quot;);&#xD;&#xA;query = tmpQuery;" />
+                                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                                <om:Property Name="Name" Value="MessageAssignment_2" />
+                                                <om:Property Name="Signal" Value="False" />
+                                            </om:Element>
+                                        </om:Element>
+                                        <om:Element Type="Send" OID="81c9ec06-36a4-4b61-87a0-39c735db6c13" ParentLink="ComplexStatement_Statement" LowerBound="129.1" HigherBound="131.1">
+                                            <om:Property Name="PortName" Value="SendGetMarkningsvarde_KurstillfalleTillStatusEventRequestPort" />
+                                            <om:Property Name="MessageName" Value="query" />
+                                            <om:Property Name="OperationName" Value="Operation_1" />
+                                            <om:Property Name="OperationMessageName" Value="Request" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Send_2" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                        <om:Element Type="Receive" OID="a0a12572-bfcd-4609-a4da-2f100b3aecac" ParentLink="ComplexStatement_Statement" LowerBound="131.1" HigherBound="133.1">
+                                            <om:Property Name="Activate" Value="False" />
+                                            <om:Property Name="PortName" Value="SendGetMarkningsvarde_KurstillfalleTillStatusEventRequestPort" />
+                                            <om:Property Name="MessageName" Value="MarkeringsvardeMessage" />
+                                            <om:Property Name="OperationName" Value="Operation_1" />
+                                            <om:Property Name="OperationMessageName" Value="Response" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Receive_3" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                        <om:Element Type="VariableAssignment" OID="27cabdc3-3fe9-4dac-84cb-0a9ec7cd2bc4" ParentLink="ComplexStatement_Statement" LowerBound="133.1" HigherBound="136.1">
+                                            <om:Property Name="Expression" Value="TempXML = MarkeringsvardeMessage;&#xD;&#xA;strMsg = strMsg + TempXML.OuterXml;" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Build string" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                    </om:Element>
+                                    <om:Element Type="DecisionBranch" OID="24ea69de-d4b0-4159-8a46-168045938a7d" ParentLink="ReallyComplexStatement_Branch">
+                                        <om:Property Name="IsGhostBranch" Value="True" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Else" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="VariableAssignment" OID="89f4b2e0-6a81-46b7-9d9c-7dcf698bd3c8" ParentLink="ComplexStatement_Statement" LowerBound="137.1" HigherBound="140.1">
+                                    <om:Property Name="Expression" Value="counter = counter + 1;&#xD;&#xA;counterStr = System.Convert.ToString(counter);" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="counter" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Construct" OID="1ca1e490-d406-43eb-b4b6-20a59c455983" ParentLink="ComplexStatement_Statement" LowerBound="141.1" HigherBound="148.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ConstructMessage_2" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessageAssignment" OID="bccf257f-3d73-47f4-89e6-3bf90f1382f7" ParentLink="ComplexStatement_Statement" LowerBound="144.1" HigherBound="147.1">
+                                    <om:Property Name="Expression" Value="TempXML.LoadXml(&quot;&lt;ns0:InternalMarkningsvarden xmlns:ns0='http://UU.Integrations.Common.Schemas'&gt;&quot;+strMsg+&quot;&lt;/ns0:InternalMarkningsvarden&gt;&quot;);&#xD;&#xA;InternalMarkningsvardenMessage = TempXML;" />
+                                    <om:Property Name="ReportToAnalyst" Value="False" />
+                                    <om:Property Name="Name" Value="MessageAssignment_3" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="MessageRef" OID="9afa04bf-9b3b-44ad-a673-128defa89899" ParentLink="Construct_MessageRef" LowerBound="142.39" HigherBound="142.69">
+                                    <om:Property Name="Ref" Value="InternalMarkningsvardenMessage" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Construct" OID="db303335-dd8d-4811-aff2-5317b2879f59" ParentLink="ComplexStatement_Statement" LowerBound="150.1" HigherBound="156.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructEnvelope" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Transform" OID="b57bbc7c-61a8-43af-80e1-cb85314dae65" ParentLink="ComplexStatement_Statement" LowerBound="153.1" HigherBound="155.1">
+                            <om:Property Name="ClassName" Value="INT0016.Ladok3.Client.Maps.KurstillfalleTillStatusEvent_to_Envelope" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform_to_Envelope" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="MessagePartRef" OID="273f87da-2b50-4670-915a-dad50284b559" ParentLink="Transform_InputMessagePartRef" LowerBound="154.122" HigherBound="154.133">
+                                <om:Property Name="MessageRef" Value="Ladok3Event" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_3" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="8affeea5-f474-49e9-b291-bb8d49528ddd" ParentLink="Transform_InputMessagePartRef" LowerBound="154.135" HigherBound="154.160">
+                                <om:Property Name="MessageRef" Value="UtbildningsinstansMessage" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_5" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="43c4d7a8-dc9a-4477-8deb-d44f6c2c6bc0" ParentLink="Transform_InputMessagePartRef" LowerBound="154.162" HigherBound="154.174">
+                                <om:Property Name="MessageRef" Value="Organisation" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_6" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="bea65454-ed95-47f1-ae7e-804eb18c6089" ParentLink="Transform_InputMessagePartRef" LowerBound="154.176" HigherBound="154.199">
+                                <om:Property Name="MessageRef" Value="MarkningsnycklarMessage" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_7" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="43428189-fb81-4166-a799-1e0cc3c5867f" ParentLink="Transform_InputMessagePartRef" LowerBound="154.201" HigherBound="154.231">
+                                <om:Property Name="MessageRef" Value="InternalMarkningsvardenMessage" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_8" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="7f08dc24-1660-47b5-8f79-5d10fbf07135" ParentLink="Transform_OutputMessagePartRef" LowerBound="154.36" HigherBound="154.49">
+                                <om:Property Name="MessageRef" Value="EventEnvelope" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_4" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="d01e9c28-113c-4744-a5b4-64a82cc49136" ParentLink="Construct_MessageRef" LowerBound="151.31" HigherBound="151.44">
+                            <om:Property Name="Ref" Value="EventEnvelope" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Construct" OID="e1d65e80-4439-4db7-8737-beb6935f2506" ParentLink="ComplexStatement_Statement" LowerBound="156.1" HigherBound="162.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructReturnMessage" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Transform" OID="4ca3785d-ed77-4f4e-a632-ab210943af09" ParentLink="ComplexStatement_Statement" LowerBound="159.1" HigherBound="161.1">
+                            <om:Property Name="ClassName" Value="INT0016.Ladok3.Client.Maps.Ladok3Event_to_ReturnMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform_to_ReturnMessage" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="7186041f-c709-41c4-8d31-00b2d091b95d" ParentLink="Transform_InputMessagePartRef" LowerBound="160.110" HigherBound="160.123">
+                                <om:Property Name="MessageRef" Value="EventEnvelope" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="07aa2b5d-6dbc-44ea-a4ac-b624eda05b07" ParentLink="Transform_OutputMessagePartRef" LowerBound="160.36" HigherBound="160.49">
+                                <om:Property Name="MessageRef" Value="ReturnMessage" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="5b56c5da-3971-4201-9602-6e94553a3bc3" ParentLink="Construct_MessageRef" LowerBound="157.31" HigherBound="157.44">
+                            <om:Property Name="Ref" Value="ReturnMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Catch" OID="ca1f0c8b-ec57-4f17-8f41-3a7ea8f2256c" ParentLink="Scope_Catch" LowerBound="165.1" HigherBound="179.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CatchException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="06d3d138-807c-4b09-9e97-602e008f84fb" ParentLink="Catch_Statement" LowerBound="168.1" HigherBound="178.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructErrorMessage" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="b42406e7-9b3b-4868-93e1-e0a6cb3d687b" ParentLink="Construct_MessageRef" LowerBound="169.35" HigherBound="169.48">
+                                <om:Property Name="Ref" Value="ReturnMessage" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="c806f054-2327-4245-9cd1-66fb55dbead6" ParentLink="ComplexStatement_Statement" LowerBound="171.1" HigherBound="177.1">
+                                <om:Property Name="Expression" Value="ackMessage = &quot;Error in HandleKurstillfalleTillStatusEvent, see EventLog for further exception information.&quot;;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, &quot;HandleKurstillfalleTillStatusEvent\r\n&quot; + ex.Message, System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;TempXML.LoadXml(&quot;&lt;ns0:InternalReturnMessage xmlns:ns0=\&quot;http://Shared.Schemas.SdEvents.InternalReturnMessage\&quot;&gt;&lt;Ack&gt;false&lt;/Ack&gt;&lt;AckMessage&gt;&lt;/AckMessage&gt;&lt;ReturnMessage&gt;&lt;![CDATA[]]&gt;&lt;/ReturnMessage&gt;&lt;/ns0:InternalReturnMessage&gt;&quot;);&#xD;&#xA;ReturnMessage = TempXML;&#xD;&#xA;ReturnMessage.AckMessage = ackMessage;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="9b423249-1d41-4a6a-85a8-0be64c3c6819" ParentLink="ServiceBody_Statement" LowerBound="181.1" HigherBound="183.1">
+                    <om:Property Name="PortName" Value="ReceiveKurstillfalleTillStatusEventPort" />
+                    <om:Property Name="MessageName" Value="ReturnMessage" />
+                    <om:Property Name="OperationName" Value="HandleKurstillfalleTillStatusEventOperation" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="2cacf263-35e3-425e-a375-f926ca25ac8c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="42.1" HigherBound="44.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0016.Ladok3.Client.ReceiveKurstillfalleTillStatusEventPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveKurstillfalleTillStatusEventPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="DirectBindingAttribute" OID="62ae358b-252b-4d5d-83d1-1f121adf0887" ParentLink="PortDeclaration_CLRAttribute" LowerBound="42.1" HigherBound="43.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="afc15edc-2253-4e87-8652-9c291bb624da" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="44.1" HigherBound="46.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="20" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0016.Ladok3.Client.SendGetOrganisation_KurstillfalleTillStatusEventRequestPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendGetOrganisation_KurstillfalleTillStatusEventRequestPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="01cb39d6-5523-4057-ab26-b34412926bdf" ParentLink="PortDeclaration_CLRAttribute" LowerBound="44.1" HigherBound="45.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="358b0ade-03d6-4ec8-a0ff-88f3025913de" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="46.1" HigherBound="48.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="13" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0016.Ladok3.Client.SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="571e8d76-e8a4-474f-bbaa-dbdf61fbf1a5" ParentLink="PortDeclaration_CLRAttribute" LowerBound="46.1" HigherBound="47.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="315c9baa-1aef-4896-bc87-843705ba2fad" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="48.1" HigherBound="50.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0016.Ladok3.Client.SendGetMarkningsnycklar_KurstillfalleTillStatusEventRequestPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendGetMarkningsnycklar_KurstillfalleTillStatusEventRequestPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="dce7e977-bc83-490a-8407-d2ef6158fbf4" ParentLink="PortDeclaration_CLRAttribute" LowerBound="48.1" HigherBound="49.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="9620d393-c450-4d07-839c-f7944b09972e" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="50.1" HigherBound="52.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0016.Ladok3.Client.SendGetMarkningsvarde_KurstillfalleTillStatusEventRequestPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendGetMarkningsvarde_KurstillfalleTillStatusEventRequestPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="36ff1f6f-e41b-40a4-b8ff-fbd10a4c1ae3" ParentLink="PortDeclaration_CLRAttribute" LowerBound="50.1" HigherBound="51.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="3390961b-09f9-40f0-b34c-0c09f2b93b14" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveKurstillfalleTillStatusEventPortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="29ae33da-7964-4f6b-b1f7-7074ba52e890" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="HandleKurstillfalleTillStatusEventOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="77055df5-e496-4964-b735-f4a466fa5591" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.102">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="3649bad0-b700-4edd-b8e6-17f2957b6d4d" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.104" HigherBound="8.149">
+                    <om:Property Name="Ref" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="4742e2d0-66d1-4879-ab66-3698f735e62b" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="77bb4ee5-efb3-42df-a865-a5b98257d5b7" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetUtbildningsinstansOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="51a468dd-1e63-426d-a011-3948b381b556" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.102">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="df62fd6e-52a2-4a3e-999b-d210e5ca7a33" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="15.104" HigherBound="15.183">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Utbildningsinstans" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="cb62ca01-4d12-438d-954c-54904bedc518" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendGetOrganisation_KurstillfalleTillStatusEventRequestPortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="cf83aafd-b9a9-4bbc-a9b4-3d0d05fc0489" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendGetOrganisationOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="ae5c55e8-2866-45dd-9195-1c01142130da" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.102">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="7ba03d11-7133-4342-bc73-bef305493872" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="22.104" HigherBound="22.173">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.schemas_ladok_se_kataloginformation.Organisation" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="14857c4a-3b9e-48e8-b17c-6117f34a0e71" ParentLink="Module_PortType" LowerBound="25.1" HigherBound="32.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendGetMarkningsnycklar_KurstillfalleTillStatusEventRequestPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="441ab3b5-913b-4b14-896d-766247664f47" ParentLink="PortType_OperationDeclaration" LowerBound="27.1" HigherBound="31.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="474d3e20-aef1-48d4-a417-69276ade4749" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="29.13" HigherBound="29.102">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="c487c62d-b5df-4db6-b605-c98f20f8be26" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="29.104" HigherBound="29.181">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Markningsnycklar" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="617ff0cf-6d30-454c-b81a-81b91d1c1ca1" ParentLink="Module_PortType" LowerBound="32.1" HigherBound="39.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendGetMarkningsvarde_KurstillfalleTillStatusEventRequestPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="11f1892c-84f4-4e0e-bb34-21cfce6dc275" ParentLink="PortType_OperationDeclaration" LowerBound="34.1" HigherBound="38.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="c6bb1db9-c3ef-483e-823b-72a7515e7516" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="36.13" HigherBound="36.36">
+                    <om:Property Name="Ref" Value="INT0016.Ladok3.Client.Schemas.QueryParameters" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="a1dd7547-2c55-4089-a37d-eba6f03ef634" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="36.38" HigherBound="36.113">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Markningsvarde" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module INT0016.Ladok3.Client
+{
+    internal porttype ReceiveKurstillfalleTillStatusEventPortType
+    {
+        requestresponse HandleKurstillfalleTillStatusEventOperation
+        {
+            Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent, Shared.Schemas.SdEvents.InternalReturnMessage
+        };
+    };
+    internal porttype SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPortType
+    {
+        requestresponse GetUtbildningsinstansOperation
+        {
+            Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent, Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Utbildningsinstans
+        };
+    };
+    internal porttype SendGetOrganisation_KurstillfalleTillStatusEventRequestPortType
+    {
+        requestresponse SendGetOrganisationOperation
+        {
+            Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent, Shared.Schemas.Ladok.schemas_ladok_se_kataloginformation.Organisation
+        };
+    };
+    internal porttype SendGetMarkningsnycklar_KurstillfalleTillStatusEventRequestPortType
+    {
+        requestresponse Operation_1
+        {
+            Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent, Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Markningsnycklar
+        };
+    };
+    internal porttype SendGetMarkningsvarde_KurstillfalleTillStatusEventRequestPortType
+    {
+        requestresponse Operation_1
+        {
+            Schemas.QueryParameters, Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Markningsvarde
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service HandleKurstillfalleTillStatusEvent
+    {
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port implements ReceiveKurstillfalleTillStatusEventPortType ReceiveKurstillfalleTillStatusEventPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendGetOrganisation_KurstillfalleTillStatusEventRequestPortType SendGetOrganisation_KurstillfalleTillStatusEventRequestPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPortType SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendGetMarkningsnycklar_KurstillfalleTillStatusEventRequestPortType SendGetMarkningsnycklar_KurstillfalleTillStatusEventRequestPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendGetMarkningsvarde_KurstillfalleTillStatusEventRequestPortType SendGetMarkningsvarde_KurstillfalleTillStatusEventRequestPort;
+        message Shared.Schemas.SdEvents.InternalReturnMessage ReturnMessage;
+        message Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurstillfalleTillStatusEvent Ladok3Event;
+        message Shared.Schemas.Ladok.KurstillfalleTillStatusEnvelope EventEnvelope;
+        message Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Utbildningsinstans UtbildningsinstansMessage;
+        message Shared.Schemas.Ladok.schemas_ladok_se_kataloginformation.Organisation Organisation;
+        message Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Markningsnycklar MarkningsnycklarMessage;
+        message Schemas.QueryParameters query;
+        message Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.Markningsvarde MarkeringsvardeMessage;
+        message Shared.Schemas.Ladok.InternalMarkningsvarden InternalMarkningsvardenMessage;
+        System.Xml.XmlDocument TempXML;
+        System.String ackMessage;
+        System.Int32 empCount;
+        System.Int32 counter;
+        System.String counterStr;
+        System.Xml.XmlDocument tmpQuery;
+        System.String strMsg;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("895a176a-3d5d-43b4-9aa4-de8ad3d7cab6")]
+            activate ((BTS.MessageType == "http://schemas.ladok.se/utbildningsinformation#KurstillfalleTillStatusEvent") && (BTS.Operation == "RouteEventsOperation"))receive (ReceiveKurstillfalleTillStatusEventPort.HandleKurstillfalleTillStatusEventOperation, Ladok3Event);
+            TempXML = new System.Xml.XmlDocument();
+            ackMessage = "";
+            counterStr = "";
+            tmpQuery = new System.Xml.XmlDocument();
+            strMsg = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("65a610e6-4080-4390-b5b7-b25bb814d6e8")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c4b52bbe-1fbd-4ff1-8f87-6086775312f8")]
+                    parallel
+                    {
+                        task
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0df081d1-1d32-4130-b4bd-b8bd6a5e7c59")]
+                            send (SendGetMarkningsnycklar_KurstillfalleTillStatusEventRequestPort.Operation_1, Ladok3Event);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("30df7e0a-281f-4380-9af1-975ff906a87c")]
+                            receive (SendGetMarkningsnycklar_KurstillfalleTillStatusEventRequestPort.Operation_1, MarkningsnycklarMessage);
+                        }
+                        task
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7c718b1f-0d6d-413c-8409-cc35044b2c3e")]
+                            send (SendGetOrganisation_KurstillfalleTillStatusEventRequestPort.SendGetOrganisationOperation, Ladok3Event);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4bedc67c-dbef-4105-9265-8888df1313a2")]
+                            receive (SendGetOrganisation_KurstillfalleTillStatusEventRequestPort.SendGetOrganisationOperation, Organisation);
+                        }
+                        task
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d585506b-66a1-4bd8-8819-4bdc35454d94")]
+                            send (SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPort.GetUtbildningsinstansOperation, Ladok3Event);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4f4b1acc-9422-4125-ab86-8f098683e061")]
+                            receive (SendGetUtbildningsinstans_KurstillfalleTillStatusEventRequestPort.GetUtbildningsinstansOperation, UtbildningsinstansMessage);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("df32d5c2-6daf-44ab-9a5b-6aa48d334276")]
+                            System.Diagnostics.EventLog.WriteEntry("BizTalk Application", "start");  
+                            empCount = xpath(UtbildningsinstansMessage, "count(/*[local-name()='Utbildningsinstans' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']/*[local-name()='Attributvarden' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation'])");
+                            counter = 1;
+                            counterStr = "1";
+                            
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ec0be06c-f2b6-4299-9e47-89cd277184ec")]
+                            while (counter <= empCount)
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("89bdd875-34d3-42ff-832e-967f5c9d51f7")]
+                                tmpQuery = xpath(UtbildningsinstansMessage, "/*[local-name()='Utbildningsinstans' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']/*[local-name()='Attributvarden' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation'][" + counterStr + "]/*[local-name()='Namn' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']");
+                                
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("1fc82fc8-67a4-4631-8288-80370b851965")]
+                                if (tmpQuery.InnerText == "utbildning.attribut.markningsvarde")
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("e11f7567-8239-4bff-8272-7fbba52716eb")]
+                                    construct query
+                                    {
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("50282c37-2778-478b-ab3b-55ab899d6fd2")]
+                                        tmpQuery = xpath(UtbildningsinstansMessage, "/*[local-name()='Utbildningsinstans' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']/*[local-name()='Attributvarden' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation'][" + counterStr + "]/*[local-name()='Varde' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']");
+                                        System.Diagnostics.EventLog.WriteEntry("Orchestration Debug", tmpQuery.InnerText);  
+                                        tmpQuery.LoadXml("<ns0:Parameters xmlns:ns0='http://INT0016.Ladok3.Client.Schemas.QueryParameters'><UID>"+tmpQuery.InnerText+"</UID></ns0:Parameters>");
+                                        query = tmpQuery;
+                                    }
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("81c9ec06-36a4-4b61-87a0-39c735db6c13")]
+                                    send (SendGetMarkningsvarde_KurstillfalleTillStatusEventRequestPort.Operation_1, query);
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a0a12572-bfcd-4609-a4da-2f100b3aecac")]
+                                    receive (SendGetMarkningsvarde_KurstillfalleTillStatusEventRequestPort.Operation_1, MarkeringsvardeMessage);
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("27cabdc3-3fe9-4dac-84cb-0a9ec7cd2bc4")]
+                                    TempXML = MarkeringsvardeMessage;
+                                    strMsg = strMsg + TempXML.OuterXml;
+                                }
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("89f4b2e0-6a81-46b7-9d9c-7dcf698bd3c8")]
+                                counter = counter + 1;
+                                counterStr = System.Convert.ToString(counter);
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1ca1e490-d406-43eb-b4b6-20a59c455983")]
+                            construct InternalMarkningsvardenMessage
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("bccf257f-3d73-47f4-89e6-3bf90f1382f7")]
+                                TempXML.LoadXml("<ns0:InternalMarkningsvarden xmlns:ns0='http://UU.Integrations.Common.Schemas'>"+strMsg+"</ns0:InternalMarkningsvarden>");
+                                InternalMarkningsvardenMessage = TempXML;
+                            }
+                        }
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("db303335-dd8d-4811-aff2-5317b2879f59")]
+                    construct EventEnvelope
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("b57bbc7c-61a8-43af-80e1-cb85314dae65")]
+                        transform (EventEnvelope) = INT0016.Ladok3.Client.Maps.KurstillfalleTillStatusEvent_to_Envelope (Ladok3Event, UtbildningsinstansMessage, Organisation, MarkningsnycklarMessage, InternalMarkningsvardenMessage);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("e1d65e80-4439-4db7-8737-beb6935f2506")]
+                    construct ReturnMessage
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("4ca3785d-ed77-4f4e-a632-ab210943af09")]
+                        transform (ReturnMessage) = INT0016.Ladok3.Client.Maps.Ladok3Event_to_ReturnMessage (EventEnvelope);
+                    }
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("ca1f0c8b-ec57-4f17-8f41-3a7ea8f2256c")]
+                    catch (System.Exception ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("06d3d138-807c-4b09-9e97-602e008f84fb")]
+                        construct ReturnMessage
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c806f054-2327-4245-9cd1-66fb55dbead6")]
+                            ackMessage = "Error in HandleKurstillfalleTillStatusEvent, see EventLog for further exception information.";
+                            System.Diagnostics.EventLog.WriteEntry("BizTalk Application", "HandleKurstillfalleTillStatusEvent\r\n" + ex.Message, System.Diagnostics.EventLogEntryType.Error);
+                            TempXML.LoadXml("<ns0:InternalReturnMessage xmlns:ns0=\"http://Shared.Schemas.SdEvents.InternalReturnMessage\"><Ack>false</Ack><AckMessage></AckMessage><ReturnMessage><![CDATA[]]></ReturnMessage></ns0:InternalReturnMessage>");
+                            ReturnMessage = TempXML;
+                            ReturnMessage.AckMessage = ackMessage;
+                        }
+                    }
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("9b423249-1d41-4a6a-85a8-0be64c3c6819")]
+            send (ReceiveKurstillfalleTillStatusEventPort.HandleKurstillfalleTillStatusEventOperation, ReturnMessage);
+        }
+    }
+}
+

@@ -41,6 +41,10 @@
   <ItemGroup>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.BizTalk.ReliableMessaging, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Shared.Schemas.Ladok, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\schemas\Shared.Schemas\Ladok\bin\Debug\Shared.Schemas.Ladok.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -73,125 +77,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Schemas\ladok\Envelopes\AterbudEnvelope.xsd.cs" />
-    <Compile Include="Schemas\ladok\Envelopes\AterkalladOmregistreringEnvelope.xsd.cs" />
-    <Compile Include="Schemas\ladok\Envelopes\AterkalladRegistreringEnvelope.xsd.cs" />
-    <Compile Include="Schemas\ladok\Envelopes\ForvantatDeltagandeSkapadEnvelope.xsd.cs" />
-    <Compile Include="Schemas\ladok\Envelopes\KurspaketeringUppdateradEnvelope.xsd.cs" />
-    <Compile Include="Schemas\ladok\Envelopes\KurstillfalleTillStatusEnvelope.xsd.cs" />
-    <Compile Include="Schemas\ladok\Envelopes\OmregistreringEnvelope.xsd.cs" />
-    <Compile Include="Schemas\ladok\Envelopes\RegistreringEnvelope.xsd.cs" />
-    <Compile Include="Schemas\ladok\Envelopes\StudentAvlidenmarkeringEnvelope.xsd.cs" />
-    <Compile Include="Schemas\ladok\PropertySchema.xsd.cs" />
-    <Compile Include="Schemas\ladok\schemas.ladok.se-dap.xsd.cs" />
-    <Compile Include="Schemas\ladok\schemas.ladok.se-events.xsd.cs" />
-    <Compile Include="Schemas\ladok\schemas.ladok.se-studentinformation.xsd.cs" />
-    <Compile Include="Schemas\ladok\schemas.ladok.se-studiedeltagande.xsd.cs" />
-    <Compile Include="Schemas\ladok\schemas.ladok.se-utbildningsinformation.xsd.cs" />
-    <Compile Include="Schemas\ladok\schemas.ladok.se.xsd.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk.pfx" />
-    <Schema Include="Schemas\ladok\Envelopes\UtbildningstillfalleAteraktiveratEnvelope.xsd">
-      <SubType>Task</SubType>
-      <TypeName>UtbildningstillfalleAteraktiveratEnvelope</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
-    </Schema>
-    <Schema Include="Schemas\ladok\Envelopes\UtbildningstillfalleInstalltEnvelope.xsd">
-      <SubType>Task</SubType>
-      <TypeName>UtbildningstillfalleInstalltEnvelope</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
-    </Schema>
-    <Schema Include="Schemas\property\kurstillfalleProperty.xsd">
-      <TypeName>kurstillfalleProperty</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.KurstillfalleProperty</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\Envelopes\KurstillfalleUppdateratEnvelope.xsd">
-      <TypeName>KurstillfalleUppdateratEnvelope</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\Envelopes\AterbudEnvelope.xsd">
-      <TypeName>AterbudEnvelope</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\Envelopes\AterkalladOmregistreringEnvelope.xsd">
-      <TypeName>AterkalladOmregistreringEnvelope</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\Envelopes\AterkalladRegistreringEnvelope.xsd">
-      <TypeName>AterkalladRegistreringEnvelope</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\Envelopes\ForvantatDeltagandeSkapadEnvelope.xsd">
-      <TypeName>ForvantatDeltagandeSkapadEnvelope</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\Envelopes\KurspaketeringUppdateradEnvelope.xsd">
-      <TypeName>KurspaketeringUppdateradEnvelope</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\Envelopes\KurstillfalleTillStatusEnvelope.xsd">
-      <TypeName>KurstillfalleTillStatusEnvelope</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\Envelopes\OmregistreringEnvelope.xsd">
-      <TypeName>OmregistreringEnvelope</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\Envelopes\RegistreringEnvelope.xsd">
-      <TypeName>RegistreringEnvelope</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\Envelopes\StudentAvlidenmarkeringEnvelope.xsd">
-      <TypeName>StudentAvlidenmarkeringEnvelope</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\PropertySchema.xsd">
-      <TypeName>PropertySchema</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\schemas.ladok.se-dap.xsd">
-      <TypeName>schemas_ladok_se_dap</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\schemas.ladok.se-events.xsd">
-      <TypeName>schemas_ladok_se_events</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\schemas.ladok.se-studentinformation.xsd">
-      <TypeName>schemas_ladok_se_studentinformation</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\schemas.ladok.se-studiedeltagande.xsd">
-      <TypeName>schemas_ladok_se_studiedeltagande</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\schemas.ladok.se-utbildningsinformation.xsd">
-      <TypeName>schemas_ladok_se_utbildningsinformation</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\ladok\schemas.ladok.se.xsd">
-      <TypeName>schemas_ladok_se</TypeName>
-      <Namespace>INT0013.TimeEdit.Events.Schemas.ladok</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
     <Schema Include="Schemas\kurstillfalleTE.xsd">
       <TypeName>kurstillfalleTE</TypeName>
       <Namespace>INT0013.TimeEdit.Events.Schemas</Namespace>
@@ -226,6 +114,13 @@
     <Map Include="Maps\UtbildningstillfalleAteraktiveratMap.btm">
       <SubType>Task</SubType>
       <TypeName>UtbildningstillfalleAteraktiveratMap</TypeName>
+      <Namespace>INT0013.TimeEdit.Events.Maps</Namespace>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\UtbildningstillfalleBorttagetMap.btm">
+      <SubType>Task</SubType>
+      <TypeName>UtbildningstillfalleBorttagetMap</TypeName>
       <Namespace>INT0013.TimeEdit.Events.Maps</Namespace>
     </Map>
   </ItemGroup>

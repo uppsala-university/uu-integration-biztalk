@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5A27DAC8-0A2E-4533-905D-53D2682211B2}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>INT0009.Sesam.Events</RootNamespace>
+    <AssemblyName>INT0009.Sesam.Events</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Shared.Schemas.Ladok, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Ladok\v4.0_2.0.0.0__b64e3957dd28061a\Shared.Schemas.Ladok.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Files\generate_bindings.ps1" />
+    <None Include="Files\INT0009.Sesam.Events.docx" />
+    <None Include="Files\INT0009.Sesam.Events.Installation.docx" />
+    <None Include="Files\INT0009.Sesam.Events.maps.xlsx" />
+    <None Include="Files\INT0009.Sesam.Events.Operations.docx" />
+    <None Include="Files\INT0009.Sesam.Events.vsdx" />
+    <None Include="key.snk.pfx" />
+    <Schema Include="Schemas\Sesam\Schema1.xsd">
+      <TypeName>Schema1</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Sesam</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Sesam\PersonEvent.xsd">
+      <TypeName>PersonEvent</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Sesam</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\Sesam\ProgramEvent.xsd">
+      <SubType>Task</SubType>
+      <TypeName>ProgramEvent</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Sesam</Namespace>
+    </Schema>
+    <Schema Include="Schemas\Sesam\KursEvent.xsd">
+      <TypeName>KursEvent</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas.Sesam</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\PropertySchema.xsd">
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>INT0009.Sesam.Events.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\KurstillfalleTillStatusEnvelope_to_SesamEvent.btm">
+      <TypeName>KurstillfalleTillStatusEnvelope_to_SesamEvent</TypeName>
+      <Namespace>INT0009.Sesam.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="Pipelines\FlatFile.SendKursPipeline.btp">
+      <TypeName>FlatFile_SendKursPipeline</TypeName>
+      <Namespace>INT0009.Sesam.Events.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\KurspaketeringUppdateradEnvelope_to_SesamEvent.btm">
+      <TypeName>KurspaketeringUppdateradEnvelope_to_SesamEvent</TypeName>
+      <Namespace>INT0009.Sesam.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schemas\Sesam\PersonEvent.xsd.cs">
+      <DependentUpon>PersonEvent.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\INT0009.Sesam.Events.BindingInfo_Dev.xml" />
+    <Map Include="Maps\TestRESTApi.btm">
+      <TypeName>Map1</TypeName>
+      <Namespace>INT0009.Sesam.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\OmregistreringEnvelope_to_PersonEvent.xsl" />
+    <Pipeline Include="Pipelines\JSON.ReceiveREST.btp">
+      <TypeName>ReceivePipeline1</TypeName>
+      <Namespace>INT0009.Sesam.Events.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+    <Pipeline Include="Pipelines\JSON.SendREST.btp">
+      <TypeName>SendPipeline1</TypeName>
+      <Namespace>INT0009.Sesam.Events.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+    <Map Include="Maps\OmregistreringEnvelope_to_PersonEvent.btm">
+      <TypeName>OmregistreringEnvelope_to_PersonEvent</TypeName>
+      <Namespace>INT0009.Sesam.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Pipeline Include="Pipelines\FlatFile.SendPersonPipeline.btp">
+      <SubType>Task</SubType>
+      <TypeName>FlatFile_SendPersonPipeline</TypeName>
+      <Namespace>INT0009.Sesam.Events.Pipelines</Namespace>
+    </Pipeline>
+    <Map Include="Maps\RegistreringEnvelope_to_PersonEvent.btm">
+      <TypeName>RegistreringEnvelope_to_PersonEvent</TypeName>
+      <Namespace>INT0009.Sesam.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\RegistreringEnvelope_to_PersonEvent.xsl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>
