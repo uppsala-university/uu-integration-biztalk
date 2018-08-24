@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:tns="http://schemas.ladok.se/kataloginformation" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.ladok.se/kataloginformation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="dap.xsd" namespace="http://schemas.ladok.se/dap" />
+  <xs:import schemaLocation="ladok.xsd" namespace="http://schemas.ladok.se" />
+  <xs:element name="Organisation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" xmlns:q1="http://schemas.ladok.se/dap" ref="q1:link" />
+        <xs:element xmlns:q2="http://schemas.ladok.se/dap" ref="q2:LarosateID" />
+        <xs:element xmlns:q3="http://schemas.ladok.se" ref="q3:SenastSparad" />
+        <xs:element xmlns:q4="http://schemas.ladok.se" ref="q4:SenastAndradAv" />
+        <xs:element xmlns:q5="http://schemas.ladok.se" ref="q5:Uid" />
+        <xs:element name="Benamningar">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" xmlns:q6="http://schemas.ladok.se/dap" ref="q6:link" />
+              <xs:element xmlns:q7="http://schemas.ladok.se/dap" ref="q7:LarosateID" />
+              <xs:element maxOccurs="unbounded" xmlns:q8="http://schemas.ladok.se" ref="q8:Benamning" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Giltighetsperiod">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" xmlns:q9="http://schemas.ladok.se/dap" ref="q9:link" />
+              <xs:element xmlns:q10="http://schemas.ladok.se/dap" ref="q10:LarosateID" />
+              <xs:element xmlns:q11="http://schemas.ladok.se" ref="q11:Startdatum" />
+              <xs:element xmlns:q12="http://schemas.ladok.se" ref="q12:Slutdatum" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Organisationskod" type="xs:string" />
+        <xs:element name="Organisationsenhetstyp" type="xs:unsignedByte" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

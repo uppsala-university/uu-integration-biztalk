@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:tns="http://schemas.ladok.se/studiedeltagande" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.ladok.se/studiedeltagande" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="events.xsd" namespace="http://schemas.ladok.se/events" />
+  <xs:import schemaLocation="dap.xsd" namespace="http://schemas.ladok.se/dap" />
+  <xs:import schemaLocation="ladok.xsd" namespace="http://schemas.ladok.se" />
+  <xs:element name="AterkalladOmregistreringEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.ladok.se/events" ref="q1:EventContext" />
+        <xs:element xmlns:q2="http://schemas.ladok.se/events" ref="q2:HandelseUID" />
+        <xs:element name="ForegaendeKurstillfalleUID" type="xs:string" />
+        <xs:element name="ForegaendeRegistreringUID" type="xs:string" />
+        <xs:element name="ForegaendeStudieperiodSlut" type="xs:date" />
+        <xs:element name="ForegaendeStudieperiodStart" type="xs:date" />
+        <xs:element name="ForegaendeTillfallesantagningUID" type="xs:string" />
+        <xs:element name="ForegaendeUtbildningsinstansUID" type="xs:string" />
+        <xs:element maxOccurs="unbounded" name="InomKurspaketeringstillfalle">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KurspaketeringUID" type="xs:string" />
+              <xs:element name="KurspaketeringstillfalleUID" type="xs:string" />
+              <xs:element name="TillfallesantagningUID" type="xs:string" />
+              <xs:element name="UtbildningstypID" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="KursUID" type="xs:string" />
+        <xs:element name="KurstillfalleUID" type="xs:string" />
+        <xs:element name="Period" type="xs:unsignedByte" />
+        <xs:element name="RegistreringUID" type="xs:string" />
+        <xs:element name="StudentUID" type="xs:string" />
+        <xs:element name="TillfallesantagningUID" type="xs:string" />
+        <xs:element name="UtbildningsinstansUID" type="xs:string" />
+        <xs:element name="Orsak" type="xs:string" />
+        <xs:element name="Aterkallandedatum" type="xs:date" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+    <xs:element name="AterkalladregistreringEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.ladok.se/events" ref="q1:EventContext" />
+        <xs:element xmlns:q2="http://schemas.ladok.se/events" ref="q2:HandelseUID" />
+        <xs:element name="ForegaendeKurstillfalleUID" type="xs:string" />
+        <xs:element name="ForegaendeRegistreringUID" type="xs:string" />
+        <xs:element name="ForegaendeStudieperiodSlut" type="xs:date" />
+        <xs:element name="ForegaendeStudieperiodStart" type="xs:date" />
+        <xs:element name="ForegaendeTillfallesantagningUID" type="xs:string" />
+        <xs:element name="ForegaendeUtbildningsinstansUID" type="xs:string" />
+        <xs:element maxOccurs="unbounded" name="InomKurspaketeringstillfalle">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KurspaketeringUID" type="xs:string" />
+              <xs:element name="KurspaketeringstillfalleUID" type="xs:string" />
+              <xs:element name="TillfallesantagningUID" type="xs:string" />
+              <xs:element name="UtbildningstypID" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="KursUID" type="xs:string" />
+        <xs:element name="KurstillfalleUID" type="xs:string" />
+        <xs:element name="Period" type="xs:unsignedByte" />
+        <xs:element name="RegistreringUID" type="xs:string" />
+        <xs:element name="StudentUID" type="xs:string" />
+        <xs:element name="TillfallesantagningUID" type="xs:string" />
+        <xs:element name="UtbildningsinstansUID" type="xs:string" />
+        <xs:element name="Orsak" type="xs:string" />
+        <xs:element name="Aterkallandedatum" type="xs:date" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AvbrottBorttagetEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.ladok.se/events" ref="q1:EventContext" />
+        <xs:element xmlns:q2="http://schemas.ladok.se/events" ref="q2:HandelseUID" />
+        <xs:element name="StudentUID" type="xs:string" />
+        <xs:element name="UtbildningUID" type="xs:string" />
+        <xs:element name="UtbildningstillfalleUID" type="xs:string" />
+        <xs:element name="UtbildningstypID" type="xs:unsignedByte" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AvbrottEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.ladok.se/events" ref="q1:EventContext" />
+        <xs:element xmlns:q2="http://schemas.ladok.se/events" ref="q2:HandelseUID" />
+        <xs:element name="Anteckning" type="xs:string" />
+        <xs:element name="Avbrottsdatum" type="xs:date" />
+        <xs:element name="ExternReferens" type="xs:string" />
+        <xs:element name="StudentUID" type="xs:string" />
+        <xs:element name="UtbildningUID" type="xs:string" />
+        <xs:element name="UtbildningstillfalleUID" type="xs:string" />
+        <xs:element name="UtbildningstypID" type="xs:unsignedByte" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UppehallEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.ladok.se/events" ref="q1:EventContext" />
+        <xs:element xmlns:q2="http://schemas.ladok.se/events" ref="q2:HandelseUID" />
+        <xs:element name="Anteckning" type="xs:string" />
+        <xs:element name="ExternReferens" type="xs:string" />
+        <xs:element name="KurspaketeringUID" type="xs:string" />
+        <xs:element name="KurspaketeringstillfalleUID" type="xs:string" />
+        <xs:element name="PlaneratSlutdatum" type="xs:date" />
+        <xs:element name="RattAttAterupptaStudier" type="xs:boolean" />
+        <xs:element name="Startdatum" type="xs:date" />
+        <xs:element name="StudentUID" type="xs:string" />
+        <xs:element name="UppehallUID" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

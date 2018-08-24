@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:tns="http://schemas.ladok.se/utbildningsinformation" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.ladok.se/utbildningsinformation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="events.xsd" namespace="http://schemas.ladok.se/events" />
+  <xs:import schemaLocation="dap.xsd" namespace="http://schemas.ladok.se/dap" />
+  <xs:import schemaLocation="ladok.xsd" namespace="http://schemas.ladok.se" />
+  <xs:element name="KurstillfalleTillStatusEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.ladok.se/events" ref="q1:EventContext" />
+        <xs:element xmlns:q2="http://schemas.ladok.se/events" ref="q2:HandelseUID" />
+        <xs:element maxOccurs="unbounded" name="LokalMarkning">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Markningsnyckel" type="xs:unsignedByte" />
+              <xs:element name="Markningsvarde" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OrganisationUID" type="xs:string" />
+        <xs:element name="Status" type="xs:unsignedByte" />
+        <xs:element name="UtbildningUID" type="xs:string" />
+        <xs:element maxOccurs="unbounded" name="Attributvarde">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" xmlns:q3="http://schemas.ladok.se/dap" ref="q3:link" />
+              <xs:element xmlns:q4="http://schemas.ladok.se/dap" ref="q4:LarosateID" />
+              <xs:element xmlns:q5="http://schemas.ladok.se" ref="q5:SenastSparad" />
+              <xs:element xmlns:q6="http://schemas.ladok.se" ref="q6:SenastAndradAv" />
+              <xs:element xmlns:q7="http://schemas.ladok.se" ref="q7:Uid" />
+              <xs:element name="AttributdefinitionUID" type="xs:string" />
+              <xs:element name="Grupp" type="xs:unsignedByte" />
+              <xs:element name="Namn" type="xs:string" />
+              <xs:element name="Varde" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UtbildningsinstansUID" type="xs:string" />
+        <xs:element name="UtbildningstypID" type="xs:unsignedByte" />
+        <xs:element name="Avgiftsbelagt" type="xs:boolean" />
+        <xs:element name="StartperiodID" type="xs:unsignedByte" />
+        <xs:element name="StudielokaliseringID" type="xs:unsignedByte" />
+        <xs:element name="StudietaktID" type="xs:unsignedByte" />
+        <xs:element name="UndervisningsformID" type="xs:unsignedByte" />
+        <xs:element name="UndervisningstidID" type="xs:unsignedByte" />
+        <xs:element name="UtbildningUtbildningstypID" type="xs:unsignedByte" />
+        <xs:element name="UtbildningstillfalleUID" type="xs:string" />
+        <xs:element name="Utbildningstillfalleskod" type="xs:string" />
+        <xs:element name="Kurstillfallesattribut">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Finansieringsform" type="xs:unsignedByte" />
+              <xs:element name="ForegaendeTillfallesantagningUID" type="xs:string" />
+              <xs:element name="IndividuelltAtagandeReferensUID" type="xs:string" />
+              <xs:element name="KurspaketeringstillfallesantagningUID" type="xs:string" />
+              <xs:element name="StudentUID" type="xs:string" />
+              <xs:element name="TillfallesByteForStudentTillatet" type="xs:boolean" />
+              <xs:element name="Undervisningsform" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Kurstillfallesperioder">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" xmlns:q8="http://schemas.ladok.se/dap" ref="q8:link" />
+              <xs:element xmlns:q9="http://schemas.ladok.se/dap" ref="q9:LarosateID" />
+              <xs:element xmlns:q10="http://schemas.ladok.se" ref="q10:SenastSparad" />
+              <xs:element xmlns:q11="http://schemas.ladok.se" ref="q11:SenastAndradAv" />
+              <xs:element xmlns:q12="http://schemas.ladok.se" ref="q12:Uid" />
+              <xs:element name="ForstaRegistreringsdatum" type="xs:date" />
+              <xs:element name="ForstaUndervisningsdatum" type="xs:date" />
+              <xs:element name="Omfattningsvarde" type="xs:decimal" />
+              <xs:element name="SistaRegistreringsdatum" type="xs:date" />
+              <xs:element name="SistaUndervisningsdatum" type="xs:date" />
+              <xs:element maxOccurs="unbounded" name="UtbildningsomradePerOrganisation">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" xmlns:q13="http://schemas.ladok.se/dap" ref="q13:link" />
+                    <xs:element xmlns:q14="http://schemas.ladok.se/dap" ref="q14:LarosateID" />
+                    <xs:element xmlns:q15="http://schemas.ladok.se" ref="q15:SenastSparad" />
+                    <xs:element xmlns:q16="http://schemas.ladok.se" ref="q16:SenastAndradAv" />
+                    <xs:element xmlns:q17="http://schemas.ladok.se" ref="q17:Uid" />
+                    <xs:element name="OrganisationUID" type="xs:string" />
+                    <xs:element name="Procent" type="xs:unsignedByte" />
+                    <xs:element name="UtbildningsomradeID" type="xs:unsignedByte" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Utbildningsinstans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" xmlns:q18="http://schemas.ladok.se/dap" ref="q18:link" />
+        <xs:element xmlns:q19="http://schemas.ladok.se/dap" ref="q19:LarosateID" />
+        <xs:element xmlns:q20="http://schemas.ladok.se" ref="q20:SenastSparad" />
+        <xs:element xmlns:q21="http://schemas.ladok.se" ref="q21:SenastAndradAv" />
+        <xs:element xmlns:q22="http://schemas.ladok.se" ref="q22:Uid" />
+        <xs:element maxOccurs="unbounded" name="Attributvarden">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" xmlns:q23="http://schemas.ladok.se/dap" ref="q23:link" />
+              <xs:element xmlns:q24="http://schemas.ladok.se/dap" ref="q24:LarosateID" />
+              <xs:element xmlns:q25="http://schemas.ladok.se" ref="q25:SenastSparad" />
+              <xs:element xmlns:q26="http://schemas.ladok.se" ref="q26:SenastAndradAv" />
+              <xs:element xmlns:q27="http://schemas.ladok.se" ref="q27:Uid" />
+              <xs:element name="AttributdefinitionUID" type="xs:string" />
+              <xs:element name="Grupp" type="xs:unsignedByte" />
+              <xs:element name="Namn" type="xs:string" />
+              <xs:element name="Varde" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Beslut">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" xmlns:q28="http://schemas.ladok.se/dap" ref="q28:link" />
+              <xs:element xmlns:q29="http://schemas.ladok.se/dap" ref="q29:LarosateID" />
+              <xs:element xmlns:q30="http://schemas.ladok.se" ref="q30:SenastSparad" />
+              <xs:element xmlns:q31="http://schemas.ladok.se" ref="q31:SenastAndradAv" />
+              <xs:element xmlns:q32="http://schemas.ladok.se" ref="q32:Uid" />
+              <xs:element name="Anteckning" type="xs:string" />
+              <xs:element name="Beslutsdatum" type="xs:date" />
+              <xs:element name="Beslutsfattare" type="xs:string" />
+              <xs:element name="BeslutstypID" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OrganisationUID" type="xs:string" />
+        <xs:element name="Status" type="xs:unsignedByte" />
+        <xs:element name="UtbildningsmallUID" type="xs:string" />
+        <xs:element name="UtbildningstypID" type="xs:unsignedByte" />
+        <xs:element name="Avvecklad" type="xs:boolean" />
+        <xs:element name="Benamningar">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" xmlns:q33="http://schemas.ladok.se/dap" ref="q33:link" />
+              <xs:element xmlns:q34="http://schemas.ladok.se/dap" ref="q34:LarosateID" />
+              <xs:element maxOccurs="unbounded" xmlns:q35="http://schemas.ladok.se" ref="q35:Benamning" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Omfattning" type="xs:string" />
+        <xs:element name="UtbildningUID" type="xs:string" />
+        <xs:element name="Utbildningskod" type="xs:string" />
+        <xs:element name="Versionsinformation">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" xmlns:q36="http://schemas.ladok.se/dap" ref="q36:link" />
+              <xs:element xmlns:q37="http://schemas.ladok.se/dap" ref="q37:LarosateID" />
+              <xs:element xmlns:q38="http://schemas.ladok.se" ref="q38:SenastSparad" />
+              <xs:element xmlns:q39="http://schemas.ladok.se" ref="q39:SenastAndradAv" />
+              <xs:element xmlns:q40="http://schemas.ladok.se" ref="q40:Uid" />
+              <xs:element name="Anteckning" type="xs:string" />
+              <xs:element name="GiltigFranPeriodID" type="xs:unsignedByte" />
+              <xs:element name="Versionsnummer" type="xs:unsignedByte" />
+              <xs:element name="ArSenasteVersion" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OverliggandeUtbildningUID" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Markningsnycklar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" xmlns:q41="http://schemas.ladok.se/dap" ref="q41:link" />
+        <xs:element xmlns:q42="http://schemas.ladok.se/dap" ref="q42:LarosateID" />
+        <xs:element maxOccurs="unbounded" name="Markningsnyckel">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" xmlns:q43="http://schemas.ladok.se/dap" ref="q43:link" />
+              <xs:element xmlns:q44="http://schemas.ladok.se/dap" ref="q44:LarosateID" />
+              <xs:element xmlns:q45="http://schemas.ladok.se" ref="q45:Benamningar" />
+              <xs:element xmlns:q46="http://schemas.ladok.se" ref="q46:Beskrivningar" />
+              <xs:element xmlns:q47="http://schemas.ladok.se" ref="q47:Giltighetsperiod" />
+              <xs:element xmlns:q48="http://schemas.ladok.se" ref="q48:ID" />
+              <xs:element xmlns:q49="http://schemas.ladok.se" ref="q49:Kod" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Markningsvarde">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" xmlns:q50="http://schemas.ladok.se/dap" ref="q50:link" />
+        <xs:element xmlns:q51="http://schemas.ladok.se/dap" ref="q51:LarosateID" />
+        <xs:element xmlns:q52="http://schemas.ladok.se" ref="q52:Benamningar" />
+        <xs:element xmlns:q53="http://schemas.ladok.se" ref="q53:Beskrivningar" />
+        <xs:element xmlns:q54="http://schemas.ladok.se" ref="q54:Giltighetsperiod" />
+        <xs:element xmlns:q55="http://schemas.ladok.se" ref="q55:ID" />
+        <xs:element xmlns:q56="http://schemas.ladok.se" ref="q56:Kod" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

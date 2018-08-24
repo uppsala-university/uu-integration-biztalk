@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:tns="http://schemas.ladok.se" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.ladok.se" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="dap.xsd" namespace="http://schemas.ladok.se/dap" />
+  <xs:element name="SenastSparad" type="xs:dateTime" />
+  <xs:element name="SenastAndradAv" type="xs:string" />
+  <xs:element name="Uid" type="xs:string" />
+  <xs:element name="Benamning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" xmlns:q1="http://schemas.ladok.se/dap" ref="q1:link" />
+        <xs:element xmlns:q2="http://schemas.ladok.se/dap" ref="q2:LarosateID" />
+        <xs:element name="Sprakkod" type="xs:string" />
+        <xs:element name="Text" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Startdatum" type="xs:date" />
+  <xs:element name="Slutdatum" type="xs:date" />
+  <xs:element name="Benamningar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" xmlns:q3="http://schemas.ladok.se/dap" ref="q3:link" />
+        <xs:element xmlns:q4="http://schemas.ladok.se/dap" ref="q4:LarosateID" />
+        <xs:element maxOccurs="unbounded" name="Benamning">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" xmlns:q5="http://schemas.ladok.se/dap" ref="q5:link" />
+              <xs:element xmlns:q6="http://schemas.ladok.se/dap" ref="q6:LarosateID" />
+              <xs:element name="Sprakkod" type="xs:string" />
+              <xs:element name="Text" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Beskrivningar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" xmlns:q7="http://schemas.ladok.se/dap" ref="q7:link" />
+        <xs:element xmlns:q8="http://schemas.ladok.se/dap" ref="q8:LarosateID" />
+        <xs:element maxOccurs="unbounded" name="Benamning">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" xmlns:q9="http://schemas.ladok.se/dap" ref="q9:link" />
+              <xs:element xmlns:q10="http://schemas.ladok.se/dap" ref="q10:LarosateID" />
+              <xs:element name="Sprakkod" type="xs:string" />
+              <xs:element name="Text" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Giltighetsperiod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" xmlns:q11="http://schemas.ladok.se/dap" ref="q11:link" />
+        <xs:element xmlns:q12="http://schemas.ladok.se/dap" ref="q12:LarosateID" />
+        <xs:element name="Startdatum" type="xs:date" />
+        <xs:element name="Slutdatum" type="xs:date" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ID" type="xs:string" />
+  <xs:element name="Kod" type="xs:string" />
+  <xs:complexType name="Organisation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Benamningar"/>
+          <xs:element minOccurs="0" name="Kod" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organisationsenhetstyp" type="xs:string"/>
+        </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:ns4="http://schemas.ladok.se/dap" xmlns:ns5="http://schemas.ladok.se" xmlns:ns6="http://schemas.ladok.se/studentinformation" xmlns:ns0="http://ladok.uu.envelope.schemas" xmlns:ns1="http://schemas.ladok.se/studiedeltagande" xmlns:ns2="http://schemas.ladok.se/events" xmlns:ns3="http://schemas.ladok.se/utbildningsinformation" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ladok.uu.envelope.schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="studiedeltagande.xsd" namespace="http://schemas.ladok.se/studiedeltagande" />
+  <xs:import schemaLocation="utbildningsinformation.xsd" namespace="http://schemas.ladok.se/utbildningsinformation" />
+  <xs:import schemaLocation="studentinformation.xsd" namespace="http://schemas.ladok.se/studentinformation" />
+  <xs:element name="AvbrottBorttagetEnvelope">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ns1:AvbrottBorttagetEvent" />
+        <xs:element ref="ns3:Utbildningstillfalle" />
+        <xs:element ref="ns3:Utbildningsinstans" />
+        <xs:element ref="ns6:Student" />
+        <xs:element ref="ns6:Kontaktuppgifter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
