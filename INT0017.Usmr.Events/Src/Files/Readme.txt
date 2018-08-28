@@ -60,6 +60,7 @@ INT0017.Create.UsmrRecord
 INT0017.Create.UsmrRecordReregister     
 INT0017.Create.UpdateUsmrRecord 
 INT0017.getPolledData
+INT0017.Create.UsmrRecord.Accepted
 
 Needed Service windows
 
