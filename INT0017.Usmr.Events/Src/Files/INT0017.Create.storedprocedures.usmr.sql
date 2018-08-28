@@ -1,6 +1,6 @@
 
 Create PROCEDURE  [dbo].[uusmrCreateStudentRecord]
-            @PNR CHAR(11),
+           @PNR CHAR(11),
             @GPNR CHAR(11),
             @EFTERNAMN VARCHAR(255),
             @FORNAMN VARCHAR(255),
@@ -32,6 +32,8 @@ Create PROCEDURE  [dbo].[uusmrCreateStudentRecord]
 AS
 BEGIN  
     SET NOCOUNT ON;      
+	IF(@TYP='J' OR @TYP='P')
+	BEGIN
     INSERT INTO [dbo].["UUSKLIST"] VALUES
             ( @PNR, 
             @GPNR,
@@ -62,7 +64,42 @@ BEGIN
             @KAR,
             @TYP,
             @PLG )
-       END
+			END
+ELSE
+BEGIN
+DELETE FROM [dbo].["UUSKLIST"] WHERE PNR=@PNR AND KURS=@KURS AND TERMIN=@TERMIN AND PROGR=@PROGR AND (TYP='J' OR TYP='P');
+  INSERT INTO [dbo].["UUSKLIST"] VALUES
+            ( @PNR, 
+            @GPNR,
+            @EFTERNAMN,
+            @FORNAMN,
+            @INLDATUM_PERS,
+            @COADRESS,
+            @GATUADRESS,
+            @POSTNR,
+            @ORT,
+            @LAND,
+            @INLDATUM_ADRESS,
+            @TELNR,
+            @INLDATUM_TELNR,
+            @EPOSTADRESS,
+            @UPPEH,
+            @KURS,
+            @INST,
+            @POANG,
+            @KT,
+            @UF,
+            @KORT,
+            @FIN,
+            @PROGR,
+            @AKT,
+            @TERMIN,
+            @PTAKT,
+            @KAR,
+            @TYP,
+            @PLG )
+END
+END
 
 	   go
 CREATE PROCEDURE [dbo].[INT0017UsmrRecords]
