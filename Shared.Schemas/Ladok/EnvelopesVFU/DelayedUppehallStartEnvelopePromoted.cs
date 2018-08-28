@@ -6,14 +6,14 @@ namespace Shared.Schemas.Ladok.Envelopes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [SchemaType(SchemaTypeEnum.Document)]
-    [Schema(@"http://ladok.uu.envelope.schemas",@"DelayedUppehallStartEnvelope")]
+    [Schema(@"http://ladok.uu.envelope.schemas",@"DelayedUppehallStartEnvelopePromoted")]
     [System.SerializableAttribute()]
-    [SchemaRoots(new string[] {@"DelayedUppehallStartEnvelope"})]
+    [SchemaRoots(new string[] {@"DelayedUppehallStartEnvelopePromoted"})]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_studentinformation", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_studentinformation))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.InternalMarkningsvarden", typeof(global::Shared.Schemas.Ladok.InternalMarkningsvarden))]
-    public sealed class DelayedUppehallStartEnvelope : Microsoft.XLANGs.BaseTypes.SchemaBase {
+    public sealed class DelayedUppehallStartEnvelopePromoted : Microsoft.XLANGs.BaseTypes.SchemaBase {
         
         [System.NonSerializedAttribute()]
         private static object _rawSchema;
@@ -38,7 +38,7 @@ namespace Shared.Schemas.Ladok.Envelopes {
       </b:references>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name=""DelayedUppehallStartEnvelope"">
+  <xs:element name=""DelayedUppehallStartEnvelopePromoted"">
     <xs:complexType>
       <xs:sequence>
         <xs:element ref=""sd:UppehallEvent"" />
@@ -49,7 +49,7 @@ namespace Shared.Schemas.Ladok.Envelopes {
   </xs:element>
 </xs:schema>";
         
-        public DelayedUppehallStartEnvelope() {
+        public DelayedUppehallStartEnvelopePromoted() {
         }
         
         public override string XmlContent {
@@ -61,7 +61,7 @@ namespace Shared.Schemas.Ladok.Envelopes {
         public override string[] RootNodes {
             get {
                 string[] _RootElements = new string [1];
-                _RootElements[0] = "DelayedUppehallStartEnvelope";
+                _RootElements[0] = "DelayedUppehallStartEnvelopePromoted";
                 return _RootElements;
             }
         }
