@@ -6,15 +6,15 @@ namespace Shared.Schemas.Ladok {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [SchemaType(SchemaTypeEnum.Document)]
-    [Schema(@"http://ladok.uu.envelope.schemas",@"AterkalladRegistreringEnvelope")]
+    [Schema(@"http://ladok.uu.envelope.schemas",@"AterkalladRegistreringEnvelopePromotedPromoted")]
     [System.SerializableAttribute()]
-    [SchemaRoots(new string[] {@"AterkalladRegistreringEnvelope"})]
+    [SchemaRoots(new string[] {@"AterkalladRegistreringEnvelopePromoted"})]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_studentinformation", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_studentinformation))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.InternalMarkningsvarden", typeof(global::Shared.Schemas.Ladok.InternalMarkningsvarden))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.PropertySchema.PropertySchema", typeof(global::Shared.Schemas.Ladok.PropertySchema.PropertySchema))]
-    public sealed class AterkalladRegistreringEnvelope : Microsoft.XLANGs.BaseTypes.SchemaBase {
+    public sealed class AterkalladRegistreringEnvelopePromoted : Microsoft.XLANGs.BaseTypes.SchemaBase {
         
         [System.NonSerializedAttribute()]
         private static object _rawSchema;
@@ -42,7 +42,7 @@ namespace Shared.Schemas.Ladok {
       </b:imports>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name=""AterkalladRegistreringEnvelope"">
+  <xs:element name=""AterkalladRegistreringEnvelopePromoted"">
     <xs:complexType>
       <xs:sequence>
         <xs:element ref=""sd:AterkalladregistreringEvent"" />
@@ -57,7 +57,7 @@ namespace Shared.Schemas.Ladok {
   </xs:element>
 </xs:schema>";
         
-        public AterkalladRegistreringEnvelope() {
+        public AterkalladRegistreringEnvelopePromoted() {
         }
         
         public override string XmlContent {
@@ -69,7 +69,7 @@ namespace Shared.Schemas.Ladok {
         public override string[] RootNodes {
             get {
                 string[] _RootElements = new string [1];
-                _RootElements[0] = "AterkalladRegistreringEnvelope";
+                _RootElements[0] = "AterkalladRegistreringEnvelopePromoted";
                 return _RootElements;
             }
         }

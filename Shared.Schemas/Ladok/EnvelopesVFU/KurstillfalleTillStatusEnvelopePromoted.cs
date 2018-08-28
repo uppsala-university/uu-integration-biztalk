@@ -6,16 +6,16 @@ namespace Shared.Schemas.Ladok {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [SchemaType(SchemaTypeEnum.Document)]
-    [Schema(@"http://ladok.uu.envelope.schemas",@"KurstillfalleTillStatusEnvelope")]
-    [Microsoft.XLANGs.BaseTypes.PropertyAttribute(typeof(global::Shared.Schemas.Ladok.PropertySchema.courseStatus), XPath = @"/*[local-name()='KurstillfalleTillStatusEnvelope' and namespace-uri()='http://ladok.uu.envelope.schemas']/*[local-name()='KurstillfalleTillStatusEvent' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']/*[local-name()='Status' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']", XsdType = @"int")]
+    [Schema(@"http://ladok.uu.envelope.schemas",@"KurstillfalleTillStatusEnvelopePromoted")]
+    [Microsoft.XLANGs.BaseTypes.PropertyAttribute(typeof(global::Shared.Schemas.Ladok.PropertySchema.courseStatus), XPath = @"/*[local-name()='KurstillfalleTillStatusEnvelopePromoted' and namespace-uri()='http://ladok.uu.envelope.schemas']/*[local-name()='KurstillfalleTillStatusEvent' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']/*[local-name()='Status' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']", XsdType = @"int")]
     [System.SerializableAttribute()]
-    [SchemaRoots(new string[] {@"KurstillfalleTillStatusEnvelope"})]
+    [SchemaRoots(new string[] {@"KurstillfalleTillStatusEnvelopePromoted"})]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_kataloginformation", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_kataloginformation))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.InternalMarkningsvarden", typeof(global::Shared.Schemas.Ladok.InternalMarkningsvarden))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.PropertySchema.PropertySchema", typeof(global::Shared.Schemas.Ladok.PropertySchema.PropertySchema))]
-    public sealed class KurstillfalleTillStatusEnvelope : Microsoft.XLANGs.BaseTypes.SchemaBase {
+    public sealed class KurstillfalleTillStatusEnvelopePromoted : Microsoft.XLANGs.BaseTypes.SchemaBase {
         
         [System.NonSerializedAttribute()]
         private static object _rawSchema;
@@ -45,11 +45,11 @@ namespace Shared.Schemas.Ladok {
       </b:imports>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name=""KurstillfalleTillStatusEnvelope"">
+  <xs:element name=""KurstillfalleTillStatusEnvelopePromoted"">
     <xs:annotation>
       <xs:appinfo>
         <b:properties>
-          <b:property name=""ns0:courseStatus"" xpath=""/*[local-name()='KurstillfalleTillStatusEnvelope' and namespace-uri()='http://ladok.uu.envelope.schemas']/*[local-name()='KurstillfalleTillStatusEvent' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']/*[local-name()='Status' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']"" />
+          <b:property name=""ns0:courseStatus"" xpath=""/*[local-name()='KurstillfalleTillStatusEnvelopePromoted' and namespace-uri()='http://ladok.uu.envelope.schemas']/*[local-name()='KurstillfalleTillStatusEvent' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']/*[local-name()='Status' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']"" />
         </b:properties>
       </xs:appinfo>
     </xs:annotation>
@@ -65,7 +65,7 @@ namespace Shared.Schemas.Ladok {
   </xs:element>
 </xs:schema>";
         
-        public KurstillfalleTillStatusEnvelope() {
+        public KurstillfalleTillStatusEnvelopePromoted() {
         }
         
         public override string XmlContent {
@@ -77,7 +77,7 @@ namespace Shared.Schemas.Ladok {
         public override string[] RootNodes {
             get {
                 string[] _RootElements = new string [1];
-                _RootElements[0] = "KurstillfalleTillStatusEnvelope";
+                _RootElements[0] = "KurstillfalleTillStatusEnvelopePromoted";
                 return _RootElements;
             }
         }

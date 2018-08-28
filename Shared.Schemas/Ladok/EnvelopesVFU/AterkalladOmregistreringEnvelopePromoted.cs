@@ -6,16 +6,16 @@ namespace Shared.Schemas.Ladok {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [SchemaType(SchemaTypeEnum.Document)]
-    [Schema(@"http://ladok.uu.envelope.schemas",@"AterkalladOmregistreringEnvelope")]
-    [Microsoft.XLANGs.BaseTypes.PropertyAttribute(typeof(global::Shared.Schemas.Ladok.PropertySchema.Utbildningskod), XPath = @"/*[local-name()='AterkalladOmregistreringEnvelope' and namespace-uri()='http://ladok.uu.envelope.schemas']/*[local-name()='Utbildningsinstans' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']/*[local-name()='Utbildningskod' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']", XsdType = @"string")]
+    [Schema(@"http://ladok.uu.envelope.schemas",@"AterkalladOmregistreringEnvelopePromoted")]
+    [Microsoft.XLANGs.BaseTypes.PropertyAttribute(typeof(global::Shared.Schemas.Ladok.PropertySchema.Utbildningskod), XPath = @"/*[local-name()='AterkalladOmregistreringEnvelopePromoted' and namespace-uri()='http://ladok.uu.envelope.schemas']/*[local-name()='Utbildningsinstans' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']/*[local-name()='Utbildningskod' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']", XsdType = @"string")]
     [System.SerializableAttribute()]
-    [SchemaRoots(new string[] {@"AterkalladOmregistreringEnvelope"})]
+    [SchemaRoots(new string[] {@"AterkalladOmregistreringEnvelopePromoted"})]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_studentinformation", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_studentinformation))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.InternalMarkningsvarden", typeof(global::Shared.Schemas.Ladok.InternalMarkningsvarden))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.PropertySchema.PropertySchema", typeof(global::Shared.Schemas.Ladok.PropertySchema.PropertySchema))]
-    public sealed class AterkalladOmregistreringEnvelope : Microsoft.XLANGs.BaseTypes.SchemaBase {
+    public sealed class AterkalladOmregistreringEnvelopePromoted : Microsoft.XLANGs.BaseTypes.SchemaBase {
         
         [System.NonSerializedAttribute()]
         private static object _rawSchema;
@@ -43,11 +43,11 @@ namespace Shared.Schemas.Ladok {
       </b:imports>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name=""AterkalladOmregistreringEnvelope"">
+  <xs:element name=""AterkalladOmregistreringEnvelopePromoted"">
     <xs:annotation>
       <xs:appinfo>
         <b:properties>
-          <b:property name=""ns0:Utbildningskod"" xpath=""/*[local-name()='AterkalladOmregistreringEnvelope' and namespace-uri()='http://ladok.uu.envelope.schemas']/*[local-name()='Utbildningsinstans' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']/*[local-name()='Utbildningskod' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']"" />
+          <b:property name=""ns0:Utbildningskod"" xpath=""/*[local-name()='AterkalladOmregistreringEnvelopePromoted' and namespace-uri()='http://ladok.uu.envelope.schemas']/*[local-name()='Utbildningsinstans' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']/*[local-name()='Utbildningskod' and namespace-uri()='http://schemas.ladok.se/utbildningsinformation']"" />
         </b:properties>
       </xs:appinfo>
     </xs:annotation>
@@ -65,7 +65,7 @@ namespace Shared.Schemas.Ladok {
   </xs:element>
 </xs:schema>";
         
-        public AterkalladOmregistreringEnvelope() {
+        public AterkalladOmregistreringEnvelopePromoted() {
         }
         
         public override string XmlContent {
@@ -77,7 +77,7 @@ namespace Shared.Schemas.Ladok {
         public override string[] RootNodes {
             get {
                 string[] _RootElements = new string [1];
-                _RootElements[0] = "AterkalladOmregistreringEnvelope";
+                _RootElements[0] = "AterkalladOmregistreringEnvelopePromoted";
                 return _RootElements;
             }
         }
