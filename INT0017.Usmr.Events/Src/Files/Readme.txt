@@ -17,12 +17,13 @@ Application have two receive ports:
 INT0017.ReceiveUsmrSdEvents   reads data from queue    (service window will need to be set for executing file output job once a day)
 INT0017.getPolledData         reads data from the database (polling intervall will need to be set for executing file output job once/service window)
 
-Application has five send ports:
+Application has six send ports:
 INT0017.Create.UsmrRecord             store a registration event in snaphot database
 INT0017.Create.UsmrRecordReregister   store a rregistration event
 INT0017.Create.UsmrRecord.Accepted    store a forvantat deltagande event 
 INT0017.Create.UpdateUsmrRecord       updates a student record with new name & contact information. The
                                       origin of the new data is the Ladok event LokalStudentEvent enriched with contact information
+INT0017.setUsmrDeceased               Set/unset deceased flag in DB
 INT0017.Create.File                   Outputs the file UUSKLIST for further processing by the system Melos.
                                       Data for the file is received from receive location INT0017.getPolledData
 									  which is a sql polling job that periodically reads the content of the whole snaphot databse.
@@ -61,6 +62,7 @@ INT0017.Create.UsmrRecordReregister
 INT0017.Create.UpdateUsmrRecord 
 INT0017.getPolledData
 INT0017.Create.UsmrRecord.Accepted
+INT0017.setUsmrDeceased
 
 Needed Service windows
 

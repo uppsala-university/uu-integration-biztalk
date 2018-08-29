@@ -30,3 +30,5 @@ CREATE TABLE [dbo].["UUSKLIST"]
             TYP   CHAR(3),
             PLG   VARCHAR(255)
 )
+go
+ALTER TABLE ["UUSKLIST"] ADD AVLIDEN varchar(1); 
