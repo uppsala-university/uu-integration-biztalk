@@ -45,10 +45,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Shared.Schemas.GroupAndPersonEvents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+    <Reference Include="Shared.Schemas.GroupAndPersonEvents, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.GroupAndPersonEvents\v4.0_2.0.0.0__b64e3957dd28061a\Shared.Schemas.GroupAndPersonEvents.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.GroupAndPersonEvents\v4.0_2.2.0.0__b64e3957dd28061a\Shared.Schemas.GroupAndPersonEvents.dll</HintPath>
     </Reference>
     <Reference Include="Shared.Utilities.SSOClientHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -88,6 +87,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Files\generate_bindings.ps1" />
     <None Include="Files\INT0003.AD.Distibution.docx" />
     <None Include="Files\INT0003.AD.Distibution.maps.xlsx" />
     <None Include="Files\INT0003.AD.Distribution.Operations.docx" />
@@ -186,12 +186,12 @@
       <Namespace>INT0003.AD.Distribution.Maps</Namespace>
       <SubType>Task</SubType>
     </Map>
-    <Content Include="Files\INT0003.AD.Distribution.BindingInfo.xml" />
     <Content Include="Files\INT0003.AD.Distribution.BindingInfo_Dev.xml" />
-    <Content Include="Files\INT0003.AD.Distribution.BindingInfo_Prod %28write to file%29.xml" />
     <Content Include="Files\INT0003.AD.Distribution.BindingInfo_Prod.xml" />
     <Content Include="Files\INT0003.AD.Distribution.BindingInfo_Test.xml" />
-    <Content Include="Maps\InternalGroupEvent_to_ADAddGroupOutgoing.xsl" />
+    <Content Include="Maps\InternalGroupEvent_to_ADAddGroupOutgoing.xsl">
+      <SubType>Designer</SubType>
+    </Content>
     <XLang Include="Processing\GroupEventsGroupToAD.odx">
       <TypeName>GroupEventsGroupToAD_Copy</TypeName>
       <Namespace>INT0003.AD.Distribution.Processing</Namespace>
