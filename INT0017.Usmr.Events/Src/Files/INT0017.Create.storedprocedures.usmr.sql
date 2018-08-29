@@ -147,3 +147,20 @@ BEGIN
 			where pnr=@PNR
            
        END
+go
+CREATE  PROCEDURE  [dbo].[uusmrSetDeceased]
+            @PNR CHAR(11),
+            @STATUS CHAR(1)
+
+AS
+BEGIN  
+    SET NOCOUNT ON;      
+	IF(@STATUS='J')
+	   BEGIN
+	   UPDATE [dbo].["UUSKLIST"] SET AVLIDEN='J' WHERE PNR = @PNR
+	   END
+	ELSE 
+	   BEGIN
+	   UPDATE [dbo].["UUSKLIST"] SET AVLIDEN='' WHERE PNR = @PNR
+	   END
+END
