@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="2" TotalEndpoints="2">
-  <Timestamp>2018-08-22T13:20:49.1756988+02:00</Timestamp>
+  <Timestamp>2018-08-27T10:04:36.6216569+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0008.Ladok3.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0008.Ladok3.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -87,19 +87,19 @@
           <PublicAddress />
           <Primary>true</Primary>
           <ReceiveLocationServiceWindowEnabled>true</ReceiveLocationServiceWindowEnabled>
-          <ReceiveLocationFromTime>2000-01-01T00:30:00</ReceiveLocationFromTime>
-          <ReceiveLocationToTime>2000-01-01T02:30:00</ReceiveLocationToTime>
+          <ReceiveLocationFromTime>2000-01-01T04:30:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T00:30:00</ReceiveLocationToTime>
           <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
           <ReceiveLocationStartDate>2018-06-18T00:00:00</ReceiveLocationStartDate>
           <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
           <ReceiveLocationEndDate>2018-06-19T23:59:59</ReceiveLocationEndDate>
           <ReceiveLocationTransportType Name="Atom" Capabilities="6153" ConfigurationClsid="4843c095-0752-45a9-a741-79e064effa87" />
           <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;https://api.mit-integration.ladok.se/uppfoljning/feed/recent&amp;lt;/uri&amp;gt;&amp;lt;clientCertificate&amp;gt;7B6E9150DD5B9EA485F23B1393398F583F53D90E&amp;lt;/clientCertificate&amp;gt;&amp;lt;pollingInterval&amp;gt;30&amp;lt;/pollingInterval&amp;gt;&amp;lt;pollingIntervalUnit&amp;gt;seconds&amp;lt;/pollingIntervalUnit&amp;gt;&amp;lt;numberOfEvents&amp;gt;10&amp;lt;/numberOfEvents&amp;gt;&amp;lt;address&amp;gt;https://api.mit-integration.ladok.se/uppfoljning/feed/recent&amp;lt;/address&amp;gt;&amp;lt;stateFile&amp;gt;\\uuc-biz025-t.exchange-test.its.uu.se\ladok3-atom$\state\state.xml&amp;lt;/stateFile&amp;gt;&amp;lt;firstFeed&amp;gt;https://api.mit-integration.ladok.se/uppfoljning/feed/143653&amp;lt;/firstFeed&amp;gt;&amp;lt;firstEntry&amp;gt;74ad4da9-31e0-11e8-b65f-0778fef44f1b&amp;lt;/firstEntry&amp;gt;&amp;lt;findFirst&amp;gt;false&amp;lt;/findFirst&amp;gt;&amp;lt;feedMax&amp;gt;10&amp;lt;/feedMax&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
-          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody" Description="" />
+          <ReceivePipeline Name="INT0008.Ladok3.Events.Pipelines.ReceiveLadokEvents" FullyQualifiedName="INT0008.Ladok3.Events.Pipelines.ReceiveLadokEvents, INT0008.Ladok3.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
           <ReceivePipelineData xsi:nil="true" />
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
-          <Enable>false</Enable>
+          <Enable>true</Enable>
           <ReceiveHandler Name="CluSDReceive" HostTrusted="false">
             <TransportType Name="Atom" Capabilities="6153" ConfigurationClsid="4843c095-0752-45a9-a741-79e064effa87" />
           </ReceiveHandler>
