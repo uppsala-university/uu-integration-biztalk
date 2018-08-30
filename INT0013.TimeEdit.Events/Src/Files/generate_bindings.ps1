@@ -15,7 +15,7 @@ $TestDB  = 'sftp://uuc-eko004.its.uu.se:22/timeedit/%MessageID%.xml'
 $ProdDB  = 'sftp://uuc-eko004.its.uu.se:22/timeedit/%MessageID%.xml'
 
 copy .\$DevBindings .\$TestBindings
-(Get-Content -Path .\$TestBindings).Replace($DevQueue,$TestQueue).Replace($DevDB,$TestDB) | Set-Content -Path .\$TestBindings
+(Get-Content -Path .\$TestBindings).Replace($DevQueue,$TestQueue).Replace($DevDB,$TestDB).Replace($DevFolder,$TesFolder)  | Set-Content -Path .\$TestBindings
 
 copy .\$DevBindings .\$ProdBindings
-(Get-Content -Path .\$ProdBindings).Replace($DevQueue,$ProdQueue).Replace($DevDB,$ProdDB) | Set-Content -Path .\$ProdBindings
+(Get-Content -Path .\$ProdBindings).Replace($DevQueue,$ProdQueue).Replace($DevDB,$ProdDB).Replace($DevFolder,$ProdFolder)  | Set-Content -Path .\$ProdBindings
