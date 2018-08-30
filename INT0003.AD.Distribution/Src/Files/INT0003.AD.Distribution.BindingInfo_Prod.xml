@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="17" TotalEndpoints="17">
-  <Timestamp>2018-08-29T14:04:32.9356621+02:00</Timestamp>
+  <Timestamp>2018-08-30T12:35:53.8580057+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0003.AD.Distribution]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0003.AD.Distribution], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -45,7 +45,7 @@
     </ModuleRef>
     <ModuleRef Name="INT0003.AD.Distribution" Version="2.2.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0003.AD.Distribution, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services>
-        <Service Name="INT0003.AD.Distribution.GroupEventsGroupToAD" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0003.AD.Distribution.GroupEventsGroupToAD" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="ReceiveGroupEventsPort" Modifier="2" BindingOption="1">
               <SendPortRef xsi:nil="true" />
@@ -76,7 +76,7 @@
           <Roles />
           <Host Name="CluGroupOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0003.AD.Distribution.GroupEventsIndividualToAD" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0003.AD.Distribution.GroupEventsIndividualToAD" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="ReceiveGroupEventPort" Modifier="2" BindingOption="1">
               <SendPortRef xsi:nil="true" />
@@ -92,7 +92,7 @@
           <Roles />
           <Host Name="CluGroupOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0003.AD.Distribution.UpdateGroupAffiliation" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0003.AD.Distribution.UpdateGroupAffiliation" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="SendAcceptedUpdatePort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0003.AD.Send_UpdateAcceptedGroup" />
@@ -128,12 +128,12 @@
           <Roles />
           <Host Name="CluGroupOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0003.AD.Distribution.ProcessGroupAffiliation" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0003.AD.Distribution.ProcessGroupAffiliation" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports />
           <Roles />
           <Host Name="CluGroupOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0003.AD.Distribution.GetActiveAccount" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0003.AD.Distribution.GetActiveAccount" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="CheckActiveAccountPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0003.Identity.distribution.Send_ActiveAccountRequest" />
@@ -149,7 +149,7 @@
           <Roles />
           <Host Name="CluGroupOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0003.AD.Distribution.GetAccount" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0003.AD.Distribution.GetAccount" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="ADQueryIndividualPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0003.AD.Send_UserQuery" />
@@ -389,7 +389,7 @@
       <PrimaryTransport>
         <Address>uadm.bt-prod@uadm.uu.se</Address>
         <TransportType Name="SMTP" Capabilities="2" ConfigurationClsid="8f36b311-b670-4cf6-aaec-04ebb80ed48d" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;To vt="8"&gt;uadm.bt-prod@uadm.uu.se&lt;/To&gt;&lt;DeliveryReceipt vt="11"&gt;0&lt;/DeliveryReceipt&gt;&lt;EmailBodyFileCharset vt="8"&gt;utf-8&lt;/EmailBodyFileCharset&gt;&lt;MessagePartsAttachments vt="19"&gt;0&lt;/MessagePartsAttachments&gt;&lt;ReadReceipt vt="11"&gt;0&lt;/ReadReceipt&gt;&lt;EmailBodyTextCharset vt="8"&gt;utf-8&lt;/EmailBodyTextCharset&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <TransportTypeData>&lt;CustomProps&gt;&lt;SMTPHost vt="8"&gt;smtp.user.uu.se&lt;/SMTPHost&gt;&lt;DeliveryReceipt vt="11"&gt;0&lt;/DeliveryReceipt&gt;&lt;EmailBodyFileCharset vt="8"&gt;utf-8&lt;/EmailBodyFileCharset&gt;&lt;EmailBodyTextCharset vt="8"&gt;utf-8&lt;/EmailBodyTextCharset&gt;&lt;From vt="8"&gt;uadm.bt-prod@uadm.uu.se&lt;/From&gt;&lt;MessagePartsAttachments vt="19"&gt;0&lt;/MessagePartsAttachments&gt;&lt;ReadReceipt vt="11"&gt;0&lt;/ReadReceipt&gt;&lt;To vt="8"&gt;uadm.bt-prod@uadm.uu.se&lt;/To&gt;&lt;/CustomProps&gt;</TransportTypeData>
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
@@ -858,7 +858,7 @@
           <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlDasmComp"&gt;&lt;Properties&gt;&lt;DocumentSpecNames vt="8"&gt;Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent, Shared.Schemas.GroupAndPersonEvents, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a&lt;/DocumentSpecNames&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e410e-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.PartyRes"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
-          <Enable>false</Enable>
+          <Enable>true</Enable>
           <ReceiveHandler Name="CluGroupReceive" HostTrusted="false">
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>
@@ -892,7 +892,7 @@
           <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlDasmComp"&gt;&lt;Properties&gt;&lt;DocumentSpecNames vt="8"&gt;Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent, Shared.Schemas.GroupAndPersonEvents, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a&lt;/DocumentSpecNames&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e410e-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.PartyRes"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
-          <Enable>false</Enable>
+          <Enable>true</Enable>
           <ReceiveHandler Name="CluGroupReceive" HostTrusted="false">
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>
