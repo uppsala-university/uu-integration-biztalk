@@ -63,7 +63,7 @@ BEGIN
             @PTAKT,
             @KAR,
             @TYP,
-            @PLG )
+            @PLG,'' )
 			END
 ELSE
 BEGIN
@@ -97,7 +97,7 @@ DELETE FROM [dbo].["UUSKLIST"] WHERE PNR=@PNR AND KURS=@KURS AND TERMIN=@TERMIN 
             @PTAKT,
             @KAR,
             @TYP,
-            @PLG )
+            @PLG,'' )
 END
 END
 
