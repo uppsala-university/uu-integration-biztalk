@@ -35,7 +35,7 @@
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="c3e6d113-2000-423b-b017-f88b65ee13d0" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="30.1" HigherBound="31.1">
-                <om:Property Name="Type" Value="Shared.Schemas.Ladok.Envelopes.DelayedUppehallStartEnvelope" />
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.EnvelopesVFU.DelayedUppehallStartEnvelope_VFU" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="DelayedUppehallStart" />
@@ -52,6 +52,90 @@
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="ReceiveDelayedUppehallStartEnvelope" />
                     <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="5824ade9-3f0d-4b2d-aaf7-36a4b7b075da" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.ReceivePortName" />
+                        <om:Property Name="RHS" Value="&quot;INT0011.VFU.Events&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="85fc2f7a-9f12-4f50-b35c-1b25bdf66677" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope_VFU&quot;" />
+                        <om:Property Name="Grouping" Value="OR" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="ca25d54e-0604-4671-a9f9-3a0ccdd69c6e" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.ReceivePortName" />
+                        <om:Property Name="RHS" Value="&quot;INT0011.VFU.Events&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="09f76cda-91cf-4944-b773-5cd42f9ee33f" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope_VFU&quot;" />
+                        <om:Property Name="Grouping" Value="OR" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="a7887b50-383d-4e68-838c-8179d5ed185e" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.ReceivePortName" />
+                        <om:Property Name="RHS" Value="&quot;INT0011.VFU.Events&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="ffc00351-88c1-4367-8dae-35ee8ab2a27b" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope_VFU&quot;" />
+                        <om:Property Name="Grouping" Value="OR" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="a7729b5b-6d2b-4bb0-a58a-60e107316996" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.ReceivePortName" />
+                        <om:Property Name="RHS" Value="&quot;INT0011.VFU.Events&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="c30feb4a-c871-4ce7-b2c7-2107d3447d45" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope_VFU&quot;" />
+                        <om:Property Name="Grouping" Value="OR" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="3d3ddf38-090b-4eb6-bd88-3a46423b6fb4" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.ReceivePortName" />
+                        <om:Property Name="RHS" Value="&quot;INT0011.VFU.Events&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="8d4ba612-2688-45ab-81f5-5fe4e7c1571c" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope_VFU&quot;" />
+                        <om:Property Name="Grouping" Value="OR" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="a9d57b22-13ed-476c-9e1c-cccee5201b10" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.ReceivePortName" />
+                        <om:Property Name="RHS" Value="&quot;INT0011.VFU.Events&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="e76164c5-ada1-4426-b5ad-1f1285fab872" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope_VFU&quot;" />
+                        <om:Property Name="Grouping" Value="OR" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
                 </om:Element>
                 <om:Element Type="Construct" OID="74c30526-ab9e-4340-bc04-c048113aa024" ParentLink="ServiceBody_Statement" LowerBound="35.1" HigherBound="41.1">
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -108,20 +192,20 @@
                         <om:Property Name="ClassName" Value="INT0011.VFU.Events.DelayedUppehallStart_to_Programdeltagande" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="RegestreringProgramdeltagande" />
-                        <om:Property Name="Signal" Value="False" />
-                        <om:Element Type="MessagePartRef" OID="7463a621-cbca-4ed7-9e57-5fd5933724f5" ParentLink="Transform_InputMessagePartRef" LowerBound="49.111" HigherBound="49.134">
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="1a691eb4-f419-4ca1-9b37-bb5b4ae6143f" ParentLink="Transform_InputMessagePartRef" LowerBound="49.111" HigherBound="49.134">
                             <om:Property Name="MessageRef" Value="ADIndividualQueryResult" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_3" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessagePartRef" OID="9a29619e-1920-4d19-96a2-6ece79879dd3" ParentLink="Transform_InputMessagePartRef" LowerBound="49.136" HigherBound="49.156">
+                        <om:Element Type="MessagePartRef" OID="e3721dc3-9734-455c-9e88-20be3ad22565" ParentLink="Transform_InputMessagePartRef" LowerBound="49.136" HigherBound="49.156">
                             <om:Property Name="MessageRef" Value="DelayedUppehallStart" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_4" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessagePartRef" OID="a103a4bb-2f50-4d13-a292-77dc95498fe7" ParentLink="Transform_OutputMessagePartRef" LowerBound="49.28" HigherBound="49.45">
+                        <om:Element Type="MessagePartRef" OID="fa87322c-11cd-40d7-a4f0-c3bb39939964" ParentLink="Transform_OutputMessagePartRef" LowerBound="49.28" HigherBound="49.45">
                             <om:Property Name="MessageRef" Value="Programdeltagande" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_5" />
@@ -223,8 +307,8 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="LadokProgramdeltagande" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="154b41a2-59e3-4f17-a4dc-59702aaa8083" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.72">
-                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.Envelopes.DelayedUppehallStartEnvelope" />
+                <om:Element Type="MessageRef" OID="154b41a2-59e3-4f17-a4dc-59702aaa8083" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.79">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.EnvelopesVFU.DelayedUppehallStartEnvelope_VFU" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="True" />
@@ -248,7 +332,7 @@ module Module_1
     {
         oneway LadokProgramdeltagande
         {
-            Shared.Schemas.Ladok.Envelopes.DelayedUppehallStartEnvelope
+            Shared.Schemas.Ladok.EnvelopesVFU.DelayedUppehallStartEnvelope_VFU
         };
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
@@ -263,11 +347,11 @@ module Module_1
         message INT0011.VFU.Events.Schemas.VFU.Programdeltagande Programdeltagande;
         message INT0011.VFU.Events.Schemas.ADEvents.ADQueryResults ADIndividualQueryResult;
         message INT0011.VFU.Events.Schemas.ADEvents.ADSendAdapterSolicitResponseIndividualQuery ADIndividualQuery;
-        message Shared.Schemas.Ladok.Envelopes.DelayedUppehallStartEnvelope DelayedUppehallStart;
+        message Shared.Schemas.Ladok.EnvelopesVFU.DelayedUppehallStartEnvelope_VFU DelayedUppehallStart;
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("393a8b30-af1a-4590-bfb3-508ea1ac32ad")]
-            activate receive (ReceiveLadokProgramdeltagande.LadokProgramdeltagande, DelayedUppehallStart);
+            activate ((BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope_VFU") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope_VFU") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope_VFU") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope_VFU") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope_VFU") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope_VFU"))receive (ReceiveLadokProgramdeltagande.LadokProgramdeltagande, DelayedUppehallStart);
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("74c30526-ab9e-4340-bc04-c048113aa024")]
             construct ADIndividualQuery
             {

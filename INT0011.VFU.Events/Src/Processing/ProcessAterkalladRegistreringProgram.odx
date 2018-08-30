@@ -61,8 +61,8 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="LadokProgramdeltagande" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="9bd1d577-4beb-4145-94fd-6af051d336ec" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.64">
-                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.AterkalladRegistreringEnvelope" />
+                <om:Element Type="MessageRef" OID="9bd1d577-4beb-4145-94fd-6af051d336ec" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.81">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.EnvelopesVFU.AterkalladRegistreringEnvelope_VFU" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="True" />
@@ -91,7 +91,7 @@
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="ead2cd4b-d37c-4d24-a54e-ec1012923f55" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
-                <om:Property Name="Type" Value="Shared.Schemas.Ladok.AterkalladRegistreringEnvelope" />
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.EnvelopesVFU.AterkalladRegistreringEnvelope_VFU" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="AterkalladRegistrering" />
@@ -115,147 +115,147 @@
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="ReceiveRegistreringEnvelope" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="DNFPredicate" OID="67d38d53-101c-4a8a-97eb-118d0d30a222" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="188e18bc-70d5-4288-a8d5-ef87a0bc30b8" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.ReceivePortName" />
                         <om:Property Name="RHS" Value="&quot;INT0011.VFU.Events&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="35034bdd-c77d-4f6d-87af-920e656a244b" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="fdca87c7-f23c-4bce-9a20-ea535cf4814d" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
-                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope&quot;" />
+                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope_VFU&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="07bbd3b2-ab2d-4bab-ad11-3a183657b295" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="ff548a23-efb7-4011-9830-1b59e20f8a12" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="Shared.Schemas.Ladok.PropertySchema.Utbildningskod" />
                         <om:Property Name="RHS" Value="&quot;UFÖ1Y&quot;" />
                         <om:Property Name="Grouping" Value="OR" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="fce87a57-d7e9-48eb-bf65-1e40965041fd" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="9d9a5660-d23b-4b43-9210-fe4e004c8c98" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.ReceivePortName" />
                         <om:Property Name="RHS" Value="&quot;INT0011.VFU.Events&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="21746da0-9700-44eb-80ea-5be9be65b494" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="6a1f5790-bbee-4d67-965f-25cfcc363669" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
-                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope&quot;" />
+                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope_VFU&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="8cf964f9-d4d6-44f7-bac1-9f2f138be032" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="a6c5f61f-2eba-4122-96cb-87442e8c7c1c" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="Shared.Schemas.Ladok.PropertySchema.Utbildningskod" />
                         <om:Property Name="RHS" Value="&quot;UGR0Y&quot;" />
                         <om:Property Name="Grouping" Value="OR" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="070ada94-48c1-49cc-aea4-9415572696d9" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="4ba1fbb2-4d02-43d0-880b-62911c33e028" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.ReceivePortName" />
                         <om:Property Name="RHS" Value="&quot;INT0011.VFU.Events&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="2b793ae3-b702-4db1-a8fc-64dde92502c2" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="4d28591b-0d6a-4fec-9063-b16d2e87a17f" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
-                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope&quot;" />
+                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope_VFU&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="d7e9caa0-6648-4433-a574-433c30a92a42" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="38e158e8-f23e-4582-b410-f896e712a5f2" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="Shared.Schemas.Ladok.PropertySchema.Utbildningskod" />
                         <om:Property Name="RHS" Value="&quot;UGY2Y&quot;" />
                         <om:Property Name="Grouping" Value="OR" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="6932ebcb-15bc-4fa8-9e69-57e5ac3c9fd9" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="59c1d21b-100d-4fd0-a494-ddbd1164ed60" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.ReceivePortName" />
                         <om:Property Name="RHS" Value="&quot;INT0011.VFU.Events&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="b345ffb6-fb5e-45d6-ad9e-c7c698774395" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="f5407c1b-3ccd-45ba-a7d0-31ff259c8476" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
-                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope&quot;" />
+                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope_VFU&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="a46d1aa6-a314-4dd6-ba7e-4ec7d2f0851f" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="598ddf92-1624-40b0-b0d2-a28292b56eea" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="Shared.Schemas.Ladok.PropertySchema.Utbildningskod" />
                         <om:Property Name="RHS" Value="&quot;UGR2Y&quot;" />
                         <om:Property Name="Grouping" Value="OR" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="e17c2ed5-e45d-453c-b2ae-51d991ba1e05" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="13ec0a64-a09b-4e20-ba7c-8def818ceca7" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.ReceivePortName" />
                         <om:Property Name="RHS" Value="&quot;INT0011.VFU.Events&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="1fcea8a8-94c4-4032-8345-95aab17dd2cb" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="30bd0d01-1e64-45bf-bc13-c22b26f5a80e" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
-                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope&quot;" />
+                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope_VFU&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="0b784615-09b9-41ce-9a98-df135df6cf71" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="b7d62649-f72b-4e77-a922-eac1da3a2642" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="Shared.Schemas.Ladok.PropertySchema.Utbildningskod" />
                         <om:Property Name="RHS" Value="&quot;ULÄRY&quot;" />
                         <om:Property Name="Grouping" Value="OR" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="e5bbcf36-91c5-47b8-8c33-4f67ca55d55a" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="21c6a578-6e3c-496c-aa6e-9e06fcbc54d5" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.ReceivePortName" />
                         <om:Property Name="RHS" Value="&quot;INT0011.VFU.Events&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="4de142eb-3dad-4391-809d-93a58337b68f" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="b0f18ec1-35a4-4e4d-a422-e8692aadc6b2" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
-                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope&quot;" />
+                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope_VFU&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="4aa28a09-bfb2-4846-b657-82af2580b7b4" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="46b6a09d-f115-4535-9363-9af04a3edbf7" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="Shared.Schemas.Ladok.PropertySchema.Utbildningskod" />
                         <om:Property Name="RHS" Value="&quot;UKL2Y&quot;" />
                         <om:Property Name="Grouping" Value="OR" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="40e4030d-b282-4e12-adfd-b65e1c323ada" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="82e0bb33-53d3-4de4-bc0e-4d5d3db5d637" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.ReceivePortName" />
                         <om:Property Name="RHS" Value="&quot;INT0011.VFU.Events&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="5da564d4-8a12-4e69-a351-9835eb651b80" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="43c3ca83-2c49-46ce-a78b-2bef9b4f8baf" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
-                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope&quot;" />
+                        <om:Property Name="RHS" Value="&quot;http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope_VFU&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="1b74be54-93c2-4dca-837a-620377d78db8" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="63bb8260-78e3-438d-817e-844024a4fb86" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="Shared.Schemas.Ladok.PropertySchema.Utbildningskod" />
                         <om:Property Name="RHS" Value="&quot;ULÄ0Y&quot;" />
                         <om:Property Name="Grouping" Value="OR" />
@@ -318,20 +318,20 @@
                         <om:Property Name="ClassName" Value="INT0011.VFU.Events.AterkalladRegestrering_to_Programdeltagande" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="RegestreringProgramdeltagande" />
-                        <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="MessagePartRef" OID="20ee59ac-a792-4db4-8ea2-cd21a386d24e" ParentLink="Transform_InputMessagePartRef" LowerBound="56.113" HigherBound="56.136">
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="447afe3d-edcd-4816-8e92-797b64f6194b" ParentLink="Transform_InputMessagePartRef" LowerBound="56.113" HigherBound="56.136">
                             <om:Property Name="MessageRef" Value="ADIndividualQueryResult" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_3" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessagePartRef" OID="71aef6ab-1864-426f-ac6c-4b2b51dbb078" ParentLink="Transform_InputMessagePartRef" LowerBound="56.138" HigherBound="56.160">
+                        <om:Element Type="MessagePartRef" OID="67de7523-fcc4-4cea-833b-aaf64e50ed86" ParentLink="Transform_InputMessagePartRef" LowerBound="56.138" HigherBound="56.160">
                             <om:Property Name="MessageRef" Value="AterkalladRegistrering" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_4" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessagePartRef" OID="4119c73a-8029-4a29-a6e1-aec0f48cdc38" ParentLink="Transform_OutputMessagePartRef" LowerBound="56.28" HigherBound="56.45">
+                        <om:Element Type="MessagePartRef" OID="e2de8751-26ba-4d7b-91a8-ab9d22113d6d" ParentLink="Transform_OutputMessagePartRef" LowerBound="56.28" HigherBound="56.45">
                             <om:Property Name="MessageRef" Value="Programdeltagande" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_5" />
@@ -427,7 +427,7 @@ module INT0011.VFU.Events
     {
         oneway LadokProgramdeltagande
         {
-            Shared.Schemas.Ladok.AterkalladRegistreringEnvelope
+            Shared.Schemas.Ladok.EnvelopesVFU.AterkalladRegistreringEnvelope_VFU
         };
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
@@ -441,12 +441,12 @@ module INT0011.VFU.Events
         port uses SendVFUProgramdeltagandeAterkalladRegistreringPortType SendPortVFUProgramdeltagande;
         message Schemas.ADEvents.ADSendAdapterSolicitResponseIndividualQuery ADIndividualQuery;
         message Schemas.ADEvents.ADQueryResults ADIndividualQueryResult;
-        message Shared.Schemas.Ladok.AterkalladRegistreringEnvelope AterkalladRegistrering;
+        message Shared.Schemas.Ladok.EnvelopesVFU.AterkalladRegistreringEnvelope_VFU AterkalladRegistrering;
         message Schemas.VFU.Programdeltagande Programdeltagande;
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("54a14d67-5669-422c-bbcc-7a4cf2017229")]
-            activate ((BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope") && (Shared.Schemas.Ladok.PropertySchema.Utbildningskod == "UFÖ1Y") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope") && (Shared.Schemas.Ladok.PropertySchema.Utbildningskod == "UGR0Y") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope") && (Shared.Schemas.Ladok.PropertySchema.Utbildningskod == "UGY2Y") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope") && (Shared.Schemas.Ladok.PropertySchema.Utbildningskod == "UGR2Y") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope") && (Shared.Schemas.Ladok.PropertySchema.Utbildningskod == "ULÄRY") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope") && (Shared.Schemas.Ladok.PropertySchema.Utbildningskod == "UKL2Y") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope") && (Shared.Schemas.Ladok.PropertySchema.Utbildningskod == "ULÄ0Y"))receive (ReceiveLadokProgramdeltagande.LadokProgramdeltagande, AterkalladRegistrering);
+            activate ((BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope_VFU") && (Shared.Schemas.Ladok.PropertySchema.Utbildningskod == "UFÖ1Y") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope_VFU") && (Shared.Schemas.Ladok.PropertySchema.Utbildningskod == "UGR0Y") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope_VFU") && (Shared.Schemas.Ladok.PropertySchema.Utbildningskod == "UGY2Y") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope_VFU") && (Shared.Schemas.Ladok.PropertySchema.Utbildningskod == "UGR2Y") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope_VFU") && (Shared.Schemas.Ladok.PropertySchema.Utbildningskod == "ULÄRY") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope_VFU") && (Shared.Schemas.Ladok.PropertySchema.Utbildningskod == "UKL2Y") || (BTS.ReceivePortName == "INT0011.VFU.Events") && (BTS.MessageType == "http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope_VFU") && (Shared.Schemas.Ladok.PropertySchema.Utbildningskod == "ULÄ0Y"))receive (ReceiveLadokProgramdeltagande.LadokProgramdeltagande, AterkalladRegistrering);
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("fd2246e2-6ff5-414c-a8c5-729d38ee2a29")]
             construct ADIndividualQuery
             {
