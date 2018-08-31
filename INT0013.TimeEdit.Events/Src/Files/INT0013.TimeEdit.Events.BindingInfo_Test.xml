@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-08-23T08:46:37.8557267+02:00</Timestamp>
+  <Timestamp>2018-08-30T13:07:12.2024505+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0013.TimeEdit.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0013.TimeEdit.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -22,7 +22,7 @@
       <PrimaryTransport>
         <Address>sftp://uuc-eko004.its.uu.se:22/timeedit/%MessageID%.xml</Address>
         <TransportType Name="SFTP" Capabilities="523" ConfigurationClsid="f75aeff5-ebc7-4e7c-a753-fdd68ab45c95" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;ConnectionLimit vt="3"&gt;5&lt;/ConnectionLimit&gt;&lt;AppendIfExists vt="11"&gt;0&lt;/AppendIfExists&gt;&lt;UserName vt="8"&gt;tedtest&lt;/UserName&gt;&lt;EncryptionCipher vt="8"&gt;Auto&lt;/EncryptionCipher&gt;&lt;AccessAnySSHServerHostKey vt="11"&gt;-1&lt;/AccessAnySSHServerHostKey&gt;&lt;SSHServerHostKey vt="8"&gt;ssh-rsa 2048 6d:23:ba:68:ce:4d:26:32:5a:a5:94:50:6c:6b:f8:14&lt;/SSHServerHostKey&gt;&lt;PrivateKey vt="8"&gt;C:\Users\kimst498\Documents\SSH\private_timeedit.ppk&lt;/PrivateKey&gt;&lt;Port vt="3"&gt;22&lt;/Port&gt;&lt;ClientAuthenticationMode vt="8"&gt;PublicKeyAuthentication&lt;/ClientAuthenticationMode&gt;&lt;ProxyPort vt="3"&gt;1080&lt;/ProxyPort&gt;&lt;ServerAddress vt="8"&gt;uuc-eko004.its.uu.se&lt;/ServerAddress&gt;&lt;TargetFileName vt="8"&gt;%MessageID%.xml&lt;/TargetFileName&gt;&lt;FolderPath vt="8"&gt;timeedit&lt;/FolderPath&gt;&lt;ProxyType vt="8"&gt;None&lt;/ProxyType&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <TransportTypeData>&lt;CustomProps&gt;&lt;ConnectionLimit vt="3"&gt;5&lt;/ConnectionLimit&gt;&lt;AppendIfExists vt="11"&gt;0&lt;/AppendIfExists&gt;&lt;UserName vt="8"&gt;tedtest&lt;/UserName&gt;&lt;EncryptionCipher vt="8"&gt;Auto&lt;/EncryptionCipher&gt;&lt;AccessAnySSHServerHostKey vt="11"&gt;-1&lt;/AccessAnySSHServerHostKey&gt;&lt;SSHServerHostKey vt="8"&gt;ssh-rsa 2048 6d:23:ba:68:ce:4d:26:32:5a:a5:94:50:6c:6b:f8:14&lt;/SSHServerHostKey&gt;&lt;PrivateKey vt="8"&gt;\\uuc-biz025-t.exchange-test.its.uu.se\timeedit$\private_timeedit.ppk&lt;/PrivateKey&gt;&lt;Port vt="3"&gt;22&lt;/Port&gt;&lt;ClientAuthenticationMode vt="8"&gt;PublicKeyAuthentication&lt;/ClientAuthenticationMode&gt;&lt;ProxyPort vt="3"&gt;1080&lt;/ProxyPort&gt;&lt;ServerAddress vt="8"&gt;uuc-eko004.its.uu.se&lt;/ServerAddress&gt;&lt;TargetFileName vt="8"&gt;%MessageID%.xml&lt;/TargetFileName&gt;&lt;FolderPath vt="8"&gt;timeedit&lt;/FolderPath&gt;&lt;ProxyType vt="8"&gt;None&lt;/ProxyType&gt;&lt;/CustomProps&gt;</TransportTypeData>
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
@@ -31,7 +31,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="BizTalkServerApplication" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="SFTP" Capabilities="523" ConfigurationClsid="f75aeff5-ebc7-4e7c-a753-fdd68ab45c95" />
         </SendHandler>
       </PrimaryTransport>
@@ -54,7 +54,6 @@
   &lt;Group&gt;
     &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0013.TimeEdit.LadokEvents" /&gt;
     &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#KurstillfalleTillStatusEnvelope" /&gt;
-    &lt;Statement Property="Shared.Schemas.Ladok.PropertySchema.courseStatus" Operator="0" Value="4" /&gt;
   &lt;/Group&gt;
   &lt;Group&gt;
     &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0013.TimeEdit.LadokEvents" /&gt;
@@ -106,7 +105,7 @@
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
           <Enable>false</Enable>
-          <ReceiveHandler Name="CluSdReceive" HostTrusted="false">
+          <ReceiveHandler Name="CluSDReceive" HostTrusted="false">
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>
         </ReceiveLocation>
