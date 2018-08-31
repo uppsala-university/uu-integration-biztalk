@@ -61,8 +61,8 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="LadokProgramdeltagande" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="2c8eabcf-397b-409d-8725-86a74d2abebb" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.58">
-                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.RegistreringEnvelope_VFU" />
+                <om:Element Type="MessageRef" OID="2c8eabcf-397b-409d-8725-86a74d2abebb" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.71">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.EnvelopesVFU.RegistreringEnvelope_VFU" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="LadokProgramdeltagande" />
                     <om:Property Name="Signal" Value="True" />
@@ -91,7 +91,7 @@
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="ead2cd4b-d37c-4d24-a54e-ec1012923f55" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
-                <om:Property Name="Type" Value="Shared.Schemas.Ladok.RegistreringEnvelope_VFU" />
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.EnvelopesVFU.RegistreringEnvelope_VFU" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="RegistreringEnvelope" />
@@ -315,23 +315,23 @@
                     <om:Property Name="Name" Value="ConstructProgramdeltagande" />
                     <om:Property Name="Signal" Value="True" />
                     <om:Element Type="Transform" OID="844ff95b-c0a3-486b-8c1a-113bcab0907b" ParentLink="ComplexStatement_Statement" LowerBound="55.1" HigherBound="57.1">
-                        <om:Property Name="ClassName" Value="INT0011.VFU.Events.Registrering_to_Programdeltagande" />
+                        <om:Property Name="ClassName" Value="INT0011.VFU.Events.RegestreringProgramdeltagande" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="RegestreringProgramdeltagande" />
-                        <om:Property Name="Signal" Value="False" />
-                        <om:Element Type="MessagePartRef" OID="30c6ddcd-0c63-40e3-ae31-982d552f73be" ParentLink="Transform_InputMessagePartRef" LowerBound="56.103" HigherBound="56.126">
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="9eaaa4c3-8d18-469d-9874-a47e93b60e32" ParentLink="Transform_InputMessagePartRef" LowerBound="56.99" HigherBound="56.122">
                             <om:Property Name="MessageRef" Value="ADIndividualQueryResult" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_3" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessagePartRef" OID="77a5468b-a13e-4fd9-acc5-a34164220f3a" ParentLink="Transform_InputMessagePartRef" LowerBound="56.128" HigherBound="56.148">
+                        <om:Element Type="MessagePartRef" OID="a1f1bf26-48aa-49b9-8d2f-02fbf4bb6e5a" ParentLink="Transform_InputMessagePartRef" LowerBound="56.124" HigherBound="56.144">
                             <om:Property Name="MessageRef" Value="RegistreringEnvelope" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_4" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessagePartRef" OID="798041bf-1276-48d0-a20b-7788e9be169f" ParentLink="Transform_OutputMessagePartRef" LowerBound="56.28" HigherBound="56.45">
+                        <om:Element Type="MessagePartRef" OID="9780045a-882b-4ece-90b1-6a2aebcd4dd1" ParentLink="Transform_OutputMessagePartRef" LowerBound="56.28" HigherBound="56.45">
                             <om:Property Name="MessageRef" Value="Programdeltagande" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_5" />
@@ -427,7 +427,7 @@ module INT0011.VFU.Events
     {
         oneway LadokProgramdeltagande
         {
-            Shared.Schemas.Ladok.RegistreringEnvelope_VFU
+            Shared.Schemas.Ladok.EnvelopesVFU.RegistreringEnvelope_VFU
         };
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
@@ -441,7 +441,7 @@ module INT0011.VFU.Events
         port uses SendVFUProgramdeltagandePortType SendPortVFUProgramdeltagande;
         message Schemas.ADEvents.ADSendAdapterSolicitResponseIndividualQuery ADIndividualQuery;
         message Schemas.ADEvents.ADQueryResults ADIndividualQueryResult;
-        message Shared.Schemas.Ladok.RegistreringEnvelope_VFU RegistreringEnvelope;
+        message Shared.Schemas.Ladok.EnvelopesVFU.RegistreringEnvelope_VFU RegistreringEnvelope;
         message Schemas.VFU.Programdeltagande Programdeltagande;
         body ()
         {
@@ -461,7 +461,7 @@ module INT0011.VFU.Events
             construct Programdeltagande
             {
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("844ff95b-c0a3-486b-8c1a-113bcab0907b")]
-                transform (Programdeltagande) = INT0011.VFU.Events.Registrering_to_Programdeltagande (ADIndividualQueryResult, RegistreringEnvelope);
+                transform (Programdeltagande) = INT0011.VFU.Events.RegestreringProgramdeltagande (ADIndividualQueryResult, RegistreringEnvelope);
             }
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("527923b6-8c9c-44de-a395-bb5df6f66d02")]
             send (SendPortVFUProgramdeltagande.VFUProgramdeltagande, Programdeltagande);
