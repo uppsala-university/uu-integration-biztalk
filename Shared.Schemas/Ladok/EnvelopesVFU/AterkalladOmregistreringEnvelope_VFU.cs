@@ -6,34 +6,32 @@ namespace Shared.Schemas.Ladok {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [SchemaType(SchemaTypeEnum.Document)]
-    [Schema(@"http://ladok.uu.envelope.schemas",@"ForvantatDeltagandeSkapadEnvelopePromoted")]
+    [Schema(@"http://ladok.uu.envelope.vfu.schema",@"RegistreringEnvelope_VFU")]
     [System.SerializableAttribute()]
-    [SchemaRoots(new string[] {@"ForvantatDeltagandeSkapadEnvelopePromoted"})]
+    [SchemaRoots(new string[] {@"RegistreringEnvelope_VFU"})]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_studentinformation", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_studentinformation))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation))]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande))]
-    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.InternalMarkningsvarden", typeof(global::Shared.Schemas.Ladok.InternalMarkningsvarden))]
-    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.schemas_ladok_se_kataloginformation", typeof(global::Shared.Schemas.Ladok.schemas_ladok_se_kataloginformation))]
-    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.PropertySchema.PropertySchema", typeof(global::Shared.Schemas.Ladok.PropertySchema.PropertySchema))]
-    public sealed class ForvantatDeltagandeSkapadEnvelopePromoted : Microsoft.XLANGs.BaseTypes.SchemaBase {
+    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Shared.Schemas.Ladok.RegistreringEnvelope", typeof(global::Shared.Schemas.Ladok.RegistreringEnvelope))]
+    public sealed class RegistreringEnvelope_VFU : Microsoft.XLANGs.BaseTypes.SchemaBase {
         
         [System.NonSerializedAttribute()]
         private static object _rawSchema;
         
         [System.NonSerializedAttribute()]
         private const string _strSchema = @"<?xml version=""1.0"" encoding=""utf-16""?>
-<xs:schema xmlns:in=""http://UU.Integrations.Common.Schemas"" xmlns:si=""http://schemas.ladok.se/studentinformation"" xmlns:ui=""http://schemas.ladok.se/utbildningsinformation"" xmlns:b=""http://schemas.microsoft.com/BizTalk/2003"" xmlns:ns0=""https://Shared.Schemas.Ladok.PropertySchema"" xmlns=""http://ladok.uu.envelope.schemas"" xmlns:ki=""http://schemas.ladok.se/kataloginformation"" xmlns:sd=""http://schemas.ladok.se/studiedeltagande"" targetNamespace=""http://ladok.uu.envelope.schemas"" xmlns:xs=""http://www.w3.org/2001/XMLSchema"">
+<xs:schema xmlns:sd=""http://schemas.ladok.se/studiedeltagande"" xmlns:si=""http://schemas.ladok.se/studentinformation"" xmlns:ui=""http://schemas.ladok.se/utbildningsinformation"" xmlns:b=""http://schemas.microsoft.com/BizTalk/2003"" xmlns=""http://UU.Integrations.Common.Schemas"" xmlns:en=""http://ladok.uu.envelope.schemas"" targetNamespace=""http://ladok.uu.envelope.vfu.schema"" xmlns:xs=""http://www.w3.org/2001/XMLSchema"">
   <xs:import schemaLocation=""Shared.Schemas.Ladok.schemas_ladok_se_studentinformation"" namespace=""http://schemas.ladok.se/studentinformation"" />
   <xs:import schemaLocation=""Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation"" namespace=""http://schemas.ladok.se/utbildningsinformation"" />
   <xs:import schemaLocation=""Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande"" namespace=""http://schemas.ladok.se/studiedeltagande"" />
-  <xs:import schemaLocation=""Shared.Schemas.Ladok.InternalMarkningsvarden"" namespace=""http://UU.Integrations.Common.Schemas"" />
-  <xs:import schemaLocation=""Shared.Schemas.Ladok.schemas_ladok_se_kataloginformation"" namespace=""http://schemas.ladok.se/kataloginformation"" />
+  <xs:import schemaLocation=""Shared.Schemas.Ladok.RegistreringEnvelope"" namespace=""http://ladok.uu.envelope.schemas"" />
   <xs:annotation>
     <xs:appinfo>
       <b:references>
         <b:reference targetNamespace=""http://UU.Integrations.Common.Schemas"" />
         <b:reference targetNamespace=""http://schemas.ladok.se/dap"" />
         <b:reference targetNamespace=""http://schemas.ladok.se"" />
+        <b:reference targetNamespace=""http://ladok.uu.envelope.schemas"" />
         <b:reference targetNamespace=""http://schemas.ladok.se/utbildningsinformation"" />
         <b:reference targetNamespace=""http://schemas.ladok.se/studentinformation"" />
         <b:reference targetNamespace=""http://schemas.ladok.se/kataloginformation"" />
@@ -41,29 +39,18 @@ namespace Shared.Schemas.Ladok {
         <b:reference targetNamespace=""http://schemas.ladok.se/studiedeltagande"" />
         <b:reference targetNamespace=""http://schemas.ladok.se/avisering"" />
       </b:references>
-      <b:imports>
-        <b:namespace prefix=""ns0"" uri=""https://Shared.Schemas.Ladok.PropertySchema"" location=""Shared.Schemas.Ladok.PropertySchema.PropertySchema"" />
-      </b:imports>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name=""ForvantatDeltagandeSkapadEnvelopePromoted"">
+  <xs:element name=""RegistreringEnvelope_VFU"">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref=""sd:ForvantatDeltagandeSkapadEvent"" />
-        <xs:element ref=""ui:Utbildningstillfalle"" />
-        <xs:element ref=""ui:Utbildningsinstans"" />
-        <xs:element ref=""si:Student"" />
-        <xs:element ref=""ki:Organisation"" />
-        <xs:element ref=""ui:Finansieringsformer"" />
-        <xs:element ref=""si:Kontaktuppgifter"" />
-        <xs:element ref=""ui:Markningsnycklar"" />
-        <xs:element ref=""in:InternalMarkningsvarden"" />
+        <xs:element ref=""en:RegistreringEnvelope"" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>";
         
-        public ForvantatDeltagandeSkapadEnvelopePromoted() {
+        public RegistreringEnvelope_VFU() {
         }
         
         public override string XmlContent {
@@ -75,7 +62,7 @@ namespace Shared.Schemas.Ladok {
         public override string[] RootNodes {
             get {
                 string[] _RootElements = new string [1];
-                _RootElements[0] = "ForvantatDeltagandeSkapadEnvelopePromoted";
+                _RootElements[0] = "RegistreringEnvelope_VFU";
                 return _RootElements;
             }
         }
