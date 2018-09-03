@@ -17,7 +17,7 @@ $VerFile  = '\\uuc-biz008-t.exchange-test.its.uu.se\ladok3-atom$\state'
 $DevThumb  = '7B6E9150DD5B9EA485F23B1393398F583F53D90E'
 $TestThumb  = '7B6E9150DD5B9EA485F23B1393398F583F53D90E'
 #$ProdThumb  = ''
-$VerThumb  = ''
+$VerThumb  = '4AFAFD5B2E152F8743C5460288333D90088A8A45'
 
 $DevRecent  = 'https://api.mit-integration.ladok.se/uppfoljning/feed/recent'
 $TestRecent  = 'https://api.mit-integration.ladok.se/uppfoljning/feed/recent'
