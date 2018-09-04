@@ -11,7 +11,14 @@ Data that are updated are student participation in courses and personal
 information such as name, emailadress and postal adress. Note that
 changes in personalnumbers are processed in application INT0015.
 This solution needs to stop receiving events during a certain time and during this interval the output file 
-should be created.
+should be created.  
+
+Application uses a pipeline to produce the output text file UUSKLIST. This pipeline uses the map INT0017.UsmrRecordToFile and two schemas:
+1, INT0017.UsmrFilerecord describes the output columns and is used for writing the file header (the column names)
+2, INT0017.UsmrFileformat describes each row in the textfile
+
+
+
 
 Application have two receive ports:
 INT0017.ReceiveUsmrSdEvents   reads data from queue    (service window will need to be set for executing file output job once a day)

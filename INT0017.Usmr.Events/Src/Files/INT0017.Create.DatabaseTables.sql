@@ -15,7 +15,7 @@ CREATE TABLE [dbo].["UUSKLIST"]
             INLDATUM_TELNR CHAR(10),
             EPOSTADRESS VARCHAR(255),
             UPPEH VARCHAR(7),
-            KURS CHAR(6),
+            KURS CHAR(10),
             INST CHAR(4),
             POANG VARCHAR(5),
             KT VARCHAR(3),
