@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-08-29T09:46:50.7687366+02:00</Timestamp>
+  <Timestamp>2018-09-05T09:23:17.8441135+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0017.Usmr.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0017.Usmr.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -39,6 +39,12 @@
           <TrackedPropertyNames />
         </Schema>
         <Schema FullName="INT0017.Usmr.Events.INT0017_usmrSetDeceasedProcedure_dbo" RootName="uusmrSetDeceasedResponse" AssemblyQualifiedName="INT0017.Usmr.Events.INT0017_usmrSetDeceasedProcedure_dbo,INT0017.Usmr.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="INT0017.Usmr.Events.INT0017_UpdateAvbrott_TypedProcedure_dbo" RootName="INT0017.UpdateAvbrott" AssemblyQualifiedName="INT0017.Usmr.Events.INT0017_UpdateAvbrott_TypedProcedure_dbo,INT0017.Usmr.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="INT0017.Usmr.Events.INT0017_UpdateAvbrott_TypedProcedure_dbo" RootName="INT0017.UpdateAvbrottResponse" AssemblyQualifiedName="INT0017.Usmr.Events.INT0017_UpdateAvbrott_TypedProcedure_dbo,INT0017.Usmr.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
           <TrackedPropertyNames />
         </Schema>
         <Schema FullName="INT0017.Usmr.Events.usmrCreateRecordStoredDataSetSchema" RootName="ArrayOfDataSet" AssemblyQualifiedName="INT0017.Usmr.Events.usmrCreateRecordStoredDataSetSchema,INT0017.Usmr.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
@@ -281,8 +287,8 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-08-27T22:00:00</FromTime>
-        <ToTime>2018-08-28T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
@@ -295,8 +301,8 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-08-27T22:00:00</FromTime>
-        <ToTime>2018-08-28T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>false</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
@@ -330,8 +336,8 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-08-28T22:00:00</FromTime>
-        <ToTime>2018-08-29T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
@@ -344,8 +350,8 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-08-28T22:00:00</FromTime>
-        <ToTime>2018-08-29T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>false</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
@@ -380,9 +386,9 @@
           <Address>FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-USMR</Address>
           <PublicAddress />
           <Primary>true</Primary>
-          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
-          <ReceiveLocationFromTime>2000-01-01T22:00:00</ReceiveLocationFromTime>
-          <ReceiveLocationToTime>2000-01-01T21:59:59</ReceiveLocationToTime>
+          <ReceiveLocationServiceWindowEnabled>true</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T05:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T05:59:59</ReceiveLocationToTime>
           <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
           <ReceiveLocationStartDate>2018-06-28T00:00:00</ReceiveLocationStartDate>
           <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
@@ -422,7 +428,7 @@
           <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
           <ReceiveLocationEndDate>2018-07-11T23:59:59</ReceiveLocationEndDate>
           <ReceiveLocationTransportType Name="WCF-SQL" Capabilities="779" ConfigurationClsid="59b35d03-6a06-4734-a249-ef561254ecf7" />
-          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" polledDataAvailableStatement="select count(*) from viewUsmrSelectAll" pollingStatement="exec INT0017UsmrRecords;" pollingIntervalInSeconds="86500" inboundOperationType="XmlPolling" xmlStoredProcedureRootNodeName="Root" xmlStoredProcedureRootNodeNamespace="http://INT0017/usmr/polldata" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;DisableLocationOnFailure vt="11"&gt;0&lt;/DisableLocationOnFailure&gt;&lt;UserName vt="8"&gt;usmr&lt;/UserName&gt;&lt;ServiceBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="ServiceBehavior" /&amp;gt;&lt;/ServiceBehaviorConfiguration&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;IncludeExceptionDetailInFaults vt="11"&gt;0&lt;/IncludeExceptionDetailInFaults&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;CredentialType vt="8"&gt;UserAccount&lt;/CredentialType&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;Password vt="1" /&gt;&lt;SuspendMessageOnFailure vt="11"&gt;0&lt;/SuspendMessageOnFailure&gt;&lt;OrderedProcessing vt="11"&gt;0&lt;/OrderedProcessing&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" polledDataAvailableStatement="select count(*) from viewUsmrSelectAll" pollingStatement="exec INT0017UsmrRecords;" pollingIntervalInSeconds="5400" inboundOperationType="XmlPolling" xmlStoredProcedureRootNodeName="Root" xmlStoredProcedureRootNodeNamespace="http://INT0017/usmr/polldata" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;DisableLocationOnFailure vt="11"&gt;0&lt;/DisableLocationOnFailure&gt;&lt;UserName vt="8"&gt;usmr&lt;/UserName&gt;&lt;ServiceBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="ServiceBehavior" /&amp;gt;&lt;/ServiceBehaviorConfiguration&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;IncludeExceptionDetailInFaults vt="11"&gt;0&lt;/IncludeExceptionDetailInFaults&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;CredentialType vt="8"&gt;UserAccount&lt;/CredentialType&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;Password vt="1" /&gt;&lt;SuspendMessageOnFailure vt="11"&gt;0&lt;/SuspendMessageOnFailure&gt;&lt;OrderedProcessing vt="11"&gt;0&lt;/OrderedProcessing&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
           <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody" Description="" />
           <ReceivePipelineData xsi:nil="true" />
           <SendPipeline xsi:nil="true" />

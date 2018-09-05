@@ -20,7 +20,7 @@ Application uses a pipeline to produce the output text file UUSKLIST. This pipel
 
 
 
-Application have two receive ports:
+Application has two receive ports:
 INT0017.ReceiveUsmrSdEvents   reads data from queue    (service window will need to be set for executing file output job once a day)
 INT0017.getPolledData         reads data from the database (polling intervall will need to be set for executing file output job once/service window)
 
@@ -59,8 +59,9 @@ select * from ["UUSKLIST"]
 
 Bindings
 
-INT0017.DEV.Bindings.xml    Bindings for DEV. The job that produces the output file is set to run very often.
-                            PROD bindings will have to set this job to run once a day.  
+INT0017.DEV.Bindings.xml    Bindings for DEV. Dev bindings produces file between 05.00 - 06.00.
+                            PROD bindings will have to set this job to run once a day.Time depends on vhen Medlos expects to get the file.  See info for 
+							receive ports INT0017.ReceiveUsmrSdEvents  & INT0017.getPolledData.  
 
 Needed Changes in bindings for test & prod:
 Password, username and databseserver needs to be set for
