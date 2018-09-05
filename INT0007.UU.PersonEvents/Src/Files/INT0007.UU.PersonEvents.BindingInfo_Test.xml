@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-08-17T14:37:30.6243016+02:00</Timestamp>
+  <Timestamp>2018-08-29T11:25:00.1544221+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0007.UU.PersonEvents]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0007.UU.PersonEvents], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -54,6 +54,7 @@
 &lt;/Filter&gt;</Filter>
       <Transforms>
         <Transform FullName="INT0007.UU.PersonEvents.Maps.LokalStudentEnvelope_To_PersonStudentAccountUpdatedEvent" AssemblyQualifiedName="INT0007.UU.PersonEvents.Maps.LokalStudentEnvelope_To_PersonStudentAccountUpdatedEvent,INT0007.UU.PersonEvents, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0007.UU.PersonEvents.Maps.StudentAvlidenmarkeringEvent_To_PersonEvent" AssemblyQualifiedName="INT0007.UU.PersonEvents.Maps.StudentAvlidenmarkeringEvent_To_PersonEvent,INT0007.UU.PersonEvents, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <OrderedDelivery>true</OrderedDelivery>
       <Priority>5</Priority>
@@ -129,10 +130,10 @@
           <ReceiveLocationTransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-IDENTITY&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:UUC-BIZSRV021-T\PRIVATE$\SD-IDENTITY&amp;lt;/uri&amp;gt;&amp;lt;batchSize&amp;gt;1&amp;lt;/batchSize&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;serialProcessing&amp;gt;true&amp;lt;/serialProcessing&amp;gt;&amp;lt;onFailure&amp;gt;suspendResumable&amp;lt;/onFailure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
           <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody" Description="" />
-          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlDasmComp"&gt;&lt;Properties&gt;&lt;DocumentSpecNames vt="8"&gt;Shared.Schemas.Ladok.Envelopes.LokalStudentEnvelope, Shared.Schemas.Ladok, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a&lt;/DocumentSpecNames&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e410e-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.PartyRes"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlDasmComp"&gt;&lt;Properties&gt;&lt;AllowUnrecognizedMessage vt="11"&gt;-1&lt;/AllowUnrecognizedMessage&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e410e-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.PartyRes"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
-          <Enable>true</Enable>
+          <Enable>false</Enable>
           <ReceiveHandler Name="CluSDReceive" HostTrusted="false">
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>
