@@ -1,0 +1,462 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="f8bb6146-8c11-438e-b886-c4519d34d314" LowerBound="1.1" HigherBound="90.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="INT0018.Delayed.Events" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="74473d4e-fd8b-4619-a8b4-8010aa0690e0" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveUppehallEventType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="6ef01ec6-6439-4d67-884d-543f0635f22e" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="841fd70b-2baa-42a7-baa8-d840f6521e9f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.81">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande.UppehallEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="6864ede1-fd74-4940-a1f1-7430841e1483" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="DelayedUppehallStartEnvelope_to_SqlPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="591aa3bb-2ac5-4a58-88cb-20e557d472bc" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="addDelayedEvent" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="9f92299c-98b4-4bf4-94e9-4a2cee75e0aa" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.52">
+                    <om:Property Name="Ref" Value="INT0018.Delayed.Events.addDeleyedProcedure_dbo.addDelayedEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="fe80b981-7274-4450-91bb-def365e08d74" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="15.54" HigherBound="15.101">
+                    <om:Property Name="Ref" Value="INT0018.Delayed.Events.addDeleyedProcedure_dbo.addDelayedEventResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="21b10889-37df-4029-8cf5-3affc0c234f2" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="DelayedUppehallStopEnvelope_to_SqlPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="cfe079df-21a7-463e-8316-f18d2ae1ef4e" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="addDelayedEvent" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="d8fe45a4-9102-4879-8531-017b0b99e005" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.52">
+                    <om:Property Name="Ref" Value="INT0018.Delayed.Events.addDeleyedProcedure_dbo.addDelayedEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="4c956a6f-84f7-4728-8e40-904f6694e9db" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="22.54" HigherBound="22.101">
+                    <om:Property Name="Ref" Value="INT0018.Delayed.Events.addDeleyedProcedure_dbo.addDelayedEventResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="26ed06b1-99e7-4867-92bb-aeca4bea7d52" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="89.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="HandleUppehalEvent" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="ServiceBody" OID="01acccb4-25da-4c18-88b0-538f8de7d808" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="74f518e2-ef98-461b-840e-ae051c0dc68a" ParentLink="ServiceBody_Statement" LowerBound="43.1" HigherBound="45.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveUppehallEvent" />
+                    <om:Property Name="MessageName" Value="UppehallEvent" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="dc70bf7f-fe01-41d3-8af5-2c4e6c6d85c4" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/studiedeltagande#UppehallEvent&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Parallel" OID="d9c051eb-b6bf-49de-81b7-f90c79735399" ParentLink="ServiceBody_Statement" LowerBound="45.1" HigherBound="87.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ParallelActions_1" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="ParallelBranch" OID="46392f2f-3cfa-483e-add4-bac4781a4829" ParentLink="ReallyComplexStatement_Branch" LowerBound="50.1" HigherBound="66.1">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ParallelBranch_1" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Construct" OID="ea2528ae-032b-42b7-817b-02155cb6e1e4" ParentLink="ComplexStatement_Statement" LowerBound="50.1" HigherBound="56.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Start" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Transform" OID="2a5acd63-fc53-42a4-932d-20c4aa0d4d1d" ParentLink="ComplexStatement_Statement" LowerBound="53.1" HigherBound="55.1">
+                                <om:Property Name="ClassName" Value="INT0018.Delayed.Events.Maps.DelayedUppehallStartEnvelpe.UppehallEvent_to_DelayedUppehallStartEnvelpe" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Transform_1" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessagePartRef" OID="f2ece45a-ae03-42f9-87b9-63cfed42c429" ParentLink="Transform_InputMessagePartRef" LowerBound="54.169" HigherBound="54.182">
+                                    <om:Property Name="MessageRef" Value="UppehallEvent" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_1" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="3c462f7f-5eae-4890-8bd0-66b947458995" ParentLink="Transform_OutputMessagePartRef" LowerBound="54.36" HigherBound="54.63">
+                                    <om:Property Name="MessageRef" Value="DelayedUppehallStartEnvelpe" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_2" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="5fbc7254-9be6-4061-9aae-6a8b10af002a" ParentLink="Construct_MessageRef" LowerBound="51.31" HigherBound="51.58">
+                                <om:Property Name="Ref" Value="DelayedUppehallStartEnvelpe" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Construct" OID="247c1539-50a6-43b0-8923-660d3ad8376e" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="62.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructMessage_1" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Transform" OID="c0491032-2e1c-4f54-9c9b-f79d75fdaad6" ParentLink="ComplexStatement_Statement" LowerBound="59.1" HigherBound="61.1">
+                                <om:Property Name="ClassName" Value="INT0018.Delayed.Events.Maps.DelayedUppehallStartEnvelpe.DelayedUppehallStartEnvelope_to_Query" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Transform_3" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessagePartRef" OID="919a2f5b-07ff-4533-9297-56b68f820d30" ParentLink="Transform_InputMessagePartRef" LowerBound="60.153" HigherBound="60.180">
+                                    <om:Property Name="MessageRef" Value="DelayedUppehallStartEnvelpe" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_5" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="5ab8c23d-5eb9-4a63-8730-64881613b1ec" ParentLink="Transform_OutputMessagePartRef" LowerBound="60.36" HigherBound="60.54">
+                                    <om:Property Name="MessageRef" Value="UppehallStartQuery" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_6" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="73f8393a-5871-452d-8e49-eb85e5bfc839" ParentLink="Construct_MessageRef" LowerBound="57.31" HigherBound="57.49">
+                                <om:Property Name="Ref" Value="UppehallStartQuery" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="2cc68c88-3229-44a2-a342-04cb00caa65b" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="64.1">
+                            <om:Property Name="PortName" Value="DelayedUppehallStartEnvelope_to_SqlPort" />
+                            <om:Property Name="MessageName" Value="UppehallStartQuery" />
+                            <om:Property Name="OperationName" Value="addDelayedEvent" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_1" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Receive" OID="a324df45-67a3-47aa-8099-07ae45798eba" ParentLink="ComplexStatement_Statement" LowerBound="64.1" HigherBound="66.1">
+                            <om:Property Name="Activate" Value="False" />
+                            <om:Property Name="PortName" Value="DelayedUppehallStartEnvelope_to_SqlPort" />
+                            <om:Property Name="MessageName" Value="ReturnStartMessage" />
+                            <om:Property Name="OperationName" Value="addDelayedEvent" />
+                            <om:Property Name="OperationMessageName" Value="Response" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Receive_2" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="ParallelBranch" OID="40995476-4bfb-4e78-80b7-88086e59724d" ParentLink="ReallyComplexStatement_Branch" LowerBound="69.1" HigherBound="85.1">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ParallelBranch_2" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Construct" OID="aeefcedf-0097-4e9c-931a-c27614c7abc2" ParentLink="ComplexStatement_Statement" LowerBound="69.1" HigherBound="75.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Stop" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Transform" OID="e7a6a5c8-405c-4c0a-8c14-4e820a64f29f" ParentLink="ComplexStatement_Statement" LowerBound="72.1" HigherBound="74.1">
+                                <om:Property Name="ClassName" Value="INT0018.Delayed.Events.Maps.DelayedUppehallStopEnvelpe.UppehallEvent_to_DelayedUppehallStopEnvelpe" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Transform_2" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessagePartRef" OID="bb464daa-207f-4669-8c78-4a39ac42ffbb" ParentLink="Transform_InputMessagePartRef" LowerBound="73.166" HigherBound="73.179">
+                                    <om:Property Name="MessageRef" Value="UppehallEvent" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_3" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="eb7df041-7350-4461-b2e5-d399b0b936d8" ParentLink="Transform_OutputMessagePartRef" LowerBound="73.36" HigherBound="73.62">
+                                    <om:Property Name="MessageRef" Value="DelayedUppehallStopEnvelpe" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_4" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="6a4f5ac1-0563-498f-ac24-d78314c3180b" ParentLink="Construct_MessageRef" LowerBound="70.31" HigherBound="70.57">
+                                <om:Property Name="Ref" Value="DelayedUppehallStopEnvelpe" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Construct" OID="6a29556a-9004-4c74-abdf-9f714375e5f9" ParentLink="ComplexStatement_Statement" LowerBound="75.1" HigherBound="81.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructMessage_2" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Transform" OID="f006d1cd-78a1-4ea0-8b12-0aced01b126f" ParentLink="ComplexStatement_Statement" LowerBound="78.1" HigherBound="80.1">
+                                <om:Property Name="ClassName" Value="INT0018.Delayed.Events.Maps.DelayedUppehallStopEnvelpe.DelayedUppehallStopEnvelope_to_Query" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Transform_4" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="MessagePartRef" OID="dcd62744-f963-4d3f-81ac-4cf3578475af" ParentLink="Transform_InputMessagePartRef" LowerBound="79.150" HigherBound="79.176">
+                                    <om:Property Name="MessageRef" Value="DelayedUppehallStopEnvelpe" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_7" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="1db6f956-918e-4c80-9212-ce53c0af53a5" ParentLink="Transform_OutputMessagePartRef" LowerBound="79.36" HigherBound="79.53">
+                                    <om:Property Name="MessageRef" Value="UppehallStopQuery" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_8" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="beae14ca-f5c7-4735-bd8f-d9fc89602739" ParentLink="Construct_MessageRef" LowerBound="76.31" HigherBound="76.48">
+                                <om:Property Name="Ref" Value="UppehallStopQuery" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="010ca9da-9068-4a4b-af38-9369a3e07f38" ParentLink="ComplexStatement_Statement" LowerBound="81.1" HigherBound="83.1">
+                            <om:Property Name="PortName" Value="DelayedUppehallStopEnvelope_to_SqlPort" />
+                            <om:Property Name="MessageName" Value="UppehallStopQuery" />
+                            <om:Property Name="OperationName" Value="addDelayedEvent" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_2" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Receive" OID="1e353315-ec9f-4ea5-9da5-45c32965ec8e" ParentLink="ComplexStatement_Statement" LowerBound="83.1" HigherBound="85.1">
+                            <om:Property Name="Activate" Value="False" />
+                            <om:Property Name="PortName" Value="DelayedUppehallStopEnvelope_to_SqlPort" />
+                            <om:Property Name="MessageName" Value="ReturnStopMessage" />
+                            <om:Property Name="OperationName" Value="addDelayedEvent" />
+                            <om:Property Name="OperationMessageName" Value="Response" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Receive_3" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="02cab81c-21a7-4f19-9457-729fbcf9bc38" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0018.Delayed.Events.ReceiveUppehallEventType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveUppehallEvent" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="cd57dd42-1021-42bf-a542-80fbb083d1c8" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="ea0a71d0-83db-42ca-b0f3-0b7c7f13ce10" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="30.1" HigherBound="32.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="19" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0018.Delayed.Events.DelayedUppehallStopEnvelope_to_SqlPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="DelayedUppehallStopEnvelope_to_SqlPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="5d2ed342-0020-4b60-a4b7-4d7f213e9dc2" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="d370572a-83b4-4658-8171-4a8941d21894" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="17" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0018.Delayed.Events.DelayedUppehallStartEnvelope_to_SqlPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="DelayedUppehallStartEnvelope_to_SqlPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="71968cd6-3108-428b-adec-950f727a27cf" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="359f8990-3f46-4e33-af1d-a5c437563e45" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande.UppehallEvent" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="UppehallEvent" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="d1834209-c21c-4d71-a6fe-80fa1ba54873" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.Envelopes.DelayedUppehallStartEnvelope" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="DelayedUppehallStartEnvelpe" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a6f9a8f1-8db0-4621-b01a-c1ebb0693011" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.Envelopes.DelayedUppehallStopEnvelope" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="DelayedUppehallStopEnvelpe" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="f60991dc-0ed4-42a8-b829-ef8116cc2475" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="Type" Value="INT0018.Delayed.Events.addDeleyedProcedure_dbo.addDelayedEvent" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="UppehallStartQuery" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ced637b1-c2a2-4803-9849-8bcdd680d245" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="Type" Value="INT0018.Delayed.Events.addDeleyedProcedure_dbo.addDelayedEvent" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="UppehallStopQuery" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="f0e6d6d5-10b2-42cf-bc15-df851cf5fd74" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="39.1" HigherBound="40.1">
+                <om:Property Name="Type" Value="INT0018.Delayed.Events.addDeleyedProcedure_dbo.addDelayedEventResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReturnStartMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="c0779827-78bb-4eea-89c0-60f42ae15627" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="40.1" HigherBound="41.1">
+                <om:Property Name="Type" Value="INT0018.Delayed.Events.addDeleyedProcedure_dbo.addDelayedEventResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReturnStopMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module INT0018.Delayed.Events
+{
+    internal porttype ReceiveUppehallEventType
+    {
+        oneway Operation_1
+        {
+            Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande.UppehallEvent
+        };
+    };
+    internal porttype DelayedUppehallStartEnvelope_to_SqlPortType
+    {
+        requestresponse addDelayedEvent
+        {
+            addDeleyedProcedure_dbo.addDelayedEvent, addDeleyedProcedure_dbo.addDelayedEventResponse
+        };
+    };
+    internal porttype DelayedUppehallStopEnvelope_to_SqlPortType
+    {
+        requestresponse addDelayedEvent
+        {
+            addDeleyedProcedure_dbo.addDelayedEvent, addDeleyedProcedure_dbo.addDelayedEventResponse
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service HandleUppehalEvent
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceiveUppehallEventType ReceiveUppehallEvent;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses DelayedUppehallStopEnvelope_to_SqlPortType DelayedUppehallStopEnvelope_to_SqlPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses DelayedUppehallStartEnvelope_to_SqlPortType DelayedUppehallStartEnvelope_to_SqlPort;
+        message Shared.Schemas.Ladok.schemas_ladok_se_studiedeltagande.UppehallEvent UppehallEvent;
+        message Shared.Schemas.Ladok.Envelopes.DelayedUppehallStartEnvelope DelayedUppehallStartEnvelpe;
+        message Shared.Schemas.Ladok.Envelopes.DelayedUppehallStopEnvelope DelayedUppehallStopEnvelpe;
+        message addDeleyedProcedure_dbo.addDelayedEvent UppehallStartQuery;
+        message addDeleyedProcedure_dbo.addDelayedEvent UppehallStopQuery;
+        message addDeleyedProcedure_dbo.addDelayedEventResponse ReturnStartMessage;
+        message addDeleyedProcedure_dbo.addDelayedEventResponse ReturnStopMessage;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("74f518e2-ef98-461b-840e-ae051c0dc68a")]
+            activate ((BTS.MessageType == "http://schemas.ladok.se/studiedeltagande#UppehallEvent"))receive (ReceiveUppehallEvent.Operation_1, UppehallEvent);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d9c051eb-b6bf-49de-81b7-f90c79735399")]
+            parallel
+            {
+                task
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("ea2528ae-032b-42b7-817b-02155cb6e1e4")]
+                    construct DelayedUppehallStartEnvelpe
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("2a5acd63-fc53-42a4-932d-20c4aa0d4d1d")]
+                        transform (DelayedUppehallStartEnvelpe) = INT0018.Delayed.Events.Maps.DelayedUppehallStartEnvelpe.UppehallEvent_to_DelayedUppehallStartEnvelpe (UppehallEvent);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("247c1539-50a6-43b0-8923-660d3ad8376e")]
+                    construct UppehallStartQuery
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("c0491032-2e1c-4f54-9c9b-f79d75fdaad6")]
+                        transform (UppehallStartQuery) = INT0018.Delayed.Events.Maps.DelayedUppehallStartEnvelpe.DelayedUppehallStartEnvelope_to_Query (DelayedUppehallStartEnvelpe);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("2cc68c88-3229-44a2-a342-04cb00caa65b")]
+                    send (DelayedUppehallStartEnvelope_to_SqlPort.addDelayedEvent, UppehallStartQuery);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a324df45-67a3-47aa-8099-07ae45798eba")]
+                    receive (DelayedUppehallStartEnvelope_to_SqlPort.addDelayedEvent, ReturnStartMessage);
+                }
+                task
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("aeefcedf-0097-4e9c-931a-c27614c7abc2")]
+                    construct DelayedUppehallStopEnvelpe
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("e7a6a5c8-405c-4c0a-8c14-4e820a64f29f")]
+                        transform (DelayedUppehallStopEnvelpe) = INT0018.Delayed.Events.Maps.DelayedUppehallStopEnvelpe.UppehallEvent_to_DelayedUppehallStopEnvelpe (UppehallEvent);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("6a29556a-9004-4c74-abdf-9f714375e5f9")]
+                    construct UppehallStopQuery
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("f006d1cd-78a1-4ea0-8b12-0aced01b126f")]
+                        transform (UppehallStopQuery) = INT0018.Delayed.Events.Maps.DelayedUppehallStopEnvelpe.DelayedUppehallStopEnvelope_to_Query (DelayedUppehallStopEnvelpe);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("010ca9da-9068-4a4b-af38-9369a3e07f38")]
+                    send (DelayedUppehallStopEnvelope_to_SqlPort.addDelayedEvent, UppehallStopQuery);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("1e353315-ec9f-4ea5-9da5-45c32965ec8e")]
+                    receive (DelayedUppehallStopEnvelope_to_SqlPort.addDelayedEvent, ReturnStopMessage);
+                }
+            }
+        }
+    }
+}
+

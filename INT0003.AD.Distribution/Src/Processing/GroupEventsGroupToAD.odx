@@ -17,8 +17,8 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="GroupEventsOperation" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="529d1130-2d06-40f1-86cc-fb4f5ad538f0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.51">
-                    <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
+                <om:Element Type="MessageRef" OID="529d1130-2d06-40f1-86cc-fb4f5ad538f0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.67">
+                    <om:Property Name="Ref" Value="Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="True" />
@@ -61,8 +61,8 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="CreateADGroupOperation" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="77527423-5132-4114-869a-ff85b1fc8666" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.51">
-                    <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
+                <om:Element Type="MessageRef" OID="77527423-5132-4114-869a-ff85b1fc8666" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.67">
+                    <om:Property Name="Ref" Value="Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
                     <om:Property Name="Signal" Value="True" />
@@ -182,7 +182,7 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="GroupNameSet" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="StatementRef" OID="4d5a2af2-02ba-43ce-ab28-f0d9b405e85a" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="71.167" HigherBound="71.190">
+                <om:Element Type="StatementRef" OID="4d5a2af2-02ba-43ce-ab28-f0d9b405e85a" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="71.171" HigherBound="71.194">
                     <om:Property Name="Initializes" Value="True" />
                     <om:Property Name="Ref" Value="83d5aff1-7aca-442b-a4a5-f61d482ddaea" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -198,7 +198,7 @@
                 </om:Element>
             </om:Element>
             <om:Element Type="MessageDeclaration" OID="bd072d37-a569-4084-a697-96906ee4d23c" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="54.1" HigherBound="55.1">
-                <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.GroupEvents.InternalGroupEvent" />
+                <om:Property Name="Type" Value="Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="GroupEvent" />
@@ -243,8 +243,8 @@
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="ReceiveGroupEvent" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="DNFPredicate" OID="0d4fdb7c-4da1-4569-8fae-2e8a928cf6b9" ParentLink="Receive_DNFPredicate">
-                        <om:Property Name="LHS" Value="INT0003.AD.Distribution.Schemas.GroupEventType" />
+                    <om:Element Type="DNFPredicate" OID="69213815-8e7b-42ea-bd9d-5f7cc7f77069" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="Shared.Schemas.GroupAndPersonEvents.GroupEventType" />
                         <om:Property Name="RHS" Value="&quot;GroupCreateRequestEvent&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
@@ -412,10 +412,10 @@
                                         <om:Property Name="Signal" Value="False" />
                                     </om:Element>
                                     <om:Element Type="MessageAssignment" OID="46fcdc61-5a11-4739-95c4-89439110bdf6" ParentLink="ComplexStatement_Statement" LowerBound="183.1" HigherBound="188.1">
-                                        <om:Property Name="Expression" Value="SupportMail = System.String.Empty;&#xD;&#xA;SupportMail(*) = GroupEvent(*);&#xD;&#xA;SupportMail(SMTP.Subject) = System.String.Format(&quot;Group {0} could not be created!&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName));&#xD;&#xA;SupportMail(SMTP.EmailBodyText) = System.String.Format(&quot;Please create 3 ActiveDirectory groups as specified below\n{0}_accepted\n{0}_registered\n{0}_reregistered&quot;,GroupEvent(INT0003.AD.Distribution.Schemas.GroupName));" />
+                                        <om:Property Name="Expression" Value="SupportMail = System.String.Empty;&#xD;&#xA;SupportMail(*) = GroupEvent(*);&#xD;&#xA;SupportMail(SMTP.Subject) = System.String.Format(&quot;Group {0} could not be created!&quot;,GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName));&#xD;&#xA;SupportMail(SMTP.EmailBodyText) = System.String.Format(&quot;Please create 3 ActiveDirectory groups as specified below\n{0}_accepted\n{0}_registered\n{0}_reregistered&quot;,GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName));" />
                                         <om:Property Name="ReportToAnalyst" Value="False" />
                                         <om:Property Name="Name" Value="MessageAssignment_1" />
-                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
                                     </om:Element>
                                 </om:Element>
                                 <om:Element Type="Send" OID="0ab909eb-6395-4cff-8390-06c0ba6ecfb3" ParentLink="ComplexStatement_Statement" LowerBound="189.1" HigherBound="191.1">
@@ -575,14 +575,14 @@
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="GroupName" />
             <om:Property Name="Signal" Value="True" />
-            <om:Element Type="PropertyRef" OID="4c4f5e8d-7ce6-4bce-9105-4c077ab1d70a" ParentLink="CorrelationType_PropertyRef" LowerBound="34.9" HigherBound="34.26">
-                <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupName" />
+            <om:Element Type="PropertyRef" OID="3da0abe1-c4a8-4625-8556-b6c60d8cd202" ParentLink="CorrelationType_PropertyRef" LowerBound="34.9" HigherBound="34.54">
+                <om:Property Name="Ref" Value="Shared.Schemas.GroupAndPersonEvents.GroupName" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="PropertyRef_1" />
                 <om:Property Name="Signal" Value="False" />
             </om:Element>
-            <om:Element Type="PropertyRef" OID="06369a93-dafe-49aa-b214-f6b678e32595" ParentLink="CorrelationType_PropertyRef" LowerBound="34.28" HigherBound="34.45">
-                <om:Property Name="Ref" Value="INT0003.AD.Distribution.Schemas.GroupType" />
+            <om:Element Type="PropertyRef" OID="f90579fa-a73b-4c2d-bdfc-a7bb3dd3e069" ParentLink="CorrelationType_PropertyRef" LowerBound="34.56" HigherBound="34.101">
+                <om:Property Name="Ref" Value="Shared.Schemas.GroupAndPersonEvents.GroupType" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="PropertyRef_1" />
                 <om:Property Name="Signal" Value="False" />
@@ -598,7 +598,7 @@ module INT0003.AD.Distribution
     {
         oneway GroupEventsOperation
         {
-            Schemas.GroupEvents.InternalGroupEvent
+            Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent
         };
     };
     internal porttype ADGroupQueryPortType
@@ -612,7 +612,7 @@ module INT0003.AD.Distribution
     {
         oneway CreateADGroupOperation
         {
-            Schemas.GroupEvents.InternalGroupEvent
+            Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent
         };
     };
     internal porttype SendSupportMailPortType
@@ -624,7 +624,7 @@ module INT0003.AD.Distribution
     };
     internal correlationtype GroupName
     {
-        Schemas.GroupName, Schemas.GroupType
+        Shared.Schemas.GroupAndPersonEvents.GroupName, Shared.Schemas.GroupAndPersonEvents.GroupType
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
     internal service longrunning transaction GroupEventsGroupToAD
@@ -644,7 +644,7 @@ module INT0003.AD.Distribution
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses SendSupportMailPortType SendSupportMail;
         correlation GroupName GroupNameSet;
-        message Schemas.GroupEvents.InternalGroupEvent GroupEvent;
+        message Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent GroupEvent;
         message Schemas.ADEvents.ADSendAdapterSolicitResponseGroupQuery ADGroupQuery;
         message Schemas.ADEvents.ADQueryResults ADGroupQueryResults;
         message Schemas.ADEvents.ADSendAdapterOneWayUpdate ADCreateGroup;
@@ -661,7 +661,7 @@ module INT0003.AD.Distribution
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("83d5aff1-7aca-442b-a4a5-f61d482ddaea")]
-            activate ((INT0003.AD.Distribution.Schemas.GroupEventType == "GroupCreateRequestEvent"))receive (ReceiveGroupEventsPort.GroupEventsOperation, GroupEvent, initialize GroupNameSet);
+            activate ((Shared.Schemas.GroupAndPersonEvents.GroupEventType == "GroupCreateRequestEvent"))receive (ReceiveGroupEventsPort.GroupEventsOperation, GroupEvent, initialize GroupNameSet);
             emailSubject = "";
             success = false;
             resultAD = 0;
@@ -776,8 +776,8 @@ module INT0003.AD.Distribution
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("46fcdc61-5a11-4739-95c4-89439110bdf6")]
                             SupportMail = System.String.Empty;
                             SupportMail(*) = GroupEvent(*);
-                            SupportMail(SMTP.Subject) = System.String.Format("Group {0} could not be created!",GroupEvent(INT0003.AD.Distribution.Schemas.GroupName));
-                            SupportMail(SMTP.EmailBodyText) = System.String.Format("Please create 3 ActiveDirectory groups as specified below\n{0}_accepted\n{0}_registered\n{0}_reregistered",GroupEvent(INT0003.AD.Distribution.Schemas.GroupName));
+                            SupportMail(SMTP.Subject) = System.String.Format("Group {0} could not be created!",GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName));
+                            SupportMail(SMTP.EmailBodyText) = System.String.Format("Please create 3 ActiveDirectory groups as specified below\n{0}_accepted\n{0}_registered\n{0}_reregistered",GroupEvent(Shared.Schemas.GroupAndPersonEvents.GroupName));
                         }
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("0ab909eb-6395-4cff-8390-06c0ba6ecfb3")]
                         send (SendSupportMail.Support, SupportMail);

@@ -39,13 +39,17 @@
     <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Shared.Schemas.GroupAndPersonEvents, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.GroupAndPersonEvents\v4.0_2.2.0.0__b64e3957dd28061a\Shared.Schemas.GroupAndPersonEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Shared.Schemas.Ladok, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Ladok\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Schemas.Ladok.dll</HintPath>
+    </Reference>
     <Reference Include="Shared.Utilities.Calculate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Utilities.Calculate\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Utilities.Calculate.dll</HintPath>
-    </Reference>
-    <Reference Include="Shared.Utilities.MySQLClientHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Utilities.MySQLClientHelper\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Utilities.MySQLClientHelper.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Utilities.Calculate\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Utilities.Calculate.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -79,122 +83,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Schemas\Ladok\Envelopes\AterbudEnvelope.xsd.cs">
-      <DependentUpon>AterbudEnvelope.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Schemas\Ladok\Envelopes\AterkalladOmregistreringEnvelope.xsd.cs">
-      <DependentUpon>AterkalladOmregistreringEnvelope.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Schemas\Ladok\Envelopes\AterkalladRegistreringEnvelope.xsd.cs">
-      <DependentUpon>AterkalladRegistreringEnvelope.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Schemas\Ladok\Envelopes\ForvantatDeltagandeSkapadEnvelope.xsd.cs">
-      <DependentUpon>ForvantatDeltagandeSkapadEnvelope.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Schemas\Ladok\Envelopes\KurstillfalleTillStatusEnvelope.xsd.cs">
-      <DependentUpon>KurstillfalleTillStatusEnvelope.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Schemas\Ladok\Envelopes\OmregistreringEnvelope.xsd.cs">
-      <DependentUpon>OmregistreringEnvelope.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Schemas\Ladok\Envelopes\RegistreringEnvelope.xsd.cs">
-      <DependentUpon>RegistreringEnvelope.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Files\generate_bindings.ps1" />
     <None Include="Files\INT0002.UU.GroupEvents.docx" />
     <None Include="Files\INT0002.UU.GroupEvents.Installation.docx" />
     <None Include="Files\INT0002.UU.GroupEvents.maps.xlsx" />
     <None Include="Files\INT0002.UU.GroupEvents.vsdx" />
     <None Include="key.snk.pfx" />
-    <Schema Include="Schemas\Ladok\Envelopes\AterbudEnvelope.xsd">
-      <TypeName>AterbudEnvelope</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\AterkalladOmregistreringEnvelope.xsd">
-      <TypeName>AterkalladOmregistreringEnvelope</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\AterkalladRegistreringEnvelope.xsd">
-      <TypeName>AterkalladRegistreringEnvelope</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\ForvantatDeltagandeSkapadEnvelope.xsd">
-      <TypeName>ForvantatDeltagandeSkapadEnvelope</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\KurstillfalleTillStatusEnvelope.xsd">
-      <TypeName>KurstillfalleTillStatusEnvelope</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\OmregistreringEnvelope.xsd">
-      <TypeName>OmregistreringEnvelope</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\RegistreringEnvelope.xsd">
-      <TypeName>RegistreringEnvelope</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\Envelopes\StudentAvlidenmarkeringEnvelope.xsd">
-      <TypeName>StudentAvlidenmarkeringEnvelope</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok.Envelopes</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\GroupEvents\InternalGroup.xsd">
-      <TypeName>InternalGroup</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.GroupEvents</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\GroupEvents\InternalGroupEvent.xsd">
-      <TypeName>InternalGroupEvent</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.GroupEvents</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\GroupEvents\InternalIdentity.xsd">
-      <TypeName>InternalIdentity</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.GroupEvents</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\schemas.ladok.se-dap.xsd">
-      <TypeName>schemas_ladok_se_dap</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\schemas.ladok.se-events.xsd">
-      <TypeName>schemas_ladok_se_events</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\schemas.ladok.se-studentinformation.xsd">
-      <TypeName>schemas_ladok_se_studentinformation</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\schemas.ladok.se-studiedeltagande.xsd">
-      <TypeName>schemas_ladok_se_studiedeltagande</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\schemas.ladok.se-utbildningsinformation.xsd">
-      <TypeName>schemas_ladok_se_utbildningsinformation</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\Ladok\schemas.ladok.se.xsd">
-      <TypeName>schemas_ladok_se</TypeName>
-      <Namespace>INT0002.UU.GroupEvents.Schemas.Ladok</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\INT0002.UU.GroupEvents.BindingInfo.Dev.xml" />
+    <Content Include="Files\INT0002.UU.GroupEvents.BindingInfo.Prod.xml" />
+    <Content Include="Files\INT0002.UU.GroupEvents.BindingInfo.Test.xml" />
     <Content Include="Maps\KurstillfalleTillStatusEnvelope_to_InternalGroupEvent.xsl" />
     <Content Include="Maps\map-extensions.xml" />
     <Content Include="Maps\OmregistreringEnvelope_to_InternalGroupEvent.xsl" />

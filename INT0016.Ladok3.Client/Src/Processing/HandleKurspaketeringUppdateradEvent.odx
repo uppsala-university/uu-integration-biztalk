@@ -1,0 +1,234 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="977d02ba-0c28-44f3-a44e-4746f1e87c5c" LowerBound="1.1" HigherBound="44.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="INT0016.Ladok3.Client" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="09478a23-c0a7-46c0-b9fe-3af11b5cd07e" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveKurspaketeringUppdateradEventPortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="5c11f607-9b25-46ab-b56e-c7e0245b5519" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="HandleKurspaketeringUppdateradEventOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="580bc15d-d44d-44fb-bd17-553a1b0606b1" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.103">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurspaketeringUppdateradEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="a22fe8fe-3ecd-4b34-bef8-eb6ce5499253" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.105" HigherBound="8.150">
+                    <om:Property Name="Ref" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="c1419131-aa7a-4e5b-a49c-f4861e22be7e" ParentLink="Module_ServiceDeclaration" LowerBound="11.1" HigherBound="43.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="HandleKurspaketeringUppdateradEvent" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="5873c47c-d813-497d-9b74-a1b5a868dd02" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="19.1" HigherBound="20.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="TempXML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="4b5ff42c-1171-476d-9e78-ed6a48b4b13e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="20.1" HigherBound="21.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ackMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="62156cb4-9418-4568-9486-d00d0df8cc93" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="16.1" HigherBound="17.1">
+                <om:Property Name="Type" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReturnMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="53fc149a-f74a-4d24-928b-01a28120fe3a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="17.1" HigherBound="18.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.Envelopes.KurspaketeringUppdateradEnvelope" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Ladok3Envelope" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="47d79c21-05e0-4440-9074-057e6df1ec29" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="18.1" HigherBound="19.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurspaketeringUppdateradEvent" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Ladok3Event" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="8e190bfc-d941-44c1-a4da-05c71a495fb2" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="4f6182ca-076a-42ef-a9f4-ad0b8e48917c" ParentLink="ServiceBody_Statement" LowerBound="23.1" HigherBound="27.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveKurspaketeringUppdateradEventPort" />
+                    <om:Property Name="MessageName" Value="Ladok3Event" />
+                    <om:Property Name="OperationName" Value="HandleKurspaketeringUppdateradEventOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="989475b7-c04f-4e14-86c4-fc956e931df5" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.Operation" />
+                        <om:Property Name="RHS" Value="&quot;RouteEventsOperation&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="10b08a61-df73-4a5b-a5dd-339fa80123fd" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/utbildningsinformation#KurspaketeringUppdateradEvent&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Construct" OID="e1b39991-7d19-4bd3-bc2e-cd7925fe1a83" ParentLink="ServiceBody_Statement" LowerBound="27.1" HigherBound="33.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructEnvelope" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="0473e865-07ff-4e4d-8c7a-d96f59572115" ParentLink="ComplexStatement_Statement" LowerBound="30.1" HigherBound="32.1">
+                        <om:Property Name="ClassName" Value="INT0016.Ladok3.Client.Maps.KurspaketeringUppdateradEvent.KurspaketeringUppdateradEvent_to_Envelope" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_1" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="f3a12574-715d-41e6-8b78-acfde6fa7d53" ParentLink="Transform_InputMessagePartRef" LowerBound="31.146" HigherBound="31.157">
+                            <om:Property Name="MessageRef" Value="Ladok3Event" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="58f63ed1-c868-440c-b5f5-128901cdabd8" ParentLink="Transform_OutputMessagePartRef" LowerBound="31.28" HigherBound="31.42">
+                            <om:Property Name="MessageRef" Value="Ladok3Envelope" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="76dadd87-73a0-4e40-85dd-fdfb2f405443" ParentLink="Construct_MessageRef" LowerBound="28.23" HigherBound="28.37">
+                        <om:Property Name="Ref" Value="Ladok3Envelope" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Construct" OID="cf529ff7-0389-4291-8678-02a410d14216" ParentLink="ServiceBody_Statement" LowerBound="33.1" HigherBound="39.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructReturnMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="13ec19b9-567d-4607-891c-a7539e8555d1" ParentLink="ComplexStatement_Statement" LowerBound="36.1" HigherBound="38.1">
+                        <om:Property Name="ClassName" Value="INT0016.Ladok3.Client.Maps.KurspaketeringUppdateradEvent.KurspaketeringUppdateradEvent_to_ReturnMessage" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_2" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="a1af564a-52ae-4f7f-b50e-5fc7a53fe1a2" ParentLink="Transform_InputMessagePartRef" LowerBound="37.150" HigherBound="37.164">
+                            <om:Property Name="MessageRef" Value="Ladok3Envelope" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="5ae5821d-208e-467a-9c25-6ecd322b854d" ParentLink="Transform_OutputMessagePartRef" LowerBound="37.28" HigherBound="37.41">
+                            <om:Property Name="MessageRef" Value="ReturnMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_4" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="7ca40a3b-f833-4475-b3b6-a180842d8c47" ParentLink="Construct_MessageRef" LowerBound="34.23" HigherBound="34.36">
+                        <om:Property Name="Ref" Value="ReturnMessage" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="f846083c-996e-46b1-9e78-68db611fcb44" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="41.1">
+                    <om:Property Name="PortName" Value="ReceiveKurspaketeringUppdateradEventPort" />
+                    <om:Property Name="MessageName" Value="ReturnMessage" />
+                    <om:Property Name="OperationName" Value="HandleKurspaketeringUppdateradEventOperation" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="f939ebf4-a378-4f38-8fc0-5406d3208ecd" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="14.1" HigherBound="16.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0016.Ladok3.Client.ReceiveKurspaketeringUppdateradEventPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveKurspaketeringUppdateradEventPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="DirectBindingAttribute" OID="45c7d560-c946-450a-a80d-10f6e147d74c" ParentLink="PortDeclaration_CLRAttribute" LowerBound="14.1" HigherBound="15.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module INT0016.Ladok3.Client
+{
+    internal porttype ReceiveKurspaketeringUppdateradEventPortType
+    {
+        requestresponse HandleKurspaketeringUppdateradEventOperation
+        {
+            Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurspaketeringUppdateradEvent, Shared.Schemas.SdEvents.InternalReturnMessage
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service HandleKurspaketeringUppdateradEvent
+    {
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port implements ReceiveKurspaketeringUppdateradEventPortType ReceiveKurspaketeringUppdateradEventPort;
+        message Shared.Schemas.SdEvents.InternalReturnMessage ReturnMessage;
+        message Shared.Schemas.Ladok.Envelopes.KurspaketeringUppdateradEnvelope Ladok3Envelope;
+        message Shared.Schemas.Ladok.schemas_ladok_se_utbildningsinformation.KurspaketeringUppdateradEvent Ladok3Event;
+        System.Xml.XmlDocument TempXML;
+        System.String ackMessage;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4f6182ca-076a-42ef-a9f4-ad0b8e48917c")]
+            activate ((BTS.Operation == "RouteEventsOperation") && (BTS.MessageType == "http://schemas.ladok.se/utbildningsinformation#KurspaketeringUppdateradEvent"))receive (ReceiveKurspaketeringUppdateradEventPort.HandleKurspaketeringUppdateradEventOperation, Ladok3Event);
+            TempXML = new System.Xml.XmlDocument();
+            ackMessage = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e1b39991-7d19-4bd3-bc2e-cd7925fe1a83")]
+            construct Ladok3Envelope
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("0473e865-07ff-4e4d-8c7a-d96f59572115")]
+                transform (Ladok3Envelope) = INT0016.Ladok3.Client.Maps.KurspaketeringUppdateradEvent.KurspaketeringUppdateradEvent_to_Envelope (Ladok3Event);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("cf529ff7-0389-4291-8678-02a410d14216")]
+            construct ReturnMessage
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("13ec19b9-567d-4607-891c-a7539e8555d1")]
+                transform (ReturnMessage) = INT0016.Ladok3.Client.Maps.KurspaketeringUppdateradEvent.KurspaketeringUppdateradEvent_to_ReturnMessage (Ladok3Envelope);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f846083c-996e-46b1-9e78-68db611fcb44")]
+            send (ReceiveKurspaketeringUppdateradEventPort.HandleKurspaketeringUppdateradEventOperation, ReturnMessage);
+        }
+    }
+}
+
