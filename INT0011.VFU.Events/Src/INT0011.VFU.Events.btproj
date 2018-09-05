@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{364F521B-3B00-4CEB-B306-C384D3FC2BB5}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>INT0011.VFU.Events</RootNamespace>
+    <AssemblyName>INT0011.VFU.Events</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Shared.Schemas.Ladok, Version=2.1.0.0, Culture=neutral, PublicKeyToken=960d5374a129ced7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Ladok\v4.0_2.1.0.0__960d5374a129ced7\Shared.Schemas.Ladok.dll</HintPath>
+    </Reference>
+    <Reference Include="Shared.Utilities.SSOClientHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\BizTalk-SVN\2016\Shared.Utilities\Src\SSOClientHelper\bin\Debug\Shared.Utilities.SSOClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Schema Include="Schemas\VFU\Kurstillfalle.xsd">
+      <TypeName>Kurstillfalle</TypeName>
+      <Namespace>INT0011.VFU.Events.Schemas.VFU</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\KurstillfalleTillStatusEnvelope_to_Kurstillfalle.btm">
+      <TypeName>KurstillfalleTillStatusEnvelope_to_Kurstillfalle</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="Pipelines\JSON.SendPipeline.btp">
+      <TypeName>JSON_SendPipeline</TypeName>
+      <Namespace>INT0011.VFU.Events.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Files\INT0011.VFU.Events.docx" />
+    <None Include="Files\INT0011.VFU.Events.maps.xlsx" />
+    <None Include="key.snk.pfx" />
+    <Schema Include="Schemas\ADEvents\ADQueryResults.xsd">
+      <TypeName>ADQueryResults</TypeName>
+      <Namespace>INT0011.VFU.Events.Schemas.ADEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\ADEvents\ADSendAdapterSolicitResponseIndividualQuery.xsd">
+      <TypeName>ADSendAdapterSolicitResponseIndividualQuery</TypeName>
+      <Namespace>INT0011.VFU.Events.Schemas.ADEvents</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\VFU\Programdeltagande.xsd">
+      <TypeName>Programdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events.Schemas.VFU</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PropertySchema.xsd">
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>INT0011.VFU.Events.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\VFU\Kursdeltagande.xsd">
+      <TypeName>Kursdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events.Schemas.VFU</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\RegistreringEnvelope_to_Kursdeltagande.btm">
+      <TypeName>RegistreringEnvelope_to_Kursdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\OmregistreringEnvelope_to_Kursdeltagande.btm">
+      <TypeName>OmregistreringEnvelope_to_Kursdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\AterkalladRegistreringEnvelope_to_Kursdeltagande.btm">
+      <TypeName>AterkalladRegistreringEnvelope_to_Kursdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\AterkalladOmregistreringEnvelope_to_Kursdeltagande.btm">
+      <Namespace>INT0011.VFU.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+      <TypeName>AterkalladOmregistreringEnvelope_to_Kursdeltagande</TypeName>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\ForvantatDeltagandeSkapad_to_Kursdeltagande.btm">
+      <TypeName>ForvantatDeltagandeSkapad_to_Kursdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Processing\ProcessRegistreringProgram.odx">
+      <TypeName>BizTalk_Orchestration1</TypeName>
+      <Namespace>INT0011.VFU.Events.Processing</Namespace>
+      <SubType>Designer</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\RegistreringEnvelope_to_ADQueryIndividual.btm">
+      <TypeName>RegistreringEnvelope_to_ADQueryIndividual</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Processing\ProcessOmregistreringProgram.odx">
+      <SubType>Task</SubType>
+      <TypeName>ProcessRegistreringProgram_Copy</TypeName>
+      <Namespace>INT0011.VFU.Events.Processing</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Processing\ProcessAterkalladRegistreringProgram.odx">
+      <SubType>Designer</SubType>
+      <TypeName>ProcessRegistreringProgram_Copy_2_</TypeName>
+      <Namespace>INT0011.VFU.Events.Processing</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Processing\ProcessForvantatDeltagandeProgram.odx">
+      <SubType>Task</SubType>
+      <TypeName>ProcessRegistreringProgram_Copy_3_</TypeName>
+      <Namespace>INT0011.VFU.Events.Processing</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Processing\ProcessAterkalladOmregistreringProgram.odx">
+      <SubType>Designer</SubType>
+      <TypeName>ProcessRegistreringProgram_Copy_4_</TypeName>
+      <Namespace>INT0011.VFU.Events.Processing</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="AterkalladOmRegestrering_to_Programdeltagande.btm">
+      <TypeName>AterkalladOmRegestrering_to_Programdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="AterkalladRegestrering_to_Programdeltagande.btm">
+      <TypeName>AterkalladRegestrering_to_Programdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ForvantatDeltagande_to_Programdeltagande.btm">
+      <TypeName>ForvantatDeltagande_to_Programdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Omregistrering_to_Programdeltagande.btm">
+      <TypeName>Omregistrering_to_Programdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="AterKalladOmregistrering_to_ADQueryIndividual.btm">
+      <TypeName>AterKalladOmregistrering_to_ADQueryIndividual</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="AterkalladRegistrering_to_ADQueryIndividual.btm">
+      <TypeName>AterkalladRegistrering_to_ADQueryIndividual</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ForvantatDeltagande_to_ADQueryIndividual.btm">
+      <TypeName>ForvantatDeltagande_to_ADQueryIndividual</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Omregestrering_to_ADQueryIndividual.btm">
+      <TypeName>Omregestrering_to_ADQueryIndividual</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AterkalladOmRegestrering_to_Programdeltagande.xsl" />
+    <Content Include="AterkalladRegestrering_to_Programdeltagande.xsl" />
+    <Content Include="AvbrottBorttaget_to_Programdeltagande.xsl" />
+    <Content Include="Avbrott_to_Programdeltagande.xsl" />
+    <Content Include="DelayedUppehallStart_to_Programdeltagande.xsl" />
+    <Content Include="DelayedUppehallStop_to_Programdeltagande.xsl" />
+    <Content Include="ForvantatDeltagande_to_Programdeltagande.xsl" />
+    <Content Include="Maps\AterkalladOmregistreringEnvelope_to_Kursdeltagande.xsl" />
+    <Content Include="Maps\AterkalladRegistreringEnvelope_to_Kursdeltagande.xsl" />
+    <Content Include="Maps\ForvantatDeltagandeSkapad_to_Kursdeltagande.xsl" />
+    <Content Include="Maps\KurstillfalleTillStatusEnvelope_to_Kurstillfalle.xsl" />
+    <Content Include="Maps\map-extensions.xml" />
+    <Content Include="Maps\OmregistreringEnvelope_to_Kursdeltagande.xsl" />
+    <Content Include="Maps\Promoted\AterkalladRegistreringEnvelope_to_Promoted.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Maps\Promoted\AterkalladOmregistreringEnvelope_to_Promoted.xsl" />
+    <Content Include="Maps\Promoted\AvbrottBorttagetEnvelope_to_Promoted.xsl" />
+    <Content Include="Maps\Promoted\AvbrottEnvelope_to_Promoted.xsl" />
+    <Content Include="Maps\Promoted\DelayedUppehallStartEnvelope_to_Promoted.xsl" />
+    <Content Include="Maps\Promoted\DelayedUppehallStopEnvelope_to_Promoted.xsl" />
+    <Content Include="Maps\Promoted\ForvantatDeltagandeSkapadEnvelope_to_Promoted.xsl" />
+    <Content Include="Maps\Promoted\KurstillfalleTillStatusEnvelope_to_Promoted.xsl" />
+    <Content Include="Maps\Promoted\OmregistreringEnvelope_to_Promoted.xsl" />
+    <Content Include="Maps\Promoted\RegistreringEnvelope_to_Promoted.xsl" />
+    <Content Include="Maps\RegistreringEnvelope_to_Kursdeltagande.xsl" />
+    <Content Include="Omregistrering_to_Programdeltagande.xsl" />
+    <Content Include="RegestreringProgramdeltagande.xsl" />
+    <Map Include="RegestreringProgramdeltagande.btm">
+      <TypeName>RegestreringProgramdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\Promoted\DelayedUppehallStopEnvelope_to_Promoted.btm">
+      <TypeName>DelayedUppehallStopEnvelope_to_Promoted</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps.Promoted</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\Promoted\DelayedUppehallStartEnvelope_to_Promoted.btm">
+      <TypeName>DelayedUppehallStartEnvelope_to_Promoted</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps.Promoted</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\Promoted\KurstillfalleTillStatusEnvelope_to_Promoted.btm">
+      <TypeName>KurstillfalleTillStatusEnvelope_to_Promoted</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps.Promoted</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\Promoted\ForvantatDeltagandeSkapadEnvelope_to_Promoted.btm">
+      <TypeName>ForvantatDeltagandeSkapadEnvelope_to_Promoted</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps.Promoted</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\Promoted\AvbrottBorttagetEnvelope_to_Promoted.btm">
+      <TypeName>AvbrottBorttagetEnvelope_to_Promoted</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps.Promoted</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\Promoted\AvbrottEnvelope_to_Promoted.btm">
+      <TypeName>AvbrottEnvelope_to_Promoted</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps.Promoted</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\Promoted\OmregistreringEnvelope_to_Promoted.btm">
+      <TypeName>OmregistreringEnvelope_to_Promoted</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps.Promoted</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\Promoted\RegistreringEnvelope_to_Promoted.btm">
+      <TypeName>RegistreringEnvelope_to_Promoted</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps.Promoted</Namespace>
+      <SubType>Designer</SubType>
+    </Map>
+    <Map Include="Maps\Promoted\AterkalladRegistreringEnvelope_to_Promoted.btm">
+      <TypeName>AterkalladRegistreringEnvelope_to_Promoted</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps.Promoted</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\Promoted\AterkalladOmregistreringEnvelope_to_Promoted.btm">
+      <TypeName>AterkalladOmregistreringEnvelope_to_Promoted</TypeName>
+      <Namespace>INT0011.VFU.Events.Maps.Promoted</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="AvbrottBorttaget_to_ADQueryIndividual.btm">
+      <TypeName>AvbrottBorttaget_to_ADQueryIndividual</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Avbrott_to_ADQueryIndividual.btm">
+      <TypeName>Avbrott_to_ADQueryIndividual</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="DelayedUppehallStart_to_ADQueryIndividual.btm">
+      <TypeName>DelayedUppehallStart_to_ADQueryIndividual</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="DelayedUppehallStop_to_ADQueryIndividual.btm">
+      <TypeName>DelayedUppehallStop_to_ADQueryIndividual</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="AvbrottBorttaget_to_Programdeltagande.btm">
+      <TypeName>AvbrottBorttaget_to_Programdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Designer</SubType>
+    </Map>
+    <Map Include="Avbrott_to_Programdeltagande.btm">
+      <TypeName>Avbrott_to_Programdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="DelayedUppehallStart_to_Programdeltagande.btm">
+      <TypeName>DelayedUppehallStart_to_Programdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="DelayedUppehallStop_to_Programdeltagande.btm">
+      <TypeName>DelayedUppehallStop_to_Programdeltagande</TypeName>
+      <Namespace>INT0011.VFU.Events</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Files\INT0011.VFU.BindingInfo_Dev.xml" />
+    <XLang Include="Processing\ProcessDelayedUppehallStopProgram.odx">
+      <TypeName>BizTalk_Orchestration1</TypeName>
+      <Namespace>INT0011.VFU.Events.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Processing\ProcessDelayedUppehallStartProgram.odx">
+      <TypeName>BizTalk_Orchestration1</TypeName>
+      <Namespace>INT0011.VFU.Events.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Processing\ProcessAvbrottBorttagetProgram.odx">
+      <TypeName>BizTalk_Orchestration1</TypeName>
+      <Namespace>INT0011.VFU.Events.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Processing\ProcessAvbrottProgram.odx">
+      <TypeName>BizTalk_Orchestration1</TypeName>
+      <Namespace>INT0011.VFU.Events.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>
