@@ -2,7 +2,7 @@ $DevBindings = 'INT0014.identity.sp.adapter.bindings.DEV.xml'
 $TestBindings = 'INT0014.identity.sp.adapter.bindings.TEST.xml'
 $VerBindings = 'INT0014.identity.sp.adapter.bindings.VER.xml'
 $ProdBindings = 'INT0014.identity.sp.adapter.bindings.PROD.xml'
-
+ 
 $DevQueue  = 'OS:.'
 $TestQueue  = 'OS:UUC-BIZSRV021-T'
 $ProdQueue  = 'OS:UUC-MSMQSRV002'
@@ -10,8 +10,8 @@ $VerQueue  = 'OS:UUC-MSMQSRV001'
  
 $DevSp  = 'https://spl3t.studentportalen.uu.se/uusp-webapp/spring/account/pnrupdate'
 $TestSp  = 'https://spl3t.studentportalen.uu.se/uusp-webapp/spring/account/pnrupdate'
-$VerSp  =  'https://spl3t.studentportalen.uu.se/uusp-webapp/spring/account/pnrupdate'
-$ProdSp  = 'https://spl3t.studentportalen.uu.se/uusp-webapp/spring/account/pnrupdate'
+$VerSp  =  'https://juni.studentportalen.uu.se/uusp-webapp/spring/account/pnrupdate'
+$ProdSp  = 'https://studentportalen.uu.se/uusp-webapp/spring/account/pnrupdate'
 
 copy .\$DevBindings .\$TestBindings
 (Get-Content -Path .\$TestBindings).Replace($DevSp,$TestSp) | Set-Content -Path .\$TestBindings
