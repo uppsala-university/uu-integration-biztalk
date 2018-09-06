@@ -19,7 +19,7 @@ copy .\$DevBindings .\$TestBindings
 
 copy .\$DevBindings .\$VerBindings
 (Get-Content -Path .\$VerBindings).Replace($DevSp,$VerSp) | Set-Content -Path .\$VerBindings
-(Get-Content -Path .\$ProdBindings).Replace($DevQueue,$VerQueue) | Set-Content -Path .\$VerBindings
+(Get-Content -Path .\$VerBindings).Replace($DevQueue,$VerQueue) | Set-Content -Path .\$VerBindings
 
 copy .\$DevBindings .\$ProdBindings
 (Get-Content -Path .\$ProdBindings).Replace($DevSp,$ProdSp) | Set-Content -Path .\$ProdBindings
