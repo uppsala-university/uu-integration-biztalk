@@ -1,6 +1,6 @@
 $DevBindings = 'INT0015.usmr.identity.DEV.bindings.xml'
 $TestBindings = 'INT0015.usmr.identity.TEST.bindings.xml'
-$VerBindings = 'IINT0015.usmr.identity.VER.bindings.xml'
+$VerBindings = 'INT0015.usmr.identity.VER.bindings.xml'
 $ProdBindings = 'INT0015.usmr.identity.PROD.bindings.xml'
 
 $DevQueue  = 'OS:.'
@@ -10,12 +10,12 @@ $VerQueue  = 'OS:UUC-MSMQSRV001'
 
 $Userreplace = 'REPLACEUSER'
 $TestDBuser  = 'sd-usmr-test-writer'
-$VerDBuser  =  'someuser'
+$VerDBuser  =  'sd-usmr-test-writer'
 $ProdDBuser  = 'someuser'
  
 $DevDB  = 'mssql://localhost:1433//sd-usmr-test-db'
 $TestDB  = 'mssql://SQL-AG1.exchange-test.its.uu.se:1433//sd-usmr-test-db'
-$VerDB  =  'Verdatabasename'
+$VerDB  =  'mssql://SQL-AG1.exchange-test.its.uu.se:1433//sd-usmr-test-db'
 $ProdDB  = 'Proddatabasename'
 
 copy .\$DevBindings .\$TestBindings
