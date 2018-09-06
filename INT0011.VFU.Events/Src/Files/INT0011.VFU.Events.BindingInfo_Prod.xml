@@ -46,7 +46,7 @@
             </Port>
           </Ports>
           <Roles />
-          <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
         <Service Name="INT0011.VFU.Events.ProcessOmregistreringProgram" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
@@ -67,7 +67,7 @@
             </Port>
           </Ports>
           <Roles />
-          <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
         <Service Name="INT0011.VFU.Events.ProcessAterkalladRegistreringProgram" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
@@ -88,7 +88,7 @@
             </Port>
           </Ports>
           <Roles />
-          <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
         <Service Name="INT0011.VFU.Events.ProcessForvantatDeltagandeProgram" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
@@ -109,7 +109,7 @@
             </Port>
           </Ports>
           <Roles />
-          <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
         <Service Name="INT0011.VFU.Events.ProcessAterkalladOmregistreringProgram" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
@@ -130,7 +130,7 @@
             </Port>
           </Ports>
           <Roles />
-          <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
         <Service Name="INT0011.VFU.Events.ProcessDelayedUppehallStopProgram" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
@@ -151,7 +151,7 @@
             </Port>
           </Ports>
           <Roles />
-          <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
         <Service Name="INT0011.VFU.Events.ProcessDelayedUppehallStartProgram" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
@@ -172,7 +172,7 @@
             </Port>
           </Ports>
           <Roles />
-          <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
         <Service Name="INT0011.VFU.Events.ProcessAvbrottBorttagetProgram" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
@@ -193,7 +193,7 @@
             </Port>
           </Ports>
           <Roles />
-          <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
         <Service Name="INT0011.VFU.Events.ProcessAvbrottProgram" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
@@ -214,7 +214,7 @@
             </Port>
           </Ports>
           <Roles />
-          <Host Name="Orchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
       </Services>
       <TrackedSchemas />
@@ -236,7 +236,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="ActiveDirectory" HostTrusted="false">
+        <SendHandler Name="CluActiveDirectorySend" HostTrusted="false">
           <TransportType Name="ActiveADAPTER" Capabilities="14619" ConfigurationClsid="12f27fb9-98df-4c53-a4aa-58f4b52a17b9" />
         </SendHandler>
       </PrimaryTransport>
@@ -283,7 +283,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralWCFSend" HostTrusted="false">
+        <SendHandler Name="CluActiveDirectorySend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -427,7 +427,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>true</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralWCFSend" HostTrusted="false">
+        <SendHandler Name="CluActiveDirectorySend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -479,7 +479,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>true</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralWCFSend" HostTrusted="false">
+        <SendHandler Name="CluActiveDirectorySend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -553,7 +553,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="GeneralSend" HostTrusted="false">
+        <SendHandler Name="CluActiveDirectorySend" HostTrusted="false">
           <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
         </SendHandler>
       </PrimaryTransport>
@@ -610,7 +610,7 @@
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
           <Enable>false</Enable>
-          <ReceiveHandler Name="GeneralReceive" HostTrusted="false">
+          <ReceiveHandler Name="CluSDReceive" HostTrusted="false">
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>
         </ReceiveLocation>
