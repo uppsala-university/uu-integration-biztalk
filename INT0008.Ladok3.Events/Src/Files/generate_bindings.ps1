@@ -26,7 +26,7 @@ $VerRecent  = 'https://api.verifiering4.ladok.se/uppfoljning/feed/recent'
 
 
 $DevInitFeed  = 'https://api.mit-integration.ladok.se/uppfoljning/feed/143653'
-$TestInitFeed  = 'https://api.mit-integration.ladok.se/uppfoljning/feed/143653'
+$TestInitFeed  = 'https://api.mit-integration.ladok.se/uppfoljning/feed/CHANGE_ME'
 $ProdInitFeed  = 'https://api.ladok.se/uppfoljning/feed/CHANGE_ME'
 $VerInitFeed  = 'https://api.verifiering4.ladok.se/uppfoljning/feed/CHANGE_ME'
 
