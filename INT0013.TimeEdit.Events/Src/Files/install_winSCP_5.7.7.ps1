@@ -1,5 +1,5 @@
 ﻿#Parameters
-$downloadNoGetTo = “C:\Users\kimst498\Downloads”
+$downloadNoGetTo = “C:\temp”
 $bizTalkInstallFolder = “C:\Program Files (x86)\Microsoft BizTalk Server 2016”
 
 #Download NuGet
