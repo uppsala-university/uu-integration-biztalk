@@ -10,9 +10,9 @@ $ProdQueue  = 'OS:UUC-MSMQSRV002'
 $VerQueue  = 'OS:UUC-MSMQSRV001'
 
 $DevFile  = 'C:\Integrations\INT0008.Ladok3.Events'
-$TestFile  = '\\uuc-biz025-t.exchange-test.its.uu.se\ladok3-atom$\state'
-$ProdFile  = '\\UUC-BIZ015.user.uu.se\ladok3-atom$\state'
-$VerFile  = '\\uuc-biz008-t.exchange-test.its.uu.se\ladok3-atom$\state'
+$TestFile  = '\\uuc-biz025-t.exchange-test.its.uu.se\ladok3-atom$'
+$ProdFile  = '\\UUC-BIZ015.user.uu.se\ladok3-atom$'
+$VerFile  = '\\uuc-biz008-t.exchange-test.its.uu.se\ladok3-atom$'
 
 $DevThumb  = '7B6E9150DD5B9EA485F23B1393398F583F53D90E'
 $TestThumb  = '7B6E9150DD5B9EA485F23B1393398F583F53D90E'
