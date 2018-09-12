@@ -14,6 +14,11 @@ $TestFile  = '\\uuc-biz025-t.exchange-test.its.uu.se\ladok3-atom$'
 $ProdFile  = '\\UUC-BIZ015.user.uu.se\ladok3-atom$'
 $VerFile  = '\\uuc-biz008-t.exchange-test.its.uu.se\ladok3-atom$'
 
+$DevArchive  = 'C:\integrations\Archive'
+$TestArchive  = ''
+$ProdArchive  = ''
+$VerArchive  = ''
+
 $DevThumb  = '7B6E9150DD5B9EA485F23B1393398F583F53D90E'
 $TestThumb  = '7B6E9150DD5B9EA485F23B1393398F583F53D90E'
 $ProdThumb  = ''
@@ -37,10 +42,10 @@ $VerInitEntry  = ''
 
 
 copy .\$DevBindings .\$TestBindings
-(Get-Content -Path .\$TestBindings).Replace($DevQueue,$TestQueue).Replace($DevFile,$TestFile).Replace($DevThumb,$TestThumb).Replace($DevRecent,$TestRecent).Replace($DevInitFeed,$TestInitFeed).Replace($DevInitEntry,$TestInitEntry)| Set-Content -Path .\$TestBindings
+(Get-Content -Path .\$TestBindings).Replace($DevQueue,$TestQueue).Replace($DevFile,$TestFile).Replace($DevArchive,$TestArchive).Replace($DevThumb,$TestThumb).Replace($DevRecent,$TestRecent).Replace($DevInitFeed,$TestInitFeed).Replace($DevInitEntry,$TestInitEntry)| Set-Content -Path .\$TestBindings
 
 copy .\$DevBindings .\$ProdBindings
-(Get-Content -Path .\$ProdBindings).Replace($DevQueue,$ProdQueue).Replace($DevFile,$ProdFile).Replace($DevThumb,$ProdThumb).Replace($DevRecent,$ProdRecent).Replace($DevInitFeed,$ProdInitFeed).Replace($DevInitEntry,$ProdInitEntry)| Set-Content -Path .\$ProdBindings
+(Get-Content -Path .\$ProdBindings).Replace($DevQueue,$ProdQueue).Replace($DevFile,$ProdFile).Replace($DevArchive,$ProdArchive).Replace($DevThumb,$ProdThumb).Replace($DevRecent,$ProdRecent).Replace($DevInitFeed,$ProdInitFeed).Replace($DevInitEntry,$ProdInitEntry)| Set-Content -Path .\$ProdBindings
 
 copy .\$DevBindings .\$VerBindings
-(Get-Content -Path .\$VerBindings).Replace($DevQueue,$VerQueue).Replace($DevFile,$VerFile).Replace($DevThumb,$VerThumb).Replace($DevRecent,$VerRecent).Replace($DevInitFeed,$VerInitFeed).Replace($DevInitEntry,$VerInitEntry)| Set-Content -Path .\$VerBindings
+(Get-Content -Path .\$VerBindings).Replace($DevQueue,$VerQueue).Replace($DevFile,$VerFile).Replace($DevArchive,$VerArchive).Replace($DevThumb,$VerThumb).Replace($DevRecent,$VerRecent).Replace($DevInitFeed,$VerInitFeed).Replace($DevInitEntry,$VerInitEntry)| Set-Content -Path .\$VerBindings
