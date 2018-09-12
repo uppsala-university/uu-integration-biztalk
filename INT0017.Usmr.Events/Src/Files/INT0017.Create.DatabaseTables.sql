@@ -22,7 +22,7 @@ CREATE TABLE [dbo].["UUSKLIST"]
             UF CHAR(3),
             KORT CHAR(4),
             FIN CHAR(3),
-            PROGR VARCHAR(5),
+            PROGR VARCHAR(10),
             AKT VARCHAR(3),
             TERMIN VARCHAR(5),
             PTAKT VARCHAR(5),
