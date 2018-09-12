@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="fd13a65d-3eaf-4338-b120-391f26a4938d" LowerBound="1.1" HigherBound="120.1">
+    <om:Element Type="Module" OID="fd13a65d-3eaf-4338-b120-391f26a4938d" LowerBound="1.1" HigherBound="110.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="INT0016.Ladok3.Client" />
         <om:Property Name="Signal" Value="False" />
@@ -106,7 +106,7 @@
                 </om:Element>
             </om:Element>
         </om:Element>
-        <om:Element Type="ServiceDeclaration" OID="83af544f-d91a-499c-a1cc-8ed799269599" ParentLink="Module_ServiceDeclaration" LowerBound="32.1" HigherBound="119.1">
+        <om:Element Type="ServiceDeclaration" OID="83af544f-d91a-499c-a1cc-8ed799269599" ParentLink="Module_ServiceDeclaration" LowerBound="32.1" HigherBound="109.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
@@ -197,92 +197,51 @@
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
                 </om:Element>
-                <om:Element Type="Scope" OID="fd141c1d-b33b-4924-888d-61d267bbf9c2" ParentLink="ServiceBody_Statement" LowerBound="57.1" HigherBound="115.1">
+                <om:Element Type="Scope" OID="fd141c1d-b33b-4924-888d-61d267bbf9c2" ParentLink="ServiceBody_Statement" LowerBound="57.1" HigherBound="105.1">
                     <om:Property Name="InitializedTransactionType" Value="True" />
                     <om:Property Name="IsSynchronized" Value="False" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="PopulateEnvelopeScope" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="Catch" OID="f47e3076-e51b-4679-92be-8f0d24a9a6c4" ParentLink="Scope_Catch" LowerBound="99.1" HigherBound="113.1">
-                        <om:Property Name="ExceptionName" Value="ex" />
-                        <om:Property Name="ExceptionType" Value="System.Exception" />
-                        <om:Property Name="IsFaultMessage" Value="False" />
+                    <om:Element Type="Send" OID="468858b7-7fc2-41d4-a50b-090292635321" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="64.1">
+                        <om:Property Name="PortName" Value="SendGetStudent_RequestPort" />
+                        <om:Property Name="MessageName" Value="LadokMessage" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="CatchException" />
+                        <om:Property Name="Name" Value="Send_2" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="Construct" OID="5cd00bff-8b4e-493c-a96c-d9fba1161353" ParentLink="Catch_Statement" LowerBound="102.1" HigherBound="112.1">
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="ConstructErrorMessage" />
-                            <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="MessageAssignment" OID="e5f7cd4a-26b7-4ecd-9ba4-ff0dab97fead" ParentLink="ComplexStatement_Statement" LowerBound="105.1" HigherBound="111.1">
-                                <om:Property Name="Expression" Value="ackMessage = &quot;Error in HandleAterbudEvent, see EventLog for further exception information.&quot;;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, &quot;HandleAterbudEvent\r\n&quot; + ex.Message, System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;TempXML.LoadXml(&quot;&lt;ns0:InternalReturnMessage xmlns:ns0=\&quot;http://Shared.Schemas.SdEvents.InternalReturnMessage\&quot;&gt;&lt;Ack&gt;false&lt;/Ack&gt;&lt;AckMessage&gt;&lt;/AckMessage&gt;&lt;ReturnMessage&gt;&lt;![CDATA[]]&gt;&lt;/ReturnMessage&gt;&lt;/ns0:InternalReturnMessage&gt;&quot;);&#xD;&#xA;ReturnMessage = TempXML;&#xD;&#xA;ReturnMessage.AckMessage = ackMessage;" />
-                                <om:Property Name="ReportToAnalyst" Value="False" />
-                                <om:Property Name="Name" Value="MessageAssignment_1" />
-                                <om:Property Name="Signal" Value="True" />
-                            </om:Element>
-                            <om:Element Type="MessageRef" OID="35bdcfd3-4317-40b9-83e8-780b0174b9f5" ParentLink="Construct_MessageRef" LowerBound="103.35" HigherBound="103.48">
-                                <om:Property Name="Ref" Value="ReturnMessage" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Signal" Value="False" />
-                            </om:Element>
-                        </om:Element>
                     </om:Element>
-                    <om:Element Type="Parallel" OID="aa493f05-ee8f-487f-a5a6-678883072f45" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="80.1">
+                    <om:Element Type="Receive" OID="50e8524b-9465-44d6-bd32-7212205b618a" ParentLink="ComplexStatement_Statement" LowerBound="64.1" HigherBound="66.1">
+                        <om:Property Name="Activate" Value="False" />
+                        <om:Property Name="PortName" Value="SendGetStudent_RequestPort" />
+                        <om:Property Name="MessageName" Value="StudentMessage" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Response" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="ParallelActions_1" />
-                        <om:Property Name="Signal" Value="False" />
-                        <om:Element Type="ParallelBranch" OID="696836e2-b7ea-4336-a13b-912c82706e9c" ParentLink="ReallyComplexStatement_Branch" LowerBound="67.1" HigherBound="71.1">
-                            <om:Property Name="IsGhostBranch" Value="True" />
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="ParallelBranch_1" />
-                            <om:Property Name="Signal" Value="False" />
-                            <om:Element Type="Send" OID="468858b7-7fc2-41d4-a50b-090292635321" ParentLink="ComplexStatement_Statement" LowerBound="67.1" HigherBound="69.1">
-                                <om:Property Name="PortName" Value="SendGetStudent_RequestPort" />
-                                <om:Property Name="MessageName" Value="LadokMessage" />
-                                <om:Property Name="OperationName" Value="Operation_1" />
-                                <om:Property Name="OperationMessageName" Value="Request" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="Send_2" />
-                                <om:Property Name="Signal" Value="True" />
-                            </om:Element>
-                            <om:Element Type="Receive" OID="50e8524b-9465-44d6-bd32-7212205b618a" ParentLink="ComplexStatement_Statement" LowerBound="69.1" HigherBound="71.1">
-                                <om:Property Name="Activate" Value="False" />
-                                <om:Property Name="PortName" Value="SendGetStudent_RequestPort" />
-                                <om:Property Name="MessageName" Value="StudentMessage" />
-                                <om:Property Name="OperationName" Value="Operation_1" />
-                                <om:Property Name="OperationMessageName" Value="Response" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="Receive_2" />
-                                <om:Property Name="Signal" Value="True" />
-                            </om:Element>
-                        </om:Element>
-                        <om:Element Type="ParallelBranch" OID="f1881781-6cee-490a-a216-e6325d200918" ParentLink="ReallyComplexStatement_Branch" LowerBound="74.1" HigherBound="78.1">
-                            <om:Property Name="IsGhostBranch" Value="True" />
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="ParallelBranch_2" />
-                            <om:Property Name="Signal" Value="False" />
-                            <om:Element Type="Send" OID="282f2fb4-9d57-44cd-b8cb-92e68ad8f260" ParentLink="ComplexStatement_Statement" LowerBound="74.1" HigherBound="76.1">
-                                <om:Property Name="PortName" Value="SendGetUtbildningstillfalle_AterbudEventRequestPort" />
-                                <om:Property Name="MessageName" Value="LadokMessage" />
-                                <om:Property Name="OperationName" Value="Operation_1" />
-                                <om:Property Name="OperationMessageName" Value="Request" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="Send_3" />
-                                <om:Property Name="Signal" Value="True" />
-                            </om:Element>
-                            <om:Element Type="Receive" OID="4960039a-3d9a-4aba-a9f8-4ce40ee9889d" ParentLink="ComplexStatement_Statement" LowerBound="76.1" HigherBound="78.1">
-                                <om:Property Name="Activate" Value="False" />
-                                <om:Property Name="PortName" Value="SendGetUtbildningstillfalle_AterbudEventRequestPort" />
-                                <om:Property Name="MessageName" Value="UtbildningstillfalleMessage" />
-                                <om:Property Name="OperationName" Value="Operation_1" />
-                                <om:Property Name="OperationMessageName" Value="Response" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="Receive_3" />
-                                <om:Property Name="Signal" Value="True" />
-                            </om:Element>
-                        </om:Element>
+                        <om:Property Name="Name" Value="Receive_2" />
+                        <om:Property Name="Signal" Value="True" />
                     </om:Element>
-                    <om:Element Type="Send" OID="48660613-acf1-4c67-8e33-f39f5e4823da" ParentLink="ComplexStatement_Statement" LowerBound="80.1" HigherBound="82.1">
+                    <om:Element Type="Send" OID="282f2fb4-9d57-44cd-b8cb-92e68ad8f260" ParentLink="ComplexStatement_Statement" LowerBound="66.1" HigherBound="68.1">
+                        <om:Property Name="PortName" Value="SendGetUtbildningstillfalle_AterbudEventRequestPort" />
+                        <om:Property Name="MessageName" Value="LadokMessage" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_3" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Receive" OID="4960039a-3d9a-4aba-a9f8-4ce40ee9889d" ParentLink="ComplexStatement_Statement" LowerBound="68.1" HigherBound="70.1">
+                        <om:Property Name="Activate" Value="False" />
+                        <om:Property Name="PortName" Value="SendGetUtbildningstillfalle_AterbudEventRequestPort" />
+                        <om:Property Name="MessageName" Value="UtbildningstillfalleMessage" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Response" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Receive_3" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Send" OID="48660613-acf1-4c67-8e33-f39f5e4823da" ParentLink="ComplexStatement_Statement" LowerBound="70.1" HigherBound="72.1">
                         <om:Property Name="PortName" Value="SendGetUtbildningsinstans_AterbudEventRequestPort" />
                         <om:Property Name="MessageName" Value="UtbildningstillfalleMessage" />
                         <om:Property Name="OperationName" Value="Operation_1" />
@@ -291,7 +250,7 @@
                         <om:Property Name="Name" Value="Send_4" />
                         <om:Property Name="Signal" Value="True" />
                     </om:Element>
-                    <om:Element Type="Receive" OID="ad71b219-25ca-4a45-839b-1fd31f708bba" ParentLink="ComplexStatement_Statement" LowerBound="82.1" HigherBound="84.1">
+                    <om:Element Type="Receive" OID="ad71b219-25ca-4a45-839b-1fd31f708bba" ParentLink="ComplexStatement_Statement" LowerBound="72.1" HigherBound="74.1">
                         <om:Property Name="Activate" Value="False" />
                         <om:Property Name="PortName" Value="SendGetUtbildningsinstans_AterbudEventRequestPort" />
                         <om:Property Name="MessageName" Value="UtbildningsinstansMessage" />
@@ -301,45 +260,45 @@
                         <om:Property Name="Name" Value="Receive_4" />
                         <om:Property Name="Signal" Value="True" />
                     </om:Element>
-                    <om:Element Type="Construct" OID="c71c4685-f84d-4248-8a8b-ee56bdb40b68" ParentLink="ComplexStatement_Statement" LowerBound="84.1" HigherBound="90.1">
+                    <om:Element Type="Construct" OID="c71c4685-f84d-4248-8a8b-ee56bdb40b68" ParentLink="ComplexStatement_Statement" LowerBound="74.1" HigherBound="80.1">
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="ConstructEnvelope" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="MessageRef" OID="13ca9f83-127d-4819-a97a-15ee63e09c55" ParentLink="Construct_MessageRef" LowerBound="85.31" HigherBound="85.44">
+                        <om:Element Type="MessageRef" OID="13ca9f83-127d-4819-a97a-15ee63e09c55" ParentLink="Construct_MessageRef" LowerBound="75.31" HigherBound="75.44">
                             <om:Property Name="Ref" Value="LadokEnvalope" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="Transform" OID="668e626e-4ce1-4559-9e68-30a6034e0d29" ParentLink="ComplexStatement_Statement" LowerBound="87.1" HigherBound="89.1">
+                        <om:Element Type="Transform" OID="668e626e-4ce1-4559-9e68-30a6034e0d29" ParentLink="ComplexStatement_Statement" LowerBound="77.1" HigherBound="79.1">
                             <om:Property Name="ClassName" Value="INT0016.Ladok3.Client.Maps.AterbudEvent.AterbudEvent_to_Envelope" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="Transform_to_Envelope" />
                             <om:Property Name="Signal" Value="False" />
-                            <om:Element Type="MessagePartRef" OID="d2239685-b298-4f93-8257-7c60ffd1d60c" ParentLink="Transform_OutputMessagePartRef" LowerBound="88.36" HigherBound="88.49">
+                            <om:Element Type="MessagePartRef" OID="d2239685-b298-4f93-8257-7c60ffd1d60c" ParentLink="Transform_OutputMessagePartRef" LowerBound="78.36" HigherBound="78.49">
                                 <om:Property Name="MessageRef" Value="LadokEnvalope" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_4" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
-                            <om:Element Type="MessagePartRef" OID="fcf56218-672a-4194-bbfa-c2791a30dc67" ParentLink="Transform_InputMessagePartRef" LowerBound="88.119" HigherBound="88.131">
+                            <om:Element Type="MessagePartRef" OID="fcf56218-672a-4194-bbfa-c2791a30dc67" ParentLink="Transform_InputMessagePartRef" LowerBound="78.119" HigherBound="78.131">
                                 <om:Property Name="MessageRef" Value="LadokMessage" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_3" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
-                            <om:Element Type="MessagePartRef" OID="cf53dc98-b636-4d9a-ba28-ab459c09af1b" ParentLink="Transform_InputMessagePartRef" LowerBound="88.133" HigherBound="88.158">
+                            <om:Element Type="MessagePartRef" OID="cf53dc98-b636-4d9a-ba28-ab459c09af1b" ParentLink="Transform_InputMessagePartRef" LowerBound="78.133" HigherBound="78.158">
                                 <om:Property Name="MessageRef" Value="UtbildningsinstansMessage" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_5" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
-                            <om:Element Type="MessagePartRef" OID="1c284769-b498-4927-8500-e7c4ad3d26c0" ParentLink="Transform_InputMessagePartRef" LowerBound="88.160" HigherBound="88.187">
+                            <om:Element Type="MessagePartRef" OID="1c284769-b498-4927-8500-e7c4ad3d26c0" ParentLink="Transform_InputMessagePartRef" LowerBound="78.160" HigherBound="78.187">
                                 <om:Property Name="MessageRef" Value="UtbildningstillfalleMessage" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_6" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
-                            <om:Element Type="MessagePartRef" OID="1517c09d-b8e0-44cb-bf81-2082bf577072" ParentLink="Transform_InputMessagePartRef" LowerBound="88.189" HigherBound="88.203">
+                            <om:Element Type="MessagePartRef" OID="1517c09d-b8e0-44cb-bf81-2082bf577072" ParentLink="Transform_InputMessagePartRef" LowerBound="78.189" HigherBound="78.203">
                                 <om:Property Name="MessageRef" Value="StudentMessage" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_7" />
@@ -347,36 +306,60 @@
                             </om:Element>
                         </om:Element>
                     </om:Element>
-                    <om:Element Type="Construct" OID="16898d6e-52b1-426f-8e3a-5a424b634371" ParentLink="ComplexStatement_Statement" LowerBound="90.1" HigherBound="96.1">
+                    <om:Element Type="Construct" OID="16898d6e-52b1-426f-8e3a-5a424b634371" ParentLink="ComplexStatement_Statement" LowerBound="80.1" HigherBound="86.1">
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="ConstructReturnMessage" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="Transform" OID="5bbaff2c-f94e-4b30-9914-de664fcc07e4" ParentLink="ComplexStatement_Statement" LowerBound="93.1" HigherBound="95.1">
+                        <om:Element Type="Transform" OID="5bbaff2c-f94e-4b30-9914-de664fcc07e4" ParentLink="ComplexStatement_Statement" LowerBound="83.1" HigherBound="85.1">
                             <om:Property Name="ClassName" Value="INT0016.Ladok3.Client.Maps.AterbudEvent.AterbudEvent_to_RetrunMessage" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="Transform_to_ReturnMessage" />
                             <om:Property Name="Signal" Value="False" />
-                            <om:Element Type="MessagePartRef" OID="1eb12e97-9f41-4993-9337-e79a01ee6e13" ParentLink="Transform_InputMessagePartRef" LowerBound="94.124" HigherBound="94.137">
+                            <om:Element Type="MessagePartRef" OID="1eb12e97-9f41-4993-9337-e79a01ee6e13" ParentLink="Transform_InputMessagePartRef" LowerBound="84.124" HigherBound="84.137">
                                 <om:Property Name="MessageRef" Value="LadokEnvalope" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_1" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
-                            <om:Element Type="MessagePartRef" OID="19e8d3ec-c641-46dd-956f-dd05a0a6e038" ParentLink="Transform_OutputMessagePartRef" LowerBound="94.36" HigherBound="94.49">
+                            <om:Element Type="MessagePartRef" OID="19e8d3ec-c641-46dd-956f-dd05a0a6e038" ParentLink="Transform_OutputMessagePartRef" LowerBound="84.36" HigherBound="84.49">
                                 <om:Property Name="MessageRef" Value="ReturnMessage" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="MessagePartReference_2" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
                         </om:Element>
-                        <om:Element Type="MessageRef" OID="45151704-08c9-4a88-9ce6-a417124bcc42" ParentLink="Construct_MessageRef" LowerBound="91.31" HigherBound="91.44">
+                        <om:Element Type="MessageRef" OID="45151704-08c9-4a88-9ce6-a417124bcc42" ParentLink="Construct_MessageRef" LowerBound="81.31" HigherBound="81.44">
                             <om:Property Name="Ref" Value="ReturnMessage" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
                     </om:Element>
+                    <om:Element Type="Catch" OID="f47e3076-e51b-4679-92be-8f0d24a9a6c4" ParentLink="Scope_Catch" LowerBound="89.1" HigherBound="103.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CatchException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="5cd00bff-8b4e-493c-a96c-d9fba1161353" ParentLink="Catch_Statement" LowerBound="92.1" HigherBound="102.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructErrorMessage" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="e5f7cd4a-26b7-4ecd-9ba4-ff0dab97fead" ParentLink="ComplexStatement_Statement" LowerBound="95.1" HigherBound="101.1">
+                                <om:Property Name="Expression" Value="ackMessage = &quot;Error in HandleAterbudEvent, see EventLog for further exception information.&quot;;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, &quot;HandleAterbudEvent\r\n&quot; + ex.Message, System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;TempXML.LoadXml(&quot;&lt;ns0:InternalReturnMessage xmlns:ns0=\&quot;http://Shared.Schemas.SdEvents.InternalReturnMessage\&quot;&gt;&lt;Ack&gt;false&lt;/Ack&gt;&lt;AckMessage&gt;&lt;/AckMessage&gt;&lt;ReturnMessage&gt;&lt;![CDATA[]]&gt;&lt;/ReturnMessage&gt;&lt;/ns0:InternalReturnMessage&gt;&quot;);&#xD;&#xA;ReturnMessage = TempXML;&#xD;&#xA;ReturnMessage.AckMessage = ackMessage;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_1" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="35bdcfd3-4317-40b9-83e8-780b0174b9f5" ParentLink="Construct_MessageRef" LowerBound="93.35" HigherBound="93.48">
+                                <om:Property Name="Ref" Value="ReturnMessage" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
                 </om:Element>
-                <om:Element Type="Send" OID="3dc1c1d9-107b-4f48-ada1-6bc542c9c62d" ParentLink="ServiceBody_Statement" LowerBound="115.1" HigherBound="117.1">
+                <om:Element Type="Send" OID="3dc1c1d9-107b-4f48-ada1-6bc542c9c62d" ParentLink="ServiceBody_Statement" LowerBound="105.1" HigherBound="107.1">
                     <om:Property Name="PortName" Value="ReceiveAterbudEventPort" />
                     <om:Property Name="MessageName" Value="ReturnMessage" />
                     <om:Property Name="OperationName" Value="Operation_1" />
@@ -516,24 +499,14 @@ module INT0016.Ladok3.Client
             {
                 body
                 {
-                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("aa493f05-ee8f-487f-a5a6-678883072f45")]
-                    parallel
-                    {
-                        task
-                        {
-                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("468858b7-7fc2-41d4-a50b-090292635321")]
-                            send (SendGetStudent_RequestPort.Operation_1, LadokMessage);
-                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("50e8524b-9465-44d6-bd32-7212205b618a")]
-                            receive (SendGetStudent_RequestPort.Operation_1, StudentMessage);
-                        }
-                        task
-                        {
-                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("282f2fb4-9d57-44cd-b8cb-92e68ad8f260")]
-                            send (SendGetUtbildningstillfalle_AterbudEventRequestPort.Operation_1, LadokMessage);
-                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4960039a-3d9a-4aba-a9f8-4ce40ee9889d")]
-                            receive (SendGetUtbildningstillfalle_AterbudEventRequestPort.Operation_1, UtbildningstillfalleMessage);
-                        }
-                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("468858b7-7fc2-41d4-a50b-090292635321")]
+                    send (SendGetStudent_RequestPort.Operation_1, LadokMessage);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("50e8524b-9465-44d6-bd32-7212205b618a")]
+                    receive (SendGetStudent_RequestPort.Operation_1, StudentMessage);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("282f2fb4-9d57-44cd-b8cb-92e68ad8f260")]
+                    send (SendGetUtbildningstillfalle_AterbudEventRequestPort.Operation_1, LadokMessage);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("4960039a-3d9a-4aba-a9f8-4ce40ee9889d")]
+                    receive (SendGetUtbildningstillfalle_AterbudEventRequestPort.Operation_1, UtbildningstillfalleMessage);
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("48660613-acf1-4c67-8e33-f39f5e4823da")]
                     send (SendGetUtbildningsinstans_AterbudEventRequestPort.Operation_1, UtbildningstillfalleMessage);
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("ad71b219-25ca-4a45-839b-1fd31f708bba")]
