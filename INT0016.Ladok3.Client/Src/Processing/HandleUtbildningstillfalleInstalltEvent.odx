@@ -183,7 +183,7 @@
                 </om:Element>
                 <om:Element Type="Scope" OID="72dc7eed-3cd9-4ad3-931a-921a03e2bc69" ParentLink="ServiceBody_Statement" LowerBound="53.1" HigherBound="94.1">
                     <om:Property Name="InitializedTransactionType" Value="True" />
-                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="IsSynchronized" Value="True" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Scope_1" />
                     <om:Property Name="Signal" Value="True" />
@@ -468,7 +468,7 @@ module INT0016.Ladok3.Client
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("3d9d8987-f1e4-4556-92b0-3d9c855263e3")]
             activate ((BTS.MessageType == "http://schemas.ladok.se/utbildningsinformation#UtbildningstillfalleInstalltEvent") && (BTS.Operation == "RouteEventsOperation"))receive (ReceveUtbildningstillfalleInstalltEvent.Operation_1, LadokEvent);
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("72dc7eed-3cd9-4ad3-931a-921a03e2bc69")]
-            scope
+            scope synchronized
             {
                 body
                 {

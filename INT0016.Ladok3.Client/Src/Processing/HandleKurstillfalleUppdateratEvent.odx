@@ -92,7 +92,7 @@
                 </om:Element>
                 <om:Element Type="Scope" OID="acd61264-848a-4401-be8c-888aeea34b12" ParentLink="ServiceBody_Statement" LowerBound="47.1" HigherBound="101.1">
                     <om:Property Name="InitializedTransactionType" Value="True" />
-                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="IsSynchronized" Value="True" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="PopulateEnvelopeScope" />
                     <om:Property Name="Signal" Value="True" />
@@ -429,7 +429,7 @@ module INT0016.Ladok3.Client
             ackMessage = "";
             TempXML = new System.Xml.XmlDocument();
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("acd61264-848a-4401-be8c-888aeea34b12")]
-            scope
+            scope synchronized
             {
                 body
                 {

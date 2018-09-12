@@ -358,7 +358,7 @@
                 </om:Element>
                 <om:Element Type="Scope" OID="2a7c3306-57c6-4991-8b13-a530b66ea22d" ParentLink="ServiceBody_Statement" LowerBound="100.1" HigherBound="216.1">
                     <om:Property Name="InitializedTransactionType" Value="True" />
-                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="IsSynchronized" Value="True" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="PopulateEnvelopeScope" />
                     <om:Property Name="Signal" Value="True" />
@@ -935,7 +935,7 @@ module INT0016.Ladok3.Client
             strMsg = "";
             tmpQuery = new System.Xml.XmlDocument();
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("2a7c3306-57c6-4991-8b13-a530b66ea22d")]
-            scope
+            scope synchronized
             {
                 body
                 {
