@@ -1,7 +1,7 @@
 
 Create PROCEDURE  [dbo].[uusmrCreateStudentRecord]
-           @PNR CHAR(11),
-            @GPNR CHAR(11),
+           @PNR CHAR(13),
+            @GPNR CHAR(13),
             @EFTERNAMN VARCHAR(255),
             @FORNAMN VARCHAR(255),
             @INLDATUM_PERS CHAR(10),
@@ -115,7 +115,7 @@ END
 go
 
 Create PROCEDURE  [dbo].[uusmrUpdateStudentRecord]  
-            @PNR CHAR(11),
+            @PNR CHAR(13),
             @EFTERNAMN VARCHAR(255),
             @FORNAMN VARCHAR(255),
             @INLDATUM_PERS CHAR(10),
@@ -149,7 +149,7 @@ BEGIN
        END
 go
 CREATE  PROCEDURE  [dbo].[uusmrSetDeceased]
-            @PNR CHAR(11),
+            @PNR CHAR(13),
             @STATUS CHAR(1)
 
 AS

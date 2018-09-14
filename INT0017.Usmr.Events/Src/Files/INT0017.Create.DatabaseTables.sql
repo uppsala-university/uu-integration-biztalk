@@ -1,7 +1,7 @@
 CREATE TABLE [dbo].["UUSKLIST"]
 (
-            PNR CHAR(11),
-            GPNR CHAR(11),
+            PNR CHAR(13),
+            GPNR CHAR(13),
             EFTERNAMN VARCHAR(255),
             FORNAMN VARCHAR(255),
             INLDATUM_PERS CHAR(10),
