@@ -23,6 +23,12 @@ namespace BizTalk.Adapter.Atom
         private string firstEntry;
         private bool findFirst;
 
+        private bool useLogging;
+        private string logSource;
+        private bool logEventId;
+        private bool logUri;
+        private string logContentXpath;
+
         private int feedMax = 0;
 
         public SecuritySettings SecuritySettings
@@ -46,6 +52,14 @@ namespace BizTalk.Adapter.Atom
         public string FirstEntry { get { return firstEntry; } }
         public bool FirdFirst { get { return findFirst; } }
 
+
+
+        public bool UseLogging { get { return useLogging; } }
+        public string LogSource { get { return logSource; } }
+        public bool LogEventId { get { return logEventId; } }
+        public bool LogUri { get { return logUri; } }
+        public string LogContentXpath { get { return logContentXpath; } }
+
         public AtomReceiveProperties(string uri)
         {
             try
@@ -62,6 +76,13 @@ namespace BizTalk.Adapter.Atom
                 this.firstFeed = String.Empty;
                 this.firstEntry = String.Empty;
                 this.feedMax = 10;
+
+                this.useLogging = false;
+                this.logSource = "BizTalk Application";
+                this.logEventId = false;
+                this.logUri = false;
+                this.logContentXpath = string.Empty;
+
             }
             finally
             {
@@ -118,8 +139,6 @@ namespace BizTalk.Adapter.Atom
                         securitySettings = new SecuritySettings();
 
                     securitySettings.Credentials = new NetworkCredential(StringIFNull(userName), StringIFNull(password));
-
-
                 }
 
                 XmlNode clientCertificate = configDOM.SelectSingleNode("Config/clientCertificate");
@@ -154,6 +173,37 @@ namespace BizTalk.Adapter.Atom
                 {
                     this.feedMax = Int32.Parse(feedMax.InnerText);
                 }
+
+                XmlNode useLoggingNode = configDOM.SelectSingleNode("Config/useLogging");
+                if (useLoggingNode != null)
+                {
+                    this.useLogging = Boolean.Parse(useLoggingNode.InnerText);
+                }
+
+                XmlNode logSourceNode = configDOM.SelectSingleNode("Config/logSource");
+                if (logSourceNode != null && !string.IsNullOrWhiteSpace(logSourceNode.InnerText))
+                {
+                    this.logSource = logSourceNode.InnerText;
+                }
+
+                XmlNode logEventIdNode = configDOM.SelectSingleNode("Config/logEventId");
+                if (logEventIdNode != null)
+                {
+                    this.logEventId = Boolean.Parse(logEventIdNode.InnerText);
+                }
+
+                XmlNode logUriNode = configDOM.SelectSingleNode("Config/logUri");
+                if (logUriNode != null)
+                {
+                    this.logUri = Boolean.Parse(logUriNode.InnerText);
+                }
+
+                XmlNode logContentXpathNode = configDOM.SelectSingleNode("Config/logContentXpath");
+                if (logContentXpathNode != null)
+                {
+                    this.logContentXpath = logContentXpathNode.InnerText;
+                }
+
             }
             catch (Exception ex)
             {
