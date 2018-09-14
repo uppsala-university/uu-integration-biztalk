@@ -30,8 +30,8 @@ $TestInitFeed  = 'https://api.mit-integration.ladok.se/uppfoljning/feed/CHANGE_M
 $ProdInitFeed  = 'https://api.ladok.se/uppfoljning/feed/CHANGE_ME'
 $VerInitFeed  = 'https://api.verifiering4.ladok.se/uppfoljning/feed/CHANGE_ME'
 
-$DevInitEntry  = '74ad4da9-31e0-11e8-b65f-0778fef44f1b'
-$TestInitEntry  = '74ad4da9-31e0-11e8-b65f-0778fef44f1b'
+$DevInitEntry  = '0b8dbce3-ad05-11e8-9494-c630dded4f0c'
+$TestInitEntry  = ''
 $ProdInitEntry  = ''
 $VerInitEntry  = ''
 
