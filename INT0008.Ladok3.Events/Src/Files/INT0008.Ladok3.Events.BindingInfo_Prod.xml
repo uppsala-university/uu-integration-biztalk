@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="2" TotalEndpoints="2">
-  <Timestamp>2018-09-12T14:44:31.3828225+02:00</Timestamp>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="3" TotalEndpoints="3">
+  <Timestamp>2018-09-14T10:33:01.0403835+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0008.Ladok3.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0008.Ladok3.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
       <TrackedSchemas />
     </ModuleRef>
-    <ModuleRef Name="INT0008.Ladok3.Events" Version="1.0.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0008.Ladok3.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
+    <ModuleRef Name="INT0008.Ladok3.Events" Version="1.1.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0008.Ladok3.Events, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services>
         <Service Name="INT0008.Ladok3.Events.SendToRoutingOrchestration" State="Unenlisted" TrackingOption="None" Description="">
           <Ports />
@@ -21,8 +21,13 @@
               <ReceivePortRef Name="INT0008.Atom.Events" />
             </Port>
             <Port Name="SendToQueue" Modifier="1" BindingOption="1">
-              <SendPortRef xsi:nil="true" />
-              <DistributionListRef Name="INT0008.SD.Send_Ladok3Envelopes" />
+              <SendPortRef Name="INT0008.SD.Send_Ladok3ForDistribution" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendToArchive" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0008.SD.Send_Ladok3ForArchive" />
+              <DistributionListRef xsi:nil="true" />
               <ReceivePortRef xsi:nil="true" />
             </Port>
           </Ports>
@@ -34,7 +39,7 @@
     </ModuleRef>
   </ModuleRefCollection>
   <SendPortCollection>
-    <SendPort Name="INT0008.SD.Send_Ladok3ForDistribution" IsStatic="true" IsTwoWay="false" BindingOption="0">
+    <SendPort Name="INT0008.SD.Send_Ladok3ForDistribution" IsStatic="true" IsTwoWay="false" BindingOption="1">
       <Description>sd-distribution QUEUE</Description>
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
@@ -75,7 +80,7 @@
       <RouteFailedMessage>false</RouteFailedMessage>
       <ApplicationName>INT0008.Ladok3.Events</ApplicationName>
     </SendPort>
-    <SendPort Name="INT0008.SD.Send_Ladok3ForArchive" IsStatic="true" IsTwoWay="false" BindingOption="0">
+    <SendPort Name="INT0008.SD.Send_Ladok3ForArchive" IsStatic="true" IsTwoWay="false" BindingOption="1">
       <Description xsi:nil="true" />
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
@@ -85,8 +90,8 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-09-11T22:00:00</FromTime>
-        <ToTime>2018-09-12T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>true</Primary>
         <OrderedDelivery>true</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
@@ -99,8 +104,8 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-09-11T22:00:00</FromTime>
-        <ToTime>2018-09-12T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>false</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
@@ -117,18 +122,7 @@
       <ApplicationName>INT0008.Ladok3.Events</ApplicationName>
     </SendPort>
   </SendPortCollection>
-  <DistributionListCollection>
-    <DistributionList Name="INT0008.SD.Send_Ladok3Envelopes">
-      <SendPorts>
-        <SendPortRef Name="INT0008.SD.Send_Ladok3ForDistribution" />
-        <SendPortRef Name="INT0008.SD.Send_Ladok3ForArchive" />
-      </SendPorts>
-      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Filter>
-      <ApplicationName>INT0008.Ladok3.Events</ApplicationName>
-      <Description xsi:nil="true" />
-    </DistributionList>
-  </DistributionListCollection>
+  <DistributionListCollection />
   <ReceivePortCollection>
     <ReceivePort Name="INT0008.Atom.Events" IsTwoWay="false" BindingOption="1">
       <Description xsi:nil="true" />
@@ -147,7 +141,7 @@
           <ReceiveLocationEndDate>2018-06-19T23:59:59</ReceiveLocationEndDate>
           <ReceiveLocationTransportType Name="Atom" Capabilities="6153" ConfigurationClsid="4843c095-0752-45a9-a741-79e064effa87" />
           <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;https://api.ladok.se/uppfoljning/feed/recent&amp;lt;/uri&amp;gt;&amp;lt;clientCertificate&amp;gt;&amp;lt;/clientCertificate&amp;gt;&amp;lt;pollingInterval&amp;gt;30&amp;lt;/pollingInterval&amp;gt;&amp;lt;pollingIntervalUnit&amp;gt;seconds&amp;lt;/pollingIntervalUnit&amp;gt;&amp;lt;numberOfEvents&amp;gt;10&amp;lt;/numberOfEvents&amp;gt;&amp;lt;address&amp;gt;https://api.ladok.se/uppfoljning/feed/recent&amp;lt;/address&amp;gt;&amp;lt;stateFile&amp;gt;\\UUC-BIZ015.user.uu.se\ladok3-atom$\State\state.xml&amp;lt;/stateFile&amp;gt;&amp;lt;firstFeed&amp;gt;https://api.ladok.se/uppfoljning/feed/CHANGE_ME&amp;lt;/firstFeed&amp;gt;&amp;lt;firstEntry&amp;gt;&amp;lt;/firstEntry&amp;gt;&amp;lt;findFirst&amp;gt;false&amp;lt;/findFirst&amp;gt;&amp;lt;feedMax&amp;gt;10&amp;lt;/feedMax&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
-          <ReceivePipeline Name="INT0008.Ladok3.Events.Pipelines.ReceiveLadokEvents" FullyQualifiedName="INT0008.Ladok3.Events.Pipelines.ReceiveLadokEvents, INT0008.Ladok3.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipeline Name="INT0008.Ladok3.Events.Pipelines.ReceiveLadokEvents" FullyQualifiedName="INT0008.Ladok3.Events.Pipelines.ReceiveLadokEvents, INT0008.Ladok3.Events, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
           <ReceivePipelineData xsi:nil="true" />
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />

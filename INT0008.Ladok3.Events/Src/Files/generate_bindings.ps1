@@ -16,7 +16,7 @@ $VerFile  = '\\uuc-biz008-t.exchange-test.its.uu.se\ladok3-atom$'
 
 $DevArchive  = 'C:\integrations\Archive'
 $TestArchive  = ''
-$ProdArchive  = ''
+$ProdArchive  = \\uuc-ladokfs001.its.uu.se\BizTalk-root$\Archive''
 $VerArchive  = ''
 
 $DevThumb  = '7B6E9150DD5B9EA485F23B1393398F583F53D90E'
