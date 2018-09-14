@@ -1,6 +1,6 @@
 Create PROCEDURE  [dbo].[uusmrPnrChangeProc]
-    @PNR  char(11), 
-    @GPNR char(11),
+    @PNR  char(13), 
+    @GPNR char(13),
             @INLDATUM_PERS char(10)
 AS
 BEGIN  
