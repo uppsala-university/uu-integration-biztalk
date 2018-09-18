@@ -14,6 +14,11 @@ $TestFile  = '\\uuc-biz025-t.exchange-test.its.uu.se\ladok3-atom$'
 $ProdFile  = '\\UUC-BIZ015.user.uu.se\ladok3-atom$'
 $VerFile  = '\\uuc-biz008-t.exchange-test.its.uu.se\ladok3-atom$'
 
+$DevArchiveFile = 'C:\integrations\Archive\sd-distribution'
+$TestArchiveFile = '\\uuc-biz025-t.exchange-test.its.uu.se\ladok3-atom$\archive'
+$VerArchiveFile = '\\uuc-biz008-t.exchange-test.its.uu.se\ladok3-atom$\archive'
+$ProdArchiveFile = '\\uuc-ladokfs001.its.uu.se\BizTalk-root$'
+
 $DevThumb  = '7B6E9150DD5B9EA485F23B1393398F583F53D90E'
 $TestThumb  = '7B6E9150DD5B9EA485F23B1393398F583F53D90E'
 $ProdThumb  = ''
