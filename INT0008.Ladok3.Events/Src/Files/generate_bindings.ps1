@@ -42,10 +42,10 @@ $VerInitEntry  = ''
 
 
 copy .\$DevBindings .\$TestBindings
-(Get-Content -Path .\$TestBindings).Replace($DevQueue,$TestQueue).Replace($DevFile,$TestFile).Replace($DevThumb,$TestThumb).Replace($DevRecent,$TestRecent).Replace($DevInitFeed,$TestInitFeed).Replace($DevInitEntry,$TestInitEntry)| Set-Content -Path .\$TestBindings
+(Get-Content -Path .\$TestBindings).Replace($DevQueue,$TestQueue).Replace($DevFile,$TestFile).Replace($DevArchiveFile,$TestArchiveFile).Replace($DevThumb,$TestThumb).Replace($DevRecent,$TestRecent).Replace($DevInitFeed,$TestInitFeed).Replace($DevInitEntry,$TestInitEntry)| Set-Content -Path .\$TestBindings
 
 copy .\$DevBindings .\$ProdBindings
-(Get-Content -Path .\$ProdBindings).Replace($DevQueue,$ProdQueue).Replace($DevFile,$ProdFile).Replace($DevThumb,$ProdThumb).Replace($DevRecent,$ProdRecent).Replace($DevInitFeed,$ProdInitFeed).Replace($DevInitEntry,$ProdInitEntry)| Set-Content -Path .\$ProdBindings
+(Get-Content -Path .\$ProdBindings).Replace($DevQueue,$ProdQueue).Replace($DevFile,$ProdFile).Replace($DevArchiveFile,$ProdArchiveFile).Replace($DevThumb,$ProdThumb).Replace($DevRecent,$ProdRecent).Replace($DevInitFeed,$ProdInitFeed).Replace($DevInitEntry,$ProdInitEntry)| Set-Content -Path .\$ProdBindings
 
 copy .\$DevBindings .\$VerBindings
-(Get-Content -Path .\$VerBindings).Replace($DevQueue,$VerQueue).Replace($DevFile,$VerFile).Replace($DevThumb,$VerThumb).Replace($DevRecent,$VerRecent).Replace($DevInitFeed,$VerInitFeed).Replace($DevInitEntry,$VerInitEntry)| Set-Content -Path .\$VerBindings
+(Get-Content -Path .\$VerBindings).Replace($DevQueue,$VerQueue).Replace($DevFile,$VerFile).Replace($DevArchiveFile,$VerArchiveFile).Replace($DevThumb,$VerThumb).Replace($DevRecent,$VerRecent).Replace($DevInitFeed,$VerInitFeed).Replace($DevInitEntry,$VerInitEntry)| Set-Content -Path .\$VerBindings
