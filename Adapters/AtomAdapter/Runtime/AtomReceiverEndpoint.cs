@@ -117,6 +117,42 @@ namespace BizTalk.Adapter.Atom
             }
         }
 
+        private void Log(Entry entry, string uri)
+        {
+            if (this.properties.UseLogging)
+            {
+                try
+                {
+                    string content = entry.Content;
+                    if (!string.IsNullOrWhiteSpace(this.properties.LogContentXpath))
+                    {
+                        XmlDocument xml = new XmlDocument();
+                        xml.LoadXml(content);
+                        XmlNode node = xml.SelectSingleNode(this.properties.LogContentXpath.Trim());
+                        if (node != null)
+                            content = node.InnerText;
+                    }
+
+                    string format = "[AtomAdapter] {0}{1}{2}{3}{4}{5}{6}{7}";
+                    string message = string.Format(format,
+                        this.properties.LogEventId ? "[Entry] " : "",
+                        this.properties.LogEventId ? entry.Id : "",
+                        this.properties.LogEventId ? " " : "",
+                        "[Event] ",
+                        content,
+                        this.properties.LogUri ? " " : "",
+                        this.properties.LogUri ? "[Feed] " : "",
+                        this.properties.LogUri ? uri : ""
+                        );
+                    System.Diagnostics.EventLog.WriteEntry(this.properties.LogSource, message);
+                }
+                catch (Exception e)
+                {
+                    throw new InvalidConfiguration(string.Format("Unable to log using current logging configuration. Exception message: {0}", e.Message));
+                }
+            }
+        }
+
         private IBaseMessage CreateMessage(Shared.Components.Entry message)
         {
 
@@ -148,7 +184,6 @@ namespace BizTalk.Adapter.Atom
             bool needToLeave = false;
 
             busy = true;
-
 
             try
             {
@@ -187,9 +222,9 @@ namespace BizTalk.Adapter.Atom
                     {
                         if (discard == false)
                         {
+                            Log(entry, feed.Uri);
                             orderedEvent = new ManualResetEvent(false);
                             transaction = new CommittableTransaction();
-
                             atomState.LastEntryId = entry.Id;
                             atomState.LastUpdated = feed.Updated;
                             atomState.LastFeed = feed.Uri;
