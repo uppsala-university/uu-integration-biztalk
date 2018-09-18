@@ -10,8 +10,8 @@ $VerQueue  = 'OS:UUC-MSMQSRV001'
 
 $Userreplace = 'REPLACEUSER'
 $TestDBuser  = 'sd-usmr-test-writer'
-$VerDBuser  =  'someuser'
-$ProdDBuser  = 'someuser'
+$VerDBuser  =  'VerDBuser'
+$ProdDBuser  = 'sd-usmr-writer'
 
 $DevFile  = 'C:\Integrations\INT0017.Usmr.Events'
 $TestFile  = '\\uuc-biz025-t.exchange-test.its.uu.se\usmr$'
@@ -21,7 +21,7 @@ $VerFile  = '\\uuc-biz008-t.exchange-test.its.uu.se\usmr$'
 $DevDB  = 'mssql://localhost:1433//sd-usmr-test-db'
 $TestDB  = 'mssql://SQL-AG1.exchange-test.its.uu.se:1433//sd-usmr-test-db'
 $VerDB  =  'Verdatabasename'
-$ProdDB  = 'Proddatabasename'
+$ProdDB  = 'mssql://SQL-AG1.user.uu.se:1433//sd-usmr-db'
 
 copy .\$DevBindings .\$TestBindings
 (Get-Content -Path .\$TestBindings).Replace($DevDB,$TestDB) | Set-Content -Path .\$TestBindings
