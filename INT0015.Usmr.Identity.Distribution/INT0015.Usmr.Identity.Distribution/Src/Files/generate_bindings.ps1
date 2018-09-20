@@ -11,12 +11,12 @@ $VerQueue  = 'OS:UUC-MSMQSRV001'
 $Userreplace = 'REPLACEUSER'
 $TestDBuser  = 'sd-usmr-test-writer'
 $VerDBuser  =  'sd-usmr-test-writer'
-$ProdDBuser  = 'someuser'
+$ProdDBuser  = 'sd-usmr-writer'
  
 $DevDB  = 'mssql://localhost:1433//sd-usmr-test-db'
 $TestDB  = 'mssql://SQL-AG1.exchange-test.its.uu.se:1433//sd-usmr-test-db'
 $VerDB  =  'mssql://SQL-AG1.exchange-test.its.uu.se:1433//sd-usmr-test-db'
-$ProdDB  = 'Proddatabasename'
+$ProdDB  = 'mssql://SQL-AG1.user.uu.se:1433//sd-usmr-db'
 
 copy .\$DevBindings .\$TestBindings
 (Get-Content -Path .\$TestBindings).Replace($DevDB,$TestDB) | Set-Content -Path .\$TestBindings
