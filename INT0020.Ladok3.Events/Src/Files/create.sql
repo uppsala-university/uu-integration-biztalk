@@ -8,6 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+/******* EVENT TABLE *********/
 CREATE TABLE [dbo].[Ladok3Events](
 	[id] [bigint] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[event] [varchar](max) NOT NULL,
@@ -17,6 +18,8 @@ CREATE TABLE [dbo].[Ladok3Events](
 
 GO
 
+/******* ADD EVENT TO DB *********/
+
 CREATE PROCEDURE addEvent @event VARCHAR(MAX)
 
 AS
@@ -25,6 +28,7 @@ INSERT INTO [dbo].[Ladok3Events] ([event]) VALUES (@event);
 
 GO
 
+/******* SAVE ENVELOPE TO DB *********/
 CREATE PROCEDURE saveEnvelope @id BIGINT, @envelope VARCHAR(MAX)
 
 AS
@@ -34,6 +38,7 @@ WHERE [id] = @id;
 
 GO
 
+/***** EVENTS FOR PROCESSING ******/
 CREATE PROCEDURE checkNextProcessing @maxProcessing int
 
 AS
@@ -77,6 +82,8 @@ DECLARE
 
 GO
 
+/****  GET PROCESSED ENVELOPES *****/
+
 CREATE PROCEDURE checkNextProcessed
 
 AS
@@ -91,20 +98,21 @@ CREATE PROCEDURE getNextProcessed
 AS
 
 DECLARE 
+	@id BIGINT,
 	@envelope VARCHAR(MAX);
 
 	BEGIN TRY
 		BEGIN TRANSACTION
 			SELECT TOP 1
-				@envelope = [event]
+				@id = [id],
+				@envelope = [envelope]
 			FROM [dbo].[Ladok3Events]
 			ORDER BY [id];
 
-			UPDATE  [dbo].[Ladok3Events]
-			SET [processing] = 1
+			DELETE FROM  [dbo].[Ladok3Events]
 			WHERE [id] = @id;
 
-			SELECT @id as [id], @event AS [event];
+			SELECT @envelope AS [envelope];
 
 		COMMIT TRANSACTION
 
