@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns3="http://schemas.datacontract.org/2004/07/System.Data" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/Procedures/dbo" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\getNextForProcessingDataSetSchema.xsd" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">Procedure.dbo</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="getNextForProcessing">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">Procedure/dbo/getNextForProcessing</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getNextForProcessingResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">Procedure/dbo/getNextForProcessing/response</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="getNextForProcessingResult" nillable="true" type="ns3:ArrayOfDataSet" />
+        <xs:element minOccurs="1" maxOccurs="1" name="ReturnValue" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
