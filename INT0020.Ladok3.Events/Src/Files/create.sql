@@ -33,7 +33,7 @@ CREATE PROCEDURE saveEnvelope @id BIGINT, @envelope VARCHAR(MAX)
 
 AS
 
-UPDATE  [dbo].[Ladok3Events] ([event]) SET [envelope] = @envelope
+UPDATE  [dbo].[Ladok3Events] SET [envelope] = @envelope
 WHERE [id] = @id; 
 
 GO
