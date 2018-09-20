@@ -43,7 +43,7 @@ CREATE PROCEDURE checkNextProcessing @maxProcessing int
 
 AS
 
-IF  @maxProcessing > (SELECT COUNT(*) FROM [dbo].[Ladok3Events] WHERE [processing] = 1)
+IF  @maxProcessing > (SELECT COUNT(*) FROM [dbo].[Ladok3Events] WHERE [processing] = 1) AND (SELECT COUNT(*) FROM [dbo].[Ladok3Events]  WHERE [processing] = 0) > 0
 	SELECT 1;
 ELSE
 	SELECT 0;
