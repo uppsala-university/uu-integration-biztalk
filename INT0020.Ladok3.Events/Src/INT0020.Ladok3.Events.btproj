@@ -39,6 +39,15 @@
     <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Shared.PipelineComponents.XPathMessageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL" />
+    <Reference Include="Shared.Schemas.SdEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.SdEvents\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Schemas.SdEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Shared.Utilities.PropertyPromotor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Utilities.PropertyPromotor\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Utilities.PropertyPromotor.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -131,6 +140,16 @@
   <ItemGroup>
     <Content Include="Files\create.sql" />
     <Content Include="Files\INT0020.Ladok3.Events.BindingInfo_Dev.xml" />
+    <XLang Include="Processing\ProcessLadok3Events.odx">
+      <TypeName>ProcessLadok3Events</TypeName>
+      <Namespace>INT0020.Ladok3.Events.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <Pipeline Include="Pipelines\XPathExtractor.btp">
+      <TypeName>XPathExtractor</TypeName>
+      <Namespace>INT0020.Ladok3.Events.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
     <XLang Include="Processing\GetLadok3Events.odx">
       <TypeName>GetLadok3Events</TypeName>
       <Namespace>INT0020.Ladok3.Events.Processing</Namespace>
