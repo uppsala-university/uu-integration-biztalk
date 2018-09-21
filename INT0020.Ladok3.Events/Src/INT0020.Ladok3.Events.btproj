@@ -73,72 +73,69 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Files\" />
     <Folder Include="Maps\" />
-    <Folder Include="Processing\" />
   </ItemGroup>
   <ItemGroup>
-    <Schema Include="Schemas\saveEnvelopeDataSetSchema.xsd">
-      <TypeName>saveEnvelopeDataSetSchema</TypeName>
+    <Schema Include="Schemas\saveEnvelopeTypedProcedure.dbo.xsd">
+      <TypeName>saveEnvelopeTypedProcedure_dbo</TypeName>
       <Namespace>INT0020.Ladok3.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
-    <Schema Include="Schemas\saveEnvelopeProcedure.dbo.xsd">
-      <TypeName>saveEnvelopeProcedure_dbo</TypeName>
+    <Schema Include="Schemas\addEventTypedProcedure.dbo.xsd">
+      <TypeName>addEventTypedProcedure_dbo</TypeName>
       <Namespace>INT0020.Ladok3.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
-    <Schema Include="Schemas\getNextProcessedDataSetSchema.xsd">
-      <TypeName>getNextProcessedDataSetSchema</TypeName>
+    <Schema Include="Schemas\checkNextProcessedProcedureResultSet.dbo.checkNextProcessed.xsd">
+      <TypeName>checkNextProcessedProcedureResultSet_dbo_checkNextProcessed</TypeName>
       <Namespace>INT0020.Ladok3.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
-    <Schema Include="Schemas\getNextProcessedProcedure.dbo.xsd">
-      <TypeName>getNextProcessedProcedure_dbo</TypeName>
+    <Schema Include="Schemas\checkNextProcessedTypedProcedure.dbo.xsd">
+      <TypeName>checkNextProcessedTypedProcedure_dbo</TypeName>
       <Namespace>INT0020.Ladok3.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
-    <Schema Include="Schemas\getNextForProcessingDataSetSchema.xsd">
-      <TypeName>getNextForProcessingDataSetSchema</TypeName>
+    <Schema Include="Schemas\checkNextProcessingProcedureResultSet.dbo.checkNextProcessing.xsd">
+      <TypeName>checkNextProcessingProcedureResultSet_dbo_checkNextProcessing</TypeName>
       <Namespace>INT0020.Ladok3.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
-    <Schema Include="Schemas\getNextForProcessingProcedure.dbo.xsd">
-      <TypeName>getNextForProcessingProcedure_dbo</TypeName>
+    <Schema Include="Schemas\checkNextProcessingTypedProcedure.dbo.xsd">
+      <TypeName>checkNextProcessingTypedProcedure_dbo</TypeName>
       <Namespace>INT0020.Ladok3.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
-    <Schema Include="Schemas\checkNextProcessingDataSetSchema.xsd">
-      <TypeName>checkNextProcessingDataSetSchema</TypeName>
+    <Schema Include="Schemas\getNextForProcessingProcedureResultSet.dbo.getNextForProcessing.xsd">
+      <TypeName>getNextForProcessingProcedureResultSet_dbo_getNextForProcessing</TypeName>
       <Namespace>INT0020.Ladok3.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
-    <Schema Include="Schemas\checkNextProcessingProcedure.dbo.xsd">
-      <TypeName>checkNextProcessingProcedure_dbo</TypeName>
+    <Schema Include="Schemas\getNextForProcessingTypedProcedure.dbo.xsd">
+      <TypeName>getNextForProcessingTypedProcedure_dbo</TypeName>
       <Namespace>INT0020.Ladok3.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
-    <Schema Include="Schemas\checkNextProcessedDataSetSchema.xsd">
-      <TypeName>checkNextProcessedDataSetSchema</TypeName>
+    <Schema Include="Schemas\getNextProcessedProcedureResultSet.dbo.getNextProcessed.xsd">
+      <TypeName>getNextProcessedProcedureResultSet_dbo_getNextProcessed</TypeName>
       <Namespace>INT0020.Ladok3.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
-    <Schema Include="Schemas\checkNextProcessedProcedure.dbo.xsd">
-      <TypeName>checkNextProcessedProcedure_dbo</TypeName>
-      <Namespace>INT0020.Ladok3.Events</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\addEventDataSetSchema.xsd">
-      <TypeName>addEventDataSetSchema</TypeName>
-      <Namespace>INT0020.Ladok3.Events</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-    <Schema Include="Schemas\addEventProcedure.dbo.xsd">
-      <TypeName>addEventProcedure_dbo</TypeName>
+    <Schema Include="Schemas\getNextProcessedTypedProcedure.dbo.xsd">
+      <TypeName>getNextProcessedTypedProcedure_dbo</TypeName>
       <Namespace>INT0020.Ladok3.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
     <None Include="key.snk.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\create.sql" />
+    <Content Include="Files\INT0020.Ladok3.Events.BindingInfo_Dev.xml" />
+    <XLang Include="Processing\GetLadok3Events.odx">
+      <TypeName>GetLadok3Events</TypeName>
+      <Namespace>INT0020.Ladok3.Events.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />

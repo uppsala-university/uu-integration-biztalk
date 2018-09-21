@@ -64,6 +64,7 @@ DECLARE
 				@id = [id],
 				@event = [event]
 			FROM [dbo].[Ladok3Events]
+			WHERE [processing] = 0
 			ORDER BY [id];
 
 			UPDATE  [dbo].[Ladok3Events]
@@ -98,7 +99,7 @@ CREATE PROCEDURE getNextProcessed
 AS
 
 DECLARE 
-	@id BIGINT,
+	@id BIGINT = 0,
 	@envelope VARCHAR(MAX);
 
 	BEGIN TRY
@@ -107,6 +108,7 @@ DECLARE
 				@id = [id],
 				@envelope = [envelope]
 			FROM [dbo].[Ladok3Events]
+			WHERE [processing] = 1 AND [envelope] IS NOT NULL AND [id] = (SELECT MIN([id]) FROM [dbo].[Ladok3Events] )
 			ORDER BY [id];
 
 			DELETE FROM  [dbo].[Ladok3Events]
