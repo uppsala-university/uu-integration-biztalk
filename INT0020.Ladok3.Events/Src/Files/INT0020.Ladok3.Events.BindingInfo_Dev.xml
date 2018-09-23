@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="4" TotalEndpoints="4">
-  <Timestamp>2018-09-21T15:40:05.8271645+02:00</Timestamp>
+  <Timestamp>2018-09-23T18:50:54.772576+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0020.Ladok3.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0020.Ladok3.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
       <TrackedSchemas>
+        <Schema FullName="INT0020.Ladok3.Events.PropertySchema.PropertySchema" AssemblyQualifiedName="INT0020.Ladok3.Events.PropertySchema.PropertySchema,INT0020.Ladok3.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
         <Schema FullName="INT0020.Ladok3.Events.saveEnvelopeTypedProcedure_dbo" RootName="saveEnvelope" AssemblyQualifiedName="INT0020.Ladok3.Events.saveEnvelopeTypedProcedure_dbo,INT0020.Ladok3.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
           <TrackedPropertyNames />
         </Schema>
@@ -71,11 +74,14 @@
         <Schema FullName="INT0020.Ladok3.Events.getNextProcessedTypedProcedure_dbo" RootName="getNextProcessedResponse" AssemblyQualifiedName="INT0020.Ladok3.Events.getNextProcessedTypedProcedure_dbo,INT0020.Ladok3.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
           <TrackedPropertyNames />
         </Schema>
+        <Schema FullName="INT0020.Ladok3.Events.Schemas.polling" RootName="TypedPolling" AssemblyQualifiedName="INT0020.Ladok3.Events.Schemas.polling,INT0020.Ladok3.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
       </TrackedSchemas>
     </ModuleRef>
     <ModuleRef Name="INT0020.Ladok3.Events" Version="1.0.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0020.Ladok3.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services>
-        <Service Name="INT0020.Ladok3.Events.ProcessLadok3Events" State="Unenlisted" TrackingOption="None">
+        <Service Name="INT0020.Ladok3.Events.ProcessLadok3Events" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody OrchestrationEvents TrackPropertiesForIncomingMessages TrackPropertiesForOutgoingMessages" Description="">
           <Ports>
             <Port Name="ReceiveForProcessing" Modifier="2" BindingOption="1">
               <SendPortRef xsi:nil="true" />
@@ -91,7 +97,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0020.Ladok3.Events.GetLadok3Events" State="Started" TrackingOption="None" Description="">
+        <Service Name="INT0020.Ladok3.Events.GetLadok3Events" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody TrackPropertiesForIncomingMessages TrackPropertiesForOutgoingMessages" Description="">
           <Ports>
             <Port Name="ReceiveLadok3Events" Modifier="2" BindingOption="1">
               <SendPortRef xsi:nil="true" />
@@ -124,12 +130,12 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-09-19T22:00:00</FromTime>
-        <ToTime>2018-09-20T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>true</Primary>
         <OrderedDelivery>true</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSDSend" HostTrusted="false">
+        <SendHandler Name="CluSdSend" HostTrusted="false">
           <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
         </SendHandler>
       </PrimaryTransport>
@@ -138,8 +144,8 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-09-19T22:00:00</FromTime>
-        <ToTime>2018-09-20T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>false</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
@@ -158,7 +164,8 @@
     </SendPort>
     <SendPort Name="INT0020.DB.Envelopes.ToFile" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
-      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <TransmitPipeline Name="INT0020.Ladok3.Events.Pipelines.XPathExtractor" FullyQualifiedName="INT0020.Ladok3.Events.Pipelines.XPathExtractor, INT0020.Ladok3.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Shared.PipelineComponents.XPathMessageExtractor.XPathMessageExtractor"&gt;&lt;Properties&gt;&lt;XPath vt="8"&gt;//*[local-name()='envelope']&lt;/XPath&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
       <PrimaryTransport>
         <Address>C:\Integrations\INT0020.Ladok3.Events\Envelopes\%MessageID%.xml</Address>
         <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
@@ -166,12 +173,12 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-09-19T22:00:00</FromTime>
-        <ToTime>2018-09-20T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>true</Primary>
         <OrderedDelivery>true</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSDSend" HostTrusted="false">
+        <SendHandler Name="CluSdSend" HostTrusted="false">
           <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
         </SendHandler>
       </PrimaryTransport>
@@ -180,8 +187,8 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-09-19T22:00:00</FromTime>
-        <ToTime>2018-09-20T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>false</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
@@ -192,7 +199,7 @@
       <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0020.DB.Events" /&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0020.DB.Envelopes" /&gt;
   &lt;/Group&gt;
 &lt;/Filter&gt;</Filter>
       <Transforms />
@@ -208,16 +215,18 @@
       <PrimaryTransport>
         <Address>mssql://.//L3Events?</Address>
         <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;StaticAction vt="8"&gt;/sdgfdg/&lt;/StaticAction&gt;&lt;ProxyUserName vt="8" /&gt;&lt;ProxyAddress vt="8" /&gt;&lt;UserName vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;PropagateFaultMessage vt="11"&gt;-1&lt;/PropagateFaultMessage&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;IsolationLevel vt="8"&gt;Serializable&lt;/IsolationLevel&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;EnableTransaction vt="11"&gt;-1&lt;/EnableTransaction&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <TransportTypeData>&lt;CustomProps&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;StaticAction vt="8"&gt;&amp;lt;BtsActionMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;
+  &amp;lt;Operation Name="SaveEnvelopeOperation" Action="TypedProcedure/dbo/saveEnvelope" /&amp;gt;
+&amp;lt;/BtsActionMapping&amp;gt;&lt;/StaticAction&gt;&lt;ProxyUserName vt="8" /&gt;&lt;ProxyAddress vt="8" /&gt;&lt;UserName vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;PropagateFaultMessage vt="11"&gt;-1&lt;/PropagateFaultMessage&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;IsolationLevel vt="8"&gt;Serializable&lt;/IsolationLevel&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;EnableTransaction vt="11"&gt;-1&lt;/EnableTransaction&gt;&lt;/CustomProps&gt;</TransportTypeData>
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-09-20T22:00:00</FromTime>
-        <ToTime>2018-09-21T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSDSend" HostTrusted="false">
+        <SendHandler Name="CluSdSend" HostTrusted="false">
           <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
         </SendHandler>
       </PrimaryTransport>
@@ -226,8 +235,8 @@
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2018-09-20T22:00:00</FromTime>
-        <ToTime>2018-09-21T21:59:59</ToTime>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>false</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
@@ -268,7 +277,7 @@
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
           <Enable>true</Enable>
-          <ReceiveHandler Name="CluSDReceive" HostTrusted="false">
+          <ReceiveHandler Name="CluSdReceive" HostTrusted="false">
             <TransportType Name="Atom" Capabilities="6153" ConfigurationClsid="4843c095-0752-45a9-a741-79e064effa87" />
           </ReceiveHandler>
         </ReceiveLocation>
@@ -285,24 +294,24 @@
       <ReceiveLocations>
         <ReceiveLocation Name="INT0020.DB.Events">
           <Description xsi:nil="true" />
-          <Address>mssql://.//L3Events?InboundId=l3events</Address>
+          <Address>mssql://.//L3Events?InboundId=Ladok3Events</Address>
           <PublicAddress />
           <Primary>true</Primary>
           <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
-          <ReceiveLocationFromTime>2018-09-19T22:00:00</ReceiveLocationFromTime>
-          <ReceiveLocationToTime>2018-09-20T21:59:59</ReceiveLocationToTime>
+          <ReceiveLocationFromTime>2000-01-01T22:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T21:59:59</ReceiveLocationToTime>
           <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
           <ReceiveLocationStartDate>2018-09-20T00:00:00</ReceiveLocationStartDate>
           <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
-          <ReceiveLocationEndDate>2018-09-21T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationEndDate>2018-09-21T23:59:59</ReceiveLocationEndDate>
           <ReceiveLocationTransportType Name="WCF-SQL" Capabilities="779" ConfigurationClsid="59b35d03-6a06-4734-a249-ef561254ecf7" />
           <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" polledDataAvailableStatement="EXEC [checkNextProcessing] @maxProcessing = 10" pollingStatement="EXEC [getNextForProcessing]" pollingIntervalInSeconds="10" pollWhileDataFound="true" inboundOperationType="TypedPolling" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;DisableLocationOnFailure vt="11"&gt;0&lt;/DisableLocationOnFailure&gt;&lt;UserName vt="8" /&gt;&lt;ServiceBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="ServiceBehavior" /&amp;gt;&lt;/ServiceBehaviorConfiguration&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;IncludeExceptionDetailInFaults vt="11"&gt;0&lt;/IncludeExceptionDetailInFaults&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;CredentialType vt="8"&gt;None&lt;/CredentialType&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;SuspendMessageOnFailure vt="11"&gt;0&lt;/SuspendMessageOnFailure&gt;&lt;OrderedProcessing vt="11"&gt;0&lt;/OrderedProcessing&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
-          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody" Description="" />
           <ReceivePipelineData xsi:nil="true" />
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
           <Enable>true</Enable>
-          <ReceiveHandler Name="CluSDReceive" HostTrusted="false">
+          <ReceiveHandler Name="CluSdReceive" HostTrusted="false">
             <TransportType Name="WCF-SQL" Capabilities="779" ConfigurationClsid="59b35d03-6a06-4734-a249-ef561254ecf7" />
           </ReceiveHandler>
         </ReceiveLocation>
@@ -323,12 +332,12 @@
           <PublicAddress />
           <Primary>true</Primary>
           <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
-          <ReceiveLocationFromTime>2018-09-19T22:00:00</ReceiveLocationFromTime>
-          <ReceiveLocationToTime>2018-09-20T21:59:59</ReceiveLocationToTime>
+          <ReceiveLocationFromTime>2000-01-01T22:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T21:59:59</ReceiveLocationToTime>
           <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
           <ReceiveLocationStartDate>2018-09-20T00:00:00</ReceiveLocationStartDate>
           <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
-          <ReceiveLocationEndDate>2018-09-21T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationEndDate>2018-09-21T23:59:59</ReceiveLocationEndDate>
           <ReceiveLocationTransportType Name="WCF-SQL" Capabilities="779" ConfigurationClsid="59b35d03-6a06-4734-a249-ef561254ecf7" />
           <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" polledDataAvailableStatement="EXEC [checkNextProcessed]" pollingStatement="EXEC [getNextProcessed]" pollingIntervalInSeconds="5" pollWhileDataFound="true" inboundOperationType="TypedPolling" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;DisableLocationOnFailure vt="11"&gt;0&lt;/DisableLocationOnFailure&gt;&lt;UserName vt="8" /&gt;&lt;ServiceBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="ServiceBehavior" /&amp;gt;&lt;/ServiceBehaviorConfiguration&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;IncludeExceptionDetailInFaults vt="11"&gt;0&lt;/IncludeExceptionDetailInFaults&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;CredentialType vt="8"&gt;None&lt;/CredentialType&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;SuspendMessageOnFailure vt="11"&gt;0&lt;/SuspendMessageOnFailure&gt;&lt;OrderedProcessing vt="11"&gt;0&lt;/OrderedProcessing&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
           <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
@@ -336,7 +345,7 @@
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
           <Enable>true</Enable>
-          <ReceiveHandler Name="CluSDReceive" HostTrusted="false">
+          <ReceiveHandler Name="CluSdReceive" HostTrusted="false">
             <TransportType Name="WCF-SQL" Capabilities="779" ConfigurationClsid="59b35d03-6a06-4734-a249-ef561254ecf7" />
           </ReceiveHandler>
         </ReceiveLocation>

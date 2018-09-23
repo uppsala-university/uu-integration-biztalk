@@ -17,11 +17,11 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReceiveForProcessingOperation" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="MessageRef" OID="8f4fffbb-b9d5-4bd6-ac19-830b91574f00" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.102">
-                    <om:Property Name="Ref" Value="INT0020.Ladok3.Events.getNextForProcessingProcedureResultSet_dbo_getNextForProcessing.StoredProcedureResultSet0" />
+                <om:Element Type="MessageRef" OID="8f4fffbb-b9d5-4bd6-ac19-830b91574f00" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.28">
+                    <om:Property Name="Ref" Value="INT0020.Ladok3.Events.Schemas.polling" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
-                    <om:Property Name="Signal" Value="False" />
+                    <om:Property Name="Signal" Value="True" />
                 </om:Element>
             </om:Element>
         </om:Element>
@@ -88,11 +88,97 @@
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="ProcessLadok3Events" />
             <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="73e2db0c-d957-4074-8a8a-24803641a778" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="44.1" HigherBound="45.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int64" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="id" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="a32e103a-b577-47a8-9949-6eedac8139cd" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="45.1" HigherBound="46.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="event" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="e0b0bf01-c056-4a31-be61-6a14a8a7f238" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="46.1" HigherBound="47.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="1e492588-c4f2-4176-ba62-c09fc4d0f034" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="47.1" HigherBound="48.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="outMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="61fc53cd-74ed-49a5-8feb-93ee24b723f0" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="48.1" HigherBound="49.1">
+                <om:Property Name="InitialValue" Value="true" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="success" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="d318913a-167b-4c5d-a554-968666eebf75" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="49.1" HigherBound="50.1">
+                <om:Property Name="InitialValue" Value="true" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="tryAgain" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="0a8b2a89-dc79-4e6b-8283-c1102def7207" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="cdata" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
             <om:Element Type="CorrelationDeclaration" OID="5ef2bfec-b6c7-49e6-80c6-2a6aad35bcfb" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="39.1" HigherBound="40.1">
                 <om:Property Name="Type" Value="INT0020.Ladok3.Events.MessageTypeCorrelationType" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="MessageTypeCorrelation" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="bf767409-eaf8-49be-b06b-0d311f022917" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="40.1" HigherBound="41.1">
+                <om:Property Name="Type" Value="INT0020.Ladok3.Events.Schemas.polling" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ForProcessing" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="9faf3696-b340-436a-95a1-3fbb38d07083" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="41.1" HigherBound="42.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IncomingEventToType" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="c01d3fcb-afb6-4af2-8e9f-9725fed2f37d" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="42.1" HigherBound="43.1">
+                <om:Property Name="Type" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReturnMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="b8356d3a-1c8c-4dfe-96ff-e8e7db9f56b8" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="43.1" HigherBound="44.1">
+                <om:Property Name="Type" Value="INT0020.Ladok3.Events.saveEnvelopeTypedProcedure_dbo.saveEnvelope" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SaveEnvelope" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="ServiceBody" OID="c1c4e6e1-1543-4f17-8093-ab4bb1bf8688" ParentLink="ServiceDeclaration_ServiceBody">
@@ -108,10 +194,10 @@
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
                 <om:Element Type="VariableAssignment" OID="a95cd0e3-626d-41dc-b654-a31709985daf" ParentLink="ServiceBody_Statement" LowerBound="61.1" HigherBound="64.1">
-                    <om:Property Name="Expression" Value="id = ForProcessing.id;&#xD;&#xA;event = ForProcessing.event;" />
+                    <om:Property Name="Expression" Value="id = xpath(ForProcessing,&quot;number(/*[local-name()='TypedPolling' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events']/*[local-name()='TypedPollingResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events']/*[local-name()='TypedPollingResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events']/*[local-name()='id' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events'])&quot;);&#xD;&#xA;event = xpath(ForProcessing,&quot;string(/*[local-name()='TypedPolling' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events']/*[local-name()='TypedPollingResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events']/*[local-name()='TypedPollingResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events']/*[local-name()='event' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events'])&quot;);" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Set Variables" />
-                    <om:Property Name="Signal" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
                 </om:Element>
                 <om:Element Type="VariableAssignment" OID="3db69f1c-1f1f-4e66-a2c9-d26b35cdde66" ParentLink="ServiceBody_Statement" LowerBound="64.1" HigherBound="66.1">
                     <om:Property Name="Expression" Value="tryAgain = true;" />
@@ -255,64 +341,6 @@
                     </om:Element>
                 </om:Element>
             </om:Element>
-            <om:Element Type="VariableDeclaration" OID="73e2db0c-d957-4074-8a8a-24803641a778" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="44.1" HigherBound="45.1">
-                <om:Property Name="UseDefaultConstructor" Value="False" />
-                <om:Property Name="Type" Value="System.Int64" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="id" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="VariableDeclaration" OID="a32e103a-b577-47a8-9949-6eedac8139cd" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="45.1" HigherBound="46.1">
-                <om:Property Name="UseDefaultConstructor" Value="False" />
-                <om:Property Name="Type" Value="System.String" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="event" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="VariableDeclaration" OID="e0b0bf01-c056-4a31-be61-6a14a8a7f238" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="46.1" HigherBound="47.1">
-                <om:Property Name="UseDefaultConstructor" Value="True" />
-                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="xmlDoc" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="VariableDeclaration" OID="1e492588-c4f2-4176-ba62-c09fc4d0f034" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="47.1" HigherBound="48.1">
-                <om:Property Name="UseDefaultConstructor" Value="False" />
-                <om:Property Name="Type" Value="System.String" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="outMessage" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="VariableDeclaration" OID="61fc53cd-74ed-49a5-8feb-93ee24b723f0" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="48.1" HigherBound="49.1">
-                <om:Property Name="InitialValue" Value="true" />
-                <om:Property Name="UseDefaultConstructor" Value="False" />
-                <om:Property Name="Type" Value="System.Boolean" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="success" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="VariableDeclaration" OID="d318913a-167b-4c5d-a554-968666eebf75" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="49.1" HigherBound="50.1">
-                <om:Property Name="InitialValue" Value="true" />
-                <om:Property Name="UseDefaultConstructor" Value="False" />
-                <om:Property Name="Type" Value="System.Boolean" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="tryAgain" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="VariableDeclaration" OID="0a8b2a89-dc79-4e6b-8283-c1102def7207" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="50.1" HigherBound="51.1">
-                <om:Property Name="UseDefaultConstructor" Value="False" />
-                <om:Property Name="Type" Value="System.String" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="cdata" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
             <om:Element Type="PortDeclaration" OID="fecf58fe-c324-4825-b5d7-cd399c9804cc" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
                 <om:Property Name="PortModifier" Value="Implements" />
                 <om:Property Name="Orientation" Value="Left" />
@@ -362,34 +390,6 @@
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
-            <om:Element Type="MessageDeclaration" OID="bf767409-eaf8-49be-b06b-0d311f022917" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="40.1" HigherBound="41.1">
-                <om:Property Name="Type" Value="INT0020.Ladok3.Events.getNextForProcessingProcedureResultSet_dbo_getNextForProcessing.StoredProcedureResultSet0" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ForProcessing" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="MessageDeclaration" OID="9faf3696-b340-436a-95a1-3fbb38d07083" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="41.1" HigherBound="42.1">
-                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="IncomingEventToType" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="MessageDeclaration" OID="c01d3fcb-afb6-4af2-8e9f-9725fed2f37d" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="42.1" HigherBound="43.1">
-                <om:Property Name="Type" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ReturnMessage" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="MessageDeclaration" OID="b8356d3a-1c8c-4dfe-96ff-e8e7db9f56b8" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="43.1" HigherBound="44.1">
-                <om:Property Name="Type" Value="INT0020.Ladok3.Events.saveEnvelopeTypedProcedure_dbo.saveEnvelope" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="SaveEnvelope" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
         </om:Element>
     </om:Element>
 </om:MetaModel>
@@ -401,7 +401,7 @@ module INT0020.Ladok3.Events
     {
         oneway ReceiveForProcessingOperation
         {
-            getNextForProcessingProcedureResultSet_dbo_getNextForProcessing.StoredProcedureResultSet0
+            Schemas.polling
         };
     };
     internal porttype Send_EventsToClientType
@@ -433,7 +433,7 @@ module INT0020.Ladok3.Events
         [Microsoft.XLANGs.BaseTypes.DeliveryNotification(Microsoft.XLANGs.BaseTypes.DeliveryNotification.NotificationLevel.Transmitted)]
         port uses Send_SaveEnvelopeType Send_SaveEnvelope;
         correlation MessageTypeCorrelationType MessageTypeCorrelation;
-        message getNextForProcessingProcedureResultSet_dbo_getNextForProcessing.StoredProcedureResultSet0 ForProcessing;
+        message Schemas.polling ForProcessing;
         message System.Xml.XmlDocument IncomingEventToType;
         message Shared.Schemas.SdEvents.InternalReturnMessage ReturnMessage;
         message saveEnvelopeTypedProcedure_dbo.saveEnvelope SaveEnvelope;
@@ -455,8 +455,8 @@ module INT0020.Ladok3.Events
             tryAgain = true;
             cdata = "";
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("a95cd0e3-626d-41dc-b654-a31709985daf")]
-            id = ForProcessing.id;
-            event = ForProcessing.event;
+            id = xpath(ForProcessing,"number(/*[local-name()='TypedPolling' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events']/*[local-name()='TypedPollingResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events']/*[local-name()='TypedPollingResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events']/*[local-name()='id' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events'])");
+            event = xpath(ForProcessing,"string(/*[local-name()='TypedPolling' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events']/*[local-name()='TypedPollingResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events']/*[local-name()='TypedPollingResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events']/*[local-name()='event' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/Ladok3Events'])");
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("3db69f1c-1f1f-4e66-a2c9-d26b35cdde66")]
             tryAgain = true;
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("115d3cca-1aad-45bf-9987-080901883008")]
