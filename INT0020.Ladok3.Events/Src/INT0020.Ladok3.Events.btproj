@@ -39,6 +39,7 @@
     <AssemblyOriginatorKeyFile>key.snk.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Shared.PipelineComponents.SimpleMessageWrapper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL" />
     <Reference Include="Shared.PipelineComponents.XPathMessageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL" />
     <Reference Include="Shared.Schemas.SdEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -150,6 +151,11 @@
   <ItemGroup>
     <Content Include="Files\create.sql" />
     <Content Include="Files\INT0020.Ladok3.Events.BindingInfo_Dev.xml" />
+    <Pipeline Include="Pipelines\MessageWrapper.btp">
+      <TypeName>MessageWrapper</TypeName>
+      <Namespace>INT0020.Ladok3.Events.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
     <XLang Include="Processing\ProcessLadok3Events.odx">
       <TypeName>ProcessLadok3Events</TypeName>
       <Namespace>INT0020.Ladok3.Events.Processing</Namespace>
