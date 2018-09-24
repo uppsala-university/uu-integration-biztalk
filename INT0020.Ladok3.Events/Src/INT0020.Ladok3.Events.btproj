@@ -40,6 +40,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Shared.PipelineComponents.SimpleMessageWrapper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL" />
+    <Reference Include="Shared.PipelineComponents.XmlDisassembler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2dbe33dac94b8972, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.PipelineComponents.XmlDisassembler\v4.0_1.0.0.0__2dbe33dac94b8972\Shared.PipelineComponents.XmlDisassembler.dll</HintPath>
+    </Reference>
     <Reference Include="Shared.PipelineComponents.XPathMessageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL" />
     <Reference Include="Shared.Schemas.SdEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -151,6 +155,11 @@
   <ItemGroup>
     <Content Include="Files\create.sql" />
     <Content Include="Files\INT0020.Ladok3.Events.BindingInfo_Dev.xml" />
+    <Pipeline Include="Pipelines\ReceiveLadokEvents.btp">
+      <TypeName>ReceiveLadokEvents</TypeName>
+      <Namespace>INT0020.Ladok3.Events.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
     <XLang Include="Processing\SendToRoutingOrchestration.odx">
       <TypeName>SendToRoutingOrchestration</TypeName>
       <Namespace>INT0020.Ladok3.Events.Processing</Namespace>
