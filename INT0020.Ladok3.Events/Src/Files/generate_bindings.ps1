@@ -14,7 +14,7 @@ $TestFile  = '\\uuc-biz025-t.exchange-test.its.uu.se\ladok3-atom$'
 $ProdFile  = '\\UUC-BIZ015.user.uu.se\ladok3-atom$'
 $VerFile  = '\\uuc-biz008-t.exchange-test.its.uu.se\ladok3-atom$'
 
-$DevArchiveFile = 'C:\integrations\Archive\sd-distribution'
+$DevArchiveFile = 'C:\Integrations\Archive\sd-distribution'
 $TestArchiveFile = '\\uuc-biz025-t.exchange-test.its.uu.se\ladok3-atom$\archive'
 $VerArchiveFile = '\\uuc-biz008-t.exchange-test.its.uu.se\ladok3-atom$\archive'
 $ProdArchiveFile = '\\uuc-ladokfs001.its.uu.se\BizTalk-root$'
