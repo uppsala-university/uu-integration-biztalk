@@ -8,10 +8,10 @@ $TestQueue  = 'OS:UUC-BIZSRV021-T'
 $VerQueue  =  'OS:UUC-MSMQSRV001'
 $ProdQueue  = 'OS:UUC-MSMQSRV002'
 
-$DevArchive  = 'C:\Integrations\Archive\esb-identity'
-$TestArchive  = '\\uuc-biz025-t.exchange-test.its.uu.se\esb-identity$\archive'
-$VerArchive  =  '\\uuc-biz008-t.exchange-test.its.uu.se\esb-identity$\archive'
-$ProdArchive  = '\\uuc-ladokfs001.its.uu.se\BizTalk-root$\esb-identity'
+$DevArchive  = 'C:\Integrations\Archive\identity-distribution'
+$TestArchive  = '\\uuc-biz025-t.exchange-test.its.uu.se\identity-distribution$\archive'
+$VerArchive  =  '\\uuc-biz008-t.exchange-test.its.uu.se\identity-distribution$\archive'
+$ProdArchive  = '\\uuc-ladokfs001.its.uu.se\BizTalk-root$\identity-distribution'
 
 copy .\$DevBindings .\$TestBindings
 (Get-Content -Path .\$TestBindings).Replace($DevQueue,$TestQueue).Replace($DevArchive,$TestArchive) | Set-Content -Path .\$TestBindings

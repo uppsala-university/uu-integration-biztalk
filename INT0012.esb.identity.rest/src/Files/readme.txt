@@ -26,4 +26,11 @@ Bindings
 INT0012.esb.identity.rest.BindingInfo_DEV_Msmq.xml    - bindings för att lägga ut event på kön identity-distribution
 INT0012.esb.identity.rest.BindingInfo_DEV_FileOutput.xml - används endast för utveckling, eventen skrivs till fil.
 
+Filytor
+
+Filytor som måste skapas:
+Test: \\uuc-biz025-t.exchange-test.its.uu.se\identity-distribution$\archive
+Var: \\uuc-biz008-t.exchange-test.its.uu.se\identity-distribution$\archive
+Prod: \\uuc-ladokfs001.its.uu.se\BizTalk-root$\identity-distribution
+
 
