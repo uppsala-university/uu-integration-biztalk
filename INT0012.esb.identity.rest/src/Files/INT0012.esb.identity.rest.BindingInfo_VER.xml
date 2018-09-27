@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="1" TotalEndpoints="1">
-  <Timestamp>2018-09-06T08:16:33.3929914+02:00</Timestamp>
+  <Timestamp>2018-09-27T11:01:10.5988752+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0012.esb.identity.rest]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0012.esb.identity.rest], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -15,7 +15,7 @@
     </ModuleRef>
     <ModuleRef Name="INT0012.esb.identity.rest" Version="1.0.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0012.esb.identity.rest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services>
-        <Service Name="INT0012.esb.identity.rest.Orchestration_1" State="Enlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0012.esb.identity.rest.Orchestration_1" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="INT0012_esb_identity_rest" Modifier="2" BindingOption="1">
               <SendPortRef xsi:nil="true" />
@@ -72,6 +72,52 @@
 &lt;/Filter&gt;</Filter>
       <Transforms />
       <OrderedDelivery>true</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0012.esb.identity.rest</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0012.esb.identity.Send_ToArchive" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>\\uuc-biz008-t.exchange-test.its.uu.se\esb-identity$\archive\%datetime_bts2000%_%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%datetime_bts2000%_%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-09-26T22:00:00</FromTime>
+        <ToTime>2018-09-27T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="CluIdentitySend" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-09-26T22:00:00</FromTime>
+        <ToTime>2018-09-27T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0012.esb.identity.restport" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
       <Priority>5</Priority>
       <StopSendingOnFailure>false</StopSendingOnFailure>
       <RouteFailedMessage>false</RouteFailedMessage>
