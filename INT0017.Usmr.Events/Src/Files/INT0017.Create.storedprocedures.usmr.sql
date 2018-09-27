@@ -1,5 +1,4 @@
-
-Create PROCEDURE  [dbo].[uusmrCreateStudentRecord]
+create PROCEDURE  [dbo].[uusmrCreateStudentRecord]
            @PNR CHAR(13),
             @GPNR CHAR(13),
             @EFTERNAMN VARCHAR(255),
@@ -32,7 +31,16 @@ Create PROCEDURE  [dbo].[uusmrCreateStudentRecord]
 AS
 BEGIN  
     SET NOCOUNT ON;      
-	IF(@TYP='J' OR @TYP='P')
+	 
+	IF(@TYP like '%P%')
+	BEGIN
+  
+			 exec  uusmrCreateStudentProgramAntagningRecord @PNR,@GPNR,@EFTERNAMN,@FORNAMN,@INLDATUM_PERS,@COADRESS, @GATUADRESS, @POSTNR, @ORT, @LAND, @INLDATUM_ADRESS,@TELNR,@INLDATUM_TELNR,@EPOSTADRESS,@UPPEH,@KURS,@INST,@POANG,@KT,
+			'',@KORT,@FIN,@PROGR,'',@TERMIN,@PTAKT,'','P','';
+     
+    END
+
+	IF(@TYP like '%J%' OR @TYP like '%P%')
 	BEGIN
     INSERT INTO [dbo].["UUSKLIST"] VALUES
             ( @PNR, 
@@ -62,12 +70,12 @@ BEGIN
             @TERMIN,
             @PTAKT,
             @KAR,
-            @TYP,
+            'J',
             @PLG,'' )
 			END
 ELSE
 BEGIN
-DELETE FROM [dbo].["UUSKLIST"] WHERE PNR=@PNR AND KURS=@KURS AND TERMIN=@TERMIN AND PROGR=@PROGR AND (TYP='J' OR TYP='P');
+DELETE FROM [dbo].["UUSKLIST"] WHERE PNR=@PNR AND KURS=@KURS AND TERMIN=@TERMIN AND PROGR=@PROGR AND (TYP='J');
   INSERT INTO [dbo].["UUSKLIST"] VALUES
             ( @PNR, 
             @GPNR,
@@ -96,11 +104,11 @@ DELETE FROM [dbo].["UUSKLIST"] WHERE PNR=@PNR AND KURS=@KURS AND TERMIN=@TERMIN 
             @TERMIN,
             @PTAKT,
             @KAR,
-            @TYP,
+            '',
             @PLG,'' )
 END
+exec  uusmrUpdateGpnr @PNR;
 END
-
 	   go
 CREATE PROCEDURE [dbo].[INT0017UsmrRecords]
 AS
@@ -108,7 +116,7 @@ BEGIN
   select PNR,GPNR,EFTERNAMN,FORNAMN,INLDATUM_PERS, COADRESS, GATUADRESS,POSTNR,ORT,LAND,INLDATUM_ADRESS,TELNR,
 INLDATUM_TELNR , EPOSTADRESS, UPPEH,KURS,INST,POANG,KT,UF,KORT,FIN,PROGR,AKT,TERMIN,PTAKT,KAR,TYP,PLG from ["UUSKLIST"] where (FIN != 'E' and 
 FIN != 'EES' and FIN != 'SLU'  and FIN != 'SWB' and FIN != 'U' and FIN != 'UCI' and FIN != 'UFM' and FIN != 'UH'
-and FIN != 'UKU' and FIN != 'UL' and FIN != 'UMD'   and (AVLIDEN IS NULL  or AVLIDEN != 'J') )
+and FIN != 'UKU' and FIN != 'UL' and FIN != 'UMD'   and (AVLIDEN IS NULL  or AVLIDEN != 'J') ) order by PNR asc
  for xml auto 
 END
 
@@ -145,7 +153,8 @@ BEGIN
             inldatum_telnr=@INLDATUM_TELNR,
             epostadress=@EPOSTADRESS 
 			where pnr=@PNR
-           
+
+       exec  uusmrUpdateGpnr @PNR;
        END
 go
 CREATE  PROCEDURE  [dbo].[uusmrSetDeceased]
@@ -164,3 +173,99 @@ BEGIN
 	   UPDATE [dbo].["UUSKLIST"] SET AVLIDEN='' WHERE PNR = @PNR
 	   END
 END
+
+go
+
+
+create PROCEDURE  [dbo].[uusmrCreateStudentProgramAntagningRecord]
+            @PNR CHAR(13),
+            @GPNR CHAR(13),
+            @EFTERNAMN VARCHAR(255),
+            @FORNAMN VARCHAR(255),
+            @INLDATUM_PERS CHAR(10),
+            @COADRESS VARCHAR(255),
+            @GATUADRESS VARCHAR(255),
+            @POSTNR VARCHAR(10),
+            @ORT VARCHAR(255),
+            @LAND VARCHAR(255),
+            @INLDATUM_ADRESS CHAR(10),
+            @TELNR VARCHAR(255),
+            @INLDATUM_TELNR CHAR(10),
+            @EPOSTADRESS VARCHAR(255),
+            @UPPEH VARCHAR(7),
+            @KURS CHAR(10),
+            @INST CHAR(4),
+            @POANG VARCHAR(5),
+            @KT VARCHAR(3),
+            @UF CHAR(3),
+            @KORT CHAR(4),
+            @FIN CHAR(3),
+            @PROGR VARCHAR(10),
+            @AKT VARCHAR(3),
+            @TERMIN VARCHAR(5),
+            @PTAKT VARCHAR(5),
+            @KAR   CHAR(3),
+            @TYP   CHAR(3),
+            @PLG   VARCHAR(255)
+AS
+BEGIN  
+    SET NOCOUNT ON;    
+	DECLARE @rowcountProgrAnt int;  
+	IF(@TYP like '%P%')
+	BEGIN
+
+     select @rowcountProgrAnt = count(*) from ["UUSKLIST"] where pnr=@PNR and termin=@TERMIN and progr=@PROGR and typ like '%P%';
+	 IF (@rowcountProgrAnt = 0)
+	    BEGIN
+		 INSERT INTO [dbo].["UUSKLIST"] VALUES
+            ( @PNR, 
+            @GPNR,
+            @EFTERNAMN,
+            @FORNAMN,
+            @INLDATUM_PERS,
+            @COADRESS,
+            @GATUADRESS,
+            @POSTNR,
+            @ORT,
+            @LAND,
+            @INLDATUM_ADRESS,
+            @TELNR,
+            @INLDATUM_TELNR,
+            @EPOSTADRESS,
+            @UPPEH,
+            '',
+            '',
+            '',
+            '',
+            @UF,
+            @KORT,
+            @FIN,
+            @PROGR,
+            @AKT,
+            @TERMIN,
+            @PTAKT,
+            @KAR,
+            'P',
+            @PLG,'' )
+		END
+
+    END
+	exec  uusmrUpdateGpnr @PNR;
+END
+
+go
+
+create PROCEDURE  [dbo].[uusmrUpdateGpnr]
+    @PNR CHAR(13)
+    AS
+    BEGIN  
+       SET NOCOUNT ON;  
+	   DECLARE @oldPnr char(13); 
+	   select  top 1 @oldPnr=gpnr from ["UUSKLIST"] where pnr=@pnr and gpnr != ''   order by inldatum_pers desc; 
+	   if (not LEN(ISNULL(@oldPnr,''))=0)
+	     BEGIN
+	      update ["UUSKLIST"] set gpnr = @oldPnr where pnr=@PNR and gpnr = '';
+	     END 
+  END
+
+
