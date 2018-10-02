@@ -72,10 +72,11 @@ BEGIN
             @KAR,
             'J',
             @PLG,'' )
+			  exec  uusmrUpdateGpnr @PNR;
 			END
 ELSE
 BEGIN
-DELETE FROM [dbo].["UUSKLIST"] WHERE PNR=@PNR AND KURS=@KURS AND TERMIN=@TERMIN AND PROGR=@PROGR AND (TYP='J');
+
   INSERT INTO [dbo].["UUSKLIST"] VALUES
             ( @PNR, 
             @GPNR,
@@ -106,8 +107,10 @@ DELETE FROM [dbo].["UUSKLIST"] WHERE PNR=@PNR AND KURS=@KURS AND TERMIN=@TERMIN 
             @KAR,
             '',
             @PLG,'' )
+			exec  uusmrUpdateGpnr @PNR;
+			DELETE FROM [dbo].["UUSKLIST"] WHERE PNR=@PNR AND KURS=@KURS AND TERMIN=@TERMIN AND PROGR=@PROGR AND (TYP='J');
 END
-exec  uusmrUpdateGpnr @PNR;
+
 END
 	   go
 CREATE PROCEDURE [dbo].[INT0017UsmrRecords]
