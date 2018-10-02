@@ -1,3 +1,6 @@
+
+	   DROP PROCEDURE IF EXISTS [dbo].[uusmrCreateStudentRecord]; 
+go
 create PROCEDURE  [dbo].[uusmrCreateStudentRecord]
            @PNR CHAR(13),
             @GPNR CHAR(13),
@@ -113,6 +116,8 @@ END
 
 END
 	   go
+	   DROP PROCEDURE IF EXISTS [dbo].[INT0017UsmrRecords]; 
+go
 CREATE PROCEDURE [dbo].[INT0017UsmrRecords]
 AS
 BEGIN
@@ -124,7 +129,8 @@ and FIN != 'UKU' and FIN != 'UL' and FIN != 'UMD'   and (AVLIDEN IS NULL  or AVL
 END
 
 go
-
+DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateStudentRecord]; 
+go
 Create PROCEDURE  [dbo].[uusmrUpdateStudentRecord]  
             @PNR CHAR(13),
             @EFTERNAMN VARCHAR(255),
@@ -160,6 +166,8 @@ BEGIN
        exec  uusmrUpdateGpnr @PNR;
        END
 go
+DROP PROCEDURE IF EXISTS [dbo].[uusmrSetDeceased]; 
+go
 CREATE  PROCEDURE  [dbo].[uusmrSetDeceased]
             @PNR CHAR(13),
             @STATUS CHAR(1)
@@ -179,7 +187,8 @@ END
 
 go
 
-
+DROP PROCEDURE IF EXISTS [dbo].[uusmrCreateStudentProgramAntagningRecord]; 
+go
 create PROCEDURE  [dbo].[uusmrCreateStudentProgramAntagningRecord]
             @PNR CHAR(13),
             @GPNR CHAR(13),
@@ -257,7 +266,8 @@ BEGIN
 END
 
 go
-
+DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateGpnr]; 
+go
 create PROCEDURE  [dbo].[uusmrUpdateGpnr]
     @PNR CHAR(13)
     AS
