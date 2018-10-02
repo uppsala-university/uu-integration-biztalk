@@ -1,3 +1,6 @@
+	   DROP PROCEDURE IF EXISTS [dbo].[uusmrPnrChangeProc]; 
+go
+
 Create PROCEDURE  [dbo].[uusmrPnrChangeProc]
     @PNR  char(13), 
     @GPNR char(13),
