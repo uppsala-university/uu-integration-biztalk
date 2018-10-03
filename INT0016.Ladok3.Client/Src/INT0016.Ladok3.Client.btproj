@@ -41,11 +41,13 @@
   <ItemGroup>
     <Reference Include="Shared.Schemas.Ladok, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Ladok\v4.0_2.2.0.0__b64e3957dd28061a\Shared.Schemas.Ladok.dll</HintPath>
+      <HintPath>..\..\Shared.Schemas\Ladok\bin\Release\Shared.Schemas.Ladok.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Shared.Schemas.SdEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.SdEvents\v4.0_1.0.0.0__b64e3957dd28061a\Shared.Schemas.SdEvents.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -81,6 +83,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <XLang Include="Processing\HandleUppehallBorttagetEvent.odx">
+      <TypeName>HandleUppehallBorttagetEvent</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
     <XLang Include="Processing\HandleStudentAvlidenmarkeringEvent.odx">
       <TypeName>HandleStudentAvlidenmarkeringEvent</TypeName>
       <Namespace>INT0016.Ladok3.Client.Processing</Namespace>
@@ -470,6 +477,33 @@
     </Map>
     <Content Include="Maps\StudentAvlidenmarkeringEvent\StudentAvlidenmarkeringEvent_to_ReturnMessage.xml" />
     <Content Include="Maps\StudentAvlidenmarkeringEvent\StudentAvlidenmarkeringEvent_to_ReturnMessage.xsl" />
+    <Map Include="Maps\UppehallBorttagetEvent\UppehallBorttagetEvent_to_Envelope.btm">
+      <TypeName>UppehallBorttagetEvent_to_Envelope</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UppehallBorttagetEvent\UppehallBorttagetEvent_to_KontaktuppgifterQueryParameters.btm">
+      <TypeName>UppehallBorttagetEvent_to_KontaktuppgifterQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UppehallBorttagetEvent\UppehallBorttagetEvent_to_ReturnMessage.btm">
+      <TypeName>UppehallBorttagetEvent_to_ReturnMessage</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UppehallBorttagetEvent\UppehallBorttagetEvent_to_StudentQueryParameters.btm">
+      <TypeName>UppehallBorttagetEvent_to_StudentQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\UppehallBorttagetEvent\UppehallBorttagetEvent_to_UtbildningstillfalleQueryParameters.btm">
+      <TypeName>UppehallBorttagetEvent_to_UtbildningstillfalleQueryParameters</TypeName>
+      <Namespace>INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\UppehallBorttagetEvent\UppehallBorttagetEvent_to_ReturnMessage.xml" />
+    <Content Include="Maps\UppehallBorttagetEvent\UppehallBorttagetEvent_to_ReturnMessage.xsl" />
     <Content Include="Maps\UppehallEvent\DelayedUppehallStartEnvelope_to_ReturnMessage.xml" />
     <Content Include="Maps\UppehallEvent\DelayedUppehallStartEnvelope_to_ReturnMessage.xsl" />
     <Content Include="Maps\UppehallEvent\DelayedUppehallStopEnvelope_to_ReturnMessage.xml" />
