@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS [dbo].["UUSKLIST"]; 
+go
 CREATE TABLE [dbo].["UUSKLIST"]
 (
             PNR CHAR(13),
@@ -15,14 +17,14 @@ CREATE TABLE [dbo].["UUSKLIST"]
             INLDATUM_TELNR CHAR(10),
             EPOSTADRESS VARCHAR(255),
             UPPEH VARCHAR(7),
-            KURS CHAR(10),
+            KURS CHAR(20),
             INST CHAR(4),
             POANG VARCHAR(5),
             KT VARCHAR(3),
             UF CHAR(3),
             KORT CHAR(4),
             FIN CHAR(3),
-            PROGR VARCHAR(10),
+            PROGR VARCHAR(20),
             AKT VARCHAR(3),
             TERMIN VARCHAR(5),
             PTAKT VARCHAR(5),
@@ -32,6 +34,9 @@ CREATE TABLE [dbo].["UUSKLIST"]
 )
 go
 ALTER TABLE ["UUSKLIST"] ADD AVLIDEN varchar(1); 
+go
+
+DROP VIEW IF EXISTS [dbo].[viewUsmrSelectAll]; 
 go
 CREATE view viewUsmrSelectAll AS
 select PNR,GPNR,EFTERNAMN,FORNAMN,INLDATUM_PERS, COADRESS, GATUADRESS,POSTNR,ORT,LAND,INLDATUM_ADRESS,TELNR,
