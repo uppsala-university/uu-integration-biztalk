@@ -266,8 +266,9 @@
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ReceiveKontaktuppgifterEventPort" />
-                <om:Property Name="Signal" Value="False" />
-                <om:Element Type="LogicalBindingAttribute" OID="a84dc3d6-1385-4e79-a293-511cedc68c88" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="DirectBindingAttribute" OID="bf250c60-a1b1-4244-a6cc-035c91a4807f" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
@@ -311,7 +312,7 @@ module INT0016.Ladok3.Client
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
     internal service HandleKontaktuppgifterEvent
     {
-        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
         port implements ReceiveKontaktuppgifterEventPortType ReceiveKontaktuppgifterEventPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses SendGetStudent_KontaktuppgifterRequestPortType SendGetStudent_KontaktuppgifterRequestPort;
