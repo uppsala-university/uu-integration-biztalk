@@ -37,7 +37,7 @@ $VerInitFeed  = 'https://api.verifiering4.ladok.se/uppfoljning/feed/CHANGE_ME'
 $DevDB  = 'mssql://.//L3Events'
 $TestDB  = 'mssql://SQL-AG21-T.exchange-test.its.uu.se//sd-ladok3events-test-db'
 $VerDB  = 'mssql://SQL-AG1.exchange-test.its.uu.se//sd-ladok3events-test-db'
-$ProdDB  = 'mssql://SQL-AG1.user.uu.se//sd-ladok3events-db'
+$ProdDB  = 'mssql://SQL-AG1.user.uu.se//sd-ladokevents-db'
 
 $DevInitEntry  = '5b9bdc34-ad06-11e8-9494-c630dded4f0c'
 $TestInitEntry  = ''
