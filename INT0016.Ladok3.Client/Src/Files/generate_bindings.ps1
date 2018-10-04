@@ -6,7 +6,7 @@ $ProdBindings = 'INT0016.Ladok3.Client.BindingInfo_Prod.xml'
 $DevLadok  = 'https://api.mit-integration.ladok.se/'
 $TestLadok  = 'https://api.mit-integration.ladok.se/'
 $VerLadok  = 'https://api.verifiering4.ladok.se/'
-$ProdLadok  = 'https://api.mit-integration.ladok.se/'
+$ProdLadok  = 'https://api.ladok.se/'
 
 $DevClientThumb  = '7B6E9150DD5B9EA485F23B1393398F583F53D90E'
 $TestClientThumb  = '7B6E9150DD5B9EA485F23B1393398F583F53D90E'
