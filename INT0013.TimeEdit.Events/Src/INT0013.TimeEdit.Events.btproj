@@ -41,9 +41,9 @@
   <ItemGroup>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.BizTalk.ReliableMessaging, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Shared.Schemas.Ladok, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+    <Reference Include="Shared.Schemas.Ladok, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\schemas\Shared.Schemas\Ladok\bin\Debug\Shared.Schemas.Ladok.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Ladok\v4.0_2.2.0.0__b64e3957dd28061a\Shared.Schemas.Ladok.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -79,6 +79,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Files\generate_bindings.ps1" />
+    <None Include="Files\install_winSCP_5.7.7.ps1" />
+    <None Include="Files\INT0013.TimeEdit.Events.docx" />
+    <None Include="Files\INT0013.TimeEdit.Events.Installation.docx" />
+    <None Include="Files\INT0013.TimeEdit.Events.msi" />
+    <None Include="Files\Specifikation_Schema_TE.xlsx" />
     <None Include="key.snk.pfx" />
     <Schema Include="Schemas\kurstillfalleTE.xsd">
       <TypeName>kurstillfalleTE</TypeName>
@@ -116,6 +122,12 @@
       <TypeName>UtbildningstillfalleAteraktiveratMap</TypeName>
       <Namespace>INT0013.TimeEdit.Events.Maps</Namespace>
     </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\INT0013.TimeEdit.Events.BindingInfo_dev.xml" />
+    <Content Include="Files\INT0013.TimeEdit.Events.BindingInfo_Prod.xml" />
+    <Content Include="Files\INT0013.TimeEdit.Events.BindingInfo_Test.xml" />
+    <Content Include="Files\INT0013.TimeEdit.Events.BindingInfo_Ver.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
