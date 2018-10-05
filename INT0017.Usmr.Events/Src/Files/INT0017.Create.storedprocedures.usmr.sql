@@ -1,8 +1,22 @@
 
-	   DROP PROCEDURE IF EXISTS [dbo].[uusmrCreateStudentRecord]; 
+DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateStudieavbrott]; 
 go
-create PROCEDURE  [dbo].[uusmrCreateStudentRecord]
-           @PNR CHAR(13),
+CREATE PROCEDURE  [dbo].[uusmrUpdateStudieavbrott]
+    @PNR CHAR(13),
+	@PROGR VARCHAR(20),
+	@KURS  VARCHAR(20),
+	@TERMIN VARCHAR(5),
+	@AVBROTTSDATUM CHAR(10)
+    AS
+    BEGIN  
+       SET NOCOUNT ON;  
+	   UPDATE ["UUSKLIST"] set PROGRAMAVBROTT = @AVBROTTSDATUM where (PNR=@PNR and PROGR=@PROGR and KURS !='')
+  END
+
+DROP PROCEDURE IF EXISTS [dbo].[uusmrCreateStudentRecord]; 
+go
+CREATE PROCEDURE  [dbo].[uusmrCreateStudentRecord]
+            @PNR CHAR(13),
             @GPNR CHAR(13),
             @EFTERNAMN VARCHAR(255),
             @FORNAMN VARCHAR(255),
@@ -17,14 +31,14 @@ create PROCEDURE  [dbo].[uusmrCreateStudentRecord]
             @INLDATUM_TELNR CHAR(10),
             @EPOSTADRESS VARCHAR(255),
             @UPPEH VARCHAR(7),
-            @KURS CHAR(10),
+            @KURS CHAR(20),
             @INST CHAR(4),
             @POANG VARCHAR(5),
             @KT VARCHAR(3),
             @UF CHAR(3),
             @KORT CHAR(4),
             @FIN CHAR(3),
-            @PROGR VARCHAR(10),
+            @PROGR VARCHAR(20),
             @AKT VARCHAR(3),
             @TERMIN VARCHAR(5),
             @PTAKT VARCHAR(5),
@@ -74,7 +88,7 @@ BEGIN
             @PTAKT,
             @KAR,
             'J',
-            @PLG,'' )
+            @PLG,'','')
 			  exec  uusmrUpdateGpnr @PNR;
 			END
 ELSE
@@ -109,7 +123,7 @@ BEGIN
             @PTAKT,
             @KAR,
             '',
-            @PLG,'' )
+            @PLG,'','' )
 			exec  uusmrUpdateGpnr @PNR;
 			DELETE FROM [dbo].["UUSKLIST"] WHERE PNR=@PNR AND KURS=@KURS AND TERMIN=@TERMIN AND PROGR=@PROGR AND (TYP='J');
 END
@@ -124,7 +138,14 @@ BEGIN
   select PNR,GPNR,EFTERNAMN,FORNAMN,INLDATUM_PERS, COADRESS, GATUADRESS,POSTNR,ORT,LAND,INLDATUM_ADRESS,TELNR,
 INLDATUM_TELNR , EPOSTADRESS, UPPEH,KURS,INST,POANG,KT,UF,KORT,FIN,PROGR,AKT,TERMIN,PTAKT,KAR,TYP,PLG from ["UUSKLIST"] where (FIN != 'E' and 
 FIN != 'EES' and FIN != 'SLU'  and FIN != 'SWB' and FIN != 'U' and FIN != 'UCI' and FIN != 'UFM' and FIN != 'UH'
-and FIN != 'UKU' and FIN != 'UL' and FIN != 'UMD'   and (AVLIDEN IS NULL  or AVLIDEN != 'J') ) order by PNR desc
+and FIN != 'UKU' and FIN != 'UL' and FIN != 'UMD'   and (AVLIDEN IS NULL  or AVLIDEN != 'J') )
+and
+( programavbrott = '' or  
+	 (SELECT CONVERT (    
+       date, GETDATE() 
+    )) < programavbrott 
+	)
+ order by PNR desc
  for xml auto 
 END
 
@@ -189,7 +210,7 @@ go
 
 DROP PROCEDURE IF EXISTS [dbo].[uusmrCreateStudentProgramAntagningRecord]; 
 go
-create PROCEDURE  [dbo].[uusmrCreateStudentProgramAntagningRecord]
+CREATE PROCEDURE  [dbo].[uusmrCreateStudentProgramAntagningRecord]
             @PNR CHAR(13),
             @GPNR CHAR(13),
             @EFTERNAMN VARCHAR(255),
@@ -205,14 +226,14 @@ create PROCEDURE  [dbo].[uusmrCreateStudentProgramAntagningRecord]
             @INLDATUM_TELNR CHAR(10),
             @EPOSTADRESS VARCHAR(255),
             @UPPEH VARCHAR(7),
-            @KURS CHAR(10),
+            @KURS CHAR(20),
             @INST CHAR(4),
             @POANG VARCHAR(5),
             @KT VARCHAR(3),
             @UF CHAR(3),
             @KORT CHAR(4),
             @FIN CHAR(3),
-            @PROGR VARCHAR(10),
+            @PROGR VARCHAR(20),
             @AKT VARCHAR(3),
             @TERMIN VARCHAR(5),
             @PTAKT VARCHAR(5),
@@ -258,13 +279,12 @@ BEGIN
             @PTAKT,
             @KAR,
             'P',
-            @PLG,'' )
+            @PLG,'','' )
 		END
 
     END
 	exec  uusmrUpdateGpnr @PNR;
 END
-
 go
 DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateGpnr]; 
 go

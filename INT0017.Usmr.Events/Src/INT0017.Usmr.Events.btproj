@@ -79,15 +79,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Map Include="Maps\INT0017.AvbrottEnvelope_to_UpdateAvbrott.btm">
-      <TypeName>INT0017_AvbrottEnvelope_to_UpdateAvbrott</TypeName>
+    <Map Include="Maps\INT0017.AvbrottEnvelope_to_usmrStudieavbrott.btm">
+      <TypeName>INT0017_AvbrottEnvelope_to_usmrStudieavbrott</TypeName>
+      <Namespace>INT0017.Usmr.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\INT0017.AvbrottBorttagetEnvelope_to_usmrStudieavbrott.btm">
+      <TypeName>INT0017_AvbrottBorttagetEnvelope_to_usmrStudieavbrott</TypeName>
       <Namespace>INT0017.Usmr.Events.Maps</Namespace>
       <SubType>Task</SubType>
     </Map>
     <Content Include="Files\INT0017.PROD.Bindings.xml" />
     <Content Include="Files\INT0017.TEST.Bindings.xml" />
     <Content Include="Files\INT0017.VER.Bindings.xml" />
-    <Content Include="Maps\INT0017.AvbrottEnvelope_to_UpdateAvbrott.xsl" />
     <Content Include="WcfSendPort_SqlAdapterBinding_Custom.bindinginfo1.xml" />
     <Map Include="Maps\INT0017.ForvantatDeltagandeEvent.To.UsmrRecord.btm">
       <TypeName>INT0017_ForvantatDeltagandeEvent_To_UsmrRecord</TypeName>
@@ -198,12 +202,17 @@
       <Namespace>INT0017.Usmr.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
-    <Schema Include="Schemas\INT0017.UpdateAvbrott.TypedProcedure.dbo.xsd">
-      <TypeName>INT0017_UpdateAvbrott_TypedProcedure_dbo</TypeName>
+    <None Include="Files\generate_bindings.ps1" />
+    <Schema Include="Schemas\INT0017.studieavbrottDataSetSchema.xsd">
+      <TypeName>INT0017_studieavbrottDataSetSchema</TypeName>
       <Namespace>INT0017.Usmr.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
-    <None Include="Files\generate_bindings.ps1" />
+    <Schema Include="Schemas\INT0017.studieavbrottProcedure.dbo.xsd">
+      <TypeName>INT0017_studieavbrottProcedure_dbo</TypeName>
+      <Namespace>INT0017.Usmr.Events</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
     <None Include="key.snk.pfx" />
     <Schema Include="Schemas\usmrCreateRecordStoredDataSetSchema.xsd">
       <TypeName>usmrCreateRecordStoredDataSetSchema</TypeName>
