@@ -13,6 +13,21 @@ CREATE PROCEDURE  [dbo].[uusmrUpdateStudieavbrott]
 	   UPDATE ["UUSKLIST"] set PROGRAMAVBROTT = @AVBROTTSDATUM where (PNR=@PNR and PROGR=@PROGR and KURS !='')
   END
 
+
+  DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateAterkalldRegistrering]; 
+go
+CREATE PROCEDURE  [dbo].[uusmrUpdateAterkalldRegistrering]
+    @PNR CHAR(13),
+	@PROGR VARCHAR(20),
+	@KURS  VARCHAR(20),
+	@TERMIN VARCHAR(5)	 
+    AS
+    BEGIN  
+       SET NOCOUNT ON;  
+	   UPDATE ["UUSKLIST"] set TYP = 'J' where (PNR=@PNR and PROGR=@PROGR and KURS = @KURS and TERMIN=@TERMIN)
+  END
+
+
 DROP PROCEDURE IF EXISTS [dbo].[uusmrCreateStudentRecord]; 
 go
 CREATE PROCEDURE  [dbo].[uusmrCreateStudentRecord]
