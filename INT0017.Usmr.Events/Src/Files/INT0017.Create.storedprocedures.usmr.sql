@@ -16,7 +16,7 @@ CREATE PROCEDURE  [dbo].[uusmrUpdateStudieavbrott]
 
   DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateAterkalldRegistrering]; 
 go
-CREATE PROCEDURE  [dbo].[uusmrUpdateAterkalldRegistrering]
+CREATE PROCEDURE  [dbo].[uusmrUpdateAterkalladRegistrering]
     @PNR CHAR(13),
 	@PROGR VARCHAR(20),
 	@KURS  VARCHAR(20),
@@ -24,10 +24,22 @@ CREATE PROCEDURE  [dbo].[uusmrUpdateAterkalldRegistrering]
     AS
     BEGIN  
        SET NOCOUNT ON;  
-	   UPDATE ["UUSKLIST"] set TYP = 'J' where (PNR=@PNR and PROGR=@PROGR and KURS = @KURS and TERMIN=@TERMIN)
+	   UPDATE ["UUSKLIST"] set TYP = 'J' where (PNR=@PNR and PROGR=@PROGR and KURS = @KURS and TERMIN=@TERMIN) and TYP !='J' and TYP !='P'
   END
-
-
+  go
+  DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateLamnaAterbud]; 
+go
+CREATE PROCEDURE  [dbo].[uusmrUpdateLamnaAterbud]
+    @PNR CHAR(13),
+	@PROGR VARCHAR(20),
+	@KURS  VARCHAR(20),
+	@TERMIN VARCHAR(5)	 
+    AS
+    BEGIN  
+       SET NOCOUNT ON;  
+	   delete from ["UUSKLIST"]  where (PNR=@PNR and KURS = @KURS and TERMIN=@TERMIN) and TYP='J'
+  END
+  go
 DROP PROCEDURE IF EXISTS [dbo].[uusmrCreateStudentRecord]; 
 go
 CREATE PROCEDURE  [dbo].[uusmrCreateStudentRecord]
