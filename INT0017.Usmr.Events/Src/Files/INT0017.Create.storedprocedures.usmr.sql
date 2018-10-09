@@ -24,7 +24,7 @@ CREATE PROCEDURE  [dbo].[uusmrUpdateAterkalladRegistrering]
     AS
     BEGIN  
        SET NOCOUNT ON;  
-	   UPDATE ["UUSKLIST"] set TYP = 'J' where (PNR=@PNR and PROGR=@PROGR and KURS = @KURS and TERMIN=@TERMIN) and TYP !='J' and TYP !='P'
+	   UPDATE ["UUSKLIST"] set TYP = 'J' where (PNR=@PNR   and KURS = @KURS and TERMIN=@TERMIN) and TYP !='J' and TYP !='P'
   END
   go
   DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateLamnaAterbud]; 
