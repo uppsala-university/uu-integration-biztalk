@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-10-05T14:17:00.5897997+02:00</Timestamp>
+  <Timestamp>2018-10-09T13:50:48.387797+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0007.UU.PersonEvents]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0007.UU.PersonEvents], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -27,7 +27,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>true</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
         </SendHandler>
       </PrimaryTransport>
@@ -45,19 +45,17 @@
       </SecondaryTransport>
       <ReceivePipelineData xsi:nil="true" />
       <Tracking>0</Tracking>
-      <Filter>
-        &lt;?xml version="1.0" encoding="utf-16"?&gt;
-        &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-        &lt;Group&gt;
-        &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0007.UU.LadokEvents" /&gt;
-        &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#LokalStudentEnvelope" /&gt;
-        &lt;/Group&gt;
-        &lt;Group&gt;
-        &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0007.UU.LadokEvents" /&gt;
-        &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#StudentAvlidenmarkeringEnvelope" /&gt;
-        &lt;/Group&gt;
-        &lt;/Filter&gt;
-      </Filter>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0007.UU.LadokEvents" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#StudentAvlidenmarkeringEnvelope" /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0007.UU.LadokEvents" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#LokalStudentEnvelope" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
       <Transforms>
         <Transform FullName="INT0007.UU.PersonEvents.Maps.LokalStudentEnvelope_To_PersonStudentAccountUpdatedEvent" AssemblyQualifiedName="INT0007.UU.PersonEvents.Maps.LokalStudentEnvelope_To_PersonStudentAccountUpdatedEvent,INT0007.UU.PersonEvents, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0007.UU.PersonEvents.Maps.StudentAvlidenmarkeringEvent_To_PersonEvent" AssemblyQualifiedName="INT0007.UU.PersonEvents.Maps.StudentAvlidenmarkeringEvent_To_PersonEvent,INT0007.UU.PersonEvents, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
@@ -83,7 +81,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
         </SendHandler>
       </PrimaryTransport>
@@ -142,7 +140,7 @@
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
           <Enable>false</Enable>
-          <ReceiveHandler Name="CluSdReceive" HostTrusted="false">
+          <ReceiveHandler Name="CluSDReceive" HostTrusted="false">
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>
         </ReceiveLocation>
