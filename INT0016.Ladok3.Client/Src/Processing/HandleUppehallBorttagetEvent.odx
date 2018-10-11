@@ -332,16 +332,16 @@
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="ReceiveLadok3Event" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="DNFPredicate" OID="fa896cab-b504-4039-be83-3509f07298cb" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="bb12987f-b2e8-4119-8e47-93c5b4342af8" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.Operation" />
                         <om:Property Name="RHS" Value="&quot;RouteEventsOperation&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
-                    <om:Element Type="DNFPredicate" OID="982b211e-eb3a-4b2c-b2ac-0e2b5609556a" ParentLink="Receive_DNFPredicate">
+                    <om:Element Type="DNFPredicate" OID="4df4379c-8d5c-4455-b9b9-e1053fa0de57" ParentLink="Receive_DNFPredicate">
                         <om:Property Name="LHS" Value="BTS.MessageType" />
-                        <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/studentinformation#UppehallBorttagetEvent&quot;" />
+                        <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/studiedeltagande#UppehallBorttagetEvent&quot;" />
                         <om:Property Name="Grouping" Value="AND" />
                         <om:Property Name="Operator" Value="Equals" />
                         <om:Property Name="Signal" Value="False" />
@@ -910,7 +910,7 @@ module INT0016.Ladok3.Client
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("f9cba575-bda4-49a0-9881-b693de1c606b")]
-            activate ((BTS.Operation == "RouteEventsOperation") && (BTS.MessageType == "http://schemas.ladok.se/studentinformation#UppehallBorttagetEvent"))receive (ReceiveUppehallBorttagetEventPort.Operation_1, Ladok3Event);
+            activate ((BTS.Operation == "RouteEventsOperation") && (BTS.MessageType == "http://schemas.ladok.se/studiedeltagande#UppehallBorttagetEvent"))receive (ReceiveUppehallBorttagetEventPort.Operation_1, Ladok3Event);
             TempXML = new System.Xml.XmlDocument();
             ackMessage = "";
             counterStr = "";
