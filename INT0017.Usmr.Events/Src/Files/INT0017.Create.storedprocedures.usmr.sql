@@ -1,6 +1,21 @@
 
+DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateStudieuppehall]; 
+go
+CREATE PROCEDURE  [dbo].[uusmrUpdateStudieuppehall]
+    @PNR CHAR(13),
+	@PROGR VARCHAR(20),
+	@KURS  VARCHAR(20),
+	@TERMIN VARCHAR(5),
+	@AVBROTTSPERIOD VARCHAR(7)
+     AS
+    BEGIN  
+       SET NOCOUNT ON;  
+	   UPDATE ["UUSKLIST"] set UPPEH = @AVBROTTSPERIOD where (PNR=@PNR and PROGR=@PROGR)
+  END
+go
 DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateStudieavbrott]; 
 go
+
 CREATE PROCEDURE  [dbo].[uusmrUpdateStudieavbrott]
     @PNR CHAR(13),
 	@PROGR VARCHAR(20),
