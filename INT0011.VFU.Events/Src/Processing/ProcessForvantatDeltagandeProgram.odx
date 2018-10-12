@@ -363,10 +363,10 @@
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
                 <om:Element Type="While" OID="684154db-9367-44a3-898b-8ad5ba3ca9fb" ParentLink="ServiceBody_Statement" LowerBound="67.1" HigherBound="145.1">
-                    <om:Property Name="Expression" Value="count &lt; 4" />
+                    <om:Property Name="Expression" Value="count &lt; 4 &amp;&amp; returncode != &quot;0&quot;" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Retry loop" />
-                    <om:Property Name="Signal" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
                     <om:Element Type="Scope" OID="311b1f12-95ef-49de-94b1-0c0504d18958" ParentLink="ComplexStatement_Statement" LowerBound="70.1" HigherBound="136.1">
                         <om:Property Name="InitializedTransactionType" Value="True" />
                         <om:Property Name="IsSynchronized" Value="False" />
@@ -761,7 +761,7 @@ module INT0011.VFU.Events
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("9c745894-445d-46fd-92b2-5fe483fe9114")]
             count = 0;
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("684154db-9367-44a3-898b-8ad5ba3ca9fb")]
-            while (count < 4)
+            while (count < 4 && returncode != "0")
             {
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("311b1f12-95ef-49de-94b1-0c0504d18958")]
                 scope
