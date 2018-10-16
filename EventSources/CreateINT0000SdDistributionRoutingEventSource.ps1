@@ -1,4 +1,4 @@
-$source = "INT0014.identity.sp.adapter"
+$source = "INT0000.SD-distribution.Routing"
 $log = "Application"
 
  if ([System.Diagnostics.EventLog]::SourceExists($source) -eq $false) 
