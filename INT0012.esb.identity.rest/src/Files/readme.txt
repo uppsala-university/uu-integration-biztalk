@@ -26,4 +26,8 @@ Bindings
 INT0012.esb.identity.rest.BindingInfo_DEV_Msmq.xml    - bindings för att lägga ut event på kön identity-distribution
 INT0012.esb.identity.rest.BindingInfo_DEV_FileOutput.xml - används endast för utveckling, eventen skrivs till fil.
 
+Adapters
+
+I FILES adaptern måste CluIdentitySend läggas till.
+
 
