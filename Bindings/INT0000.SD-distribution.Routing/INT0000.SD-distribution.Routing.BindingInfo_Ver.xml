@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-09-27T14:58:19.3586216+02:00</Timestamp>
+  <Timestamp>2018-10-17T15:13:08.7962349+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0000.SD-distribution.Routing]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0000.SD-distribution.Routing], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -10,8 +10,8 @@
   <SendPortCollection>
     <SendPort Name="INT0000.SD-group.Send_Routing" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
-      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
-      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4108-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="BizTalkComponents.PipelineComponents.Logging.Logging"&gt;&lt;Properties&gt;&lt;Parameters vt="8"&gt;Id=/*[local-name()='GroupEvent' and namespace-uri()='http://UU.Integrations.Common.Schemas.InternalGroupEvent']/*[local-name()='Group' and namespace-uri()='http://UU.Integrations.Common.Schemas.Internal.Group']/*[local-name()='Id' and namespace-uri()='http://UU.Integrations.Common.Schemas.Internal.Group']&lt;/Parameters&gt;&lt;Source vt="8"&gt;BizTalk Application&lt;/Source&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
+      <TransmitPipeline Name="Shared.Pipelines.Pipelines.FilterOnPropertyPipeline" FullyQualifiedName="Shared.Pipelines.Pipelines.FilterOnPropertyPipeline, Shared.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Shared.PipelineComponents.FilterOnPromotion.FilterOnPromotion"&gt;&lt;Properties&gt;&lt;LogSource vt="8"&gt;INT0000.SD-distribution.Routing&lt;/LogSource&gt;&lt;LogXPath vt="8"&gt;//*[local-name()='HandelseUID']&lt;/LogXPath&gt;&lt;MessageTypes vt="8"&gt;http://ladok.uu.envelope.schemas#RegistreringEnvelope|http://ladok.uu.envelope.schemas#OmregistreringEnvelope|http://ladok.uu.envelope.schemas#AterbudEnvelope|http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope|http://ladok.uu.envelope.schemas#AterkalladOmregistreringEnvelope|http://ladok.uu.envelope.schemas#ForvantatDeltagandeSkapadEnvelope|http://ladok.uu.envelope.schemas#KurstillfalleTillStatusEnvelope&lt;/MessageTypes&gt;&lt;PropertyName vt="8"&gt;EventUtbildningstypId&lt;/PropertyName&gt;&lt;PropertyNamespace vt="8"&gt;https://Shared.Schemas.Ladok.PropertySchema&lt;/PropertyNamespace&gt;&lt;PropertyValues vt="8"&gt;52|101382|101955|101994|102011&lt;/PropertyValues&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
       <PrimaryTransport>
         <Address>FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\SD-GROUP</Address>
         <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
@@ -86,7 +86,7 @@
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
       <PrimaryTransport>
         <Address>null://sd-distribution-unknown-subscriber</Address>
-        <TransportType Name="NullAdapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
+        <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
         <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;name&amp;gt;sd-distribution-unknown-subscriber&amp;lt;/name&amp;gt;&amp;lt;logMessages&amp;gt;false&amp;lt;/logMessages&amp;gt;&amp;lt;uri&amp;gt;null://sd-distribution-unknown-subscriber&amp;lt;/uri&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
         <RetryCount>0</RetryCount>
         <RetryInterval>5</RetryInterval>
@@ -97,7 +97,7 @@
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
         <SendHandler Name="CluSDSend" HostTrusted="false">
-          <TransportType Name="NullAdapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
+          <TransportType Name="nulladapter" Capabilities="8210" ConfigurationClsid="c98d3c74-f722-4f50-8afc-4c2a9cb1d961" />
         </SendHandler>
       </PrimaryTransport>
       <SecondaryTransport>
@@ -130,7 +130,8 @@
     </SendPort>
     <SendPort Name="INT0000.SD-Sesam.Send_Routing" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
-      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <TransmitPipeline Name="Shared.Pipelines.Pipelines.FilterOnPropertyPipeline" FullyQualifiedName="Shared.Pipelines.Pipelines.FilterOnPropertyPipeline, Shared.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Shared.PipelineComponents.FilterOnPromotion.FilterOnPromotion"&gt;&lt;Properties&gt;&lt;LogSource vt="8"&gt;INT0000.SD-distribution.Routing&lt;/LogSource&gt;&lt;LogXPath vt="8"&gt;//*[local-name()='HandelseUID']&lt;/LogXPath&gt;&lt;MessageTypes vt="8"&gt;http://ladok.uu.envelope.schemas#KurstillfalleTillStatusEnvelope|http://ladok.uu.envelope.schemas#KurspaketeringUppdateradEnvelope|http://ladok.uu.envelope.schemas#RegistreringEnvelope|http://ladok.uu.envelope.schemas#OmregistreringEnvelope&lt;/MessageTypes&gt;&lt;PropertyName vt="8"&gt;EventUtbildningstypId&lt;/PropertyName&gt;&lt;PropertyNamespace vt="8"&gt;https://Shared.Schemas.Ladok.PropertySchema&lt;/PropertyNamespace&gt;&lt;PropertyValues vt="8"&gt;52|101382|101955|101994|102011&lt;/PropertyValues&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
       <PrimaryTransport>
         <Address>FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\SD-SESAM</Address>
         <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
@@ -285,9 +286,98 @@
       <RouteFailedMessage>false</RouteFailedMessage>
       <ApplicationName>INT0000.SD-distribution.Routing</ApplicationName>
     </SendPort>
+    <SendPort Name="INT0000.SD-vfu.Send_Routing" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Shared.Pipelines.Pipelines.FilterOnPropertyPipeline" FullyQualifiedName="Shared.Pipelines.Pipelines.FilterOnPropertyPipeline, Shared.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Shared.PipelineComponents.FilterOnPromotion.FilterOnPromotion"&gt;&lt;Properties&gt;&lt;LogSource vt="8"&gt;INT0000.SD-distribution.Routing&lt;/LogSource&gt;&lt;LogXPath vt="8"&gt;//*[local-name()='HandelseUID']&lt;/LogXPath&gt;&lt;MessageTypes vt="8"&gt;http://ladok.uu.envelope.schemas#KurstillfalleTillStatusEnvelope|http://ladok.uu.envelope.schemas#RegistreringEnvelope|http://ladok.uu.envelope.schemas#ForvantatDeltagandeSkapadEnvelope|http://ladok.uu.envelope.schemas#OmregistreringEnvelope|http://ladok.uu.envelope.schemas#AterkalladOmregistreringEnvelope|http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope |http://ladok.uu.envelope.schemas#AvbrottEnvelope|http://ladok.uu.envelope.schemas#AvbrottBorttagetEnvelope|http://ladok.uu.envelope.schemas#DelayedUppehallStopEnvelope|http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope&lt;/MessageTypes&gt;&lt;PropertyName vt="8"&gt;EventUtbildningstypId&lt;/PropertyName&gt;&lt;PropertyNamespace vt="8"&gt;https://Shared.Schemas.Ladok.PropertySchema&lt;/PropertyNamespace&gt;&lt;PropertyValues vt="8"&gt;52|101382|101994|101955|102011|117019|101292|94|102071|101972|101999|101376&lt;/PropertyValues&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
+      <PrimaryTransport>
+        <Address>FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\SD-VFU</Address>
+        <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\SD-VFU&amp;lt;/queue&amp;gt;&amp;lt;maximumMessageSize&amp;gt;1024&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;false&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\SD-VFU&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>1</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>true</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="CluSDSend" HostTrusted="false">
+          <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T22:00:00</FromTime>
+        <ToTime>2000-01-01T21:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#KurstillfalleTillStatusEnvelope" /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#RegistreringEnvelope" /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#ForvantatDeltagandeSkapadEnvelope" /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#OmregistreringEnvelope" /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#AterkalladOmregistreringEnvelope" /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope " /&gt;
+  &lt;/Group&gt;
+   &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#AvbrottEnvelope " /&gt;
+  &lt;/Group&gt;
+   &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#AvbrottBorttagetEnvelope " /&gt;
+  &lt;/Group&gt;
+   &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#DelayedUppehallStopEnvelope " /&gt;
+  &lt;/Group&gt;
+   &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope " /&gt;
+  &lt;/Group&gt;
+   &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#UppehallBorttagetEnvelope" /&gt;
+  &lt;/Group&gt;
+  &lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>true</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>true</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0000.SD-distribution.Routing</ApplicationName>
+    </SendPort>
     <SendPort Name="INT0000.SD.timeedit.Send_Routing" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
-      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <TransmitPipeline Name="Shared.Pipelines.Pipelines.FilterOnPropertyPipeline" FullyQualifiedName="Shared.Pipelines.Pipelines.FilterOnPropertyPipeline, Shared.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Shared.PipelineComponents.FilterOnPromotion.FilterOnPromotion"&gt;&lt;Properties&gt;&lt;LogSource vt="8"&gt;INT0000.SD-distribution.Routing&lt;/LogSource&gt;&lt;LogXPath vt="8"&gt;//*[local-name()='HandelseUID']&lt;/LogXPath&gt;&lt;MessageTypes vt="8"&gt;http://ladok.uu.envelope.schemas#KurstillfalleTillStatusEnvelope|http://ladok.uu.envelope.schemas#KurstillfalleUppdateratEnvelope|http://ladok.uu.envelope.schemas#UtbildningstillfalleInstalltEnvelope|http://ladok.uu.envelope.schemas#UtbildningstillfalleAteraktiveratEnvelope&lt;/MessageTypes&gt;&lt;PropertyName vt="8"&gt;EventUtbildningstypId&lt;/PropertyName&gt;&lt;PropertyNamespace vt="8"&gt;https://Shared.Schemas.Ladok.PropertySchema&lt;/PropertyNamespace&gt;&lt;PropertyValues vt="8"&gt;52|101382|101994|101955|102011|117019|101292|94|102071|101972|101999|101376&lt;/PropertyValues&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
       <PrimaryTransport>
         <Address>FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\SD-TIMEEDIT</Address>
         <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
@@ -396,92 +486,10 @@
       <RouteFailedMessage>false</RouteFailedMessage>
       <ApplicationName>INT0000.SD-distribution.Routing</ApplicationName>
     </SendPort>
-    <SendPort Name="INT0000.SD-vfu.Send_Routing" IsStatic="true" IsTwoWay="false" BindingOption="0">
-      <Description xsi:nil="true" />
-      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
-      <PrimaryTransport>
-        <Address>FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\SD-VFU</Address>
-        <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\SD-VFU&amp;lt;/queue&amp;gt;&amp;lt;maximumMessageSize&amp;gt;1024&amp;lt;/maximumMessageSize&amp;gt;&amp;lt;acknowledgeType&amp;gt;None&amp;lt;/acknowledgeType&amp;gt;&amp;lt;timeOut&amp;gt;4&amp;lt;/timeOut&amp;gt;&amp;lt;priority&amp;gt;Normal&amp;lt;/priority&amp;gt;&amp;lt;recoverable&amp;gt;false&amp;lt;/recoverable&amp;gt;&amp;lt;encryptionAlgorithm&amp;gt;None&amp;lt;/encryptionAlgorithm&amp;gt;&amp;lt;useAuthentication&amp;gt;false&amp;lt;/useAuthentication&amp;gt;&amp;lt;segmentationSupport&amp;gt;false&amp;lt;/segmentationSupport&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;useJournalQueue&amp;gt;false&amp;lt;/useJournalQueue&amp;gt;&amp;lt;useDeadLetterQueue&amp;gt;true&amp;lt;/useDeadLetterQueue&amp;gt;&amp;lt;ackTypeEnumsValue&amp;gt;0&amp;lt;/ackTypeEnumsValue&amp;gt;&amp;lt;timeOutUnits&amp;gt;Days&amp;lt;/timeOutUnits&amp;gt;&amp;lt;bodyType&amp;gt;8209&amp;lt;/bodyType&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\SD-VFU&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
-        <RetryCount>3</RetryCount>
-        <RetryInterval>1</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
-        <Primary>true</Primary>
-        <OrderedDelivery>true</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSDSend" HostTrusted="false">
-          <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
-        </SendHandler>
-      </PrimaryTransport>
-      <SecondaryTransport>
-        <Address />
-        <RetryCount>3</RetryCount>
-        <RetryInterval>5</RetryInterval>
-        <ServiceWindowEnabled>false</ServiceWindowEnabled>
-        <FromTime>2000-01-01T22:00:00</FromTime>
-        <ToTime>2000-01-01T21:59:59</ToTime>
-        <Primary>false</Primary>
-        <OrderedDelivery>false</OrderedDelivery>
-        <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler xsi:nil="true" />
-      </SecondaryTransport>
-      <ReceivePipelineData xsi:nil="true" />
-      <Tracking>0</Tracking>
-      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#KurstillfalleTillStatusEnvelope" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#RegistreringEnvelope" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#ForvantatDeltagandeSkapadEnvelope" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#OmregistreringEnvelope" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#AterkalladOmregistreringEnvelope" /&gt;
-  &lt;/Group&gt;
-  &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#AterkalladRegistreringEnvelope " /&gt;
-  &lt;/Group&gt;
-   &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#AvbrottEnvelope " /&gt;
-  &lt;/Group&gt;
-   &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#AvbrottBorttagetEnvelope " /&gt;
-  &lt;/Group&gt;
-   &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#DelayedUppehallStopEnvelope " /&gt;
-  &lt;/Group&gt;
-   &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
-    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope " /&gt;
-  &lt;/Group&gt;
-&lt;/Filter&gt;</Filter>
-      <Transforms />
-      <OrderedDelivery>true</OrderedDelivery>
-      <Priority>5</Priority>
-      <StopSendingOnFailure>true</StopSendingOnFailure>
-      <RouteFailedMessage>false</RouteFailedMessage>
-      <ApplicationName>INT0000.SD-distribution.Routing</ApplicationName>
-    </SendPort>
     <SendPort Name="INT0000.SD-Usmr.Send_Routing" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
-      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <TransmitPipeline Name="Shared.Pipelines.Pipelines.FilterOnPropertyPipeline" FullyQualifiedName="Shared.Pipelines.Pipelines.FilterOnPropertyPipeline, Shared.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Shared.PipelineComponents.FilterOnPromotion.FilterOnPromotion"&gt;&lt;Properties&gt;&lt;LogSource vt="8"&gt;INT0000.SD-distribution.Routing&lt;/LogSource&gt;&lt;LogXPath vt="8"&gt;//*[local-name()='HandelseUID']&lt;/LogXPath&gt;&lt;MessageTypes vt="8"&gt;http://ladok.uu.envelope.schemas#RegistreringEnvelope|http://ladok.uu.envelope.schemas#ForvantatDeltagandeSkapadEnvelope|http://ladok.uu.envelope.schemas#OmregistreringEnvelope&lt;/MessageTypes&gt;&lt;PropertyName vt="8"&gt;EventUtbildningstypId&lt;/PropertyName&gt;&lt;PropertyNamespace vt="8"&gt;https://Shared.Schemas.Ladok.PropertySchema&lt;/PropertyNamespace&gt;&lt;PropertyValues vt="8"&gt;101381|101731|101951|101953|101959|107510|101377|52|101382|101994|101955|102011|117019&lt;/PropertyValues&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
       <PrimaryTransport>
         <Address>FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\SD-USMR</Address>
         <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
@@ -523,7 +531,7 @@
     &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#ForvantatDeltagandeSkapadEnvelope" /&gt;
   &lt;/Group&gt;
   &lt;Group&gt;
-    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD-Usmr.Send_Routing" /&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0000.SD.Routing" /&gt;
     &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#OmregistreringEnvelope" /&gt;
   &lt;/Group&gt;
   &lt;Group&gt;

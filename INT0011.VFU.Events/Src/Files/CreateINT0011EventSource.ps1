@@ -1,4 +1,4 @@
-$source = "INT0014.identity.sp.adapter"
+$source = "INT0011.VFU.Events"
 $log = "Application"
 
  if ([System.Diagnostics.EventLog]::SourceExists($source) -eq $false) 

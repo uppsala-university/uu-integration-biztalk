@@ -56,5 +56,5 @@ copy .\$DevBindings .\$ProdBindings
 (Get-Content -Path .\$ProdBindings).Replace($DevQueue,$ProdQueue).Replace($DevMail,$ProdMail).Replace($DevUsersLDAP,$ProdUsersLDAP).Replace($DevCoursesLDAP,$ProdCoursesLDAP).Replace($DevCoursesLDAP2,$ProdCoursesLDAP2).Replace($DevUsersLDAP2,$ProdUsersLDAP2).Replace($DevSMTP,$ProdSMTP) | Set-Content -Path .\$ProdBindings
 
 copy .\$DevBindings .\$VerBindings
-(Get-Content -Path .\$VerBindings).Replace($DevQueue,$VerQueue).Replace($DevMail,$VerMail).Replace($DevUsersLDAP,$VerUsersLDAP).Replace($DevCoursesLDAP,$VerCoursesLDAP).Replace($DevCoursesLDAP2,$VerCoursesLDAP2).Replace($DevUsersLDAP2,$VerUsersLDAP2).Replace($DevSMTP,$VerSMTP) | Set-Content -Path .\$ProdBindings
+(Get-Content -Path .\$VerBindings).Replace($DevQueue,$VerQueue).Replace($DevMail,$VerMail).Replace($DevUsersLDAP,$VerUsersLDAP).Replace($DevCoursesLDAP,$VerCoursesLDAP).Replace($DevCoursesLDAP2,$VerCoursesLDAP2).Replace($DevUsersLDAP2,$VerUsersLDAP2).Replace($DevSMTP,$VerSMTP) | Set-Content -Path .\$VerBindings
 
