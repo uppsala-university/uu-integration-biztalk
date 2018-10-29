@@ -35,6 +35,8 @@ CREATE TABLE [dbo].["UUSKLIST"]
 go
 ALTER TABLE ["UUSKLIST"] ADD AVLIDEN varchar(1); 
 go
+ALTER TABLE ["UUSKLIST"] ADD PROGRAMAVBROTT varchar(10); 
+go
 
 DROP VIEW IF EXISTS [dbo].[viewUsmrSelectAll]; 
 go

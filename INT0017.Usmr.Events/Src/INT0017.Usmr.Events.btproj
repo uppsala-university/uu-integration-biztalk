@@ -42,7 +42,7 @@
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Shared.Schemas.Ladok, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Ladok\v4.0_2.2.0.0__b64e3957dd28061a\Shared.Schemas.Ladok.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Ladok\v4.0_2.2.0.0__b64e3957dd28061a\Shared.Schemas.Ladok.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -79,15 +79,47 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Map Include="Maps\INT0017.AvbrottEnvelope_to_UpdateAvbrott.btm">
-      <TypeName>INT0017_AvbrottEnvelope_to_UpdateAvbrott</TypeName>
+    <Content Include="Maps\INT0017.AterbudEnvelope_to_uusmrUpdateLamnaAterbud.xsl" />
+    <Map Include="Maps\INT0017.DelayedEnvelopeStop_to_usmrUpdStudieavbrott.btm">
+      <TypeName>INT0017_DelayedEnvelopeStop_to_usmrUpdStudieavbrott</TypeName>
+      <Namespace>INT0017.Usmr.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\INT0017_AterkalladRegistreringEnvelopt_to_usmrUpdateAterkalladReg.btm">
+      <TypeName>INT0017_AterkalladRegistreringEnvelopt_to_usmrUpdateAterkalladReg</TypeName>
+      <Namespace>INT0017.Usmr.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\INT0017.AterkalladOmregistreringEnvelope_to_usmrUpdateAterkalladReg.btm">
+      <TypeName>INT0017_AterkalladOmregistreringEnvelope_to_usmrUpdateAterkalladReg</TypeName>
+      <Namespace>INT0017.Usmr.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\INT0017.AterbudEnvelope_to_uusmrUpdateLamnaAterbud.btm">
+      <TypeName>INT0017_AterbudEnvelope_to_uusmrUpdateLamnaAterbud</TypeName>
+      <Namespace>INT0017.Usmr.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\INT0017.AterkalladOmregistreringEnvelope_to_usmrUpdateAterkalladReg.xsl" />
+    <Map Include="Maps\INT0017.DelayedEnvelope_to_usmrUpdStudieavbrott.btm">
+      <TypeName>INT0017_DelayedEnvelope_to_usmrUpdStudieavbrott</TypeName>
+      <Namespace>INT0017.Usmr.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\INT0017_AterkalladRegistreringEnvelopt_to_usmrUpdateAterkalladReg.xsl" />
+    <Map Include="Maps\INT0017.AvbrottEnvelope_to_usmrStudieavbrott.btm">
+      <TypeName>INT0017_AvbrottEnvelope_to_usmrStudieavbrott</TypeName>
+      <Namespace>INT0017.Usmr.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\INT0017.AvbrottBorttagetEnvelope_to_usmrStudieavbrott.btm">
+      <TypeName>INT0017_AvbrottBorttagetEnvelope_to_usmrStudieavbrott</TypeName>
       <Namespace>INT0017.Usmr.Events.Maps</Namespace>
       <SubType>Task</SubType>
     </Map>
     <Content Include="Files\INT0017.PROD.Bindings.xml" />
     <Content Include="Files\INT0017.TEST.Bindings.xml" />
     <Content Include="Files\INT0017.VER.Bindings.xml" />
-    <Content Include="Maps\INT0017.AvbrottEnvelope_to_UpdateAvbrott.xsl" />
     <Content Include="WcfSendPort_SqlAdapterBinding_Custom.bindinginfo1.xml" />
     <Map Include="Maps\INT0017.ForvantatDeltagandeEvent.To.UsmrRecord.btm">
       <TypeName>INT0017_ForvantatDeltagandeEvent_To_UsmrRecord</TypeName>
@@ -198,12 +230,47 @@
       <Namespace>INT0017.Usmr.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
-    <Schema Include="Schemas\INT0017.UpdateAvbrott.TypedProcedure.dbo.xsd">
-      <TypeName>INT0017_UpdateAvbrott_TypedProcedure_dbo</TypeName>
+    <None Include="Files\generate_bindings.ps1" />
+    <Schema Include="Schemas\INT0017.studieavbrottDataSetSchema.xsd">
+      <TypeName>INT0017_studieavbrottDataSetSchema</TypeName>
       <Namespace>INT0017.Usmr.Events</Namespace>
       <SubType>Task</SubType>
     </Schema>
-    <None Include="Files\generate_bindings.ps1" />
+    <Schema Include="Schemas\INT0017.studieavbrottProcedure.dbo.xsd">
+      <TypeName>INT0017_studieavbrottProcedure_dbo</TypeName>
+      <Namespace>INT0017.Usmr.Events</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\INT0017_AterkalladRegistreringDataSetSchema.xsd">
+      <TypeName>INT0017_AterkalladRegistreringDataSetSchema</TypeName>
+      <Namespace>INT0017.Usmr.Events</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\INT0017_AterkalladRegistreringProcedure.dbo.xsd">
+      <TypeName>INT0017_AterkalladRegistreringProcedure_dbo</TypeName>
+      <Namespace>INT0017.Usmr.Events</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\INT0017.usmrUpdateLamnaAterbudDataSetSchema.xsd">
+      <TypeName>INT0017_usmrUpdateLamnaAterbudDataSetSchema</TypeName>
+      <Namespace>INT0017.Usmr.Events</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\INT0017.usmrUpdateLamnaAterbudProcedure.dbo.xsd">
+      <TypeName>INT0017_usmrUpdateLamnaAterbudProcedure_dbo</TypeName>
+      <Namespace>INT0017.Usmr.Events</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\INT0017.studieuppehallDataSetSchema.xsd">
+      <TypeName>INT0017_studieuppehallDataSetSchema</TypeName>
+      <Namespace>INT0017.Usmr.Events</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\INT0017.studieuppehallProcedure.dbo.xsd">
+      <TypeName>INT0017_studieuppehallProcedure_dbo</TypeName>
+      <Namespace>INT0017.Usmr.Events</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
     <None Include="key.snk.pfx" />
     <Schema Include="Schemas\usmrCreateRecordStoredDataSetSchema.xsd">
       <TypeName>usmrCreateRecordStoredDataSetSchema</TypeName>
