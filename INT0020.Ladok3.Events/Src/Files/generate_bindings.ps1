@@ -21,7 +21,7 @@ $ProdArchiveFile = '\\uuc-ladokfs001.its.uu.se\BizTalk-root$'
 
 $DevThumb  = '7B6E9150DD5B9EA485F23B1393398F583F53D90E'
 $TestThumb  = '7B6E9150DD5B9EA485F23B1393398F583F53D90E'
-$ProdThumb  = ''
+$ProdThumb  = '9912327594B7DC0066181B4BE3426725641FF26D'
 $VerThumb  = '4AFAFD5B2E152F8743C5460288333D90088A8A45'
 
 $DevRecent  = 'https://api.mit-integration.ladok.se/uppfoljning/feed/recent'
