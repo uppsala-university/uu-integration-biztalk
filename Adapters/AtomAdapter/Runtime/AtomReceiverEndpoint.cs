@@ -117,39 +117,69 @@ namespace BizTalk.Adapter.Atom
             }
         }
 
-        private void Log(Entry entry, string uri)
+        private XmlDocument GetXMLDocumentFromContent(string content)
+        {
+            try
+            {
+                XmlDocument xml = new XmlDocument();
+                xml.LoadXml(content);
+                return xml;
+            }
+            catch (Exception e)
+            {
+                throw new InvalidConfiguration(string.Format("Content not XML. Cannot use XPath logging or namespace whitelist. Exception message: {0}", e.Message));
+            }
+        }
+
+        private string GetLogContent(XmlDocument xml)
+        {
+            try
+            {
+                string content = string.Empty;
+                XmlNode node = xml.SelectSingleNode(this.properties.LogContentXpath.Trim());
+                if (node != null)
+                    content = node.InnerText;
+                return content;
+            }
+            catch (Exception e)
+            {
+                throw new InvalidConfiguration(string.Format("Unable to log using current logging configuration. Exception message: {0}", e.Message));
+            }
+        }
+
+        private bool Discard(XmlDocument xml)
+        {
+            try
+            {
+                return this.properties.NamespaceWhiteList.Count > 0 && !this.properties.NamespaceWhiteList.Contains(xml.DocumentElement.NamespaceURI);
+            }
+            catch (Exception e)
+            {
+                throw new InvalidConfiguration(string.Format("Content not XML. Cannot use XPath logging or namespace whitelist. Exception message: {0}", e.Message));
+            }
+        }
+
+        private void Log(string content, string id, string uri, string nameSpace, bool discarded)
         {
             if (this.properties.UseLogging)
             {
-                try
-                {
-                    string content = entry.Content;
-                    if (!string.IsNullOrWhiteSpace(this.properties.LogContentXpath))
-                    {
-                        XmlDocument xml = new XmlDocument();
-                        xml.LoadXml(content);
-                        XmlNode node = xml.SelectSingleNode(this.properties.LogContentXpath.Trim());
-                        if (node != null)
-                            content = node.InnerText;
-                    }
-
-                    string format = "[AtomAdapter] {0}{1}{2}{3}{4}{5}{6}{7}";
-                    string message = string.Format(format,
-                        this.properties.LogEventId ? "[Entry] " : "",
-                        this.properties.LogEventId ? entry.Id : "",
-                        this.properties.LogEventId ? " " : "",
-                        "[Event] ",
-                        content,
-                        this.properties.LogUri ? " " : "",
-                        this.properties.LogUri ? "[Feed] " : "",
-                        this.properties.LogUri ? uri : ""
-                        );
-                    System.Diagnostics.EventLog.WriteEntry(this.properties.LogSource, message);
-                }
-                catch (Exception e)
-                {
-                    throw new InvalidConfiguration(string.Format("Unable to log using current logging configuration. Exception message: {0}", e.Message));
-                }
+                string format = "[AtomAdapter] {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}";
+                string message = string.Format(format,
+                    this.properties.LogEventId ? "[Entry] " : "",
+                    this.properties.LogEventId ? id : "",
+                    this.properties.LogEventId ? " " : "",
+                    "[Event] ",
+                    content,
+                    this.properties.LogUri ? " " : "",
+                    this.properties.LogUri ? "[Feed] " : "",
+                    this.properties.LogUri ? uri : "",
+                    this.properties.LogUri ? " " : "",
+                    this.properties.LogUri ? "[Namespace] " : "",
+                    this.properties.LogUri ? nameSpace : "",
+                    this.properties.LogDiscarded && discarded ? " " : "",
+                    this.properties.LogDiscarded && discarded ? "[DISCARDED] " : ""
+                    );
+                System.Diagnostics.EventLog.WriteEntry(this.properties.LogSource, message);
             }
         }
 
@@ -203,7 +233,7 @@ namespace BizTalk.Adapter.Atom
                 AtomReader atom = new AtomReader(this.properties.Uri, stateSettings, this.properties.SecuritySettings, this.properties.FeedMax);
 
                 Feed feed = null;
-                bool discard = atom.IdFound;
+                bool lookForStateId = atom.IdFound;
                 string stateId = stateSettings.Id;
                 string lastId = String.Empty;
 
@@ -220,9 +250,20 @@ namespace BizTalk.Adapter.Atom
 
                     while (getEntry && entry != null)
                     {
-                        if (discard == false)
+                        if (lookForStateId == false)
                         {
-                            Log(entry, feed.Uri);
+                            XmlDocument xml = null;
+                            bool whitelistDiscard = false;
+                            string logContent = entry.Content;
+                            string nameSpace = string.Empty;
+                            if (this.properties.NeedXMLContent)
+                            {
+                                xml = GetXMLDocumentFromContent(logContent);
+                                nameSpace = xml.DocumentElement.NamespaceURI;
+                                logContent = GetLogContent(xml);
+                                whitelistDiscard = Discard(xml);
+                            }
+                            Log(logContent, entry.Id, feed.Uri, nameSpace, whitelistDiscard);
                             orderedEvent = new ManualResetEvent(false);
                             transaction = new CommittableTransaction();
                             atomState.LastEntryId = entry.Id;
@@ -230,19 +271,26 @@ namespace BizTalk.Adapter.Atom
                             atomState.LastFeed = feed.Uri;
 
                             SaveState(transaction);
-
-                            using (SingleMessageReceiveTxnBatch batch = new SingleMessageReceiveTxnBatch(this.transportProxy, this.control, transaction, orderedEvent))
+                            if (!whitelistDiscard)
                             {
-                                batch.SubmitMessage(CreateMessage(entry));
-                                batch.Done();
-                                orderedEvent.WaitOne();
+                                using (SingleMessageReceiveTxnBatch batch = new SingleMessageReceiveTxnBatch(this.transportProxy, this.control, transaction, orderedEvent))
+                                {
+                                    batch.SubmitMessage(CreateMessage(entry));
+                                    batch.Done();
+                                    orderedEvent.WaitOne();
+                                }
+                            }
+                            else
+                            {
+                                transaction.Commit();
+                                transaction.Dispose();
                             }
                             entryCounter++;
                             getEntry = getAllEntries || entryCounter < properties.NumberOfEvents;
                         }
 
                         if (stateId == entry.Id)
-                            discard = false;
+                            lookForStateId = false;
 
                         if (getEntry)
                             entry = feed.Entries.PopOrNUll();
