@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-10-09T11:31:21.0259284+02:00</Timestamp>
+  <Timestamp>2018-11-08T13:40:09.5791793+01:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0010.Studentportalen.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0010.Studentportalen.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -19,8 +19,8 @@
       <PrimaryTransport>
         <Address>https://studentportalen.uu.se/uusp-webapp/spring/ladok-event?pw=CHANGEME</Address>
         <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;ServiceCertificate vt="8" /&gt;&lt;HttpMethodAndUrl vt="8"&gt;POST&lt;/HttpMethodAndUrl&gt;&lt;MaxReceivedMessageSize vt="3"&gt;65536&lt;/MaxReceivedMessageSize&gt;&lt;ClientCertificate vt="8" /&gt;&lt;ProxyUserName vt="8" /&gt;&lt;UseAcsAuthentication vt="11"&gt;0&lt;/UseAcsAuthentication&gt;&lt;SuppressMessageBodyForHttpVerbs vt="8" /&gt;&lt;VariablePropertyMapping vt="8"&gt;&amp;lt;BtsVariablePropertyMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&amp;gt;&lt;/VariablePropertyMapping&gt;&lt;SecurityMode vt="8"&gt;Transport&lt;/SecurityMode&gt;&lt;ProxyToUse vt="8"&gt;Default&lt;/ProxyToUse&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;TransportClientCredentialType vt="8"&gt;Windows&lt;/TransportClientCredentialType&gt;&lt;OpenTimeout vt="8"&gt;00:05:00&lt;/OpenTimeout&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;UseSasAuthentication vt="11"&gt;0&lt;/UseSasAuthentication&gt;&lt;CloseTimeout vt="8"&gt;00:05:00&lt;/CloseTimeout&gt;&lt;SendTimeout vt="8"&gt;00:05:00&lt;/SendTimeout&gt;&lt;HttpHeaders vt="8"&gt;Content-Type: application/xml;charset=utf-8&lt;/HttpHeaders&gt;&lt;/CustomProps&gt;</TransportTypeData>
-        <RetryCount>3</RetryCount>
+        <TransportTypeData>&lt;CustomProps&gt;&lt;ServiceCertificate vt="8" /&gt;&lt;HttpMethodAndUrl vt="8"&gt;POST&lt;/HttpMethodAndUrl&gt;&lt;MaxReceivedMessageSize vt="3"&gt;65536&lt;/MaxReceivedMessageSize&gt;&lt;ClientCertificate vt="8" /&gt;&lt;ProxyUserName vt="8" /&gt;&lt;UseAcsAuthentication vt="11"&gt;0&lt;/UseAcsAuthentication&gt;&lt;SuppressMessageBodyForHttpVerbs vt="8" /&gt;&lt;VariablePropertyMapping vt="8"&gt;&amp;lt;BtsVariablePropertyMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&amp;gt;&lt;/VariablePropertyMapping&gt;&lt;SecurityMode vt="8"&gt;Transport&lt;/SecurityMode&gt;&lt;ProxyToUse vt="8"&gt;Default&lt;/ProxyToUse&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;TransportClientCredentialType vt="8"&gt;Windows&lt;/TransportClientCredentialType&gt;&lt;OpenTimeout vt="8"&gt;00:00:15&lt;/OpenTimeout&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;UseSasAuthentication vt="11"&gt;0&lt;/UseSasAuthentication&gt;&lt;CloseTimeout vt="8"&gt;00:01:00&lt;/CloseTimeout&gt;&lt;SendTimeout vt="8"&gt;00:01:00&lt;/SendTimeout&gt;&lt;HttpHeaders vt="8"&gt;Content-Type: application/xml;charset=utf-8&lt;/HttpHeaders&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>1000</RetryCount>
         <RetryInterval>1</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
         <FromTime>2000-01-01T22:00:00</FromTime>
@@ -28,7 +28,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>true</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -105,7 +105,7 @@
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
           <Enable>false</Enable>
-          <ReceiveHandler Name="CluSdReceive" HostTrusted="false">
+          <ReceiveHandler Name="CluSDReceive" HostTrusted="false">
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>
         </ReceiveLocation>
