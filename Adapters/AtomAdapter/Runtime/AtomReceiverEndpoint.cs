@@ -30,6 +30,8 @@ namespace BizTalk.Adapter.Atom
     {
         //  timer and buffer
         Timer timer;
+        private bool isRetrying = false;
+        private int retryCounter;
         //private ManualResetEvent batchFinished = new ManualResetEvent(false);
         //  properties
         private AtomReceiveProperties properties;
@@ -296,7 +298,7 @@ namespace BizTalk.Adapter.Atom
                             entry = feed.Entries.PopOrNUll();
                     }
                 }
-
+                ResetIfRetrying();
                 needToLeave = false;
             }
             catch (MaxDeepthException deepth)
@@ -310,7 +312,10 @@ namespace BizTalk.Adapter.Atom
             }
             catch (WebException ex)
             {
-                this.transportProxy.ReceiverShuttingdown(this.properties.Uri, ex);
+                if (NextRetry())
+                    this.transportProxy.SetErrorInfo(ex);
+                else
+                    this.transportProxy.ReceiverShuttingdown(this.properties.Uri, ex);
 
             }
             catch (Exception e)
@@ -326,6 +331,32 @@ namespace BizTalk.Adapter.Atom
                     this.control.Leave();
             }
         }
+
+        private bool NextRetry()
+        {
+            if (this.properties.NumberOfRetries < 1)
+                return false;
+            if (!isRetrying)
+            {
+                isRetrying = true;
+                this.retryCounter = this.properties.NumberOfRetries + 1;
+                this.timer.Change(this.properties.RetryPollingInterval, this.properties.RetryPollingInterval);
+            }
+            this.retryCounter--;
+
+            return this.retryCounter > 0;
+
+        }
+
+        private void ResetIfRetrying()
+        {
+            if (isRetrying)
+            {
+                this.isRetrying = false;
+                this.timer.Change(this.properties.PollingInterval, this.properties.PollingInterval);
+            }
+        }
+
 
         private void Start()
         {
