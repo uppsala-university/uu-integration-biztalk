@@ -10,7 +10,7 @@ CREATE PROCEDURE  [dbo].[uusmrUpdateStudieuppehall]
      AS
     BEGIN  
        SET NOCOUNT ON;  
-	   UPDATE ["UUSKLIST"] set UPPEH = @AVBROTTSPERIOD where (PNR=@PNR and PROGR=@PROGR)
+	   UPDATE ["UUSKLIST"] set UPPEH = @AVBROTTSPERIOD, UPPDATERAD = GETDATE() where (PNR=@PNR and PROGR=@PROGR)
   END
 go
 DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateStudieavbrott]; 
@@ -25,7 +25,7 @@ CREATE PROCEDURE  [dbo].[uusmrUpdateStudieavbrott]
     AS
     BEGIN  
        SET NOCOUNT ON;  
-	   UPDATE ["UUSKLIST"] set PROGRAMAVBROTT = @AVBROTTSDATUM where (PNR=@PNR and PROGR=@PROGR and KURS !='')
+	   UPDATE ["UUSKLIST"] set PROGRAMAVBROTT = @AVBROTTSDATUM, UPPDATERAD = GETDATE() where (PNR=@PNR and PROGR=@PROGR and KURS !='')
   END
 
 
@@ -39,7 +39,7 @@ CREATE PROCEDURE  [dbo].[uusmrUpdateAterkalladRegistrering]
     AS
     BEGIN  
        SET NOCOUNT ON;  
-	   UPDATE ["UUSKLIST"] set TYP = 'J' where (PNR=@PNR   and KURS = @KURS and TERMIN=@TERMIN) and TYP !='J' and TYP !='P'
+	   UPDATE ["UUSKLIST"] set TYP = 'J', UPPDATERAD = GETDATE() where (PNR=@PNR   and KURS = @KURS and TERMIN=@TERMIN) and TYP !='J' and TYP !='P'
   END
   go
   DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateLamnaAterbud]; 
@@ -130,7 +130,11 @@ BEGIN
             @PTAKT,
             @KAR,
             'J',
-            @PLG,'','')
+            @PLG,
+			'',
+			'',
+			GETDATE(),
+			null)
 			  exec  uusmrUpdateGpnr @PNR;
 			END
 ELSE
@@ -165,7 +169,11 @@ BEGIN
             @PTAKT,
             @KAR,
             '',
-            @PLG,'','' )
+            @PLG,
+			'',
+			'',
+			GETDATE(),
+			null)
 			exec  uusmrUpdateGpnr @PNR;
 			DELETE FROM [dbo].["UUSKLIST"] WHERE PNR=@PNR AND KURS=@KURS AND TERMIN=@TERMIN AND PROGR=@PROGR AND (TYP='J');
 END
@@ -223,7 +231,8 @@ BEGIN
             inldatum_adress=@INLDATUM_ADRESS,
             telnr=@TELNR,
             inldatum_telnr=@INLDATUM_TELNR,
-            epostadress=@EPOSTADRESS 
+            epostadress=@EPOSTADRESS,
+			UPPDATERAD = GETDATE()
 			where pnr=@PNR
 
        exec  uusmrUpdateGpnr @PNR;
@@ -240,11 +249,11 @@ BEGIN
     SET NOCOUNT ON;      
 	IF(@STATUS='J')
 	   BEGIN
-	   UPDATE [dbo].["UUSKLIST"] SET AVLIDEN='J' WHERE PNR = @PNR
+	   UPDATE [dbo].["UUSKLIST"] SET AVLIDEN='J', UPPDATERAD = GETDATE() WHERE PNR = @PNR
 	   END
 	ELSE 
 	   BEGIN
-	   UPDATE [dbo].["UUSKLIST"] SET AVLIDEN='' WHERE PNR = @PNR
+	   UPDATE [dbo].["UUSKLIST"] SET AVLIDEN='', UPPDATERAD = GETDATE() WHERE PNR = @PNR
 	   END
 END
 
@@ -321,7 +330,11 @@ BEGIN
             @PTAKT,
             @KAR,
             'P',
-            @PLG,'','' )
+            @PLG,
+			'',
+			'',
+			GETDATE(),
+			null)
 		END
 
     END
@@ -339,7 +352,7 @@ create PROCEDURE  [dbo].[uusmrUpdateGpnr]
 	   select  top 1 @oldPnr=gpnr from ["UUSKLIST"] where pnr=@pnr and gpnr != ''   order by inldatum_pers desc; 
 	   if (not LEN(ISNULL(@oldPnr,''))=0)
 	     BEGIN
-	      update ["UUSKLIST"] set gpnr = @oldPnr where pnr=@PNR and gpnr = '';
+	      update ["UUSKLIST"] set gpnr = @oldPnr, UPPDATERAD = GETDATE() where pnr=@PNR and gpnr = '';
 	     END 
   END
 
