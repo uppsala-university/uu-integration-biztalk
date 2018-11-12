@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-11-08T16:20:27.2821262+01:00</Timestamp>
+  <Timestamp>2018-11-12T12:22:12.5728188+01:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0017.Usmr.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0017.Usmr.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -191,6 +191,7 @@
   &amp;lt;Operation Name="http://ladok.uu.envelope.schemas#AterbudEnvelope" Action="Procedure/dbo/uusmrUpdateLamnaAterbud" /&amp;gt;
   &amp;lt;Operation Name="http://ladok.uu.envelope.schemas#DelayedUppehallStartEnvelope" Action="Procedure/dbo/uusmrUpdateStudieuppehall" /&amp;gt;
   &amp;lt;Operation Name="http://ladok.uu.envelope.schemas#DelayedUppehallStopEnvelope" Action="Procedure/dbo/uusmrUpdateStudieuppehall" /&amp;gt;
+  &amp;lt;Operation Name="http://ladok.uu.envelope.schemas#KontaktuppgifterEnvelope" Action="Procedure/dbo/uusmrUpdateStudentRecord" /&amp;gt;
 &amp;lt;/BtsActionMapping&amp;gt;&lt;/StaticAction&gt;&lt;ProxyUserName vt="8" /&gt;&lt;ProxyAddress vt="8" /&gt;&lt;UserName vt="8"&gt;VerDBuser&lt;/UserName&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;PropagateFaultMessage vt="11"&gt;-1&lt;/PropagateFaultMessage&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;Password vt="1" /&gt;&lt;IsolationLevel vt="8"&gt;Serializable&lt;/IsolationLevel&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;EnableTransaction vt="11"&gt;-1&lt;/EnableTransaction&gt;&lt;/CustomProps&gt;</TransportTypeData>
         <RetryCount>3</RetryCount>
         <RetryInterval>1</RetryInterval>
@@ -268,6 +269,10 @@
     &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0017.ReceiveUsmrSdEvents" /&gt;
     &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#DelayedUppehallStopEnvelope" /&gt;
   &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="INT0017.ReceiveUsmrSdEvents" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://ladok.uu.envelope.schemas#KontaktuppgifterEnvelope" /&gt;
+  &lt;/Group&gt;
 &lt;/Filter&gt;</Filter>
       <Transforms>
         <Transform FullName="INT0017.Usmr.Events.Maps.RegistreringEventToUsmrRecord" AssemblyQualifiedName="INT0017.Usmr.Events.Maps.RegistreringEventToUsmrRecord,INT0017.Usmr.Events, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
@@ -282,6 +287,7 @@
         <Transform FullName="INT0017.Usmr.Events.Maps.INT0017_AterbudEnvelope_to_uusmrUpdateLamnaAterbud" AssemblyQualifiedName="INT0017.Usmr.Events.Maps.INT0017_AterbudEnvelope_to_uusmrUpdateLamnaAterbud,INT0017.Usmr.Events, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0017.Usmr.Events.Maps.INT0017_DelayedEnvelope_to_usmrUpdStudieavbrott" AssemblyQualifiedName="INT0017.Usmr.Events.Maps.INT0017_DelayedEnvelope_to_usmrUpdStudieavbrott,INT0017.Usmr.Events, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0017.Usmr.Events.Maps.INT0017_DelayedEnvelopeStop_to_usmrUpdStudieavbrott" AssemblyQualifiedName="INT0017.Usmr.Events.Maps.INT0017_DelayedEnvelopeStop_to_usmrUpdStudieavbrott,INT0017.Usmr.Events, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0017.Usmr.Events.Maps.INT0017_KontaktuppgifterEnvelope_to_LokalStudentEnvelope" AssemblyQualifiedName="INT0017.Usmr.Events.Maps.INT0017_KontaktuppgifterEnvelope_to_LokalStudentEnvelope,INT0017.Usmr.Events, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <OrderedDelivery>true</OrderedDelivery>
       <Priority>5</Priority>
@@ -309,11 +315,11 @@
           <ReceiveLocationEndDate>2018-06-29T23:59:59</ReceiveLocationEndDate>
           <ReceiveLocationTransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\SD-USMR&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV001\PRIVATE$\SD-USMR&amp;lt;/uri&amp;gt;&amp;lt;batchSize&amp;gt;1&amp;lt;/batchSize&amp;gt;&amp;lt;transactional&amp;gt;false&amp;lt;/transactional&amp;gt;&amp;lt;serialProcessing&amp;gt;true&amp;lt;/serialProcessing&amp;gt;&amp;lt;onFailure&amp;gt;suspendResumable&amp;lt;/onFailure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
-          <ReceivePipeline Name="INT0017.Usmr.Events.Pipelines.INT0017_Usmr_Receive" FullyQualifiedName="INT0017.Usmr.Events.Pipelines.INT0017_Usmr_Receive, INT0017.Usmr.Events, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" />
+          <ReceivePipeline Name="INT0017.Usmr.Events.Pipelines.INT0017_Usmr_Receive" FullyQualifiedName="INT0017.Usmr.Events.Pipelines.INT0017_Usmr_Receive, INT0017.Usmr.Events, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
           <ReceivePipelineData xsi:nil="true" />
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
-          <Enable>true</Enable>
+          <Enable>false</Enable>
           <ReceiveHandler Name="CluSDReceive" HostTrusted="false">
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>

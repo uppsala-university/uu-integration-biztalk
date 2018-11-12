@@ -8,7 +8,7 @@ $TestQueue  = 'OS:UUC-BIZSRV021-T'
 $ProdQueue  = 'OS:UUC-MSMQSRV002'
 $VerQueue  = 'OS:UUC-MSMQSRV001'
 
-$Userreplace = 'REPLACEUSER'
+$Userreplace = 'REPLACEUSER' 
 $TestDBuser  = 'sd-usmr-test-writer'
 $VerDBuser  =  'VerDBuser'
 $ProdDBuser  = 'sd-usmr-writer'
