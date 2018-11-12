@@ -28,8 +28,8 @@ CREATE PROCEDURE  [dbo].[uusmrUpdateStudieavbrott]
 	   UPDATE ["UUSKLIST"] set PROGRAMAVBROTT = @AVBROTTSDATUM, UPPDATERAD = GETDATE() where (PNR=@PNR and PROGR=@PROGR and KURS !='')
   END
 
-
-  DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateAterkalldRegistrering]; 
+  go
+  DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateAterkalladRegistrering]; 
 go
 CREATE PROCEDURE  [dbo].[uusmrUpdateAterkalladRegistrering]
     @PNR CHAR(13),

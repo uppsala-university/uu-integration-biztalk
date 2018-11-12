@@ -40,6 +40,11 @@ go
 ALTER TABLE ["UUSKLIST"] ADD PROGRAMAVBROTT varchar(10); 
 go
 
+ALTER TABLE ["UUSKLIST"] ADD SKAPAD [datetime] NULL
+go
+ALTER TABLE ["UUSKLIST"] ADD UPPDATERAD [datetime] NULL 
+go
+
 DROP VIEW IF EXISTS [dbo].[viewUsmrSelectAll]; 
 go
 CREATE view viewUsmrSelectAll AS
