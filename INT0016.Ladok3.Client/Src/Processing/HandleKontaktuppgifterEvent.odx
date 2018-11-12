@@ -1,0 +1,376 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="e08ad9e5-89bd-44f8-aa8f-4731b0f112d2" LowerBound="1.1" HigherBound="82.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="INT0016.Ladok3.Client" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="90e18e68-0948-40f9-8fb4-588b454558d3" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveKontaktuppgifterEventPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="38e80d20-107e-4abd-a929-3d5aaead4ba6" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="feee4201-8417-477e-9320-49f651f555aa" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.91">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.schemas_ladok_se_studentinformation.KontaktuppgifterEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="714a06d9-9d1a-459c-b625-03cbe68cb27b" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.93" HigherBound="8.138">
+                    <om:Property Name="Ref" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="99d3fe62-e36c-41c9-9e4d-ac6391656e96" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendGetStudent_KontaktuppgifterRequestPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="2d454949-e2b4-422b-9a42-dbe679fd8556" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="ec292399-8cab-4cf4-bfe0-5312058a3818" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.91">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.schemas_ladok_se_studentinformation.KontaktuppgifterEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="0b51470d-ba93-48d2-867c-018112433fc1" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="15.93" HigherBound="15.157">
+                    <om:Property Name="Ref" Value="Shared.Schemas.Ladok.schemas_ladok_se_studentinformation.Student" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="4ab5a9a7-d949-49f3-b955-2ab2b38f919e" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="81.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="HandleKontaktuppgifterEvent" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="ed53ea7c-20ef-4204-9bf2-a7c3468f7afc" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="TempXML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="820bffb0-6ac8-4e82-9cfc-c604a6215183" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ackMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="39f80caf-230d-436a-884c-15a2c1c0b64c" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_studentinformation.Student" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="StudentMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="701f7693-c3d4-4763-8281-f93b3f35631f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Shared.Schemas.SdEvents.InternalReturnMessage" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReturnMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="c2df09ac-6f6d-43b2-a5a5-d610dcf48487" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.schemas_ladok_se_studentinformation.KontaktuppgifterEvent" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="LadokMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="1a1e0b2c-320d-49f9-9965-687f4706155f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="Type" Value="Shared.Schemas.Ladok.Envelopes.KontaktuppgifterEnvelope" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Ladok3Envelope" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="84206bdf-15dc-418e-a9a7-f8820017707d" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="53c79122-b5cc-49ae-8781-641352190a19" ParentLink="ServiceBody_Statement" LowerBound="33.1" HigherBound="37.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveKontaktuppgifterEventPort" />
+                    <om:Property Name="MessageName" Value="LadokMessage" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveLadok3Event" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="e9bad5fd-d6ce-4a1b-9417-0feaeadef081" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://schemas.ladok.se/studentinformation#KontaktuppgifterEvent&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="104eab22-bca9-4c20-8687-7a415ffadb6e" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.Operation" />
+                        <om:Property Name="RHS" Value="&quot;RouteEventsOperation&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Scope" OID="647ba82e-5f9f-45aa-a7e2-f1bfdbcfab6b" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="77.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="PopulateEnvelopeScope" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Send" OID="b07abdda-296f-4493-bff3-a417ea75e188" ParentLink="ComplexStatement_Statement" LowerBound="42.1" HigherBound="44.1">
+                        <om:Property Name="PortName" Value="SendGetStudent_KontaktuppgifterRequestPort" />
+                        <om:Property Name="MessageName" Value="LadokMessage" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="SendGetStudentRequest" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Receive" OID="b43c297a-8a0d-48c6-a4a8-2b55c95f5bbd" ParentLink="ComplexStatement_Statement" LowerBound="44.1" HigherBound="46.1">
+                        <om:Property Name="Activate" Value="False" />
+                        <om:Property Name="PortName" Value="SendGetStudent_KontaktuppgifterRequestPort" />
+                        <om:Property Name="MessageName" Value="StudentMessage" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Response" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ReceiveStudentResponse" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="8eb2539a-8604-4861-8c14-86903feb64fb" ParentLink="ComplexStatement_Statement" LowerBound="46.1" HigherBound="52.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructEnvelope" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Transform" OID="cbab4906-aa44-4b9f-98cc-8c57772bbbee" ParentLink="ComplexStatement_Statement" LowerBound="49.1" HigherBound="51.1">
+                            <om:Property Name="ClassName" Value="INT0016.Ladok3.Client.Map.KontaktuppgifterEvent.KontaktuppgifterEvent_to_Envelope" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform_to_Envelope" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="MessagePartRef" OID="8986129f-d58f-43f9-b34b-d802e8dbcb3d" ParentLink="Transform_OutputMessagePartRef" LowerBound="50.36" HigherBound="50.50">
+                                <om:Property Name="MessageRef" Value="Ladok3Envelope" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_3" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="aa269246-8cc8-4868-96c3-3ebaf45965e1" ParentLink="Transform_InputMessagePartRef" LowerBound="50.137" HigherBound="50.149">
+                                <om:Property Name="MessageRef" Value="LadokMessage" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="4389c14e-ea47-42f5-b4dd-7f4bcbad5a03" ParentLink="Transform_InputMessagePartRef" LowerBound="50.151" HigherBound="50.165">
+                                <om:Property Name="MessageRef" Value="StudentMessage" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="01ac9adb-777b-456f-887f-7a6573e57a38" ParentLink="Construct_MessageRef" LowerBound="47.31" HigherBound="47.45">
+                            <om:Property Name="Ref" Value="Ladok3Envelope" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Construct" OID="e9f443b7-b2e9-4318-be17-abd5fff4fc8a" ParentLink="ComplexStatement_Statement" LowerBound="52.1" HigherBound="58.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructReturnMessage" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Transform" OID="dcc2c501-d6da-47f6-b43f-d6f4b7e873b7" ParentLink="ComplexStatement_Statement" LowerBound="55.1" HigherBound="57.1">
+                            <om:Property Name="ClassName" Value="INT0016.Ladok3.Client.Maps.KontaktuppgifterEvent.KontaktuppgifterEnvelope_to_ReturnMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform_to_Returnmessage" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="16d82346-3e47-4e82-ab3a-5a3650127065" ParentLink="Transform_InputMessagePartRef" LowerBound="56.145" HigherBound="56.159">
+                                <om:Property Name="MessageRef" Value="Ladok3Envelope" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_4" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="c09f79d0-4227-4c76-a447-ab19f162b096" ParentLink="Transform_OutputMessagePartRef" LowerBound="56.36" HigherBound="56.49">
+                                <om:Property Name="MessageRef" Value="ReturnMessage" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_5" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="103d1221-7915-4a59-b502-2684c7d8f962" ParentLink="Construct_MessageRef" LowerBound="53.31" HigherBound="53.44">
+                            <om:Property Name="Ref" Value="ReturnMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Catch" OID="d990dd30-48bf-472a-88b4-ba774ae4f3d4" ParentLink="Scope_Catch" LowerBound="61.1" HigherBound="75.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CatchException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="5f10f365-10cd-4de1-839f-e02b94ac5eef" ParentLink="Catch_Statement" LowerBound="64.1" HigherBound="74.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructErrorMessage" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="6afec706-d1f4-4d19-b739-37ab1de48b04" ParentLink="ComplexStatement_Statement" LowerBound="67.1" HigherBound="73.1">
+                                <om:Property Name="Expression" Value="ackMessage = &quot;Error in HandleAterbudEvent, see EventLog for further exception information.&quot;;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, &quot;HandleAterbudEvent\r\n&quot; + ex.Message, System.Diagnostics.EventLogEntryType.Error);&#xD;&#xA;TempXML.LoadXml(&quot;&lt;ns0:InternalReturnMessage xmlns:ns0=\&quot;http://Shared.Schemas.SdEvents.InternalReturnMessage\&quot;&gt;&lt;Ack&gt;false&lt;/Ack&gt;&lt;AckMessage&gt;&lt;/AckMessage&gt;&lt;ReturnMessage&gt;&lt;![CDATA[]]&gt;&lt;/ReturnMessage&gt;&lt;/ns0:InternalReturnMessage&gt;&quot;);&#xD;&#xA;ReturnMessage = TempXML;&#xD;&#xA;ReturnMessage.AckMessage = ackMessage;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="8c4fbfe1-92fd-4550-b60b-a5e0933b3faf" ParentLink="Construct_MessageRef" LowerBound="65.35" HigherBound="65.48">
+                                <om:Property Name="Ref" Value="ReturnMessage" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="eea03c33-8ef9-488c-9a79-219da05959b9" ParentLink="ServiceBody_Statement" LowerBound="77.1" HigherBound="79.1">
+                    <om:Property Name="PortName" Value="ReceiveKontaktuppgifterEventPort" />
+                    <om:Property Name="MessageName" Value="ReturnMessage" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SendReturnMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="3561e760-d58d-4247-be69-daf4942db135" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="0" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0016.Ladok3.Client.ReceiveKontaktuppgifterEventPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveKontaktuppgifterEventPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="DirectBindingAttribute" OID="bf250c60-a1b1-4244-a6cc-035c91a4807f" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0637af89-6567-41cd-a924-ae452b2f51bc" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="11" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0016.Ladok3.Client.SendGetStudent_KontaktuppgifterRequestPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendGetStudent_KontaktuppgifterRequestPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="4a6a9833-b5f0-42b8-bb6a-c046790988b9" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module INT0016.Ladok3.Client
+{
+    internal porttype ReceiveKontaktuppgifterEventPortType
+    {
+        requestresponse Operation_1
+        {
+            Shared.Schemas.Ladok.schemas_ladok_se_studentinformation.KontaktuppgifterEvent, Shared.Schemas.SdEvents.InternalReturnMessage
+        };
+    };
+    internal porttype SendGetStudent_KontaktuppgifterRequestPortType
+    {
+        requestresponse Operation_1
+        {
+            Shared.Schemas.Ladok.schemas_ladok_se_studentinformation.KontaktuppgifterEvent, Shared.Schemas.Ladok.schemas_ladok_se_studentinformation.Student
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service HandleKontaktuppgifterEvent
+    {
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port implements ReceiveKontaktuppgifterEventPortType ReceiveKontaktuppgifterEventPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendGetStudent_KontaktuppgifterRequestPortType SendGetStudent_KontaktuppgifterRequestPort;
+        message Shared.Schemas.Ladok.schemas_ladok_se_studentinformation.Student StudentMessage;
+        message Shared.Schemas.SdEvents.InternalReturnMessage ReturnMessage;
+        message Shared.Schemas.Ladok.schemas_ladok_se_studentinformation.KontaktuppgifterEvent LadokMessage;
+        message Shared.Schemas.Ladok.Envelopes.KontaktuppgifterEnvelope Ladok3Envelope;
+        System.Xml.XmlDocument TempXML;
+        System.String ackMessage;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("53c79122-b5cc-49ae-8781-641352190a19")]
+            activate ((BTS.MessageType == "http://schemas.ladok.se/studentinformation#KontaktuppgifterEvent") && (BTS.Operation == "RouteEventsOperation"))receive (ReceiveKontaktuppgifterEventPort.Operation_1, LadokMessage);
+            TempXML = new System.Xml.XmlDocument();
+            ackMessage = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("647ba82e-5f9f-45aa-a7e2-f1bfdbcfab6b")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("b07abdda-296f-4493-bff3-a417ea75e188")]
+                    send (SendGetStudent_KontaktuppgifterRequestPort.Operation_1, LadokMessage);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("b43c297a-8a0d-48c6-a4a8-2b55c95f5bbd")]
+                    receive (SendGetStudent_KontaktuppgifterRequestPort.Operation_1, StudentMessage);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("8eb2539a-8604-4861-8c14-86903feb64fb")]
+                    construct Ladok3Envelope
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("cbab4906-aa44-4b9f-98cc-8c57772bbbee")]
+                        transform (Ladok3Envelope) = INT0016.Ladok3.Client.Map.KontaktuppgifterEvent.KontaktuppgifterEvent_to_Envelope (LadokMessage, StudentMessage);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("e9f443b7-b2e9-4318-be17-abd5fff4fc8a")]
+                    construct ReturnMessage
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("dcc2c501-d6da-47f6-b43f-d6f4b7e873b7")]
+                        transform (ReturnMessage) = INT0016.Ladok3.Client.Maps.KontaktuppgifterEvent.KontaktuppgifterEnvelope_to_ReturnMessage (Ladok3Envelope);
+                    }
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("d990dd30-48bf-472a-88b4-ba774ae4f3d4")]
+                    catch (System.Exception ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("5f10f365-10cd-4de1-839f-e02b94ac5eef")]
+                        construct ReturnMessage
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6afec706-d1f4-4d19-b739-37ab1de48b04")]
+                            ackMessage = "Error in HandleAterbudEvent, see EventLog for further exception information.";
+                            System.Diagnostics.EventLog.WriteEntry("BizTalk Application", "HandleAterbudEvent\r\n" + ex.Message, System.Diagnostics.EventLogEntryType.Error);
+                            TempXML.LoadXml("<ns0:InternalReturnMessage xmlns:ns0=\"http://Shared.Schemas.SdEvents.InternalReturnMessage\"><Ack>false</Ack><AckMessage></AckMessage><ReturnMessage><![CDATA[]]></ReturnMessage></ns0:InternalReturnMessage>");
+                            ReturnMessage = TempXML;
+                            ReturnMessage.AckMessage = ackMessage;
+                        }
+                    }
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("eea03c33-8ef9-488c-9a79-219da05959b9")]
+            send (ReceiveKontaktuppgifterEventPort.Operation_1, ReturnMessage);
+        }
+    }
+}
+

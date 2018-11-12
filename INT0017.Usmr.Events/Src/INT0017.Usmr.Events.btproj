@@ -40,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Shared.PipelineComponents.PromoteMessageTypeAsBTSOperation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL" />
     <Reference Include="Shared.Schemas.Ladok, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Ladok\v4.0_2.2.0.0__b64e3957dd28061a\Shared.Schemas.Ladok.dll</HintPath>
@@ -106,6 +107,12 @@
       <Namespace>INT0017.Usmr.Events.Maps</Namespace>
       <SubType>Task</SubType>
     </Map>
+    <Map Include="Maps\INT0017.KontaktuppgifterEnvelope_to_Update.Usmr.Studentrecord.btm">
+      <TypeName>INT0017_KontaktuppgifterEnvelope_to_LokalStudentEnvelope</TypeName>
+      <Namespace>INT0017.Usmr.Events.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Maps\INT0017.KontaktuppgifterEnvelope_to_Update.Usmr.Studentrecord.xsl" />
     <Content Include="Maps\INT0017_AterkalladRegistreringEnvelopt_to_usmrUpdateAterkalladReg.xsl" />
     <Map Include="Maps\INT0017.AvbrottEnvelope_to_usmrStudieavbrott.btm">
       <TypeName>INT0017_AvbrottEnvelope_to_usmrStudieavbrott</TypeName>
@@ -120,6 +127,11 @@
     <Content Include="Files\INT0017.PROD.Bindings.xml" />
     <Content Include="Files\INT0017.TEST.Bindings.xml" />
     <Content Include="Files\INT0017.VER.Bindings.xml" />
+    <Pipeline Include="Pipelines\INT0017.Usmr.Receive.btp">
+      <TypeName>INT0017_Usmr_Receive</TypeName>
+      <Namespace>INT0017.Usmr.Events.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
     <Content Include="WcfSendPort_SqlAdapterBinding_Custom.bindinginfo1.xml" />
     <Map Include="Maps\INT0017.ForvantatDeltagandeEvent.To.UsmrRecord.btm">
       <TypeName>INT0017_ForvantatDeltagandeEvent_To_UsmrRecord</TypeName>
@@ -134,9 +146,11 @@
     <Content Include="Maps\INT0017.ForvantatDeltagandeEvent.To.UsmrRecord.xsl">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Maps\INT0017.Update.Usmr.Studentrecord.xsl" />
+    <Content Include="Maps\INT0017.Update.Usmr.Studentrecord.xsl">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
-    <Pipeline Include="INT0017.Usmr.Pipeline.btp">
+    <Pipeline Include="Pipelines\INT0017.Usmr.Pipeline.btp">
       <TypeName>INT0017_Usmr_Pipeline</TypeName>
       <Namespace>INT0017.Usmr.Events</Namespace>
       <SubType>Task</SubType>

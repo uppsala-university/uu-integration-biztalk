@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="95" TotalEndpoints="95">
-  <Timestamp>2018-10-04T15:12:14.2734269+02:00</Timestamp>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="96" TotalEndpoints="96">
+  <Timestamp>2018-10-26T14:05:44.2497269+02:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0016.Ladok3.Client]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0016.Ladok3.Client], Version=, Culture=, PublicKeyToken=">
       <Services />
       <TrackedSchemas>
-        <Schema FullName="INT0016.Ladok3.Client.Schemas.PropertySchema" AssemblyQualifiedName="INT0016.Ladok3.Client.Schemas.PropertySchema,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
+        <Schema FullName="INT0016.Ladok3.Client.Schemas.PropertySchema" AssemblyQualifiedName="INT0016.Ladok3.Client.Schemas.PropertySchema,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
           <TrackedPropertyNames />
         </Schema>
-        <Schema FullName="INT0016.Ladok3.Client.Schemas.QueryParameters" RootName="Parameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Schemas.QueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false">
+        <Schema FullName="INT0016.Ladok3.Client.Schemas.QueryParameters" RootName="Parameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Schemas.QueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
           <TrackedPropertyNames />
         </Schema>
       </TrackedSchemas>
     </ModuleRef>
-    <ModuleRef Name="INT0016.Ladok3.Client" Version="1.1.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
+    <ModuleRef Name="INT0016.Ladok3.Client" Version="1.2.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services>
-        <Service Name="INT0016.Ladok3.Client.HandleUppehallBorttagetEvent" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleUppehallBorttagetEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="SendGetStudent_UppehallBorttagetEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetStudent" />
@@ -51,7 +51,18 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleStudentAvlidenmarkeringEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleKontaktuppgifterEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports>
+            <Port Name="SendGetStudent_KontaktuppgifterRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetStudent" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="INT0016.Ladok3.Client.HandleStudentAvlidenmarkeringEvent" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetStudent_StudentAvlidenmarkeringEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetStudent" />
@@ -62,7 +73,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleDelayedUppehallStopEnvelope" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleDelayedUppehallStopEnvelope" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetStudent_UppehallStopEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetStudent" />
@@ -98,7 +109,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleDelayedUppehallStartEnvelope" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleDelayedUppehallStartEnvelope" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetStudent_UppehallEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetStudent" />
@@ -134,7 +145,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleAvbrottBorttagetEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleAvbrottBorttagetEvent" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetUtbildningstillfalle_AvbrottBorttagetEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningstillfalle" />
@@ -170,7 +181,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleAvbrottEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleAvbrottEvent" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetUtbildningstillfalle_AvbrottEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningstillfalle" />
@@ -206,7 +217,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleLokalStudentEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleLokalStudentEvent" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetKontaktuppgifter_LokalStudentEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetKontaktuppgifter" />
@@ -217,7 +228,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleAterbudEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleAterbudEvent" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetStudent_RequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetStudent" />
@@ -238,7 +249,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleAterkalladOmregistreringEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleAterkalladOmregistreringEvent" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetMarkningsnycklar_AterkalladOmregistreringEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetMarkningsnycklar" />
@@ -274,7 +285,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleAterkalladregistreringEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleAterkalladregistreringEvent" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetUtbildningsinstans_AterkalladregistreringEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningsinstans" />
@@ -310,7 +321,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleForvantatDeltagandeSkapadEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleForvantatDeltagandeSkapadEvent" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetStudietakter_ForvantatDeltagandeSkapadEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetStudietakter" />
@@ -376,12 +387,12 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleKurspaketeringUppdateradEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleKurspaketeringUppdateradEvent" State="Started" TrackingOption="None" Description="">
           <Ports />
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleOmregistreringEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleOmregistreringEvent" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetKurstillfalle_OmegistreringEventPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetKurstillfalle" />
@@ -447,7 +458,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleUtbildningstillfalleAteraktiveratEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleUtbildningstillfalleAteraktiveratEvent" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetUtbildningstillfalle_UtbildningstillfalleAteraktiveratEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningstillfalle" />
@@ -468,7 +479,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleUtbildningstillfalleInstalltEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleUtbildningstillfalleInstalltEvent" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetUtbildningstillfalle_UtbildningstillfalleInstalltRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningstillfalle" />
@@ -489,7 +500,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleKurstillfalleUppdateratEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleKurstillfalleUppdateratEvent" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetUtbildningsinstansRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningsinstans" />
@@ -505,7 +516,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleRegistreringEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleRegistreringEvent" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetKurstillfalle_RegistreringEventPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetKurstillfalle" />
@@ -571,7 +582,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleKurstillfalleTillStatusEvent" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleKurstillfalleTillStatusEvent" State="Started" TrackingOption="None" Description="">
           <Ports>
             <Port Name="SendGetMarkningsnycklar_KurstillfalleTillStatusEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetMarkningsnycklar" />
@@ -597,7 +608,7 @@
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
         </Service>
-        <Service Name="INT0016.Ladok3.Client.HandleOtherEvents" State="Unenlisted" TrackingOption="None" Description="">
+        <Service Name="INT0016.Ladok3.Client.HandleOtherEvents" State="Started" TrackingOption="None" Description="">
           <Ports />
           <Roles />
           <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
@@ -624,7 +635,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -645,13 +656,13 @@
       <Tracking>0</Tracking>
       <Filter />
       <Transforms>
-        <Transform FullName="INT0016.Ladok3.Client.Maps.KurstillfalleTillStatusEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.KurstillfalleTillStatusEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.KurstillfalleUppdateratEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.KurstillfalleUppdateratEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.Common.Utbildningstillfalle_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.Common.Utbildningstillfalle_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEven_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEven_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.KurstillfalleTillStatusEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.KurstillfalleTillStatusEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.KurstillfalleUppdateratEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.KurstillfalleUppdateratEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.Common.Utbildningstillfalle_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.Common.Utbildningstillfalle_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEven_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEven_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -677,7 +688,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -698,11 +709,11 @@
       <Tracking>0</Tracking>
       <Filter />
       <Transforms>
-        <Transform FullName="INT0016.Ladok3.Client.Maps.KurstillfalleTillStatusEvent_to_OrganisationQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.KurstillfalleTillStatusEvent_to_OrganisationQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.KurstillfalleUppdateratEvent_to_OrganisationQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.KurstillfalleUppdateratEvent_to_OrganisationQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_OrganisationQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_OrganisationQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_OrganisationQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_OrganisationQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.Common.Utbildningstillfalle_to_OrganisationQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.Common.Utbildningstillfalle_to_OrganisationQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.KurstillfalleTillStatusEvent_to_OrganisationQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.KurstillfalleTillStatusEvent_to_OrganisationQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.KurstillfalleUppdateratEvent_to_OrganisationQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.KurstillfalleUppdateratEvent_to_OrganisationQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_OrganisationQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_OrganisationQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_OrganisationQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_OrganisationQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.Common.Utbildningstillfalle_to_OrganisationQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.Common.Utbildningstillfalle_to_OrganisationQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -728,7 +739,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -749,17 +760,19 @@
       <Tracking>0</Tracking>
       <Filter />
       <Transforms>
-        <Transform FullName="INT0016.Ladok3.Client.Maps.RegistreringEvent.RegistreringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.RegistreringEvent.RegistreringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AterbudEvent.AterbudEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterbudEvent.AterbudEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.OmegistreringEvent.OmregistreringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.OmegistreringEvent.OmregistreringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AvbrottEvent.AvbrottEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AvbrottEvent.AvbrottEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent.AvbrottBorttagetEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent.AvbrottBorttagetEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallEvent.UppefallEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallEvent.UppefallEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.StudentAvlidenmarkeringEvent.StudentAvlidenmarkeringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.StudentAvlidenmarkeringEvent.StudentAvlidenmarkeringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.RegistreringEvent.RegistreringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.RegistreringEvent.RegistreringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterbudEvent.AterbudEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterbudEvent.AterbudEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.OmegistreringEvent.OmregistreringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.OmegistreringEvent.OmregistreringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AvbrottEvent.AvbrottEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AvbrottEvent.AvbrottEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent.AvbrottBorttagetEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent.AvbrottBorttagetEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallEvent.UppefallEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallEvent.UppefallEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.StudentAvlidenmarkeringEvent.StudentAvlidenmarkeringEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.StudentAvlidenmarkeringEvent.StudentAvlidenmarkeringEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.KurspaketeringUppdateradEvent.KurspaketeringUppdateradEvent_to_Envelope" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.KurspaketeringUppdateradEvent.KurspaketeringUppdateradEvent_to_Envelope,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.KontaktuppgifterEvent.KontaktuppgifterEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.KontaktuppgifterEvent.KontaktuppgifterEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -785,7 +798,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -806,15 +819,15 @@
       <Tracking>0</Tracking>
       <Filter />
       <Transforms>
-        <Transform FullName="INT0016.Ladok3.Client.Maps.Common.Student_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.Common.Student_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AtterkalladregistreringEvent_to_KontaktuppgifterQueryParamenters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AtterkalladregistreringEvent_to_KontaktuppgifterQueryParamenters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.LokalStudentEvent.LokalStudentEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.LokalStudentEvent.LokalStudentEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AvbrottEvent.AvbrottEvent_to_KontakuppgifterQueryParameters_btm" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AvbrottEvent.AvbrottEvent_to_KontakuppgifterQueryParameters_btm,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent.AvbrottBorttagetEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent.AvbrottBorttagetEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallEvent.UppefallEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallEvent.UppefallEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.Common.Student_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.Common.Student_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AtterkalladregistreringEvent_to_KontaktuppgifterQueryParamenters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AtterkalladregistreringEvent_to_KontaktuppgifterQueryParamenters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.LokalStudentEvent.LokalStudentEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.LokalStudentEvent.LokalStudentEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AvbrottEvent.AvbrottEvent_to_KontakuppgifterQueryParameters_btm" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AvbrottEvent.AvbrottEvent_to_KontakuppgifterQueryParameters_btm,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent.AvbrottBorttagetEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent.AvbrottBorttagetEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallEvent.UppefallEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallEvent.UppefallEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -840,7 +853,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -861,10 +874,10 @@
       <Tracking>0</Tracking>
       <Filter />
       <Transforms>
-        <Transform FullName="INT0016.Ladok3.Client.Maps.RegistreringEvent.RegistreringEvent_to_ProgramtillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.RegistreringEvent.RegistreringEvent_to_ProgramtillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.OmegistreringEvent.OmregistreringEvent_to_ProgramtillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.OmegistreringEvent.OmregistreringEvent_to_ProgramtillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_ProgramtillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_ProgramtillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallEvent.UppefallEvent_to_PrograminstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallEvent.UppefallEvent_to_PrograminstansQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.RegistreringEvent.RegistreringEvent_to_ProgramtillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.RegistreringEvent.RegistreringEvent_to_ProgramtillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.OmegistreringEvent.OmregistreringEvent_to_ProgramtillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.OmegistreringEvent.OmregistreringEvent_to_ProgramtillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_ProgramtillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_ProgramtillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallEvent.UppefallEvent_to_PrograminstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallEvent.UppefallEvent_to_PrograminstansQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -890,7 +903,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -911,8 +924,8 @@
       <Tracking>0</Tracking>
       <Filter />
       <Transforms>
-        <Transform FullName="INT0016.Ladok3.Client.Maps.RegistreringEvent.RegistreringEvent_to_KurstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.RegistreringEvent.RegistreringEvent_to_KurstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.OmegistreringEvent.OmregistreringEvent_to_KurstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.OmegistreringEvent.OmregistreringEvent_to_KurstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.RegistreringEvent.RegistreringEvent_to_KurstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.RegistreringEvent.RegistreringEvent_to_KurstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.OmegistreringEvent.OmregistreringEvent_to_KurstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.OmegistreringEvent.OmregistreringEvent_to_KurstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -938,7 +951,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -959,16 +972,16 @@
       <Tracking>0</Tracking>
       <Filter />
       <Transforms>
-        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleBorttagetEvent.UtbildningstillfalleBorttagetEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleBorttagetEvent.UtbildningstillfalleBorttagetEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_UtbildningstillfalleQueryParameters_btm" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_UtbildningstillfalleQueryParameters_btm,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AterbudEvent.AterbudEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterbudEvent.AterbudEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AvbrottEvent.AvbrottEvent_to_UtbildningstillfelleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AvbrottEvent.AvbrottEvent_to_UtbildningstillfelleQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent.AvbrottBorttagetEvent_to_UtbildningstillfelleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent.AvbrottBorttagetEvent_to_UtbildningstillfelleQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleInstalltEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleAteraktiveratEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleBorttagetEvent.UtbildningstillfalleBorttagetEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UtbildningstillfalleBorttagetEvent.UtbildningstillfalleBorttagetEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_UtbildningstillfalleQueryParameters_btm" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.ForvantatDeltagandeSkapadEvent.ForvantatDeltagandeSkapadEvent_to_UtbildningstillfalleQueryParameters_btm,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterbudEvent.AterbudEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterbudEvent.AterbudEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AvbrottEvent.AvbrottEvent_to_UtbildningstillfelleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AvbrottEvent.AvbrottEvent_to_UtbildningstillfelleQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent.AvbrottBorttagetEvent_to_UtbildningstillfelleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent.AvbrottBorttagetEvent_to_UtbildningstillfelleQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_UtbildningstillfalleQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_UtbildningstillfalleQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -992,7 +1005,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -1013,7 +1026,7 @@
       <Tracking>0</Tracking>
       <Filter />
       <Transforms>
-        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AtterkalladregistreringEvent_to_MarkningsnycklarQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AtterkalladregistreringEvent_to_MarkningsnycklarQueryParameters,INT0016.Ladok3.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AtterkalladregistreringEvent_to_MarkningsnycklarQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AtterkalladregistreringEvent_to_MarkningsnycklarQueryParameters,INT0016.Ladok3.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -1039,7 +1052,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -1082,7 +1095,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -1125,7 +1138,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -1168,7 +1181,7 @@
         <Primary>true</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>

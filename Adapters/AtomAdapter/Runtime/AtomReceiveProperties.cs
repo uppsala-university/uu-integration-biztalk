@@ -2,6 +2,7 @@
 using Microsoft.BizTalk.Adapter.Common;
 using Shared.Components;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Xml;
 
@@ -14,9 +15,15 @@ namespace BizTalk.Adapter.Atom
         private int pollingInterval;
         private string pollingIntervalUnit;
         private int numberOfEvents;
+
+        private int retryPollingInterval;
+        private string retryPollingIntervalUnit;
+        private int numberOfRetries;
+
         private string stateFile;
         private string userName;
         private string password;
+        private string namespaceWhitelist;
         private SecuritySettings securitySettings = null;
 
         private string firstFeed;
@@ -28,6 +35,9 @@ namespace BizTalk.Adapter.Atom
         private bool logEventId;
         private bool logUri;
         private string logContentXpath;
+        private bool logNamespace;
+        private bool logDiscarded;
+
 
         private int feedMax = 0;
 
@@ -48,6 +58,10 @@ namespace BizTalk.Adapter.Atom
         public string PollingIntervalUnit { get { return pollingIntervalUnit; } }
         public int NumberOfEvents { get { return numberOfEvents; } }
 
+        public int RetryPollingInterval { get { return retryPollingInterval; } }
+        public string RetryPollingIntervalUnit { get { return retryPollingIntervalUnit; } }
+        public int NumberOfRetries { get { return numberOfRetries; } }
+
         public string FirstFeed { get { return firstFeed; } }
         public string FirstEntry { get { return firstEntry; } }
         public bool FirdFirst { get { return findFirst; } }
@@ -59,6 +73,19 @@ namespace BizTalk.Adapter.Atom
         public bool LogEventId { get { return logEventId; } }
         public bool LogUri { get { return logUri; } }
         public string LogContentXpath { get { return logContentXpath; } }
+        public bool LogNamespace { get { return logNamespace; } }
+        public bool LogDiscarded { get { return logDiscarded; } }
+        private List<string> _namespaceWhiteList;
+        public List<string> NamespaceWhiteList { get { return _namespaceWhiteList; } }
+
+        public bool NeedXMLContent
+        {
+            get
+            {
+                return NamespaceWhiteList.Count > 0 || !string.IsNullOrWhiteSpace(LogContentXpath);
+            }
+        }
+
 
         public AtomReceiveProperties(string uri)
         {
@@ -68,6 +95,11 @@ namespace BizTalk.Adapter.Atom
                 this.pollingInterval = 3000;
                 this.pollingIntervalUnit = "seconds";
                 this.numberOfEvents = 10;
+
+                this.retryPollingInterval = 600000;
+                this.retryPollingIntervalUnit = "minutes";
+                this.numberOfRetries = 10;
+
                 this.stateFile = String.Empty;
                 this.address = String.Empty;
                 this.userName = String.Empty;
@@ -82,6 +114,10 @@ namespace BizTalk.Adapter.Atom
                 this.logEventId = false;
                 this.logUri = false;
                 this.logContentXpath = string.Empty;
+                this.logNamespace = false;
+                this.logDiscarded = false;
+                this.namespaceWhitelist = string.Empty;
+                this._namespaceWhiteList = new List<string>();
 
             }
             finally
@@ -130,6 +166,35 @@ namespace BizTalk.Adapter.Atom
                 XmlNode nodeNumberOfEvents = configDOM.SelectSingleNode("Config/numberOfEvents");
                 this.numberOfEvents = int.Parse(nodeNumberOfEvents.InnerText);
 
+
+
+                int retryPollingIntervalMultiplier = 1;
+                XmlNode nodeRetryPollingIntervalUnit = configDOM.SelectSingleNode("Config/retryPollingIntervalUnit");
+                switch (nodeRetryPollingIntervalUnit.InnerText.ToLower())
+                {
+                    case "milliseconds":
+                        retryPollingIntervalMultiplier = 1;
+                        break;
+                    case "seconds":
+                        retryPollingIntervalMultiplier = 1000;
+                        break;
+                    case "minutes":
+                        retryPollingIntervalMultiplier = 1000 * 60;
+                        break;
+                }
+
+                XmlNode nodeRetryPollingInterval = configDOM.SelectSingleNode("Config/retryPollingInterval");
+                int retryPollingIntervalValue = int.Parse(nodeRetryPollingInterval.InnerText);
+                this.retryPollingInterval = retryPollingIntervalMultiplier * retryPollingIntervalValue;
+
+                XmlNode nodeNumberOfRetries = configDOM.SelectSingleNode("Config/numberOfRetries");
+                this.numberOfRetries = int.Parse(nodeNumberOfRetries.InnerText);
+
+
+
+
+
+
                 XmlNode userName = configDOM.SelectSingleNode("Config/userName");
                 if (userName != null)
                 {
@@ -160,8 +225,8 @@ namespace BizTalk.Adapter.Atom
                 if (firstFeed != null)
                 {
                     this.firstEntry = nodeFirstEntry.InnerText;
-                }          
-                      
+                }
+
                 XmlNode findFirst = configDOM.SelectSingleNode("Config/findFirst");
                 if (findFirst != null)
                 {
@@ -202,6 +267,29 @@ namespace BizTalk.Adapter.Atom
                 if (logContentXpathNode != null)
                 {
                     this.logContentXpath = logContentXpathNode.InnerText;
+                }
+
+                XmlNode logNamespaceNode = configDOM.SelectSingleNode("Config/logNamespace");
+                if (logNamespaceNode != null)
+                {
+                    this.logNamespace = Boolean.Parse(logNamespaceNode.InnerText);
+                }
+
+                XmlNode logDiscardedNode = configDOM.SelectSingleNode("Config/logDiscarded");
+                if (logDiscardedNode != null)
+                {
+                    this.logDiscarded = Boolean.Parse(logDiscardedNode.InnerText);
+                }
+
+                XmlNode namespaceWhitelistNode = configDOM.SelectSingleNode("Config/namespaceWhitelist");
+                if (namespaceWhitelistNode != null)
+                {
+                    this.namespaceWhitelist = namespaceWhitelistNode.InnerText;
+                    if (!string.IsNullOrWhiteSpace(this.namespaceWhitelist))
+                    {
+
+                        _namespaceWhiteList = new List<string>(this.namespaceWhitelist.Split('|'));
+                    }
                 }
 
             }
