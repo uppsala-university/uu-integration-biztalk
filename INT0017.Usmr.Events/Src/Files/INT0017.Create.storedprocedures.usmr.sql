@@ -101,7 +101,42 @@ BEGIN
 
 	IF(@TYP like '%J%' OR @TYP like '%P%')
 	BEGIN
-    INSERT INTO [dbo].["UUSKLIST"] VALUES
+    INSERT INTO [dbo].["UUSKLIST"]
+	 ( PNR, 
+            GPNR,
+            EFTERNAMN,
+            FORNAMN,
+            INLDATUM_PERS,
+            COADRESS,
+            GATUADRESS,
+            POSTNR,
+            ORT,
+            LAND,
+            INLDATUM_ADRESS,
+            TELNR,
+            INLDATUM_TELNR,
+            EPOSTADRESS,
+            UPPEH,
+            KURS,
+            INST,
+            POANG,
+            KT,
+            UF,
+            KORT,
+            FIN,
+            PROGR,
+            AKT,
+            TERMIN,
+            PTAKT,
+            KAR,
+            TYP,
+            PLG,
+			AVLIDEN,
+			PROGRAMAVBROTT,
+			SKAPAD,
+			UPPDATERAD)
+
+	 VALUES
             ( @PNR, 
             @GPNR,
             @EFTERNAMN,
@@ -140,7 +175,43 @@ BEGIN
 ELSE
 BEGIN
 
-  INSERT INTO [dbo].["UUSKLIST"] VALUES
+  INSERT INTO [dbo].["UUSKLIST"] 
+  
+    ( PNR, 
+            GPNR,
+            EFTERNAMN,
+            FORNAMN,
+            INLDATUM_PERS,
+            COADRESS,
+            GATUADRESS,
+            POSTNR,
+            ORT,
+            LAND,
+            INLDATUM_ADRESS,
+            TELNR,
+            INLDATUM_TELNR,
+            EPOSTADRESS,
+            UPPEH,
+            KURS,
+            INST,
+            POANG,
+            KT,
+            UF,
+            KORT,
+            FIN,
+            PROGR,
+            AKT,
+            TERMIN,
+            PTAKT,
+            KAR,
+            TYP,
+            PLG,
+			AVLIDEN,
+			PROGRAMAVBROTT,
+			SKAPAD,
+			UPPDATERAD)
+  
+  VALUES
             ( @PNR, 
             @GPNR,
             @EFTERNAMN,
