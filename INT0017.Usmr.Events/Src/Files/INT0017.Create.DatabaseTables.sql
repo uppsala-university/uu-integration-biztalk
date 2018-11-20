@@ -30,9 +30,8 @@ CREATE TABLE [dbo].["UUSKLIST"]
             PTAKT VARCHAR(5),
             KAR   CHAR(3),
             TYP   CHAR(3),
-            PLG   VARCHAR(255),
-			SKAPAD [datetime] NULL,
-			UPPDATERAD [datetime] NULL
+            PLG   VARCHAR(255)
+			 
 )
 go
 ALTER TABLE ["UUSKLIST"] ADD AVLIDEN varchar(1); 

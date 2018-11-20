@@ -101,7 +101,42 @@ BEGIN
 
 	IF(@TYP like '%J%' OR @TYP like '%P%')
 	BEGIN
-    INSERT INTO [dbo].["UUSKLIST"] VALUES
+    INSERT INTO [dbo].["UUSKLIST"]
+	 ( PNR, 
+            GPNR,
+            EFTERNAMN,
+            FORNAMN,
+            INLDATUM_PERS,
+            COADRESS,
+            GATUADRESS,
+            POSTNR,
+            ORT,
+            LAND,
+            INLDATUM_ADRESS,
+            TELNR,
+            INLDATUM_TELNR,
+            EPOSTADRESS,
+            UPPEH,
+            KURS,
+            INST,
+            POANG,
+            KT,
+            UF,
+            KORT,
+            FIN,
+            PROGR,
+            AKT,
+            TERMIN,
+            PTAKT,
+            KAR,
+            TYP,
+            PLG,
+			AVLIDEN,
+			PROGRAMAVBROTT,
+			SKAPAD,
+			UPPDATERAD)
+
+	 VALUES
             ( @PNR, 
             @GPNR,
             @EFTERNAMN,
@@ -140,7 +175,43 @@ BEGIN
 ELSE
 BEGIN
 
-  INSERT INTO [dbo].["UUSKLIST"] VALUES
+  INSERT INTO [dbo].["UUSKLIST"] 
+  
+    ( PNR, 
+            GPNR,
+            EFTERNAMN,
+            FORNAMN,
+            INLDATUM_PERS,
+            COADRESS,
+            GATUADRESS,
+            POSTNR,
+            ORT,
+            LAND,
+            INLDATUM_ADRESS,
+            TELNR,
+            INLDATUM_TELNR,
+            EPOSTADRESS,
+            UPPEH,
+            KURS,
+            INST,
+            POANG,
+            KT,
+            UF,
+            KORT,
+            FIN,
+            PROGR,
+            AKT,
+            TERMIN,
+            PTAKT,
+            KAR,
+            TYP,
+            PLG,
+			AVLIDEN,
+			PROGRAMAVBROTT,
+			SKAPAD,
+			UPPDATERAD)
+  
+  VALUES
             ( @PNR, 
             @GPNR,
             @EFTERNAMN,
@@ -190,7 +261,7 @@ INLDATUM_TELNR , EPOSTADRESS, UPPEH,KURS,INST,POANG,KT,UF,KORT,FIN,PROGR,AKT,TER
 FIN != 'EES' and FIN != 'SLU'  and FIN != 'SWB' and FIN != 'U' and FIN != 'UCI' and FIN != 'UFM' and FIN != 'UH'
 and FIN != 'UKU' and FIN != 'UL' and FIN != 'UMD'   and (AVLIDEN IS NULL  or AVLIDEN != 'J') )
 and
-( programavbrott = '' or  
+( programavbrott is null or len(programavbrott) < 1 or  
 	 (SELECT CONVERT (    
        date, GETDATE() 
     )) < programavbrott 
