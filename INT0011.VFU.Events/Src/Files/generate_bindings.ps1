@@ -25,7 +25,7 @@ $ProdAKKA  = 'https://akka-adm.uu.se/akkaappl-soap/ws/AkkaCall'
 $VerAKKA = 'https://akka-adm.test.uu.se/akkaappl-soap/ws/AkkaCall'
 
 copy .\$DevBindings .\$TestBindings
-(Get-Content -Path .\$TestBindings).Replace($DevQueue,$TestQueue).Replace($DevUsersLDAP,$TestUsersLDAP).Replace($DevRestApi,$TestRestApi).Replace($DevAKKA,$TestAKKA | Set-Content -Path .\$TestBindings
+(Get-Content -Path .\$TestBindings).Replace($DevQueue,$TestQueue).Replace($DevUsersLDAP,$TestUsersLDAP).Replace($DevRestApi,$TestRestApi).Replace($DevAKKA,$TestAKKA) | Set-Content -Path .\$TestBindings
 
 copy .\$DevBindings .\$ProdBindings
 (Get-Content -Path .\$ProdBindings).Replace($DevQueue,$ProdQueue).Replace($DevUsersLDAP,$ProdUsersLDAP).Replace($DevRestApi,$ProdRestApi).Replace($DevAKKA,$ProdAKKA) | Set-Content -Path .\$ProdBindings
