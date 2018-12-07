@@ -5,18 +5,18 @@
     <ModuleRef Name="[Application:INT0014.identity.sp.adapter]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0014.identity.sp.adapter], Version=, Culture=, PublicKeyToken=">
       <Services />
       <TrackedSchemas>
-        <Schema FullName="INT0014.identity.sp.adapter.src.Schemas.INT0014_FlatFileHTTPresponse" RootName="HttpRequestBody" AssemblyQualifiedName="INT0014.identity.sp.adapter.src.Schemas.INT0014_FlatFileHTTPresponse,INT0014.identity.sp.adapter, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
+        <Schema FullName="INT0014.identity.sp.adapter.src.Schemas.INT0014_FlatFileHTTPresponse" RootName="HttpRequestBody" AssemblyQualifiedName="INT0014.identity.sp.adapter.src.Schemas.INT0014_FlatFileHTTPresponse,INT0014.identity.sp.adapter, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
           <TrackedPropertyNames />
         </Schema>
-        <Schema FullName="INT0014.identity.sp.adapter.src.Schemas.INT0012_esb_identity_person" RootName="Person" AssemblyQualifiedName="INT0014.identity.sp.adapter.src.Schemas.INT0012_esb_identity_person,INT0014.identity.sp.adapter, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
+        <Schema FullName="INT0014.identity.sp.adapter.src.Schemas.INT0012_esb_identity_person" RootName="Person" AssemblyQualifiedName="INT0014.identity.sp.adapter.src.Schemas.INT0012_esb_identity_person,INT0014.identity.sp.adapter, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
           <TrackedPropertyNames />
         </Schema>
-        <Schema FullName="INT0014.identity.sp.adapter.src.Schemas.INT0012_esb_identity_personEvent" RootName="PersonEvent" AssemblyQualifiedName="INT0014.identity.sp.adapter.src.Schemas.INT0012_esb_identity_personEvent,INT0014.identity.sp.adapter, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
+        <Schema FullName="INT0014.identity.sp.adapter.src.Schemas.INT0012_esb_identity_personEvent" RootName="PersonEvent" AssemblyQualifiedName="INT0014.identity.sp.adapter.src.Schemas.INT0012_esb_identity_personEvent,INT0014.identity.sp.adapter, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" AlwaysTrackAllProperties="false" Description="">
           <TrackedPropertyNames />
         </Schema>
       </TrackedSchemas>
     </ModuleRef>
-    <ModuleRef Name="INT0014.identity.sp.adapter" Version="1.1.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0014.identity.sp.adapter, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
+    <ModuleRef Name="INT0014.identity.sp.adapter" Version="1.2.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0014.identity.sp.adapter, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services />
       <TrackedSchemas />
     </ModuleRef>
@@ -24,7 +24,7 @@
   <SendPortCollection>
     <SendPort Name="INT0014.send.identity.sp" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
-      <TransmitPipeline Name="INT0014.identity.sp.adapter.src.Pipelines.INT0014_send_identity_change" FullyQualifiedName="INT0014.identity.sp.adapter.src.Pipelines.INT0014_send_identity_change, INT0014.identity.sp.adapter, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <TransmitPipeline Name="INT0014.identity.sp.adapter.src.Pipelines.INT0014_send_identity_change" FullyQualifiedName="INT0014.identity.sp.adapter.src.Pipelines.INT0014_send_identity_change, INT0014.identity.sp.adapter, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
       <PrimaryTransport>
         <Address>https://studentportalen.uu.se/uusp-webapp/spring/account/pnrupdate</Address>
         <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
@@ -88,7 +88,7 @@
           <ReceiveLocationEndDate>2018-05-25T23:59:59</ReceiveLocationEndDate>
           <ReceiveLocationTransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV002\PRIVATE$\IDENTITY-SP&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:UUC-MSMQSRV002\PRIVATE$\IDENTITY-SP&amp;lt;/uri&amp;gt;&amp;lt;batchSize&amp;gt;1&amp;lt;/batchSize&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;serialProcessing&amp;gt;true&amp;lt;/serialProcessing&amp;gt;&amp;lt;onFailure&amp;gt;suspendResumable&amp;lt;/onFailure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
-          <ReceivePipeline Name="INT0014.identity.sp.adapter.src.Pipelines.Logging" FullyQualifiedName="INT0014.identity.sp.adapter.src.Pipelines.Logging, INT0014.identity.sp.adapter, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipeline Name="INT0014.identity.sp.adapter.src.Pipelines.Logging" FullyQualifiedName="INT0014.identity.sp.adapter.src.Pipelines.Logging, INT0014.identity.sp.adapter, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
           <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlDasmComp"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e410d-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="BizTalkComponents.PipelineComponents.Logging.Logging"&gt;&lt;Properties&gt;&lt;Parameters vt="8"&gt;[Port] INT0014.esb.identity.personEvent [identifier]:/*[local-name()='PersonEvent']/@*[local-name()='identifier']&lt;/Parameters&gt;&lt;Source vt="8"&gt;INT0014.Identity.SP.Adapter&lt;/Source&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
@@ -102,7 +102,7 @@
       <Authentication>0</Authentication>
       <Tracking>0</Tracking>
       <Transforms>
-        <Transform FullName="INT0014.identity.sp.adapter.src.Maps.INT0014_esb_identityToRestResponse" AssemblyQualifiedName="INT0014.identity.sp.adapter.src.Maps.INT0014_esb_identityToRestResponse,INT0014.identity.sp.adapter, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0014.identity.sp.adapter.src.Maps.INT0014_esb_identityToRestResponse" AssemblyQualifiedName="INT0014.identity.sp.adapter.src.Maps.INT0014_esb_identityToRestResponse,INT0014.identity.sp.adapter, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <RouteFailedMessage>false</RouteFailedMessage>
       <ApplicationName>INT0014.identity.sp.adapter</ApplicationName>
