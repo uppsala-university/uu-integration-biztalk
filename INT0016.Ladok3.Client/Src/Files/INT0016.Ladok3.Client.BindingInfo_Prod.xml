@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="99" TotalEndpoints="99">
-  <Timestamp>2018-12-07T14:30:48.3872464+01:00</Timestamp>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="102" TotalEndpoints="102">
+  <Timestamp>2018-12-10T10:46:50.4546505+01:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0016.Ladok3.Client]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0016.Ladok3.Client], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -174,6 +174,21 @@
             </Port>
             <Port Name="SendGetMarkeringsnycklar_AvbrottBorttagetEventRequestPort" Modifier="1" BindingOption="1">
               <SendPortRef Name="INT0016.Ladok3.Client.Send_GetMarkningsnycklar" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetStudiestrukturForStudent" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningsstruktur" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetUtbildningsinstans" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningsinstans" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetOverliggandeUtbildningstillfalle" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningstillfalle" />
               <DistributionListRef xsi:nil="true" />
               <ReceivePortRef xsi:nil="true" />
             </Port>
@@ -1230,7 +1245,7 @@
         <TransportTypeData>&lt;CustomProps&gt;&lt;ServiceCertificate vt="8"&gt;6ECF836EA6D1AAA2A353A2F93E4881DBA9B67745&lt;/ServiceCertificate&gt;&lt;HttpMethodAndUrl vt="8"&gt;&amp;lt;BtsHttpUrlMapping&amp;gt; &amp;lt;Operation Method="GET" Url="/studiedeltagande/studiestruktur/student/{UID}" /&amp;gt;&amp;lt;/BtsHttpUrlMapping&amp;gt;&lt;/HttpMethodAndUrl&gt;&lt;MaxReceivedMessageSize vt="3"&gt;2147483647&lt;/MaxReceivedMessageSize&gt;&lt;ClientCertificate vt="8"&gt;9912327594B7DC0066181B4BE3426725641FF26D&lt;/ClientCertificate&gt;&lt;ProxyUserName vt="8" /&gt;&lt;UseAcsAuthentication vt="11"&gt;0&lt;/UseAcsAuthentication&gt;&lt;SuppressMessageBodyForHttpVerbs vt="8"&gt;GET&lt;/SuppressMessageBodyForHttpVerbs&gt;&lt;VariablePropertyMapping vt="8"&gt;&amp;lt;BtsVariablePropertyMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;
   &amp;lt;Variable Name="UID" PropertyName="Uid" PropertyNamespace="https://INT0016.Ladok3.Client.Schemas.PropertySchema" /&amp;gt;
 &amp;lt;/BtsVariablePropertyMapping&amp;gt;&lt;/VariablePropertyMapping&gt;&lt;SecurityMode vt="8"&gt;Transport&lt;/SecurityMode&gt;&lt;ProxyToUse vt="8"&gt;Default&lt;/ProxyToUse&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;TransportClientCredentialType vt="8"&gt;Certificate&lt;/TransportClientCredentialType&gt;&lt;OpenTimeout vt="8"&gt;00:01:00&lt;/OpenTimeout&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;UseSasAuthentication vt="11"&gt;0&lt;/UseSasAuthentication&gt;&lt;CloseTimeout vt="8"&gt;00:01:00&lt;/CloseTimeout&gt;&lt;SendTimeout vt="8"&gt;00:01:00&lt;/SendTimeout&gt;&lt;HttpHeaders vt="8"&gt;Content-Type: application/vnd.ladok+xml&lt;/HttpHeaders&gt;&lt;/CustomProps&gt;</TransportTypeData>
-        <RetryCount>0</RetryCount>
+        <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
         <FromTime>2018-12-05T23:00:00</FromTime>
