@@ -919,10 +919,10 @@
                                     <om:Property Name="Name" Value="två eller fler" />
                                     <om:Property Name="Signal" Value="True" />
                                     <om:Element Type="VariableAssignment" OID="c0536c74-7a01-4c94-ab81-3ad0ecb66627" ParentLink="ComplexStatement_Statement" LowerBound="278.1" HigherBound="280.1">
-                                        <om:Property Name="Expression" Value="kurspaketeringstillfalleUid1 =  xpath(LadokMessage, &quot;string( /*[local-name()='ForvantatDeltagandeSkapadEvent' and namespace-uri()='http://schemas.ladok.se/studiedeltagande' ]/*[local-name()='PaketerandeUtbildningstillfalleUID'][1]/text())&quot;);" />
+                                        <om:Property Name="Expression" Value="kurspaketeringstillfalleUid1 =  xpath(LadokMessage, &quot;string( /*[local-name()='ForvantatDeltagandeSkapadEvent' and namespace-uri()='http://schemas.ladok.se/studiedeltagande' ]/*[local-name()='PaketerandeUtbildningstillfalleUID'][2]/text())&quot;);" />
                                         <om:Property Name="ReportToAnalyst" Value="True" />
                                         <om:Property Name="Name" Value="Build string" />
-                                        <om:Property Name="Signal" Value="False" />
+                                        <om:Property Name="Signal" Value="True" />
                                     </om:Element>
                                     <om:Element Type="Construct" OID="10bafa7f-4a79-46be-ae2a-84205a507591" ParentLink="ComplexStatement_Statement" LowerBound="280.1" HigherBound="287.1">
                                         <om:Property Name="ReportToAnalyst" Value="True" />
@@ -979,10 +979,10 @@
                                         <om:Property Name="Signal" Value="True" />
                                     </om:Element>
                                     <om:Element Type="VariableAssignment" OID="5bb1e793-d995-4f34-9159-98a841dc5470" ParentLink="ComplexStatement_Statement" LowerBound="295.1" HigherBound="297.1">
-                                        <om:Property Name="Expression" Value="kurspaketeringstillfalleUid1 =  xpath(LadokMessage, &quot;string( /*[local-name()='ForvantatDeltagandeSkapadEvent' and namespace-uri()='http://schemas.ladok.se/studiedeltagande' ]/*[local-name()='PaketerandeUtbildningstillfalleUID'][2]/text())&quot;);" />
+                                        <om:Property Name="Expression" Value="kurspaketeringstillfalleUid1 =  xpath(LadokMessage, &quot;string( /*[local-name()='ForvantatDeltagandeSkapadEvent' and namespace-uri()='http://schemas.ladok.se/studiedeltagande' ]/*[local-name()='PaketerandeUtbildningstillfalleUID'][1]/text())&quot;);" />
                                         <om:Property Name="ReportToAnalyst" Value="True" />
                                         <om:Property Name="Name" Value="Build string" />
-                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
                                     </om:Element>
                                     <om:Element Type="Construct" OID="5f082057-6f5d-4f5c-902e-e2002feba573" ParentLink="ComplexStatement_Statement" LowerBound="297.1" HigherBound="304.1">
                                         <om:Property Name="ReportToAnalyst" Value="True" />
@@ -1968,7 +1968,7 @@ module INT0016.Ladok3.Client
                         if (noInomPaketerandeUtbtillfalle > 1)
                         {
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("c0536c74-7a01-4c94-ab81-3ad0ecb66627")]
-                            kurspaketeringstillfalleUid1 =  xpath(LadokMessage, "string( /*[local-name()='ForvantatDeltagandeSkapadEvent' and namespace-uri()='http://schemas.ladok.se/studiedeltagande' ]/*[local-name()='PaketerandeUtbildningstillfalleUID'][1]/text())");
+                            kurspaketeringstillfalleUid1 =  xpath(LadokMessage, "string( /*[local-name()='ForvantatDeltagandeSkapadEvent' and namespace-uri()='http://schemas.ladok.se/studiedeltagande' ]/*[local-name()='PaketerandeUtbildningstillfalleUID'][2]/text())");
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("10bafa7f-4a79-46be-ae2a-84205a507591")]
                             construct query
                             {
@@ -1985,7 +1985,7 @@ module INT0016.Ladok3.Client
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("42cbd314-220b-4aa5-ad5d-38c6ca5d2cac")]
                             receive (SendGetProgramInstans_ForvantatDeltagandeSkapadEventPort.Operation_1, ProgramInstansMessage);
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("5bb1e793-d995-4f34-9159-98a841dc5470")]
-                            kurspaketeringstillfalleUid1 =  xpath(LadokMessage, "string( /*[local-name()='ForvantatDeltagandeSkapadEvent' and namespace-uri()='http://schemas.ladok.se/studiedeltagande' ]/*[local-name()='PaketerandeUtbildningstillfalleUID'][2]/text())");
+                            kurspaketeringstillfalleUid1 =  xpath(LadokMessage, "string( /*[local-name()='ForvantatDeltagandeSkapadEvent' and namespace-uri()='http://schemas.ladok.se/studiedeltagande' ]/*[local-name()='PaketerandeUtbildningstillfalleUID'][1]/text())");
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("5f082057-6f5d-4f5c-902e-e2002feba573")]
                             construct query
                             {
