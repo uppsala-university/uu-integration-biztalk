@@ -13,10 +13,12 @@
 
   <xs:element name="FotnotLista" type="dok:FotnotLista"/>
 
-  <xs:complexType name="DokumentmallParameter">
+  <xs:complexType name="FotnotLista">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Nyckel" type="xs:string"/>
-      <xs:element minOccurs="0" name="Varde" type="xs:string"/>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="dok:Fotnot"/>
+        <xs:any namespace="##other" processContents="lax"/>
+      </xs:choice>
     </xs:sequence>
   </xs:complexType>
 
@@ -41,12 +43,10 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="FotnotLista">
+  <xs:complexType name="DokumentmallParameter">
     <xs:sequence>
-      <xs:choice maxOccurs="unbounded" minOccurs="0">
-        <xs:element ref="dok:Fotnot"/>
-        <xs:any namespace="##other" processContents="lax"/>
-      </xs:choice>
+      <xs:element minOccurs="0" name="Nyckel" type="xs:string"/>
+      <xs:element minOccurs="0" name="Varde" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 
