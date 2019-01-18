@@ -3,8 +3,8 @@ $TestBindings = 'INT0016.Ladok3.Client.BindingInfo_Test.xml'
 $VerBindings = 'INT0016.Ladok3.Client.BindingInfo_Ver.xml'
 $ProdBindings = 'INT0016.Ladok3.Client.BindingInfo_Prod.xml'
 
-$DevLadok  = 'https://api.mit-integration.ladok.se/'
-$TestLadok  = 'https://api.mit-integration.ladok.se/'
+$DevLadok  = 'https://api.integrationstest.ladok.se/'
+$TestLadok  = 'https://api.integrationstest.ladok.se/'
 $VerLadok  = 'https://api.verifiering4.ladok.se/'
 $ProdLadok  = 'https://api.ladok.se/'
 
