@@ -126,11 +126,83 @@
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="GetAccount" />
             <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="4b94c1b7-4439-4903-a80d-51bd84768ad9" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="58.1" HigherBound="59.1">
+                <om:Property Name="InitialValue" Value="5" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="akkaRetries" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="ba9a7bd5-896b-4b7b-b776-568b2752fd12" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="59.1" HigherBound="60.1">
+                <om:Property Name="InitialValue" Value="0" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="resultCountIndividual" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="5d7f61e7-1430-4822-840b-5e8d677af8b0" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="60.1" HigherBound="61.1">
+                <om:Property Name="InitialValue" Value="true" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sentToAKKA" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="b701d2d9-673f-4521-a98e-565efcafca60" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="61.1" HigherBound="62.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="waitTimeInMinutes" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="18e51216-52b8-4347-88fd-3410edc2bb91" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="62.1" HigherBound="63.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="adRetries" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="f27bbddb-6f3b-42ea-962b-474149c4e898" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="63.1" HigherBound="64.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="eventType" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
             <om:Element Type="CorrelationDeclaration" OID="89f194a8-d060-4372-afde-501deb810361" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="54.1" HigherBound="55.1">
                 <om:Property Name="Type" Value="INT0003.AD.Distribution.IndividualID" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="IndividualIDSet" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="3648002d-f14d-4540-8860-b56c14d76070" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="55.1" HigherBound="56.1">
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.ADEvents.ADQueryResults" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ADIndividualQueryResult" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="b2bba8c0-f2ef-4465-ba44-0450769f791f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="56.1" HigherBound="57.1">
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.ADEvents.ADSendAdapterSolicitResponseIndividualQuery" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ADIndividualQuery" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="016d47a0-d7a2-4c03-a2a6-abd2c6663551" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="57.1" HigherBound="58.1">
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.ADEvents.ADNewIndividual" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ADNewIndividual" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
             <om:Element Type="ServiceBody" OID="978be187-6bd0-4e7c-afe8-b4ceba1b8f4d" ParentLink="ServiceDeclaration_ServiceBody">
@@ -342,7 +414,7 @@
                                         <om:Property Name="Signal" Value="False" />
                                         <om:Element Type="Scope" OID="3c752f93-a1da-40d1-971b-d85d9d27b526" ParentLink="ComplexStatement_Statement" LowerBound="129.1" HigherBound="153.1">
                                             <om:Property Name="InitializedTransactionType" Value="True" />
-                                            <om:Property Name="IsSynchronized" Value="False" />
+                                            <om:Property Name="IsSynchronized" Value="True" />
                                             <om:Property Name="ReportToAnalyst" Value="True" />
                                             <om:Property Name="Name" Value="Create AKKA User" />
                                             <om:Property Name="Signal" Value="True" />
@@ -565,57 +637,6 @@
                     </om:Element>
                 </om:Element>
             </om:Element>
-            <om:Element Type="VariableDeclaration" OID="4b94c1b7-4439-4903-a80d-51bd84768ad9" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="58.1" HigherBound="59.1">
-                <om:Property Name="InitialValue" Value="5" />
-                <om:Property Name="UseDefaultConstructor" Value="False" />
-                <om:Property Name="Type" Value="System.Int32" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="akkaRetries" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="VariableDeclaration" OID="ba9a7bd5-896b-4b7b-b776-568b2752fd12" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="59.1" HigherBound="60.1">
-                <om:Property Name="InitialValue" Value="0" />
-                <om:Property Name="UseDefaultConstructor" Value="False" />
-                <om:Property Name="Type" Value="System.Int32" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="resultCountIndividual" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="VariableDeclaration" OID="5d7f61e7-1430-4822-840b-5e8d677af8b0" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="60.1" HigherBound="61.1">
-                <om:Property Name="InitialValue" Value="true" />
-                <om:Property Name="UseDefaultConstructor" Value="False" />
-                <om:Property Name="Type" Value="System.Boolean" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="sentToAKKA" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="VariableDeclaration" OID="b701d2d9-673f-4521-a98e-565efcafca60" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="61.1" HigherBound="62.1">
-                <om:Property Name="UseDefaultConstructor" Value="False" />
-                <om:Property Name="Type" Value="System.Int32" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="waitTimeInMinutes" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="VariableDeclaration" OID="18e51216-52b8-4347-88fd-3410edc2bb91" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="62.1" HigherBound="63.1">
-                <om:Property Name="UseDefaultConstructor" Value="False" />
-                <om:Property Name="Type" Value="System.Int32" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="adRetries" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="VariableDeclaration" OID="f27bbddb-6f3b-42ea-962b-474149c4e898" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="63.1" HigherBound="64.1">
-                <om:Property Name="UseDefaultConstructor" Value="False" />
-                <om:Property Name="Type" Value="System.String" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="eventType" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
             <om:Element Type="PortDeclaration" OID="a6fef939-a887-47e6-a688-8ca5377cbea6" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="46.1" HigherBound="49.1">
                 <om:Property Name="PortModifier" Value="Uses" />
                 <om:Property Name="Orientation" Value="Right" />
@@ -663,27 +684,6 @@
                 <om:Element Type="LogicalBindingAttribute" OID="0820e473-0ac1-451f-9eaa-ba7ea95969ba" ParentLink="PortDeclaration_CLRAttribute" LowerBound="52.1" HigherBound="53.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
-            </om:Element>
-            <om:Element Type="MessageDeclaration" OID="3648002d-f14d-4540-8860-b56c14d76070" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="55.1" HigherBound="56.1">
-                <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.ADEvents.ADQueryResults" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ADIndividualQueryResult" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="MessageDeclaration" OID="b2bba8c0-f2ef-4465-ba44-0450769f791f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="56.1" HigherBound="57.1">
-                <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.ADEvents.ADSendAdapterSolicitResponseIndividualQuery" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ADIndividualQuery" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="MessageDeclaration" OID="016d47a0-d7a2-4c03-a2a6-abd2c6663551" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="57.1" HigherBound="58.1">
-                <om:Property Name="Type" Value="INT0003.AD.Distribution.Schemas.ADEvents.ADNewIndividual" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="ADNewIndividual" />
-                <om:Property Name="Signal" Value="True" />
             </om:Element>
         </om:Element>
     </om:Element>
@@ -818,7 +818,7 @@ module INT0003.AD.Distribution
                         while (sentToAKKA == false && akkaRetries > 0)
                         {
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("3c752f93-a1da-40d1-971b-d85d9d27b526")]
-                            scope
+                            scope synchronized
                             {
                                 body
                                 {
