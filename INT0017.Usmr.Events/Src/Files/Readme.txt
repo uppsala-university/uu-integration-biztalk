@@ -63,6 +63,11 @@ INT0017.DEV.Bindings.xml    Bindings for DEV. Dev bindings produces file between
                             PROD bindings will have to set this job to run once a day.Time depends on vhen Medlos expects to get the file.  See info for 
 							receive ports INT0017.ReceiveUsmrSdEvents  & INT0017.getPolledData.  
 
+Dev bindings should use the following SFTP settings:
+Server = 'localhost'
+SSH fingerprint  = 'ssh-rsa 2048 dc:dd:1a:a4:1a:98:0f:36:ff:ce:e6:52:ae:c8:28:0a'
+SFTP user   = '\localbizservice'
+
 Needed Changes in bindings for test & prod:
 Password, username and databseserver needs to be set for
 INT0017.Create.UsmrRecord              
