@@ -12,7 +12,7 @@ using Microsoft.BizTalk.XLANGs.BTXEngine;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("INT0017.Usmr.Events")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: Microsoft.XLANGs.BaseTypes.BizTalkAssemblyAttribute(typeof(BTXService))]

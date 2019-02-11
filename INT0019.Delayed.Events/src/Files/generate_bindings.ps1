@@ -9,13 +9,13 @@ $VerQueue  = 'OS:UUC-MSMQSRV001'
 $ProdQueue  = 'OS:UUC-MSMQSRV002'
 
 $DevDB  = 'mssql://.//sd-delayed-test-db'
-$TestDB  = 'mssql://SQL-AG1.exchange-test.its.uu.se//sd-delayed-test-db'
-$VerDB  = 'mssql://SQL-AG1.exchange-test.its.uu.se//sd-delayed-test-db'
+$TestDB  = 'mssql://SQL-AG21-T.exchange-test.its.uu.se//sd-delayed-test-db'
+$VerDB  = 'mssql://SQL-AG21-T.exchange-test.its.uu.se//sd-delayed-test-db'
 $ProdDB  = 'mssql://SQL-AG1.user.uu.se//sd-delayed-db'
 
-$DevDBUser  = 'sd-delayed-test-writer'
-$TestDBUser  = 'sd-delayed-test-writer'
-$VerDBUser  = 'sd-delayed-test-writer'
+$DevDBUser  = 'sd-delayed-writer'
+$TestDBUser  = 'sd-delayed-writer'
+$VerDBUser  = 'sd-delayed-writer'
 $ProdDBUser  = 'sd-delayed-writer'
 
 copy .\$DevBindings .\$TestBindings
