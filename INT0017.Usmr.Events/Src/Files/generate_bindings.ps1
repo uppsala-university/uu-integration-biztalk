@@ -9,12 +9,12 @@ $ProdQueue  = 'OS:UUC-MSMQSRV002'
 $VerQueue  = 'OS:UUC-MSMQSRV001'
 
 $Userreplace = 'REPLACEUSER' 
-$TestDBuser  = 'sd-usmr-test-writer'
-$VerDBuser  =  'VerDBuser'
+$TestDBuser  = 'sd-usmr-writer'
+$VerDBuser  =  'sd-usmr-writer'
 $ProdDBuser  = 'sd-usmr-writer'
  
 $DevDB  = 'mssql://localhost:1433//sd-usmr-test-db'
-$TestDB  = 'mssql://SQL-AG1.exchange-test.its.uu.se:1433//sd-usmr-test-db'
+$TestDB  = 'mssql://SQL-AG21-T.exchange-test.its.uu.se:1433//sd-usmr-test-db'
 $VerDB  =  'Verdatabasename'
 $ProdDB  = 'mssql://SQL-AG1.user.uu.se:1433//sd-usmr-db'
 
