@@ -19,22 +19,22 @@ $VerDB  =  'Verdatabasename'
 $ProdDB  = 'mssql://SQL-AG1.user.uu.se:1433//sd-usmr-db'
 
 $DevSFTP  = 'localhost'
-$TestSFTP  = 'CHANGE_ME'
+$TestSFTP  = 'UUC-BIZ025-T.exchange-test.its.uu.se'
 $ProdSFTP  = 'ftp.softnav.softronic.se'
 $VerSFTP  = 'CHANGE_ME'
 
 $DevSFTPFingerPrint  = 'ssh-rsa 2048 dc:dd:1a:a4:1a:98:0f:36:ff:ce:e6:52:ae:c8:28:0a'
-$TestSFTPFingerPrint  = 'CHANGE_ME'
+$TestSFTPFingerPrint  = 'ssh-rsa 2048 1c:8a:22:00:e8:91:36:82:90:5f:64:a2:6b:2b:c3:5a'
 $ProdSFTPFingerPrint  = 'ssh-dss 1024 6e:de:df:92:93:75:fa:b5:88:c2:a4:90:ca:50:da:30'
 $VerSFTPFingerPrint  = 'CHANGE_ME'
 
 $DevSFTPUser  = '\localbizservice'
-$TestSFTPUser  = 'CHANGE_ME'
+$TestSFTPUser  = 'u-test2'
 $ProdSFTPUser  = 'us'
 $VerSFTPUser  = 'CHANGE_ME'
 
 $DevSFTPPath  = '/C:/Integrations/INT0017.Usmr.Events'
-$TestSFTPPath  = 'CHANGE_ME'
+$TestSFTPPath  = '/E:/usmr'
 $ProdSFTPPath  = '/US:'
 $VerSFTPPath  = 'CHANGE_ME'
 
