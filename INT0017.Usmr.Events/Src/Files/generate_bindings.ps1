@@ -20,7 +20,7 @@ $ProdDB  = 'mssql://SQL-AG1.user.uu.se:1433//sd-usmr-db'
 
 $DevSFTP  = 'localhost'
 $TestSFTP  = 'CHANGE_ME'
-$ProdSFTP  = 'ftp.softnac.softronic.se'
+$ProdSFTP  = 'ftp.softnav.softronic.se'
 $VerSFTP  = 'CHANGE_ME'
 
 $DevSFTPFingerPrint  = 'ssh-rsa 2048 dc:dd:1a:a4:1a:98:0f:36:ff:ce:e6:52:ae:c8:28:0a'
