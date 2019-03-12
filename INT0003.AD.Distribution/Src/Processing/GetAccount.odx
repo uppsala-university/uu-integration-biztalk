@@ -540,10 +540,10 @@
                         </om:Element>
                         <om:Element Type="Decision" OID="e7765643-4f90-42ff-b251-6a95489b918c" ParentLink="ComplexStatement_Statement" LowerBound="197.1" HigherBound="240.1">
                             <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="PersonExistsAndRegEllerOmreg" />
+                            <om:Property Name="Name" Value="PersonExistsAndRegEllerOmregEllerForvantatDeltagande" />
                             <om:Property Name="Signal" Value="True" />
                             <om:Element Type="DecisionBranch" OID="42725bf8-6edb-4dcf-aa43-17ce5d4030a7" ParentLink="ReallyComplexStatement_Branch" LowerBound="198.17" HigherBound="240.1">
-                                <om:Property Name="Expression" Value="sentToAKKA == false &amp;&amp; (eventType == &quot;Registrering&quot; || eventType == &quot;Omregistrering&quot;)" />
+                                <om:Property Name="Expression" Value="sentToAKKA == false &amp;&amp; (eventType == &quot;Registrering&quot; || eventType == &quot;Omregistrering&quot; || eventType == &quot;ForvantatDeltagande&quot;)" />
                                 <om:Property Name="IsGhostBranch" Value="True" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="Yes" />
@@ -886,7 +886,7 @@ module INT0003.AD.Distribution
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("142a1fb8-c446-4d77-806a-7c2ddc516218")]
                 eventType = xpath(GroupEvent,"string(/*[local-name()='GroupEvent']/*[local-name()='Group']/*[local-name()='Type'])");
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("e7765643-4f90-42ff-b251-6a95489b918c")]
-                if (sentToAKKA == false && (eventType == "Registrering" || eventType == "Omregistrering"))
+                if (sentToAKKA == false && (eventType == "Registrering" || eventType == "Omregistrering" || eventType == "ForvantatDeltagande"))
                 {
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("e235d5d1-5ef2-4d8b-8160-7d124e516049")]
                     while (akkaRetries > 0)
