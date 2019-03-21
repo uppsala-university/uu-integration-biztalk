@@ -1,66 +1,72 @@
+---BT-40  Uttöka fältlängder för adressuppgifter. Trunkera postnr till 10 tecken i utdatafil
 
-DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateStudieuppehall]; 
-go
-CREATE PROCEDURE  [dbo].[uusmrUpdateStudieuppehall]
-    @PNR CHAR(13),
-	@PROGR VARCHAR(20),
-	@KURS  VARCHAR(20),
-	@TERMIN VARCHAR(5),
-	@AVBROTTSPERIOD VARCHAR(7)
-     AS
-    BEGIN  
-       SET NOCOUNT ON;  
-	   UPDATE ["UUSKLIST"] set UPPEH = @AVBROTTSPERIOD, UPPDATERAD = GETDATE() where (PNR=@PNR and PROGR=@PROGR)
-  END
-go
-DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateStudieavbrott]; 
+ALTER TABLE ["UUSKLIST"] ALTER COLUMN POSTNR VARCHAR(4096); 
+ALTER TABLE ["UUSKLIST"] ALTER COLUMN COADRESS VARCHAR(4096); 
+ALTER TABLE ["UUSKLIST"] ALTER COLUMN GATUADRESS VARCHAR(4096); 
+ALTER TABLE ["UUSKLIST"] ALTER COLUMN ORT VARCHAR(4096); 
+ALTER TABLE ["UUSKLIST"] ALTER COLUMN LAND VARCHAR(4096);
+
+go 
+
+ALTER PROCEDURE [dbo].[INT0017UsmrRecords]
+AS
+BEGIN
+  select PNR,GPNR,EFTERNAMN,FORNAMN,INLDATUM_PERS, COADRESS, GATUADRESS,substring(POSTNR,0,11) as POSTNR,ORT,UPPER(LAND) as LAND,INLDATUM_ADRESS,TELNR,
+INLDATUM_TELNR , EPOSTADRESS, UPPEH,KURS,INST,POANG,KT,UF,KORT,FIN,PROGR,AKT,TERMIN,PTAKT,KAR,TYP,PLG from ["UUSKLIST"] where (FIN != 'E' and 
+FIN != 'EES' and FIN != 'SLU'  and FIN != 'SWB' and FIN != 'U' and FIN != 'UCI' and FIN != 'UFM' and FIN != 'UH'
+and FIN != 'UKU' and FIN != 'UL' and FIN != 'UMD'   and (AVLIDEN IS NULL  or AVLIDEN != 'J') )
+and
+( programavbrott is null or len(programavbrott) < 1 or  
+                            (SELECT CONVERT (    
+       date, GETDATE() 
+    )) < programavbrott 
+                           )
+order by PNR desc
+for xml auto 
+END
+
 go
 
-CREATE PROCEDURE  [dbo].[uusmrUpdateStudieavbrott]
-    @PNR CHAR(13),
-	@PROGR VARCHAR(20),
-	@KURS  VARCHAR(20),
-	@TERMIN VARCHAR(5),
-	@AVBROTTSDATUM CHAR(10)
-    AS
-    BEGIN  
-       SET NOCOUNT ON;  
-	   IF @PROGR = 'FRIST'
-	   UPDATE ["UUSKLIST"] set PROGRAMAVBROTT = @AVBROTTSDATUM, UPPDATERAD = GETDATE() where (PNR=@PNR and PROGR='FRIST' and KURS = @KURS)
-       ELSE
-	   UPDATE ["UUSKLIST"] set PROGRAMAVBROTT = @AVBROTTSDATUM, UPPDATERAD = GETDATE() where (PNR=@PNR and PROGR=@PROGR and KURS !='')
-  END
 
-  go
-  DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateAterkalladRegistrering]; 
-go
-CREATE PROCEDURE  [dbo].[uusmrUpdateAterkalladRegistrering]
-    @PNR CHAR(13),
-	@PROGR VARCHAR(20),
-	@KURS  VARCHAR(20),
-	@TERMIN VARCHAR(5)	 
-    AS
-    BEGIN  
-       SET NOCOUNT ON;  
-	   UPDATE ["UUSKLIST"] set TYP = 'J', UPPDATERAD = GETDATE() where (PNR=@PNR   and KURS = @KURS and TERMIN=@TERMIN) and TYP !='J' and TYP !='P'
-  END
-  go
-  DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateLamnaAterbud]; 
-go
-CREATE PROCEDURE  [dbo].[uusmrUpdateLamnaAterbud]
-    @PNR CHAR(13),
-	@PROGR VARCHAR(20),
-	@KURS  VARCHAR(20),
-	@TERMIN VARCHAR(5)	 
-    AS
-    BEGIN  
-       SET NOCOUNT ON;  
-	   delete from ["UUSKLIST"]  where (PNR=@PNR and KURS = @KURS and TERMIN=@TERMIN) and TYP='J'
-  END
-  go
-DROP PROCEDURE IF EXISTS [dbo].[uusmrCreateStudentRecord]; 
-go
-CREATE PROCEDURE  [dbo].[uusmrCreateStudentRecord]
+alter PROCEDURE  [dbo].[uusmrUpdateStudentRecord]  
+            @PNR CHAR(13),
+            @EFTERNAMN VARCHAR(255),
+            @FORNAMN VARCHAR(255),
+            @INLDATUM_PERS CHAR(10),
+            @COADRESS VARCHAR(4096),
+            @GATUADRESS VARCHAR(4096),
+            @POSTNR VARCHAR(4096),
+            @ORT VARCHAR(4096),
+            @LAND VARCHAR(4096),
+            @INLDATUM_ADRESS CHAR(10),
+            @TELNR VARCHAR(255),
+            @INLDATUM_TELNR CHAR(10),
+            @EPOSTADRESS VARCHAR(255)            
+AS
+BEGIN  
+    SET NOCOUNT ON;      
+    UPDATE [dbo].["UUSKLIST"] SET
+            efternamn=@EFTERNAMN,
+            fornamn=@FORNAMN,
+            inldatum_pers=@INLDATUM_PERS,
+            coadress=@COADRESS,
+            gatuadress=@GATUADRESS,
+            postnr=@POSTNR,
+            ort=@ORT,
+            land=@LAND,
+            inldatum_adress=@INLDATUM_ADRESS,
+            telnr=@TELNR,
+            inldatum_telnr=@INLDATUM_TELNR,
+            epostadress=@EPOSTADRESS,
+			UPPDATERAD = GETDATE()
+			where pnr=@PNR
+
+       exec  uusmrUpdateGpnr @PNR;
+       END
+
+	   go
+
+	  alter PROCEDURE  [dbo].[uusmrCreateStudentRecord]
             @PNR CHAR(13),
             @GPNR CHAR(13),
             @EFTERNAMN VARCHAR(255),
@@ -253,89 +259,8 @@ BEGIN
 END
 
 END
-	   go
-	   DROP PROCEDURE IF EXISTS [dbo].[INT0017UsmrRecords]; 
 go
-CREATE PROCEDURE [dbo].[INT0017UsmrRecords]
-AS
-BEGIN
-  select PNR,GPNR,EFTERNAMN,FORNAMN,INLDATUM_PERS, COADRESS, GATUADRESS,substring(POSTNR,0,11) as POSTNR,ORT,UPPER(LAND) as LAND,INLDATUM_ADRESS,TELNR,
-INLDATUM_TELNR , EPOSTADRESS, UPPEH,KURS,INST,POANG,KT,UF,KORT,FIN,PROGR,AKT,TERMIN,PTAKT,KAR,TYP,PLG from ["UUSKLIST"] where (FIN != 'E' and 
-FIN != 'EES' and FIN != 'SLU'  and FIN != 'SWB' and FIN != 'U' and FIN != 'UCI' and FIN != 'UFM' and FIN != 'UH'
-and FIN != 'UKU' and FIN != 'UL' and FIN != 'UMD'   and (AVLIDEN IS NULL  or AVLIDEN != 'J') )
-and
-( programavbrott is null or len(programavbrott) < 1 or  
-	 (SELECT CONVERT (    
-       date, GETDATE() 
-    )) < programavbrott 
-	)
- order by PNR desc
- for xml auto 
-END
-
-go
-DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateStudentRecord]; 
-go
-Create PROCEDURE  [dbo].[uusmrUpdateStudentRecord]  
-            @PNR CHAR(13),
-            @EFTERNAMN VARCHAR(255),
-            @FORNAMN VARCHAR(255),
-            @INLDATUM_PERS CHAR(10),
-            @COADRESS VARCHAR(4096),
-            @GATUADRESS VARCHAR(4096),
-            @POSTNR VARCHAR(4096),
-            @ORT VARCHAR(4096),
-            @LAND VARCHAR(4096),
-            @INLDATUM_ADRESS CHAR(10),
-            @TELNR VARCHAR(255),
-            @INLDATUM_TELNR CHAR(10),
-            @EPOSTADRESS VARCHAR(255)            
-AS
-BEGIN  
-    SET NOCOUNT ON;      
-    UPDATE [dbo].["UUSKLIST"] SET
-            efternamn=@EFTERNAMN,
-            fornamn=@FORNAMN,
-            inldatum_pers=@INLDATUM_PERS,
-            coadress=@COADRESS,
-            gatuadress=@GATUADRESS,
-            postnr=@POSTNR,
-            ort=@ORT,
-            land=@LAND,
-            inldatum_adress=@INLDATUM_ADRESS,
-            telnr=@TELNR,
-            inldatum_telnr=@INLDATUM_TELNR,
-            epostadress=@EPOSTADRESS,
-			UPPDATERAD = GETDATE()
-			where pnr=@PNR
-
-       exec  uusmrUpdateGpnr @PNR;
-       END
-go
-DROP PROCEDURE IF EXISTS [dbo].[uusmrSetDeceased]; 
-go
-CREATE  PROCEDURE  [dbo].[uusmrSetDeceased]
-            @PNR CHAR(13),
-            @STATUS CHAR(1)
-
-AS
-BEGIN  
-    SET NOCOUNT ON;      
-	IF(@STATUS='J')
-	   BEGIN
-	   UPDATE [dbo].["UUSKLIST"] SET AVLIDEN='J', UPPDATERAD = GETDATE() WHERE PNR = @PNR
-	   END
-	ELSE 
-	   BEGIN
-	   UPDATE [dbo].["UUSKLIST"] SET AVLIDEN='', UPPDATERAD = GETDATE() WHERE PNR = @PNR
-	   END
-END
-
-go
-
-DROP PROCEDURE IF EXISTS [dbo].[uusmrCreateStudentProgramAntagningRecord]; 
-go
-CREATE PROCEDURE  [dbo].[uusmrCreateStudentProgramAntagningRecord]
+alter PROCEDURE  [dbo].[uusmrCreateStudentProgramAntagningRecord]
             @PNR CHAR(13),
             @GPNR CHAR(13),
             @EFTERNAMN VARCHAR(255),
@@ -414,20 +339,3 @@ BEGIN
     END
 	exec  uusmrUpdateGpnr @PNR;
 END
-go
-DROP PROCEDURE IF EXISTS [dbo].[uusmrUpdateGpnr]; 
-go
-create PROCEDURE  [dbo].[uusmrUpdateGpnr]
-    @PNR CHAR(13)
-    AS
-    BEGIN  
-       SET NOCOUNT ON;  
-	   DECLARE @oldPnr char(13); 
-	   select  top 1 @oldPnr=gpnr from ["UUSKLIST"] where pnr=@pnr and gpnr != ''   order by inldatum_pers desc; 
-	   if (not LEN(ISNULL(@oldPnr,''))=0)
-	     BEGIN
-	      update ["UUSKLIST"] set gpnr = @oldPnr, UPPDATERAD = GETDATE() where pnr=@PNR and gpnr = '';
-	     END 
-  END
-
-

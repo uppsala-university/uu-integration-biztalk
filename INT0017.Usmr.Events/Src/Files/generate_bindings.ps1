@@ -9,34 +9,59 @@ $ProdQueue  = 'OS:UUC-MSMQSRV002'
 $VerQueue  = 'OS:UUC-MSMQSRV001'
 
 $Userreplace = 'REPLACEUSER' 
-$TestDBuser  = 'sd-usmr-test-writer'
-$VerDBuser  =  'VerDBuser'
+$TestDBuser  = 'sd-usmr-writer'
+$VerDBuser  =  'sd-usmr-writer'
 $ProdDBuser  = 'sd-usmr-writer'
-
-$DevFile  = 'C:\Integrations\INT0017.Usmr.Events'
-$TestFile  = '\\uuc-biz025-t.exchange-test.its.uu.se\usmr$'
-$ProdFile  = '\\UUC-BIZ015.user.uu.se\usmr$'
-$VerFile  = '\\uuc-biz008-t.exchange-test.its.uu.se\usmr$'
  
 $DevDB  = 'mssql://localhost:1433//sd-usmr-test-db'
-$TestDB  = 'mssql://SQL-AG1.exchange-test.its.uu.se:1433//sd-usmr-test-db'
+$TestDB  = 'mssql://SQL-AG21-T.exchange-test.its.uu.se:1433//sd-usmr-test-db'
 $VerDB  =  'Verdatabasename'
 $ProdDB  = 'mssql://SQL-AG1.user.uu.se:1433//sd-usmr-db'
+
+$DevSFTP  = 'localhost'
+$TestSFTP  = 'UUC-BIZ025-T.exchange-test.its.uu.se'
+$ProdSFTP  = 'ftp.softnav.softronic.se'
+$VerSFTP  = 'CHANGE_ME'
+
+$DevSFTPFingerPrint  = 'ssh-rsa 2048 dc:dd:1a:a4:1a:98:0f:36:ff:ce:e6:52:ae:c8:28:0a'
+$TestSFTPFingerPrint  = 'ssh-rsa 2048 1c:8a:22:00:e8:91:36:82:90:5f:64:a2:6b:2b:c3:5a'
+$ProdSFTPFingerPrint  = 'ssh-dss 1024 6e:de:df:92:93:75:fa:b5:88:c2:a4:90:ca:50:da:30'
+$VerSFTPFingerPrint  = 'CHANGE_ME'
+
+$DevSFTPUser  = '\localbizservice'
+$TestSFTPUser  = 'u-test2'
+$ProdSFTPUser  = 'us'
+$VerSFTPUser  = 'CHANGE_ME'
+
+$DevSFTPPath  = '/C:/Integrations/INT0017.Usmr.Events'
+$TestSFTPPath  = '/E:/usmr'
+$ProdSFTPPath  = '/US:'
+$VerSFTPPath  = 'CHANGE_ME'
 
 copy .\$DevBindings .\$TestBindings
 (Get-Content -Path .\$TestBindings).Replace($DevDB,$TestDB) | Set-Content -Path .\$TestBindings
 (Get-Content -Path .\$TestBindings).Replace($DevQueue,$TestQueue)| Set-Content -Path .\$TestBindings
 (Get-Content -Path .\$TestBindings).Replace($Userreplace,$TestDBuser)| Set-Content -Path .\$TestBindings
-(Get-Content -Path .\$TestBindings).Replace($DevFile,$TestFile)| Set-Content -Path .\$TestBindings
+(Get-Content -Path .\$TestBindings).Replace($DevSFTP,$TestSFTP)| Set-Content -Path .\$TestBindings
+(Get-Content -Path .\$TestBindings).Replace($DevSFTPFingerPrint,$TestSFTPFingerPrint)| Set-Content -Path .\$TestBindings
+(Get-Content -Path .\$TestBindings).Replace($DevSFTPUser,$TestSFTPUser)| Set-Content -Path .\$TestBindings
+(Get-Content -Path .\$TestBindings).Replace($DevSFTPPath,$TestSFTPPath)| Set-Content -Path .\$TestBindings
+
 
 copy .\$DevBindings .\$VerBindings
 (Get-Content -Path .\$VerBindings).Replace($DevDB,$VerDB) | Set-Content -Path .\$VerBindings
 (Get-Content -Path .\$VerBindings).Replace($DevQueue,$VerQueue) | Set-Content -Path .\$VerBindings
 (Get-Content -Path .\$VerBindings).Replace($Userreplace,$VerDBuser) | Set-Content -Path .\$VerBindings
-(Get-Content -Path .\$VerBindings).Replace($Devfile,$VerFile) | Set-Content -Path .\$VerBindings
+(Get-Content -Path .\$VerBindings).Replace($DevSFTP,$VerSFTP) | Set-Content -Path .\$VerBindings
+(Get-Content -Path .\$VerBindings).Replace($DevSFTPFingerPrint,$VerSFTPFingerPrint) | Set-Content -Path .\$VerBindings
+(Get-Content -Path .\$VerBindings).Replace($DevSFTPUser,$VerSFTPUser) | Set-Content -Path .\$VerBindings
+(Get-Content -Path .\$VerBindings).Replace($DevSFTPPath,$VerSFTPPath) | Set-Content -Path .\$VerBindings
 
 copy .\$DevBindings .\$ProdBindings
 (Get-Content -Path .\$ProdBindings).Replace($DevDB,$ProdDB) | Set-Content -Path .\$ProdBindings
 (Get-Content -Path .\$ProdBindings).Replace($DevQueue,$ProdQueue) | Set-Content -Path .\$ProdBindings
 (Get-Content -Path .\$ProdBindings).Replace($Userreplace,$ProdDBuser) | Set-Content -Path .\$ProdBindings
-(Get-Content -Path .\$ProdBindings).Replace($DevFile,$ProdFile) | Set-Content -Path .\$ProdBindings
+(Get-Content -Path .\$ProdBindings).Replace($DevSFTP,$ProdSFTP) | Set-Content -Path .\$ProdBindings
+(Get-Content -Path .\$ProdBindings).Replace($DevSFTPFingerPrint,$ProdSFTPFingerPrint) | Set-Content -Path .\$ProdBindings
+(Get-Content -Path .\$ProdBindings).Replace($DevSFTPUser,$ProdSFTPUser) | Set-Content -Path .\$ProdBindings
+(Get-Content -Path .\$ProdBindings).Replace($DevSFTPPath,$ProdSFTPPath) | Set-Content -Path .\$ProdBindings
