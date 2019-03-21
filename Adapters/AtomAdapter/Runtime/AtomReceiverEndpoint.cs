@@ -30,6 +30,8 @@ namespace BizTalk.Adapter.Atom
     {
         //  timer and buffer
         Timer timer;
+        private bool isRetrying = false;
+        private int retryCounter;
         //private ManualResetEvent batchFinished = new ManualResetEvent(false);
         //  properties
         private AtomReceiveProperties properties;
@@ -117,6 +119,72 @@ namespace BizTalk.Adapter.Atom
             }
         }
 
+        private XmlDocument GetXMLDocumentFromContent(string content)
+        {
+            try
+            {
+                XmlDocument xml = new XmlDocument();
+                xml.LoadXml(content);
+                return xml;
+            }
+            catch (Exception e)
+            {
+                throw new InvalidConfiguration(string.Format("Content not XML. Cannot use XPath logging or namespace whitelist. Exception message: {0}", e.Message));
+            }
+        }
+
+        private string GetLogContent(XmlDocument xml)
+        {
+            try
+            {
+                string content = string.Empty;
+                XmlNode node = xml.SelectSingleNode(this.properties.LogContentXpath.Trim());
+                if (node != null)
+                    content = node.InnerText;
+                return content;
+            }
+            catch (Exception e)
+            {
+                throw new InvalidConfiguration(string.Format("Unable to log using current logging configuration. Exception message: {0}", e.Message));
+            }
+        }
+
+        private bool Discard(XmlDocument xml)
+        {
+            try
+            {
+                return this.properties.NamespaceWhiteList.Count > 0 && !this.properties.NamespaceWhiteList.Contains(xml.DocumentElement.NamespaceURI);
+            }
+            catch (Exception e)
+            {
+                throw new InvalidConfiguration(string.Format("Content not XML. Cannot use XPath logging or namespace whitelist. Exception message: {0}", e.Message));
+            }
+        }
+
+        private void Log(string content, string id, string uri, string nameSpace, bool discarded)
+        {
+            if (this.properties.UseLogging)
+            {
+                string format = "[AtomAdapter] {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}";
+                string message = string.Format(format,
+                    this.properties.LogEventId ? "[Entry] " : "",
+                    this.properties.LogEventId ? id : "",
+                    this.properties.LogEventId ? " " : "",
+                    "[Event] ",
+                    content,
+                    this.properties.LogUri ? " " : "",
+                    this.properties.LogUri ? "[Feed] " : "",
+                    this.properties.LogUri ? uri : "",
+                    this.properties.LogUri ? " " : "",
+                    this.properties.LogUri ? "[Namespace] " : "",
+                    this.properties.LogUri ? nameSpace : "",
+                    this.properties.LogDiscarded && discarded ? " " : "",
+                    this.properties.LogDiscarded && discarded ? "[DISCARDED] " : ""
+                    );
+                System.Diagnostics.EventLog.WriteEntry(this.properties.LogSource, message);
+            }
+        }
+
         private IBaseMessage CreateMessage(Shared.Components.Entry message)
         {
 
@@ -149,7 +217,6 @@ namespace BizTalk.Adapter.Atom
 
             busy = true;
 
-
             try
             {
                 //  used to block the Terminate from BizTalk 
@@ -168,7 +235,7 @@ namespace BizTalk.Adapter.Atom
                 AtomReader atom = new AtomReader(this.properties.Uri, stateSettings, this.properties.SecuritySettings, this.properties.FeedMax);
 
                 Feed feed = null;
-                bool discard = atom.IdFound;
+                bool lookForStateId = atom.IdFound;
                 string stateId = stateSettings.Id;
                 string lastId = String.Empty;
 
@@ -185,35 +252,53 @@ namespace BizTalk.Adapter.Atom
 
                     while (getEntry && entry != null)
                     {
-                        if (discard == false)
+                        if (lookForStateId == false)
                         {
+                            XmlDocument xml = null;
+                            bool whitelistDiscard = false;
+                            string logContent = entry.Content;
+                            string nameSpace = string.Empty;
+                            if (this.properties.NeedXMLContent)
+                            {
+                                xml = GetXMLDocumentFromContent(logContent);
+                                nameSpace = xml.DocumentElement.NamespaceURI;
+                                logContent = GetLogContent(xml);
+                                whitelistDiscard = Discard(xml);
+                            }
+                            Log(logContent, entry.Id, feed.Uri, nameSpace, whitelistDiscard);
                             orderedEvent = new ManualResetEvent(false);
                             transaction = new CommittableTransaction();
-
                             atomState.LastEntryId = entry.Id;
                             atomState.LastUpdated = feed.Updated;
                             atomState.LastFeed = feed.Uri;
 
                             SaveState(transaction);
-
-                            using (SingleMessageReceiveTxnBatch batch = new SingleMessageReceiveTxnBatch(this.transportProxy, this.control, transaction, orderedEvent))
+                            if (!whitelistDiscard)
                             {
-                                batch.SubmitMessage(CreateMessage(entry));
-                                batch.Done();
-                                orderedEvent.WaitOne();
+                                using (SingleMessageReceiveTxnBatch batch = new SingleMessageReceiveTxnBatch(this.transportProxy, this.control, transaction, orderedEvent))
+                                {
+                                    batch.SubmitMessage(CreateMessage(entry));
+                                    batch.Done();
+                                    orderedEvent.WaitOne();
+                                }
+                            }
+                            else
+                            {
+                                transaction.Commit();
+                                transaction.Dispose();
                             }
                             entryCounter++;
                             getEntry = getAllEntries || entryCounter < properties.NumberOfEvents;
                         }
 
                         if (stateId == entry.Id)
-                            discard = false;
+                            lookForStateId = false;
 
                         if (getEntry)
                             entry = feed.Entries.PopOrNUll();
                     }
                 }
-
+                ResetIfRetrying();
                 needToLeave = false;
             }
             catch (MaxDeepthException deepth)
@@ -227,7 +312,10 @@ namespace BizTalk.Adapter.Atom
             }
             catch (WebException ex)
             {
-                this.transportProxy.ReceiverShuttingdown(this.properties.Uri, ex);
+                if (NextRetry())
+                    this.transportProxy.SetErrorInfo(ex);
+                else
+                    this.transportProxy.ReceiverShuttingdown(this.properties.Uri, ex);
 
             }
             catch (Exception e)
@@ -243,6 +331,32 @@ namespace BizTalk.Adapter.Atom
                     this.control.Leave();
             }
         }
+
+        private bool NextRetry()
+        {
+            if (this.properties.NumberOfRetries < 1)
+                return false;
+            if (!isRetrying)
+            {
+                isRetrying = true;
+                this.retryCounter = this.properties.NumberOfRetries + 1;
+                this.timer.Change(this.properties.RetryPollingInterval, this.properties.RetryPollingInterval);
+            }
+            this.retryCounter--;
+
+            return this.retryCounter > 0;
+
+        }
+
+        private void ResetIfRetrying()
+        {
+            if (isRetrying)
+            {
+                this.isRetrying = false;
+                this.timer.Change(this.properties.PollingInterval, this.properties.PollingInterval);
+            }
+        }
+
 
         private void Start()
         {

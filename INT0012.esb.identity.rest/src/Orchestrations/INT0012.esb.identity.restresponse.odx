@@ -1,0 +1,147 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="a279aeba-f786-4b69-a719-7ca7cbd608dd" LowerBound="1.1" HigherBound="35.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="INT0012.esb.identity.rest" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="a329d697-9e78-4f3f-af4b-2158f0bbddbe" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="INT0012_rest_rest_porttype" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="b98527ee-db51-4d30-8f39-f98053feb684" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="postOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="6b6f81f7-c888-4829-8fa4-9f50518a3fb8" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.53">
+                    <om:Property Name="Ref" Value="INT0012.esb.identity.rest.Schemas.INT0012_esb_identity_personEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="e91a034c-9df8-45d6-b221-20257a7be91c" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.55" HigherBound="8.95">
+                    <om:Property Name="Ref" Value="INT0012.esb.identity.rest.Schemas.INT0012_esb_identity_personEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="571f39a9-7671-4209-92b2-293a29be0259" ParentLink="Module_ServiceDeclaration" LowerBound="11.1" HigherBound="34.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Orchestration_1" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="463c36ce-ba0c-4e8f-8c6d-ea7d1d69f5d1" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="16.1" HigherBound="17.1">
+                <om:Property Name="Type" Value="INT0012.esb.identity.rest.Schemas.INT0012_esb_identity_personEvent" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="restIN" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="c43fbea9-462c-4438-ab9b-aca6a8da5410" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="17.1" HigherBound="18.1">
+                <om:Property Name="Type" Value="INT0012.esb.identity.rest.Schemas.INT0012_esb_identity_personEvent" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="restOUT" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="9384f3b8-c1e6-4f40-8de5-4762ecb1903a" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="d4a1fd63-033a-4736-aa93-7a8bc8c938b5" ParentLink="ServiceBody_Statement" LowerBound="20.1" HigherBound="22.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="INT0012_esb_identity_rest" />
+                    <om:Property Name="MessageName" Value="restIN" />
+                    <om:Property Name="OperationName" Value="postOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_esb_rest" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="0c453b6d-22e2-41ad-883a-d6aca4a6a816" ParentLink="ServiceBody_Statement" LowerBound="22.1" HigherBound="30.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="create_rest_response" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="22158514-36cb-468a-ad52-049a17b8dc23" ParentLink="ComplexStatement_Statement" LowerBound="25.1" HigherBound="29.1">
+                        <om:Property Name="Expression" Value="restOUT = restIN;&#xD;&#xA;restOUT(*) = restIN(*);&#xD;&#xA;restOUT(WCF.OutboundHttpStatusCode) = &quot;202&quot;;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="4a5440ee-a771-4913-8301-caaa4af559c5" ParentLink="Construct_MessageRef" LowerBound="23.23" HigherBound="23.30">
+                        <om:Property Name="Ref" Value="restOUT" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="1f73ac21-fc20-4d58-9ba0-a7a1fff4c584" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="32.1">
+                    <om:Property Name="PortName" Value="INT0012_esb_identity_rest" />
+                    <om:Property Name="MessageName" Value="restOUT" />
+                    <om:Property Name="OperationName" Value="postOperation" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="response_esb_rest" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0d1a8a08-7ad4-400d-8aa4-70d5087d90f1" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="14.1" HigherBound="16.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INT0012.esb.identity.rest.INT0012_rest_rest_porttype" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="INT0012_esb_identity_rest" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="1feab21f-5de6-4941-8307-c95f93fdf58f" ParentLink="PortDeclaration_CLRAttribute" LowerBound="14.1" HigherBound="15.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module INT0012.esb.identity.rest
+{
+    internal porttype INT0012_rest_rest_porttype
+    {
+        requestresponse postOperation
+        {
+            Schemas.INT0012_esb_identity_personEvent, Schemas.INT0012_esb_identity_personEvent
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service Orchestration_1
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements INT0012_rest_rest_porttype INT0012_esb_identity_rest;
+        message Schemas.INT0012_esb_identity_personEvent restIN;
+        message Schemas.INT0012_esb_identity_personEvent restOUT;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d4a1fd63-033a-4736-aa93-7a8bc8c938b5")]
+            activate receive (INT0012_esb_identity_rest.postOperation, restIN);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0c453b6d-22e2-41ad-883a-d6aca4a6a816")]
+            construct restOUT
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("22158514-36cb-468a-ad52-049a17b8dc23")]
+                restOUT = restIN;
+                restOUT(*) = restIN(*);
+                restOUT(WCF.OutboundHttpStatusCode) = "202";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1f73ac21-fc20-4d58-9ba0-a7a1fff4c584")]
+            send (INT0012_esb_identity_rest.postOperation, restOUT);
+        }
+    }
+}
+

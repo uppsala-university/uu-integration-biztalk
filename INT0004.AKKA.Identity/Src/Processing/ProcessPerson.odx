@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="44bccbb9-4a75-410e-ad23-cdccf74b9b31" LowerBound="1.1" HigherBound="145.1">
+    <om:Element Type="Module" OID="44bccbb9-4a75-410e-ad23-cdccf74b9b31" LowerBound="1.1" HigherBound="153.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="INT0004.AKKA.Identity" />
         <om:Property Name="Signal" Value="False" />
@@ -75,7 +75,7 @@
                 </om:Element>
             </om:Element>
         </om:Element>
-        <om:Element Type="ServiceDeclaration" OID="dbd472a6-6668-4e77-9d1b-6c5ac91937dc" ParentLink="Module_ServiceDeclaration" LowerBound="29.1" HigherBound="144.1">
+        <om:Element Type="ServiceDeclaration" OID="dbd472a6-6668-4e77-9d1b-6c5ac91937dc" ParentLink="Module_ServiceDeclaration" LowerBound="29.1" HigherBound="152.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
@@ -125,20 +125,28 @@
                 <om:Property Name="Name" Value="loop" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
+            <om:Element Type="VariableDeclaration" OID="29f758cc-e7d0-40fa-9fa4-132e1711d864" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="48.1" HigherBound="49.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="stringMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
             <om:Element Type="CorrelationDeclaration" OID="4d34169e-395b-4955-8f6c-7060dc3ab161" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="39.1" HigherBound="40.1">
                 <om:Property Name="Type" Value="INT0004.AKKA.Identity.PersonNumberType" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="PersonNumberSet" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="StatementRef" OID="b9762e3b-6da6-40e4-85ca-0660668970ed" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="51.72" HigherBound="51.98">
+                <om:Element Type="StatementRef" OID="b9762e3b-6da6-40e4-85ca-0660668970ed" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="52.72" HigherBound="52.98">
                     <om:Property Name="Initializes" Value="True" />
                     <om:Property Name="Ref" Value="076781a5-b8fe-4186-81b7-df5e6d5d4c57" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="StatementRef_1" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
-                <om:Element Type="StatementRef" OID="e6a75ed1-06cd-4035-8b62-ce0a7e742230" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="129.77" HigherBound="129.92">
+                <om:Element Type="StatementRef" OID="e6a75ed1-06cd-4035-8b62-ce0a7e742230" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="137.77" HigherBound="137.92">
                     <om:Property Name="Initializes" Value="False" />
                     <om:Property Name="Ref" Value="036e2b78-1ab9-48c7-82c3-0861031f9b22" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -169,7 +177,7 @@
             </om:Element>
             <om:Element Type="ServiceBody" OID="156e3ed8-be5e-4a36-813f-efef0dbb062e" ParentLink="ServiceDeclaration_ServiceBody">
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="Receive" OID="076781a5-b8fe-4186-81b7-df5e6d5d4c57" ParentLink="ServiceBody_Statement" LowerBound="50.1" HigherBound="56.1">
+                <om:Element Type="Receive" OID="076781a5-b8fe-4186-81b7-df5e6d5d4c57" ParentLink="ServiceBody_Statement" LowerBound="51.1" HigherBound="58.1">
                     <om:Property Name="Activate" Value="True" />
                     <om:Property Name="PortName" Value="RcvPersonEventsPort" />
                     <om:Property Name="MessageName" Value="Person" />
@@ -179,24 +187,24 @@
                     <om:Property Name="Name" Value="RcvPersonEvent" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="VariableAssignment" OID="86763cb1-bccb-4ae4-a123-199628c30516" ParentLink="ServiceBody_Statement" LowerBound="56.1" HigherBound="59.1">
+                <om:Element Type="VariableAssignment" OID="86763cb1-bccb-4ae4-a123-199628c30516" ParentLink="ServiceBody_Statement" LowerBound="58.1" HigherBound="61.1">
                     <om:Property Name="Expression" Value="waitForNextMessageInMinutes = 5;&#xD;&#xA;System.Int32.TryParse(Shared.Utilities.SSOClientHelper.SSOClientHelper.Read(&quot;INT0004.AKKA.Identity&quot;, &quot;NextCorrelatedMessageWaittimeInMinutes&quot;), out waitForNextMessageInMinutes);" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Init wait time" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
-                <om:Element Type="While" OID="ad114f80-bc64-49fd-8bde-3c848712af44" ParentLink="ServiceBody_Statement" LowerBound="59.1" HigherBound="122.1">
+                <om:Element Type="While" OID="ad114f80-bc64-49fd-8bde-3c848712af44" ParentLink="ServiceBody_Statement" LowerBound="61.1" HigherBound="130.1">
                     <om:Property Name="Expression" Value="returncode != &quot;0&quot;" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Retry loop" />
                     <om:Property Name="Signal" Value="False" />
-                    <om:Element Type="Scope" OID="82fe9875-8ecf-40b9-97df-619d7cffd6ba" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="115.1">
+                    <om:Element Type="Scope" OID="82fe9875-8ecf-40b9-97df-619d7cffd6ba" ParentLink="ComplexStatement_Statement" LowerBound="64.1" HigherBound="123.1">
                         <om:Property Name="InitializedTransactionType" Value="True" />
                         <om:Property Name="IsSynchronized" Value="False" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="AKKARequest" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="Send" OID="ac45c314-7eba-4639-bd3f-cd3098deab9e" ParentLink="ComplexStatement_Statement" LowerBound="67.1" HigherBound="69.1">
+                        <om:Element Type="Send" OID="ac45c314-7eba-4639-bd3f-cd3098deab9e" ParentLink="ComplexStatement_Statement" LowerBound="69.1" HigherBound="71.1">
                             <om:Property Name="PortName" Value="SndPersonRequestPort" />
                             <om:Property Name="MessageName" Value="Person" />
                             <om:Property Name="OperationName" Value="AKKA" />
@@ -205,7 +213,7 @@
                             <om:Property Name="Name" Value="SndPersonEvent" />
                             <om:Property Name="Signal" Value="True" />
                         </om:Element>
-                        <om:Element Type="Receive" OID="6c659c74-ea76-46db-80fb-63fbe6b4f3a4" ParentLink="ComplexStatement_Statement" LowerBound="69.1" HigherBound="71.1">
+                        <om:Element Type="Receive" OID="6c659c74-ea76-46db-80fb-63fbe6b4f3a4" ParentLink="ComplexStatement_Statement" LowerBound="71.1" HigherBound="73.1">
                             <om:Property Name="Activate" Value="False" />
                             <om:Property Name="PortName" Value="SndPersonRequestPort" />
                             <om:Property Name="MessageName" Value="AKKAResponse" />
@@ -215,39 +223,39 @@
                             <om:Property Name="Name" Value="RcvAKKAResponse" />
                             <om:Property Name="Signal" Value="True" />
                         </om:Element>
-                        <om:Element Type="VariableAssignment" OID="a91b7ff1-6d7f-449d-8407-00c6dee895e4" ParentLink="ComplexStatement_Statement" LowerBound="71.1" HigherBound="75.1">
+                        <om:Element Type="VariableAssignment" OID="a91b7ff1-6d7f-449d-8407-00c6dee895e4" ParentLink="ComplexStatement_Statement" LowerBound="73.1" HigherBound="77.1">
                             <om:Property Name="Expression" Value="eventType = Person(Shared.Schemas.GroupAndPersonEvents.EventType);&#xD;&#xA;returncode = xpath(AKKAResponse,&quot;string(/*[1]/*[local-name()='return']/*[local-name()='returncode'])&quot;);&#xD;&#xA;returntext = xpath(AKKAResponse,&quot;string(/*[1]/*[local-name()='return']/*[local-name()='returntext'])&quot;);" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="GetReturnInfo" />
                             <om:Property Name="Signal" Value="True" />
                         </om:Element>
-                        <om:Element Type="Decision" OID="475955bb-d3c6-4092-bbe2-6ddb8277583d" ParentLink="ComplexStatement_Statement" LowerBound="75.1" HigherBound="89.1">
+                        <om:Element Type="Decision" OID="475955bb-d3c6-4092-bbe2-6ddb8277583d" ParentLink="ComplexStatement_Statement" LowerBound="77.1" HigherBound="97.1">
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="Validate return code" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="DecisionBranch" OID="dfbefae1-5f58-429e-a7ba-974dbb4d8eea" ParentLink="ReallyComplexStatement_Branch" LowerBound="76.25" HigherBound="89.1">
+                            <om:Element Type="DecisionBranch" OID="dfbefae1-5f58-429e-a7ba-974dbb4d8eea" ParentLink="ReallyComplexStatement_Branch" LowerBound="78.25" HigherBound="91.1">
                                 <om:Property Name="Expression" Value="returncode == &quot;0&quot; &amp;&amp; eventType.EndsWith(&quot;Request&quot;)" />
                                 <om:Property Name="IsGhostBranch" Value="True" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="Success" />
                                 <om:Property Name="Signal" Value="False" />
-                                <om:Element Type="Construct" OID="37cf3c51-88ec-4195-b13e-5b24028ef0e1" ParentLink="ComplexStatement_Statement" LowerBound="78.1" HigherBound="86.1">
+                                <om:Element Type="Construct" OID="37cf3c51-88ec-4195-b13e-5b24028ef0e1" ParentLink="ComplexStatement_Statement" LowerBound="80.1" HigherBound="88.1">
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="ConstructAKKAResponse" />
                                     <om:Property Name="Signal" Value="True" />
-                                    <om:Element Type="MessageAssignment" OID="8f1c48c3-064a-4cb7-8401-7a81f57318a8" ParentLink="ComplexStatement_Statement" LowerBound="81.1" HigherBound="85.1">
-                                        <om:Property Name="Expression" Value="AKKAPromotedResponse = AKKAResponse;&#xD;&#xA;AKKAPromotedResponse(*) = AKKAResponse(*);&#xD;&#xA;AKKAPromotedResponse(Shared.Schemas.GroupAndPersonEvents.PersonNumber) = Person(Shared.Schemas.GroupAndPersonEvents.PersonNumber);" />
+                                    <om:Element Type="MessageAssignment" OID="8f1c48c3-064a-4cb7-8401-7a81f57318a8" ParentLink="ComplexStatement_Statement" LowerBound="83.1" HigherBound="87.1">
+                                        <om:Property Name="Expression" Value="AKKAPromotedResponse = AKKAResponse;&#xD;&#xA;AKKAPromotedResponse(*) = AKKAResponse(*);&#xD;&#xA;AKKAPromotedResponse(INT0004.AKKA.Identity.Schemas.PersonNumber) = Person(Shared.Schemas.GroupAndPersonEvents.PersonNumber);" />
                                         <om:Property Name="ReportToAnalyst" Value="False" />
                                         <om:Property Name="Name" Value="MessageAKKAResponseAssignment" />
-                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
                                     </om:Element>
-                                    <om:Element Type="MessageRef" OID="321860c7-ce0e-490f-b04b-6ceadcc4da55" ParentLink="Construct_MessageRef" LowerBound="79.39" HigherBound="79.59">
+                                    <om:Element Type="MessageRef" OID="321860c7-ce0e-490f-b04b-6ceadcc4da55" ParentLink="Construct_MessageRef" LowerBound="81.39" HigherBound="81.59">
                                         <om:Property Name="Ref" Value="AKKAPromotedResponse" />
                                         <om:Property Name="ReportToAnalyst" Value="True" />
                                         <om:Property Name="Signal" Value="False" />
                                     </om:Element>
                                 </om:Element>
-                                <om:Element Type="Send" OID="b6e6dd18-1c5c-4a4e-bb67-3753190aecee" ParentLink="ComplexStatement_Statement" LowerBound="86.1" HigherBound="88.1">
+                                <om:Element Type="Send" OID="b6e6dd18-1c5c-4a4e-bb67-3753190aecee" ParentLink="ComplexStatement_Statement" LowerBound="88.1" HigherBound="90.1">
                                     <om:Property Name="PortName" Value="SndPersonResponsePort" />
                                     <om:Property Name="MessageName" Value="AKKAPromotedResponse" />
                                     <om:Property Name="OperationName" Value="PersonResponse" />
@@ -257,6 +265,19 @@
                                     <om:Property Name="Signal" Value="True" />
                                 </om:Element>
                             </om:Element>
+                            <om:Element Type="DecisionBranch" OID="3b4fab3b-dfb7-43f1-a000-82381e2871dc" ParentLink="ReallyComplexStatement_Branch" LowerBound="91.30" HigherBound="97.1">
+                                <om:Property Name="Expression" Value="returncode != &quot;0&quot; &amp;&amp; returntext.Contains(&quot;ladok UUID saknas&quot;)" />
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Ladok UUID missing" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="VariableAssignment" OID="35f6d609-c66e-41b1-b13b-c8d5ad9dce0b" ParentLink="ComplexStatement_Statement" LowerBound="93.1" HigherBound="96.1">
+                                    <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;, System.String.Format(&quot;INT0004.AKKA.Identity - ProcessPerson: {0}. Ignoring event.&quot;, returntext), System.Diagnostics.EventLogEntryType.Information);&#xD;&#xA;returncode = &quot;0&quot;;" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Log" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
                             <om:Element Type="DecisionBranch" OID="dea0569d-dab7-4378-8ad5-34be0fed6f8e" ParentLink="ReallyComplexStatement_Branch">
                                 <om:Property Name="IsGhostBranch" Value="True" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
@@ -264,41 +285,41 @@
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
                         </om:Element>
-                        <om:Element Type="Catch" OID="6ee6a73a-02a6-473d-9f3d-9f26fa3e00a3" ParentLink="Scope_Catch" LowerBound="92.1" HigherBound="99.1">
+                        <om:Element Type="Catch" OID="6ee6a73a-02a6-473d-9f3d-9f26fa3e00a3" ParentLink="Scope_Catch" LowerBound="100.1" HigherBound="107.1">
                             <om:Property Name="ExceptionName" Value="AKKAFault" />
                             <om:Property Name="ExceptionType" Value="SndPersonRequestPort.AKKA.AKKAFault" />
                             <om:Property Name="IsFaultMessage" Value="False" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="AKKAFaultException" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="VariableAssignment" OID="cf3e5df6-10cf-40eb-bc6d-f830a6ae9bd2" ParentLink="Catch_Statement" LowerBound="95.1" HigherBound="98.1">
+                            <om:Element Type="VariableAssignment" OID="cf3e5df6-10cf-40eb-bc6d-f830a6ae9bd2" ParentLink="Catch_Statement" LowerBound="103.1" HigherBound="106.1">
                                 <om:Property Name="Expression" Value="returntext = xpath(AKKAFault, &quot;string(/*[local-name()='Fault']/*[local-name()='faultstring'])&quot;);&#xD;&#xA;returncode = &quot;1&quot;;" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="GetFaultString" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
                         </om:Element>
-                        <om:Element Type="Catch" OID="6debeb93-f383-4f1a-aece-a2e86665ab8e" ParentLink="Scope_Catch" LowerBound="99.1" HigherBound="106.1">
+                        <om:Element Type="Catch" OID="6debeb93-f383-4f1a-aece-a2e86665ab8e" ParentLink="Scope_Catch" LowerBound="107.1" HigherBound="114.1">
                             <om:Property Name="ExceptionName" Value="NoAKKAConnection" />
                             <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.DeliveryFailureException" />
                             <om:Property Name="IsFaultMessage" Value="False" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="AKKAConnectionException" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="VariableAssignment" OID="bc315d54-2974-4ae6-99a2-059ddf8291c3" ParentLink="Catch_Statement" LowerBound="102.1" HigherBound="105.1">
+                            <om:Element Type="VariableAssignment" OID="bc315d54-2974-4ae6-99a2-059ddf8291c3" ParentLink="Catch_Statement" LowerBound="110.1" HigherBound="113.1">
                                 <om:Property Name="Expression" Value="returntext = &quot;Could not connect to AKKA&quot;;&#xD;&#xA;returncode = &quot;2&quot;;" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="Set error" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
                         </om:Element>
-                        <om:Element Type="Catch" OID="63f22901-05b0-4202-b764-fef54783b620" ParentLink="Scope_Catch" LowerBound="106.1" HigherBound="113.1">
+                        <om:Element Type="Catch" OID="63f22901-05b0-4202-b764-fef54783b620" ParentLink="Scope_Catch" LowerBound="114.1" HigherBound="121.1">
                             <om:Property Name="ExceptionType" Value="General Exception" />
                             <om:Property Name="IsFaultMessage" Value="False" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="CatchAllException" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="VariableAssignment" OID="7e5e197c-3de4-4226-9833-533284f2419c" ParentLink="Catch_Statement" LowerBound="109.1" HigherBound="112.1">
+                            <om:Element Type="VariableAssignment" OID="7e5e197c-3de4-4226-9833-533284f2419c" ParentLink="Catch_Statement" LowerBound="117.1" HigherBound="120.1">
                                 <om:Property Name="Expression" Value="returntext = &quot;Unknown error when trying to connect to AKKA&quot;;&#xD;&#xA;returncode = &quot;3&quot;;" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="Set error" />
@@ -306,17 +327,17 @@
                             </om:Element>
                         </om:Element>
                     </om:Element>
-                    <om:Element Type="Decision" OID="6a67128a-797e-4b79-bfce-2b49680cd264" ParentLink="ComplexStatement_Statement" LowerBound="115.1" HigherBound="121.1">
+                    <om:Element Type="Decision" OID="6a67128a-797e-4b79-bfce-2b49680cd264" ParentLink="ComplexStatement_Statement" LowerBound="123.1" HigherBound="129.1">
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="HasError" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="DecisionBranch" OID="c7caa333-9fea-4250-84ed-7fb2d7b3a3a0" ParentLink="ReallyComplexStatement_Branch" LowerBound="116.17" HigherBound="121.1">
+                        <om:Element Type="DecisionBranch" OID="c7caa333-9fea-4250-84ed-7fb2d7b3a3a0" ParentLink="ReallyComplexStatement_Branch" LowerBound="124.17" HigherBound="129.1">
                             <om:Property Name="Expression" Value="returncode != &quot;0&quot;" />
                             <om:Property Name="IsGhostBranch" Value="True" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="ErrorExists" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="Suspend" OID="4f325d0d-f898-4427-8a1e-1e2d73f127aa" ParentLink="ComplexStatement_Statement" LowerBound="118.1" HigherBound="120.1">
+                            <om:Element Type="Suspend" OID="4f325d0d-f898-4427-8a1e-1e2d73f127aa" ParentLink="ComplexStatement_Statement" LowerBound="126.1" HigherBound="128.1">
                                 <om:Property Name="ErrorMessage" Value="System.String.Format(&quot;Error returned from AKKA ,{0}\n , resume to retry or terminate!&quot;,returntext);" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="Handle and terminate" />
@@ -331,21 +352,21 @@
                         </om:Element>
                     </om:Element>
                 </om:Element>
-                <om:Element Type="While" OID="076529e0-7503-4b56-9aec-5bbdf53a9938" ParentLink="ServiceBody_Statement" LowerBound="122.1" HigherBound="142.1">
+                <om:Element Type="While" OID="076529e0-7503-4b56-9aec-5bbdf53a9938" ParentLink="ServiceBody_Statement" LowerBound="130.1" HigherBound="150.1">
                     <om:Property Name="Expression" Value="loop == true" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Wait for events" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="Listen" OID="65c8c49e-8946-45ce-85ff-741fd24f8baa" ParentLink="ComplexStatement_Statement" LowerBound="125.1" HigherBound="141.1">
+                    <om:Element Type="Listen" OID="65c8c49e-8946-45ce-85ff-741fd24f8baa" ParentLink="ComplexStatement_Statement" LowerBound="133.1" HigherBound="149.1">
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="NextBatchOrTimeout" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="ListenBranch" OID="45fee155-69a2-4e87-ab0c-3c9875790f73" ParentLink="ReallyComplexStatement_Branch" LowerBound="125.1" HigherBound="125.1">
+                        <om:Element Type="ListenBranch" OID="45fee155-69a2-4e87-ab0c-3c9875790f73" ParentLink="ReallyComplexStatement_Branch" LowerBound="133.1" HigherBound="133.1">
                             <om:Property Name="IsGhostBranch" Value="True" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="ListenBranch_1" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="Receive" OID="036e2b78-1ab9-48c7-82c3-0861031f9b22" ParentLink="ListenBranch_Statement" LowerBound="128.1" HigherBound="129.93">
+                            <om:Element Type="Receive" OID="036e2b78-1ab9-48c7-82c3-0861031f9b22" ParentLink="ListenBranch_Statement" LowerBound="136.1" HigherBound="137.93">
                                 <om:Property Name="Activate" Value="False" />
                                 <om:Property Name="PortName" Value="RcvPersonEventsPort" />
                                 <om:Property Name="MessageName" Value="Person" />
@@ -355,25 +376,25 @@
                                 <om:Property Name="Name" Value="RcvPersonEvent" />
                                 <om:Property Name="Signal" Value="True" />
                             </om:Element>
-                            <om:Element Type="VariableAssignment" OID="9385314a-7a2d-4bb6-9cd5-cd48626f9aa5" ParentLink="ComplexStatement_Statement" LowerBound="131.1" HigherBound="133.1">
+                            <om:Element Type="VariableAssignment" OID="9385314a-7a2d-4bb6-9cd5-cd48626f9aa5" ParentLink="ComplexStatement_Statement" LowerBound="139.1" HigherBound="141.1">
                                 <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk Application&quot;,&quot;Multiple calls to AKKA with same person number. Ignoring.\nPerson number: &quot; + Person(Shared.Schemas.GroupAndPersonEvents.PersonNumber), System.Diagnostics.EventLogEntryType.Information);" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="Log" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
                         </om:Element>
-                        <om:Element Type="ListenBranch" OID="b1effc98-9f68-480c-84b4-33003e98dbf8" ParentLink="ReallyComplexStatement_Branch" LowerBound="125.1" HigherBound="125.1">
+                        <om:Element Type="ListenBranch" OID="b1effc98-9f68-480c-84b4-33003e98dbf8" ParentLink="ReallyComplexStatement_Branch" LowerBound="133.1" HigherBound="133.1">
                             <om:Property Name="IsGhostBranch" Value="True" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="ListenBranch_2" />
                             <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="VariableAssignment" OID="2fd43665-df25-4415-ba5c-1c08027c3f4a" ParentLink="ComplexStatement_Statement" LowerBound="137.1" HigherBound="139.1">
+                            <om:Element Type="VariableAssignment" OID="2fd43665-df25-4415-ba5c-1c08027c3f4a" ParentLink="ComplexStatement_Statement" LowerBound="145.1" HigherBound="147.1">
                                 <om:Property Name="Expression" Value="loop = false;" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="ExitLoop" />
                                 <om:Property Name="Signal" Value="False" />
                             </om:Element>
-                            <om:Element Type="Delay" OID="ecb03cc5-86d5-49c1-842d-50532e2eb23e" ParentLink="ListenBranch_Statement" LowerBound="134.1" HigherBound="135.81">
+                            <om:Element Type="Delay" OID="ecb03cc5-86d5-49c1-842d-50532e2eb23e" ParentLink="ListenBranch_Statement" LowerBound="142.1" HigherBound="143.81">
                                 <om:Property Name="Timeout" Value="new System.TimeSpan(0,waitForNextMessageInMinutes,0)" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="WaitForNextMessageEventBatch" />
@@ -501,6 +522,7 @@ module INT0004.AKKA.Identity
         System.String eventType;
         System.Int32 waitForNextMessageInMinutes;
         System.Boolean loop;
+        System.String stringMessage;
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("076781a5-b8fe-4186-81b7-df5e6d5d4c57")]
@@ -509,6 +531,7 @@ module INT0004.AKKA.Identity
             returntext = "";
             eventType = System.String.Empty;
             loop = true;
+            stringMessage = "";
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("86763cb1-bccb-4ae4-a123-199628c30516")]
             waitForNextMessageInMinutes = 5;
             System.Int32.TryParse(Shared.Utilities.SSOClientHelper.SSOClientHelper.Read("INT0004.AKKA.Identity", "NextCorrelatedMessageWaittimeInMinutes"), out waitForNextMessageInMinutes);
@@ -537,10 +560,16 @@ module INT0004.AKKA.Identity
                                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("8f1c48c3-064a-4cb7-8401-7a81f57318a8")]
                                 AKKAPromotedResponse = AKKAResponse;
                                 AKKAPromotedResponse(*) = AKKAResponse(*);
-                                AKKAPromotedResponse(Shared.Schemas.GroupAndPersonEvents.PersonNumber) = Person(Shared.Schemas.GroupAndPersonEvents.PersonNumber);
+                                AKKAPromotedResponse(INT0004.AKKA.Identity.Schemas.PersonNumber) = Person(Shared.Schemas.GroupAndPersonEvents.PersonNumber);
                             }
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("b6e6dd18-1c5c-4a4e-bb67-3753190aecee")]
                             send (SndPersonResponsePort.PersonResponse, AKKAPromotedResponse);
+                        }
+                        else if (returncode != "0" && returntext.Contains("ladok UUID saknas"))
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("35f6d609-c66e-41b1-b13b-c8d5ad9dce0b")]
+                            System.Diagnostics.EventLog.WriteEntry("BizTalk Application", System.String.Format("INT0004.AKKA.Identity - ProcessPerson: {0}. Ignoring event.", returntext), System.Diagnostics.EventLogEntryType.Information);
+                            returncode = "0";
                         }
                     }
                     exceptions

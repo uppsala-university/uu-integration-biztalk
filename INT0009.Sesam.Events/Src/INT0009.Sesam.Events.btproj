@@ -43,9 +43,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Shared.Schemas.Ladok, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+    <Reference Include="Shared.Schemas.Ladok, Version=2.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Ladok\v4.0_2.0.0.0__b64e3957dd28061a\Shared.Schemas.Ladok.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Ladok\v4.0_2.3.0.0__b64e3957dd28061a\Shared.Schemas.Ladok.dll</HintPath>
+    </Reference>
+    <Reference Include="Shared.Utilities.SSOClientHelper, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Utilities.SSOClientHelper\v4.0_1.1.0.0__b64e3957dd28061a\Shared.Utilities.SSOClientHelper.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -82,9 +86,16 @@
     <None Include="Files\INT0009.Sesam.Events.docx" />
     <None Include="Files\INT0009.Sesam.Events.Installation.docx" />
     <None Include="Files\INT0009.Sesam.Events.maps.xlsx" />
+    <None Include="Files\INT0009.Sesam.Events.msi" />
     <None Include="Files\INT0009.Sesam.Events.Operations.docx" />
+    <None Include="Files\INT0009.Sesam.Events.sso" />
     <None Include="Files\INT0009.Sesam.Events.vsdx" />
     <None Include="key.snk.pfx" />
+    <Schema Include="PropertySchema.xsd">
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>INT0009.Sesam.Events.PropertySchema</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
     <Schema Include="Schemas\Sesam\Schema1.xsd">
       <TypeName>Schema1</TypeName>
       <Namespace>INT0009.Sesam.Events.Schemas.Sesam</Namespace>
@@ -139,13 +150,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Files\INT0009.Sesam.Events.BindingInfo_Dev.xml" />
-    <Map Include="Maps\TestRESTApi.btm">
-      <TypeName>Map1</TypeName>
-      <Namespace>INT0009.Sesam.Events.Maps</Namespace>
-      <SubType>Task</SubType>
-    </Map>
-    <Content Include="Maps\OmregistreringEnvelope_to_PersonEvent.xsl" />
+    <Content Include="Files\INT0009.Sesam.Events.BindingInfo_Dev.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Files\INT0009.Sesam.Events.BindingInfo_Prod.xml" />
+    <Content Include="Files\INT0009.Sesam.Events.BindingInfo_Test.xml" />
+    <Content Include="Files\INT0009.Sesam.Events.BindingInfo_Ver.xml" />
+    <Content Include="Maps\RegistreringEnvelope_to_PersonEvent.xsl">
+      <SubType>Designer</SubType>
+    </Content>
     <Pipeline Include="Pipelines\JSON.ReceiveREST.btp">
       <TypeName>ReceivePipeline1</TypeName>
       <Namespace>INT0009.Sesam.Events.Pipelines</Namespace>
@@ -171,7 +184,7 @@
       <Namespace>INT0009.Sesam.Events.Maps</Namespace>
       <SubType>Task</SubType>
     </Map>
-    <Content Include="Maps\RegistreringEnvelope_to_PersonEvent.xsl" />
+    <Content Include="Maps\OmregistreringEnvelope_to_PersonEvent.xsl" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />

@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
-  <Timestamp>2018-07-05T10:51:14.8188613+02:00</Timestamp>
+  <Timestamp>2018-11-08T13:40:09.5791793+01:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0010.Studentportalen.Events]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0010.Studentportalen.Events], Version=, Culture=, PublicKeyToken=">
       <Services />
       <TrackedSchemas />
     </ModuleRef>
-    <ModuleRef Name="INT0010.Studentportalen.Events" Version="1.0.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
+    <ModuleRef Name="INT0010.Studentportalen.Events" Version="1.3.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services />
       <TrackedSchemas />
     </ModuleRef>
   </ModuleRefCollection>
   <SendPortCollection>
-    <SendPort Name="INT0010.SP.Send_REST" IsStatic="true" IsTwoWay="true" BindingOption="0">
+    <SendPort Name="INT0010.SP.Send_REST" IsStatic="true" IsTwoWay="false" BindingOption="0">
       <Description xsi:nil="true" />
       <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlAsmComp"&gt;&lt;Properties&gt;&lt;PreserveBom vt="11"&gt;0&lt;/PreserveBom&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
       <PrimaryTransport>
-        <Address>https://spl3t.studentportalen.uu.se/uusp-webapp/spring/ladok-event?pw=CHANGEME</Address>
+        <Address>https://spl3t.studentportalen.uu.se/uusp-webapp/spring/ladok-event?pw=Curry79Groda</Address>
         <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
-        <TransportTypeData>&lt;CustomProps&gt;&lt;ServiceCertificate vt="8" /&gt;&lt;HttpMethodAndUrl vt="8"&gt;POST&lt;/HttpMethodAndUrl&gt;&lt;MaxReceivedMessageSize vt="3"&gt;13262496&lt;/MaxReceivedMessageSize&gt;&lt;ClientCertificate vt="8" /&gt;&lt;ProxyUserName vt="8" /&gt;&lt;UseAcsAuthentication vt="11"&gt;0&lt;/UseAcsAuthentication&gt;&lt;SuppressMessageBodyForHttpVerbs vt="8"&gt;POST&lt;/SuppressMessageBodyForHttpVerbs&gt;&lt;VariablePropertyMapping vt="8"&gt;&amp;lt;BtsVariablePropertyMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&amp;gt;&lt;/VariablePropertyMapping&gt;&lt;SecurityMode vt="8"&gt;Transport&lt;/SecurityMode&gt;&lt;ProxyToUse vt="8"&gt;Default&lt;/ProxyToUse&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior"&amp;gt;&amp;lt;webHttp faultExceptionEnabled="true" /&amp;gt;&amp;lt;/behavior&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;TransportClientCredentialType vt="8"&gt;Windows&lt;/TransportClientCredentialType&gt;&lt;OpenTimeout vt="8"&gt;00:01:00&lt;/OpenTimeout&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;UseSasAuthentication vt="11"&gt;0&lt;/UseSasAuthentication&gt;&lt;CloseTimeout vt="8"&gt;00:01:00&lt;/CloseTimeout&gt;&lt;SendTimeout vt="8"&gt;00:01:00&lt;/SendTimeout&gt;&lt;HttpHeaders vt="8"&gt;Content-Type: application/xml&lt;/HttpHeaders&gt;&lt;/CustomProps&gt;</TransportTypeData>
-        <RetryCount>3</RetryCount>
-        <RetryInterval>5</RetryInterval>
+        <TransportTypeData>&lt;CustomProps&gt;&lt;ServiceCertificate vt="8" /&gt;&lt;HttpMethodAndUrl vt="8"&gt;POST&lt;/HttpMethodAndUrl&gt;&lt;MaxReceivedMessageSize vt="3"&gt;65536&lt;/MaxReceivedMessageSize&gt;&lt;ClientCertificate vt="8" /&gt;&lt;ProxyUserName vt="8" /&gt;&lt;UseAcsAuthentication vt="11"&gt;0&lt;/UseAcsAuthentication&gt;&lt;SuppressMessageBodyForHttpVerbs vt="8" /&gt;&lt;VariablePropertyMapping vt="8"&gt;&amp;lt;BtsVariablePropertyMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&amp;gt;&lt;/VariablePropertyMapping&gt;&lt;SecurityMode vt="8"&gt;Transport&lt;/SecurityMode&gt;&lt;ProxyToUse vt="8"&gt;Default&lt;/ProxyToUse&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;TransportClientCredentialType vt="8"&gt;Windows&lt;/TransportClientCredentialType&gt;&lt;OpenTimeout vt="8"&gt;00:00:15&lt;/OpenTimeout&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;UseSasAuthentication vt="11"&gt;0&lt;/UseSasAuthentication&gt;&lt;CloseTimeout vt="8"&gt;00:01:00&lt;/CloseTimeout&gt;&lt;SendTimeout vt="8"&gt;00:01:00&lt;/SendTimeout&gt;&lt;HttpHeaders vt="8"&gt;Content-Type: application/xml;charset=utf-8&lt;/HttpHeaders&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>1000</RetryCount>
+        <RetryInterval>1</RetryInterval>
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
         <FromTime>2000-01-01T22:00:00</FromTime>
         <ToTime>2000-01-01T21:59:59</ToTime>
         <Primary>true</Primary>
         <OrderedDelivery>true</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
-        <SendHandler Name="CluSdSend" HostTrusted="false">
+        <SendHandler Name="CluSDSend" HostTrusted="false">
           <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
         </SendHandler>
       </PrimaryTransport>
@@ -43,9 +44,8 @@
         <DeliveryNotification>1</DeliveryNotification>
         <SendHandler xsi:nil="true" />
       </SecondaryTransport>
-      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
       <ReceivePipelineData xsi:nil="true" />
-      <Tracking>0</Tracking>
+      <Tracking>4</Tracking>
       <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;Group&gt;
@@ -53,25 +53,27 @@
   &lt;/Group&gt;
 &lt;/Filter&gt;</Filter>
       <Transforms>
-        <Transform FullName="INT0010.Studentportalen.Events.Maps.AterbudEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.AterbudEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0010.Studentportalen.Events.Maps.AterkalladOmregistreringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.AterkalladOmregistreringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0010.Studentportalen.Events.Maps.AterkalladRegistreringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.AterkalladRegistreringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />	
-		<Transform FullName="INT0010.Studentportalen.Events.Maps.AvbrottBorttagetEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.AvbrottBorttagetEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-		<Transform FullName="INT0010.Studentportalen.Events.Maps.AvbrottEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.AvbrottEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-		<Transform FullName="INT0010.Studentportalen.Events.Maps.DelayedUppehallStartEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.DelayedUppehallStartEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-		<Transform FullName="INT0010.Studentportalen.Events.Maps.DelayedUppehallStopEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.DelayedUppehallStopEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />		
-        <Transform FullName="INT0010.Studentportalen.Events.Maps.ForvantatDeltagandeSkapadEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.ForvantatDeltagandeSkapadEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0010.Studentportalen.Events.Maps.KurspaketeringUppdateradEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.KurspaketeringUppdateradEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0010.Studentportalen.Events.Maps.KurstillfalleTillStatusEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.KurstillfalleTillStatusEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0010.Studentportalen.Events.Maps.OmregistreringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.OmregistreringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0010.Studentportalen.Events.Maps.KurstillfalleUppdateratEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.KurstillfalleUppdateratEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0010.Studentportalen.Events.Maps.RegistreringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.RegistreringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0010.Studentportalen.Events.Maps.StudentAvlidenmarkeringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.StudentAvlidenmarkeringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleAteraktiveratEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleAteraktiveratEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleBorttagetEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleBorttagetEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
-        <Transform FullName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleInstalltEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleInstalltEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.AterbudEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.AterbudEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.AterkalladOmregistreringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.AterkalladOmregistreringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.AterkalladRegistreringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.AterkalladRegistreringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.AvbrottBorttagetEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.AvbrottBorttagetEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.DelayedUppehallStartEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.DelayedUppehallStartEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.AvbrottEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.AvbrottEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.DelayedUppehallStopEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.DelayedUppehallStopEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.ForvantatDeltagandeSkapadEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.ForvantatDeltagandeSkapadEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.KurspaketeringUppdateradEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.KurspaketeringUppdateradEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.KurstillfalleTillStatusEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.KurstillfalleTillStatusEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.KurstillfalleUppdateratEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.KurstillfalleUppdateratEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.OmregistreringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.OmregistreringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.RegistreringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.RegistreringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.StudentAvlidenmarkeringEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.StudentAvlidenmarkeringEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleAteraktiveratEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleAteraktiveratEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleBorttagetEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleBorttagetEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleInstalltEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.UtbildningstillfalleInstalltEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.KontaktuppgifterEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.KontaktuppgifterEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.LokalStudentEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.LokalStudentEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0010.Studentportalen.Events.Maps.UppehallBorttagetEnvelope_to_Event" AssemblyQualifiedName="INT0010.Studentportalen.Events.Maps.UppehallBorttagetEnvelope_to_Event,INT0010.Studentportalen.Events, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
-      <InboundTransforms />
       <OrderedDelivery>true</OrderedDelivery>
       <Priority>5</Priority>
       <StopSendingOnFailure>true</StopSendingOnFailure>
@@ -99,11 +101,11 @@
           <ReceiveLocationTransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;queue&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-SP&amp;lt;/queue&amp;gt;&amp;lt;uri&amp;gt;FORMATNAME:DIRECT=OS:.\PRIVATE$\SD-SP&amp;lt;/uri&amp;gt;&amp;lt;batchSize&amp;gt;1&amp;lt;/batchSize&amp;gt;&amp;lt;transactional&amp;gt;true&amp;lt;/transactional&amp;gt;&amp;lt;serialProcessing&amp;gt;true&amp;lt;/serialProcessing&amp;gt;&amp;lt;onFailure&amp;gt;suspendResumable&amp;lt;/onFailure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
           <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
-          <ReceivePipelineData xsi:nil="true" />
+          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlDasmComp"&gt;&lt;Properties&gt;&lt;AllowUnrecognizedMessage vt="11"&gt;-1&lt;/AllowUnrecognizedMessage&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e410e-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.PartyRes"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
           <SendPipeline xsi:nil="true" />
           <SendPipelineData xsi:nil="true" />
-          <Enable>true</Enable>
-          <ReceiveHandler Name="CluSdReceive" HostTrusted="false">
+          <Enable>false</Enable>
+          <ReceiveHandler Name="CluSDReceive" HostTrusted="false">
             <TransportType Name="MSMQ" Capabilities="13579" ConfigurationClsid="ff5cee87-fd92-4422-b47d-f7d033311693" />
           </ReceiveHandler>
         </ReceiveLocation>
