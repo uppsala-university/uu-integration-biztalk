@@ -429,11 +429,10 @@ create PROCEDURE  [dbo].[uusmrUpdateGpnr]
 	      update ["UUSKLIST"] set gpnr = @oldPnr, UPPDATERAD = GETDATE() where pnr=@PNR and gpnr = '';
 	     END 
   END
-
- go
+  go
 DROP PROCEDURE IF EXISTS [dbo].[uusmrHanteraStudieaktivitet]; 
 go
-alter PROCEDURE  [dbo].[uusmrHanteraStudieaktivitet]
+CREATE PROCEDURE  [dbo].[uusmrHanteraStudieaktivitet]
             @PNR CHAR(13),
             @EFTERNAMN VARCHAR(255),
             @FORNAMN VARCHAR(255),
@@ -447,7 +446,6 @@ alter PROCEDURE  [dbo].[uusmrHanteraStudieaktivitet]
             @TELNR VARCHAR(255),
             @INLDATUM_TELNR CHAR(10),
             @EPOSTADRESS VARCHAR(255),
-			@AKTIVITET VARCHAR(255),
 			@TERMIN VARCHAR(5),
 			@INST VARCHAR(4),
 			@AKT  VARCHAR(3),
@@ -457,7 +455,7 @@ alter PROCEDURE  [dbo].[uusmrHanteraStudieaktivitet]
      SET NOCOUNT ON;    
 	 DECLARE @rowcountDoktorand int;  
 	
-      select @rowcountDoktorand = count(*) from ["UUSKLIST"] where pnr=@PNR and termin=@TERMIN and inst =@INST and KURS='' and AKT != '';
+      select @rowcountDoktorand = count(*) from ["UUSKLIST"] where pnr=@PNR and termin=@TERMIN and inst =@INST and KURS='' and PROGR = '' and AKT != '';
 	  IF (@rowcountDoktorand = 0)
 	     BEGIN
 		  INSERT INTO [dbo].["UUSKLIST"]
@@ -549,7 +547,7 @@ alter PROCEDURE  [dbo].[uusmrHanteraStudieaktivitet]
 			inst=@INST,
 			akt=@AKT,
 			UPPDATERAD = GETDATE()
-		    where pnr=@PNR and termin=@TERMIN and inst =@INST and KURS='' and AKT != ''
+		    where pnr=@PNR and termin=@TERMIN and inst =@INST and KURS='' and PROGR ='' and AKT != ''
 		END
     
 	exec  uusmrUpdateGpnr @PNR;
