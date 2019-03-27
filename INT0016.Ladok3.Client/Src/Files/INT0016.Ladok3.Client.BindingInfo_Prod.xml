@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="102" TotalEndpoints="102">
-  <Timestamp>2019-01-23T10:35:02.196258+01:00</Timestamp>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="107" TotalEndpoints="107">
+  <Timestamp>2019-03-26T12:53:45.0405378+01:00</Timestamp>
   <ModuleRefCollection>
     <ModuleRef Name="[Application:INT0016.Ladok3.Client]" Version="" Culture="" PublicKeyToken="" FullName="[Application:INT0016.Ladok3.Client], Version=, Culture=, PublicKeyToken=">
       <Services />
@@ -15,6 +15,37 @@
     </ModuleRef>
     <ModuleRef Name="INT0016.Ladok3.Client" Version="1.4.0.0" Culture="neutral" PublicKeyToken="b64e3957dd28061a" FullName="INT0016.Ladok3.Client, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a">
       <Services>
+        <Service Name="INT0016.Ladok3.Client.HandleStudieaktivitetDokumenteradEvent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents">
+          <Ports>
+            <Port Name="SendGetStudent_StudieaktiviteterDokumenteradRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetStudent" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetUtbildningsinstans_StudieaktiviteterDokumenteradRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetUtbildningsinstans" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetOrganisation_StudieaktiviteterDokumenteradRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetOrganisation" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetPerioder_StudieaktiviteterDokumenteradRequestPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetPerioder" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendGetKontaktuppgifter_StudieaktiviteterDokumenteradEventPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="INT0016.Ladok3.Client.Send_GetKontaktuppgifter" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="CluSDOrchestration" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
         <Service Name="INT0016.Ladok3.Client.HandleUppehallBorttagetEvent" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
           <Ports>
             <Port Name="SendGetStudent_UppehallBorttagetEventRequestPort" Modifier="1" BindingOption="1">
@@ -693,6 +724,7 @@
         <Transform FullName="INT0016.Ladok3.Client.Maps.Common.Utbildningstillfalle_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.Common.Utbildningstillfalle_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEven_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladregistreringEvent.AterkalladregistreringEven_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AterkalladOmregistreringEvent.AterkalladOmregistreringEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.StudieaktiviteterDokumenteradEvent.StudieaktiviteterDokumenteradEvent_to_UtbildningsinstansQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.StudieaktiviteterDokumenteradEvent.StudieaktiviteterDokumenteradEvent_to_UtbildningsinstansQueryParameters,INT0016.Ladok3.Client, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -803,6 +835,7 @@
         <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0016.Ladok3.Client.Maps.KurspaketeringUppdateradEvent.KurspaketeringUppdateradEvent_to_Envelope" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.KurspaketeringUppdateradEvent.KurspaketeringUppdateradEvent_to_Envelope,INT0016.Ladok3.Client, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0016.Ladok3.Client.Maps.KontaktuppgifterEvent.KontaktuppgifterEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.KontaktuppgifterEvent.KontaktuppgifterEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.StudieaktiviteterDokumenteradEvent.StudieaktiviteterDokumenteradEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.StudieaktiviteterDokumenteradEvent.StudieaktiviteterDokumenteradEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -858,6 +891,7 @@
         <Transform FullName="INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent.AvbrottBorttagetEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.AvbrottBorttagetEvent.AvbrottBorttagetEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallEvent.UppefallEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallEvent.UppefallEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
         <Transform FullName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_KontaktuppgifterQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.UppehallBorttagetEvent.UppehallBorttagetEvent_to_KontaktuppgifterQueryParameters,INT0016.Ladok3.Client, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
+        <Transform FullName="INT0016.Ladok3.Client.Maps.StudieaktiviteterDokumenteradEvent.StudieaktiviteterDokumenteradEvent_to_StudentQueryParameters" AssemblyQualifiedName="INT0016.Ladok3.Client.Maps.StudieaktiviteterDokumenteradEvent.StudieaktiviteterDokumenteradEvent_to_StudentQueryParameters,INT0016.Ladok3.Client, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a" />
       </Transforms>
       <InboundTransforms />
       <OrderedDelivery>false</OrderedDelivery>
@@ -1264,6 +1298,49 @@
         <ServiceWindowEnabled>false</ServiceWindowEnabled>
         <FromTime>2000-01-01T23:00:00</FromTime>
         <ToTime>2000-01-01T22:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <InboundTransforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>INT0016.Ladok3.Client</ApplicationName>
+    </SendPort>
+    <SendPort Name="INT0016.Ladok3.Client.Send_GetPerioder" IsStatic="true" IsTwoWay="true" BindingOption="1">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>https://api.ladok.se/</Address>
+        <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;ServiceCertificate vt="8"&gt;6E0D043C7CC6E2D21E726CB1F3DA66ED21D911B9&lt;/ServiceCertificate&gt;&lt;HttpMethodAndUrl vt="8"&gt;&amp;lt;BtsHttpUrlMapping&amp;gt; &amp;lt;Operation Method="GET" Url="/kataloginformation/grunddata/period" /&amp;gt;&amp;lt;/BtsHttpUrlMapping&amp;gt;&lt;/HttpMethodAndUrl&gt;&lt;MaxReceivedMessageSize vt="3"&gt;65536&lt;/MaxReceivedMessageSize&gt;&lt;ClientCertificate vt="8"&gt;9002016DBA1047590274F50EC11DC207516A0703&lt;/ClientCertificate&gt;&lt;ProxyUserName vt="8" /&gt;&lt;UseAcsAuthentication vt="11"&gt;0&lt;/UseAcsAuthentication&gt;&lt;SuppressMessageBodyForHttpVerbs vt="8" /&gt;&lt;VariablePropertyMapping vt="8"&gt;&amp;lt;BtsVariablePropertyMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&amp;gt;&lt;/VariablePropertyMapping&gt;&lt;SecurityMode vt="8"&gt;Transport&lt;/SecurityMode&gt;&lt;ProxyToUse vt="8"&gt;Default&lt;/ProxyToUse&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;TransportClientCredentialType vt="8"&gt;Certificate&lt;/TransportClientCredentialType&gt;&lt;OpenTimeout vt="8"&gt;00:01:00&lt;/OpenTimeout&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;UseSasAuthentication vt="11"&gt;0&lt;/UseSasAuthentication&gt;&lt;CloseTimeout vt="8"&gt;00:01:00&lt;/CloseTimeout&gt;&lt;SendTimeout vt="8"&gt;00:01:00&lt;/SendTimeout&gt;&lt;HttpHeaders vt="8" /&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2019-03-24T23:00:00</FromTime>
+        <ToTime>2019-03-25T22:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="CluSDSend" HostTrusted="false">
+          <TransportType Name="WCF-WebHttp" Capabilities="387" ConfigurationClsid="e5b2de81-de67-4559-869b-20925949a1e0" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2019-03-24T23:00:00</FromTime>
+        <ToTime>2019-03-25T22:59:59</ToTime>
         <Primary>false</Primary>
         <OrderedDelivery>false</OrderedDelivery>
         <DeliveryNotification>1</DeliveryNotification>
