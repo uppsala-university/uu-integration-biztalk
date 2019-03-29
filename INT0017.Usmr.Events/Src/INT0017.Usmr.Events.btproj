@@ -41,9 +41,9 @@
   <ItemGroup>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Shared.PipelineComponents.PromoteMessageTypeAsBTSOperation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL" />
-    <Reference Include="Shared.Schemas.Ladok, Version=2.3.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
+    <Reference Include="Shared.Schemas.Ladok, Version=2.4.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Ladok\v4.0_2.3.0.0__b64e3957dd28061a\Shared.Schemas.Ladok.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Shared.Schemas.Ladok\v4.0_2.4.0.0__b64e3957dd28061a\Shared.Schemas.Ladok.dll</HintPath>
     </Reference>
     <Reference Include="Shared.Utilities.SSOClientHelper, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b64e3957dd28061a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -85,7 +85,18 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Files\BT-40AlterDB.sql" />
+    <Content Include="Files\BT-62.sql" />
     <Content Include="Maps\INT0017.AterbudEnvelope_to_uusmrUpdateLamnaAterbud.xsl" />
+    <Content Include="Maps\INT0017.StudieaktivitetDokumenteradEvent_To_UusmrHanteraStudieaktivitet.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WcfSendPort_SqlAdapterBinding_Custom.bindinginfo3.xml" />
+    <Map Include="Maps\INT0017.StudieaktivitetDokumenteradEvent_To_UusmrHanteraStudieaktivitet.btm">
+      <TypeName>INT0017_StudieaktivitetDokumenteradEvent_To_UusmrHanteraStudieaktivitet</TypeName>
+      <Namespace>INT0017.Usmr.Events.Maps</Namespace>
+      <SubType>Designer</SubType>
+    </Map>
+    <Content Include="WcfSendPort_SqlAdapterBinding_Custom.bindinginfo2.xml" />
     <Map Include="Maps\INT0017.DelayedEnvelopeStop_to_usmrUpdStudieavbrott.btm">
       <TypeName>INT0017_DelayedEnvelopeStop_to_usmrUpdStudieavbrott</TypeName>
       <Namespace>INT0017.Usmr.Events.Maps</Namespace>
@@ -137,7 +148,7 @@
     <Pipeline Include="Pipelines\INT0017.Usmr.Receive.btp">
       <TypeName>INT0017_Usmr_Receive</TypeName>
       <Namespace>INT0017.Usmr.Events.Pipelines</Namespace>
-      <SubType>Task</SubType>
+      <SubType>Designer</SubType>
     </Pipeline>
     <Content Include="WcfSendPort_SqlAdapterBinding_Custom.bindinginfo1.xml" />
     <Map Include="Maps\INT0017.ForvantatDeltagandeEvent.To.UsmrRecord.btm">
@@ -196,6 +207,21 @@
     </Map>
   </ItemGroup>
   <ItemGroup>
+    <Schema Include="Maps\INT0017.StudieaktivitetProcedure.dbo.xsd">
+      <SubType>Task</SubType>
+      <TypeName>INT0017_StudieaktivitetProcedure_dbo</TypeName>
+      <Namespace>INT0017.Usmr.Events.Maps</Namespace>
+    </Schema>
+    <Schema Include="Maps\INT0017.StudieaktivitetDataSetSchema.xsd">
+      <SubType>Task</SubType>
+      <TypeName>INT0017_StudieaktivitetDataSetSchema</TypeName>
+      <Namespace>INT0017.Usmr.Events.Maps</Namespace>
+    </Schema>
+    <Schema Include="Schemas\INT0017.StudieaktivitetDataSetSchema.xsd">
+      <SubType>Task</SubType>
+      <TypeName>INT0017_StudieaktivitetDataSetSchema</TypeName>
+      <Namespace>INT0017.Usmr.Events.Schemas</Namespace>
+    </Schema>
     <Schema Include="Schemas\INT0017.Usmr.fileformat.xsd">
       <TypeName>INT0017_Usmr_fileformat</TypeName>
       <Namespace>INT0017.Usmr.Events.Schemas</Namespace>
