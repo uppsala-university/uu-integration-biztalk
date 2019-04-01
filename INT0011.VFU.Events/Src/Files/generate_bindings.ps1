@@ -14,10 +14,10 @@ $TestUsersLDAP  = 'LDAP://exchange-test.its.uu.se:389/OU=Users,OU=Student,OU=Akk
 $ProdUsersLDAP = 'LDAP://user.uu.se/OU=Users,OU=Student,OU=Akka,DC=user,DC=uu,DC=se'
 $VerUsersLDAP  = 'LDAP://exchange-test.its.uu.se:389/OU=Users,OU=Student,OU=Akka,DC=exchange-test,DC=its,DC=uu,DC=se'
 
-$DevRestApi = 'https://vfu-test.its.uu.se/vfutest'
-$TestRestApi = 'https://vfu-test.its.uu.se/vfutest'
+$DevRestApi = 'https://vfu-test.its.uu.se/vfu'
+$TestRestApi = 'https://vfu-test.its.uu.se/vfu'
 $ProdRestApi = 'https://vfu.its.uu.se/vfu'
-$VerRestApi =  'https://vfu-test.its.uu.se/vfutest'
+$VerRestApi =  'https://vfu-test.its.uu.se/vfu'
 
 $DevAKKA  = 'https://akka-adm.test.uu.se/akkaappl-soap/ws/AkkaCall'
 $TestAKKA  = 'https://akka-adm.test.uu.se/akkaappl-soap/ws/AkkaCall'
