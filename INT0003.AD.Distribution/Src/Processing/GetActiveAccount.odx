@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="6390c773-2ecf-41fd-a0d9-31d6865374aa" LowerBound="1.1" HigherBound="57.1">
+    <om:Element Type="Module" OID="6390c773-2ecf-41fd-a0d9-31d6865374aa" LowerBound="1.1" HigherBound="61.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="INT0003.AD.Distribution" />
         <om:Property Name="Signal" Value="False" />
@@ -44,27 +44,27 @@
                 </om:Element>
             </om:Element>
         </om:Element>
-        <om:Element Type="ServiceDeclaration" OID="1b442ea1-1470-47c2-94cd-c4018bf3789a" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="56.1">
+        <om:Element Type="ServiceDeclaration" OID="1b442ea1-1470-47c2-94cd-c4018bf3789a" ParentLink="Module_ServiceDeclaration" LowerBound="22.1" HigherBound="60.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="True" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="GetActiveAccount" />
             <om:Property Name="Signal" Value="False" />
-            <om:Element Type="CorrelationDeclaration" OID="97c73032-3693-4026-b232-783fc5499775" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="25.1" HigherBound="26.1">
-                <om:Property Name="Type" Value="INT0003.AD.Distribution.IndividualID" />
+            <om:Element Type="CorrelationDeclaration" OID="97c73032-3693-4026-b232-783fc5499775" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="Type" Value="INT0003.AD.Distribution.ProducerReferenceID" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="IDSet" />
+                <om:Property Name="Name" Value="ProducerReferenceIDSet" />
                 <om:Property Name="Signal" Value="True" />
-                <om:Element Type="StatementRef" OID="95e2a247-2319-41ea-bbc3-75d202586256" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="30.69" HigherBound="30.85">
+                <om:Element Type="StatementRef" OID="95e2a247-2319-41ea-bbc3-75d202586256" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="34.69" HigherBound="34.102">
                     <om:Property Name="Initializes" Value="True" />
                     <om:Property Name="Ref" Value="3f97fdbf-3a3b-4e67-88a3-c81717beef73" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="StatementRef_1" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
-                <om:Element Type="StatementRef" OID="25d69548-b353-4cff-a245-74cda71994e1" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="45.89" HigherBound="45.94">
+                <om:Element Type="StatementRef" OID="25d69548-b353-4cff-a245-74cda71994e1" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="49.89" HigherBound="49.111">
                     <om:Property Name="Initializes" Value="False" />
                     <om:Property Name="Ref" Value="c2cf1d41-46d0-43a8-9d3d-0a4f748cff1c" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
@@ -72,7 +72,7 @@
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
-            <om:Element Type="MessageDeclaration" OID="d9546e3d-7433-4641-ab39-73a3be5d1800" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+            <om:Element Type="MessageDeclaration" OID="d9546e3d-7433-4641-ab39-73a3be5d1800" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="30.1" HigherBound="31.1">
                 <om:Property Name="Type" Value="Shared.Schemas.GroupAndPersonEvents.InternalPersonEvent" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
@@ -81,7 +81,7 @@
             </om:Element>
             <om:Element Type="ServiceBody" OID="b34f3643-73e4-4654-841a-724ad6671091" ParentLink="ServiceDeclaration_ServiceBody">
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="VariableDeclaration" OID="ea84e409-10e8-4de4-93f6-d2c62cc546c7" ParentLink="ServiceBody_Declaration" LowerBound="27.15" HigherBound="27.45">
+                <om:Element Type="VariableDeclaration" OID="ea84e409-10e8-4de4-93f6-d2c62cc546c7" ParentLink="ServiceBody_Declaration" LowerBound="31.15" HigherBound="31.45">
                     <om:Property Name="UseDefaultConstructor" Value="False" />
                     <om:Property Name="Type" Value="System.String" />
                     <om:Property Name="ParamDirection" Value="Ref" />
@@ -89,14 +89,14 @@
                     <om:Property Name="Name" Value="emailSubject" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="MessageDeclaration" OID="dfea8e98-7e80-48d0-9ad1-98f018751616" ParentLink="ServiceBody_Declaration" LowerBound="27.47" HigherBound="27.120">
+                <om:Element Type="MessageDeclaration" OID="dfea8e98-7e80-48d0-9ad1-98f018751616" ParentLink="ServiceBody_Declaration" LowerBound="31.47" HigherBound="31.120">
                     <om:Property Name="Type" Value="Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent" />
                     <om:Property Name="ParamDirection" Value="In" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="GroupEvent" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="VariableDeclaration" OID="8ffb01a3-225c-41b1-a4a2-34e543407da0" ParentLink="ServiceBody_Declaration" LowerBound="27.122" HigherBound="27.142">
+                <om:Element Type="VariableDeclaration" OID="8ffb01a3-225c-41b1-a4a2-34e543407da0" ParentLink="ServiceBody_Declaration" LowerBound="31.122" HigherBound="31.142">
                     <om:Property Name="UseDefaultConstructor" Value="False" />
                     <om:Property Name="Type" Value="System.String" />
                     <om:Property Name="ParamDirection" Value="Ref" />
@@ -104,7 +104,7 @@
                     <om:Property Name="Name" Value="cn" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="VariableDeclaration" OID="8123a0e1-05d6-4294-a46c-5b8a7c403d84" ParentLink="ServiceBody_Declaration" LowerBound="27.144" HigherBound="27.170">
+                <om:Element Type="VariableDeclaration" OID="8123a0e1-05d6-4294-a46c-5b8a7c403d84" ParentLink="ServiceBody_Declaration" LowerBound="31.144" HigherBound="31.170">
                     <om:Property Name="InitialValue" Value="true" />
                     <om:Property Name="UseDefaultConstructor" Value="False" />
                     <om:Property Name="Type" Value="System.Boolean" />
@@ -113,7 +113,7 @@
                     <om:Property Name="Name" Value="success" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="VariableDeclaration" OID="59652f2a-2b20-407c-8322-a7d76e19ecd8" ParentLink="ServiceBody_Declaration" LowerBound="27.172" HigherBound="27.199">
+                <om:Element Type="VariableDeclaration" OID="59652f2a-2b20-407c-8322-a7d76e19ecd8" ParentLink="ServiceBody_Declaration" LowerBound="31.172" HigherBound="31.199">
                     <om:Property Name="InitialValue" Value="&quot;&quot;" />
                     <om:Property Name="UseDefaultConstructor" Value="False" />
                     <om:Property Name="Type" Value="System.String" />
@@ -122,7 +122,7 @@
                     <om:Property Name="Name" Value="errorText" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="Send" OID="3f97fdbf-3a3b-4e67-88a3-c81717beef73" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                <om:Element Type="Send" OID="3f97fdbf-3a3b-4e67-88a3-c81717beef73" ParentLink="ServiceBody_Statement" LowerBound="33.1" HigherBound="35.1">
                     <om:Property Name="PortName" Value="CheckActiveAccountPort" />
                     <om:Property Name="MessageName" Value="GroupEvent" />
                     <om:Property Name="OperationName" Value="ActiveAccount" />
@@ -131,40 +131,40 @@
                     <om:Property Name="Name" Value="SndCheckActiveAccount" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="Listen" OID="38e92aa4-2b40-4268-8362-6aef6ea8c372" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="54.1">
+                <om:Element Type="Listen" OID="38e92aa4-2b40-4268-8362-6aef6ea8c372" ParentLink="ServiceBody_Statement" LowerBound="35.1" HigherBound="58.1">
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Wait for response" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="ListenBranch" OID="63bb7b47-092d-47ea-8630-e44041da5934" ParentLink="ReallyComplexStatement_Branch" LowerBound="31.1" HigherBound="31.1">
+                    <om:Element Type="ListenBranch" OID="63bb7b47-092d-47ea-8630-e44041da5934" ParentLink="ReallyComplexStatement_Branch" LowerBound="35.1" HigherBound="35.1">
                         <om:Property Name="IsGhostBranch" Value="True" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="ListenBranch_1" />
                         <om:Property Name="Signal" Value="False" />
-                        <om:Element Type="VariableAssignment" OID="b7edddd1-0978-42b3-8e6f-1e40a5ae46eb" ParentLink="ComplexStatement_Statement" LowerBound="37.1" HigherBound="43.1">
+                        <om:Element Type="VariableAssignment" OID="b7edddd1-0978-42b3-8e6f-1e40a5ae46eb" ParentLink="ComplexStatement_Statement" LowerBound="41.1" HigherBound="47.1">
                             <om:Property Name="Expression" Value="success = false;&#xD;&#xA;errorText = System.String.Format(&quot;Could not retrieve account information for Person with pnr {0}!&quot;,GroupEvent(Shared.Schemas.GroupAndPersonEvents.PersonNumber));&#xD;&#xA;emailSubject = errorText;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="Set error" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="Delay" OID="8094dac2-ed59-41ad-b9d9-7039bd140cd7" ParentLink="ListenBranch_Statement" LowerBound="34.1" HigherBound="35.52">
+                        <om:Element Type="Delay" OID="8094dac2-ed59-41ad-b9d9-7039bd140cd7" ParentLink="ListenBranch_Statement" LowerBound="38.1" HigherBound="39.52">
                             <om:Property Name="Timeout" Value="new System.TimeSpan(0,10,0)" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="ResponseTimeout" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
                     </om:Element>
-                    <om:Element Type="ListenBranch" OID="cb71e78b-8326-4397-be0e-5e0b8580d39a" ParentLink="ReallyComplexStatement_Branch" LowerBound="31.1" HigherBound="31.1">
+                    <om:Element Type="ListenBranch" OID="cb71e78b-8326-4397-be0e-5e0b8580d39a" ParentLink="ReallyComplexStatement_Branch" LowerBound="35.1" HigherBound="35.1">
                         <om:Property Name="IsGhostBranch" Value="True" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="ListenBranch_2" />
                         <om:Property Name="Signal" Value="False" />
-                        <om:Element Type="VariableAssignment" OID="b323348c-a1b8-4f12-803f-065a9865241c" ParentLink="ComplexStatement_Statement" LowerBound="47.1" HigherBound="52.1">
+                        <om:Element Type="VariableAssignment" OID="b323348c-a1b8-4f12-803f-065a9865241c" ParentLink="ComplexStatement_Statement" LowerBound="51.1" HigherBound="56.1">
                             <om:Property Name="Expression" Value="success = true;&#xD;&#xA;cn = xpath(PersonResponse,&quot;string(/*[local-name()='PersonEvent']/*[local-name()='Person']/@*[local-name()='identifier'])&quot;);&#xD;&#xA;errorText = &quot;&quot;;&#xD;&#xA;emailSubject = errorText;&#xD;&#xA;" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="Get returned Account" />
                             <om:Property Name="Signal" Value="True" />
                         </om:Element>
-                        <om:Element Type="Receive" OID="c2cf1d41-46d0-43a8-9d3d-0a4f748cff1c" ParentLink="ListenBranch_Statement" LowerBound="44.1" HigherBound="45.95">
+                        <om:Element Type="Receive" OID="c2cf1d41-46d0-43a8-9d3d-0a4f748cff1c" ParentLink="ListenBranch_Statement" LowerBound="48.1" HigherBound="49.112">
                             <om:Property Name="Activate" Value="False" />
                             <om:Property Name="PortName" Value="ActiveAccountResponsePort" />
                             <om:Property Name="MessageName" Value="PersonResponse" />
@@ -177,7 +177,7 @@
                     </om:Element>
                 </om:Element>
             </om:Element>
-            <om:Element Type="PortDeclaration" OID="ea0fe842-1195-40c4-8bca-e357708e3b64" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+            <om:Element Type="PortDeclaration" OID="ea0fe842-1195-40c4-8bca-e357708e3b64" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="25.1" HigherBound="27.1">
                 <om:Property Name="PortModifier" Value="Uses" />
                 <om:Property Name="Orientation" Value="Right" />
                 <om:Property Name="PortIndex" Value="-1" />
@@ -189,11 +189,11 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="CheckActiveAccountPort" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="LogicalBindingAttribute" OID="f7e42bab-3390-4026-8d94-59b5c0c1311b" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                <om:Element Type="LogicalBindingAttribute" OID="f7e42bab-3390-4026-8d94-59b5c0c1311b" ParentLink="PortDeclaration_CLRAttribute" LowerBound="25.1" HigherBound="26.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
-            <om:Element Type="PortDeclaration" OID="83ac9964-cc4f-436d-bbd4-4c9f3b6b1863" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+            <om:Element Type="PortDeclaration" OID="83ac9964-cc4f-436d-bbd4-4c9f3b6b1863" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="27.1" HigherBound="29.1">
                 <om:Property Name="PortModifier" Value="Implements" />
                 <om:Property Name="Orientation" Value="Right" />
                 <om:Property Name="PortIndex" Value="-1" />
@@ -205,9 +205,21 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="ActiveAccountResponsePort" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="LogicalBindingAttribute" OID="bd3f467f-3774-47c0-ab00-9080e39dde3b" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                <om:Element Type="LogicalBindingAttribute" OID="bd3f467f-3774-47c0-ab00-9080e39dde3b" ParentLink="PortDeclaration_CLRAttribute" LowerBound="27.1" HigherBound="28.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="24767fca-fa11-4abd-ab18-bf0f14b71706" ParentLink="Module_CorrelationType" LowerBound="18.1" HigherBound="22.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProducerReferenceID" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="d7019b23-a137-47c5-9699-6abac3d380aa" ParentLink="CorrelationType_PropertyRef" LowerBound="20.9" HigherBound="20.64">
+                <om:Property Name="Ref" Value="Shared.Schemas.GroupAndPersonEvents.ProducerReferenceId" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
             </om:Element>
         </om:Element>
     </om:Element>
@@ -230,6 +242,10 @@ module INT0003.AD.Distribution
             Shared.Schemas.GroupAndPersonEvents.InternalPersonEvent
         };
     };
+    internal correlationtype ProducerReferenceID
+    {
+        Shared.Schemas.GroupAndPersonEvents.ProducerReferenceId
+    };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
     internal service GetActiveAccount
     {
@@ -237,12 +253,12 @@ module INT0003.AD.Distribution
         port uses CheckActiveAccountPortType CheckActiveAccountPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port implements ActiveAccountResponsePortType ActiveAccountResponsePort;
-        correlation IndividualID IDSet;
+        correlation ProducerReferenceID ProducerReferenceIDSet;
         message Shared.Schemas.GroupAndPersonEvents.InternalPersonEvent PersonResponse;
         body (ref System.String emailSubject, message Shared.Schemas.GroupAndPersonEvents.InternalGroupEvent GroupEvent, ref System.String cn, ref System.Boolean success, ref System.String errorText)
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("3f97fdbf-3a3b-4e67-88a3-c81717beef73")]
-            send (CheckActiveAccountPort.ActiveAccount, GroupEvent, initialize IDSet);
+            send (CheckActiveAccountPort.ActiveAccount, GroupEvent, initialize ProducerReferenceIDSet);
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("38e92aa4-2b40-4268-8362-6aef6ea8c372")]
             listen
             {
@@ -257,7 +273,7 @@ module INT0003.AD.Distribution
                     
                 }
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("c2cf1d41-46d0-43a8-9d3d-0a4f748cff1c")]
-                until receive (ActiveAccountResponsePort.ActiveAccount, PersonResponse, IDSet)
+                until receive (ActiveAccountResponsePort.ActiveAccount, PersonResponse, ProducerReferenceIDSet)
                 {
                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("b323348c-a1b8-4f12-803f-065a9865241c")]
                     success = true;

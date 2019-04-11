@@ -8,10 +8,10 @@ $TestQueue  = 'OS:UUC-BIZSRV021-T'
 $ProdQueue  = 'OS:UUC-MSMQSRV002'
 $VerQueue  = 'OS:UUC-MSMQSRV001'
 
-$DevEndPoint  = 'https://spl3t.studentportalen.uu.se/uusp-webapp/spring/ladok-event?pw=Curry79Groda'
-$TestEndPoint  = 'https://spl3t.studentportalen.uu.se/uusp-webapp/spring/ladok-event?pw=Curry79Groda'
+$DevEndPoint  = 'https://dev1.studentportalen.uu.se/uusp-webapp/spring/ladok-event?pw=Curry79Groda'
+$TestEndPoint  = 'https://dev1.studentportalen.uu.se/uusp-webapp/spring/ladok-event?pw=Curry79Groda'
 $ProdEndPoint  = 'https://studentportalen.uu.se/uusp-webapp/spring/ladok-event?pw=CHANGEME'
-$VerEndPoint  = 'https://spl3t.studentportalen.uu.se/uusp-webapp/spring/ladok-event?pw=Curry79Groda'
+$VerEndPoint  = 'https://dev1.studentportalen.uu.se/uusp-webapp/spring/ladok-event?pw=Curry79Groda'
 
 copy .\$DevBindings .\$TestBindings
 (Get-Content -Path .\$TestBindings).Replace($DevQueue,$TestQueue).Replace($DevEndPoint,$TestEndPoint) | Set-Content -Path .\$TestBindings

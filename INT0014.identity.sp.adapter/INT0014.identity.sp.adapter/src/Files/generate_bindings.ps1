@@ -8,9 +8,9 @@ $TestQueue  = 'OS:UUC-BIZSRV021-T'
 $ProdQueue  = 'OS:UUC-MSMQSRV002'
 $VerQueue  = 'OS:UUC-MSMQSRV001'
  
-$DevSp  = 'https://spl3t.studentportalen.uu.se/uusp-webapp/spring/account/pnrupdate'
-$TestSp  = 'https://spl3t.studentportalen.uu.se/uusp-webapp/spring/account/pnrupdate'
-$VerSp  =  'https://juni.studentportalen.uu.se/uusp-webapp/spring/account/pnrupdate'
+$DevSp  = 'https://dev1.studentportalen.uu.se/uusp-webapp/spring/account/pnrupdate'
+$TestSp  = 'https://dev1.studentportalen.uu.se/uusp-webapp/spring/account/pnrupdate'
+$VerSp  =  'https://dev1.studentportalen.uu.se/uusp-webapp/spring/account/pnrupdate'
 $ProdSp  = 'https://studentportalen.uu.se/uusp-webapp/spring/account/pnrupdate'
 
 copy .\$DevBindings .\$TestBindings
