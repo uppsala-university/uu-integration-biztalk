@@ -247,17 +247,17 @@
                             <om:Property Name="Name" Value="ConstructQueryAkka" />
                             <om:Property Name="Signal" Value="True" />
                             <om:Element Type="Transform" OID="89e7859f-35b7-4e21-9544-0bc860f3c5f8" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="64.1">
-                                <om:Property Name="ClassName" Value="INT0011.VFU.Events.Avbrott_to_Akka" />
+                                <om:Property Name="ClassName" Value="INT0011.VFU.Events.Maps.Avbrott_to_Akka" />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="Registrering_to_Akka" />
-                                <om:Property Name="Signal" Value="True" />
-                                <om:Element Type="MessagePartRef" OID="c5dc3c2e-06c4-4542-86f3-3c393d4f6e85" ParentLink="Transform_InputMessagePartRef" LowerBound="63.96" HigherBound="63.103">
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="MessagePartRef" OID="2e0050b8-0199-4d0d-bd5c-8d3d82d5866b" ParentLink="Transform_InputMessagePartRef" LowerBound="63.101" HigherBound="63.108">
                                     <om:Property Name="MessageRef" Value="Avbrott" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="MessagePartReference_7" />
                                     <om:Property Name="Signal" Value="False" />
                                 </om:Element>
-                                <om:Element Type="MessagePartRef" OID="86bee6e5-9b27-440c-8c83-58826abb610d" ParentLink="Transform_OutputMessagePartRef" LowerBound="63.40" HigherBound="63.56">
+                                <om:Element Type="MessagePartRef" OID="fad88dae-1888-4be3-a837-f9ad7f40f955" ParentLink="Transform_OutputMessagePartRef" LowerBound="63.40" HigherBound="63.56">
                                     <om:Property Name="MessageRef" Value="AkkaSenasteKonto" />
                                     <om:Property Name="ReportToAnalyst" Value="True" />
                                     <om:Property Name="Name" Value="MessagePartReference_8" />
@@ -363,29 +363,29 @@
                                         <om:Property Name="Name" Value="ConstructProgramdeltagande" />
                                         <om:Property Name="Signal" Value="True" />
                                         <om:Element Type="Transform" OID="0ccb17e1-7dcf-4009-ab6b-3ec5ec97837e" ParentLink="ComplexStatement_Statement" LowerBound="93.1" HigherBound="95.1">
-                                            <om:Property Name="ClassName" Value="INT0011.VFU.Events.Avbrott_to_Programdeltagande" />
+                                            <om:Property Name="ClassName" Value="INT0011.VFU.Events.Maps.Avbrott_to_Programdeltagande" />
                                             <om:Property Name="ReportToAnalyst" Value="True" />
                                             <om:Property Name="Name" Value="RegestreringProgramdeltagande" />
-                                            <om:Property Name="Signal" Value="False" />
-                                            <om:Element Type="MessagePartRef" OID="ea2ac044-e8a1-4a8a-8a4f-21e87ddc91a2" ParentLink="Transform_InputMessagePartRef" LowerBound="94.122" HigherBound="94.145">
+                                            <om:Property Name="Signal" Value="True" />
+                                            <om:Element Type="MessagePartRef" OID="f01ae6ed-347c-43b0-94d3-fbd88bb5532d" ParentLink="Transform_InputMessagePartRef" LowerBound="94.127" HigherBound="94.150">
                                                 <om:Property Name="MessageRef" Value="ADIndividualQueryResult" />
                                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                                 <om:Property Name="Name" Value="MessagePartReference_3" />
                                                 <om:Property Name="Signal" Value="False" />
                                             </om:Element>
-                                            <om:Element Type="MessagePartRef" OID="ae561e7c-5ade-41a3-8735-dd895a58d4a4" ParentLink="Transform_InputMessagePartRef" LowerBound="94.147" HigherBound="94.154">
+                                            <om:Element Type="MessagePartRef" OID="c0b43bfa-fc1b-4b17-a062-1686f6e3873c" ParentLink="Transform_InputMessagePartRef" LowerBound="94.152" HigherBound="94.159">
                                                 <om:Property Name="MessageRef" Value="Avbrott" />
                                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                                 <om:Property Name="Name" Value="MessagePartReference_4" />
                                                 <om:Property Name="Signal" Value="False" />
                                             </om:Element>
-                                            <om:Element Type="MessagePartRef" OID="104adb4c-a7ee-4a95-9ac7-0b8ec2b4c000" ParentLink="Transform_InputMessagePartRef" LowerBound="94.156" HigherBound="94.180">
+                                            <om:Element Type="MessagePartRef" OID="ecb2b5d3-dac3-4b3f-8c58-c8e6145d0976" ParentLink="Transform_InputMessagePartRef" LowerBound="94.161" HigherBound="94.185">
                                                 <om:Property Name="MessageRef" Value="AkkaSenasteKontoResponse" />
                                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                                 <om:Property Name="Name" Value="MessagePartReference_6" />
                                                 <om:Property Name="Signal" Value="False" />
                                             </om:Element>
-                                            <om:Element Type="MessagePartRef" OID="a5aaaf3e-4161-45ea-928b-db4cefc91d62" ParentLink="Transform_OutputMessagePartRef" LowerBound="94.52" HigherBound="94.69">
+                                            <om:Element Type="MessagePartRef" OID="cf38754c-7829-4688-ac0c-cef5568ae5f9" ParentLink="Transform_OutputMessagePartRef" LowerBound="94.52" HigherBound="94.69">
                                                 <om:Property Name="MessageRef" Value="Programdeltagande" />
                                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                                 <om:Property Name="Name" Value="MessagePartReference_5" />
@@ -744,7 +744,7 @@ module INT0011.VFU.Events
                         construct AkkaSenasteKonto
                         {
                             [Microsoft.XLANGs.BaseTypes.DesignerPosition("89e7859f-35b7-4e21-9544-0bc860f3c5f8")]
-                            transform (AkkaSenasteKonto) = INT0011.VFU.Events.Avbrott_to_Akka (Avbrott);
+                            transform (AkkaSenasteKonto) = INT0011.VFU.Events.Maps.Avbrott_to_Akka (Avbrott);
                         }
                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("31c39585-2fd9-4c1e-9ef6-7310dbcdc5ef")]
                         send (SendAkkaRequestPort.AKKA, AkkaSenasteKonto);
@@ -775,7 +775,7 @@ module INT0011.VFU.Events
                                     construct Programdeltagande
                                     {
                                         [Microsoft.XLANGs.BaseTypes.DesignerPosition("0ccb17e1-7dcf-4009-ab6b-3ec5ec97837e")]
-                                        transform (Programdeltagande) = INT0011.VFU.Events.Avbrott_to_Programdeltagande (ADIndividualQueryResult, Avbrott, AkkaSenasteKontoResponse);
+                                        transform (Programdeltagande) = INT0011.VFU.Events.Maps.Avbrott_to_Programdeltagande (ADIndividualQueryResult, Avbrott, AkkaSenasteKontoResponse);
                                     }
                                     [Microsoft.XLANGs.BaseTypes.DesignerPosition("da32b223-42a8-440d-a932-87661a762e67")]
                                     scope synchronized
