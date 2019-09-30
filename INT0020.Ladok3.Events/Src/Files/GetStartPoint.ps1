@@ -47,12 +47,11 @@ function GetStartPoint
         $prodresponse = Invoke-RestMethod -Uri $produrlcurrent -CertificateThumbprint $prodthumb 
 
         # Hämta första händelseUID från feeds
-        $testHandelseUID = $testresponse[$testresponse.Length-1].content.FirstChild.HandelseUID
-        $prodHandelseUID = $prodresponse[$prodresponse.Length-1].content.FirstChild.HandelseUID
-
+        $testID = $testresponse[$testresponse.Length-1].id
+        $prodID = $prodresponse[$prodresponse.Length-1].id        
 
         # Jämför UIDs, avsluta loop om de är lika
-        if($prodHandelseUID -eq $testHandelseUID)
+        if($prodID -eq $testID)
         {
             break
         }
@@ -63,28 +62,30 @@ function GetStartPoint
     
 
     #Hitta rätt entry i feeden
-    $currententry = $testresponse.Length-1
+    $currenttestentry = $testresponse.Length-1
+    $currentprodentry = $prodresponse.Length-1
 
     while($true)
     {
-        $previousTestHandelseUID = $testHandelseUID
-        $prodHandelseUID = $prodresponse[$currententry].content.FirstChild.HandelseUID
-        $testHandelseUID = $testresponse[$currententry].content.FirstChild.HandelseUID
+        $previousTestID = $testID
+        $prodID = $prodresponse[$currentprodentry].id
+        $testID = $testresponse[$currenttestentry].id
 
         # Jämför UIDs, avsluta loop om de är olika
-        if($prodHandelseUID -ne $testHandelseUID)
+        if($prodID -ne $testID)
         {
             break
         }
 
         # Om de är lika fortsätt med nästa entry
-        $currententry = $currententry-1
+        $currenttestentry = $currenttestentry-1
+        $currentprodentry = $currentprodentry-1
     }
 
     $json = @(
         @{
             URL = $testurl + $currentfeednumber
-            HandelseUID = $previousTestHandelseUID
+            ID = $previousTestID
         }
     )
 
